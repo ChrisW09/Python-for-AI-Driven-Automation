@@ -145,30 +145,43 @@
   All three are exercised across the 11 notebooks.
 \end{frame}
 
-\begin{frame}{Course at a glance}
-  \small
-  \begin{tabular}{lll}
+\begin{frame}{Course at a glance -- 19 notebooks, four arcs}
+  \footnotesize
+  \begin{tabular}{rll}
     \toprule
     \textbf{NB} & \textbf{Topic} & \textbf{What you build} \\
     \midrule
-    1  & Python basics              & A KPI snapshot for an AI support bot \\
-    2  & Control structures         & A ticket-triage rules engine \\
-    3  & Lists \& sequences         & Latency-log analysis \\
-    4  & Dictionaries / JSON        & A defensive API-response parser \\
-    5  & Pandas preview             & LLM-call log analysis \\
-    6  & Functions \& modules       & A reusable cost / clean toolkit \\
-    7  & NumPy fundamentals         & A/B-testing two LLM providers \\
-    8  & Matplotlib basics          & A 2$\times$2 AI-ops dashboard \\
-    9  & scikit-learn               & Customer-churn prediction \\
-    10 & Capstone                   & End-to-end AI support analytics \\
-    11 & AI-assisted workflows      & LLM prompts, RAG, automation \\
+    \multicolumn{3}{l}{\textit{Foundations}} \\
+    1  & Python basics                  & KPI snapshot for an AI support bot \\
+    2  & Control structures             & Ticket-triage rules engine \\
+    3  & Lists \& sequences             & Latency-log analysis \\
+    4  & Dictionaries / JSON            & Defensive API-response parser \\
+    5  & Pandas preview                 & LLM-call log analysis \\
+    6  & Functions \& modules           & Reusable cost / cleaning toolkit \\
+    \multicolumn{3}{l}{\textit{Real-world I/O}} \\
+    12 & APIs \& HTTP                   & Weather-data ETL against a live API \\
+    13 & SQL fundamentals               & SQL-driven channel report \\
+    \multicolumn{3}{l}{\textit{Data science \& ML}} \\
+    7  & NumPy fundamentals             & A/B-test of two LLM providers \\
+    8  & Matplotlib                     & 2$\times$2 AI-ops dashboard \\
+    14 & Time series \& forecasting     & 3-month forecast of automation rate \\
+    9  & scikit-learn                   & Customer-churn prediction \\
+    10 & \textbf{Capstone}              & AI Support-Bot Analytics \\
+    \multicolumn{3}{l}{\textit{AI engineering}} \\
+    11 & AI workflows                   & Inbox-triage with the MockLLM \\
+    15 & Embeddings \& RAG              & Real semantic retrieval, benchmarked \\
+    16 & Tools \& agents                & Multi-tool data assistant \\
+    17 & Document processing            & Invoice-parsing pipeline \\
+    \multicolumn{3}{l}{\textit{Engineering}} \\
+    18 & Notebook $\to$ project         & Packaged, tested, importable library \\
+    19 & Scheduling                     & Production-shape automation wrapper \\
     \bottomrule
   \end{tabular}
 \end{frame}
 
 
 % ============================================================
-\section{Python Fundamentals}
+\section{Python}
 % ============================================================
 
 \subsection{Variables and types}
@@ -291,6 +304,68 @@ call_cost(800, 200, 0.0010)      # $0.001280  -- override one default
 
 
 % ============================================================
+\section{HTTP \& SQL}
+% ============================================================
+
+\subsection{HTTP for data fetching}
+
+\begin{frame}{Every HTTP request, in one picture}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{images/16_http_anatomy.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{The five rules that save you in production}
+  \begin{enumerate}
+    \item Always pass \texttt{timeout=...} (or your code hangs forever)
+    \item Call \texttt{r.raise\_for\_status()} \emph{before} \texttt{r.json()}
+    \item Retry on \texttt{429} and \texttt{5xx}; \textbf{not} on \texttt{400/401/404}
+    \item Exponential backoff: \texttt{0.5s $\to$ 1s $\to$ 2s $\to$ 4s}
+    \item API keys in environment variables, never in code
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{exampleblock}{The defensive shape}
+\begin{lstlisting}
+try:
+    r = requests.get(url, params=p, timeout=8)
+    r.raise_for_status()
+    return r.json()
+except requests.exceptions.RequestException as e:
+    log.warning(f"fetch failed: {e}")
+    return None
+\end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{SQL fundamentals}
+
+\begin{frame}{SQL vs pandas -- same answer, two languages}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{images/17_sql_vs_pandas.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{When SQL beats pandas (and vice versa)}
+  \begin{block}{Reach for SQL when \ldots}
+    \begin{itemize}
+      \item The data lives in a database -- don't move it before you have to.
+      \item Joining several large tables on keys.
+      \item Filtering / aggregating before bringing data into Python.
+      \item The query needs to be shared with non-Python colleagues.
+    \end{itemize}
+  \end{block}
+  \begin{exampleblock}{Reach for pandas when \ldots}
+    \begin{itemize}
+      \item The data is already a DataFrame.
+      \item Reshaping (pivot, melt, multi-index).
+      \item You need to plug into matplotlib / scikit-learn directly.
+    \end{itemize}
+  \end{exampleblock}
+  \textbf{Pro pattern:} SQL for the heavy lift, pandas for the last mile.
+\end{frame}
+
+
+% ============================================================
 \section{Data Handling}
 % ============================================================
 
@@ -405,7 +480,7 @@ df.groupby("model").agg(
 
 
 % ============================================================
-\section{Numerical Computing}
+\section{NumPy}
 % ============================================================
 
 \subsection{Why NumPy}
@@ -528,6 +603,54 @@ plt.show()
       \item Hard-to-distinguish colours $\rightarrow$ use a small consistent palette.
     \end{enumerate}
   \end{alertblock}
+\end{frame}
+
+
+% ============================================================
+\section{Time Series}
+% ============================================================
+
+\subsection{Working with time-shaped data}
+
+\begin{frame}[fragile]{A time series is a DataFrame with a \texttt{DatetimeIndex}}
+  \begin{block}{The two functions that change everything}
+\begin{lstlisting}
+df["date"] = pd.to_datetime(df["date"])    # parse strings
+df = df.set_index("date")                  # time-aware index
+\end{lstlisting}
+  \end{block}
+  \vspace{6pt}
+  \begin{exampleblock}{Now you can do all of this}
+\begin{lstlisting}
+df.loc["2024-03"]                          # one whole month
+df.resample("W").mean()                    # weekly aggregate
+df["auto_rate"].rolling(7).mean()          # 7-day smoothing
+df["auto_rate"].diff(7)                    # week-over-week change
+\end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Three baselines you must beat}
+  \begin{block}{Before you reach for fancy models}
+    \begin{enumerate}
+      \item \textbf{Naive} -- tomorrow looks like today.
+      \item \textbf{Seasonal naive} -- this Monday looks like last Monday.
+      \item \textbf{Moving average} -- this week's average, extended.
+    \end{enumerate}
+  \end{block}
+  \vspace{4pt}
+  \begin{alertblock}{The forecasting golden rule}
+    Any model that doesn't beat \emph{seasonal naive} on your data has not earned its complexity.
+    Walk away and use the simple baseline.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{A 3-month forecast in five lines}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/18_time_series_forecast.png}
+  \end{center}
+  Always report a \textbf{confidence band}, evaluate with \textbf{walk-forward backtesting},
+  and use \textbf{MAE / RMSE / MAPE} -- not a single hold-out.
 \end{frame}
 
 
@@ -818,6 +941,141 @@ def chat(messages, model="gpt-4o-mini", temperature=0.0):
     Use environment variables (\texttt{os.getenv("OPENAI\_API\_KEY")}) or a
     \texttt{.env} file plus \texttt{python-dotenv}.
   \end{alertblock}
+\end{frame}
+
+
+% (Continuing the AI Workflows section with the new modules)
+\subsection{Semantic retrieval (real RAG)}
+
+\begin{frame}{Keyword RAG fails on paraphrasing}
+  \begin{exampleblock}{The motivating example}
+    User asks: \emph{``How do I end my plan?''}\\[2pt]
+    Doc says : \emph{``Cancelling your subscription \ldots''}
+  \end{exampleblock}
+  \vspace{4pt}
+  Zero word overlap $\Rightarrow$ keyword retrieval misses.
+  \vspace{6pt}
+  \begin{block}{The fix: embeddings + cosine similarity}
+    Map each text to a vector such that \emph{similar meaning} $\Rightarrow$
+    \emph{similar vector}. Distance is unit-free; synonyms work; paraphrasing works.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Retriever shoot-out on the same eval set}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/19_retrieval_comparison.png}
+  \end{center}
+\end{frame}
+
+\subsection{Tools and agents}
+
+\begin{frame}{Tool calling -- the LLM picks, your code runs}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{images/20_agent_loop.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{The agent loop in five lines}
+\begin{lstlisting}
+while step < max_steps:
+    resp = llm.chat(messages=messages, tools=TOOLS)
+    if "text" in resp:                     # final answer
+        return resp["text"]
+    call   = resp["tool_call"]
+    result = TOOL_FNS[call["name"]](**call["arguments"])
+    messages.append({"role": "tool", "content": json.dumps(result)})
+\end{lstlisting}
+  \begin{alertblock}{Always cap the loop}
+    \texttt{max\_steps} is the single most important parameter on an agent.
+    Without it, a buggy tool or confused model will burn through your budget
+    silently. Set it to 5--10 for most tasks.
+  \end{alertblock}
+\end{frame}
+
+\subsection{Document processing}
+
+\begin{frame}{The pipeline is universal}
+  \begin{block}{Same shape for invoices, contracts, lab reports, receipts \ldots}
+    \texttt{Extract} $\to$ \texttt{Chunk} $\to$ \texttt{LLM extract} $\to$ \texttt{Validate} $\to$ \texttt{Aggregate}
+  \end{block}
+  \vspace{4pt}
+  \begin{exampleblock}{The output schema is your specification}
+\begin{verbatim}
+{
+  "vendor":     "Acme Cloud Solutions",
+  "invoice_id": "INV-1042",
+  "due_date":   "2024-05-15",
+  "total":      1802.42,
+  "line_items": [...]
+}
+\end{verbatim}
+  \end{exampleblock}
+  \textbf{Field-level accuracy} is your honest metric -- the worst field sets the floor.
+\end{frame}
+
+
+% ============================================================
+\section{Production}
+% ============================================================
+
+\subsection{From notebook to project}
+
+\begin{frame}{The src/ layout -- the modern Python project}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{images/21_project_structure.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{The three habits that pay forever}
+  \begin{enumerate}
+    \item \texttt{pyproject.toml} declares everything -- deps, version, CLI entry point.
+    \item \texttt{pytest} tests live in \texttt{tests/}; one file per module.
+    \item Install in editable mode: \texttt{pip install -e ".[dev]"} -- changes to \texttt{src/} take effect immediately.
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{When to graduate}
+    The moment two notebooks copy-paste the same function -- or one notebook
+    needs to run on a schedule -- package it. Don't wait until later.
+  \end{block}
+\end{frame}
+
+\subsection{Scheduling and orchestration}
+
+\begin{frame}{Pick the host that fits the job}
+  \begin{block}{The decision tree}
+    \begin{itemize}
+      \item On your laptop, low frequency $\Rightarrow$ \textbf{cron}
+      \item On a Linux server $\Rightarrow$ \textbf{systemd timer}
+      \item Code already on GitHub, weekly / on-PR $\Rightarrow$ \textbf{GitHub Actions}
+      \item Multiple tasks with dependencies $\Rightarrow$ \textbf{Prefect / Airflow / Dagster}
+    \end{itemize}
+  \end{block}
+  \vspace{4pt}
+  Don't pull out a heavy orchestrator until you really need it. cron handles
+  90\% of production workloads forever.
+\end{frame}
+
+\begin{frame}[fragile]{The four production essentials}
+  \begin{enumerate}
+    \item \textbf{Idempotency} -- a deterministic \texttt{run\_id} and a check before doing work.
+    \item \textbf{Retries with backoff} -- 429 / 5xx / network blips are routine.
+    \item \textbf{Structured logging} -- START $\to$ steps $\to$ END/FAIL.
+    \item \textbf{Notifications} -- Slack webhook on failure; quiet on success.
+  \end{enumerate}
+  \vspace{4pt}
+  \begin{exampleblock}{The smallest production wrapper}
+\begin{lstlisting}
+def run(task_fn, run_id, max_retries=3):
+    started = time.perf_counter()
+    try:
+        result = with_retry(lambda: task_fn(run_id=run_id),
+                            max_attempts=max_retries)
+    except Exception as e:
+        send_slack_alert(f"FAILED {task_fn.__name__}: {e}")
+        raise
+    return {**result, "duration_s": time.perf_counter() - started}
+\end{lstlisting}
+  \end{exampleblock}
 \end{frame}
 
 

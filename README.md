@@ -5,9 +5,10 @@ practical AI-powered workflows for real business problems.
 
 ```
    ┌──────────────────────────────────────────────────────────────────────┐
-   │  11 notebooks  •  ~250 code cells  •  All exercises with solutions    │
+   │  19 notebooks  •  ~450 code cells  •  All exercises with solutions    │
    │  Runs on Google Colab with zero setup                                 │
    │  AI / LLM workflows included — runs offline with a built-in MockLLM   │
+   │  Real HTTP, SQL, time series, embeddings, agents, packaging, cron     │
    └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -76,21 +77,54 @@ MockLLM to a real provider.
 
 ## 📚 Full notebook map
 
-| # | Notebook | Module | Focus | What you build |
-|---|---|---|---|---|
-| 1 | `01_python_basics.ipynb` | Python Fundamentals | Variables, types, arithmetic, strings, f-strings | A KPI snapshot for an AI support bot (auto-rate, token cost, ROI) |
-| 2 | `02_control_structures.ipynb` | Python Fundamentals | `if/elif/else`, loops, error handling | A confidence-based ticket-triage rules engine, retry-with-backoff |
-| 3 | `03_lists_data_structures.ipynb` | Data Structures | Lists, tuples, slicing, comprehensions | Latency logs analysis, batched token-cost computation |
-| 4 | `04_dictionaries_advanced.ipynb` | Data Structures | Dicts, JSON, LLM chat-message lists | Defensive API-response parser, a few-shot prompt builder |
-| 5 | `05_pandas_preview.ipynb` | Data Science Libraries | Your first real DataFrame | LLM-call log explored with filter/groupby/plot |
-| 6 | `06_functions_modules.ipynb` | Python Fundamentals | Functions, modules, type hints | A 4-function toolkit: parse → clean → cost → report |
-| 7 | `07_numpy_fundamentals.ipynb` | Data Science Libraries | Arrays, vectorisation, broadcasting | A/B-testing two LLM providers across 50 prompts |
-| 8 | `08_matplotlib_basics.ipynb` | Data Science Libraries | Publication-quality charts | A 2×2 AI-ops executive dashboard |
-| 9 | `09_scikit_learn_basics.ipynb` | Machine Learning | The full ML workflow | **Customer churn prediction** + **NPS regression** + a text classifier |
-| 10 | `10_capstone_project.ipynb` | Capstone | End-to-end analytics | The AI Support-Bot Analytics project (above) |
-| 11 | `11_ai_assisted_workflows.ipynb` | AI Engineering | LLMs, prompts, RAG, automation | The AI workflows project (above) |
+### Part I — Foundations (NB 1–6)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 1 | `01_python_basics.ipynb`            | Variables, types, arithmetic, strings, f-strings | A KPI snapshot for an AI support bot |
+| 2 | `02_control_structures.ipynb`       | `if/elif/else`, loops, error handling | A confidence-based ticket-triage rules engine |
+| 3 | `03_lists_data_structures.ipynb`    | Lists, tuples, slicing, comprehensions | Latency-log analysis |
+| 4 | `04_dictionaries_advanced.ipynb`    | Dicts, JSON, LLM chat-message lists | Defensive API-response parser |
+| 5 | `05_pandas_preview.ipynb`           | Your first real DataFrame | LLM-call log analysis |
+| 6 | `06_functions_modules.ipynb`        | Functions, modules, type hints | A reusable cost / cleaning toolkit |
 
-**Total**: ~250 code cells, every concept exercised, every exercise solved with reasoning.
+### Part II — Real-world I/O (NB 12–13)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 12 | `12_apis_and_http.ipynb`           | `requests`, status codes, retries, pagination | A weather-data ETL pipeline against a live public API |
+| 13 | `13_sql_fundamentals.ipynb`        | SQLite + pandas, joins, CTEs, window functions | A SQL-driven channel report |
+
+### Part III — Data science (NB 7, 8, 14)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 7  | `07_numpy_fundamentals.ipynb`      | Arrays, vectorisation, broadcasting | A/B-testing two LLM providers |
+| 8  | `08_matplotlib_basics.ipynb`       | Publication-quality charts | A 2×2 AI-ops executive dashboard |
+| 14 | `14_time_series_forecasting.ipynb` | Resampling, rolling, decomposition, Holt-Winters | A 3-month automation-rate forecast |
+
+### Part IV — Machine learning (NB 9)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 9  | `09_scikit_learn_basics.ipynb`     | The full ML workflow | Customer churn prediction + NPS regression + text classifier |
+
+### Part V — The analytical capstone (NB 10)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 10 | `10_capstone_project.ipynb`        | End-to-end business-AI analytics | The AI Support-Bot Analytics project |
+
+### Part VI — AI engineering (NB 11, 15–17)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 11 | `11_ai_assisted_workflows.ipynb`   | LLMs, prompts, structured output, RAG | Inbox-triage with the MockLLM |
+| 15 | `15_embeddings_semantic_retrieval.ipynb` | TF-IDF + dense embeddings, retrieval@k | A real RAG system, benchmarked vs keyword |
+| 16 | `16_tools_and_agents.ipynb`        | JSON-schema tools, call→execute→return loop | A multi-tool data assistant |
+| 17 | `17_ai_document_processing.ipynb`  | Extract → chunk → LLM → validate → aggregate | An invoice-parsing pipeline |
+
+### Part VII — Engineering polish (NB 18–19)
+| # | Notebook | Focus | What you build |
+|---|---|---|---|
+| 18 | `18_from_notebook_to_project.ipynb`| `src/` layout, `pyproject.toml`, pytest, CLI | A packaged, tested, importable Python package |
+| 19 | `19_scheduling_orchestration.ipynb`| cron / systemd / GitHub Actions / Prefect, idempotency, alerts | A production-shape automation wrapper |
+
+**Total**: ~450 code cells, every concept exercised, every exercise solved with reasoning.
 
 ---
 
