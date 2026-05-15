@@ -165,16 +165,26 @@ These are conscious trade-offs.
 
 ---
 
-## Working with AI / API keys
+## LLM providers — local and hosted, four options
 
-Notebooks 18, 19, 22, 27 can be run *entirely offline* with the built-in `MockLLM`. When you're ready to use a real model:
+Notebooks 18 – 22 and 27 can be run **entirely offline** with the built-in `MockLLM`. When you're ready for real intelligence, swap one line. The course supports four providers through a unified interface in [`llm_providers.py`](./llm_providers.py):
 
-1. Get a key from OpenAI or Anthropic.
-2. Set it as an **environment variable** (never paste into a notebook):
-   ```bash
-   export OPENAI_API_KEY=sk-...
-   ```
-3. Each notebook's "Going live" section shows the exact line to swap.
+| Provider | Class | When |
+|---|---|---|
+| 🟢 OpenAI    | `OpenAILLM(model="gpt-4o-mini")` | Reliable default. |
+| 🟠 Anthropic | `AnthropicLLM(model="claude-haiku-4-5-20251001")` | Long context, careful tone. |
+| 🔵 Google    | `GoogleLLM(model="gemini-2.0-flash")` | Cheap at scale. |
+| 🟣 Ollama    | `OllamaLLM(model="llama3.2:3b")` | **Local** — no internet, no key, no cost. |
+
+```bash
+# For hosted providers, set the corresponding env var (never inline):
+export OPENAI_API_KEY=sk-...
+export ANTHROPIC_API_KEY=sk-ant-...
+export GOOGLE_API_KEY=...
+# Ollama: `ollama pull llama3.2:3b` once, then `ollama serve` (auto-starts on macOS).
+```
+
+📓 **See [`05_ai_engineering/A1_llm_providers_guide.ipynb`](./05_ai_engineering/A1_llm_providers_guide.ipynb)** for setup, model recommendations, cost estimates, and a decision table.
 
 > ⚠️ **Never commit API keys to git.** The notebooks are designed so you don't have to touch a key inside the notebook itself.
 
