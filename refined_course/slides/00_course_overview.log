@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.30)  15 MAY 2026 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.30)  15 MAY 2026 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -945,11 +945,11 @@ Package pdftex.def Info: images/00_course_roadmap.png  used on input line 57.
  [4
 
  <./images/00_course_roadmap.png>]
-<images/06_three_circles.png, id=127, 574.3056pt x 452.892pt>
+<images/06_three_circles.png, id=127, 574.3056pt x 403.7484pt>
 File: images/06_three_circles.png Graphic file (type png)
 <use images/06_three_circles.png>
 Package pdftex.def Info: images/06_three_circles.png  used on input line 63.
-(pdftex.def)             Requested size: 231.84763pt x 182.83286pt.
+(pdftex.def)             Requested size: 260.08261pt x 182.8433pt.
  [5
 
  <./images/06_three_circles.png>]
@@ -1011,7 +1011,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
  [8
 
 ]
-<images/01_dependency_graph.png, id=187, 630.1944pt x 459.1554pt>
+<images/01_dependency_graph.png, id=188, 630.1944pt x 459.1554pt>
 File: images/01_dependency_graph.png Graphic file (type png)
 <use images/01_dependency_graph.png>
 Package pdftex.def Info: images/01_dependency_graph.png  used on input line 107
@@ -1022,11 +1022,11 @@ Package pdftex.def Info: images/01_dependency_graph.png  used on input line 107
  <./images/01_dependency_graph.png>] (./00_course_overview.toc) [10
 
 ]
-<images/02_learning_paths.png, id=216, 755.9442pt x 487.0998pt>
+<images/02_learning_paths.png, id=217, 798.3426pt x 515.526pt>
 File: images/02_learning_paths.png Graphic file (type png)
 <use images/02_learning_paths.png>
 Package pdftex.def Info: images/02_learning_paths.png  used on input line 117.
-(pdftex.def)             Requested size: 298.30055pt x 192.21277pt.
+(pdftex.def)             Requested size: 297.66013pt x 192.21263pt.
  [11
 
  <./images/02_learning_paths.png>]
@@ -1039,7 +1039,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
  [12
 
 ]
-<images/03_weekly_timeline.png, id=241, 742.4538pt x 343.0416pt>
+<images/03_weekly_timeline.png, id=242, 742.4538pt x 343.0416pt>
 File: images/03_weekly_timeline.png Graphic file (type png)
 <use images/03_weekly_timeline.png>
 Package pdftex.def Info: images/03_weekly_timeline.png  used on input line 136.
@@ -1051,7 +1051,7 @@ Package pdftex.def Info: images/03_weekly_timeline.png  used on input line 136.
 (./00_course_overview.toc) [14
 
 ]
-<images/04_study_loop.png, id=271, 686.565pt x 311.7246pt>
+<images/04_study_loop.png, id=272, 686.565pt x 311.7246pt>
 File: images/04_study_loop.png Graphic file (type png)
 <use images/04_study_loop.png>
 Package pdftex.def Info: images/04_study_loop.png  used on input line 147.
@@ -1095,13 +1095,17 @@ File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
  (./00_course_overview.vrb) [21
 
 ]
-Overfull \hbox (85.48618pt too wide) in paragraph at lines 215--215
- \T1/lmss/bx/n/24.88 00_onboarding/00_master_onboarding.ipynb 
- []
+\openout4 = `00_course_overview.vrb'.
 
-[22
+ (./00_course_overview.vrb) [22
 
 ] [23
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 248.
+
+[24
 
 ]
 \tf@nav=\write6
@@ -1118,26 +1122,27 @@ Package rerunfilecheck Info: File `00_course_overview.out' has not changed.
 (rerunfilecheck)             Checksum: 2799A209174D9742E8D640A884FB7079;692.
  ) 
 Here is how much of TeX's memory you used:
- 23174 strings out of 480247
- 448527 string characters out of 5896151
- 700727 words of memory out of 5000000
- 40538 multiletter control sequences out of 15000+600000
- 541297 words of font info for 79 fonts, out of 8000000 for 9000
+ 23246 strings out of 480247
+ 450474 string characters out of 5896151
+ 701727 words of memory out of 5000000
+ 40604 multiletter control sequences out of 15000+600000
+ 544748 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,17n,104p,398b,716s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/shar
+ 99i,17n,104p,398b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/shar
 e/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssb
 x10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmsso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmtt9.pfb>
-Output written on 00_course_overview.pdf (23 pages, 832828 bytes).
+onts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb>
+Output written on 00_course_overview.pdf (24 pages, 874713 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 369 compressed objects within 4 object streams
- 53 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 482 PDF objects out of 1000 (max. 8388607)
+ 388 compressed objects within 4 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 # Module 0 — Onboarding
 
-**Goal:** in 20–30 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the remaining 27 notebooks.
+**Goal:** in 20–30 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the remaining 25 notebooks.
 
 ```
         ┌────────────────────────────────┐

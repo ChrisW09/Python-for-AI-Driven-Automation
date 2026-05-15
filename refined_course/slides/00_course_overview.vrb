@@ -1,14 +1,13 @@
-\frametitle{What you need to install}
-\begin{block}{For Google Colab}
-    Nothing. All required libraries are pre-installed. Open the notebook, hit Shift+Enter.
+\frametitle{Now → open Notebook 0}
+\vspace{8pt}
+  \begin{center}
+    {\large One file to open. The rest unfolds from there.}\\[14pt]
+    \texttt{\large 00\_onboarding/00\_master\_onboarding.ipynb}\\[18pt]
+  \end{center}
+  \begin{block}{Three things that notebook does for you}
+    \begin{enumerate}
+      \item Confirms your Python environment is correctly set up.
+      \item Explains the five-step study loop you'll use throughout.
+      \item Helps you pick the right learning path from the five options.
+    \end{enumerate}
   \end{block}
-  \begin{exampleblock}{For local Jupyter}
-\small
-\begin{verbatim}
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-jupyter lab
-\end{verbatim}
-  \end{exampleblock}
-  Notebook 0 includes an environment-check cell you run to confirm everything works before you move on.
