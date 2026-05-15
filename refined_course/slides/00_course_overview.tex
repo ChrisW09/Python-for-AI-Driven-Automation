@@ -1,0 +1,224 @@
+% ============================================================
+% COURSE OVERVIEW — the deck students see FIRST
+%   (a separate, smaller deck than the full technical deck)
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+% Theme
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+      \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}%
+    \end{beamercolorbox}%
+  }%
+}
+\AtBeginSection[]{%
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\title{Course Overview}
+\subtitle{Python for AI-Driven Automation and Business Data Science}
+\author{Course materials}
+\institute{}
+\date{}
+
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ============================================================
+\section{The big picture}
+% ============================================================
+
+\begin{frame}{The course in one diagram}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{images/00_course_roadmap.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Where this course sits}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth,height=0.78\textheight,keepaspectratio]{images/06_three_circles.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Three skills, taught together}
+  \begin{block}{1. Python fluency}
+    Read, write, and modify clean Python without friction. Functions, modules, error handling, defensive parsing.
+  \end{block}
+  \begin{exampleblock}{2. Working with data professionally}
+    pandas, NumPy, matplotlib, scikit-learn, statistics, time-series forecasting. Real datasets, not toy ones.
+  \end{exampleblock}
+  \begin{block}{3. AI-driven automation}
+    Calling LLMs as functions. Structured output. Retrieval-augmented generation. Tools and agents. Document processing. \emph{Plus} the engineering wrapper around all of it.
+  \end{block}
+\end{frame}
+
+% ============================================================
+\section{Structure}
+% ============================================================
+
+\begin{frame}{Seven modules, twenty-seven notebooks}
+  \footnotesize
+  \begin{tabular}{rll}
+    \toprule
+    \textbf{\#} & \textbf{Module} & \textbf{Notebooks} \\
+    \midrule
+    0 & Onboarding              & 3 — start here, environment, study loop \\
+    1 & Foundations             & NB 1–6  — Python you can read without friction \\
+    2 & Real-world I/O          & NB 7–9  — HTTP, SQL, data validation \\
+    3 & Data science            & NB 10–14 — pandas, NumPy, plots, stats, time series \\
+    4 & Machine learning        & NB 15–17 — sklearn, model evaluation, features \\
+    5 & AI engineering          & NB 18–22 — LLM patterns, RAG, agents, evaluation \\
+    6 & Production              & NB 23–25 — packaging, scheduling, config \\
+    7 & Capstones               & NB 26–27 — analytics + AI assistant \\
+    \bottomrule
+  \end{tabular}
+  \vspace{6pt}
+  \begin{block}{Every module folder has its own README}
+    Goals, prerequisites, what you'll build, the notebooks in order. Read it before you open the first notebook of the module.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Module dependencies — what comes before what}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{images/01_dependency_graph.png}
+  \end{center}
+\end{frame}
+
+% ============================================================
+\section{Learning paths}
+% ============================================================
+
+\begin{frame}{Pick the path that fits you}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{images/02_learning_paths.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{When to pick which path}
+  \begin{block}{Complete beginner}
+    Never written code before. Take all seven modules in order. Time-budget: \textbf{35 hours}, split into 6 weeks of ${\sim}6$ h each.
+  \end{block}
+  \begin{exampleblock}{Analyst who knows Excel and SQL}
+    Skim Module 1 (Python basics) and Modules 2 (SQL is already familiar). Focus on Modules 3 (DS), 4 (ML), 7 (capstone). Time-budget: \textbf{20 hours}.
+  \end{exampleblock}
+  \begin{block}{ML practitioner adding AI engineering}
+    Skim Module 4. Focus on Modules 5 (AI), 6 (Production), 7 (Capstone). Time-budget: \textbf{15 hours}.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Six weeks at six hours each}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/03_weekly_timeline.png}
+  \end{center}
+  Got more time? Move faster. Got less? Split one week into two.
+\end{frame}
+
+% ============================================================
+\section{How to study}
+% ============================================================
+
+\begin{frame}{The five-step study loop}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/04_study_loop.png}
+  \end{center}
+  Apply this loop to \emph{every} notebook. Genuine struggle beats passive reading.
+\end{frame}
+
+\begin{frame}{Six visual markers you'll see throughout}
+  \footnotesize
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Marker} & \textbf{Meaning} \\
+    \midrule
+    \texttt{(Tip)}        & A small ``stop and notice'' callout. \\
+    \texttt{(Intuition)}  & The mental model behind the syntax. \\
+    \texttt{(Pitfall)}    & A bug or anti-pattern that bites if you're not warned. \\
+    \texttt{(Exercises)}  & Hands-on tasks. Try \emph{before} peeking at the solution. \\
+    \texttt{(Bonus)}      & One larger applied task per notebook. \\
+    \texttt{(Debug me)}   & A cell that \emph{intentionally} contains a bug for you to find. \\
+    \texttt{(Next step)}  & Always points to the next notebook in your path. \\
+    \bottomrule
+  \end{tabular}
+  \vspace{4pt}
+
+  Once you internalise the markers they become road signs, not decoration.
+\end{frame}
+
+% ============================================================
+\section{What you'll build}
+% ============================================================
+
+\begin{frame}{Six small artefacts you ship along the way}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{images/05_what_youll_build.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Plus two big capstones at the end}
+  \begin{exampleblock}{Capstone A — AI Support-Bot Analytics (NB 26)}
+    Five channels × twelve months of operational data $\to$ 2$\times$2 executive dashboard $\to$ regression demonstrating Simpson's paradox $\to$ five-bullet executive summary.
+  \end{exampleblock}
+  \vspace{6pt}
+  \begin{block}{Capstone B — AI Customer-Feedback Assistant (NB 27)}
+    Ingest free-form customer feedback $\to$ classify + extract via the MockLLM $\to$ ground answers in a knowledge base via RAG $\to$ orchestrate as a scheduled job with alerts. End-to-end AI feature.
+  \end{block}
+\end{frame}
+
+% ============================================================
+\section{Getting started}
+% ============================================================
+
+\begin{frame}[fragile]{What you need to install}
+  \begin{block}{For Google Colab}
+    Nothing. All required libraries are pre-installed. Open the notebook, hit Shift+Enter.
+  \end{block}
+  \begin{exampleblock}{For local Jupyter}
+\small
+\begin{verbatim}
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter lab
+\end{verbatim}
+  \end{exampleblock}
+  Notebook 0 includes an environment-check cell you run to confirm everything works before you move on.
+\end{frame}
+
+\begin{frame}{Now → open Notebook 0}
+  \begin{center}
+    {\Huge \textbf{00\_onboarding/00\_master\_onboarding.ipynb}}\\[12pt]
+    {\large Read it. Run the environment check.}\\[6pt]
+    Then pick your path from the diagrams in this deck.
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\Huge\bfseries Welcome.}\\[10pt]
+    \large 27 notebooks await you.
+  \end{center}
+\end{frame}
+
+\end{document}

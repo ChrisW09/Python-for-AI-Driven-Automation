@@ -1,0 +1,14 @@
+\frametitle{What you need to install}
+\begin{block}{For Google Colab}
+    Nothing. All required libraries are pre-installed. Open the notebook, hit Shift+Enter.
+  \end{block}
+  \begin{exampleblock}{For local Jupyter}
+\small
+\begin{verbatim}
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter lab
+\end{verbatim}
+  \end{exampleblock}
+  Notebook 0 includes an environment-check cell you run to confirm everything works before you move on.

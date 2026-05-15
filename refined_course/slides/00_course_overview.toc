@@ -1,0 +1,7 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{The big picture}{3}{0}{1}
+\beamer@sectionintoc {2}{Structure}{7}{0}{2}
+\beamer@sectionintoc {3}{Learning paths}{10}{0}{3}
+\beamer@sectionintoc {4}{How to study}{14}{0}{4}
+\beamer@sectionintoc {5}{What you'll build}{17}{0}{5}
+\beamer@sectionintoc {6}{Getting started}{20}{0}{6}

@@ -1,0 +1,16 @@
+id,text,sentiment,topic
+F-001,Love the new dashboard! It's so much faster.,positive,feature
+F-002,The app crashed three times today. So frustrating!,negative,tech
+F-003,Could you please add CSV export? Need it for reports.,neutral,feature
+F-004,My invoice doesn't match my plan — please refund $45.,negative,billing
+F-005,"Everything works fine, no complaints.",neutral,other
+F-006,Login is broken after the latest update.,negative,tech
+F-007,Fantastic support! Resolved my issue in minutes.,positive,other
+F-008,Why is the renewal price so high? Considering cancelling.,negative,billing
+F-009,New feature is great but loading is slow on mobile.,neutral,tech
+F-010,Please add support for Markdown in the editor.,neutral,feature
+F-011,"Thanks, the team is amazing!",positive,other
+F-012,Charged twice for my subscription last month.,negative,billing
+F-013,Dark mode would be incredible. Please prioritise.,neutral,feature
+F-014,500 error on file upload. Help.,negative,tech
+F-015,"Smooth experience overall, would recommend.",positive,other
