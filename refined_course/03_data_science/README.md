@@ -29,6 +29,17 @@
 | 13 | `13_statistics_basics.ipynb` | A/B-test analysis with t-tests and confidence intervals |
 | 14 | `14_time_series_forecasting.ipynb` | 3-month forecast with Holt-Winters + walk-forward backtest |
 
+## Optional appendices — specialised forecasting
+
+For a deep dive into time-series forecasting beyond Holt-Winters:
+
+| Appendix | Notebook | Focus |
+|---|---|---|
+| A1 | `A1_forecasting_classical.ipynb` | ARIMA / SARIMA / ETS deep dive — stationarity, ACF/PACF, residual diagnostics, rolling-origin CV |
+| A2 | `A2_forecasting_prophet_libraries.ipynb` | Prophet, NeuralProphet, sktime, Darts — when to reach for which |
+| A3 | `A3_forecasting_deep_learning.ipynb` | LSTM + Transformer forecasters in PyTorch from scratch |
+| A4 | `A4_forecasting_foundation_models.ipynb` | TimesFM, Chronos, TabPFN-TS — zero-shot pretrained forecasters |
+
 ## The four mental models you should leave with
 
 1. **pandas: split → apply → combine.** Every analytical question is "for each X, compute Y". `groupby` is the verb.

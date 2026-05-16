@@ -923,24 +923,77 @@ def rag_answer(question, docs):
 
 \subsection{Going live}
 
-\begin{frame}[fragile]{Swap the MockLLM for a real provider}
-\begin{lstlisting}
-# pip install openai
-from openai import OpenAI
-client = OpenAI()    # picks up OPENAI_API_KEY from env
+\begin{frame}{Four providers, one interface}
+  \footnotesize
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Provider} & \textbf{Class} & \textbf{Best for} \\
+    \midrule
+    \textcolor{codegreen}{\textbf{OpenAI}}
+        & \texttt{OpenAILLM(...)}
+        & Reliable default; well-documented \\
+    \textcolor{codeblue}{\textbf{Anthropic}}
+        & \texttt{AnthropicLLM(...)}
+        & Long context (200K), careful drafts \\
+    \textcolor{codeblue}{\textbf{Google} Gemini}
+        & \texttt{GoogleLLM(...)}
+        & Cheapest at scale; 1M+ context \\
+    \textbf{Ollama} (local)
+        & \texttt{OllamaLLM(...)}
+        & \textbf{No internet, no key} -- runs locally \\
+    \bottomrule
+  \end{tabular}
+  \vspace{8pt}
+  \begin{block}{The unified interface}
+    Every provider exposes the same
+    \texttt{chat(messages, temperature, max\_tokens)} method and returns the
+    same dict \texttt{\{text, model, tokens\_in, tokens\_out, latency\_s\}}.
+    Swapping providers is a one-line change in any AI notebook.
+  \end{block}
+\end{frame}
 
-def chat(messages, model="gpt-4o-mini", temperature=0.0):
-    resp = client.chat.completions.create(
-        model=model, messages=messages, temperature=temperature,
-    )
-    return {"text": resp.choices[0].message.content,
-            "tokens_in":  resp.usage.prompt_tokens,
-            "tokens_out": resp.usage.completion_tokens}
+\begin{frame}[fragile]{The one-line swap}
+\begin{lstlisting}
+# Default — works offline, no internet, no key:
+from llm_providers import MockLLM
+llm = MockLLM()
+
+# Or swap to ANY real provider — the rest of the notebook is unchanged:
+from llm_providers import OpenAILLM
+llm = OpenAILLM(model="gpt-4o-mini")
+
+# pip install openai      and   export OPENAI_API_KEY=sk-...
+# pip install anthropic   and   export ANTHROPIC_API_KEY=sk-ant-...
+# pip install google-generativeai and  export GOOGLE_API_KEY=...
+# pip install ollama      and   ollama pull llama3.2:3b
 \end{lstlisting}
   \begin{alertblock}{Never paste API keys into a notebook}
-    Use environment variables (\texttt{os.getenv("OPENAI\_API\_KEY")}) or a
-    \texttt{.env} file plus \texttt{python-dotenv}.
+    Read them from environment variables (\texttt{os.getenv("OPENAI\_API\_KEY")})
+    or a \texttt{.env} file. Keys in notebooks leak to git history.
   \end{alertblock}
+\end{frame}
+
+\begin{frame}{Picking the smallest model that passes the eval}
+  \begin{exampleblock}{Approximate monthly cost for 50K messages (500-in / 100-out)}
+    \footnotesize
+    \begin{tabular}{lr}
+      \toprule
+      Model & Monthly \\
+      \midrule
+      OpenAI \texttt{gpt-4o-mini}       & \$8        \\
+      OpenAI \texttt{gpt-4o}            & \$112      \\
+      Anthropic \texttt{claude-haiku}   & \$40       \\
+      Anthropic \texttt{claude-sonnet}  & \$150      \\
+      Google \texttt{gemini-2.0-flash}  & \$3        \\
+      Ollama \texttt{llama3.2:3b} (local) & \$0      \\
+      \bottomrule
+    \end{tabular}
+  \end{exampleblock}
+  \vspace{4pt}
+  \begin{block}{The rule of thumb}
+    Always test the \emph{cheapest} provider on your golden set first.
+    Pay for a bigger model only when the small one fails the eval.
+  \end{block}
 \end{frame}
 
 

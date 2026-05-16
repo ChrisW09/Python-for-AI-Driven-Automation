@@ -1,5 +1,5 @@
 # Python for AI-Driven Automation and Business Data Science
-## *Refined edition — 7 modules, 25 notebooks, end-to-end*
+## *Refined edition — 7 modules, 26 notebooks, end-to-end*
 
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation**. This is the **refined edition** — the same business-AI-flavoured course you may know, restructured into a coherent module-based curriculum with five new notebooks closing real gaps and a dedicated onboarding deck.
 
@@ -65,6 +65,26 @@ Five high-impact notebooks that close gaps in the original:
 | **27** | `27_capstone_ai_assistant.ipynb` | An end-to-end AI feature combining everything from Modules 5 + 6. |
 
 Plus the **master onboarding notebook**, **7 per-module READMEs** with diagrams, and a **23-slide course-overview deck**.
+
+---
+
+## Optional appendix track — 11 advanced notebooks
+
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 26-notebook backbone. Each appendix lives next to its parent module and is fully runnable.
+
+| Module | Appendix | What it covers |
+|---|---|---|
+| 03 Data Science | `A1_forecasting_classical.ipynb` | ARIMA / SARIMA / ETS deep dive |
+| 03 Data Science | `A2_forecasting_prophet_libraries.ipynb` | Prophet, NeuralProphet, sktime, Darts |
+| 03 Data Science | `A3_forecasting_deep_learning.ipynb` | LSTM + Transformer forecasters in PyTorch |
+| 03 Data Science | `A4_forecasting_foundation_models.ipynb` | TimesFM, Chronos, TabPFN-TS |
+| 04 ML | `A1_pytorch_foundations.ipynb` | Tensors, autograd, MLPs |
+| 04 ML | `A2_pytorch_vision_and_sequences.ipynb` | CNNs, RNNs, Transformers |
+| 04 ML | `A3_pytorch_fine_tuning.ipynb` | Transfer learning + LoRA |
+| 04 ML | `A4_tabpfn_priorlab.ipynb` | TabPFN tabular foundation model + cloud API |
+| 05 AI Eng | `A1_llm_providers_guide.ipynb` | OpenAI / Anthropic / Google / Ollama |
+| 05 AI Eng | `A2_vector_stores_survey.ipynb` | FAISS, Chroma, Qdrant, Weaviate, pgvector |
+| 05 AI Eng | `A3_rag_and_agent_frameworks.ipynb` | LangChain, LlamaIndex, Haystack, agents |
 
 ---
 

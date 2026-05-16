@@ -78,7 +78,7 @@
 \section{Structure}
 % ============================================================
 
-\begin{frame}{Seven modules, twenty-five notebooks}
+\begin{frame}{Seven modules, twenty-six notebooks}
   \footnotesize
   \begin{tabular}{rll}
     \toprule
@@ -190,6 +190,32 @@
 \section{Getting started}
 % ============================================================
 
+\begin{frame}{LLM providers — local and hosted, four options}
+  \footnotesize
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Provider} & \textbf{Class} & \textbf{Best for} \\
+    \midrule
+    OpenAI    & \texttt{OpenAILLM("gpt-4o-mini")}            & Reliable default \\
+    Anthropic & \texttt{AnthropicLLM("claude-haiku")}        & Long context, careful tone \\
+    Google    & \texttt{GoogleLLM("gemini-2.0-flash")}       & Cheapest at high volume \\
+    Ollama    & \texttt{OllamaLLM("llama3.2:3b")}            & \textbf{Local} -- no internet, no key \\
+    \bottomrule
+  \end{tabular}
+  \vspace{6pt}
+  \begin{block}{Default = the offline MockLLM}
+    Every AI notebook runs offline by default. Swapping in a real provider is a
+    \emph{one-line} change thanks to the unified interface in
+    \texttt{refined\_course/llm\_providers.py}.
+  \end{block}
+  \vspace{4pt}
+  \begin{exampleblock}{See the dedicated guide}
+    Notebook \texttt{05\_ai\_engineering/A1\_llm\_providers\_guide.ipynb} has the
+    full setup walk-through, model recommendations, and cost estimates.
+  \end{exampleblock}
+\end{frame}
+
+
 \begin{frame}[fragile]{What you need to install}
   \begin{block}{For Google Colab}
     Nothing. All required libraries are pre-installed. Open the notebook, hit Shift+Enter.
@@ -242,7 +268,7 @@ jupyter lab
 \begin{frame}
   \begin{center}
     {\Huge\bfseries Welcome.}\\[10pt]
-    \large 25 notebooks await you.\\[20pt]
+    \large 26 notebooks await you.\\[20pt]
     {\large \textit{Open Module 0 next.}}
   \end{center}
 \end{frame}

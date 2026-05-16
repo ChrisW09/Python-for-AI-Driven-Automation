@@ -30,6 +30,17 @@
 | 16 | `16_model_evaluation.ipynb` | Honest model-evaluation toolkit |
 | 17 | `17_feature_engineering.ipynb` | Real feature pipelines on tabular data |
 
+## Optional appendices — PyTorch & tabular foundation models
+
+A four-notebook deep-learning mini-track that picks up where scikit-learn stops:
+
+| Appendix | Notebook | Focus |
+|---|---|---|
+| A1 | `A1_pytorch_foundations.ipynb` | Tensors, autograd, MLP on tabular data, training-loop best practices |
+| A2 | `A2_pytorch_vision_and_sequences.ipynb` | CNNs for images + RNN/Transformer for sequences |
+| A3 | `A3_pytorch_fine_tuning.ipynb` | Transfer learning + LoRA on a small transformer |
+| A4 | `A4_tabpfn_priorlab.ipynb` | TabPFN (PriorLabs) — tabular foundation model + cloud API |
+
 ## The disciplines this module trains
 
 - **Always split.** Train on train, score on held-out test. Never the other way round.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.30)  15 MAY 2026 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.3.30)  15 MAY 2026 20:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1089,23 +1089,25 @@ File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ] (./00_course_overview.toc)
 [20
 
-]
-\openout4 = `00_course_overview.vrb'.
-
- (./00_course_overview.vrb) [21
+] [21
 
 ]
 \openout4 = `00_course_overview.vrb'.
 
  (./00_course_overview.vrb) [22
 
-] [23
+]
+\openout4 = `00_course_overview.vrb'.
+
+ (./00_course_overview.vrb) [23
+
+]
+[24
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 248.
-
-[24
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 274.
+ [25
 
 ]
 \tf@nav=\write6
@@ -1122,10 +1124,10 @@ Package rerunfilecheck Info: File `00_course_overview.out' has not changed.
 (rerunfilecheck)             Checksum: 2799A209174D9742E8D640A884FB7079;692.
  ) 
 Here is how much of TeX's memory you used:
- 23246 strings out of 480247
- 450474 string characters out of 5896151
+ 23250 strings out of 480247
+ 450509 string characters out of 5896151
  701727 words of memory out of 5000000
- 40604 multiletter control sequences out of 15000+600000
+ 40606 multiletter control sequences out of 15000+600000
  544748 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,17n,104p,398b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1139,10 +1141,10 @@ onts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb>
-Output written on 00_course_overview.pdf (24 pages, 874713 bytes).
+Output written on 00_course_overview.pdf (25 pages, 881903 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
- 388 compressed objects within 4 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 494 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
+ 57 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

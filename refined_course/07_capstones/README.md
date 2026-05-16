@@ -41,4 +41,4 @@ This is the *engineering* version of "shipping a project". The deliverable is a 
 
 ## You're done
 
-Congratulations — you've completed the 27-notebook journey. From here, **what you build is up to you**.
+Congratulations — you've completed the 26-notebook journey. From here, **what you build is up to you**.

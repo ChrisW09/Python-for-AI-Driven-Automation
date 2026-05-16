@@ -4,7 +4,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 ```
    ┌──────────────────────────────────────────────────────────────────────────┐
-   │  25 notebooks (refined edition)  •  ~500 code cells                       │
+   │  26 notebooks (refined edition)  •  ~500 code cells                       │
    │  ~80 exercises with detailed worked solutions                             │
    │  Runs on Google Colab with zero setup                                     │
    │  AI workflows included — fully offline with a built-in MockLLM            │
@@ -336,7 +336,7 @@ MIT — see [`LICENSE`](./LICENSE). Use freely for personal learning, teaching, 
 ## At a glance
 
 ```
-   25 notebooks   •   ~80 exercises with detailed solutions
+   26 notebooks   •   ~80 exercises with detailed solutions
    7 modules      •   2 hero capstones
    24-slide overview deck   +   80-slide technical deck
    Runs on Colab, locally, and offline.

@@ -34,6 +34,14 @@
 | 21 | `21_document_processing.ipynb` | An invoice-extraction pipeline with validation |
 | 22 | `22_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
 
+## Optional appendices — provider, vector-store & framework surveys
+
+| Appendix | Notebook | Focus |
+|---|---|---|
+| A1 | `A1_llm_providers_guide.ipynb` | OpenAI / Anthropic / Google / Ollama — unified `chat()` interface, model picks, cost notes |
+| A2 | `A2_vector_stores_survey.ipynb` | FAISS, Chroma, Qdrant, Weaviate, Pinecone, pgvector — decision rubric |
+| A3 | `A3_rag_and_agent_frameworks.ipynb` | LangChain, LlamaIndex, Haystack, DSPy, AutoGen, CrewAI, smolagents |
+
 ## The 5 disciplines this module trains
 
 1. **Treat the LLM as a function call.** Typed inputs, structured outputs, retries, costs.
