@@ -1,11 +1,14 @@
 name: notebooks
 
-# Run every notebook end-to-end on PRs that touch them, and verify that
-# the README / onboarding don't reference notebook numbers that don't exist.
+# Run every notebook end-to-end on PRs that touch them, and verify that the
+# README / onboarding don't reference notebook numbers that don't exist.
+#
+# The legacy flat 19-notebook layout under previous_versions/ is intentionally
+# excluded — it's an archive copy of the pre-2026 course.
 #
 # Local equivalents:
 #   python scripts/check_nb_references.py
-#   jupyter nbconvert --to notebook --execute --output /tmp/out.ipynb <nb>
+#   python scripts/run_all_notebooks.py .
 
 on:
   push:
@@ -16,7 +19,6 @@ on:
       - "**/*.py"
       - "**/*.md"
       - "requirements.txt"
-      - "refined_course/requirements.txt"
       - ".github/workflows/notebooks.yml"
 
 jobs:
@@ -35,10 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: link-check
     timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        layout: [refined_course, top_level]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -48,15 +46,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # The refined-course requirements are a superset; use them for both layouts.
-          pip install -r refined_course/requirements.txt
+          pip install -r requirements.txt
           pip install jupyter nbconvert nbclient ipykernel
-      - name: Run all notebooks
+      - name: Run all notebooks (excluding previous_versions/)
         env:
-          PYTHONPATH: ${{ github.workspace }}/refined_course:${{ github.workspace }}
-        run: |
-          if [ "${{ matrix.layout }}" = "refined_course" ]; then
-            python scripts/run_all_notebooks.py refined_course
-          else
-            python scripts/run_all_notebooks.py . --exclude refined_course
-          fi
+          # llm_providers.py lives at the repo root so every notebook can `import` it
+          PYTHONPATH: ${{ github.workspace }}
+        run: python scripts/run_all_notebooks.py .

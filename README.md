@@ -1,128 +1,102 @@
 # Python for AI-Driven Automation and Business Data Science
+## *7 modules, 25 notebooks (+ 11 optional appendices), end-to-end*
 
-> ## 👉 New here? Open [`refined_course/00_onboarding/00_master_onboarding.ipynb`](./refined_course/00_onboarding/00_master_onboarding.ipynb).
-> The `refined_course/` folder is the **canonical, recommended layout**. The 19 numbered notebooks at the top level are an older, flat-list version kept for backwards compatibility — they teach the same material but without the 7-module structure, onboarding deck, or 5 newer notebooks. If you've never opened this repo before, **don't start at the top level — start in `refined_course/`**.
+A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation** — Python fluency, business data science, machine learning, AI engineering, and production wiring, all in one curriculum.
 
-A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-powered automation**.
-
-```
-   ┌──────────────────────────────────────────────────────────────────────────┐
-   │  25 notebooks (refined edition) + 11 optional appendices                  │
-   │  ~500 code cells  •  180+ exercises with detailed worked solutions        │
-   │  Two-tier exercise design: Practice (1–5) + Stretch (A–D) per notebook    │
-   │  Runs on Google Colab with zero setup                                     │
-   │  AI workflows included — fully offline with a built-in MockLLM            │
-   │  Real HTTP, SQL, time series, embeddings, agents, packaging, scheduling   │
-   └──────────────────────────────────────────────────────────────────────────┘
-```
-
-> 🗺️  **Want the full map first?** Open [`refined_course/00_onboarding/00b_course_overview.ipynb`](./refined_course/00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
->
-> 📊 **The course in one diagram:** [`refined_course/slides/00_course_overview.pdf`](./refined_course/slides/00_course_overview.pdf)
+> 🚀 **Start here:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb)
+> 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
+> 📊 **Slide-deck version:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
 
 ---
 
 ## What's in this repo
 
-This repo holds **two editions of the same course**:
-
-| Folder | What | When to use |
-|---|---|---|
-| **`refined_course/`** | The **recommended** edition: 7-module curriculum with onboarding deck, per-module READMEs, and 5 extra notebooks closing real gaps. | Use this. It's the polished one. |
-| `01_*.ipynb` … `19_*.ipynb` (root) | The original linear 19-notebook course. | Use if you want a strictly-linear progression and don't care about the modular structure. |
-
-The two editions share the same *content* — the refined edition reorganises the originals into modules and adds five new notebooks (statistics, model evaluation, feature engineering, AI evaluation, and a second capstone) plus a master onboarding notebook.
-
----
-
-## Who this course is for
-
-- **Analysts** who want to graduate from Excel/SQL to Python and pick up modern AI tools.
-- **Engineers** who want to add data and AI engineering to their stack.
-- **ML practitioners** who want to add the AI-engineering layer (LLMs, prompts, RAG, agents).
-- **Students** of data science who want a curriculum that's *actually current* (not 2015's idea of data work).
-- **Managers** curious enough to read the capstones and the overview deck.
-
-There are five **learning paths** in the onboarding notebook, with time budgets from 8 to 35 hours.
-
----
-
-## Why this course is different
-
-Most introductory Python courses still teach Python the way it was taught in 2015. The work that actually matters today combines three skills:
-
-1. **Solid Python fluency** — reading and writing code without friction.
-2. **Working with data professionally** — cleaning, exploring, modelling, visualising.
-3. **AI-driven automation** — using language models, APIs, and small scripts to replace repetitive analytical work.
-
-This course is built around that combination from the *very first notebook*. You compute LLM token costs while you learn variables and loops. You write a ticket-triage rules engine while you learn `if/else`. You parse JSON-shaped API responses while you learn dictionaries. By the end you'll have built a packaged, tested, scheduled AI feature you can talk about in interviews.
-
----
-
-## The 7-module structure (refined edition)
-
-```
-   ┌────────────────────────────────────────────────────────────────────┐
-   │                                                                     │
-   │  0  Onboarding         master onboarding notebook                    │
-   │  1  Foundations        NB 1–5   Python basics                        │
-   │  2  Real-world I/O     NB 7–8   HTTP + SQL                           │
-   │  3  Data Science       NB 10–14 pandas, NumPy, plots, stats, TS      │
-   │  4  Machine Learning   NB 15–17 sklearn + evaluation + features      │
-   │  5  AI Engineering     NB 18–22 prompts, RAG, agents, docs, eval     │
-   │  6  Production         NB 23–24 packaging, scheduling                │
-   │  7  Capstones          NB 26–27 analytics + AI assistant             │
-   │                                                                     │
-   └────────────────────────────────────────────────────────────────────┘
-```
-
-Each module folder has its own `README.md` with goals, prerequisites, an ASCII diagram, and a list of common pitfalls. Read it before opening the first notebook of the module.
-
----
-
-## What you'll build by the end
-
-**Six small artefacts along the way:**
-
-| What | From which notebook |
+| Folder | What |
 |---|---|
-| A KPI snapshot for an AI support bot | NB 1 |
-| A confidence-based ticket-triage rules engine | NB 2 |
-| A live API ETL pipeline | NB 7 |
-| A 3-month forecast with Holt-Winters | NB 14 |
-| A multi-tool data assistant (LLM + tools) | NB 20 |
-| A packaged, tested Python project | NB 23 |
-
-**Two big capstones:**
-
-- 🏆 **Capstone A — AI Support-Bot Analytics** (NB 26): 5 channels × 12 months → 2×2 executive dashboard → regression demonstrating Simpson's paradox → 5-bullet executive summary.
-- 🏆 **Capstone B — AI Customer-Feedback Assistant** (NB 27): classify + validate + RAG + scheduled orchestration + cost dashboard + eval gate.
+| `00_onboarding/` … `07_capstones/` | **The course.** 25 main notebooks + 11 optional appendices, organised by topic. |
+| `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
+| `slides/` | A 23-slide course-overview deck (PDF + LaTeX source). |
+| `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass; nothing requires CI. |
+| `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (and an offline `MockLLM`). |
+| `previous_versions/` | The legacy flat 19-notebook layout (pre-2026 refinement), preserved for archive purposes only. |
 
 ---
 
-## Getting started — 2 minutes
+## The 7 modules
 
-### Option A — Google Colab *(easiest, no install)*
+### 📍 [Module 0 — Onboarding](./00_onboarding/) *(start here)*
+*Master onboarding notebook + environment check.* 20 minutes.
 
-1. Go to [colab.research.google.com](https://colab.research.google.com).
-2. **File → Upload notebook** → pick `refined_course/00_onboarding/00_master_onboarding.ipynb`.
-3. Hit Shift+Enter on every cell. The last cell prints `✅ Setup looks good!`.
+### 🐍 [Module 1 — Foundations](./01_foundations/) *(NB 1–5)*
+Python you can read without friction. Variables, control flow, lists, dicts, functions.
 
-### Option B — Local Jupyter
+### 🔌 [Module 2 — Real-world I/O](./02_real_world_io/) *(NB 7–8)*
+HTTP requests, SQL, Pydantic validation. Pull real data from anywhere; refuse bad data at the boundary. *(The originally planned NB 9 on Pydantic was folded into NB 8.)*
 
-```bash
-git clone <repo-url>
-cd "Python for AI-Driven Automation and Business Data Science"
+### 📊 [Module 3 — Data Science](./03_data_science/) *(NB 10–14)*
+pandas, NumPy, matplotlib, **statistics**, time series. The analytical core.
 
-python -m venv .venv
-source .venv/bin/activate          # macOS / Linux
-.venv\Scripts\activate             # Windows
+### 🤖 [Module 4 — Machine Learning](./04_machine_learning/) *(NB 15–17)*
+scikit-learn workflow + **honest model evaluation** + **feature engineering**.
 
-pip install -r refined_course/requirements.txt
-jupyter lab refined_course/00_onboarding/00_master_onboarding.ipynb
-```
+### 🧠 [Module 5 — AI Engineering](./05_ai_engineering/) *(NB 18–22)*
+LLM prompts, RAG, agents, document processing, **AI evaluation & observability**.
 
-Tested on Python 3.10–3.12.
+### 🚀 [Module 6 — Production](./06_production/) *(NB 23–24)*
+Packaging notebooks into projects and scheduling. *(Configuration & secrets are covered inline in NB 23; the originally planned standalone NB 25 was folded into it.)*
+
+### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 26–27)*
+Two end-to-end projects — analytical and engineering.
+
+> 💡 **About the numbering gaps.** You'll notice NB 06, 09, and 25 are missing — that's intentional, not an oversight. NB 06 (extra Python practice), NB 09 (Pydantic validation), and NB 25 (config & secrets) were folded into adjacent notebooks rather than standing alone. The 24 numbered notebooks plus the onboarding form the complete backbone.
+
+---
+
+## Five high-impact notebooks worth singling out
+
+| # | Notebook | What it teaches |
+|---|---|---|
+| **13** | `13_statistics_basics.ipynb` | Confidence intervals, t-tests, Cohen's *d*, sample-size planning, A/B-test reporting that survives a stakeholder review. |
+| **16** | `16_model_evaluation.ipynb` | Confusion matrices in cost units, threshold tuning, ROC/PR curves, **calibration**, learning curves. |
+| **17** | `17_feature_engineering.ipynb` | Encoding strategies, scaling, datetime features, **target leakage**, feature selection, custom transformers. |
+| **22** | `22_ai_evaluation_observability.ipynb` | Golden datasets, LLM-as-judge, tracing, cost dashboards, A/B testing prompts, regression detection. |
+| **27** | `27_capstone_ai_assistant.ipynb` | An end-to-end AI feature combining everything from Modules 5 + 6. |
+
+---
+
+## Optional appendix track — 11 advanced notebooks
+
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 25-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+
+| Module | Appendix | What it covers |
+|---|---|---|
+| 03 Data Science | `A1_forecasting_classical.ipynb` | ARIMA / SARIMA / ETS deep dive |
+| 03 Data Science | `A2_forecasting_prophet_libraries.ipynb` | Prophet, NeuralProphet, sktime, Darts |
+| 03 Data Science | `A3_forecasting_deep_learning.ipynb` | LSTM + Transformer forecasters in PyTorch |
+| 03 Data Science | `A4_forecasting_foundation_models.ipynb` | TimesFM, Chronos, TabPFN-TS |
+| 04 ML | `A1_pytorch_foundations.ipynb` | Tensors, autograd, MLPs |
+| 04 ML | `A2_pytorch_vision_and_sequences.ipynb` | CNNs, RNNs, Transformers |
+| 04 ML | `A3_pytorch_fine_tuning.ipynb` | Transfer learning + LoRA |
+| 04 ML | `A4_tabpfn_priorlab.ipynb` | TabPFN tabular foundation model + cloud API |
+| 05 AI Eng | `A1_llm_providers_guide.ipynb` | OpenAI / Anthropic / Google / Ollama |
+| 05 AI Eng | `A2_vector_stores_survey.ipynb` | FAISS, Chroma, Qdrant, Weaviate, pgvector |
+| 05 AI Eng | `A3_rag_and_agent_frameworks.ipynb` | LangChain, LlamaIndex, Haystack, agents |
+
+---
+
+## Learning paths
+
+Match yourself to the path that fits:
+
+| You are | You'll touch | Time |
+|---|---|---|
+| **Complete beginner** | All 7 modules in order | ~35 h |
+| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 7 | ~20 h |
+| **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 7 | ~28 h |
+| **ML practitioner** | Modules 0, 5, 6, 7 | ~15 h |
+| **Manager** (curious) | Module 0 + 7 only | ~8 h |
+
+The course-overview deck has these paths visualised — open it before you pick.
 
 ---
 
@@ -131,41 +105,15 @@ Tested on Python 3.10–3.12.
 Every notebook follows the same six-section template:
 
 1. **🎯 Learning objectives** + **✅ Prerequisites**
-2. **Numbered concept sections** — short prose, then runnable code, then a "what just happened" callout.
-3. **🧪 Practice exercises** — with full solutions and *reasoning* (not just code).
-4. **🧠 Stretch exercises** — 2 extra optional exercises (applied + harder).
-5. **🎁 Bonus mini-project** — one larger applied task per notebook.
-6. **🧠 Key takeaways** + **✅ Self-assessment** + **🚀 Next step**.
+2. **Numbered concept sections** — short prose, then runnable code.
+3. **🧪 Practice exercises** (numbered 1, 2, 3, …) — 3–5 per notebook, with full solutions and *reasoning* (not just the answer). One per notebook is a 🐞 *Debug-me* puzzle.
+4. **🧠 Stretch exercises** (lettered A, B, C, D) — 4 per notebook, deliberately harder. The kind of question you'd want to be able to answer in an interview. Same Solution + Reasoning format as the practice exercises.
+5. **🎁 Bonus mini-project** — one larger applied task.
+6. **✅ Self-assessment checklist** + **🚀 Next step** — pointer to the next notebook in your path.
 
-Total exercise count across the refined course: **~80 exercises**, every one with a detailed solution and explanation.
+That's **~8 exercises per notebook on average** — and **180+ across the course**, every single one with a worked solution and an explanation of *why* it works.
 
-### Visual markers you'll see throughout
-
-| Marker | Meaning |
-|---|---|
-| 💡 **Tip** | Stop-and-notice callout. |
-| 🎯 **Intuition** | The mental model behind the syntax. |
-| ⚠️ **Pitfall** | A bug or anti-pattern that bites you without warning. |
-| 🧪 **Exercise** | Hands-on practice — try before peeking. |
-| 🎁 **Bonus** | Larger applied task per notebook. |
-| 🐞 **Debug me** | A cell with an *intentional* bug for you to find. |
-| 🚀 **Next step** | Points to the next notebook on your path. |
-
----
-
-## The five learning paths
-
-Match yourself to the one that fits:
-
-| You are … | You'll do | Time |
-|---|---|---|
-| **Complete beginner** | All 7 modules in order | ~35 h |
-| **Analyst** (knows Excel + SQL) | Modules 0, 2, 3, 4, 7 | ~20 h |
-| **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 7 | ~28 h |
-| **ML practitioner** | Modules 0, 5, 6, 7 | ~15 h |
-| **Manager / curious** | Module 0 + capstones only | ~8 h |
-
-The onboarding notebook and overview deck both visualise these paths.
+The six visual markers (💡 tip, 🎯 intuition, ⚠️ pitfall, 🧪 exercise, 🎁 bonus, 🐞 debug-me) are road signs you'll see throughout. They are explained in the onboarding notebook.
 
 ---
 
@@ -178,101 +126,36 @@ The onboarding notebook and overview deck both visualise these paths.
      └────────── read the prose before looking at the code
 ```
 
-Apply this loop to *every* notebook. Five minutes of genuine struggle beats five hours of passive reading.
+Apply this to every notebook. Five minutes of genuine struggle beats five hours of passive reading.
 
 ---
 
-## Slide decks
+## Setup
 
-This repo ships two PDF decks:
+### Google Colab *(easiest)*
+Upload any notebook. Done. All required libraries are pre-installed.
 
-- **Course overview** ([`refined_course/slides/00_course_overview.pdf`](./refined_course/slides/00_course_overview.pdf)) — 24 pages. The "you are here" deck: roadmap, dependency graph, learning paths, study loop, what-you'll-build gallery.
-- **Technical deep dive** ([`slides/course_slides.pdf`](./slides/course_slides.pdf)) — 80 pages. Lecture-style summary of the original 19-notebook course; covers prompts, RAG, the capstone dashboard, the production wrapper, and more.
-
-Both decks are built from `.tex` sources you can edit and recompile (`pdflatex deck.tex`, twice).
-
----
-
-## ❓ FAQ
-
-**Do I need to know Python before starting?**
-No. Notebook 1 (and the onboarding) start from zero. Use the learning paths if you do.
-
-**Do I need a GPU?**
-No. Everything runs on a laptop or in free Colab. The AI-workflows notebooks (18–22, 27) use a built-in `MockLLM` and don't need internet.
-
-**Do I need an OpenAI / Anthropic API key?**
-No, but you can use one. Notebooks 18, 19, 22, 27 work offline with the MockLLM. The "Going live" sections show the exact line you swap to use a real model.
-
-**Will this teach me deep learning?**
-Not directly — that's a different course. You will learn the *Python and ML foundations* you'd need before specialising into deep learning. The AI-engineering modules cover using pre-trained LLMs, which is what most production AI applications need.
-
-**Will this teach me fine-tuning?**
-No, but it leaves you well-equipped to read a fine-tuning tutorial next.
-
-**Can I use this for a workshop / classroom?**
-Yes. Each notebook is roughly one 60–90-minute session. The course-overview deck doubles as the opening lecture.
-
-**How long is this in total?**
-- Motivated full-time learner: **~5–7 days**.
-- Part-time learner (1 h/day): **~3–4 weeks**.
-- Skim-and-reference reader: **a weekend**.
-
-**Is the data real?**
-The datasets are synthetic but **carefully calibrated** to mirror real-world patterns (e.g., the churn dataset in NB 15 produces a 30% churn rate with R² ≈ 0.75 on NPS prediction). Synthetic data lets us guarantee reproducibility and avoids licensing issues.
-
-**Do the notebooks actually run?**
-Yes — every code cell in every notebook executes top-to-bottom in CI on each commit. Three cells are *expected* to error: the `🐞 Debug me` exercises that are supposed to fail so you find the bugs.
-
----
-
-## Repository layout
-
-```
-Python for AI-Driven Automation and Business Data Science/
-├── README.md                       ← this file
-├── LICENSE                         ← MIT
-│
-├── refined_course/                 ← the recommended 7-module edition
-│   ├── README.md                   ← refined-course entry point
-│   ├── 00_onboarding/              ← master onboarding notebook
-│   ├── 01_foundations/             ← NB 1–5
-│   ├── 02_real_world_io/           ← NB 7–8
-│   ├── 03_data_science/            ← NB 10–14
-│   ├── 04_machine_learning/        ← NB 15–17
-│   ├── 05_ai_engineering/          ← NB 18–22
-│   ├── 06_production/              ← NB 23–24
-│   ├── 07_capstones/               ← NB 26–27
-│   ├── slides/
-│   │   ├── 00_course_overview.pdf  ← 24-slide overview deck
-│   │   └── images/                 ← 7 overview figures
-│   ├── data/                       ← 3 sample CSVs
-│   ├── requirements.txt
-│   └── LICENSE
-│
-├── 01_python_basics.ipynb          ← original linear edition (still works)
-├── 02_control_structures.ipynb
-├── …
-├── 19_scheduling_orchestration.ipynb
-│
-├── slides/
-│   ├── course_slides.pdf           ← 80-page technical deck
-│   ├── course_slides.tex
-│   └── images/                     ← 21 figures
-│
-└── data/                           ← 3 sample CSVs (mirrored in refined_course)
+### Local Jupyter
+```bash
+python -m venv .venv
+source .venv/bin/activate         # macOS / Linux
+.venv\Scripts\activate            # Windows
+pip install -r requirements.txt
+jupyter lab
 ```
 
+Tested with Python 3.10+. Module 0 includes an environment-check cell.
+
 ---
 
-## What's *not* in the course (intentionally)
+## What you'll build by the end
 
-- ❌ Deep learning from scratch (PyTorch / TF training loops).
-- ❌ Vendor-specific cloud deployment (AWS / GCP / Azure).
-- ❌ Vector-database deep dives (Pinecone / Weaviate / etc.).
-- ❌ Web scraping.
+Six smaller artefacts along the way (KPI snapshot, ETL pipeline, SQL report, forecast, inbox triage, scheduled job) **plus two big capstones**:
 
-These are conscious trade-offs — the course is deep where it counts and stays out of vendor-specific or quickly-dating territory.
+- 🏆 **Capstone A — AI Support-Bot Analytics** *(NB 26)*: 5 channels × 12 months → 2×2 dashboard → Simpson's-paradox demo → executive summary.
+- 🏆 **Capstone B — AI Customer-Feedback Assistant** *(NB 27)*: classification + validation + RAG + scheduled orchestration + cost dashboard + eval gate.
+
+You can talk through either of these as "a project I built" in an interview.
 
 ---
 
@@ -288,42 +171,84 @@ A few principles that guided every notebook:
 
 ---
 
-## LLM providers — local *and* hosted
+## What's *not* in the course
 
-Every AI notebook (NB 18 – 22, 27) ships with an offline `MockLLM` so you can run the whole course **with no internet and no API key**. When you're ready for real intelligence in the answers, swap one line. The course supports **four providers** through a single unified interface (`refined_course/llm_providers.py`):
+So you're not surprised later:
 
-| Provider | Class | When to pick it |
+- ❌ Deep learning from scratch (PyTorch / TF training loops). You'll *use* pre-trained models — which is what most working AI applications need.
+- ❌ Vendor-specific cloud deployment (AWS / GCP / Azure). NB 24 teaches the *patterns* of scheduling — without committing to one platform.
+- ❌ Vector-database deep dive. NB 19 implements the underlying retrieval logic and points you at Qdrant / Weaviate / Pinecone for the production scale-up.
+
+These are conscious trade-offs.
+
+---
+
+## LLM providers — local and hosted, four options
+
+Notebooks 18 – 22 and 27 can be run **entirely offline** with the built-in `MockLLM`. When you're ready for real intelligence, swap one line. The course supports four providers through a unified interface in [`llm_providers.py`](./llm_providers.py):
+
+| Provider | Class | When |
 |---|---|---|
-| 🟢 **OpenAI** | `OpenAILLM(model="gpt-4o-mini")` | Best default — reliable, well-documented, fast |
-| 🟠 **Anthropic** (Claude) | `AnthropicLLM(model="claude-haiku-4-5-20251001")` | Strong reasoning, long context (200K), careful tone |
-| 🔵 **Google** (Gemini) | `GoogleLLM(model="gemini-2.0-flash")` | Cheapest for high-volume; 1M+ token context |
-| 🟣 **Ollama** (local) | `OllamaLLM(model="llama3.2:3b")` | **No internet, no key, no cost** — runs on your own hardware |
-
-To swap providers in any AI notebook, change *one* line:
-
-```python
-# Default (offline)
-from llm_providers import MockLLM
-llm = MockLLM()
-
-# Pick any one of these instead — the rest of the notebook is unchanged:
-from llm_providers import OpenAILLM;    llm = OpenAILLM(model="gpt-4o-mini")
-from llm_providers import AnthropicLLM; llm = AnthropicLLM(model="claude-haiku-4-5-20251001")
-from llm_providers import GoogleLLM;    llm = GoogleLLM(model="gemini-2.0-flash")
-from llm_providers import OllamaLLM;    llm = OllamaLLM(model="llama3.2:3b")
-```
-
-**Setup steps for each provider** are in [`refined_course/05_ai_engineering/A1_llm_providers_guide.ipynb`](./refined_course/05_ai_engineering/A1_llm_providers_guide.ipynb) — including authentication, model recommendations, cost estimates, and a decision table for picking the right one.
+| 🟢 OpenAI    | `OpenAILLM(model="gpt-4o-mini")` | Reliable default. |
+| 🟠 Anthropic | `AnthropicLLM(model="claude-haiku-4-5-20251001")` | Long context, careful tone. |
+| 🔵 Google    | `GoogleLLM(model="gemini-2.0-flash")` | Cheap at scale. |
+| 🟣 Ollama    | `OllamaLLM(model="llama3.2:3b")` | **Local** — no internet, no key, no cost. |
 
 ```bash
-# For one of the hosted providers, set the corresponding env var (never inline it):
+# For hosted providers, set the corresponding env var (never inline):
 export OPENAI_API_KEY=sk-...
 export ANTHROPIC_API_KEY=sk-ant-...
 export GOOGLE_API_KEY=...
-# Ollama needs no key — `ollama serve` on localhost is the whole setup.
+# Ollama: `ollama pull llama3.2:3b` once, then `ollama serve` (auto-starts on macOS).
 ```
 
+📓 **See [`05_ai_engineering/A1_llm_providers_guide.ipynb`](./05_ai_engineering/A1_llm_providers_guide.ipynb)** for setup, model recommendations, cost estimates, and a decision table.
+
 > ⚠️ **Never commit API keys to git.** The notebooks are designed so you don't have to touch a key inside the notebook itself.
+
+---
+
+## Layout at a glance
+
+```
+.
+├── README.md                       ← you are here
+├── requirements.txt
+├── LICENSE
+├── llm_providers.py
+│
+├── 00_onboarding/
+│   ├── README.md
+│   ├── 00_master_onboarding.ipynb
+│   └── 00b_course_overview.ipynb
+│
+├── 01_foundations/         ← NB 1–5: Python basics, control, lists, dicts, functions
+├── 02_real_world_io/       ← NB 7–8: HTTP, SQL  (NB 9 was folded into NB 8)
+├── 03_data_science/        ← NB 10–14: pandas, NumPy, plots, stats, time series  (+ A1–A4 forecasting appendices)
+├── 04_machine_learning/    ← NB 15–17: sklearn, evaluation, feature engineering  (+ A1–A4 PyTorch / TabPFN appendices)
+├── 05_ai_engineering/      ← NB 18–22: prompts, RAG, agents, docs, AI evaluation  (+ A1–A3 provider / vector-store / framework appendices)
+├── 06_production/          ← NB 23–24: packaging, scheduling  (NB 25 folded into NB 23)
+├── 07_capstones/           ← NB 26: analytics  +  NB 27: AI assistant
+│
+├── slides/
+│   ├── 00_course_overview.pdf     ← 23-slide onboarding deck
+│   └── images/                     ← 7 overview figures
+│
+├── data/                           ← 3 sample CSVs (support_ops, api_log, customer_feedback)
+│
+├── scripts/
+│   ├── check_nb_references.py     ← link checker for NB-number references in docs
+│   └── run_all_notebooks.py       ← execute every notebook end-to-end (for local sanity checks)
+│
+└── previous_versions/
+    └── flat_19_notebook_layout/   ← the pre-2026 flat layout, kept for archive only
+```
+
+---
+
+## About the previous_versions/ folder
+
+Before the 2026 refinement pass, the course shipped as a flat list of 19 notebooks at the top level (`01_python_basics.ipynb` … `19_scheduling_orchestration.ipynb`) alongside their own `data/`, `slides/`, and `requirements.txt`. That layout is preserved verbatim in `previous_versions/flat_19_notebook_layout/` so old bookmarks keep working, but **the canonical course is the 7-module structure at the top level** — start there.
 
 ---
 
@@ -333,17 +258,6 @@ The course gets better when real readers tell us what didn't land. If you spot a
 
 ## Licence
 
-MIT — see [`LICENSE`](./LICENSE). Use freely for personal learning, teaching, or any other purpose.
+MIT — see `LICENSE`. Use freely for personal learning, teaching, or any other purpose.
 
----
-
-## At a glance
-
-```
-   26 notebooks   •   ~80 exercises with detailed solutions
-   7 modules      •   2 hero capstones
-   24-slide overview deck   +   80-slide technical deck
-   Runs on Colab, locally, and offline.
-```
-
-**Open [`refined_course/00_onboarding/00_master_onboarding.ipynb`](./refined_course/00_onboarding/00_master_onboarding.ipynb) and start.**
+Happy coding.

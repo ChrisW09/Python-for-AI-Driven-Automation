@@ -20,12 +20,14 @@ from nbclient import NotebookClient
 from nbclient.exceptions import CellExecutionError
 
 
+DEFAULT_EXCLUDES = ["previous_versions", ".ipynb_checkpoints", "__pycache__"]
+
+
 def iter_notebooks(root: Path, exclude: list[str]) -> list[Path]:
+    excludes = set(exclude) | set(DEFAULT_EXCLUDES)
     out: list[Path] = []
     for p in sorted(root.rglob("*.ipynb")):
-        if ".ipynb_checkpoints" in p.parts:
-            continue
-        if any(p.is_relative_to(root / e) for e in exclude if (root / e).exists()):
+        if any(part in excludes for part in p.parts):
             continue
         out.append(p)
     return out

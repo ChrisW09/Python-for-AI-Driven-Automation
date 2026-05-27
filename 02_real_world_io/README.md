@@ -6,14 +6,14 @@
 **Prerequisites:** Module 1 (especially NB 4 — dictionaries and JSON).
 
 ```
-   Public APIs         Your databases       Schemas in code
-   (NB 7 — HTTP)  ──►  (NB 8 — SQL)    ──►  (NB 9 — Pydantic)
-        │                    │                      │
-        └────────────────────┴──────────────────────┘
-                             │
-                             ▼
-             Now you can pull real data from anywhere
-                  and trust it before using it.
+   Public APIs         Your databases + schemas
+   (NB 7 — HTTP)  ──►  (NB 8 — SQL + Pydantic)
+        │                    │
+        └────────────────────┘
+                  │
+                  ▼
+   Now you can pull real data from anywhere
+        and trust it before using it.
 ```
 
 ## Notebooks
@@ -21,8 +21,7 @@
 | # | Notebook | What you'll build |
 |---|---|---|
 | 7 | `07_apis_and_http.ipynb` | A weather-data ETL pipeline against a live API |
-| 8 | `08_sql_fundamentals.ipynb` | A SQL-driven channel report (joins, CTEs, window functions) |
-| 9 | `09_data_validation_pydantic.ipynb` | Schema-validated API responses + LLM outputs |
+| 8 | `08_sql_fundamentals.ipynb` | A SQL-driven channel report (joins, CTEs, window functions) — including Pydantic-validated rows where they enter Python (originally planned as a standalone NB 9; folded in here). |
 
 ## Why this module matters
 

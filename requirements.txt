@@ -17,8 +17,37 @@ pytest>=8.0
 # Notebook 19 — optional in-process scheduling
 # schedule>=1.2
 
-# Optional — only needed for Notebook 11 / 15 / 16 if you go beyond the MockLLM.
-# Uncomment the provider(s) you actually plan to use.
-# openai>=1.0
-# anthropic>=0.30
-# sentence-transformers>=2.7        # for real dense embeddings in NB15
+# --- Optional LLM providers (see notebook A1 — the providers guide) ---
+# Every AI notebook works offline with the built-in MockLLM. Uncomment the
+# provider(s) you actually plan to use.
+# openai>=1.0                       # OpenAI: gpt-4o-mini, gpt-4o, text-embedding-3-small
+# anthropic>=0.30                   # Anthropic: Claude haiku / sonnet / opus
+# google-generativeai>=0.7          # Google: Gemini Flash / Pro
+# ollama>=0.3                       # Local: any model you `ollama pull` (needs Ollama server)
+# sentence-transformers>=2.7        # Local embeddings (NB 19)
+
+# --- Optional vector stores & RAG/agent frameworks (Module 5 appendices A2-A3) ---
+# faiss-cpu>=1.7
+# chromadb>=0.5
+# qdrant-client>=1.9
+# langchain>=0.2
+# llama-index>=0.10
+# haystack-ai>=2.0
+
+# --- Optional deep learning (Module 4 appendices A1-A3) ---
+# torch>=2.2                        # install: pip install torch --index-url https://download.pytorch.org/whl/cpu
+# transformers>=4.40
+# peft>=0.10                        # LoRA / parameter-efficient fine-tuning
+
+# --- Optional tabular foundation model (Module 4 appendix A4) ---
+# tabpfn>=0.1                       # local TabPFN (PriorLabs)
+# tabpfn-client>=0.1                # hosted PriorLabs API
+
+# --- Optional forecasting libraries (Module 3 appendices A2-A4) ---
+# prophet>=1.1
+# neuralprophet>=0.8
+# sktime>=0.30
+# u8darts>=0.30
+# timesfm>=1.0                      # Google's foundation forecaster
+# chronos-forecasting>=1.2          # Amazon's foundation forecaster
+# tabpfn-time-series>=0.1           # PriorLabs forecasting model

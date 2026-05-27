@@ -24,8 +24,14 @@ ROOT = Path(__file__).resolve().parent.parent
 
 # Where to look for cross-references
 TEXT_GLOBS = ["**/*.md", "**/*.ipynb"]
-# Where to find notebook files
-NB_GLOBS = ["*.ipynb", "refined_course/**/*.ipynb"]
+# Where to find notebook files (skip the legacy archive)
+NB_GLOBS = ["**/*.ipynb"]
+# Folders ignored entirely (both for text scanning and notebook discovery)
+EXCLUDED_DIR_NAMES = {"previous_versions", ".ipynb_checkpoints", "__pycache__"}
+
+
+def is_excluded(path: Path) -> bool:
+    return any(part in EXCLUDED_DIR_NAMES for part in path.parts)
 
 
 def discover_nb_numbers() -> set[int]:
@@ -33,7 +39,7 @@ def discover_nb_numbers() -> set[int]:
     nums = set()
     for pat in NB_GLOBS:
         for p in ROOT.glob(pat):
-            if ".ipynb_checkpoints" in p.parts:
+            if is_excluded(p):
                 continue
             m = re.match(r"(\d{1,2})_", p.name)
             if m:
@@ -45,7 +51,7 @@ def iter_text_files():
     seen = set()
     for pat in TEXT_GLOBS:
         for p in ROOT.glob(pat):
-            if ".ipynb_checkpoints" in p.parts or p in seen:
+            if is_excluded(p) or p in seen:
                 continue
             seen.add(p)
             yield p
