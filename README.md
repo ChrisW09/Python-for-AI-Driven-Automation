@@ -5,6 +5,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 > 🚀 **Start here:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb)
 > 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
+> 🏎️ **Tight on time?** Take the [Fast Track](./fast_track/) — 8 essential notebooks, about 9 hours total. Same teaching, Stretch and Bonus sections trimmed off.
 > 📊 **Slide-deck version:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
 
 ---
@@ -13,7 +14,8 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 | Folder | What |
 |---|---|
-| `00_onboarding/` … `07_capstones/` | **The course.** 25 main notebooks + 11 optional appendices, organised by topic. |
+| `00_onboarding/` … `07_capstones/` | **The full course.** 25 main notebooks + 11 optional appendices, organised by topic. |
+| `fast_track/` | **The fast track.** 8 trimmed notebooks (~9 h total) for a quick end-to-end pass at the essentials. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | A 23-slide course-overview deck (PDF + LaTeX source). |
 | `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass. |
@@ -230,6 +232,8 @@ export GOOGLE_API_KEY=...
 ├── 05_ai_engineering/      ← NB 18–22: prompts, RAG, agents, docs, AI evaluation  (+ A1–A3 provider / vector-store / framework appendices)
 ├── 06_production/          ← NB 23–24: packaging, scheduling  (NB 25 folded into NB 23)
 ├── 07_capstones/           ← NB 26: analytics  +  NB 27: AI assistant
+│
+├── fast_track/                     ← 8 trimmed notebooks (~9 h) — the shortcut path
 │
 ├── slides/
 │   ├── 00_course_overview.pdf     ← 23-slide onboarding deck
