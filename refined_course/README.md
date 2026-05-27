@@ -1,10 +1,11 @@
 # Python for AI-Driven Automation and Business Data Science
-## *Refined edition — 7 modules, 26 notebooks, end-to-end*
+## *Refined edition — 7 modules, 25 notebooks (+ 11 optional appendices), end-to-end*
 
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation**. This is the **refined edition** — the same business-AI-flavoured course you may know, restructured into a coherent module-based curriculum with five new notebooks closing real gaps and a dedicated onboarding deck.
 
 > 🚀 **Start here:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb)
-> 📊 **The roadmap:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
+> 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
+> 📊 **Slide-deck version:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
 
 ---
 
@@ -45,10 +46,12 @@ scikit-learn workflow + **honest model evaluation** + **feature engineering**.
 LLM prompts, RAG, agents, document processing, **AI evaluation & observability**.
 
 ### 🚀 [Module 6 — Production](./06_production/) *(NB 23–24)*
-Packaging notebooks into projects, scheduling, configuration & secrets.
+Packaging notebooks into projects and scheduling. *(Configuration & secrets are covered inline in NB 23; the originally planned standalone NB 25 was folded into it.)*
 
 ### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 26–27)*
 Two end-to-end projects — analytical and engineering.
+
+> 💡 **About the numbering gaps.** You'll notice NB 06, 09, and 25 are missing — that's intentional, not an oversight. NB 06 (extra Python practice), NB 09 (Pydantic validation), and NB 25 (config & secrets) were folded into adjacent notebooks rather than standing alone. The 24 numbered notebooks plus the onboarding form the complete backbone.
 
 ---
 
@@ -70,7 +73,7 @@ Plus the **master onboarding notebook**, **7 per-module READMEs** with diagrams,
 
 ## Optional appendix track — 11 advanced notebooks
 
-A second tier of optional, deep-dive notebooks for readers who want to go beyond the 26-notebook backbone. Each appendix lives next to its parent module and is fully runnable.
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 25-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
 
 | Module | Appendix | What it covers |
 |---|---|---|
@@ -110,10 +113,12 @@ Every notebook follows the same six-section template:
 
 1. **🎯 Learning objectives** + **✅ Prerequisites**
 2. **Numbered concept sections** — short prose, then runnable code.
-3. **🧪 Exercises** — with full solutions and *reasoning* (not just the answer).
-4. **🎁 Bonus mini-project** — one larger applied task.
-5. **🧠 Key takeaways** + **✅ Self-assessment checklist**.
-6. **🚀 Next step** — pointer to the next notebook in your path.
+3. **🧪 Practice exercises** (numbered 1, 2, 3, …) — 3–5 per notebook, with full solutions and *reasoning* (not just the answer). One per notebook is a 🐞 *Debug-me* puzzle.
+4. **🧠 Stretch exercises** (lettered A, B, C, D) — 4 per notebook, deliberately harder. The kind of question you'd want to be able to answer in an interview. Same Solution + Reasoning format as the practice exercises.
+5. **🎁 Bonus mini-project** — one larger applied task.
+6. **✅ Self-assessment checklist** + **🚀 Next step** — pointer to the next notebook in your path.
+
+That's **~8 exercises per notebook on average** — and **180+ across the course**, every single one with a worked solution and an explanation of *why* it works.
 
 The six visual markers (💡 tip, 🎯 intuition, ⚠️ pitfall, 🧪 exercise, 🎁 bonus, 🐞 debug-me) are road signs you'll see throughout. They are explained in the onboarding notebook.
 

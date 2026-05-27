@@ -1,18 +1,22 @@
 # Python for AI-Driven Automation and Business Data Science
 
+> ## 👉 New here? Open [`refined_course/00_onboarding/00_master_onboarding.ipynb`](./refined_course/00_onboarding/00_master_onboarding.ipynb).
+> The `refined_course/` folder is the **canonical, recommended layout**. The 19 numbered notebooks at the top level are an older, flat-list version kept for backwards compatibility — they teach the same material but without the 7-module structure, onboarding deck, or 5 newer notebooks. If you've never opened this repo before, **don't start at the top level — start in `refined_course/`**.
+
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-powered automation**.
 
 ```
    ┌──────────────────────────────────────────────────────────────────────────┐
-   │  26 notebooks (refined edition)  •  ~500 code cells                       │
-   │  ~80 exercises with detailed worked solutions                             │
+   │  25 notebooks (refined edition) + 11 optional appendices                  │
+   │  ~500 code cells  •  180+ exercises with detailed worked solutions        │
+   │  Two-tier exercise design: Practice (1–5) + Stretch (A–D) per notebook    │
    │  Runs on Google Colab with zero setup                                     │
    │  AI workflows included — fully offline with a built-in MockLLM            │
    │  Real HTTP, SQL, time series, embeddings, agents, packaging, scheduling   │
    └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-> 🚀 **Start here:** [`refined_course/00_onboarding/00_master_onboarding.ipynb`](./refined_course/00_onboarding/00_master_onboarding.ipynb)
+> 🗺️  **Want the full map first?** Open [`refined_course/00_onboarding/00b_course_overview.ipynb`](./refined_course/00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
 >
 > 📊 **The course in one diagram:** [`refined_course/slides/00_course_overview.pdf`](./refined_course/slides/00_course_overview.pdf)
 

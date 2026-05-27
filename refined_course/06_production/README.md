@@ -8,26 +8,25 @@
 ```
                   ┌─────────────────────────────────────┐
                   │  src/ layout + pyproject.toml +      │
-                  │  pytest + CLI entry points           │
-                  │           (NB 23)                    │
+                  │  pytest + CLI entry points +         │
+                  │  config & secrets (folded in)        │
+                  │            (NB 23)                   │
                   └─────────────────┬───────────────────┘
                                     │
-                       ┌────────────┴────────────┐
-                       ▼                          ▼
-                 NB 24                       NB 25
-                 Scheduling                  Config &
-                 cron / systemd /            secrets management
-                 GitHub Actions /            yaml + dotenv +
-                 Prefect                     12-factor app
+                                    ▼
+                              NB 24
+                              Scheduling
+                              cron / systemd /
+                              GitHub Actions /
+                              Prefect
 ```
 
 ## Notebooks
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 23 | `23_from_notebook_to_project.ipynb` | A packaged, tested, importable `costkit` library |
+| 23 | `23_from_notebook_to_project.ipynb` | A packaged, tested, importable `costkit` library — including YAML configs, dotenv, and dev/staging/prod patterns (originally planned as a standalone NB 25; folded in here). |
 | 24 | `24_scheduling_orchestration.ipynb` | Production-shape automation wrapper with retries + alerts |
-| 25 | `25_configuration_secrets.ipynb` | YAML configs, dotenv, dev/staging/prod patterns |
 
 ## What "production-ready" actually means here
 

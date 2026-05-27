@@ -1,10 +1,14 @@
 # Module 0 — Onboarding
 
-**Goal:** in 20–30 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the remaining 26 notebooks.
+**Goal:** in 30–45 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the remaining 24 notebooks.
 
 ```
         ┌────────────────────────────────┐
         │  Master onboarding notebook    │   ← you start here
+        └──────────────┬─────────────────┘
+                       │
+        ┌──────────────┴─────────────────┐
+        │  Course overview notebook      │   ← read second for the full map + time budgets
         └──────────────┬─────────────────┘
                        │
         ┌──────────────┴─────────────────┐
@@ -17,10 +21,12 @@
 | Notebook | What it does |
 |---|---|
 | **`00_master_onboarding.ipynb`** | Course philosophy, learning paths, environment check. The "you are here" notebook. |
+| **`00b_course_overview.ipynb`** | The companion overview: seven-module diagram, per-notebook time budgets (read / practice / stretch / bonus), five learning paths, interactive time estimator, study habits that actually work. |
 
-## Reading the master onboarding notebook is enough
+## Suggested order
 
-Once you've run its environment-check cell and seen `✅ Setup looks good!`, you're ready to move on.
+1. Run `00_master_onboarding.ipynb` end-to-end. Confirm the environment check prints `✅ Setup looks good!`.
+2. Skim `00b_course_overview.ipynb` to pick a learning path and estimate your total time.
 
 ## Where next
 
