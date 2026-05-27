@@ -16,7 +16,8 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 | `00_onboarding/` … `07_capstones/` | **The course.** 25 main notebooks + 11 optional appendices, organised by topic. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | A 23-slide course-overview deck (PDF + LaTeX source). |
-| `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass; nothing requires CI. |
+| `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass. |
+| `docs/` | Audit reports from the 2026 refinement pass + most recent execution snapshot. Reference material — not part of the course itself. |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (and an offline `MockLLM`). |
 | `previous_versions/` | The legacy flat 19-notebook layout (pre-2026 refinement), preserved for archive purposes only. |
 
@@ -239,6 +240,8 @@ export GOOGLE_API_KEY=...
 ├── scripts/
 │   ├── check_nb_references.py     ← link checker for NB-number references in docs
 │   └── run_all_notebooks.py       ← execute every notebook end-to-end (for local sanity checks)
+│
+├── docs/                          ← audit reports + most recent execution snapshot
 │
 └── previous_versions/
     └── flat_19_notebook_layout/   ← the pre-2026 flat layout, kept for archive only

@@ -1,0 +1,21 @@
+# docs/
+
+Project artefacts. Not part of the course content — these are reference documents about *how the course was assembled*.
+
+| File | What it is |
+|---|---|
+| `01_initial_execution_report.docx` | The very first end-to-end execution audit (May 2026). All 55 notebooks were executed in a fresh kernel; this report records which passed and which failed, with first-failing cell + error captured for each. |
+| `02_refinement_review.docx` | A structural / hygiene audit that identified eleven refinement opportunities (numbering drift, MockLLM duplicated across notebooks, missing nbformat cell IDs, etc.) — each with evidence and a concrete fix. |
+| `03_refinements_applied.docx` | The summary of the refinement pass: what was changed, what was deliberately left alone, and the verification that the post-refinement execution state matched the original (53 / 55 pass, 2 intentional Debug-me fails). |
+| `notebook_execution_results.json` | The most recent execution snapshot from the helper `scripts/run_all_notebooks.py`. One entry per notebook with `status`, `duration_s`, and first error (if any). Regenerate by re-running the script from the repo root. |
+
+Reading order: 01 → 02 → 03. The current state of the repo reflects everything in report 03.
+
+## Reproducing the execution snapshot
+
+```bash
+# from the repo root
+python scripts/run_all_notebooks.py .
+```
+
+The runner skips `previous_versions/` automatically.
