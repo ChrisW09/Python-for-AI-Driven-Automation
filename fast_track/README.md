@@ -4,6 +4,8 @@ The whole curriculum, condensed to its essentials. **8 notebooks. About 9 hours.
 
 > 🚀 **Start here:** [`00_fast_track_onboarding.ipynb`](./00_fast_track_onboarding.ipynb)
 
+**~7 exercises per notebook, every one with a worked solution.** Every fast-track notebook keeps the canonical Practice exercises (3–5 each) *and* two of the harder Stretch exercises (C + D) — the same two-tier exercise design as the full course, just with the very-deep Stretch A/B and the Bonus mini-project trimmed out so the path stays under ~9 h.
+
 ---
 
 ## What's here
@@ -29,7 +31,7 @@ Each notebook (except the onboarding) is a **trimmed copy** of its canonical cou
 
 Compared to the full course, these are gone:
 
-- **🧠 Stretch exercises (A–D)** in every notebook — the deeper, interview-grade problems.
+- **🧠 Stretch exercises A and B** (the very-deep problems) — the fast track keeps Stretch C and D, which are still notably harder than the Practice ones but realistic for the time budget.
 - **🎁 Bonus mini-project** at the end of every notebook.
 - **`04_dictionaries_advanced.ipynb`** — merged into the fast-track NB 03.
 - **APIs / HTTP / SQL** — these matter once you have a real I/O task; defer them.
