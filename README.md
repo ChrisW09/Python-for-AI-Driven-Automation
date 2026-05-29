@@ -16,6 +16,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 |---|---|
 | `00_onboarding/` … `07_capstones/` | **The full course.** 25 main notebooks + 11 optional appendices, organised by topic. |
 | `fast_track/` | **The fast track.** 8 trimmed notebooks (~9 h total) for a quick end-to-end pass at the essentials. |
+| `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | A 23-slide course-overview deck (PDF + LaTeX source). |
 | `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass. |
@@ -234,6 +235,8 @@ export GOOGLE_API_KEY=...
 ├── 07_capstones/           ← NB 26: analytics  +  NB 27: AI assistant
 │
 ├── fast_track/                     ← 8 trimmed notebooks (~9 h) — the shortcut path
+│
+├── quizzes/                        ← 6 multiple-choice quizzes, one per module
 │
 ├── slides/
 │   ├── 00_course_overview.pdf     ← 23-slide onboarding deck
