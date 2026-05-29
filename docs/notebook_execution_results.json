@@ -3,21 +3,21 @@
     "notebook": "00_onboarding/00_master_onboarding.ipynb",
     "status": "pass",
     "cells_executed": 2,
-    "duration_s": 1.29,
+    "duration_s": 1.07,
     "error": null
   },
   {
     "notebook": "00_onboarding/00b_course_overview.ipynb",
     "status": "pass",
     "cells_executed": 1,
-    "duration_s": 0.52,
+    "duration_s": 0.53,
     "error": null
   },
   {
     "notebook": "01_foundations/01_python_basics.ipynb",
     "status": "fail",
     "cells_executed": 0,
-    "duration_s": 0.64,
+    "duration_s": 0.62,
     "error": {
       "cell_index": 39,
       "ename": "TypeError",
@@ -29,14 +29,14 @@
     "notebook": "01_foundations/02_control_structures.ipynb",
     "status": "pass",
     "cells_executed": 25,
-    "duration_s": 0.56,
+    "duration_s": 0.57,
     "error": null
   },
   {
     "notebook": "01_foundations/03_lists_data_structures.ipynb",
     "status": "pass",
     "cells_executed": 26,
-    "duration_s": 0.62,
+    "duration_s": 0.61,
     "error": null
   },
   {
@@ -50,28 +50,28 @@
     "notebook": "01_foundations/05_functions_modules.ipynb",
     "status": "pass",
     "cells_executed": 24,
-    "duration_s": 0.99,
+    "duration_s": 0.98,
     "error": null
   },
   {
     "notebook": "02_real_world_io/07_apis_and_http.ipynb",
     "status": "pass",
     "cells_executed": 18,
-    "duration_s": 11.1,
+    "duration_s": 11.11,
     "error": null
   },
   {
     "notebook": "02_real_world_io/08_sql_fundamentals.ipynb",
     "status": "pass",
     "cells_executed": 22,
-    "duration_s": 0.68,
+    "duration_s": 0.67,
     "error": null
   },
   {
     "notebook": "03_data_science/10_pandas_fundamentals.ipynb",
     "status": "pass",
     "cells_executed": 29,
-    "duration_s": 1.15,
+    "duration_s": 1.07,
     "error": null
   },
   {
@@ -85,119 +85,119 @@
     "notebook": "03_data_science/12_matplotlib_basics.ipynb",
     "status": "pass",
     "cells_executed": 19,
-    "duration_s": 1.5,
+    "duration_s": 1.48,
     "error": null
   },
   {
     "notebook": "03_data_science/13_statistics_basics.ipynb",
     "status": "pass",
     "cells_executed": 17,
-    "duration_s": 1.31,
+    "duration_s": 1.28,
     "error": null
   },
   {
     "notebook": "03_data_science/14_time_series_forecasting.ipynb",
     "status": "pass",
     "cells_executed": 23,
-    "duration_s": 2.46,
+    "duration_s": 2.31,
     "error": null
   },
   {
     "notebook": "03_data_science/A1_forecasting_classical.ipynb",
     "status": "pass",
     "cells_executed": 11,
-    "duration_s": 11.07,
+    "duration_s": 10.71,
     "error": null
   },
   {
     "notebook": "03_data_science/A2_forecasting_prophet_libraries.ipynb",
     "status": "pass",
     "cells_executed": 7,
-    "duration_s": 1.35,
+    "duration_s": 1.31,
     "error": null
   },
   {
     "notebook": "03_data_science/A3_forecasting_deep_learning.ipynb",
     "status": "pass",
     "cells_executed": 8,
-    "duration_s": 1.18,
+    "duration_s": 1.22,
     "error": null
   },
   {
     "notebook": "03_data_science/A4_forecasting_foundation_models.ipynb",
     "status": "pass",
     "cells_executed": 5,
-    "duration_s": 2.56,
+    "duration_s": 2.54,
     "error": null
   },
   {
     "notebook": "04_machine_learning/15_sklearn_basics.ipynb",
     "status": "pass",
     "cells_executed": 25,
-    "duration_s": 5.72,
+    "duration_s": 5.74,
     "error": null
   },
   {
     "notebook": "04_machine_learning/16_model_evaluation.ipynb",
     "status": "pass",
     "cells_executed": 19,
-    "duration_s": 6.24,
+    "duration_s": 6.05,
     "error": null
   },
   {
     "notebook": "04_machine_learning/17_feature_engineering.ipynb",
     "status": "pass",
     "cells_executed": 17,
-    "duration_s": 1.4,
+    "duration_s": 4.03,
     "error": null
   },
   {
     "notebook": "04_machine_learning/A1_pytorch_foundations.ipynb",
     "status": "pass",
     "cells_executed": 12,
-    "duration_s": 1.32,
+    "duration_s": 1.41,
     "error": null
   },
   {
     "notebook": "04_machine_learning/A2_pytorch_vision_and_sequences.ipynb",
     "status": "pass",
     "cells_executed": 8,
-    "duration_s": 0.94,
+    "duration_s": 1.13,
     "error": null
   },
   {
     "notebook": "04_machine_learning/A3_pytorch_fine_tuning.ipynb",
     "status": "pass",
     "cells_executed": 7,
-    "duration_s": 0.9,
+    "duration_s": 1.01,
     "error": null
   },
   {
     "notebook": "04_machine_learning/A4_tabpfn_priorlab.ipynb",
     "status": "pass",
     "cells_executed": 5,
-    "duration_s": 3.55,
+    "duration_s": 4.17,
     "error": null
   },
   {
     "notebook": "05_ai_engineering/18_ai_workflows.ipynb",
     "status": "pass",
     "cells_executed": 18,
-    "duration_s": 0.59,
+    "duration_s": 0.56,
     "error": null
   },
   {
     "notebook": "05_ai_engineering/19_embeddings_retrieval.ipynb",
     "status": "pass",
     "cells_executed": 17,
-    "duration_s": 1.32,
+    "duration_s": 1.35,
     "error": null
   },
   {
     "notebook": "05_ai_engineering/20_tools_and_agents.ipynb",
     "status": "pass",
     "cells_executed": 15,
-    "duration_s": 0.63,
+    "duration_s": 0.71,
     "error": null
   },
   {
@@ -211,63 +211,70 @@
     "notebook": "05_ai_engineering/22_ai_evaluation_observability.ipynb",
     "status": "pass",
     "cells_executed": 17,
-    "duration_s": 1.11,
+    "duration_s": 1.07,
     "error": null
   },
   {
     "notebook": "05_ai_engineering/A1_llm_providers_guide.ipynb",
     "status": "pass",
     "cells_executed": 11,
-    "duration_s": 0.61,
+    "duration_s": 0.62,
     "error": null
   },
   {
     "notebook": "05_ai_engineering/A2_vector_stores_survey.ipynb",
     "status": "pass",
     "cells_executed": 8,
-    "duration_s": 0.99,
+    "duration_s": 0.98,
     "error": null
   },
   {
     "notebook": "05_ai_engineering/A3_rag_and_agent_frameworks.ipynb",
     "status": "pass",
     "cells_executed": 7,
-    "duration_s": 0.58,
+    "duration_s": 0.59,
     "error": null
   },
   {
     "notebook": "06_production/23_from_notebook_to_project.ipynb",
     "status": "pass",
     "cells_executed": 18,
-    "duration_s": 0.63,
+    "duration_s": 0.66,
     "error": null
   },
   {
-    "notebook": "06_production/24_scheduling_orchestration.ipynb",
+    "notebook": "07_capstones/26_capstone_analytics.ipynb",
     "status": "pass",
-    "cells_executed": 13,
-    "duration_s": 4.52,
+    "cells_executed": 19,
+    "duration_s": 1.73,
     "error": null
   },
   {
     "notebook": "07_capstones/27_capstone_ai_assistant.ipynb",
     "status": "pass",
     "cells_executed": 16,
-    "duration_s": 1.14,
+    "duration_s": 1.32,
     "error": null
   },
   {
     "notebook": "fast_track/00_fast_track_onboarding.ipynb",
     "status": "pass",
     "cells_executed": 1,
-    "duration_s": 0.95,
+    "duration_s": 1.11,
+    "error": null
+  },
+  {
+    "notebook": "06_production/24_scheduling_orchestration.ipynb",
+    "status": "pass",
+    "cells_executed": 13,
+    "duration_s": 4.63,
     "error": null
   },
   {
     "notebook": "fast_track/01_python_basics.ipynb",
     "status": "fail",
     "cells_executed": 0,
-    "duration_s": 0.82,
+    "duration_s": 0.59,
     "error": {
       "cell_index": 40,
       "ename": "TypeError",
@@ -279,98 +286,91 @@
     "notebook": "fast_track/02_control_structures.ipynb",
     "status": "pass",
     "cells_executed": 22,
-    "duration_s": 0.66,
+    "duration_s": 0.58,
     "error": null
   },
   {
     "notebook": "fast_track/03_lists_and_dicts.ipynb",
     "status": "pass",
     "cells_executed": 23,
-    "duration_s": 0.7,
-    "error": null
-  },
-  {
-    "notebook": "07_capstones/26_capstone_analytics.ipynb",
-    "status": "pass",
-    "cells_executed": 19,
-    "duration_s": 1.75,
+    "duration_s": 0.63,
     "error": null
   },
   {
     "notebook": "fast_track/04_functions.ipynb",
     "status": "pass",
     "cells_executed": 21,
-    "duration_s": 1.17,
+    "duration_s": 1.07,
     "error": null
   },
   {
     "notebook": "fast_track/05_pandas_fundamentals.ipynb",
     "status": "pass",
     "cells_executed": 28,
-    "duration_s": 1.26,
+    "duration_s": 1.11,
     "error": null
   },
   {
     "notebook": "fast_track/06_sklearn_basics.ipynb",
     "status": "pass",
     "cells_executed": 23,
-    "duration_s": 6.3,
+    "duration_s": 5.82,
     "error": null
   },
   {
     "notebook": "fast_track/07_ai_workflows.ipynb",
     "status": "pass",
     "cells_executed": 17,
-    "duration_s": 0.57,
+    "duration_s": 0.6,
     "error": null
   },
   {
     "notebook": "fast_track/08_embeddings_and_rag.ipynb",
     "status": "pass",
     "cells_executed": 15,
-    "duration_s": 1.37,
+    "duration_s": 1.25,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_01_foundations.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.56,
+    "duration_s": 0.47,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_02_real_world_io.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.49,
+    "duration_s": 0.52,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_03_data_science.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 4.03,
+    "duration_s": 0.53,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_04_machine_learning.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.66,
+    "duration_s": 0.52,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_05_ai_engineering.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.6,
+    "duration_s": 0.5,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_06_production.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 3.03,
+    "duration_s": 0.52,
     "error": null
   }
 ]

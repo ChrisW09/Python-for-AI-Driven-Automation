@@ -9,6 +9,7 @@ Project artefacts. Not part of the course content — these are reference docume
 | `03_refinements_applied.docx` | The summary of the refinement pass: what was changed, what was deliberately left alone, and the verification that the post-refinement execution state matched the original (53 / 55 pass, 2 intentional Debug-me fails). |
 | `04_pedagogical_audit.docx` | A pedagogical audit of the course: concept-dependency map (where each Python concept is *used* vs *explained*), premature-syntax findings, the surgical fixes applied to the foundations module, and recommendations for future revisions. |
 | `05_recommendations_applied.docx` | Follow-up to the audit: each of the eight recommendations paired with what was actually built (f-strings reordered, 🧠 / 🔭 markers added, concept-introduction index, three ASCII diagrams, six module quizzes). |
+| `06_final_review.docx` | The end-of-engagement review: full inventory of the repo, journey from audit 01 to here, smoke-test results by section, re-run concept-dependency audit, known limitations, and suggested next moves. |
 | `notebook_execution_results.json` | The most recent execution snapshot from the helper `scripts/run_all_notebooks.py`. One entry per notebook with `status`, `duration_s`, and first error (if any). Regenerate by re-running the script from the repo root. |
 
 Reading order: 01 → 02 → 03. The current state of the repo reflects everything in report 03.
