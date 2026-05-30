@@ -1,12 +1,14 @@
-# Byte-compiled / optimized / DLL files
+# =============================================================================
+#  .gitignore — Python for AI-Driven Automation and Business Data Science
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#  Python — byte-code, build outputs, distribution
+# -----------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
 dist/
@@ -14,20 +16,33 @@ downloads/
 .eggs/
 *.egg-info/
 *.egg
+sdist/
+wheels/
+*.whl
+share/python-wheels/
+pip-wheel-metadata/
 
-# Virtual environments
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# -----------------------------------------------------------------------------
+#  Virtual environments
+# -----------------------------------------------------------------------------
 .venv/
 venv/
 ENV/
 env/
 env.bak/
 envs/
+.python-version       # pyenv
+.tool-versions        # asdf
+poetry.lock           # optional — usually committed, uncomment to ignore
+Pipfile.lock          # optional — usually committed, uncomment to ignore
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
+# -----------------------------------------------------------------------------
+#  Test / coverage / type-check caches
+# -----------------------------------------------------------------------------
 htmlcov/
 .tox/
 .nox/
@@ -40,27 +55,175 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# VS Code
-.vscode/
-
-# macOS
-.DS_Store
-
-# PyCharm
-.idea/
-
-# Mypy
 .mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
 
-# Misc
+# -----------------------------------------------------------------------------
+#  Jupyter
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+.jupyter/
+# nbconvert outputs from `jupyter nbconvert --to html` etc.
+*.nbconvert.html
+*.nbconvert.tex
+*.nbconvert.pdf
+
+# -----------------------------------------------------------------------------
+#  LaTeX — slides/ source rebuilds these on every compile
+# -----------------------------------------------------------------------------
+# Aux files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.vrb
+*.run.xml
+*.xdv
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ind
+*.ilg
+# minted / pygments outputs
+_minted-*/
+*.pyg
+# Standalone
+missfont.log
+
+# -----------------------------------------------------------------------------
+#  macOS
+# -----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*               # resource-fork doubles
+Icon?
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# -----------------------------------------------------------------------------
+#  Windows / Linux housekeeping (in case of cross-platform contributions)
+# -----------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# -----------------------------------------------------------------------------
+#  Editors / IDEs
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+.cursor/
+# Vim
+*.swp
+*.swo
+*.swn
+# Emacs
+*~
+\#*\#
+.\#*
+auto-save-list
+tramp
+.org-id-locations
+*_archive
+
+# -----------------------------------------------------------------------------
+#  Environment variables / secrets
+#  (the course teaches LLM-provider keys handling — never commit them)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+.envrc
+# Common API-key / credential filenames
+secrets.json
+credentials.json
+service-account.json
+.openai
+.anthropic
+.gemini
+.huggingface
+# PEM / key material
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# -----------------------------------------------------------------------------
+#  Notebook-side artefacts the notebooks may write at runtime
+# -----------------------------------------------------------------------------
+# Some notebooks write a small forecast.csv / model.pkl to the local folder
+# during exercises; keep the canonical sample CSVs under data/ tracked, ignore
+# anything generated at the repo root.
+/forecast.csv
+/model.pkl
+/scratch.csv
+/scratch.json
+*.tmp
+*.bak
+
+# -----------------------------------------------------------------------------
+#  Logs and local databases
+# -----------------------------------------------------------------------------
 *.log
 *.sqlite3
+*.sqlite3-journal
+*.db-journal
+# Don't ignore .ipynb cell-level outputs — those are committed deliberately.
 
-# Local env files
-.env
+# -----------------------------------------------------------------------------
+#  Node — only if you run any markdown / JS tooling locally (docx-js etc.)
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# -----------------------------------------------------------------------------
+#  Misc local notes that shouldn't ship
+# -----------------------------------------------------------------------------
+TODO.local.md
+NOTES.local.md
+scratch/
+.local/
 
 # End of .gitignore
