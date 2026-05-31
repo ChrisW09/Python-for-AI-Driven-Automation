@@ -1,6 +1,6 @@
 # 🏎️ Fast Track
 
-The whole curriculum, condensed to its essentials. **8 notebooks. About 9 hours.** A shortcut you can finish in two work weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack.
+The whole curriculum, condensed to its essentials. **9 notebooks. About 10 hours.** A shortcut you can finish in two work weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack.
 
 > 🚀 **Start here:** [`00_fast_track_onboarding.ipynb`](./00_fast_track_onboarding.ipynb)
 
@@ -17,11 +17,12 @@ The whole curriculum, condensed to its essentials. **8 notebooks. About 9 hours.
 | 2 | `02_control_structures.ipynb`        | if/elif, for/while, comprehensions, early return | ~55 min |
 | 3 | `03_lists_and_dicts.ipynb`           | Lists, tuples, sets, dicts, `defaultdict`, `Counter` | ~60 min |
 | 4 | `04_functions.ipynb`                 | Functions, default args, `*args/**kwargs`, decorators | ~65 min |
-| 5 | `05_pandas_fundamentals.ipynb`       | DataFrames, groupby, merge, missing data, plotting | ~80 min |
-| 6 | `06_sklearn_basics.ipynb`            | train/test split, fit/predict, evaluation, pipelines | ~85 min |
-| 7 | `07_ai_workflows.ipynb`              | LLM prompting, classification, JSON output, validation | ~65 min |
-| 8 | `08_embeddings_and_rag.ipynb`        | Embeddings, cosine similarity, retrieval, basic RAG | ~65 min |
-| | **Total** | | **~9 h** |
+| 5 | `05_classes_basics.ipynb`            | Classes, `__init__`, `self`, methods, `__repr__`, `@dataclass` | ~60 min |
+| 6 | `06_pandas_fundamentals.ipynb`       | DataFrames, groupby, merge, missing data, plotting | ~80 min |
+| 7 | `07_sklearn_basics.ipynb`            | train/test split, fit/predict, evaluation, pipelines | ~85 min |
+| 8 | `08_ai_workflows.ipynb`              | LLM prompting, classification, JSON output, validation | ~65 min |
+| 9 | `09_embeddings_and_rag.ipynb`        | Embeddings, cosine similarity, retrieval, basic RAG | ~65 min |
+| | **Total** | | **~10 h** |
 
 Each notebook (except the onboarding) is a **trimmed copy** of its canonical counterpart in the parent folders. The first cell of every trimmed notebook links back to the full version.
 
@@ -73,10 +74,11 @@ fast_track/                    canonical full course
   02_control_structures ←  01_foundations/02_control_structures
   03_lists_and_dicts    ←  01_foundations/03_lists_data_structures
   04_functions          ←  01_foundations/05_functions_modules
-  05_pandas_fundamentals←  03_data_science/10_pandas_fundamentals
-  06_sklearn_basics     ←  04_machine_learning/15_sklearn_basics
-  07_ai_workflows       ←  05_ai_engineering/18_ai_workflows
-  08_embeddings_and_rag ←  05_ai_engineering/19_embeddings_retrieval
+  05_classes_basics     ←  01_foundations/06_classes_and_oop
+  06_pandas_fundamentals←  03_data_science/10_pandas_fundamentals
+  07_sklearn_basics     ←  04_machine_learning/15_sklearn_basics
+  08_ai_workflows       ←  05_ai_engineering/18_ai_workflows
+  09_embeddings_and_rag ←  05_ai_engineering/19_embeddings_retrieval
 ```
 
-The fast-track notebooks are flat-numbered 1–8 deliberately — when there are only eight things in front of you, finishing feels achievable. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 11 with NumPy"*), so you can always follow a thread back to the depth notebook.
+The fast-track notebooks are flat-numbered 1–9 deliberately — when there are only nine things in front of you, finishing feels achievable. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 11 with NumPy"*), so you can always follow a thread back to the depth notebook.

@@ -2,15 +2,15 @@
 
 **Goal:** Become fluent enough to read and write Python without friction. By the end of this module you will not be looking up "how do I make a list?" anymore.
 
-**Estimated time:** 7–10 hours of focused study.
+**Estimated time:** 9–12 hours of focused study.
 **Prerequisites:** None — Notebook 1 starts from zero.
 
 ```
-   types  ──►  control  ──►  lists  ──►  dicts  ──►  functions
-   (NB 1)       (NB 2)      (NB 3)     (NB 4)      (NB 5)
-                                                       │
-                                                       ▼
-                                                  every later module
+   types  ──►  control  ──►  lists  ──►  dicts  ──►  functions  ──►  classes
+   (NB 1)       (NB 2)      (NB 3)     (NB 4)      (NB 5)         (NB 6)
+                                                                     │
+                                                                     ▼
+                                                              every later module
 ```
 
 ## Notebooks (run in order)
@@ -22,6 +22,7 @@
 | 3 | `03_lists_data_structures.ipynb` | A latency-log analysis |
 | 4 | `04_dictionaries_advanced.ipynb` | A defensive API-response parser |
 | 5 | `05_functions_modules.ipynb` | A reusable cost / cleaning toolkit |
+| 6 | `06_classes_and_oop.ipynb` | A `TodoList` class with full OOP fluency — closes the documented NB 6 gap |
 
 ## What "fluent" looks like at the end
 

@@ -1,11 +1,11 @@
 # Python for AI-Driven Automation and Business Data Science
-## *7 modules, 25 notebooks (+ 11 optional appendices), end-to-end*
+## *7 modules, 26 notebooks (+ 11 optional appendices), end-to-end*
 
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation** — Python fluency, business data science, machine learning, AI engineering, and production wiring, all in one curriculum.
 
 > 🚀 **Start here:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb)
 > 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
-> 🏎️ **Tight on time?** Take the [Fast Track](./fast_track/) — 8 essential notebooks, about 9 hours total. Same teaching, Stretch and Bonus sections trimmed off.
+> 🏎️ **Tight on time?** Take the [Fast Track](./fast_track/) — 9 essential notebooks, about 10 hours total. Same teaching, Stretch and Bonus sections trimmed off.
 > 📊 **Slide-deck version:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
 
 ---
@@ -14,8 +14,8 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 | Folder | What |
 |---|---|
-| `00_onboarding/` … `07_capstones/` | **The full course.** 25 main notebooks + 11 optional appendices, organised by topic. |
-| `fast_track/` | **The fast track.** 8 trimmed notebooks (~9 h total) for a quick end-to-end pass at the essentials. |
+| `00_onboarding/` … `07_capstones/` | **The full course.** 26 main notebooks + 11 optional appendices, organised by topic. |
+| `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
 | `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | A 23-slide course-overview deck (PDF + LaTeX source). |
@@ -31,7 +31,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 ### 📍 [Module 0 — Onboarding](./00_onboarding/) *(start here)*
 *Master onboarding notebook + environment check.* 20 minutes.
 
-### 🐍 [Module 1 — Foundations](./01_foundations/) *(NB 1–5)*
+### 🐍 [Module 1 — Foundations](./01_foundations/) *(NB 1–6)*
 Python you can read without friction. Variables, control flow, lists, dicts, functions.
 
 ### 🔌 [Module 2 — Real-world I/O](./02_real_world_io/) *(NB 7–8)*
@@ -52,7 +52,7 @@ Packaging notebooks into projects and scheduling. *(Configuration & secrets are 
 ### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 26–27)*
 Two end-to-end projects — analytical and engineering.
 
-> 💡 **About the numbering gaps.** You'll notice NB 06, 09, and 25 are missing — that's intentional, not an oversight. NB 06 (extra Python practice), NB 09 (Pydantic validation), and NB 25 (config & secrets) were folded into adjacent notebooks rather than standing alone. The 24 numbered notebooks plus the onboarding form the complete backbone.
+> 💡 **About the numbering gaps.** NB 09 and 25 are intentionally absent — Pydantic validation was folded into NB 8, and config & secrets into NB 23. NB 6 (originally a documented gap for "extra Python practice") is now **Classes & OOP** — added in the 2026 pedagogy pass so every later notebook can lean on real OOP fluency.
 
 ---
 
@@ -70,7 +70,7 @@ Two end-to-end projects — analytical and engineering.
 
 ## Optional appendix track — 11 advanced notebooks
 
-A second tier of optional, deep-dive notebooks for readers who want to go beyond the 25-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 26-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
 
 | Module | Appendix | What it covers |
 |---|---|---|
@@ -226,7 +226,7 @@ export GOOGLE_API_KEY=...
 │   ├── 00_master_onboarding.ipynb
 │   └── 00b_course_overview.ipynb
 │
-├── 01_foundations/         ← NB 1–5: Python basics, control, lists, dicts, functions
+├── 01_foundations/         ← NB 1–6: Python basics, control, lists, dicts, functions, classes & OOP
 ├── 02_real_world_io/       ← NB 7–8: HTTP, SQL  (NB 9 was folded into NB 8)
 ├── 03_data_science/        ← NB 10–14: pandas, NumPy, plots, stats, time series  (+ A1–A4 forecasting appendices)
 ├── 04_machine_learning/    ← NB 15–17: sklearn, evaluation, feature engineering  (+ A1–A4 PyTorch / TabPFN appendices)
@@ -234,7 +234,7 @@ export GOOGLE_API_KEY=...
 ├── 06_production/          ← NB 23–24: packaging, scheduling  (NB 25 folded into NB 23)
 ├── 07_capstones/           ← NB 26: analytics  +  NB 27: AI assistant
 │
-├── fast_track/                     ← 8 trimmed notebooks (~9 h) — the shortcut path
+├── fast_track/                     ← 9 trimmed notebooks (~10 h) — the shortcut path
 │
 ├── quizzes/                        ← 6 multiple-choice quizzes, one per module
 │
