@@ -138,3 +138,43 @@ These were identified during review but **not changed** in this pass — either 
 **After:** the navigation is internally consistent end-to-end and verified by the link-checker; the linear path and the fast-track both flow correctly; a handful of real correctness bugs (a `TypeError`, a version-dependent crash, a `ModuleNotFoundError` that killed two fast-track notebooks, no-op exercise solutions) are fixed and verified; and several of the densest explanations now carry the same kind of beginner-friendly notes the best notebooks already used. The genuine content gap in the fast-track (dictionaries) is closed, and a premature-`def` jump in NB 2 is now scaffolded.
 
 **Net:** the course was already in the top tier on *content and instructional design*; it was being held back by a broken *navigation and consistency layer* plus a few latent bugs. With those resolved, it now delivers the clean, trustworthy, front-to-back beginner journey its content always deserved. The remaining items in §5 are refinements, not blockers.
+
+---
+
+## 7. Second consistency pass (final review)
+
+A follow-up pass built an authoritative map of **every** `Notebook N` / `NB N` reference in all 63 notebooks + READMEs and cross-checked each against the canonical topic for that number. It also executed the notebooks whose dependencies are installable, to prove the edits don't break execution.
+
+### 7.1 A real course-wide bug found and fixed: `llm_providers` import
+The biggest find of the second pass. The AI notebooks import the shared helper with a bare `from llm_providers import …`, but `llm_providers.py` lives **only at the repo root**. JupyterLab starts a kernel with its working directory set to the *notebook's own folder*, and the project's own `run_all_notebooks.py` runs each notebook with `cwd = notebook's folder` too. Verified empirically: `from llm_providers import MockLLM` raises **`ModuleNotFoundError` from `05_ai_engineering/`**. So a learner opening NB 18–19 or appendices A1–A3 directly in JupyterLab would hit a hard import error on the first AI cell. (The recorded "pass" snapshot was produced with the repo root forced onto the path.)
+
+**Fix:** added a 3-line, cwd-independent bootstrap (walks up from the working directory to find `llm_providers.py` and puts it on `sys.path`) to the five notebooks that import it — `18_ai_workflows`, `19_embeddings_retrieval`, `A1_llm_providers_guide`, `A2_vector_stores_survey`, `A3_rag_and_agent_frameworks` — the same fix already applied to the two fast-track AI notebooks. **Verified:** NB 18 now runs 18 cells cleanly *from its own folder*, and the import resolves from a subfolder cwd. (NB 28 only *mentions* `llm_providers` in prose — no change needed.)
+
+### 7.2 Remaining stale cross-references (missed by pass 1)
+- **NB 12 (matplotlib)** — two more "the NB10 capstone" references (cells 0 and 62) → **NB 26** (pass 1 fixed only the other two).
+- **NB 15 (sklearn)** — "The LLM-based approach in **NB11**" → **NB 18** (old layout had AI-workflows at 11).
+- **Fast-track `09_embeddings_and_rag`** — five references to "Notebook 11"/"NB11" for the keyword-RAG (which is fast-track notebook 8), plus a prerequisite line citing canonical `NB 5 / 11 / 15` (and NumPy, which the fast track skips) → corrected to fast-track numbers.
+- **Fast-track NB 04 & NB 07** — inline "NB 11 / NB 15" canonical references that don't exist in the fast track → reworded.
+
+After this, an authoritative scan reports **0** old-meaning collisions in the main course and **0** canonical-number references in the fast-track.
+
+### 7.3 Structural consistency
+- **00b estimator omitted NB 6 (Classes).** The interactive time estimator's `TIMES_MIN` table and default "complete beginner" path skipped NB 6 entirely (and the diagram said "NB 01–05") — the core Classes notebook was invisible to the planning tool. Added `"06"` to both, fixed the diagram to "NB 01–06" (estimator now totals 26 notebooks).
+- **NB 6** lacked the `> **Module:** … · **Estimated time:** … · **Difficulty:** …` subtitle every sibling (NB 1–5, 7) has — added.
+- **Modules 8–9 (NB 28–36)** had no subtitle line at all — added one to each (Module label + time + difficulty), so all 34 numbered notebooks now share the header format.
+- **NB 26** module label "Capstone Project" → "Capstones" (matches NB 27 and the module name).
+- **Fast-track titles** unified to "Notebook N (fast track) — …" across all nine.
+
+### 7.4 Content improvements
+- **NB 32** — named the *one-hot* target in the cross-entropy formula and added a one-line definition of `d_k` under the attention table (the lone undefined symbol on the most intimidating page).
+- **NB 34** — translated the stray German "**Faustregel:**" → "**Rule of thumb:**".
+- **Quizzes 2 & 3** — added a fast-track scope note (they test HTTP/SQL/Pydantic and NumPy/stats that the fast track skips).
+
+### 7.5 Verification performed this pass
+- Reference checker: **green** (all NB references resolve).
+- **63 / 63** notebooks parse; **769** code cells checked, **0** syntax errors.
+- Executed 14 notebooks end-to-end with the available libraries (foundations NB 2–6, NB 7, NB 10–12, NB 20, NB 18, fast-track 03/04/08) — **all clean**, including the previously-broken fast-track and AI-notebook imports. (DS/ML notebooks needing scikit-learn/statsmodels couldn't be executed in the sandbox for lack of disk space; their edited cells were verified by syntax check and, for the behaviour-sensitive ones, by standalone equivalence tests.)
+- Confirmed every edit is persisted on disk in the course folder.
+
+### 7.6 Items still open after this pass
+Genuinely-future refinements (unchanged from §5, minus what was completed above): the Module 2 ↔ 3 pandas-ordering question; cross-document time-estimate reconciliation (README ~35 h vs 00b ~68 h); Module 8↔5 / 9↔5 overlap consolidation (NB 30↔33, NB 35↔36); NB 36's brittle free-text ReAct parser vs structured tool-calling; and the inline-vs-imported `MockLLM`/`MockEmbedder` duplication note in NB 19/21. None blocks a learner.
