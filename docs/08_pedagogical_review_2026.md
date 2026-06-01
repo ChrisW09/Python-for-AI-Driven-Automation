@@ -9,7 +9,7 @@ Editing was **surgical and in-place**: no notebooks were renumbered on disk, no 
 ## 1. Major structural changes
 
 ### 1.1 Course-wide numbering & navigation repair (the headline fix)
-The course had been migrated from an old flat **19-notebook** layout to the current **9-module** layout (files `NB 01–36`), but the *content inside* many notebooks still carried the **old numbers** in their titles, module labels, prerequisites, cross-references, and "Next step" pointers. The link-checker didn't catch it because it only verifies that an `NB n` token resolves to *some* file — not that the number is the *right* one, and it ignores spelled-out "Notebook n" titles entirely.
+The course had been migrated from an old flat **19-notebook** layout to the current **9-module** layout (files `01`–`36`), but the *content inside* many notebooks still carried the **old numbers** in their titles, module labels, prerequisites, cross-references, and "Next step" pointers. The link-checker didn't catch it because it only verifies that an `NB n` token resolves to *some* file — not that the number is the *right* one, and it ignores spelled-out "Notebook n" titles entirely.
 
 Concretely, before this pass:
 
