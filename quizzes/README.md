@@ -4,7 +4,7 @@ Six short multiple-choice quizzes, one per module. Each one is **five questions,
 
 | Quiz | Module | File |
 |---|---|---|
-| 1 | Foundations (NB 1–5) | [`quiz_01_foundations.ipynb`](./quiz_01_foundations.ipynb) |
+| 1 | Foundations (NB 1–6) | [`quiz_01_foundations.ipynb`](./quiz_01_foundations.ipynb) |
 | 2 | Real-world I/O (NB 7–8) | [`quiz_02_real_world_io.ipynb`](./quiz_02_real_world_io.ipynb) |
 | 3 | Data Science (NB 10–14) | [`quiz_03_data_science.ipynb`](./quiz_03_data_science.ipynb) |
 | 4 | Machine Learning (NB 15–17) | [`quiz_04_machine_learning.ipynb`](./quiz_04_machine_learning.ipynb) |

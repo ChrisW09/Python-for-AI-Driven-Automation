@@ -1,5 +1,5 @@
 # Python for AI-Driven Automation and Business Data Science
-## *7 modules, 26 notebooks (+ 11 optional appendices), end-to-end*
+## *9 modules, 35 notebooks (+ 11 optional appendices), end-to-end*
 
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation** — Python fluency, business data science, machine learning, AI engineering, and production wiring, all in one curriculum.
 
@@ -14,7 +14,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 | Folder | What |
 |---|---|
-| `00_onboarding/` … `07_capstones/` | **The full course.** 26 main notebooks + 11 optional appendices, organised by topic. |
+| `00_onboarding/` … `09_building_ai_pocs/` | **The full course.** 35 main notebooks + 11 optional appendices, organised by topic. |
 | `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
 | `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
@@ -52,6 +52,12 @@ Packaging notebooks into projects and scheduling. *(Configuration & secrets are 
 ### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 26–27)*
 Two end-to-end projects — analytical and engineering.
 
+### 🏢 [Module 8 — Business AI in Practice](./08_business_ai/) *(NB 28–31)*
+Digital transformation context, architecture patterns, AI-assisted software development, BPM integration + governance + POC→MVP→Production. The seminar half of the course — pairs the technical fluency of Modules 1–7 with the judgement to deploy it inside organisations.
+
+### 🛠️ [Module 9 — Building AI POCs (hands-on)](./09_building_ai_pocs/) *(NB 32–36)*
+The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + Copilot setup and vibe coding, three POCs of growing complexity (Streamlit → 3-tier → ML pipeline), RAG pipeline deep dive with a RAG-over-PDF POC, vector databases + agentic AI with a Chroma semantic-search POC and a ReAct command-line agent. Every notebook ends with a paste-ready Copilot Agent Mode prompt — designed so the whole course can be taught from the notebooks alone.
+
 > 💡 **About the numbering gaps.** NB 09 and 25 are intentionally absent — Pydantic validation was folded into NB 8, and config & secrets into NB 23. NB 6 (originally a documented gap for "extra Python practice") is now **Classes & OOP** — added in the 2026 pedagogy pass so every later notebook can lean on real OOP fluency.
 
 ---
@@ -70,7 +76,7 @@ Two end-to-end projects — analytical and engineering.
 
 ## Optional appendix track — 11 advanced notebooks
 
-A second tier of optional, deep-dive notebooks for readers who want to go beyond the 26-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 35-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
 
 | Module | Appendix | What it covers |
 |---|---|---|
@@ -117,7 +123,7 @@ Every notebook follows the same six-section template:
 
 That's **~8 exercises per notebook on average** — and **180+ across the course**, every single one with a worked solution and an explanation of *why* it works.
 
-The six visual markers (💡 tip, 🎯 intuition, ⚠️ pitfall, 🧪 exercise, 🎁 bonus, 🐞 debug-me) are road signs you'll see throughout. They are explained in the onboarding notebook.
+The nine visual markers (💡 tip, 🎯 intuition, ⚠️ pitfall, 🧪 exercise, 🎁 bonus, 🐞 debug-me, 🧠 mental-model, 🔭 forward-reference, ⭐/⭐⭐/⭐⭐⭐ difficulty) are road signs you'll see throughout. They are explained in the onboarding notebook.
 
 ---
 
@@ -233,6 +239,8 @@ export GOOGLE_API_KEY=...
 ├── 05_ai_engineering/      ← NB 18–22: prompts, RAG, agents, docs, AI evaluation  (+ A1–A3 provider / vector-store / framework appendices)
 ├── 06_production/          ← NB 23–24: packaging, scheduling  (NB 25 folded into NB 23)
 ├── 07_capstones/           ← NB 26: analytics  +  NB 27: AI assistant
+├── 08_business_ai/         ← NB 28–31: digital transformation, architecture, AI-assisted dev, BPM + governance + cases
+├── 09_building_ai_pocs/    ← NB 32–36: LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents
 │
 ├── fast_track/                     ← 9 trimmed notebooks (~10 h) — the shortcut path
 │
