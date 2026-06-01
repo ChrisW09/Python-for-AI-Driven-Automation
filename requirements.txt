@@ -1,7 +1,7 @@
 # Core libraries used across the course
 numpy>=1.24
 pandas>=2.0
-matplotlib>=3.7
+matplotlib>=3.9        # 3.9+ required: notebooks use ax.boxplot(tick_labels=...)
 scikit-learn>=1.3
 jupyterlab>=4.0
 
@@ -47,7 +47,7 @@ pytest>=8.0
 # prophet>=1.1
 # neuralprophet>=0.8
 # sktime>=0.30
-# u8darts>=0.30
+# darts>=0.30                       # was published as u8darts; current package name is `darts`
 # timesfm>=1.0                      # Google's foundation forecaster
 # chronos-forecasting>=1.2          # Amazon's foundation forecaster
 # tabpfn-time-series>=0.1           # PriorLabs forecasting model

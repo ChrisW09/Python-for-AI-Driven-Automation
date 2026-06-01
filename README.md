@@ -26,7 +26,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 ---
 
-## The 7 modules
+## The modules
 
 ### 📍 [Module 0 — Onboarding](./00_onboarding/) *(start here)*
 *Master onboarding notebook + environment check.* 20 minutes.
@@ -100,7 +100,7 @@ Match yourself to the path that fits:
 
 | You are | You'll touch | Time |
 |---|---|---|
-| **Complete beginner** | All 7 modules in order | ~35 h |
+| **Complete beginner** | All core modules (1–7) in order | ~35 h |
 | **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 7 | ~20 h |
 | **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 7 | ~28 h |
 | **ML practitioner** | Modules 0, 5, 6, 7 | ~15 h |
