@@ -30,7 +30,7 @@ NB_GLOBS = ["**/*.ipynb"]
 # fast_track/ uses its own re-numbering (1-8) that diverges from the canonical
 # course; cross-references in any file should resolve against the canonical
 # numbering, so we don't let fast_track filenames satisfy "NB N" references.
-EXCLUDED_DIR_NAMES = {"previous_versions", "fast_track", ".ipynb_checkpoints", "__pycache__"}
+EXCLUDED_DIR_NAMES = {"previous_versions", "fast_track", "docs", ".ipynb_checkpoints", "__pycache__"}
 
 
 def is_excluded(path: Path) -> bool:

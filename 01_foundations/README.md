@@ -5,7 +5,7 @@
 **Estimated time:** 9–12 hours of focused study.
 **Prerequisites:** None — Notebook 1 starts from zero.
 
-> 🧭 **Where this fits in the AI-automation picture.** This is the skill-building base of the course's spiral: you saw the destination in `00c` (and the *why* in NB 28) — these six notebooks are the Python you need before any of it. Every later module (pandas, ML, RAG, agents, the POCs) leans on what you build here.
+> 🧭 **Where this fits in the AI-automation picture.** This is the skill-building base of the course's spiral: you saw the destination in `00c` (and the *why* in NB 26) — these six notebooks are the Python you need before any of it. Every later module (pandas, ML, RAG, agents, the POCs) leans on what you build here.
 
 ```
    types  ──►  control  ──►  lists  ──►  dicts  ──►  functions  ──►  classes
@@ -41,4 +41,4 @@ You should be able to read a 50-line Python script and explain what each block d
 
 ## Where next
 
-→ **Module 2 — Real-world I/O** (`../02_real_world_io/07_apis_and_http.ipynb`)
+→ **Module 2 — Real-world I/O** (`../03_real_world_io/12_apis_and_http.ipynb`)

@@ -3,18 +3,18 @@
 **Goal:** Take the code you've been writing in notebooks and graduate it into a packaged, scheduled, observable, configurable Python project that another engineer can pick up.
 
 **Estimated time:** 5–7 hours.
-**Prerequisites:** Module 1 (functions). Helpful: NB 7 (HTTP), NB 21 (the toolkit we'll package).
+**Prerequisites:** Module 1 (functions). Helpful: NB 12 (HTTP), NB 20 (the toolkit we'll package).
 
 ```
                   ┌─────────────────────────────────────┐
                   │  src/ layout + pyproject.toml +      │
                   │  pytest + CLI entry points +         │
                   │  config & secrets (folded in)        │
-                  │            (NB 23)                   │
+                  │            (NB 22)                   │
                   └─────────────────┬───────────────────┘
                                     │
                                     ▼
-                              NB 24
+                              NB 23
                               Scheduling
                               cron / systemd /
                               GitHub Actions /
@@ -25,8 +25,8 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 23 | `23_from_notebook_to_project.ipynb` | A packaged, tested, importable `costkit` library — including YAML configs, dotenv, and dev/staging/prod patterns (originally planned as a standalone NB 25; folded in here). |
-| 24 | `24_scheduling_orchestration.ipynb` | Production-shape automation wrapper with retries + alerts |
+| 23 | `22_from_notebook_to_project.ipynb` | A packaged, tested, importable `costkit` library — including YAML configs, dotenv, and dev/staging/prod patterns (originally planned as a standalone NB 25; folded in here). |
+| 24 | `23_scheduling_orchestration.ipynb` | Production-shape automation wrapper with retries + alerts |
 
 ## What "production-ready" actually means here
 
@@ -41,4 +41,4 @@ You aren't deploying to a Kubernetes cluster in this course. You *are* learning 
 
 ## Where next
 
-→ **Module 7 — Capstones** (`../07_capstones/26_capstone_analytics.ipynb`)
+→ **Module 7 — Capstones** (`../07_capstones/24_capstone_analytics.ipynb`)

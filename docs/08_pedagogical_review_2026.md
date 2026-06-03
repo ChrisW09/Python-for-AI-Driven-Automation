@@ -237,3 +237,18 @@ A few **bonus** solutions use `pd.read_csv("data/…")`, which resolves only whe
 Reference checker green; 64 notebooks parse; 773 code cells, 0 syntax errors; 53 notebooks execute end-to-end with zero runtime errors; all seven solution fixes re-verified by re-running both the notebook (kernel) and the solution blocks; all edits confirmed on disk.
 
 **Bottom line:** after this pass the course is not just *structurally* and *referentially* clean (passes 1–8) but **runtime-clean and solution-correct** — every notebook on the executable path runs end-to-end, and every worked solution runs in the context a learner meets it in.
+
+---
+
+## 10. Open-items pass (consolidation & framing refinements)
+
+The remaining items logged as "future work" in §5–§9, now addressed:
+
+- **NB 30 ↔ NB 33 overlap (signposted + de-duplicated).** On inspection the two are mostly *complementary*, not duplicated — NB 30 §3 teaches *general* code-prompting patterns; NB 33 §5 teaches *app-scaffolding* prompt structure (stack, files, schemas, demo data). The genuine duplication was the near-identical "team prompt-style guide" stretch in both. Fixes: NB 33 §5 now back-references NB 30 §3 ("there you learned *what* makes a good prompt; here you apply it"); NB 33's Stretch B is reframed as an *Agent-Mode addendum* that builds on NB 30's guide rather than repeating it; and NB 30 §6 now points forward to Module 9 as where the workflow is *practised* ("this notebook is the judgement; Module 9 is the practice").
+- **NB 36 ReAct parser (contradiction resolved).** The POC 2 prompt claimed a regex parser of `Thought/Action/Action Input` is "reliable," while the notebook's own Debug-me solution correctly calls free-text regex parsing "brittle" and names structured tool-calling as the fix. The POC bullet now states this honestly: regex *can* drive the loop, but the model deviates in practice, so **production agents use the structured tool-calling API from §8** — the free-text version is kept only because it makes every *Thought*/*Action* visible, which is the point of a teaching POC. This reconciles §8, the POC, and the Debug-me lesson.
+- **NB 19 / NB 21 inline-vs-imported mocks (clarified).** Both vendor a tiny `MockLLM` inline while other notebooks import it from `llm_providers.py`. Added a one-line note in each explaining the inline copy is "the same idea as `llm_providers.py`'s (NB 18), vendored for self-containment" — and fixed a stale `from NB11` comment in NB 19 (the mock pattern comes from NB 18, not 11).
+- **NB 35 ↔ NB 36 vector-store landscape (already fine — left as-is).** Re-checked: NB 35 §6 is a brief, use-case-mapped 5-bullet list that already says "*(full landscape covered in NB 36)*", and NB 36 §3 is the canonical 6-row table + selection heuristic. That is a sensible split (pick-a-store-now vs the full comparison), not a true duplication, so it was left unchanged.
+
+**Verification (open-items pass):** reference checker green; 64 notebooks parse, 0 syntax errors; the five edited notebooks (NB 19, 21, 30, 33, 36) all execute cleanly; edits confirmed on disk.
+
+**Genuinely remaining (a deliberate design decision, not a defect):** whether to physically reorder pandas (NB 10) ahead of Module 2 to remove the forward-reference (currently handled with 🔭 notes). That's an author call about file numbering, not a correctness or clarity gap — everything else logged across the ten passes is now resolved.

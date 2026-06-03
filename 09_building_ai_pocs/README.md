@@ -11,11 +11,11 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
         ┌──────────────────────────────────────────────────────────────────┐
         │  Module 9 — Building AI POCs                                     │
         │                                                                    │
-        │  NB 32  LLM Fundamentals (Transformer, tokens, parameters)        │
-        │  NB 33  From Setup to First POC (VS Code, Copilot, vibe coding)   │
-        │  NB 34  Three POCs (Streamlit → 3-tier → ML pipeline)             │
-        │  NB 35  RAG Pipeline Deep Dive (chunking, ANN, RAG-over-PDF POC)  │
-        │  NB 36  Vector DBs + Agentic AI (tool calling, ReAct, two POCs)   │
+        │  NB 30  LLM Fundamentals (Transformer, tokens, parameters)        │
+        │  NB 31  From Setup to First POC (VS Code, Copilot, vibe coding)   │
+        │  NB 32  Three POCs (Streamlit → 3-tier → ML pipeline)             │
+        │  NB 33  RAG Pipeline Deep Dive (chunking, ANN, RAG-over-PDF POC)  │
+        │  NB 34  Vector DBs + Agentic AI (tool calling, ReAct, two POCs)   │
         └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -23,11 +23,11 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
 
 | # | Notebook | Slide source |
 |---|---|---|
-| 32 | `32_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
-| 33 | `33_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
-| 34 | `34_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
-| 35 | `35_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
-| 36 | `36_vector_db_and_agentic_ai.ipynb` | "Building with LLMs" Parts 4–5 |
+| 32 | `30_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
+| 33 | `31_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
+| 34 | `32_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
+| 35 | `33_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
+| 36 | `34_vector_db_and_agentic_ai.ipynb` | "Building with LLMs" Parts 4–5 |
 
 ## How this module is different from Module 5
 
@@ -40,11 +40,11 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
 
 ## Recommended teaching order
 
-1. NB 32 — Transformer / LLM theory (1 lecture)
-2. NB 33 — Setup + first Streamlit POC (1 lecture, with live setup)
-3. NB 34 — Three POCs progression (2 lectures — one per architecture step)
-4. NB 35 — RAG deep dive + PDF POC (1 lecture + lab)
-5. NB 36 — Vector DBs + Agentic AI + two POCs (1 lecture + lab)
+1. NB 30 — Transformer / LLM theory (1 lecture)
+2. NB 31 — Setup + first Streamlit POC (1 lecture, with live setup)
+3. NB 32 — Three POCs progression (2 lectures — one per architecture step)
+4. NB 33 — RAG deep dive + PDF POC (1 lecture + lab)
+5. NB 34 — Vector DBs + Agentic AI + two POCs (1 lecture + lab)
 
 Each notebook ends with a self-contained Copilot Agent Mode prompt that builds a working prototype in VS Code, so the lab session is *paste the prompt → review the generated code → iterate*.
 

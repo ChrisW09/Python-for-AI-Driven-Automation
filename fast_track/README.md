@@ -34,7 +34,7 @@ Compared to the full course, these are gone:
 
 - **🧠 Stretch exercises A and B** (the very-deep problems) — the fast track keeps Stretch C and D, which are still notably harder than the Practice ones but realistic for the time budget.
 - **🎁 Bonus mini-project** at the end of every notebook.
-- **`04_dictionaries_advanced.ipynb`** — merged into the fast-track NB 03.
+- **`04_dictionaries_advanced.ipynb`** — merged into the fast-track NB 3.
 - **APIs / HTTP / SQL** — these matter once you have a real I/O task; defer them.
 - **NumPy / matplotlib / statistics / time series** — pandas covers ~80 % of what beginners need to read code.
 - **Model evaluation, feature engineering, tools & agents, document processing, AI evaluation, production wiring** — defer these to the full course when you need the depth.
@@ -62,7 +62,7 @@ Same dependencies as the full course:
 pip install -r ../requirements.txt
 ```
 
-You don't need anything extra — the `llm_providers.py` shim at the repo root means the AI notebooks (NB 7 and 8) run offline by default with the built-in `MockLLM`.
+You don't need anything extra — the `llm_providers.py` shim at the repo root means the AI notebooks (NB 12 and 8) run offline by default with the built-in `MockLLM`.
 
 ---
 
@@ -75,10 +75,10 @@ fast_track/                    canonical full course
   03_lists_and_dicts    ←  01_foundations/03_lists_data_structures
   04_functions          ←  01_foundations/05_functions_modules
   05_classes_basics     ←  01_foundations/06_classes_and_oop
-  06_pandas_fundamentals←  03_data_science/10_pandas_fundamentals
-  07_sklearn_basics     ←  04_machine_learning/15_sklearn_basics
-  08_ai_workflows       ←  05_ai_engineering/18_ai_workflows
-  09_embeddings_and_rag ←  05_ai_engineering/19_embeddings_retrieval
+  06_pandas_fundamentals←  02_data_science/07_pandas_fundamentals
+  07_sklearn_basics     ←  04_machine_learning/14_sklearn_basics
+  08_ai_workflows       ←  05_ai_engineering/17_ai_workflows
+  09_embeddings_and_rag ←  05_ai_engineering/18_embeddings_retrieval
 ```
 
-The fast-track notebooks are flat-numbered 1–9 deliberately — when there are only nine things in front of you, finishing feels achievable. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 11 with NumPy"*), so you can always follow a thread back to the depth notebook.
+The fast-track notebooks are flat-numbered 1–9 deliberately — when there are only nine things in front of you, finishing feels achievable. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 8 with NumPy"*), so you can always follow a thread back to the depth notebook.

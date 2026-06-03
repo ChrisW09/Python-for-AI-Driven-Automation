@@ -35,31 +35,31 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 ### 🐍 [Module 1 — Foundations](./01_foundations/) *(NB 1–6)*
 Python you can read without friction. Variables, control flow, lists, dicts, functions.
 
-### 🔌 [Module 2 — Real-world I/O](./02_real_world_io/) *(NB 7–8)*
-HTTP requests, SQL, Pydantic validation. Pull real data from anywhere; refuse bad data at the boundary. *(The originally planned NB 9 on Pydantic was folded into NB 8.)*
+### 🔌 [Module 2 — Real-world I/O](./03_real_world_io/) *(NB 12–13)*
+HTTP requests, SQL, Pydantic validation. Pull real data from anywhere; refuse bad data at the boundary. *(The originally planned NB 9 on Pydantic was folded into NB 13.)*
 
-### 📊 [Module 3 — Data Science](./03_data_science/) *(NB 10–14)*
+### 📊 [Module 3 — Data Science](./02_data_science/) *(NB 7–11)*
 pandas, NumPy, matplotlib, **statistics**, time series. The analytical core.
 
-### 🤖 [Module 4 — Machine Learning](./04_machine_learning/) *(NB 15–17)*
+### 🤖 [Module 4 — Machine Learning](./04_machine_learning/) *(NB 14–16)*
 scikit-learn workflow + **honest model evaluation** + **feature engineering**.
 
-### 🧠 [Module 5 — AI Engineering](./05_ai_engineering/) *(NB 18–22)*
+### 🧠 [Module 5 — AI Engineering](./05_ai_engineering/) *(NB 17–21)*
 LLM prompts, RAG, agents, document processing, **AI evaluation & observability**.
 
-### 🚀 [Module 6 — Production](./06_production/) *(NB 23–24)*
-Packaging notebooks into projects and scheduling. *(Configuration & secrets are covered inline in NB 23; the originally planned standalone NB 25 was folded into it.)*
+### 🚀 [Module 6 — Production](./06_production/) *(NB 22–23)*
+Packaging notebooks into projects and scheduling. *(Configuration & secrets are covered inline in NB 22; the originally planned standalone NB 25 was folded into it.)*
 
-### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 26–27)*
+### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 24–25)*
 Two end-to-end projects — analytical and engineering.
 
-### 🏢 [Module 8 — Business AI in Practice](./08_business_ai/) *(NB 28–31)*
+### 🏢 [Module 8 — Business AI in Practice](./08_business_ai/) *(NB 26–29)*
 Digital transformation context, architecture patterns, AI-assisted software development, BPM integration + governance + POC→MVP→Production. The seminar half of the course — pairs the technical fluency of Modules 1–7 with the judgement to deploy it inside organisations.
 
-### 🛠️ [Module 9 — Building AI POCs (hands-on)](./09_building_ai_pocs/) *(NB 32–36)*
+### 🛠️ [Module 9 — Building AI POCs (hands-on)](./09_building_ai_pocs/) *(NB 30–34)*
 The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + Copilot setup and vibe coding, three POCs of growing complexity (Streamlit → 3-tier → ML pipeline), RAG pipeline deep dive with a RAG-over-PDF POC, vector databases + agentic AI with a Chroma semantic-search POC and a ReAct command-line agent. Every notebook ends with a paste-ready Copilot Agent Mode prompt — designed so the whole course can be taught from the notebooks alone.
 
-> 💡 **About the numbering gaps.** NB 09 and 25 are intentionally absent — Pydantic validation was folded into NB 8, and config & secrets into NB 23. NB 6 (originally a documented gap for "extra Python practice") is now **Classes & OOP** — added in the 2026 pedagogy pass so every later notebook can lean on real OOP fluency.
+> 💡 **About the numbering gaps.** NB 09 and 25 are intentionally absent — Pydantic validation was folded into NB 13, and config & secrets into NB 22. NB 6 (originally a documented gap for "extra Python practice") is now **Classes & OOP** — added in the 2026 pedagogy pass so every later notebook can lean on real OOP fluency.
 
 ---
 
@@ -67,11 +67,11 @@ The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + 
 
 | # | Notebook | What it teaches |
 |---|---|---|
-| **13** | `13_statistics_basics.ipynb` | Confidence intervals, t-tests, Cohen's *d*, sample-size planning, A/B-test reporting that survives a stakeholder review. |
-| **16** | `16_model_evaluation.ipynb` | Confusion matrices in cost units, threshold tuning, ROC/PR curves, **calibration**, learning curves. |
-| **17** | `17_feature_engineering.ipynb` | Encoding strategies, scaling, datetime features, **target leakage**, feature selection, custom transformers. |
-| **22** | `22_ai_evaluation_observability.ipynb` | Golden datasets, LLM-as-judge, tracing, cost dashboards, A/B testing prompts, regression detection. |
-| **27** | `27_capstone_ai_assistant.ipynb` | An end-to-end AI feature combining everything from Modules 5 + 6. |
+| **13** | `10_statistics_basics.ipynb` | Confidence intervals, t-tests, Cohen's *d*, sample-size planning, A/B-test reporting that survives a stakeholder review. |
+| **16** | `15_model_evaluation.ipynb` | Confusion matrices in cost units, threshold tuning, ROC/PR curves, **calibration**, learning curves. |
+| **17** | `16_feature_engineering.ipynb` | Encoding strategies, scaling, datetime features, **target leakage**, feature selection, custom transformers. |
+| **22** | `21_ai_evaluation_observability.ipynb` | Golden datasets, LLM-as-judge, tracing, cost dashboards, A/B testing prompts, regression detection. |
+| **27** | `25_capstone_ai_assistant.ipynb` | An end-to-end AI feature combining everything from Modules 5 + 6. |
 
 ---
 
@@ -163,8 +163,8 @@ Tested with Python 3.10+. Module 0 includes an environment-check cell.
 
 Six smaller artefacts along the way (KPI snapshot, ETL pipeline, SQL report, forecast, inbox triage, scheduled job) **plus two big capstones**:
 
-- 🏆 **Capstone A — AI Support-Bot Analytics** *(NB 26)*: 5 channels × 12 months → 2×2 dashboard → Simpson's-paradox demo → executive summary.
-- 🏆 **Capstone B — AI Customer-Feedback Assistant** *(NB 27)*: classification + validation + RAG + scheduled orchestration + cost dashboard + eval gate.
+- 🏆 **Capstone A — AI Support-Bot Analytics** *(NB 24)*: 5 channels × 12 months → 2×2 dashboard → Simpson's-paradox demo → executive summary.
+- 🏆 **Capstone B — AI Customer-Feedback Assistant** *(NB 25)*: classification + validation + RAG + scheduled orchestration + cost dashboard + eval gate.
 
 You can talk through either of these as "a project I built" in an interview.
 
@@ -187,8 +187,8 @@ A few principles that guided every notebook:
 So you're not surprised later:
 
 - ❌ Deep learning from scratch (PyTorch / TF training loops). You'll *use* pre-trained models — which is what most working AI applications need.
-- ❌ Vendor-specific cloud deployment (AWS / GCP / Azure). NB 24 teaches the *patterns* of scheduling — without committing to one platform.
-- ❌ Vector-database deep dive. NB 19 implements the underlying retrieval logic and points you at Qdrant / Weaviate / Pinecone for the production scale-up.
+- ❌ Vendor-specific cloud deployment (AWS / GCP / Azure). NB 23 teaches the *patterns* of scheduling — without committing to one platform.
+- ❌ Vector-database deep dive. NB 18 implements the underlying retrieval logic and points you at Qdrant / Weaviate / Pinecone for the production scale-up.
 
 These are conscious trade-offs.
 
@@ -196,7 +196,7 @@ These are conscious trade-offs.
 
 ## LLM providers — local and hosted, four options
 
-Notebooks 18 – 22 and 27 can be run **entirely offline** with the built-in `MockLLM`. When you're ready for real intelligence, swap one line. The course supports four providers through a unified interface in [`llm_providers.py`](./llm_providers.py):
+Notebooks 17 – 21 and 27 can be run **entirely offline** with the built-in `MockLLM`. When you're ready for real intelligence, swap one line. The course supports four providers through a unified interface in [`llm_providers.py`](./llm_providers.py):
 
 | Provider | Class | When |
 |---|---|---|
@@ -234,14 +234,14 @@ export GOOGLE_API_KEY=...
 │   └── 00b_course_overview.ipynb
 │
 ├── 01_foundations/         ← NB 1–6: Python basics, control, lists, dicts, functions, classes & OOP
-├── 02_real_world_io/       ← NB 7–8: HTTP, SQL  (NB 9 was folded into NB 8)
-├── 03_data_science/        ← NB 10–14: pandas, NumPy, plots, stats, time series  (+ A1–A4 forecasting appendices)
-├── 04_machine_learning/    ← NB 15–17: sklearn, evaluation, feature engineering  (+ A1–A4 PyTorch / TabPFN appendices)
-├── 05_ai_engineering/      ← NB 18–22: prompts, RAG, agents, docs, AI evaluation  (+ A1–A3 provider / vector-store / framework appendices)
-├── 06_production/          ← NB 23–24: packaging, scheduling  (NB 25 folded into NB 23)
-├── 07_capstones/           ← NB 26: analytics  +  NB 27: AI assistant
-├── 08_business_ai/         ← NB 28–31: digital transformation, architecture, AI-assisted dev, BPM + governance + cases
-├── 09_building_ai_pocs/    ← NB 32–36: LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents
+├── 03_real_world_io/       ← NB 12–13: HTTP, SQL  (NB 9 was folded into NB 13)
+├── 02_data_science/        ← NB 7–11: pandas, NumPy, plots, stats, time series  (+ A1–A4 forecasting appendices)
+├── 04_machine_learning/    ← NB 14–16: sklearn, evaluation, feature engineering  (+ A1–A4 PyTorch / TabPFN appendices)
+├── 05_ai_engineering/      ← NB 17–21: prompts, RAG, agents, docs, AI evaluation  (+ A1–A3 provider / vector-store / framework appendices)
+├── 06_production/          ← NB 22–23: packaging, scheduling  (NB 25 folded into NB 22)
+├── 07_capstones/           ← NB 24: analytics  +  NB 25: AI assistant
+├── 08_business_ai/         ← NB 26–29: digital transformation, architecture, AI-assisted dev, BPM + governance + cases
+├── 09_building_ai_pocs/    ← NB 30–34: LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents
 │
 ├── fast_track/                     ← 9 trimmed notebooks (~10 h) — the shortcut path
 │

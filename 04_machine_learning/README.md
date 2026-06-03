@@ -3,7 +3,7 @@
 **Goal:** Train your first models with scikit-learn, evaluate them *honestly*, and learn the feature-engineering moves that separate a 0.65 R² from a 0.85.
 
 **Estimated time:** 6–8 hours.
-**Prerequisites:** Modules 1–3. Especially NB 11 (NumPy shapes) and NB 13 (statistics — for the metrics).
+**Prerequisites:** Modules 1–3. Especially NB 8 (NumPy shapes) and NB 10 (statistics — for the metrics).
 
 ```
                   ┌────────────────────────────────────────┐
@@ -12,12 +12,12 @@
                                │
                 ┌──────────────┴──────────────┐
                 ▼                              ▼
-    NB 15 — sklearn basics            NB 16 — model evaluation
+    NB 14 — sklearn basics            NB 15 — model evaluation
     Churn prediction + NPS            Confusion matrix, ROC, calibration,
     regression end-to-end             cross-validation, learning curves
                 ▲
                 │
-          NB 17 — feature engineering
+          NB 16 — feature engineering
           Encoding, scaling, dates,
           target leakage, selection
 ```
@@ -26,9 +26,9 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 15 | `15_sklearn_basics.ipynb` | Customer-churn classifier + NPS regression |
-| 16 | `16_model_evaluation.ipynb` | Honest model-evaluation toolkit |
-| 17 | `17_feature_engineering.ipynb` | Real feature pipelines on tabular data |
+| 15 | `14_sklearn_basics.ipynb` | Customer-churn classifier + NPS regression |
+| 16 | `15_model_evaluation.ipynb` | Honest model-evaluation toolkit |
+| 17 | `16_feature_engineering.ipynb` | Real feature pipelines on tabular data |
 
 ## Optional appendices — PyTorch & tabular foundation models
 
@@ -51,4 +51,4 @@ A four-notebook deep-learning mini-track that picks up where scikit-learn stops:
 
 ## Where next
 
-→ **Module 5 — AI Engineering** (`../05_ai_engineering/18_ai_workflows.ipynb`)
+→ **Module 5 — AI Engineering** (`../05_ai_engineering/17_ai_workflows.ipynb`)
