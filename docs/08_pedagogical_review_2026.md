@@ -198,3 +198,42 @@ Genuinely-future refinements (unchanged from §5, minus what was completed above
 **On "can the business/architecture topics be taught well in Jupyter?"** The technical 80 % is ideal for notebooks; much of the "theory" is *better* in a notebook when it's code-backed (the `00c` demo, NB 32's tokeniser/attention, architecture-by-building in NB 34). The genuinely narrative parts (governance philosophy, change management, case-study discussion in Module 8) are only *adequately* served by Jupyter — there the notebook is effectively a formatted reader, best paired with the slide deck for live delivery, with the notebook holding the reflection/case exercises. That split is now reflected in how the spiral positions those notebooks (early, prerequisite-free reading) versus the code-heavy build notebooks (late, hands-on).
 
 **Verification (pass 3):** reference checker green; **64 notebooks** parse (the new `00c` included); **773 code cells, 0 syntax errors**; `00c` executes end-to-end from the onboarding folder; the 00b estimator runs and totals the 36-notebook spiral; all edits confirmed on disk.
+
+---
+
+## 9. Runtime + solution-correctness pass (deepest verification)
+
+This pass installed the full scientific stack (scikit-learn, statsmodels, scipy) and did two things prior passes could not: **executed the notebooks end-to-end against real libraries**, and **ran every exercise's *worked solution* in its in-notebook context**. Both surfaced issues that static checks and even `nbclient` miss — because worked solutions live in collapsed markdown blocks that a notebook run never executes.
+
+### 9.1 End-to-end execution — clean
+**53 notebooks executed top-to-bottom with the real stack** — the full core path (00c, Notebooks 1–24, 26, 27), Module 8 (28–31), Module 9 (32–36), the entire fast-track (00–09), the two runnable appendices (03/A1, 05/A1), and all six quizzes — **all pass with zero runtime errors**. (The ~9 remaining appendices need heavy optional libraries — torch, prophet, darts, faiss, chromadb, tabpfn — and are reference notebooks by design.) The seasonal-naive rewrite, the import bootstraps, and every earlier content fix were confirmed working in real execution.
+
+### 9.2 Seven broken worked-solutions found and fixed
+A custom checker ran each `<details>` solution block in the namespace state it would actually see (the code cells preceding it). It found **seven genuinely broken solutions**, now fixed and re-verified:
+
+| Notebook | Symptom | Root cause | Fix |
+|---|---|---|---|
+| **NB 16** | bonus `compare_models` — *all CV fits fail* | a later calibration cell did `X, y = load_breast_cancer(...)`, so the churn `prep` (selects columns by name) got an ndarray | restore `X, y` from the churn `df` in the solution |
+| **NB 19** | bonus `rag_answer_safe` — `KeyError: 'tech.mobile'` | Stretch C/D reassigned the global `DOCS` to a smaller corpus the retriever wasn't built on | renamed the exercises' local corpus to `KB` |
+| **NB 19** | Debug-me solution — `NameError: new_doc_text` | solution wasn't self-contained | define `new_doc_text` in the block |
+| **NB 20** | bonus `run_pandas_query` — `'dict' has no attribute 'append'` | Stretch exercises reassigned `TOOLS` (a schema *list*) to a name→function *dict* | renamed the exercises' dict to `TOOL_MAP` |
+| **NB 21** | Stretch solution — `'function' has no attribute '__func__'` | `MockLLM._extract` is a `@staticmethod`; `.__func__` is wrong | call `MockLLM._extract(text)` directly |
+| **NB 27** | two Stretch solutions — `NameError: send_slack_alert`; `FileNotFoundError` | a helper was never defined; a report dir was never created | add an offline `send_slack_alert` stub; `out_dir.mkdir(exist_ok=True)` |
+| **NB 08** | bonus CTE+JOIN — `no such table: channel_meta` | a later cell reset `conn` to a fresh in-memory DB, dropping the lookup table | re-register `channel_meta` on the current connection |
+| **fast-track 09** | same Debug-me `NameError` as NB 19 | trimmed copy carried the same gap | same self-containment fix |
+
+**The dominant root cause** — six of the seven — is the same: a **later cell silently reassigns a global** (`X`, `DOCS`, `TOOLS`, `conn`) that an earlier-defined helper or a later bonus/stretch solution still depends on. These only break when the notebook is run **top-to-bottom — exactly how a learner uses it** — and they were invisible to every prior check (and to the original course audits) because the solutions are markdown, never executed by a notebook run. Worked solutions are pedagogy-critical: a broken one either misleads the learner or hangs/crashes their kernel right when they're checking their own attempt.
+
+### 9.3 Confirmed *non*-issues (false positives the checker raised)
+- **NB 02 Debug-me** infinite loop — *intentional* puzzle code, with an explicit "don't run this" warning; the real solution is correct.
+- **NB 07** bonus `KeyError: 'city'` — the checker ran the `safe_fetch` *stub*; with the real implementation it works online (this is a live-API bonus).
+- **NB 23** `SyntaxError` — an illustrative `...`-elided CLI fragment, not standalone code.
+- **NB 36** `ModuleNotFoundError: faiss` — an optional-dependency demo, by design.
+
+### 9.4 One minor item left as-is
+A few **bonus** solutions use `pd.read_csv("data/…")`, which resolves only when Jupyter is launched from the repo root (the documented setup). Every notebook's **main** flow generates its data inline, so the course is cwd-robust where it matters; only these optional bonus reads assume the repo-root working directory. Left unchanged (a documentation convention, not a defect); noted here for completeness.
+
+### 9.5 Verification (pass 9)
+Reference checker green; 64 notebooks parse; 773 code cells, 0 syntax errors; 53 notebooks execute end-to-end with zero runtime errors; all seven solution fixes re-verified by re-running both the notebook (kernel) and the solution blocks; all edits confirmed on disk.
+
+**Bottom line:** after this pass the course is not just *structurally* and *referentially* clean (passes 1–8) but **runtime-clean and solution-correct** — every notebook on the executable path runs end-to-end, and every worked solution runs in the context a learner meets it in.
