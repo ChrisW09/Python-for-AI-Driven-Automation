@@ -50,6 +50,20 @@
   arr/.style={-{Stealth[length=2.6mm]}, line width=1pt, draw=hsbiblue},
 }
 
+% ---- Python code listings ----------------------------------
+\usepackage{listings}
+\lstdefinestyle{py}{%
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{hsbiblue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{cgreen!60!black},
+  showstringspaces=false,
+  columns=fullflexible,
+  breaklines=true,
+  aboveskip=3pt, belowskip=1pt,
+}
+
 \title{Architecture Patterns for AI Applications}
 \subtitle{Module 8 --- Business AI in Practice $\cdot$ Notebook 29}
 \author{Prof.\ Dr.\ Christoph Weisser}
@@ -127,6 +141,66 @@
   \begin{exampleblock}{The rule}
     Pick the architecture you'll have \emph{outgrown in 12 months}, not the one you'll \emph{need in 36}. Premature complexity kills more projects than migrations do.
   \end{exampleblock}
+\end{frame}
+
+% ============================================================
+\section{Frontend \& backend}
+% ============================================================
+\begin{frame}{Frontend $\leftrightarrow$ backend: the request/response cycle}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[tier, fill=hsbilight, text width=3.0cm] (fe) {\textbf{Frontend}\\ \scriptsize Streamlit (the UI)};
+    \node[tier, fill=hsbimid!30, text width=3.4cm, right=4.7cm of fe] (be) {\textbf{Backend}\\ \scriptsize FastAPI $+$ model $+$ DB};
+    \draw[arr] ([yshift=4.5mm]fe.east) -- ([yshift=4.5mm]be.west)
+      node[midway,above,font=\scriptsize]{\texttt{POST /api/predict} $+$ JSON};
+    \draw[arr] ([yshift=-4.5mm]be.west) -- ([yshift=-4.5mm]fe.east)
+      node[midway,below,font=\scriptsize]{\texttt{200 OK} $+$ JSON result};
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+    \item The frontend \emph{never} touches the database --- it only calls the backend over \textbf{HTTP}.
+    \item A request names an \textbf{endpoint} (URL path) $+$ a \textbf{verb} (\texttt{GET} read, \texttt{POST} send data) $+$ a JSON \textbf{body}.
+    \item The backend validates, runs the logic / model, and returns \textbf{JSON} $+$ a \textbf{status code} (\texttt{200} ok $\cdot$ \texttt{4xx} client error $\cdot$ \texttt{5xx} server error).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{The backend --- one FastAPI endpoint}
+\begin{lstlisting}[style=py]
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Customer(BaseModel):        # validates the incoming JSON
+    tenure: int
+    monthly_charges: float
+
+@app.post("/api/predict")         # endpoint path + HTTP verb
+def predict(c: Customer):
+    p = model.predict_proba([[c.tenure, c.monthly_charges]])[0][1]
+    return {"churn_probability": round(float(p), 3)}
+\end{lstlisting}
+  \vspace{-2pt}
+  {\footnotesize Pydantic \textbf{validates} the body automatically; returning a dict is serialised to JSON; interactive docs appear free at \texttt{/docs}.}
+\end{frame}
+
+\begin{frame}[fragile]{The frontend --- calling the backend}
+\begin{lstlisting}[style=py]
+import requests, streamlit as st
+
+resp = requests.post(
+    "http://localhost:8000/api/predict",
+    json={"tenure": 12, "monthly_charges": 79.9},
+    timeout=10,
+)
+resp.raise_for_status()           # turn 4xx / 5xx into an error
+st.metric("Churn risk", resp.json()["churn_probability"])
+\end{lstlisting}
+  \begin{itemize}
+    \item The frontend is just an \textbf{HTTP client} --- the same \texttt{requests} pattern as NB 7.
+    \item \textbf{CORS:} a browser blocks cross-origin calls --- add FastAPI's \texttt{CORSMiddleware} so the UI (port 8501) may call the API (port 8000).
+  \end{itemize}
+  {\footnotesize You build this end-to-end in \textbf{Notebook 34 (POC 2)} --- Streamlit $+$ FastAPI $+$ SQLite.}
 \end{frame}
 
 % ============================================================

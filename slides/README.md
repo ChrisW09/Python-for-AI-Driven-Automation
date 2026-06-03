@@ -10,7 +10,7 @@ Lecture decks in the HSBI house style (LaTeX Beamer, Madrid theme, 16:9).
 |---|---|---|
 | `00_course_overview` | Orientation: the big picture, structure, learning paths, how to study, what you'll build | Module 0 (onboarding) |
 | `28_digital_transformation` | Why AI now · tasks-not-jobs · maturity model · change strategies · adoption pitfalls | NB 28 |
-| `29_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · the ML pipeline · choosing the right size | NB 29 |
+| `29_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · **frontend↔backend interaction with FastAPI** (request/response cycle + code) · the ML pipeline · choosing the right size | NB 29 |
 | `30_ai_assisted_software_development` | IDEs · Git & pull requests · prompt patterns for code · the four failure modes · the 60-second review | NB 30 |
 | `31_bpm_governance_poc_mvp` | BPM lifecycle · RACI for AI · POC → MVP → Production · three case studies · the readiness checklist | NB 31 |
 | `32_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 32 |
