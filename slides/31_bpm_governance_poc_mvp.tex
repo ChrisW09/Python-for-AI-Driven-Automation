@@ -1,0 +1,131 @@
+% ============================================================
+% Lecture deck — Module 8 / Notebook 31
+% BPM Integration, Governance, POC -> MVP -> Production
+% HSBI house style (Prof. Dr. Christoph Weisser). Thin deck —
+% the notebook is the source of truth.
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+      \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}%
+    \end{beamercolorbox}%
+  }%
+}
+\AtBeginSection[]{%
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\title{BPM, Governance, and POC $\to$ MVP $\to$ Production}
+\subtitle{Module 8 --- Business AI in Practice $\cdot$ Notebook 31}
+\author{Prof.\ Dr.\ Christoph Weisser}
+\institute{HSBI}
+\date{Summer Semester 2026}
+
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ============================================================
+\section{BPM}
+% ============================================================
+\begin{frame}{Embedding AI in the BPM lifecycle}
+  \begin{block}{Name the phase before you scope the work}
+    The Business Process Management loop: \textbf{analyse} $\to$ \textbf{design} $\to$ \textbf{execute} $\to$ \textbf{monitor} $\to$ (back to analyse). An AI feature lands at \emph{one} of these phases.
+  \end{block}
+  \begin{exampleblock}{Tip}
+    When a stakeholder pitches an AI project, ask them to name the BPM phase. If they can't, the project isn't yet ready to scope --- it's still a wish, not a feature.
+  \end{exampleblock}
+\end{frame}
+
+% ============================================================
+\section{Governance}
+% ============================================================
+\begin{frame}{Governance --- a RACI for an AI initiative}
+  \begin{block}{RACI, plus the AI itself as a participant}
+    Responsible / Accountable / Consulted / Informed --- extended so the \emph{AI system} is a named actor.
+  \end{block}
+  \begin{itemize}
+    \item The AI is \textbf{R} (responsible) for an \emph{individual} decision --- but a human is always \textbf{A} (accountable). The AI cannot be blamed.
+    \item \textbf{Compliance is A} for the provider choice --- anything touching customer data has a compliance veto.
+    \item \textbf{Rollback is owned by the platform team}, not the ML team: ML decides \emph{whether} to revert; platform can actually \emph{do} it.
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\section{POC to Prod}
+% ============================================================
+\begin{frame}{POC $\to$ MVP $\to$ Production --- three projects, not three phases}
+  \small
+  \begin{center}
+  \begin{tabular}{lp{3.4cm}p{4.3cm}}
+    \toprule
+    \textbf{Phase} & \textbf{Goal} & \textbf{What ``done'' looks like} \\
+    \midrule
+    \textbf{POC}        & show the AI \emph{can} do the task at all & a demo on a curated dataset; a go / no-go \\
+    \textbf{MVP}        & validate that users \emph{will} use it & a small set of real users, in their real workflow \\
+    \textbf{Production} & it is the \emph{default} tool for the task & SLOs, on-call, runbooks, dashboards, change control \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \begin{alertblock}{The most common confusion}
+    Production is \emph{not} ``MVP, but more robust.'' It is MVP \emph{plus all the boring operational work} --- monitoring, rollback, cost control, support.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================
+\section{Cases}
+% ============================================================
+\begin{frame}{Three case studies --- what real initiatives look like}
+  \begin{itemize}
+    \item \textbf{Triage (shipped).} The classifier wasn't the hard part --- ticketing integration, queue routing, and the override UI were. The provider shim and the monitoring dashboard both paid off.
+    \item \textbf{Invoice processing (shipped).} The AI was \emph{30\,\%} of the project; ingestion, ERP integration, and human-review UI were the other 70\,\%. Trust grew from \emph{observation}; a rule layer caught hallucinated invoice numbers.
+    \item \textbf{Sales analytics (did \emph{not} ship).} A solution looking for a problem --- ``AI for sales analytics'' never produced a specific user story. \emph{Discovery is allowed to conclude ``don't build it.''}
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\section{Checklist}
+% ============================================================
+\begin{frame}{A one-page readiness checklist}
+  \small
+  \begin{block}{Ten questions a technical lead uses to say ``no'' constructively}
+    \begin{enumerate}
+      \item \textbf{User} --- who \emph{specifically} uses it?
+      \item \textbf{Task} --- which task does it absorb? (name it with a verb)
+      \item \textbf{BPM phase} --- analyse / design / execute / monitor?
+      \item \textbf{Pattern $\times$ stake} --- where does the task sit on the 2$\times$2 from Notebook 28?
+      \item \textbf{Baseline} --- how is the task done today, and how long does it take?
+      \item \textbf{Success metric} --- what number is measurably different in 8 weeks?
+      \item \textbf{Failure mode} --- what does a wrong answer look like, and who notices?
+      \item \textbf{Rollback} --- can you switch it off in 5 minutes?
+      \item \textbf{Cost model} --- per-call cost, and the implied monthly bill at full scale?
+      \item \textbf{RACI} --- who is A for runtime, compliance, and rollback?
+    \end{enumerate}
+  \end{block}
+  Full detail, the RACI table, and the three cases end-to-end are in \textbf{Notebook 31}.
+\end{frame}
+
+\end{document}

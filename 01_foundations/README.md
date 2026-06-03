@@ -5,6 +5,8 @@
 **Estimated time:** 9–12 hours of focused study.
 **Prerequisites:** None — Notebook 1 starts from zero.
 
+> 🧭 **Where this fits in the AI-automation picture.** This is the skill-building base of the course's spiral: you saw the destination in `00c` (and the *why* in NB 28) — these six notebooks are the Python you need before any of it. Every later module (pandas, ML, RAG, agents, the POCs) leans on what you build here.
+
 ```
    types  ──►  control  ──►  lists  ──►  dicts  ──►  functions  ──►  classes
    (NB 1)       (NB 2)      (NB 3)     (NB 4)      (NB 5)         (NB 6)

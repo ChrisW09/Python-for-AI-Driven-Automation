@@ -1,0 +1,167 @@
+% ============================================================
+% Lecture deck — Module 8 / Notebook 30
+% AI-Assisted Software Development
+% HSBI house style (Prof. Dr. Christoph Weisser). Thin deck —
+% the notebook is the source of truth.
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+      \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}%
+    \end{beamercolorbox}%
+  }%
+}
+\AtBeginSection[]{%
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\title{AI-Assisted Software Development}
+\subtitle{Module 8 --- Business AI in Practice $\cdot$ Notebook 30}
+\author{Prof.\ Dr.\ Christoph Weisser}
+\institute{HSBI}
+\date{Summer Semester 2026}
+
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ============================================================
+\section{IDEs}
+% ============================================================
+\begin{frame}{The modern IDE landscape (2026)}
+  \small
+  \begin{center}
+  \begin{tabular}{lp{4.4cm}p{3.6cm}}
+    \toprule
+    \textbf{Tool} & \textbf{AI assistance} & \textbf{Best for} \\
+    \midrule
+    VS Code $+$ Copilot & inline completion $+$ chat & broad default; great Jupyter support \\
+    Cursor              & chat-first; multi-file refactors & rewriting larger chunks; agentic edits \\
+    PyCharm $+$ JetBrains AI & completion $+$ assistant panel & large, refactor-heavy projects \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \begin{exampleblock}{Recommendation for beginners}
+    \textbf{VS Code $+$ Copilot} or \textbf{Cursor} --- the most forgiving combinations to learn the workflow on.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Three ways the assistant helps}
+  \begin{itemize}
+    \item \textbf{Inline completion} --- grey ghost-text as you type. Fast, low-effort; good for small, repetitive code.
+    \item \textbf{Chat} --- a side panel where you request a multi-line / multi-file change. Slower, higher-effort; good for new functions and refactors.
+    \item \textbf{Agent mode} --- the assistant edits files and runs commands on its own. Most powerful; needs the most review (see Module 9).
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\section{Git}
+% ============================================================
+\begin{frame}{Git --- nine commands cover 90\,\% of daily work}
+  \small
+  \begin{center}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Command} & \textbf{What it does} \\
+    \midrule
+    \texttt{status} / \texttt{diff}        & see what changed \\
+    \texttt{add} / \texttt{commit}         & stage and snapshot \\
+    \texttt{pull} / \texttt{push}          & sync with the remote \\
+    \texttt{checkout -b} / \texttt{checkout} & make / switch a branch \\
+    \texttt{merge}                          & combine a branch back in \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \begin{alertblock}{Common beginner mistake}
+    \emph{Force-pushing} (\texttt{git push -{}-force}) over the main branch destroys history other people have built on. Force-push only your \emph{own} feature branches.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Pull requests --- the real unit of professional work}
+  \begin{block}{A good PR has}
+    \begin{itemize}
+      \item A \textbf{short title} that reads like a sentence: ``Add retry-with-backoff to the LLM client.''
+      \item A \textbf{2-paragraph description}: what changed, why, and what testing was done.
+      \item \textbf{Small scope.} A 30-line PR is reviewed in 5 minutes; a 3{,}000-line PR sits for a week.
+      \item \textbf{Tests}, or at least a screenshot of having run the new code.
+    \end{itemize}
+  \end{block}
+  AI-generated PRs are no exception --- arguably \emph{more} important to keep small, because the reviewer's job is to check what the AI couldn't.
+\end{frame}
+
+% ============================================================
+\section{Prompting}
+% ============================================================
+\begin{frame}{Five prompt patterns for code}
+  \begin{enumerate}
+    \item \textbf{Give it what it can't see} --- paste the surrounding code, the schema, the error.
+    \item \textbf{Ask for one thing}, explicitly --- one function or change per turn, then iterate.
+    \item \textbf{Be specific about constraints} --- Python version, libraries to use / avoid, style, performance, error semantics.
+    \item \textbf{Ask for tests} --- ``add a pytest that covers the empty-input case.''
+    \item \textbf{Ask for alternatives when designing} --- ``give me three storage options with trade-offs.''
+  \end{enumerate}
+\end{frame}
+
+% ============================================================
+\section{Review}
+% ============================================================
+\begin{frame}{Four failure modes of AI-generated code}
+  \begin{itemize}
+    \item \textbf{A --- Hallucinated APIs.} Calls a function or argument that does not exist.
+    \item \textbf{B --- Plausible but wrong.} Looks right; the logic is subtly off (a ``weighted average'' that isn't).
+    \item \textbf{C --- Architectural drift.} Ignores the codebase's patterns --- \texttt{print} where everything else uses \texttt{logging}.
+    \item \textbf{D --- Silent over-confidence.} ``Safely'' swallows errors with a bare \texttt{except} and hides the failure.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The 60-second review checklist}
+  \begin{block}{Run this on every AI-generated change before you accept or merge}
+    \begin{enumerate}
+      \item \textbf{Does it run?} Even just the import line.
+      \item \textbf{Are there tests?} If not, ask for them.
+      \item \textbf{Does it use our libraries / patterns?} Grep for one similar function.
+      \item \textbf{Does it swallow errors?} Search the diff for \texttt{except Exception}, \texttt{or \{\}}, \texttt{pass}.
+      \item \textbf{Does it do exactly what was asked} --- no more, no less?
+    \end{enumerate}
+  \end{block}
+  60 seconds; catches roughly 80\,\% of the failures. The remaining 20\,\% is what real testing and code review are for.
+\end{frame}
+
+% ============================================================
+\section{When not}
+% ============================================================
+\begin{frame}{When \emph{not} to use the AI assistant}
+  \begin{exampleblock}{Mental model}
+    AI assistants are most valuable when you \emph{could} write the code yourself but would rather not. They are least valuable when you don't yet understand the problem.
+  \end{exampleblock}
+  \begin{itemize}
+    \item Skip it when the task is to \emph{learn} the concept --- let it explain, but write the first version yourself.
+    \item Skip it for security-critical or correctness-critical logic you can't fully review.
+    \item \textbf{Companion notebook:} hands-on Git, PR, and review exercises are in \textbf{Notebook 30}; the course recommends it \emph{early} so the workflow pays off everywhere.
+  \end{itemize}
+\end{frame}
+
+\end{document}

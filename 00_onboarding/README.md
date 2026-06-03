@@ -1,18 +1,22 @@
 # Module 0 — Onboarding
 
-**Goal:** in 30–45 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the remaining 24 notebooks.
+**Goal:** in 30–45 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the rest of the course.
 
 ```
         ┌────────────────────────────────┐
-        │  Master onboarding notebook    │   ← you start here
+        │  Master onboarding (00)        │   ← you start here (env check + the spiral)
         └──────────────┬─────────────────┘
                        │
         ┌──────────────┴─────────────────┐
-        │  Course overview notebook      │   ← read second for the full map + time budgets
+        │  See it work (00c)             │   ← 5-min offline demo of what you'll build
         └──────────────┬─────────────────┘
                        │
         ┌──────────────┴─────────────────┐
-        │  Module 1 — Foundations         │
+        │  Course overview (00b)         │   ← the full map + interactive time estimator
+        └──────────────┬─────────────────┘
+                       │
+        ┌──────────────┴─────────────────┐
+        │  Module 1 — Foundations        │
         └────────────────────────────────┘
 ```
 
@@ -20,13 +24,15 @@
 
 | Notebook | What it does |
 |---|---|
-| **`00_master_onboarding.ipynb`** | Course philosophy, learning paths, environment check. The "you are here" notebook. |
-| **`00b_course_overview.ipynb`** | The companion overview: seven-module diagram, per-notebook time budgets (read / practice / stretch / bonus), five learning paths, interactive time estimator, study habits that actually work. |
+| **`00_master_onboarding.ipynb`** | Course philosophy, the recommended **spiral** order, learning paths, environment check. The "you are here" notebook. |
+| **`00c_see_it_work.ipynb`** | A 5-minute, **offline** demo of the finished shapes — AI triage, RAG, a KPI snapshot — so you see the destination before the Python begins. |
+| **`00b_course_overview.ipynb`** | The companion overview: module-map diagram, per-notebook time budgets (read / practice / stretch / bonus), learning paths, interactive time estimator, study habits that actually work. |
 
 ## Suggested order
 
 1. Run `00_master_onboarding.ipynb` end-to-end. Confirm the environment check prints `✅ Setup looks good!`.
-2. Skim `00b_course_overview.ipynb` to pick a learning path and estimate your total time.
+2. Run `00c_see_it_work.ipynb` — a 5-minute demo of what you'll be able to build.
+3. Skim `00b_course_overview.ipynb` to pick a learning path and estimate your total time.
 
 ## Where next
 

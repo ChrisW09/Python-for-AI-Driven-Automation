@@ -1,0 +1,184 @@
+% ============================================================
+% Lecture deck — Module 9 / Notebook 32
+% LLM Fundamentals
+% HSBI house style (Prof. Dr. Christoph Weisser). Thin deck —
+% the notebook is the source of truth.
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+      \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}%
+    \end{beamercolorbox}%
+  }%
+}
+\AtBeginSection[]{%
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\title{LLM Fundamentals}
+\subtitle{Module 9 --- Building AI POCs $\cdot$ Notebook 32}
+\author{Prof.\ Dr.\ Christoph Weisser}
+\institute{HSBI}
+\date{Summer Semester 2026}
+
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ============================================================
+\section{Tokens}
+% ============================================================
+\begin{frame}{What is a Large Language Model?}
+  \begin{block}{A next-token predictor}
+    An LLM learns statistical relationships between words from massive corpora (books, code, the web). Given some text, it computes the \emph{most probable continuation}, one token at a time.
+  \end{block}
+  \begin{exampleblock}{Analogy}
+    Someone who has read every book ever written: they can continue any topic plausibly --- but they have \emph{no built-in sense} of what is true, current, or private to your company.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{How LLMs see text: tokens}
+  \begin{itemize}
+    \item Text is split into \textbf{tokens} (sub-word pieces): \texttt{ChatGPT} $\to$ \texttt{[Chat][G][PT]}.
+    \item \textbf{Cost and the context window are measured in tokens} --- not characters, not words.
+    \item Rule of thumb: 1 English token $\approx$ 4 characters $\approx$ 0.75 words. So 1{,}000 tokens $\approx$ 750 words.
+    \item Non-English text and code tokenize \emph{less} efficiently --- more tokens for the same meaning.
+    \item The model is \emph{blind to characters within a token} --- which is why ``how many r's in strawberry?'' is hard.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What are parameters? Why ``large''?}
+  \small
+  \begin{center}
+  \begin{tabular}{llr}
+    \toprule
+    \textbf{Model} & \textbf{Parameters} & \textbf{Year} \\
+    \midrule
+    GPT-2                    & 1.5 billion                     & 2019 \\
+    Llama-3 (open-weights)   & 8B / 70B / 405B                 & 2024 \\
+    Frontier (GPT-4, Claude, Gemini) & hundreds of billions (est.) & 2023+ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \begin{alertblock}{Key insight}
+    There is \emph{no} manual list of facts inside the model. Knowledge is \emph{implicitly distributed} across all the weights --- which is exactly why it can be confidently wrong.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================
+\section{Training}
+% ============================================================
+\begin{frame}{The training objective: next-token prediction}
+  \begin{block}{Hide $\to$ predict $\to$ measure $\to$ nudge, trillions of times}
+    Hide the next token in a stretch of text, ask the model to predict it, measure the error, nudge every parameter slightly toward a better prediction.
+  \end{block}
+  \[
+    \mathcal{L} \;=\; -\sum_i y_i \log \hat{p}_i
+  \]
+  where $y_i = 1$ for the one true next token and $0$ otherwise (a \emph{one-hot} target), and $\hat{p}_i$ is the model's predicted probability for token $i$. Grammar, facts, and reasoning emerge as \emph{side-effects} of getting good at this one task.
+\end{frame}
+
+% ============================================================
+\section{Transformer}
+% ============================================================
+\begin{frame}{The architecture: the Transformer}
+  \begin{block}{A stack of attention $+$ feed-forward layers}
+    Every token is turned into a vector; each layer lets tokens \emph{exchange information} (attention) and then transforms each vector (feed-forward). Stack many layers $\to$ rich, context-aware representations.
+  \end{block}
+  \begin{itemize}
+    \item All tokens are processed \emph{in parallel} during training --- a huge speed-up over older recurrent models.
+    \item Depth (layers) $+$ width (vector size) $+$ data $=$ the ``large'' in LLM.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Attention mechanism (Q / K / V)}
+  \small
+  \begin{center}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Step} & \textbf{What happens} \\
+    \midrule
+    1. Project   & compute Query, Key, Value for every token via learned matrices \\
+    2. Score     & $\mathrm{score}_{ij} = Q_i \cdot K_j / \sqrt{d_k}$ \\
+    3. Normalise & softmax over $j$ $\to$ weights summing to 1 \\
+    4. Mix       & new vector $= \sum_j \mathrm{weight}_{ij}\, V_j$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{2pt}
+  $d_k$ is the length of each Key/Query vector; dividing by $\sqrt{d_k}$ keeps the scores from blowing up. \textbf{Intuition:} for each word, look at every other word and decide how much to listen to it.
+\end{frame}
+
+% ============================================================
+\section{Using LLMs}
+% ============================================================
+\begin{frame}{Three intervention points}
+  \begin{block}{Where you can change the output}
+    \begin{itemize}
+      \item \textbf{Pre-training} --- done by the provider; you don't touch it.
+      \item \textbf{Fine-tuning} --- adjust the \emph{weights} for behaviour / style (SFT, instruction tuning, RLHF, or cheap LoRA adapters).
+      \item \textbf{Prompting} --- change the \emph{input}; no training. Your day-to-day lever.
+    \end{itemize}
+  \end{block}
+  \begin{exampleblock}{Fine-tuning vs RAG}
+    Fine-tuning changes \emph{behaviour or style}. \textbf{RAG} (NB 35) keeps the weights frozen and supplies \emph{fresh facts} at query time. Different problems --- don't fine-tune to add knowledge.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Five prompting techniques}
+  \small
+  \begin{center}
+  \begin{tabular}{lp{7.0cm}}
+    \toprule
+    \textbf{Technique} & \textbf{When to reach for it} \\
+    \midrule
+    Zero-shot          & a general question; you trust the model's defaults \\
+    Few-shot           & you want a \emph{consistent} format --- show 2--3 examples \\
+    Chain-of-Thought   & multi-step reasoning --- ask it to work step by step \\
+    Role assignment    & set tone / depth --- ``you are a senior analyst\ldots'' \\
+    Format constraint  & machine-parseable output --- ``return JSON with keys\ldots'' \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  A production prompt usually stacks several: \emph{role} $+$ \emph{context} $+$ \emph{task} $+$ \emph{format} $+$ \emph{constraints}.
+\end{frame}
+
+% ============================================================
+\section{Limits}
+% ============================================================
+\begin{frame}{Two structural limitations}
+  \begin{alertblock}{1. Hallucinations}
+    The model predicts \emph{plausible} continuations, not \emph{true} ones --- so it can invent clauses, statistics, or APIs with full confidence.
+  \end{alertblock}
+  \begin{alertblock}{2. Knowledge cutoff}
+    It knows nothing after its training date, and nothing about your \emph{private} data --- no current prices, no internal reports.
+  \end{alertblock}
+  \begin{exampleblock}{Mitigations (built later in the course)}
+    \textbf{RAG} (NB 35) grounds answers in real evidence $\cdot$ \textbf{Tools} (NB 36) let it look things up $\cdot$ \textbf{Evaluation} (NB 22) measures how often it's wrong.
+  \end{exampleblock}
+\end{frame}
+
+\end{document}

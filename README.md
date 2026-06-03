@@ -4,7 +4,8 @@
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation** — Python fluency, business data science, machine learning, AI engineering, and production wiring, all in one curriculum.
 
 > 🚀 **Start here:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb)
-> 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — seven-module diagram, per-notebook time budgets, five learning paths, interactive time estimator.
+> 👀 **See it work first (5 min):** [`00_onboarding/00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) — a tiny *offline* demo of AI triage + RAG + a KPI snapshot, so you can see what you'll build before the Python begins.
+> 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — module-map diagram, per-notebook time budgets, learning paths, interactive time estimator.
 > 🏎️ **Tight on time?** Take the [Fast Track](./fast_track/) — 9 essential notebooks, about 10 hours total. Same teaching, Stretch and Bonus sections trimmed off.
 > 📊 **Slide-deck version:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
 
@@ -100,13 +101,13 @@ Match yourself to the path that fits:
 
 | You are | You'll touch | Time |
 |---|---|---|
-| **Complete beginner** | All core modules (1–7) in order | ~35 h |
-| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 7 | ~20 h |
-| **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 7 | ~28 h |
-| **ML practitioner** | Modules 0, 5, 6, 7 | ~15 h |
-| **Manager** (curious) | Module 0 + 7 only | ~8 h |
+| **Complete beginner** | All modules, in **spiral order** (orientation → skills → build → deploy → capstone) | ~90 h |
+| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 7 | ~30 h |
+| **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 9, 7 | ~55 h |
+| **ML practitioner** | Modules 0, 5, 6, 9, 7 | ~25 h |
+| **Manager** (curious) | Module 0 (incl. `00c`) + 8 + 7 | ~10 h |
 
-The course-overview deck has these paths visualised — open it before you pick.
+The times above are rough — the **interactive estimator** in [`00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) computes the exact total for *your* path, and the spiral order is spelled out in the master onboarding. The course-overview deck has these paths visualised — open it before you pick.
 
 ---
 

@@ -5,6 +5,8 @@
 **Estimated time:** 8–10 hours of focused study.
 **Prerequisites:** Module 1 (functions, comprehensions). Module 2 is helpful for the CSV-loading examples.
 
+> 🧭 **Where this fits.** Modules 1–2 gave you Python and real data *in*; this module turns that data into *insight* — the analytical half of every AI-automation project, and the groundwork for the machine-learning and AI-engineering modules that follow.
+
 ```
        pandas        ◄──►   NumPy           ◄──►   matplotlib
    (NB 10 — tables)         (NB 11 — math)         (NB 12 — plots)

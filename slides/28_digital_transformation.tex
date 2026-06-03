@@ -1,0 +1,154 @@
+% ============================================================
+% Lecture deck — Module 8 / Notebook 28
+% Digital Transformation & AI-Induced Change
+% House style: HSBI (Prof. Dr. Christoph Weisser). English content
+% to match the course. Thin deck — the notebook is the source of truth.
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+      \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}%
+    \end{beamercolorbox}%
+  }%
+}
+\AtBeginSection[]{%
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\title{Digital Transformation \& AI-Induced Change}
+\subtitle{Module 8 --- Business AI in Practice $\cdot$ Notebook 28}
+\author{Prof.\ Dr.\ Christoph Weisser}
+\institute{HSBI}
+\date{Summer Semester 2026}
+
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ============================================================
+\section{Why now}
+% ============================================================
+\begin{frame}{Why AI feels different \emph{this} time}
+  \begin{block}{Three things changed}
+    \begin{itemize}
+      \item \textbf{The marginal cost of intelligence dropped sharply.} A useful LLM call costs cents, takes seconds, and needs no in-house ML team.
+      \item \textbf{The interface is natural language.} Anyone on staff can prototype an AI workflow --- an organisational change, not just a technical one.
+      \item \textbf{One model handles many tasks.} Not a churn predictor here and a fraud detector there --- one foundation model, many jobs.
+    \end{itemize}
+  \end{block}
+  \begin{exampleblock}{Mental model}
+    Earlier AI waves added \emph{specific} capability at high fixed cost. This wave adds \emph{general} capability at near-zero marginal cost.
+  \end{exampleblock}
+\end{frame}
+
+% ============================================================
+\section{Tasks}
+% ============================================================
+\begin{frame}{The unit of change: tasks, not jobs}
+  \begin{itemize}
+    \item A job is a \emph{bundle of tasks}. AI absorbs \emph{tasks}, rarely whole jobs.
+    \item Enumerate the tasks; score each by \emph{how patternable} $\times$ \emph{how high-stakes}; start in the high-pattern / low-stakes corner.
+  \end{itemize}
+  \begin{exampleblock}{Reframe the stakeholder question}
+    ``Will AI replace these 12 people?'' $\to$ ``Which of their \emph{tasks} will AI absorb, and what do the people do with the freed-up time?''
+  \end{exampleblock}
+\end{frame}
+
+% ============================================================
+\section{Maturity}
+% ============================================================
+\begin{frame}{The five-stage AI maturity model}
+  \small
+  \begin{center}
+  \begin{tabular}{clp{6.3cm}}
+    \toprule
+    \textbf{\#} & \textbf{Stage} & \textbf{Signature behaviour} \\
+    \midrule
+    0 & Unaware          & Not in the strategy; staff quietly use ChatGPT on their phones. \\
+    1 & Experimenting    & A few pilots in a sandbox; results stay in slides. \\
+    2 & Operationalising & One or two features live in production, owned by a real team. \\
+    3 & Industrialising  & A platform team; reusable infra; a new feature ships in weeks. \\
+    4 & AI-native        & AI is in the \emph{process design}, not bolted on. \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{4pt}
+  Most organisations sit between 1 and 2. The model tells you the \emph{next realistic step} --- not the destination.
+\end{frame}
+
+% ============================================================
+\section{Strategies}
+% ============================================================
+\begin{frame}{Three change strategies}
+  \begin{block}{Substitution / Augmentation / Reinvention}
+    \begin{itemize}
+      \item \textbf{Substitution} --- AI does the task \emph{instead of} a human.
+      \item \textbf{Augmentation} --- AI assists; a human stays in the loop and decides.
+      \item \textbf{Reinvention} --- redesign the process around what AI makes newly cheap.
+    \end{itemize}
+  \end{block}
+  \begin{exampleblock}{Intuition}
+    Most real projects are \textbf{augmentation} in year one, and drift toward \textbf{substitution} for the well-understood tasks as trust grows.
+  \end{exampleblock}
+\end{frame}
+
+% ============================================================
+\section{Pitfalls}
+% ============================================================
+\begin{frame}{The most common adoption pitfalls}
+  \begin{enumerate}
+    \item \textbf{Solutionism} --- automating a process that is broken to begin with (a faster mess).
+    \item \textbf{Pilot purgatory} --- endless demos; nothing reaches production.
+    \item \textbf{No monitoring} --- 92\,\% accurate at launch; nobody knows six months later.
+    \item \textbf{No change management} --- the tool works; nobody adopts it.
+    \item \textbf{Governance as an afterthought} --- ethics / safety bolted on at the very end.
+  \end{enumerate}
+\end{frame}
+
+% ============================================================
+\section{People}
+% ============================================================
+\begin{frame}{The human side}
+  \begin{itemize}
+    \item Job descriptions, skill mix, and team shape begin changing the \emph{day you ship} --- not later.
+    \item Frame the change as augmentation, and give people a one-click override.
+  \end{itemize}
+  \begin{block}{The cheapest trust intervention}
+    Publish the AI's \textbf{confidence score} next to every output it produces. Users quickly learn when to trust it and when to double-check.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Companion notebook}
+  \begin{exampleblock}{This is the conceptual half of the lecture}
+    The hands-on judgement --- task inventories, placing an organisation on the maturity model, the pre-mortem, the strategy-map 2$\times$2 --- lives in \textbf{Notebook 28}, with worked solutions.
+  \end{exampleblock}
+  \begin{itemize}
+    \item Prerequisite-free; the course's \emph{spiral} recommends it as an early read (the ``why'').
+    \item Then continue to \textbf{Notebook 29 --- Architecture Patterns}.
+  \end{itemize}
+\end{frame}
+
+\end{document}
