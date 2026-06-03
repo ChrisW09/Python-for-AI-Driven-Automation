@@ -28,11 +28,11 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 18 | `17_ai_workflows.ipynb` | Inbox-triage with the MockLLM (prompts, JSON output, batch) |
-| 19 | `18_embeddings_retrieval.ipynb` | TF-IDF + dense retrieval, retrieval@k benchmark |
-| 20 | `19_tools_and_agents.ipynb` | A multi-tool data assistant |
-| 21 | `20_document_processing.ipynb` | An invoice-extraction pipeline with validation |
-| 22 | `21_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
+| 17 | `17_ai_workflows.ipynb` | Inbox-triage with the MockLLM (prompts, JSON output, batch) |
+| 18 | `18_embeddings_retrieval.ipynb` | TF-IDF + dense retrieval, retrieval@k benchmark |
+| 19 | `19_tools_and_agents.ipynb` | A multi-tool data assistant |
+| 20 | `20_document_processing.ipynb` | An invoice-extraction pipeline with validation |
+| 21 | `21_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
 
 ## Optional appendices — provider, vector-store & framework surveys
 

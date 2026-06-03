@@ -62,7 +62,7 @@ Same dependencies as the full course:
 pip install -r ../requirements.txt
 ```
 
-You don't need anything extra — the `llm_providers.py` shim at the repo root means the AI notebooks (NB 12 and 8) run offline by default with the built-in `MockLLM`.
+You don't need anything extra — the `llm_providers.py` shim at the repo root means the AI notebooks (NB 8 and 9) run offline by default with the built-in `MockLLM`.
 
 ---
 

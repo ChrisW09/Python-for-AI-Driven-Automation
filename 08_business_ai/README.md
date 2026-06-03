@@ -28,10 +28,10 @@
 
 | # | Notebook | What you'll learn |
 |---|---|---|
-| 28 | `26_digital_transformation.ipynb` | Why AI now, what's *actually* changing in organisations, the maturity model, adoption pitfalls, the human side |
-| 29 | `27_architecture_patterns.ipynb` | Single-tier scripts → 3-tier client-server → service / microservice patterns → end-to-end ML pipelines; when to use which |
-| 30 | `28_ai_assisted_software_development.ipynb` | Modern IDEs, Git basics, prompt engineering for code, critical review of AI-generated artefacts, when *not* to trust the LLM |
-| 31 | `29_bpm_governance_poc_mvp.ipynb` | Embedding AI in the BPM lifecycle, governance + RACI for AI projects, the POC → MVP → Production journey, three case studies |
+| 26 | `26_digital_transformation.ipynb` | Why AI now, what's *actually* changing in organisations, the maturity model, adoption pitfalls, the human side |
+| 27 | `27_architecture_patterns.ipynb` | Single-tier scripts → 3-tier client-server → service / microservice patterns → end-to-end ML pipelines; when to use which |
+| 28 | `28_ai_assisted_software_development.ipynb` | Modern IDEs, Git basics, prompt engineering for code, critical review of AI-generated artefacts, when *not* to trust the LLM |
+| 29 | `29_bpm_governance_poc_mvp.ipynb` | Embedding AI in the BPM lifecycle, governance + RACI for AI projects, the POC → MVP → Production journey, three case studies |
 
 ## How this module is different from the rest
 

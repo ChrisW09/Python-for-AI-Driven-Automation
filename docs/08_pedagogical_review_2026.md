@@ -2,7 +2,9 @@
 
 A full-course pedagogical review from the perspective of a **first-time learner**, with fixes applied directly in place. Scope: all 34 numbered notebooks + 2 onboarding notebooks + 11 appendices + 9 fast-track notebooks + 6 quizzes (63 notebooks total), plus `README.md` and `requirements.txt`.
 
-Editing was **surgical and in-place**: no notebooks were renumbered on disk, no content was moved between notebooks. Every notebook still parses, every edited code cell is valid Python, and the reference checker (`scripts/check_nb_references.py`) is green. 39 files changed (~+217 / −128 lines).
+> ⚠️ **Numbering note (read first).** Sections 1–10 are the historical record of the review passes and use the **pre-renumber** notebook numbers (1–36 with gaps at 9 and 25, Real-world I/O before Data Science). In the final pass the course was **fully renumbered** — contiguous NB 1–34, Data Science moved ahead of Real-world I/O. The old→new map is in **§11**; all *course* files use the new numbers.
+
+Editing in passes 1–10 was **surgical and in-place**: no notebooks were renumbered on disk, no content was moved between notebooks. Every notebook still parses, every edited code cell is valid Python, and the reference checker (`scripts/check_nb_references.py`) is green. 39 files changed (~+217 / −128 lines).
 
 ---
 
@@ -251,4 +253,33 @@ The remaining items logged as "future work" in §5–§9, now addressed:
 
 **Verification (open-items pass):** reference checker green; 64 notebooks parse, 0 syntax errors; the five edited notebooks (NB 19, 21, 30, 33, 36) all execute cleanly; edits confirmed on disk.
 
-**Genuinely remaining (a deliberate design decision, not a defect):** whether to physically reorder pandas (NB 10) ahead of Module 2 to remove the forward-reference (currently handled with 🔭 notes). That's an author call about file numbering, not a correctness or clarity gap — everything else logged across the ten passes is now resolved.
+**Genuinely remaining at the end of this pass:** whether to physically reorder pandas ahead of Real-world I/O and clean up the numbering. **Resolved in §11** — the author opted for the full renumber.
+
+---
+
+## 11. Full clean renumber (final pass)
+
+At the author's request the numbering was rebuilt from scratch: **contiguous NB 1–34, no gaps**, and **Data Science now precedes Real-world I/O** (removing the long-standing pandas forward-reference from the ETL/SQL notebooks).
+
+### 11.1 What changed structurally
+- **Module 2 ↔ Module 3 swapped**: Module 2 is now *Data Science* (`02_data_science/`, NB 7–11), Module 3 is *Real-world I/O* (`03_real_world_io/`, NB 12–13). Folder names, module READMEs, quizzes (`quiz_02` ↔ `quiz_03`), the onboarding diagrams/tables, learning paths, and the time estimator were all updated; pandas is now a stated prerequisite of the API/SQL notebooks instead of a 🔭 preview.
+- **Gaps closed**: the placeholders at NB 9 (Pydantic — folded into the SQL notebook) and NB 25 (config & secrets — folded into NB 22) no longer leave holes; every number 1–34 exists.
+- **Slides renamed** to match their companion notebooks (`26_digital_transformation` … `30_llm_fundamentals`); subtitles updated and all decks recompiled.
+- **Fast track unchanged** (its own 1–9 numbering); its back-references to canonical notebooks were remapped.
+
+### 11.2 Old → new map
+| Old | New | Notebook |
+|---|---|---|
+| 1–6 | 1–6 | Foundations (unchanged) |
+| 10, 11, 12, 13, 14 | **7, 8, 9, 10, 11** | pandas, NumPy, matplotlib, statistics, time series |
+| 7, 8 | **12, 13** | APIs & HTTP, SQL |
+| 15, 16, 17 | **14, 15, 16** | sklearn, model evaluation, feature engineering |
+| 18, 19, 20, 21, 22 | **17, 18, 19, 20, 21** | AI workflows, embeddings, agents, documents, AI evaluation |
+| 23, 24 | **22, 23** | notebook→project, scheduling |
+| 26, 27 | **24, 25** | Capstones A & B |
+| 28, 29, 30, 31 | **26, 27, 28, 29** | digital transformation, architecture, AI-assisted dev, BPM/governance/POC→MVP |
+| 32, 33, 34, 35, 36 | **30, 31, 32, 33, 34** | LLM fundamentals, setup→first POC, three POCs, RAG deep dive, vector DB + agentic AI |
+| 9, 25 | — | gaps eliminated (content folded into NB 13 / NB 22) |
+
+### 11.3 Verification
+Reference checker green over the whole repo (contiguous 1–34, no stale tokens); every notebook's H1 matches its filename; all 64 notebooks parse; the full execution set re-run clean after the renumber; all six decks recompile with 0 errors / 0 overfull boxes. `docs/` keeps historical numbering by design (this report, sections 1–10); `previous_versions/` untouched.

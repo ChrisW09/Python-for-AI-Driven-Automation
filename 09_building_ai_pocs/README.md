@@ -23,11 +23,11 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
 
 | # | Notebook | Slide source |
 |---|---|---|
-| 32 | `30_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
-| 33 | `31_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
-| 34 | `32_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
-| 35 | `33_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
-| 36 | `34_vector_db_and_agentic_ai.ipynb` | "Building with LLMs" Parts 4–5 |
+| 30 | `30_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
+| 31 | `31_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
+| 32 | `32_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
+| 33 | `33_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
+| 34 | `34_vector_db_and_agentic_ai.ipynb` | "Building with LLMs" Parts 4–5 |
 
 ## How this module is different from Module 5
 

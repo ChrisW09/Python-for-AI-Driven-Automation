@@ -1,11 +1,11 @@
-# Module 3 — Data Science
+# Module 2 — Data Science
 
 **Goal:** Master the four-library stack that powers every analytical Python codebase — pandas, NumPy, matplotlib, statsmodels — plus the statistics you need to interpret what they show you.
 
 **Estimated time:** 8–10 hours of focused study.
-**Prerequisites:** Module 1 (functions, comprehensions). Module 2 is helpful for the CSV-loading examples.
+**Prerequisites:** Module 1 (functions, comprehensions).
 
-> 🧭 **Where this fits.** Modules 1–2 gave you Python and real data *in*; this module turns that data into *insight* — the analytical half of every AI-automation project, and the groundwork for the machine-learning and AI-engineering modules that follow.
+> 🧭 **Where this fits.** Module 1 gave you Python; this module turns data into *insight* — the analytical half of every AI-automation project, and the groundwork for the I/O, machine-learning and AI-engineering modules that follow.
 
 ```
        pandas        ◄──►   NumPy           ◄──►   matplotlib
@@ -25,11 +25,11 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 10 | `07_pandas_fundamentals.ipynb` | LLM-call log analysis with filter/groupby/plot |
-| 11 | `08_numpy_fundamentals.ipynb` | A/B test of two LLM providers, vectorised |
-| 12 | `09_matplotlib_basics.ipynb` | 2×2 AI-ops executive dashboard |
-| 13 | `10_statistics_basics.ipynb` | A/B-test analysis with t-tests and confidence intervals |
-| 14 | `11_time_series_forecasting.ipynb` | 3-month forecast with Holt-Winters + walk-forward backtest |
+| 7 | `07_pandas_fundamentals.ipynb` | LLM-call log analysis with filter/groupby/plot |
+| 8 | `08_numpy_fundamentals.ipynb` | A/B test of two LLM providers, vectorised |
+| 9 | `09_matplotlib_basics.ipynb` | 2×2 AI-ops executive dashboard |
+| 10 | `10_statistics_basics.ipynb` | A/B-test analysis with t-tests and confidence intervals |
+| 11 | `11_time_series_forecasting.ipynb` | 3-month forecast with Holt-Winters + walk-forward backtest |
 
 ## Optional appendices — specialised forecasting
 
@@ -51,4 +51,4 @@ For a deep dive into time-series forecasting beyond Holt-Winters:
 
 ## Where next
 
-→ **Module 4 — Machine Learning** (`../04_machine_learning/14_sklearn_basics.ipynb`)
+→ **Module 3 — Real-world I/O** (`../03_real_world_io/12_apis_and_http.ipynb`)

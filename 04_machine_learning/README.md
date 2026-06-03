@@ -26,9 +26,9 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 15 | `14_sklearn_basics.ipynb` | Customer-churn classifier + NPS regression |
-| 16 | `15_model_evaluation.ipynb` | Honest model-evaluation toolkit |
-| 17 | `16_feature_engineering.ipynb` | Real feature pipelines on tabular data |
+| 14 | `14_sklearn_basics.ipynb` | Customer-churn classifier + NPS regression |
+| 15 | `15_model_evaluation.ipynb` | Honest model-evaluation toolkit |
+| 16 | `16_feature_engineering.ipynb` | Real feature pipelines on tabular data |
 
 ## Optional appendices — PyTorch & tabular foundation models
 

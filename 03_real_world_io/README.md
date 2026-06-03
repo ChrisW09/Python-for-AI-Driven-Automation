@@ -1,9 +1,9 @@
-# Module 2 — Real-world I/O
+# Module 3 — Real-world I/O
 
 **Goal:** Move beyond toy data. Make HTTP calls against live APIs, query a SQL database from Python, and validate structured data with Pydantic.
 
 **Estimated time:** 4–6 hours of focused study.
-**Prerequisites:** Module 1 (especially NB 4 — dictionaries and JSON).
+**Prerequisites:** Modules 1–2 (especially NB 4 — dictionaries and JSON — and NB 7 — pandas; the ETL and SQL examples build DataFrames).
 
 ```
    Public APIs         Your databases + schemas
@@ -20,12 +20,12 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 7 | `12_apis_and_http.ipynb` | A weather-data ETL pipeline against a live API |
-| 8 | `13_sql_fundamentals.ipynb` | A SQL-driven channel report (joins, CTEs, window functions) — including Pydantic-validated rows where they enter Python (originally planned as a standalone NB 9; folded in here). |
+| 12 | `12_apis_and_http.ipynb` | A weather-data ETL pipeline against a live API |
+| 13 | `13_sql_fundamentals.ipynb` | A SQL-driven channel report (joins, CTEs, window functions) — including Pydantic-validated rows where they enter Python (folded in here rather than split into its own notebook). |
 
 ## Why this module matters
 
-Up to Module 1 every dataset was generated inline. From now on you'll *pull* data — from APIs, from databases, from LLMs — and that data **will be messy**. This module gives you the three skills that let you handle it without your code crashing every other Tuesday:
+Up to now every dataset was generated inline. From now on you'll *pull* data — from APIs, from databases, from LLMs — and that data **will be messy**. This module gives you the three skills that let you handle it without your code crashing every other Tuesday:
 
 1. **HTTP** — make polite, retry-aware requests with timeouts and proper error handling.
 2. **SQL** — read data straight out of a database with `SELECT … GROUP BY` (and know when SQL beats pandas).
@@ -33,4 +33,4 @@ Up to Module 1 every dataset was generated inline. From now on you'll *pull* dat
 
 ## Where next
 
-→ **Module 3 — Data Science** (`../02_data_science/07_pandas_fundamentals.ipynb`)
+→ **Module 4 — Machine Learning** (`../04_machine_learning/14_sklearn_basics.ipynb`)

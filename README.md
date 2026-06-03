@@ -1,5 +1,5 @@
 # Python for AI-Driven Automation and Business Data Science
-## *9 modules, 35 notebooks (+ 11 optional appendices), end-to-end*
+## *9 modules, 34 notebooks (+ 11 optional appendices), end-to-end*
 
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation** — Python fluency, business data science, machine learning, AI engineering, and production wiring, all in one curriculum.
 
@@ -15,7 +15,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 | Folder | What |
 |---|---|
-| `00_onboarding/` … `09_building_ai_pocs/` | **The full course.** 35 main notebooks + 11 optional appendices, organised by topic. |
+| `00_onboarding/` … `09_building_ai_pocs/` | **The full course.** 34 main notebooks + 11 optional appendices, organised by topic. |
 | `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
 | `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
@@ -35,11 +35,11 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 ### 🐍 [Module 1 — Foundations](./01_foundations/) *(NB 1–6)*
 Python you can read without friction. Variables, control flow, lists, dicts, functions.
 
-### 🔌 [Module 2 — Real-world I/O](./03_real_world_io/) *(NB 12–13)*
-HTTP requests, SQL, Pydantic validation. Pull real data from anywhere; refuse bad data at the boundary. *(The originally planned NB 9 on Pydantic was folded into NB 13.)*
-
-### 📊 [Module 3 — Data Science](./02_data_science/) *(NB 7–11)*
+### 📊 [Module 2 — Data Science](./02_data_science/) *(NB 7–11)*
 pandas, NumPy, matplotlib, **statistics**, time series. The analytical core.
+
+### 🔌 [Module 3 — Real-world I/O](./03_real_world_io/) *(NB 12–13)*
+HTTP requests, SQL, Pydantic validation. Pull real data from anywhere; refuse bad data at the boundary. *(Pydantic validation is folded into NB 13.)*
 
 ### 🤖 [Module 4 — Machine Learning](./04_machine_learning/) *(NB 14–16)*
 scikit-learn workflow + **honest model evaluation** + **feature engineering**.
@@ -48,7 +48,7 @@ scikit-learn workflow + **honest model evaluation** + **feature engineering**.
 LLM prompts, RAG, agents, document processing, **AI evaluation & observability**.
 
 ### 🚀 [Module 6 — Production](./06_production/) *(NB 22–23)*
-Packaging notebooks into projects and scheduling. *(Configuration & secrets are covered inline in NB 22; the originally planned standalone NB 25 was folded into it.)*
+Packaging notebooks into projects and scheduling. *(Configuration & secrets are covered inline in NB 22.)*
 
 ### 🏆 [Module 7 — Capstones](./07_capstones/) *(NB 24–25)*
 Two end-to-end projects — analytical and engineering.
@@ -59,32 +59,30 @@ Digital transformation context, architecture patterns, AI-assisted software deve
 ### 🛠️ [Module 9 — Building AI POCs (hands-on)](./09_building_ai_pocs/) *(NB 30–34)*
 The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + Copilot setup and vibe coding, three POCs of growing complexity (Streamlit → 3-tier → ML pipeline), RAG pipeline deep dive with a RAG-over-PDF POC, vector databases + agentic AI with a Chroma semantic-search POC and a ReAct command-line agent. Every notebook ends with a paste-ready Copilot Agent Mode prompt — designed so the whole course can be taught from the notebooks alone.
 
-> 💡 **About the numbering gaps.** NB 09 and 25 are intentionally absent — Pydantic validation was folded into NB 13, and config & secrets into NB 22. NB 6 (originally a documented gap for "extra Python practice") is now **Classes & OOP** — added in the 2026 pedagogy pass so every later notebook can lean on real OOP fluency.
-
 ---
 
 ## Five high-impact notebooks worth singling out
 
 | # | Notebook | What it teaches |
 |---|---|---|
-| **13** | `10_statistics_basics.ipynb` | Confidence intervals, t-tests, Cohen's *d*, sample-size planning, A/B-test reporting that survives a stakeholder review. |
-| **16** | `15_model_evaluation.ipynb` | Confusion matrices in cost units, threshold tuning, ROC/PR curves, **calibration**, learning curves. |
-| **17** | `16_feature_engineering.ipynb` | Encoding strategies, scaling, datetime features, **target leakage**, feature selection, custom transformers. |
-| **22** | `21_ai_evaluation_observability.ipynb` | Golden datasets, LLM-as-judge, tracing, cost dashboards, A/B testing prompts, regression detection. |
-| **27** | `25_capstone_ai_assistant.ipynb` | An end-to-end AI feature combining everything from Modules 5 + 6. |
+| **10** | `10_statistics_basics.ipynb` | Confidence intervals, t-tests, Cohen's *d*, sample-size planning, A/B-test reporting that survives a stakeholder review. |
+| **15** | `15_model_evaluation.ipynb` | Confusion matrices in cost units, threshold tuning, ROC/PR curves, **calibration**, learning curves. |
+| **16** | `16_feature_engineering.ipynb` | Encoding strategies, scaling, datetime features, **target leakage**, feature selection, custom transformers. |
+| **21** | `21_ai_evaluation_observability.ipynb` | Golden datasets, LLM-as-judge, tracing, cost dashboards, A/B testing prompts, regression detection. |
+| **25** | `25_capstone_ai_assistant.ipynb` | An end-to-end AI feature combining everything from Modules 5 + 6. |
 
 ---
 
 ## Optional appendix track — 11 advanced notebooks
 
-A second tier of optional, deep-dive notebooks for readers who want to go beyond the 35-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 34-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
 
 | Module | Appendix | What it covers |
 |---|---|---|
-| 03 Data Science | `A1_forecasting_classical.ipynb` | ARIMA / SARIMA / ETS deep dive |
-| 03 Data Science | `A2_forecasting_prophet_libraries.ipynb` | Prophet, NeuralProphet, sktime, Darts |
-| 03 Data Science | `A3_forecasting_deep_learning.ipynb` | LSTM + Transformer forecasters in PyTorch |
-| 03 Data Science | `A4_forecasting_foundation_models.ipynb` | TimesFM, Chronos, TabPFN-TS |
+| 02 Data Science | `A1_forecasting_classical.ipynb` | ARIMA / SARIMA / ETS deep dive |
+| 02 Data Science | `A2_forecasting_prophet_libraries.ipynb` | Prophet, NeuralProphet, sktime, Darts |
+| 02 Data Science | `A3_forecasting_deep_learning.ipynb` | LSTM + Transformer forecasters in PyTorch |
+| 02 Data Science | `A4_forecasting_foundation_models.ipynb` | TimesFM, Chronos, TabPFN-TS |
 | 04 ML | `A1_pytorch_foundations.ipynb` | Tensors, autograd, MLPs |
 | 04 ML | `A2_pytorch_vision_and_sequences.ipynb` | CNNs, RNNs, Transformers |
 | 04 ML | `A3_pytorch_fine_tuning.ipynb` | Transfer learning + LoRA |
@@ -196,7 +194,7 @@ These are conscious trade-offs.
 
 ## LLM providers — local and hosted, four options
 
-Notebooks 17 – 21 and 27 can be run **entirely offline** with the built-in `MockLLM`. When you're ready for real intelligence, swap one line. The course supports four providers through a unified interface in [`llm_providers.py`](./llm_providers.py):
+Notebooks 17 – 21 and 25 can be run **entirely offline** with the built-in `MockLLM`. When you're ready for real intelligence, swap one line. The course supports four providers through a unified interface in [`llm_providers.py`](./llm_providers.py):
 
 | Provider | Class | When |
 |---|---|---|
@@ -234,11 +232,11 @@ export GOOGLE_API_KEY=...
 │   └── 00b_course_overview.ipynb
 │
 ├── 01_foundations/         ← NB 1–6: Python basics, control, lists, dicts, functions, classes & OOP
-├── 03_real_world_io/       ← NB 12–13: HTTP, SQL  (NB 9 was folded into NB 13)
 ├── 02_data_science/        ← NB 7–11: pandas, NumPy, plots, stats, time series  (+ A1–A4 forecasting appendices)
+├── 03_real_world_io/       ← NB 12–13: HTTP, SQL + Pydantic validation
 ├── 04_machine_learning/    ← NB 14–16: sklearn, evaluation, feature engineering  (+ A1–A4 PyTorch / TabPFN appendices)
 ├── 05_ai_engineering/      ← NB 17–21: prompts, RAG, agents, docs, AI evaluation  (+ A1–A3 provider / vector-store / framework appendices)
-├── 06_production/          ← NB 22–23: packaging, scheduling  (NB 25 folded into NB 22)
+├── 06_production/          ← NB 22–23: packaging, scheduling  (config & secrets inline in NB 22)
 ├── 07_capstones/           ← NB 24: analytics  +  NB 25: AI assistant
 ├── 08_business_ai/         ← NB 26–29: digital transformation, architecture, AI-assisted dev, BPM + governance + cases
 ├── 09_building_ai_pocs/    ← NB 30–34: LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents
@@ -249,7 +247,7 @@ export GOOGLE_API_KEY=...
 │
 ├── slides/                         ← HSBI Beamer decks (see slides/README.md)
 │   ├── 00_course_overview.pdf     ← 23-slide onboarding deck
-│   ├── 28–32 *.pdf                 ← 5 lecture decks for the conceptual lectures (Module 8 + LLM fundamentals)
+│   ├── 26–30 *.pdf                 ← 5 lecture decks for the conceptual lectures (Module 8 + LLM fundamentals)
 │   └── images/                     ← 7 overview figures
 │
 ├── data/                           ← 3 sample CSVs (support_ops, api_log, customer_feedback)
@@ -268,7 +266,7 @@ export GOOGLE_API_KEY=...
 
 ## About the previous_versions/ folder
 
-Before the 2026 refinement pass, the course shipped as a flat list of 19 notebooks at the top level (`01_python_basics.ipynb` … `19_scheduling_orchestration.ipynb`) alongside their own `data/`, `slides/`, and `requirements.txt`. That layout is preserved verbatim in `previous_versions/flat_19_notebook_layout/` so old bookmarks keep working, but **the canonical course is the 7-module structure at the top level** — start there.
+Before the 2026 refinement pass, the course shipped as a flat list of 19 notebooks at the top level (`01_python_basics.ipynb` … `19_scheduling_orchestration.ipynb`) alongside their own `data/`, `slides/`, and `requirements.txt`. That layout is preserved verbatim in `previous_versions/flat_19_notebook_layout/` so old bookmarks keep working, but **the canonical course is the 9-module structure at the top level** — start there.
 
 ---
 

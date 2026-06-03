@@ -78,20 +78,22 @@
 \section{Structure}
 % ============================================================
 
-\begin{frame}{Seven modules, twenty-six notebooks}
+\begin{frame}{Nine modules, thirty-four notebooks}
   \footnotesize
   \begin{tabular}{rll}
     \toprule
     \textbf{\#} & \textbf{Module} & \textbf{Notebooks} \\
     \midrule
-    0 & Onboarding              & 1 — master onboarding \\
-    1 & Foundations             & NB 1–5  — Python you can read without friction \\
-    2 & Real-world I/O          & NB 12–13  — HTTP, SQL  \emph{(data validation reserved)} \\
-    3 & Data science            & NB 7–11 — pandas, NumPy, plots, stats, time series \\
+    0 & Onboarding              & master onboarding + overview + see-it-work \\
+    1 & Foundations             & NB 1–6 — Python you can read without friction \\
+    2 & Data science            & NB 7–11 — pandas, NumPy, plots, stats, time series \\
+    3 & Real-world I/O          & NB 12–13 — HTTP, SQL, Pydantic validation \\
     4 & Machine learning        & NB 14–16 — sklearn, model evaluation, features \\
     5 & AI engineering          & NB 17–21 — LLM patterns, RAG, agents, evaluation \\
-    6 & Production              & NB 22–23 — packaging, scheduling  \emph{(config reserved)} \\
+    6 & Production              & NB 22–23 — packaging, scheduling, config \& secrets \\
     7 & Capstones               & NB 24–25 — analytics + AI assistant \\
+    8 & Business AI             & NB 26–29 — strategy, architecture, BPM, governance \\
+    9 & Building AI POCs        & NB 30–34 — LLM theory, Copilot, three POCs, RAG, agents \\
     \bottomrule
   \end{tabular}
   \vspace{6pt}
@@ -118,17 +120,17 @@
 
 \begin{frame}{When to pick which path}
   \begin{block}{Complete beginner}
-    Never written code before. Take all seven modules in order. Time-budget: \textbf{35 hours}, split into 6 weeks of ${\sim}6$ h each.
+    Never written code before. Take all nine modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 90 hours} — the interactive estimator in \texttt{00b} computes yours.
   \end{block}
   \begin{exampleblock}{Analyst who knows Excel and SQL}
-    Skim Module 1 (Python basics) and Modules 2 (SQL is already familiar). Focus on Modules 3 (DS), 4 (ML), 7 (capstone). Time-budget: \textbf{20 hours}.
+    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (ML), 7 (capstone). Time-budget: \textbf{about 30 hours}.
   \end{exampleblock}
   \begin{block}{ML practitioner adding AI engineering}
-    Skim Module 4. Focus on Modules 5 (AI), 6 (Production), 7 (Capstone). Time-budget: \textbf{15 hours}.
+    Skim Module 4. Focus on Modules 5 (AI), 6 (production), 9 (build the POCs), 7 (capstone). Time-budget: \textbf{about 25 hours}.
   \end{block}
 \end{frame}
 
-\begin{frame}{Six weeks at six hours each}
+\begin{frame}{Ten weeks, self-paced}
   \begin{center}
     \includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/03_weekly_timeline.png}
   \end{center}
@@ -268,7 +270,7 @@ jupyter lab
 \begin{frame}
   \begin{center}
     {\Huge\bfseries Welcome.}\\[10pt]
-    \large 26 notebooks await you.\\[20pt]
+    \large 34 notebooks await you.\\[20pt]
     {\large \textit{Open Module 0 next.}}
   \end{center}
 \end{frame}

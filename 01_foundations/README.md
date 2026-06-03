@@ -24,7 +24,7 @@
 | 3 | `03_lists_data_structures.ipynb` | A latency-log analysis |
 | 4 | `04_dictionaries_advanced.ipynb` | A defensive API-response parser |
 | 5 | `05_functions_modules.ipynb` | A reusable cost / cleaning toolkit |
-| 6 | `06_classes_and_oop.ipynb` | A `TodoList` class with full OOP fluency — closes the documented NB 6 gap |
+| 6 | `06_classes_and_oop.ipynb` | A `TodoList` class with full OOP fluency |
 
 ## What "fluent" looks like at the end
 
@@ -41,4 +41,4 @@ You should be able to read a 50-line Python script and explain what each block d
 
 ## Where next
 
-→ **Module 2 — Real-world I/O** (`../03_real_world_io/12_apis_and_http.ipynb`)
+→ **Module 2 — Data Science** (`../02_data_science/07_pandas_fundamentals.ipynb`)
