@@ -247,8 +247,9 @@ export GOOGLE_API_KEY=...
 │
 ├── quizzes/                        ← 6 multiple-choice quizzes, one per module
 │
-├── slides/
+├── slides/                         ← HSBI Beamer decks (see slides/README.md)
 │   ├── 00_course_overview.pdf     ← 23-slide onboarding deck
+│   ├── 28–32 *.pdf                 ← 5 lecture decks for the conceptual lectures (Module 8 + LLM fundamentals)
 │   └── images/                     ← 7 overview figures
 │
 ├── data/                           ← 3 sample CSVs (support_ops, api_log, customer_feedback)

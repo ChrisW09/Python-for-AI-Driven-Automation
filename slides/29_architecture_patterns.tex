@@ -1,8 +1,8 @@
 % ============================================================
 % Lecture deck — Module 8 / Notebook 29
 % Architecture Patterns for AI Applications
-% HSBI house style (Prof. Dr. Christoph Weisser). Thin deck —
-% the notebook is the source of truth.
+% HSBI house style. English content. TikZ visuals.
+% The notebook is the single source of truth.
 % ============================================================
 \documentclass[aspectratio=169,11pt]{beamer}
 
@@ -14,6 +14,8 @@
 \usepackage{booktabs}
 \usepackage{amsmath,amssymb}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc,fit,backgrounds}
 
 \usetheme{Madrid}
 \usecolortheme{default}
@@ -34,6 +36,20 @@
   \end{frame}
 }
 
+\definecolor{hsbiblue}{RGB}{45,57,120}
+\definecolor{hsbimid}{RGB}{76,114,176}
+\definecolor{hsbilight}{RGB}{225,231,247}
+\definecolor{cgreen}{RGB}{85,164,103}
+\definecolor{corange}{RGB}{221,132,82}
+\definecolor{cred}{RGB}{196,78,82}
+\definecolor{cpurple}{RGB}{129,114,178}
+\tikzset{
+  box/.style={rounded corners=3pt, draw=hsbiblue, line width=1pt, fill=hsbilight, align=center, inner sep=5pt, font=\footnotesize},
+  tier/.style={rounded corners=3pt, draw=hsbiblue, line width=1.2pt, fill=hsbilight, align=center, text width=2.5cm, minimum height=1.2cm, font=\footnotesize},
+  flow/.style={rounded corners=2pt, draw=hsbiblue, line width=0.9pt, fill=hsbilight, align=center, text width=1.55cm, minimum height=0.85cm, font=\scriptsize},
+  arr/.style={-{Stealth[length=2.6mm]}, line width=1pt, draw=hsbiblue},
+}
+
 \title{Architecture Patterns for AI Applications}
 \subtitle{Module 8 --- Business AI in Practice $\cdot$ Notebook 29}
 \author{Prof.\ Dr.\ Christoph Weisser}
@@ -52,37 +68,56 @@
 \section{Traffic}
 % ============================================================
 \begin{frame}{Architecture is the answer to a \emph{traffic} question}
+  \begin{center}
+  \begin{tikzpicture}
+    \foreach \x/\u in {0/{1 user}, 2.6/{10}, 5.2/{100}, 7.8/{1{,}000+}}{
+      \node[font=\footnotesize] at (\x,0) {\u};
+    }
+    \draw[arr] (-0.6,-0.4) -- (8.7,-0.4) node[midway,below,font=\scriptsize]{users $\cdot$ frequency $\cdot$ number of teams $\to$};
+  \end{tikzpicture}
+  \end{center}
   \begin{block}{Ask three things before you choose}
     \begin{itemize}
-      \item \textbf{How many users?} \quad 1 $\to$ 10 $\to$ 100 $\to$ 1{,}000+.
-      \item \textbf{How often, and who invokes it?} A human at a keyboard, a schedule, or another service?
+      \item \textbf{How many users}, and growing how fast?
+      \item \textbf{Who invokes it} --- a human, a schedule, or another service?
       \item \textbf{How many teams} will own and ship pieces of it?
     \end{itemize}
   \end{block}
-  \begin{exampleblock}{The point}
-    Architecture is not about sophistication --- it is about matching structure to load. The same feature wants a different shape at 5 users than at 5{,}000.
-  \end{exampleblock}
+  {\footnotesize Architecture is not sophistication --- it is matching \emph{structure} to \emph{load}.}
 \end{frame}
 
 % ============================================================
 \section{Patterns}
 % ============================================================
-\begin{frame}{The four software patterns}
-  \small
+\begin{frame}{Four patterns of growing complexity}
   \begin{center}
-  \begin{tabular}{lp{4.0cm}p{3.6cm}}
-    \toprule
-    \textbf{Pattern} & \textbf{When it fits} & \textbf{Example} \\
-    \midrule
-    Single-tier        & one analyst exploring, or one daily job & Jupyter notebook; cron + script \\
-    Three-tier         & interactive use by non-developers & Streamlit $+$ FastAPI $+$ DB \\
-    Service-oriented   & 2--3 capabilities, one team & shared infra, common interface \\
-    Microservices      & 4+ teams shipping independently & one team per service \\
-    \bottomrule
-  \end{tabular}
+  \begin{tikzpicture}
+    \node[box, fill=hsbilight,   text width=2.3cm, minimum height=1.3cm] (a) {\textbf{Single-tier}\\ \scriptsize script / notebook};
+    \node[box, fill=hsbimid!30,  text width=2.3cm, minimum height=1.3cm, right=0.5cm of a] (b) {\textbf{Three-tier}\\ \scriptsize UI $\cdot$ logic $\cdot$ data};
+    \node[box, fill=hsbimid!55,  text width=2.3cm, minimum height=1.3cm, right=0.5cm of b, text=white] (c) {\textbf{Service-oriented}\\ \scriptsize a few services};
+    \node[box, fill=hsbimid!80,  text width=2.3cm, minimum height=1.3cm, right=0.5cm of c, text=white] (d) {\textbf{Microservices}\\ \scriptsize one team each};
+    \draw[arr] ($(a.south west)+(0,-0.3)$) -- ($(d.south east)+(0,-0.3)$)
+      node[midway,below,font=\scriptsize]{growing traffic $\cdot$ growing team count $\to$};
+  \end{tikzpicture}
   \end{center}
-  \vspace{4pt}
-  Read top to bottom as growing traffic and growing team count --- not as ``primitive to advanced''.
+  {\footnotesize Read left to right as \emph{growing load}, not ``primitive to advanced''. The simplest workable choice wins.}
+\end{frame}
+
+\begin{frame}{Three-tier --- the workhorse for interactive AI features}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[tier, fill=hsbilight]  (p) {\textbf{Presentation}\\ \scriptsize Streamlit (UI)};
+    \node[tier, fill=hsbimid!30, right=1.7cm of p] (l) {\textbf{Logic}\\ \scriptsize FastAPI (REST)};
+    \node[tier, fill=hsbilight,  right=1.7cm of l] (d) {\textbf{Data}\\ \scriptsize SQLite / DB};
+    \draw[arr,{Stealth[length=2.4mm]}-{Stealth[length=2.4mm]}] (p)--(l) node[midway,above,font=\scriptsize]{HTTP / JSON};
+    \draw[arr,{Stealth[length=2.4mm]}-{Stealth[length=2.4mm]}] (l)--(d) node[midway,above,font=\scriptsize]{SQL};
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+    \item Each tier can change independently; the \textbf{REST contract} is the boundary.
+    \item The API is reusable --- a second UI, a CLI, or another team can call it.
+    \item \emph{You build exactly this} in \textbf{Notebook 34 (POC 2)}.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{The over-engineering trap}
@@ -90,7 +125,7 @@
     Microservices became fashionable around 2015; many teams adopted them \emph{before} they had the team size or traffic to justify the operational cost. The right unit of a service is a \emph{capability} --- not every Python module.
   \end{alertblock}
   \begin{exampleblock}{The rule}
-    Pick the architecture you'll have \emph{outgrown in 12 months}, not the one you'll \emph{need in 36}. Migrations are real, but rarely the thing that kills a project --- premature complexity is.
+    Pick the architecture you'll have \emph{outgrown in 12 months}, not the one you'll \emph{need in 36}. Premature complexity kills more projects than migrations do.
   \end{exampleblock}
 \end{frame}
 
@@ -98,14 +133,26 @@
 \section{Pipeline}
 % ============================================================
 \begin{frame}{The cross-cutting ML / AI pipeline}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[flow] (d) {data};
+    \node[flow, right=0.45cm of d] (f) {features};
+    \node[flow, right=0.45cm of f] (t) {train};
+    \node[flow, right=0.45cm of t] (e) {evaluate};
+    \node[flow, right=0.45cm of e] (s) {serve};
+    \node[flow, right=0.45cm of s, fill=cgreen!18] (m) {monitor};
+    \foreach \x/\y in {d/f,f/t,t/e,e/s,s/m}{\draw[arr] (\x)--(\y);}
+    \draw[arr, draw=cred] (m.south) -- ++(0,-0.55) -| (d.south)
+      node[pos=0.25,below,font=\scriptsize]{drift $\to$ retrain};
+  \end{tikzpicture}
+  \end{center}
   \begin{block}{What pure-software patterns don't capture}
     \begin{itemize}
-      \item \textbf{Training data is part of the artefact.} Two models that look identical but trained on different snapshots are \emph{different products}.
-      \item \textbf{Drift exists.} 92\,\% accurate in March is not 92\,\% in October --- monitoring must compare against fresh ground truth.
-      \item \textbf{The feedback loop has economic cost.} Every prediction nudges the world the next training batch will learn from.
+      \item \textbf{Training data is part of the artefact} --- different snapshot, different product.
+      \item \textbf{Drift exists} --- 92\,\% in March is not 92\,\% in October.
+      \item \textbf{The feedback loop has economic cost} --- each prediction nudges the next training batch.
     \end{itemize}
   \end{block}
-  Data $\to$ features $\to$ train $\to$ evaluate $\to$ serve $\to$ \emph{monitor} $\to$ (back to data).
 \end{frame}
 
 % ============================================================
@@ -114,13 +161,13 @@
 \begin{frame}{Choosing the right size}
   \begin{block}{Smells that you've outgrown your current shape}
     \begin{itemize}
-      \item Someone asks ``can we run this nightly?'' $\to$ add scheduling (single-tier job).
+      \item ``Can we run this nightly?'' $\to$ add scheduling (single-tier job).
       \item A non-developer needs to use it $\to$ add a UI tier (three-tier).
       \item A second team wants to build on it $\to$ expose it as a service.
     \end{itemize}
   \end{block}
-  \begin{exampleblock}{Two opposite mistakes to avoid}
-    \emph{Over-engineering} (microservices for a pilot) and \emph{under-engineering} (a 200-user system held together by one notebook).
+  \begin{exampleblock}{Two opposite mistakes}
+    \textcolor{cred}{Over-engineering} (microservices for a pilot) and \textcolor{cred}{under-engineering} (a 200-user system held together by one notebook).
   \end{exampleblock}
 \end{frame}
 
@@ -144,7 +191,7 @@
   \end{tabular}
   \end{center}
   \vspace{4pt}
-  You \emph{build} the three-tier and ML-pipeline shapes in \textbf{Notebook 34}; the rest you meet as patterns here.
+  {\footnotesize You \emph{build} the three-tier and ML-pipeline shapes in \textbf{Notebook 34}; the rest you meet as patterns here.}
 \end{frame}
 
 \end{document}
