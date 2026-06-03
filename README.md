@@ -19,7 +19,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 | `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
 | `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
-| `slides/` | A 23-slide course-overview deck (PDF + LaTeX source). |
+| `slides/` | A 25-slide course-overview deck (PDF + LaTeX source). |
 | `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass. |
 | `docs/` | Audit reports from the 2026 refinement pass + most recent execution snapshot. Reference material — not part of the course itself. |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (and an offline `MockLLM`). |
@@ -246,7 +246,7 @@ export GOOGLE_API_KEY=...
 ├── quizzes/                        ← 6 multiple-choice quizzes, one per module
 │
 ├── slides/                         ← HSBI Beamer decks (see slides/README.md)
-│   ├── 00_course_overview.pdf     ← 23-slide onboarding deck
+│   ├── 00_course_overview.pdf     ← 25-slide onboarding deck
 │   ├── 26–30 *.pdf                 ← 5 lecture decks for the conceptual lectures (Module 8 + LLM fundamentals)
 │   └── images/                     ← 7 overview figures
 │
