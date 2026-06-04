@@ -75,7 +75,9 @@ The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + 
 
 ## Optional appendix track — 11 advanced notebooks
 
-A second tier of optional, deep-dive notebooks for readers who want to go beyond the 34-notebook backbone. Each appendix lives next to its parent module and is fully runnable. Unlike the main notebooks, appendices are written as **reference notebooks**: they ship with pre-rendered outputs only when noted in their first cell, focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 34-notebook backbone. Each appendix lives next to its parent module. Unlike the main notebooks, appendices are written as **reference notebooks**: they focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+
+Every appendix is **fully runnable offline**. When an optional heavy dependency (PyTorch, Prophet, FAISS, transformers, …) isn't installed, the notebook falls back to a small built-in stand-in so it still executes end-to-end. Install the real library (see [Setup](#setup)) to swap the stand-in for the genuine article.
 
 | Module | Appendix | What it covers |
 |---|---|---|
@@ -155,6 +157,16 @@ jupyter lab
 
 Tested with Python 3.10+. Module 0 includes an environment-check cell.
 
+### Optional appendix libraries
+The 34 main notebooks need only `requirements.txt`. The 11 optional [appendices](#optional-appendix-track--11-advanced-notebooks) demo heavier libraries — PyTorch, `transformers`, Prophet / NeuralProphet / sktime / Darts, FAISS / Chroma, LangChain / LlamaIndex, TabPFN. These are **not installed by default**; each is listed (commented out, grouped by appendix) at the bottom of `requirements.txt`. Install only the ones you want, e.g.:
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cpu   # Module 4 PyTorch appendices (+ Module 2 A3)
+pip install prophet sktime darts                                     # Module 2 forecasting appendices
+```
+
+Each appendix still runs end-to-end without these, via its built-in offline stand-in — so installing them is purely to see the real library at work.
+
 ---
 
 ## What you'll build by the end
@@ -184,11 +196,11 @@ A few principles that guided every notebook:
 
 So you're not surprised later:
 
-- ❌ Deep learning from scratch (PyTorch / TF training loops). You'll *use* pre-trained models — which is what most working AI applications need.
+- ❌ Deep learning from scratch in the **main track** — the 34-notebook backbone *uses* pre-trained models, which is what most working AI applications need. (Tensors, autograd, training loops, and fine-tuning live in the optional Module 4 appendices A1–A3 if you want them.)
 - ❌ Vendor-specific cloud deployment (AWS / GCP / Azure). NB 23 teaches the *patterns* of scheduling — without committing to one platform.
-- ❌ Vector-database deep dive. NB 18 implements the underlying retrieval logic and points you at Qdrant / Weaviate / Pinecone for the production scale-up.
+- ❌ Vector-database deep dive in the **main track**. NB 18 implements the underlying retrieval logic and points you at Qdrant / Weaviate / Pinecone; the optional Module 5 appendix A2 surveys the landscape (FAISS / Chroma / Qdrant / Weaviate / pgvector) and Module 9 ships a Chroma semantic-search POC.
 
-These are conscious trade-offs.
+These are conscious trade-offs — the main track stays lean, and the optional appendix track is there when you want to go deeper.
 
 ---
 
@@ -229,7 +241,8 @@ export GOOGLE_API_KEY=...
 ├── 00_onboarding/
 │   ├── README.md
 │   ├── 00_master_onboarding.ipynb
-│   └── 00b_course_overview.ipynb
+│   ├── 00b_course_overview.ipynb
+│   └── 00c_see_it_work.ipynb       ← 5-min offline demo of what you'll build
 │
 ├── 01_foundations/         ← NB 1–6: Python basics, control, lists, dicts, functions, classes & OOP
 ├── 02_data_science/        ← NB 7–11: pandas, NumPy, plots, stats, time series  (+ A1–A4 forecasting appendices)
