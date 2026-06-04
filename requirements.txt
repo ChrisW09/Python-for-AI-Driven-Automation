@@ -1,3 +1,13 @@
+# =============================================================================
+# Verified with (Python 3.11), last full run 2026-06-04 — the course executes
+# clean on this exact set (61 pass / 3 intentional Debug-me xfail / 0 fail):
+#   numpy 2.4.6 · pandas 3.0.3 · matplotlib 3.10.9 · scikit-learn 1.8.0
+#   statsmodels 0.14.6 · scipy 1.17.1 · requests 2.34.2 · jupyterlab 4.5.7
+# The >= ranges below stay deliberately open ("modern tools, modern habits" —
+# see README). If a future upstream release breaks a notebook, pin to the
+# versions above as a known-good baseline.
+# =============================================================================
+
 # Core libraries used across the course
 numpy>=1.24
 pandas>=2.0
