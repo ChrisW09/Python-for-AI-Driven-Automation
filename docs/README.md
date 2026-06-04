@@ -20,8 +20,11 @@ Reading order: 01 → 02 → 03. The current state of the repo reflects everythi
 ## Reproducing the execution snapshot
 
 ```bash
-# from the repo root
-python scripts/run_all_notebooks.py .
+# from the repo root — writes docs/notebook_execution_results.json
+python scripts/run_all_notebooks.py . --json docs/notebook_execution_results.json
 ```
 
-The runner skips `previous_versions/` automatically.
+The runner skips `previous_versions/` and `.venv/` automatically, executes each
+notebook in memory (notebooks are never modified on disk), and exits non-zero if
+any notebook errors — including the intentional 🐞 *Debug-me* cells, which is why
+the snapshot shows a small number of expected `fail` entries.
