@@ -283,3 +283,22 @@ At the author's request the numbering was rebuilt from scratch: **contiguous NB 
 
 ### 11.3 Verification
 Reference checker green over the whole repo (contiguous 1–34, no stale tokens); every notebook's H1 matches its filename; all 64 notebooks parse; the full execution set re-run clean after the renumber; all six decks recompile with 0 errors / 0 overfull boxes. `docs/` keeps historical numbering by design (this report, sections 1–10); `previous_versions/` untouched.
+
+---
+
+## 12. Final full-course review (latest-library runtime pass)
+
+A fresh end-to-end review against the **current** scientific stack — pandas **3.0.3**, scikit-learn **1.8**, matplotlib **3.10.9**, NumPy 2.x, torch **2.12**, transformers **5.10** — to confirm the course still runs on the libraries a learner installs today, plus an independent content sweep across all 64 notebooks.
+
+### 12.1 Runtime — clean on the latest stack
+All **64 notebooks executed fresh** end-to-end (`scripts/run_all_notebooks.py`): **61 pass, 3 xfail** (the intentional 🐞 Debug-me puzzles in NB 1, NB 6, and fast-track 01), **0 unexpected errors**. No pandas-3 / sklearn-1.8 / numpy-2 deprecation breaks surfaced — the notebooks already use modern idioms (`"ME"` offsets, `default_rng`, `sparse_output`, `get_feature_names_out`, `tick_labels=`). Reference checker green; counts verified against the README (34 main, 11 appendices, 6 quizzes, 9 fast-track content notebooks).
+
+### 12.2 Two correctness fixes applied
+- **`llm_providers.py` docstring** advertised a non-existent OpenAI model (`o-mini`) and listed vague Anthropic/Google names (`claude-haiku`, `gemini-flash`) that aren't valid API IDs — while the class defaults and notebooks correctly use full versioned IDs. Rewritten so the docstring matches the real defaults (`gpt-4o-mini`, `claude-haiku-4-5-20251001`, `gemini-2.0-flash`); a learner copying a name from the header now gets a name that resolves.
+- **NB 10 (statistics) `ab_report`** built the difference-CI from a **z** critical value while reporting a **Welch's t-test** p-value — so the CI and the p-value could disagree at the significance boundary (the exact failure a "safe to send to a manager" report must not have). Switched the CI to the **Welch–Satterthwaite t** critical value (`stats.t.ppf`, already taught earlier in the notebook), with a one-line comment explaining why. Re-executed: module runs 9/9 clean.
+
+### 12.3 Confirmed clean (no change needed)
+Independent module-by-module sweeps (onboarding+foundations, data science, I/O+ML, AI engineering, production+capstones, business-AI+POCs, fast-track+quizzes+requirements) found the rest of the course correct: all 30 quiz answer keys verified correct; NB 30's Transformer math (attention, √dₖ scaling, cross-entropy) and NB 33's cosine-similarity worked examples check out; no stale cross-references; no placeholders, TODOs, or untranslated leftovers; capstones self-contained and top-to-bottom runnable. Remaining Module 8↔9 overlaps are the intentional seminar-vs-hands-on split already signposted in §10.
+
+### 12.4 Verification (pass 12)
+Reference checker green; 64/64 notebooks parse; fresh full execution 61 pass / 3 xfail / 0 errors on the current library stack; `llm_providers` imports cleanly with corrected docstring; both edits confirmed on disk.

@@ -15,9 +15,9 @@ Every provider implements the same minimal interface:
 Pick the provider that fits your situation:
 
     MockLLM       — fully offline. Default for the course's notebooks. No internet, no keys.
-    OpenAILLM     — gpt-4o-mini / gpt-4o / o-mini. Set OPENAI_API_KEY.
-    AnthropicLLM  — claude-haiku / claude-sonnet / claude-opus. Set ANTHROPIC_API_KEY.
-    GoogleLLM     — gemini-flash / gemini-pro. Set GOOGLE_API_KEY (or GEMINI_API_KEY).
+    OpenAILLM     — gpt-4o-mini (default) / gpt-4o. Set OPENAI_API_KEY.
+    AnthropicLLM  — claude-haiku-4-5-20251001 (default) / claude-sonnet-4-6 / claude-opus-4-6. Set ANTHROPIC_API_KEY.
+    GoogleLLM     — gemini-2.0-flash (default) / gemini-2.0-pro. Set GOOGLE_API_KEY (or GEMINI_API_KEY).
     OllamaLLM     — any model you've `ollama pull`ed locally. No key needed.
 
 Usage in any notebook:
