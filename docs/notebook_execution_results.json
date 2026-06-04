@@ -22,7 +22,7 @@
   },
   {
     "notebook": "01_foundations/01_python_basics.ipynb",
-    "status": "fail",
+    "status": "xfail",
     "cells_executed": 15,
     "duration_s": 0.76,
     "error": {
@@ -61,7 +61,7 @@
   },
   {
     "notebook": "01_foundations/06_classes_and_oop.ipynb",
-    "status": "fail",
+    "status": "xfail",
     "cells_executed": 11,
     "duration_s": 0.6,
     "error": {
@@ -352,7 +352,7 @@
   },
   {
     "notebook": "fast_track/01_python_basics.ipynb",
-    "status": "fail",
+    "status": "xfail",
     "cells_executed": 15,
     "duration_s": 0.56,
     "error": {

@@ -190,13 +190,18 @@ service-account.json
 # -----------------------------------------------------------------------------
 #  Notebook-side artefacts the notebooks may write at runtime
 # -----------------------------------------------------------------------------
-# Some notebooks write a small forecast.csv / model.pkl to the local folder
-# during exercises; keep the canonical sample CSVs under data/ tracked, ignore
-# anything generated at the repo root.
+# Some notebooks write a small forecast.csv / model.pkl to their own folder
+# during exercises (e.g. 03_real_world_io/forecast.csv is regenerated from a live
+# API call on each run); keep the canonical sample CSVs under data/ tracked, and
+# ignore these generated artefacts wherever a notebook writes them.
 /forecast.csv
 /model.pkl
 /scratch.csv
 /scratch.json
+forecast.csv
+model.pkl
+scratch.csv
+scratch.json
 *.tmp
 *.bak
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Execute every .ipynb under a root and exit non-zero if any errors.
+"""Execute every .ipynb under a root and exit non-zero on any unexpected error.
 
 Usage:
     python scripts/run_all_notebooks.py .
@@ -7,6 +7,8 @@ Usage:
 
 Designed for CI. Each notebook runs end-to-end with a fresh kernel and a
 per-cell timeout. The notebook's own folder is used as the working directory.
+Intentional 🐞 Debug-me cells (marked "INTENTIONALLY ERRORS") are reported with
+status "xfail" and do NOT fail the run — only genuine regressions exit non-zero.
 With --json, also writes a snapshot (one entry per notebook) in the schema
 {notebook, status, cells_executed, duration_s, error}. Notebooks are executed
 in memory and are never modified on disk.
@@ -75,7 +77,12 @@ def run_one(nb_path: Path, root: Path, timeout: int) -> dict:
     except CellExecutionError as e:
         err = _first_error(nb) or {"cell_index": None, "ename": "CellExecutionError",
                                    "evalue": str(e)[:200]}
-        return {"notebook": rel, "status": "fail", "cells_executed": _cells_executed(nb),
+        # An intentional 🐞 Debug-me cell is an *expected* failure, not a regression.
+        ci = err.get("cell_index")
+        intentional = (ci is not None
+                       and "INTENTIONALLY ERRORS" in "".join(nb.cells[ci].source).upper())
+        return {"notebook": rel, "status": "xfail" if intentional else "fail",
+                "cells_executed": _cells_executed(nb),
                 "duration_s": round(time.time() - start, 2), "error": err}
     except Exception as e:
         return {"notebook": rel, "status": "fail", "cells_executed": _cells_executed(nb),
@@ -88,7 +95,8 @@ def _note(res: dict) -> str:
         return f"{res['duration_s']}s"
     e = res.get("error") or {}
     loc = f"cell {e['cell_index']} " if e.get("cell_index") is not None else ""
-    return f"{loc}{e.get('ename')}: {(e.get('evalue') or '')[:160]}"
+    prefix = "(expected) " if res["status"] == "xfail" else ""
+    return f"{prefix}{loc}{e.get('ename')}: {(e.get('evalue') or '')[:160]}"
 
 
 def main() -> int:
@@ -107,25 +115,30 @@ def main() -> int:
         print(f"No notebooks found under {root}", file=sys.stderr)
         return 1
 
+    MARK = {"pass": "✅", "xfail": "🐞", "fail": "❌"}
     results: list[dict] = []
     failures = 0
+    xfails = 0
     for nb in nbs:
         res = run_one(nb, root, args.timeout)
         results.append(res)
-        status = "✅" if res["status"] == "pass" else "❌"
-        print(f"  {status} {res['notebook']}  {_note(res)}", flush=True)
-        if res["status"] != "pass":
+        print(f"  {MARK.get(res['status'], '❌')} {res['notebook']}  {_note(res)}", flush=True)
+        if res["status"] == "fail":
             failures += 1
+        elif res["status"] == "xfail":
+            xfails += 1
 
     if args.json_path:
         Path(args.json_path).write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
         print(f"\nWrote snapshot: {args.json_path}")
 
+    npass = len(nbs) - failures - xfails
     print()
+    xnote = f" ({xfails} intentional 🐞 Debug-me xfail{'s' if xfails != 1 else ''})" if xfails else ""
     if failures:
-        print(f"❌ {failures} / {len(nbs)} notebooks failed")
+        print(f"❌ {failures} / {len(nbs)} notebooks failed unexpectedly{xnote}")
         return 1
-    print(f"✅ All {len(nbs)} notebooks executed cleanly")
+    print(f"✅ {npass} / {len(nbs)} notebooks executed cleanly{xnote}")
     return 0
 
 
