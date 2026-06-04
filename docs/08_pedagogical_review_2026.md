@@ -302,3 +302,9 @@ Independent module-by-module sweeps (onboarding+foundations, data science, I/O+M
 
 ### 12.4 Verification (pass 12)
 Reference checker green; 64/64 notebooks parse; fresh full execution 61 pass / 3 xfail / 0 errors on the current library stack; `llm_providers` imports cleanly with corrected docstring; both edits confirmed on disk.
+
+---
+
+## 12. Module 10 — Industry Applications (post-renumber addition)
+
+Four new full house-style notebooks (NB 35–38, `10_industry_applications/`) covering the top industry use-case families: **35** churn + CLV + expected-value retention targeting (builds on NB 14/15 rather than repeating them), **36** fraud & anomaly detection (imbalanced evaluation, Isolation Forest, precision@k queue economics), **37** segmentation & recommenders (RFM, k-means — the course's unsupervised debut — and item-item CF with hit-rate@k), **38** demand forecasting & predictive maintenance (promo-aware forecasting, safety stock, newsvendor, sensor-based maintenance scheduling). Each follows the standard template (Practice + Stretch + Debug-me + Bonus, ~8 exercises with worked solutions) and ends in a costed decision rule. Numbering stays contiguous (1–38). Integration: main/module READMEs, master onboarding table, 00b estimator + paths + concept index (+~11 h), slides overview deck + regenerated images, fast-track note. Verified: all 4 execute end-to-end; all 32 worked solutions execute in per-solution context; reference checker green over 0–38.

@@ -1,5 +1,5 @@
 # Python for AI-Driven Automation and Business Data Science
-## *9 modules, 34 notebooks (+ 11 optional appendices), end-to-end*
+## *10 modules, 38 notebooks (+ 11 optional appendices), end-to-end*
 
 A modern, hands-on, self-paced course that takes you from your first line of Python to **shipping a real AI-driven automation** — Python fluency, business data science, machine learning, AI engineering, and production wiring, all in one curriculum.
 
@@ -15,7 +15,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 
 | Folder | What |
 |---|---|
-| `00_onboarding/` … `09_building_ai_pocs/` | **The full course.** 34 main notebooks + 11 optional appendices, organised by topic. |
+| `00_onboarding/` … `10_industry_applications/` | **The full course.** 38 main notebooks + 11 optional appendices, organised by topic. |
 | `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
 | `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
@@ -59,6 +59,9 @@ Digital transformation context, architecture patterns, AI-assisted software deve
 ### 🛠️ [Module 9 — Building AI POCs (hands-on)](./09_building_ai_pocs/) *(NB 30–34)*
 The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + Copilot setup and vibe coding, three POCs of growing complexity (Streamlit → 3-tier → ML pipeline), RAG pipeline deep dive with a RAG-over-PDF POC, vector databases + agentic AI with a Chroma semantic-search POC and a ReAct command-line agent. Every notebook ends with a paste-ready Copilot Agent Mode prompt — designed so the whole course can be taught from the notebooks alone.
 
+### 🏭 [Module 10 — Industry Applications](./10_industry_applications/) *(NB 35–38)*
+The four use-case families that dominate business data science: **churn + CLV + retention economics**, **fraud & anomaly detection**, **customer segmentation & recommenders** (the course's unsupervised-learning debut), and **demand forecasting + predictive maintenance**. Every notebook ends in a costed decision rule, not a metric.
+
 ---
 
 ## Five high-impact notebooks worth singling out
@@ -75,7 +78,7 @@ The applied deep-dive companion: LLM fundamentals (Transformer math), VS Code + 
 
 ## Optional appendix track — 11 advanced notebooks
 
-A second tier of optional, deep-dive notebooks for readers who want to go beyond the 34-notebook backbone. Each appendix lives next to its parent module. Unlike the main notebooks, appendices are written as **reference notebooks**: they focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
+A second tier of optional, deep-dive notebooks for readers who want to go beyond the 38-notebook backbone. Each appendix lives next to its parent module. Unlike the main notebooks, appendices are written as **reference notebooks**: they focus on demonstrating libraries rather than interactive exercises, and skip the Solution/Debug-me scaffolding.
 
 Every appendix is **fully runnable offline**. When an optional heavy dependency (PyTorch, Prophet, FAISS, transformers, …) isn't installed, the notebook falls back to a small built-in stand-in so it still executes end-to-end. Install the real library (see [Setup](#setup)) to swap the stand-in for the genuine article.
 
@@ -101,8 +104,8 @@ Match yourself to the path that fits:
 
 | You are | You'll touch | Time |
 |---|---|---|
-| **Complete beginner** | All modules, in **spiral order** (orientation → skills → build → deploy → capstone) | ~90 h |
-| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 7 | ~30 h |
+| **Complete beginner** | All modules, in **spiral order** (orientation → skills → applications → build → deploy → capstone) | ~105 h |
+| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 10, 7 | ~40 h |
 | **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 9, 7 | ~55 h |
 | **ML practitioner** | Modules 0, 5, 6, 9, 7 | ~25 h |
 | **Manager** (curious) | Module 0 (incl. `00c`) + 8 + 7 | ~10 h |
@@ -253,6 +256,7 @@ export GOOGLE_API_KEY=...
 ├── 07_capstones/           ← NB 24: analytics  +  NB 25: AI assistant
 ├── 08_business_ai/         ← NB 26–29: digital transformation, architecture, AI-assisted dev, BPM + governance + cases
 ├── 09_building_ai_pocs/    ← NB 30–34: LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents
+├── 10_industry_applications/ ← NB 35–38: churn + CLV, fraud, segmentation + recommenders, forecasting + maintenance
 │
 ├── fast_track/                     ← 9 trimmed notebooks (~10 h) — the shortcut path
 │

@@ -38,7 +38,7 @@ Compared to the full course, these are gone:
 - **APIs / HTTP / SQL** — these matter once you have a real I/O task; defer them.
 - **NumPy / matplotlib / statistics / time series** — pandas covers ~80 % of what beginners need to read code.
 - **Model evaluation, feature engineering, tools & agents, document processing, AI evaluation, production wiring** — defer these to the full course when you need the depth.
-- **Both capstones** and **all 11 optional appendices**.
+- **Both capstones**, **Module 10's industry applications** (churn value, fraud, segmentation, forecasting), and **all 11 optional appendices**.
 
 The full course is at the parent level — entry point: `../00_onboarding/00_master_onboarding.ipynb`.
 

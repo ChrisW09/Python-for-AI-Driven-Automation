@@ -1,6 +1,6 @@
 # Module-Descriptor Coverage Matrix (Modulhandbuch ↔ Course)
 
-Mapping the official **Lernergebnisse / Kompetenzen** and **Inhalte** to where the course actually delivers them. Notebook numbers are the canonical layout (NB 1–34, contiguous).
+Mapping the official **Lernergebnisse / Kompetenzen** and **Inhalte** to where the course actually delivers them. Notebook numbers are the canonical layout (NB 1–38, contiguous).
 
 **Verdict:** the course covers **all six competencies and all thirteen content items.** Coverage is *full* for 12 of 13 contents and 5 of 6 competencies; the remaining items are *full on content* with one delivery-level nuance each (the "interdisciplinary team" dimension and "microservices" as an implemented — vs taught — pattern). Details and the two nuances are below.
 
