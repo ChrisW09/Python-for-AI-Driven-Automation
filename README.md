@@ -17,7 +17,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 |---|---|
 | `00_onboarding/` … `10_industry_applications/` | **The full course.** 38 main notebooks + 11 optional appendices, organised by topic. |
 | `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
-| `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per module — to check what stuck. |
+| `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per skill module (Modules 1–6) — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | A 25-slide course-overview deck (PDF + LaTeX source). |
 | `scripts/` | Local helper scripts — run every notebook end-to-end or check that NB-number references in the docs resolve to real files. Use them whenever you want a sanity-check pass. |
@@ -105,7 +105,7 @@ Match yourself to the path that fits:
 | You are | You'll touch | Time |
 |---|---|---|
 | **Complete beginner** | All modules, in **spiral order** (orientation → skills → applications → build → deploy → capstone) | ~105 h |
-| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 10, 7 | ~40 h |
+| **Analyst** (knows Excel/SQL) | Modules 0, 2, 3, 4, 10, 7 | ~43 h |
 | **Developer** (knows another language) | Modules 0, 2, 3, 4, 5, 6, 9, 7 | ~55 h |
 | **ML practitioner** | Modules 0, 5, 6, 9, 7 | ~25 h |
 | **Manager** (curious) | Module 0 (incl. `00c`) + 8 + 7 | ~10 h |
@@ -125,7 +125,7 @@ Every notebook follows the same six-section template:
 5. **🎁 Bonus mini-project** — one larger applied task.
 6. **✅ Self-assessment checklist** + **🚀 Next step** — pointer to the next notebook in your path.
 
-That's **~8 exercises per notebook on average** — and **180+ across the course**, every single one with a worked solution and an explanation of *why* it works.
+That's **~8 exercises per notebook on average** — and **300+ across the course**, every single one with a worked solution and an explanation of *why* it works.
 
 The nine visual markers (💡 tip, 🎯 intuition, ⚠️ pitfall, 🧪 exercise, 🎁 bonus, 🐞 debug-me, 🧠 mental-model, 🔭 forward-reference, ⭐/⭐⭐/⭐⭐⭐ difficulty) are road signs you'll see throughout. They are explained in the onboarding notebook.
 
@@ -260,7 +260,7 @@ export GOOGLE_API_KEY=...
 │
 ├── fast_track/                     ← 9 trimmed notebooks (~10 h) — the shortcut path
 │
-├── quizzes/                        ← 6 multiple-choice quizzes, one per module
+├── quizzes/                        ← 6 multiple-choice quizzes, one per skill module (1–6)
 │
 ├── slides/                         ← HSBI Beamer decks (see slides/README.md)
 │   ├── 00_course_overview.pdf     ← 25-slide onboarding deck

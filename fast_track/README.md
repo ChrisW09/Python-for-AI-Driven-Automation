@@ -48,7 +48,7 @@ The full course is at the parent level — entry point: `../00_onboarding/00_mas
 
 Three good signals:
 
-1. **You want interview prep.** The full course has 88 Stretch exercises (A–D in every notebook) that are deliberately interview-grade. None of those are here.
+1. **You want interview prep.** The full course has 140+ Stretch exercises (A–D in every notebook) that are deliberately interview-grade. None of those are here.
 2. **You want to ship code.** The full course's Module 6 covers packaging, scheduling, and config & secrets — none of which is here.
 3. **You're curious about a specific topic.** The full course has dedicated notebooks on NumPy, matplotlib, statistics, time-series forecasting, agents, document processing, and AI evaluation. Pick the one that matters for your work.
 

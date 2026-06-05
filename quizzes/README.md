@@ -1,6 +1,6 @@
 # 🧪 Module Quizzes
 
-Six short multiple-choice quizzes, one per module. Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
+Six short multiple-choice quizzes, one per skill module (Modules 1–6). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Quiz | Module | File |
 |---|---|---|
