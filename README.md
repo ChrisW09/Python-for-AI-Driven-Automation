@@ -6,7 +6,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 > 🚀 **Start here:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb)
 > 👀 **See it work first (5 min):** [`00_onboarding/00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) — a tiny *offline* demo of AI triage + RAG + a KPI snapshot, so you can see what you'll build before the Python begins.
 > 🗺️  **Then the full map:** [`00_onboarding/00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) — module-map diagram, per-notebook time budgets, learning paths, interactive time estimator.
-> 🏎️ **Tight on time?** Take the [Fast Track](./fast_track/) — 9 essential notebooks, about 10 hours total. Same teaching, Stretch and Bonus sections trimmed off.
+> 🏎️ **Tight on time?** Take the [Fast Track](./fast_track/) — 13 essential notebooks, about 14 hours total. Same teaching, Stretch A/B and Bonus sections trimmed off.
 > 📊 **Slide-deck version:** [`slides/00_course_overview.pdf`](./slides/00_course_overview.pdf)
 
 ---
@@ -16,7 +16,7 @@ A modern, hands-on, self-paced course that takes you from your first line of Pyt
 | Folder | What |
 |---|---|
 | `00_onboarding/` … `10_industry_applications/` | **The full course.** 38 main notebooks + 11 optional appendices, organised by topic. |
-| `fast_track/` | **The fast track.** 9 trimmed notebooks (~10 h total) for a quick end-to-end pass at the essentials. |
+| `fast_track/` | **The fast track.** 13 trimmed notebooks (~14 h total) for a quick end-to-end pass at the essentials. |
 | `quizzes/` | **Module quizzes.** 6 short multiple-choice quizzes (5 questions each, ~10 min) — one per skill module (Modules 1–6) — to check what stuck. |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | A 25-slide course-overview deck (PDF + LaTeX source). |
@@ -258,7 +258,7 @@ export GOOGLE_API_KEY=...
 ├── 09_building_ai_pocs/    ← NB 30–34: LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents
 ├── 10_industry_applications/ ← NB 35–38: churn + CLV, fraud, segmentation + recommenders, forecasting + maintenance
 │
-├── fast_track/                     ← 9 trimmed notebooks (~10 h) — the shortcut path
+├── fast_track/                     ← 13 trimmed notebooks (~14 h) — the shortcut path
 │
 ├── quizzes/                        ← 6 multiple-choice quizzes, one per skill module (1–6)
 │

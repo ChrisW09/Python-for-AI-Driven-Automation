@@ -27,7 +27,7 @@ TEXT_GLOBS = ["**/*.md", "**/*.ipynb"]
 # Where to find notebook files (skip the legacy archive)
 NB_GLOBS = ["**/*.ipynb"]
 # Folders ignored entirely (both for text scanning and notebook discovery).
-# fast_track/ uses its own re-numbering (1-8) that diverges from the canonical
+# fast_track/ uses its own re-numbering (1-13) that diverges from the canonical
 # course; cross-references in any file should resolve against the canonical
 # numbering, so we don't let fast_track filenames satisfy "NB N" references.
 EXCLUDED_DIR_NAMES = {"previous_versions", "fast_track", "docs", ".ipynb_checkpoints", "__pycache__"}
