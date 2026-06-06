@@ -48,7 +48,7 @@ New here? The 5-minute offline demo [`00c_see_it_work.ipynb`](./00_onboarding/00
 |---|---|
 | `00_onboarding/` … `10_industry_applications/` | The complete course — 38 notebooks + 11 optional appendices. |
 | `fast_track/` | The fast track — 13 trimmed notebooks (~14 h). |
-| `quizzes/` | 6 short multiple-choice quizzes (Modules 1–6). |
+| `quizzes/` | 9 short multiple-choice quizzes (Modules 1–6 & 8–10). |
 | `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source). |
 | `scripts/` | Local helpers to run every notebook end-to-end or check NB-number references. |
@@ -65,7 +65,7 @@ A consistent six-part template: **🎯 objectives + ✅ prerequisites → number
 
 ## Setup
 
-**Google Colab (easiest):** upload any notebook — required libraries are pre-installed.
+**Google Colab (easiest):** click the **“Open in Colab”** badge at the top of any notebook — it opens straight from GitHub, no download, and the required libraries are pre-installed.
 
 **Local Jupyter:**
 ```bash
