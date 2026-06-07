@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <b>75 runnable notebooks · 10 modules · 300+ exercises · 100% offline</b>
+  <b>79 runnable notebooks · 11 modules · 300+ exercises · 100% offline</b>
 </p>
 
 ---
@@ -29,7 +29,7 @@
 - [Repository layout](#repository-layout)
 - [How each notebook works](#how-each-notebook-works)
 - [LLM providers](#llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 75 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 79 notebooks
 - [Contributing &amp; licence](#contributing--licence)
 
 ---
@@ -72,8 +72,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 10 modules + 11 optional appendices | The essentials, condensed |
-| **Notebooks** | 38 lessons (+ appendices) | 13 lessons |
+| **Scope** | All 11 modules + 11 optional appendices | The essentials, condensed |
+| **Notebooks** | 42 lessons (+ appendices) | 13 lessons |
 | **Time** | ~105 hours | ~14 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -97,6 +97,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**8 · Business AI**](./08_business_ai/) | 26–29 | Digital transformation, architecture, AI-assisted dev, governance |
 | [**9 · Building AI POCs**](./09_building_ai_pocs/) | 30–34 | LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents |
 | [**10 · Industry Applications**](./10_industry_applications/) | 35–38 | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance |
+| [**11 · Agents, Tools &amp; MCP**](./11_agents_tools_mcp/) | 39–42 | Agent architectures, robust tools, the Model Context Protocol, multi-agent systems |
 
 > **11 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline.
 
@@ -106,7 +107,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `10_industry_applications/` | The complete course — 38 lessons + 11 appendices |
+| `00_onboarding/` … `11_agents_tools_mcp/` | The complete course — 42 lessons + 11 appendices |
 | `fast_track/` | The fast track — 13 trimmed notebooks (~14 h) |
 | `quizzes/` | 9 short multiple-choice quizzes (Modules 1–6 &amp; 8–10) |
 | `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
@@ -252,6 +253,15 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `36_fraud_anomaly_detection.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/36_fraud_anomaly_detection.ipynb) |
 | `37_segmentation_recommenders.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/37_segmentation_recommenders.ipynb) |
 | `38_demand_maintenance.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/38_demand_maintenance.ipynb) |
+
+### 11 · Agents, Tools & MCP
+
+| Notebook | Open |
+|---|---|
+| `39_agent_architectures.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_agents_tools_mcp/39_agent_architectures.ipynb) |
+| `40_designing_robust_tools.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_agents_tools_mcp/40_designing_robust_tools.ipynb) |
+| `41_model_context_protocol.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_agents_tools_mcp/41_model_context_protocol.ipynb) |
+| `42_multi_agent_systems.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_agents_tools_mcp/42_multi_agent_systems.ipynb) |
 
 ### 🏎️ Fast track
 
