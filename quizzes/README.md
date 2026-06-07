@@ -1,6 +1,6 @@
 # 🧪 Module Quizzes
 
-Nine short multiple-choice quizzes — one per content module (Modules 1–6 and 8–10; Module 7 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
+Ten short multiple-choice quizzes — one per content module (Modules 1–6 and 8–11; Module 7 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Quiz | Module | File |
 |---|---|---|
@@ -13,6 +13,7 @@ Nine short multiple-choice quizzes — one per content module (Modules 1–6 and
 | 8 | Business AI (NB 26–29) | [`quiz_08_business_ai.ipynb`](./quiz_08_business_ai.ipynb) |
 | 9 | Building AI POCs (NB 30–34) | [`quiz_09_building_ai_pocs.ipynb`](./quiz_09_building_ai_pocs.ipynb) |
 | 10 | Industry Applications (NB 35–38) | [`quiz_10_industry_applications.ipynb`](./quiz_10_industry_applications.ipynb) |
+| 11 | Agents, Tools & MCP (NB 39–42) | [`quiz_11_agents_tools_mcp.ipynb`](./quiz_11_agents_tools_mcp.ipynb) |
 
 ## How to use the quizzes
 

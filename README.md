@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <b>79 runnable notebooks · 11 modules · 300+ exercises · 100% offline</b>
+  <b>81 runnable notebooks · 11 modules · 300+ exercises · 100% offline</b>
 </p>
 
 ---
@@ -29,7 +29,7 @@
 - [Repository layout](#repository-layout)
 - [How each notebook works](#how-each-notebook-works)
 - [LLM providers](#llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 79 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 81 notebooks
 - [Contributing &amp; licence](#contributing--licence)
 
 ---
@@ -73,8 +73,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
 | **Scope** | All 11 modules + 11 optional appendices | The essentials, condensed |
-| **Notebooks** | 42 lessons (+ appendices) | 13 lessons |
-| **Time** | ~105 hours | ~14 hours |
+| **Notebooks** | 42 lessons (+ appendices) | 14 lessons |
+| **Time** | ~105 hours | ~15 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
 
@@ -108,8 +108,8 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | Path | Contents |
 |---|---|
 | `00_onboarding/` … `11_agents_tools_mcp/` | The complete course — 42 lessons + 11 appendices |
-| `fast_track/` | The fast track — 13 trimmed notebooks (~14 h) |
-| `quizzes/` | 9 short multiple-choice quizzes (Modules 1–6 &amp; 8–10) |
+| `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
+| `quizzes/` | 10 short multiple-choice quizzes (Modules 1–6 &amp; 8–11) |
 | `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
 | `scripts/` | Helpers to run every notebook end-to-end or check NB-number references |
@@ -281,6 +281,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `11_embeddings_and_rag.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/11_embeddings_and_rag.ipynb) |
 | `12_tools_and_agents.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/12_tools_and_agents.ipynb) |
 | `13_notebook_to_project.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/13_notebook_to_project.ipynb) |
+| `14_agents_and_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/14_agents_and_mcp.ipynb) |
 
 ### 🧠 Quizzes
 
@@ -295,6 +296,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_08_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_08_business_ai.ipynb) |
 | `quiz_09_building_ai_pocs.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_09_building_ai_pocs.ipynb) |
 | `quiz_10_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_10_industry_applications.ipynb) |
+| `quiz_11_agents_tools_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_11_agents_tools_mcp.ipynb) |
 
 ---
 

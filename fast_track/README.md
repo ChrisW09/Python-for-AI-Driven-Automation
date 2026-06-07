@@ -1,6 +1,6 @@
 # 🏎️ Fast Track
 
-The whole curriculum, condensed to its essentials. **13 notebooks. About 14 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack, from Python basics all the way to LLM agents and packaging a real project.
+The whole curriculum, condensed to its essentials. **14 notebooks. About 15 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack, from Python basics all the way to LLM agents, the Model Context Protocol (MCP), and packaging a real project.
 
 > 🚀 **Start here:** [`00_fast_track_onboarding.ipynb`](./00_fast_track_onboarding.ipynb)
 
@@ -86,6 +86,7 @@ fast_track/                      canonical full course
   11_embeddings_and_rag     ←  05_ai_engineering/18_embeddings_retrieval
   12_tools_and_agents       ←  05_ai_engineering/19_tools_and_agents
   13_notebook_to_project    ←  06_production/22_from_notebook_to_project
+  14_agents_and_mcp         ←  11_agents_tools_mcp/* (agents, tools & MCP, condensed)
 ```
 
-The fast-track notebooks are flat-numbered 1–13 deliberately — a single linear path you work straight through. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 8 with NumPy"*), so you can always follow a thread back to the depth notebook.
+The fast-track notebooks are flat-numbered 1–14 deliberately — a single linear path you work straight through. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 8 with NumPy"*), so you can always follow a thread back to the depth notebook.
