@@ -97,23 +97,19 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 ## 🚀 Open any notebook in Colab
 
-Every notebook runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Expand a module and click a badge.
+Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Click a badge to open it.
 
-<details>
-<summary><b>0 · Onboarding</b></summary>
+### 0 · Onboarding
 
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `00_master_onboarding.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00_master_onboarding.ipynb) |
 | `00b_course_overview.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00b_course_overview.ipynb) |
 | `00c_see_it_work.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb) |
 
-</details>
+### 1 · Foundations
 
-<details>
-<summary><b>1 · Foundations</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `01_python_basics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/01_foundations/01_python_basics.ipynb) |
 | `02_control_structures.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/01_foundations/02_control_structures.ipynb) |
@@ -122,12 +118,9 @@ Every notebook runs in [Google Colab](https://colab.research.google.com/) with o
 | `05_functions_modules.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/01_foundations/05_functions_modules.ipynb) |
 | `06_classes_and_oop.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/01_foundations/06_classes_and_oop.ipynb) |
 
-</details>
+### 2 · Data Science
 
-<details>
-<summary><b>2 · Data Science</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `07_pandas_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/07_pandas_fundamentals.ipynb) |
 | `08_numpy_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/08_numpy_fundamentals.ipynb) |
@@ -139,22 +132,16 @@ Every notebook runs in [Google Colab](https://colab.research.google.com/) with o
 | `A3_forecasting_deep_learning.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A3_forecasting_deep_learning.ipynb) |
 | `A4_forecasting_foundation_models.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A4_forecasting_foundation_models.ipynb) |
 
-</details>
+### 3 · Real-world I/O
 
-<details>
-<summary><b>3 · Real-world I/O</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `12_apis_and_http.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/12_apis_and_http.ipynb) |
 | `13_sql_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/13_sql_fundamentals.ipynb) |
 
-</details>
+### 4 · Machine Learning
 
-<details>
-<summary><b>4 · Machine Learning</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `14_sklearn_basics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/04_machine_learning/14_sklearn_basics.ipynb) |
 | `15_model_evaluation.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/04_machine_learning/15_model_evaluation.ipynb) |
@@ -164,12 +151,9 @@ Every notebook runs in [Google Colab](https://colab.research.google.com/) with o
 | `A3_pytorch_fine_tuning.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/04_machine_learning/A3_pytorch_fine_tuning.ipynb) |
 | `A4_tabpfn_priorlab.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/04_machine_learning/A4_tabpfn_priorlab.ipynb) |
 
-</details>
+### 5 · AI Engineering
 
-<details>
-<summary><b>5 · AI Engineering</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `17_ai_workflows.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/05_ai_engineering/17_ai_workflows.ipynb) |
 | `18_embeddings_retrieval.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/05_ai_engineering/18_embeddings_retrieval.ipynb) |
@@ -180,44 +164,32 @@ Every notebook runs in [Google Colab](https://colab.research.google.com/) with o
 | `A2_vector_stores_survey.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/05_ai_engineering/A2_vector_stores_survey.ipynb) |
 | `A3_rag_and_agent_frameworks.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/05_ai_engineering/A3_rag_and_agent_frameworks.ipynb) |
 
-</details>
+### 6 · Production
 
-<details>
-<summary><b>6 · Production</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `22_from_notebook_to_project.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_production/22_from_notebook_to_project.ipynb) |
 | `23_scheduling_orchestration.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_production/23_scheduling_orchestration.ipynb) |
 
-</details>
+### 7 · Capstones
 
-<details>
-<summary><b>7 · Capstones</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `24_capstone_analytics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_capstones/24_capstone_analytics.ipynb) |
 | `25_capstone_ai_assistant.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_capstones/25_capstone_ai_assistant.ipynb) |
 
-</details>
+### 8 · Business AI
 
-<details>
-<summary><b>8 · Business AI</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `26_digital_transformation.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/08_business_ai/26_digital_transformation.ipynb) |
 | `27_architecture_patterns.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/08_business_ai/27_architecture_patterns.ipynb) |
 | `28_ai_assisted_software_development.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/08_business_ai/28_ai_assisted_software_development.ipynb) |
 | `29_bpm_governance_poc_mvp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/08_business_ai/29_bpm_governance_poc_mvp.ipynb) |
 
-</details>
+### 9 · Building AI POCs
 
-<details>
-<summary><b>9 · Building AI POCs</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `30_llm_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/09_building_ai_pocs/30_llm_fundamentals.ipynb) |
 | `31_from_setup_to_first_poc.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/09_building_ai_pocs/31_from_setup_to_first_poc.ipynb) |
@@ -225,24 +197,18 @@ Every notebook runs in [Google Colab](https://colab.research.google.com/) with o
 | `33_rag_pipeline_deep_dive.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/09_building_ai_pocs/33_rag_pipeline_deep_dive.ipynb) |
 | `34_vector_db_and_agentic_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/09_building_ai_pocs/34_vector_db_and_agentic_ai.ipynb) |
 
-</details>
+### 10 · Industry Applications
 
-<details>
-<summary><b>10 · Industry Applications</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `35_churn_clv_retention.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/35_churn_clv_retention.ipynb) |
 | `36_fraud_anomaly_detection.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/36_fraud_anomaly_detection.ipynb) |
 | `37_segmentation_recommenders.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/37_segmentation_recommenders.ipynb) |
 | `38_demand_maintenance.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_industry_applications/38_demand_maintenance.ipynb) |
 
-</details>
+### 🏎️ Fast track
 
-<details>
-<summary><b>🏎️ Fast track</b></summary>
-
-| Notebook | Colab |
+| Notebook | Open |
 |---|---|
 | `00_fast_track_onboarding.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/00_fast_track_onboarding.ipynb) |
 | `01_python_basics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/01_python_basics.ipynb) |
@@ -259,7 +225,19 @@ Every notebook runs in [Google Colab](https://colab.research.google.com/) with o
 | `12_tools_and_agents.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/12_tools_and_agents.ipynb) |
 | `13_notebook_to_project.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/13_notebook_to_project.ipynb) |
 
-</details>
+### 🧠 Quizzes
+
+| Notebook | Open |
+|---|---|
+| `quiz_01_foundations.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_01_foundations.ipynb) |
+| `quiz_02_data_science.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_02_data_science.ipynb) |
+| `quiz_03_real_world_io.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_03_real_world_io.ipynb) |
+| `quiz_04_machine_learning.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_04_machine_learning.ipynb) |
+| `quiz_05_ai_engineering.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_05_ai_engineering.ipynb) |
+| `quiz_06_production.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_06_production.ipynb) |
+| `quiz_08_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_08_business_ai.ipynb) |
+| `quiz_09_building_ai_pocs.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_09_building_ai_pocs.ipynb) |
+| `quiz_10_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_10_industry_applications.ipynb) |
 
 ---
 
