@@ -1,82 +1,129 @@
-# Python for AI-Driven Automation and Business Data Science
+<h1 align="center">Python for AI-Driven Automation &amp; Business Data Science</h1>
 
-*From your first line of Python to shipping a real AI-driven automation — Python fluency, business data science, machine learning, AI engineering, and production wiring in one hands-on, self-paced curriculum.*
+<p align="center">
+  From your first line of Python to shipping a real AI-driven automation —<br>
+  a hands-on, self-paced curriculum across Python fluency, business data science,<br>
+  machine learning, AI engineering, and production.
+</p>
 
-**10 modules · 38 notebooks (+ 11 optional appendices) · end-to-end**
+<p align="center">
+  <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-3da639.svg">
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776ab.svg?logo=python&logoColor=white">
+  <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
+  <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
+  <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
+</p>
 
----
-
-## Two ways to take it
-
-There are two learning paths — pick one:
-
-### 🎓 Complete course — *the full depth*
-All 10 modules / 38 notebooks (plus 11 optional appendices), worked in spiral order with every exercise, stretch problem, and capstone. **~105 hours.**
-→ **Start:** [`00_onboarding/00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00_master_onboarding.ipynb)
-
-### 🏎️ Fast track — *the essentials, condensed*
-The same teaching trimmed to **13 notebooks, ~14 hours** — a credible end-to-end pass you can finish in a few weeks of evenings (Stretch A/B and the bonus projects removed).
-→ **Start:** [`fast_track/00_fast_track_onboarding.ipynb`](./fast_track/00_fast_track_onboarding.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/00_fast_track_onboarding.ipynb)
-
-New here? The 5-minute offline demo [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb) shows what you'll build before the Python begins, and [`00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00b_course_overview.ipynb) has the full module map and an interactive time estimator.
+<p align="center">
+  <b>75 runnable notebooks · 10 modules · 300+ exercises · 100% offline</b>
+</p>
 
 ---
 
-## The modules (complete course)
+## Contents
 
-| Module | NB | Focus |
-|---|---|---|
-| 0 · Onboarding | — | Setup, orientation, 5-min demo |
-| 1 · Foundations | 1–6 | Variables, control flow, lists, dicts, functions, classes |
-| 2 · Data Science | 7–11 | pandas, NumPy, matplotlib, statistics, time series |
-| 3 · Real-world I/O | 12–13 | HTTP/APIs, SQL, data validation |
-| 4 · Machine Learning | 14–16 | scikit-learn, model evaluation, feature engineering |
-| 5 · AI Engineering | 17–21 | prompts, RAG, agents, document processing, AI eval & observability |
-| 6 · Production | 22–23 | packaging notebooks into projects, scheduling |
-| 7 · Capstones | 24–25 | two end-to-end projects (analytics + AI assistant) |
-| 8 · Business AI | 26–29 | digital transformation, architecture, AI-assisted dev, governance |
-| 9 · Building AI POCs | 30–34 | LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents |
-| 10 · Industry Applications | 35–38 | churn/CLV, fraud, segmentation + recommenders, demand & maintenance |
-
-11 optional **appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline.
+- [Why this course](#why-this-course)
+- [Quick start](#quick-start)
+- [Choose your path](#choose-your-path)
+- [Curriculum](#curriculum)
+- [Repository layout](#repository-layout)
+- [How each notebook works](#how-each-notebook-works)
+- [LLM providers](#llm-providers)
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 75 notebooks
+- [Contributing &amp; licence](#contributing--licence)
 
 ---
 
-## What's in the repo
+## Why this course
 
-| Folder | What |
-|---|---|
-| `00_onboarding/` … `10_industry_applications/` | The complete course — 38 notebooks + 11 optional appendices. |
-| `fast_track/` | The fast track — 13 trimmed notebooks (~14 h). |
-| `quizzes/` | 9 short multiple-choice quizzes (Modules 1–6 & 8–10). |
-| `data/` | The three sample CSVs the notebooks read (support_ops, api_log, customer_feedback). |
-| `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source). |
-| `scripts/` | Local helpers to run every notebook end-to-end or check NB-number references. |
-| `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`). |
-| `previous_versions/` | The legacy flat 19-notebook layout, archived. |
+- **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
+- **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
+- **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
+- **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
 
 ---
 
-## How each notebook is structured
+## Quick start
 
-A consistent six-part template: **🎯 objectives + ✅ prerequisites → numbered concept sections (prose + runnable code) → 🧪 practice exercises (incl. a 🐞 debug-me) → 🧠 stretch exercises A–D → 🎁 bonus mini-project → ✅ self-assessment + 🚀 next step.** Every exercise — **300+ across the course** — ships with a worked solution and the *reasoning* behind it.
+### ▶︎ Google Colab — zero setup *(recommended)*
 
----
+Click a badge to open a notebook in your browser; nothing to install.
 
-## Setup
+- **Start the full course** — `00_master_onboarding.ipynb` &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00_master_onboarding.ipynb)
+- **Start the fast track** — `00_fast_track_onboarding.ipynb` &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/00_fast_track_onboarding.ipynb)
+- **See it work first (5 min)** — `00c_see_it_work.ipynb` &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb)
 
-**Google Colab (easiest):** click the **“Open in Colab”** badge at the top of any notebook — it opens straight from GitHub, no download, and the required libraries are pre-installed. Or use the [**Open-in-Colab index**](#-open-any-notebook-in-colab) below to jump straight to any notebook.
+Every notebook is listed with its own Colab link in [Open any notebook in Colab](#-open-any-notebook-in-colab).
 
-**Local Jupyter:**
+### ⌥ Local Jupyter
+
 ```bash
 python -m venv .venv
-source .venv/bin/activate     # Windows: .venv\Scripts\activate
+source .venv/bin/activate         # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter lab
 ```
-Tested with Python 3.10+. Module 0 includes an environment-check cell.
 
-The 11 optional appendices demo heavier libraries (PyTorch, Prophet, FAISS, LangChain, …), listed commented-out at the bottom of `requirements.txt`. Each still runs offline via a built-in stand-in, so install them only to see the real library at work.
+Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 11 appendices demo heavier libraries (PyTorch, Prophet, FAISS, LangChain, …), kept commented-out at the bottom of `requirements.txt` — each still runs offline via a built-in stand-in, so install them only to see the real library at work.
+
+---
+
+## Choose your path
+
+| | 🎓 **Complete course** | 🏎️ **Fast track** |
+|---|---|---|
+| **Scope** | All 10 modules + 11 optional appendices | The essentials, condensed |
+| **Notebooks** | 38 lessons (+ appendices) | 13 lessons |
+| **Time** | ~105 hours | ~14 hours |
+| **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
+| **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
+
+New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 5-minute offline demo of what you'll build, and [`00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) has the full module map and an interactive time estimator.
+
+---
+
+## Curriculum
+
+| Module | Lessons | Focus |
+|---|:---:|---|
+| [**0 · Onboarding**](./00_onboarding/) | — | Setup, orientation, 5-minute demo |
+| [**1 · Foundations**](./01_foundations/) | 1–6 | Variables, control flow, lists, dicts, functions, classes |
+| [**2 · Data Science**](./02_data_science/) | 7–11 | pandas, NumPy, matplotlib, statistics, time series |
+| [**3 · Real-world I/O**](./03_real_world_io/) | 12–13 | HTTP/APIs, SQL, data validation |
+| [**4 · Machine Learning**](./04_machine_learning/) | 14–16 | scikit-learn, model evaluation, feature engineering |
+| [**5 · AI Engineering**](./05_ai_engineering/) | 17–21 | Prompts, RAG, agents, document processing, eval &amp; observability |
+| [**6 · Production**](./06_production/) | 22–23 | Packaging notebooks into projects, scheduling |
+| [**7 · Capstones**](./07_capstones/) | 24–25 | Two end-to-end projects (analytics + AI assistant) |
+| [**8 · Business AI**](./08_business_ai/) | 26–29 | Digital transformation, architecture, AI-assisted dev, governance |
+| [**9 · Building AI POCs**](./09_building_ai_pocs/) | 30–34 | LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents |
+| [**10 · Industry Applications**](./10_industry_applications/) | 35–38 | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance |
+
+> **11 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline.
+
+---
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `00_onboarding/` … `10_industry_applications/` | The complete course — 38 lessons + 11 appendices |
+| `fast_track/` | The fast track — 13 trimmed notebooks (~14 h) |
+| `quizzes/` | 9 short multiple-choice quizzes (Modules 1–6 &amp; 8–10) |
+| `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
+| `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
+| `scripts/` | Helpers to run every notebook end-to-end or check NB-number references |
+| `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
+| `previous_versions/` | The legacy flat 19-notebook layout, archived |
+
+---
+
+## How each notebook works
+
+A consistent six-part template:
+
+> 🎯 **Objectives** + ✅ **prerequisites** → numbered **concept sections** (prose + runnable code) → 🧪 **practice exercises** (incl. a 🐞 debug-me) → 🧠 **stretch exercises** A–D → 🎁 **bonus mini-project** → ✅ **self-assessment** + 🚀 **next step**
+
+Every exercise — **300+ across the course** — ships with a worked solution and the *reasoning* behind it.
 
 ---
 
@@ -84,7 +131,7 @@ The 11 optional appendices demo heavier libraries (PyTorch, Prophet, FAISS, Lang
 
 Notebooks 17–21 and 25 run **entirely offline** with the built-in `MockLLM`. For real intelligence, swap one line — the unified interface in [`llm_providers.py`](./llm_providers.py) supports four providers:
 
-| Provider | Class | When |
+| Provider | Class | When to use |
 |---|---|---|
 | 🟢 OpenAI | `OpenAILLM(model="gpt-4o-mini")` | Reliable default |
 | 🟠 Anthropic | `AnthropicLLM(model="claude-haiku-4-5-20251001")` | Long context, careful tone |
@@ -241,8 +288,12 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 ---
 
+---
+
 ## Contributing & licence
 
-Spotted a bug or an unclear explanation? Open an issue or PR. Licensed **MIT** (see `LICENSE`) — use freely for learning, teaching, or anything else.
+Spotted a bug or an unclear explanation? **Open an issue or PR** — contributions are welcome.
 
-Happy coding.
+Licensed under the **MIT License** (see [`LICENSE`](./LICENSE)) — use freely for learning, teaching, or anything else.
+
+<p align="center"><sub>Happy coding 🚀</sub></p>
