@@ -49,6 +49,8 @@
 
 Click a badge to open a notebook in your browser; nothing to install.
 
+> 🔑 **You need a free Google account to *run* the notebooks.** Colab gives each signed-in user a free cloud runtime, so the first time you press **Run** it will ask you to sign in (any Gmail account works). Without signing in you can read a notebook but not execute its cells. No Google account? Use the **Local Jupyter** option below instead.
+
 - **Start the full course** — `00_master_onboarding.ipynb` &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00_master_onboarding.ipynb)
 - **Start the fast track** — `00_fast_track_onboarding.ipynb` &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/00_fast_track_onboarding.ipynb)
 - **See it work first (5 min)** — `00c_see_it_work.ipynb` &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb)
@@ -145,7 +147,7 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 ## 🚀 Open any notebook in Colab
 
-Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Click a badge to open it.
+Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
 ### 0 · Onboarding
 
