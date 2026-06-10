@@ -19,7 +19,7 @@ The whole curriculum, condensed to its essentials. **14 notebooks. About 15 hour
 | 4 | `04_functions.ipynb`                | Functions, default args, `*args/**kwargs`, decorators | ~65 min |
 | 5 | `05_classes_basics.ipynb`           | Classes, `__init__`, `self`, methods | ~60 min |
 | 6 | `06_pandas_fundamentals.ipynb`      | DataFrames, groupby, merge, missing data | ~80 min |
-| 7 | `07_visualization_and_stats.ipynb`  | matplotlib charts; distributions, confidence intervals, hypothesis tests | ~80 min |
+| 7 | `07_visualization_and_stats.ipynb`  | charts in a few lines (pandas/seaborn); distributions, confidence intervals, hypothesis tests | ~80 min |
 | 8 | `08_sklearn_basics.ipynb`           | train/test split, fit/predict, evaluation, pipelines | ~85 min |
 | 9 | `09_apis_and_sql.ipynb`             | HTTP/REST APIs, status codes, JSON, SQL queries with pandas | ~85 min |
 | 10 | `10_ai_workflows.ipynb`            | LLM prompting, classification, JSON output, validation | ~65 min |

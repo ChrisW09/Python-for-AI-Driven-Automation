@@ -14,6 +14,7 @@
 numpy>=1.24,<3
 pandas>=2.0,<4
 matplotlib>=3.9,<4     # 3.9+ required: notebooks use ax.boxplot(tick_labels=...)
+seaborn>=0.13,<1       # statistical charts in one line (NB 9, fast-track NB 7)
 scikit-learn>=1.3,<2
 scipy>=1.10,<2        # statistics, safety stock, rank ensembles (NB 10, 35–38)
 jupyterlab>=4.0,<5

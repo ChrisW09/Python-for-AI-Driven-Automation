@@ -1,6 +1,6 @@
 # Module 2 — Data Science
 
-**Goal:** Master the four-library stack that powers every analytical Python codebase — pandas, NumPy, matplotlib, statsmodels — plus the statistics you need to interpret what they show you.
+**Goal:** Master the library stack that powers every analytical Python codebase — pandas, NumPy, seaborn/matplotlib, statsmodels — plus the statistics you need to interpret what they show you.
 
 **Estimated time:** 8–10 hours of focused study.
 **Prerequisites:** Module 1 (functions, comprehensions).
@@ -8,7 +8,7 @@
 > 🧭 **Where this fits.** Module 1 gave you Python; this module turns data into *insight* — the analytical half of every AI-automation project, and the groundwork for the I/O, machine-learning and AI-engineering modules that follow.
 
 ```
-       pandas        ◄──►   NumPy           ◄──►   matplotlib
+       pandas        ◄──►   NumPy           ◄──►  seaborn/matplotlib
    (NB 7 — tables)         (NB 8 — math)         (NB 9 — plots)
                                   │
                                   ▼
@@ -27,7 +27,7 @@
 |---|---|---|
 | 7 | `07_pandas_fundamentals.ipynb` | LLM-call log analysis with filter/groupby/plot |
 | 8 | `08_numpy_fundamentals.ipynb` | A/B test of two LLM providers, vectorised |
-| 9 | `09_matplotlib_basics.ipynb` | 2×2 AI-ops executive dashboard |
+| 9 | `09_matplotlib_basics.ipynb` | Charts in 1–3 lines (pandas/seaborn) + a 2×2 AI-ops executive dashboard |
 | 10 | `10_statistics_basics.ipynb` | A/B-test analysis with t-tests and confidence intervals |
 | 11 | `11_time_series_forecasting.ipynb` | 3-month forecast with Holt-Winters + walk-forward backtest |
 
@@ -46,7 +46,7 @@ For a deep dive into time-series forecasting beyond Holt-Winters:
 
 1. **pandas: split → apply → combine.** Every analytical question is "for each X, compute Y". `groupby` is the verb.
 2. **NumPy: shape is everything.** Most ML bugs are shape mismatches. `print(x.shape)` is your first debugging move.
-3. **matplotlib: figure / axes.** `fig, ax = plt.subplots(...)` scales from one plot to a 12-panel dashboard.
+3. **Plotting: reach for the one-liner first.** `df.plot(...)` for quick looks, seaborn's `hue=` instead of loops; matplotlib's `ax` is the escape hatch, not the starting point.
 4. **Time series: trend + seasonality + residual.** Decompose before modelling. Always beat the *seasonal-naive* baseline.
 
 ## Where next

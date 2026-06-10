@@ -90,7 +90,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 |---|:---:|---|
 | [**0 · Onboarding**](./00_onboarding/) | — | Setup, orientation, 5-minute demo |
 | [**1 · Foundations**](./01_foundations/) | 1–6 | Variables, control flow, lists, dicts, functions, classes |
-| [**2 · Data Science**](./02_data_science/) | 7–11 | pandas, NumPy, matplotlib, statistics, time series |
+| [**2 · Data Science**](./02_data_science/) | 7–11 | pandas, NumPy, seaborn/matplotlib, statistics, time series |
 | [**3 · Real-world I/O**](./03_real_world_io/) | 12–13 | HTTP/APIs, SQL, data validation |
 | [**4 · Machine Learning**](./04_machine_learning/) | 14–16 | scikit-learn, model evaluation, feature engineering |
 | [**5 · AI Engineering**](./05_ai_engineering/) | 17–21 | Prompts, RAG, agents, document processing, eval &amp; observability |
