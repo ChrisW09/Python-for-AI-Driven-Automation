@@ -13,8 +13,8 @@
                 ┌──────────────┴──────────────┐
                 ▼                              ▼
     NB 14 — sklearn basics            NB 15 — model evaluation
-    Churn prediction + NPS            Confusion matrix, ROC, calibration,
-    regression end-to-end             cross-validation, learning curves
+    Churn + NPS regression,           Confusion matrix, ROC, calibration,
+    cross-validation, grid search     thresholds, learning curves
                 ▲
                 │
           NB 16 — feature engineering
@@ -26,7 +26,7 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 14 | `14_sklearn_basics.ipynb` | Customer-churn classifier + NPS regression |
+| 14 | `14_sklearn_basics.ipynb` | Customer-churn classifier + NPS regression, tuned with cross-validation & `GridSearchCV` |
 | 15 | `15_model_evaluation.ipynb` | Honest model-evaluation toolkit |
 | 16 | `16_feature_engineering.ipynb` | Real feature pipelines on tabular data |
 

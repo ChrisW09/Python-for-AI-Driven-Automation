@@ -12,7 +12,7 @@
    Capstone A — Analytics                       Capstone B — AI Assistant
    (NB 24)                                      (NB 25)
                                        
-   pandas + matplotlib + sklearn        prompts + RAG + tools +
+   pandas + seaborn + sklearn           prompts + RAG + tools +
    on a 12-month                        validation + scheduling +
    operations dataset                   evaluation
               │                                              │

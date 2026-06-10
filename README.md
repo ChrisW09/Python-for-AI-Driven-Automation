@@ -39,6 +39,8 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
+- **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
+- **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
 
 ---
@@ -92,7 +94,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**1 · Foundations**](./01_foundations/) | 1–6 | Variables, control flow, lists, dicts, functions, classes |
 | [**2 · Data Science**](./02_data_science/) | 7–11 | pandas, NumPy, seaborn/matplotlib, statistics, time series |
 | [**3 · Real-world I/O**](./03_real_world_io/) | 12–13 | HTTP/APIs, SQL, data validation |
-| [**4 · Machine Learning**](./04_machine_learning/) | 14–16 | scikit-learn, model evaluation, feature engineering |
+| [**4 · Machine Learning**](./04_machine_learning/) | 14–16 | scikit-learn, cross-validation &amp; hyperparameter tuning, model evaluation, feature engineering |
 | [**5 · AI Engineering**](./05_ai_engineering/) | 17–21 | Prompts, RAG, agents, document processing, eval &amp; observability |
 | [**6 · Production**](./06_production/) | 22–23 | Packaging notebooks into projects, scheduling |
 | [**7 · Capstones**](./07_capstones/) | 24–25 | Two end-to-end projects (analytics + AI assistant) |
@@ -115,6 +117,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
 | `scripts/` | Helpers to run every notebook end-to-end or check NB-number references |
+| `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
 | `previous_versions/` | The legacy flat 19-notebook layout, archived |
 
@@ -127,6 +130,11 @@ A consistent six-part template:
 > 🎯 **Objectives** + ✅ **prerequisites** → numbered **concept sections** (prose + runnable code) → 🧪 **practice exercises** (incl. a 🐞 debug-me) → 🧠 **stretch exercises** A–D → 🎁 **bonus mini-project** → ✅ **self-assessment** + 🚀 **next step**
 
 Every exercise — **300+ across the course** — ships with a worked solution and the *reasoning* behind it.
+
+Two conventions you'll see throughout:
+
+- **Charts take a few lines, not a page.** Plots are drawn with pandas `.plot()`, seaborn one-liners (`hue=` instead of loops, `sns.heatmap(cm, annot=True)` for matrices), and scikit-learn's `*Display` helpers — raw matplotlib appears only for final tweaks and multi-panel layouts.
+- **Diagrams travel with the notebook.** Explanatory figures (the train/test split, 5-fold cross-validation, the GridSearchCV flow, RAG pipelines, MCP host/client/server topology, walk-forward backtesting, …) are embedded as attachments inside the `.ipynb` files, so they render on GitHub, in Colab, and locally with no extra image files.
 
 ---
 
@@ -299,8 +307,6 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_09_building_ai_pocs.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_09_building_ai_pocs.ipynb) |
 | `quiz_10_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_10_industry_applications.ipynb) |
 | `quiz_11_agents_tools_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_11_agents_tools_mcp.ipynb) |
-
----
 
 ---
 
