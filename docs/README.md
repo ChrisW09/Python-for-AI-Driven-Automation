@@ -15,7 +15,7 @@ Project artefacts. Not part of the course content — these are reference docume
 | `07_submission_ready.docx` | The submission-readiness certificate: a 20-item checklist, the final smoke-test result, and what changed in the last polish pass (consistency fixes, marker count, exercise count, requirements.txt comments). All checklist items PASS. |
 | `notebook_execution_results.json` | The most recent execution snapshot from the helper `scripts/run_all_notebooks.py`. One entry per notebook with `status`, `duration_s`, and first error (if any). Regenerate by re-running the script from the repo root. |
 
-Reading order: 01 → 02 → 03. The current state of the repo reflects everything in report 03.
+Reading order: 01 → 02 → 03 → … → 09 (numeric). The current state of the repo reflects everything through report 08; report 09 is the curriculum-alignment matrix on top of that state.
 
 ## Reproducing the execution snapshot
 

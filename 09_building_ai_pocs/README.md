@@ -50,5 +50,7 @@ Each notebook ends with a self-contained Copilot Agent Mode prompt that builds a
 
 ## Where next
 
+→ Module 10 (`../10_industry_applications/`, NB 35–38) — apply the toolkit to churn + CLV, fraud, segmentation + recommenders, and forecasting use-cases.
+→ Module 11 (`../11_agents_tools_mcp/`, NB 39–42) — the direct sequel to NB 34: agent architectures, hardened tools, MCP, multi-agent systems.
 → Module 7 capstones (`../07_capstones/`) — apply what you learned to a complete deliverable.
 → Module 8 (`../08_business_ai/`) — embed your POC into a real organisation: governance, BPM, POC→MVP→Production.

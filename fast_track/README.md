@@ -14,10 +14,10 @@ The whole curriculum, condensed to its essentials. **14 notebooks. About 15 hour
 |---|---|---|---|
 | 0 | `00_fast_track_onboarding.ipynb`    | What the fast track is, what's been left out, environment check | ~10 min |
 | 1 | `01_python_basics.ipynb`            | Types, casting, f-strings, defensive string handling | ~50 min |
-| 2 | `02_control_structures.ipynb`       | if/elif, for/while, comprehensions, early return | ~55 min |
-| 3 | `03_lists_and_dicts.ipynb`          | Lists, tuples, sets, dicts, `defaultdict`, `Counter` | ~60 min |
+| 2 | `02_control_structures.ipynb`       | if/elif, for/while, loop control, early return | ~55 min |
+| 3 | `03_lists_and_dicts.ipynb`          | Lists, tuples, sets, dicts, comprehensions, `defaultdict`, `Counter` | ~60 min |
 | 4 | `04_functions.ipynb`                | Functions, default args, `*args/**kwargs`, decorators | ~65 min |
-| 5 | `05_classes_basics.ipynb`           | Classes, `__init__`, `self`, methods, `__repr__`, `@dataclass` | ~60 min |
+| 5 | `05_classes_basics.ipynb`           | Classes, `__init__`, `self`, methods | ~60 min |
 | 6 | `06_pandas_fundamentals.ipynb`      | DataFrames, groupby, merge, missing data | ~80 min |
 | 7 | `07_visualization_and_stats.ipynb`  | matplotlib charts; distributions, confidence intervals, hypothesis tests | ~80 min |
 | 8 | `08_sklearn_basics.ipynb`           | train/test split, fit/predict, evaluation, pipelines | ~85 min |
@@ -26,7 +26,8 @@ The whole curriculum, condensed to its essentials. **14 notebooks. About 15 hour
 | 11 | `11_embeddings_and_rag.ipynb`      | Embeddings, cosine similarity, retrieval, basic RAG | ~65 min |
 | 12 | `12_tools_and_agents.ipynb`        | Tool calling, the agent loop, multi-step agents | ~60 min |
 | 13 | `13_notebook_to_project.ipynb`     | Packaging notebook code into an installable, tested project | ~60 min |
-| | **Total** | | **~14 h** |
+| 14 | `14_agents_and_mcp.ipynb`          | Agent loops with budgets, robust tools, the Model Context Protocol (MCP) | ~60 min |
+| | **Total** | | **~15 h** |
 
 Each notebook (except the onboarding) is a **trimmed copy** of its canonical counterpart in the parent folders; notebooks 7 and 9 each combine two canonical chapters into one. The first cell of every trimmed notebook links back to the full version(s).
 
@@ -41,7 +42,7 @@ Compared to the full course, these are gone:
 - **`04_dictionaries_advanced.ipynb`** — merged into the fast-track NB 3.
 - **NumPy and time-series forecasting** — pandas plus the new visualization/statistics notebook (NB 7) cover ~80 % of what beginners need first.
 - **Model evaluation, feature engineering, document processing, AI evaluation & observability, and scheduling/orchestration** — defer these to the full course when you need the depth.
-- **Both capstones**, **Module 10's industry applications** (churn value, fraud, segmentation, forecasting), and **all 11 optional appendices**.
+- **Both capstones**, **Module 8's business-AI applications**, **Module 9's proof-of-concept builds**, **Module 10's industry applications** (churn value, fraud, segmentation, forecasting), and **all 11 optional appendices**.
 
 The full course is at the parent level — entry point: `../00_onboarding/00_master_onboarding.ipynb`.
 
@@ -65,7 +66,7 @@ Same dependencies as the full course:
 pip install -r ../requirements.txt
 ```
 
-You don't need anything extra — the `llm_providers.py` shim at the repo root means the AI notebooks (NB 10, 11, and 12) run offline by default with the built-in `MockLLM`.
+You don't need anything extra — the `llm_providers.py` shim at the repo root means the AI notebooks (NB 10, 11, 12, and 14) run offline by default with the built-in `MockLLM`.
 
 ---
 
@@ -89,4 +90,4 @@ fast_track/                      canonical full course
   14_agents_and_mcp         ←  11_agents_tools_mcp/* (agents, tools & MCP, condensed)
 ```
 
-The fast-track notebooks are flat-numbered 1–14 deliberately — a single linear path you work straight through. Inside each notebook the cross-references still use the canonical NB numbers (e.g. *"in NB 8 with NumPy"*), so you can always follow a thread back to the depth notebook.
+The fast-track notebooks are flat-numbered 1–14 deliberately — a single linear path you work straight through. Inside each notebook the cross-references use the **fast-track numbers** (e.g. *"pandas in NB 6"*); back-references to the full course always use explicit relative paths (e.g. [`../05_ai_engineering/`](../05_ai_engineering/)), so you can always follow a thread to the depth notebook.

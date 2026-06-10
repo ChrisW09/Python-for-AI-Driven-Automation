@@ -3,7 +3,7 @@
 **Goal:** Bridge the gap between *knowing how to build* AI systems (Modules 1–7) and *knowing how to land them inside a real organisation*. By the end of this module you will be able to walk a stakeholder through the architecture choices, the governance model, and the POC → MVP → Production path for any AI-automation initiative.
 
 **Estimated time:** 5–7 hours.
-**Prerequisites:** Modules 1 (foundations) and at least one of Modules 4 (ML) or 5 (AI Engineering). Strong background reading: NB 24 / 27 capstones — they make the business cases here much more vivid.
+**Prerequisites:** Modules 1 (foundations) and at least one of Modules 4 (ML) or 5 (AI Engineering). Strong background reading: NB 24 / 25 capstones — they make the business cases here much more vivid.
 
 ```
         ┌──────────────────────────────────────────────────────────┐
@@ -55,5 +55,7 @@ This shape mirrors how the course is actually taught: Modules 1–7 are the work
 | LLM evaluation patterns | NB 21 |
 
 ## Where next
+
+→ **Module 9 — Building AI POCs** (`../09_building_ai_pocs/30_llm_fundamentals.ipynb`) — the hands-on deep-dive companion to this module. After that, **Module 10 — Industry Applications** (`../10_industry_applications/`, NB 35–38) and **Module 11 — Agents, Tools & MCP** (`../11_agents_tools_mcp/`, NB 39–42) complete the course.
 
 → **Module 7 — Capstones** (`../07_capstones/24_capstone_analytics.ipynb` or `25_capstone_ai_assistant.ipynb`), if you haven't done them yet. The capstones make many of the Module 8 ideas concrete.

@@ -76,7 +76,7 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 |---|---|---|
 | **Scope** | All 11 modules + 11 optional appendices | The essentials, condensed |
 | **Notebooks** | 42 lessons (+ appendices) | 14 lessons |
-| **Time** | ~105 hours | ~15 hours |
+| **Time** | ~115 hours | ~15 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
 
