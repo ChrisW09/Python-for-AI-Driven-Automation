@@ -58,6 +58,16 @@ pytest>=8.0,<10
 # tabpfn>=0.1                       # local TabPFN (PriorLabs)
 # tabpfn-client>=0.1                # hosted PriorLabs API
 
+# --- Optional text analytics (Module 12 — topic modeling & sentiment) ---
+# Each notebook runs offline via a scikit-learn stand-in; install to see the real library.
+# bertopic>=0.16                    # NB 43 — embedding topic models (pulls sentence-transformers, umap-learn, hdbscan)
+# stream-topic>=0.1                 # NB 44 — STREAM (AnFreTh/STREAM): unified topic models + evaluation
+# vaderSentiment>=3.3               # NB 45 — lexicon/rule-based sentiment
+# transformers>=4.40                # NB 45 — transformer sentiment pipelines (also Module 4 A3)
+
+# --- Optional deep tabular learning (Module 13 — DeepTab) ---
+# deeptab>=0.1                      # NB 46 — OpenTabular/DeepTab; deep tabular models, sklearn API (pulls torch + lightning)
+
 # --- Optional forecasting libraries (Module 2 appendices A2-A4) ---
 # prophet>=1.1
 # neuralprophet>=0.8
