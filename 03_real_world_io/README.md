@@ -23,6 +23,14 @@
 | 12 | `12_apis_and_http.ipynb` | A weather-data ETL pipeline against a live API |
 | 13 | `13_sql_fundamentals.ipynb` | A SQL-driven channel report (joins, CTEs, window functions) — including Pydantic-validated rows where they enter Python (folded in here rather than split into its own notebook). |
 
+## Appendices (optional)
+
+Written as demo / reference notebooks rather than guided lessons — runnable offline, no API keys needed.
+
+| Appendix | Notebook | Focus |
+|---|---|---|
+| A1 | `A1_web_scraping_firecrawl.ipynb` | Web scraping — `requests` + BeautifulSoup, `robots.txt`, polite-scraper habits, and Firecrawl for LLM-ready markdown / structured extraction |
+
 ## Why this module matters
 
 Up to now every dataset was generated inline. From now on you'll *pull* data — from APIs, from databases, from LLMs — and that data **will be messy**. This module gives you the three skills that let you handle it without your code crashing every other Tuesday:

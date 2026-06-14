@@ -196,6 +196,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 |---|---|
 | `12_apis_and_http.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/12_apis_and_http.ipynb) |
 | `13_sql_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/13_sql_fundamentals.ipynb) |
+| `A1_web_scraping_firecrawl.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/A1_web_scraping_firecrawl.ipynb) |
 
 ### 4 · Machine Learning
 
