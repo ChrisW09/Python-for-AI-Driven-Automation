@@ -1,0 +1,55 @@
+# Compose file for local dev AND as the production template.
+# Locally: `docker compose up --build`.
+# In production we PULL prebuilt images (see deployment.md) — the `image:`
+# tags below are what CI pushes and what the server pulls.
+
+services:
+  backend:
+    build: ./backend
+    image: ghcr.io/chrisw09/example-app-backend:latest
+    environment:
+      DATABASE_URL: postgresql://app:app@db:5432/app
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [appnet]
+
+  frontend:
+    build: ./frontend
+    image: ghcr.io/chrisw09/example-app-frontend:latest
+    restart: unless-stopped
+    networks: [appnet]
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks: [appnet]
+
+  nginx:
+    build: ./nginx
+    image: ghcr.io/chrisw09/example-app-nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+    restart: unless-stopped
+    networks: [appnet]
+
+volumes:
+  db_data:
+
+networks:
+  appnet:

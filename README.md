@@ -102,8 +102,9 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**9 · Building AI POCs**](./09_building_ai_pocs/) | 30–34 | LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents |
 | [**10 · Industry Applications**](./10_industry_applications/) | 35–38 | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance |
 | [**11 · Agents, Tools &amp; MCP**](./11_agents_tools_mcp/) | 39–42 | Agent architectures, robust tools, the Model Context Protocol, multi-agent systems |
-| [**12 · Optional: Text Analytics**](./12_optional/) | 43–45 | Topic modeling (BERTopic, STREAM) &amp; sentiment analysis (VADER → classical → transformers) |
+| [**12 · NLP (Text Analytics)**](./12_NLP/) | 43–45 | Topic modeling (BERTopic, STREAM) &amp; sentiment analysis (VADER → classical → transformers) |
 | [**13 · Optional: DeepTab**](./13_DeepTab/) | 46 | Deep learning for tabular data — Mamba/FT-Transformer/SAINT… behind a scikit-learn API |
+| [**14 · CI/CD &amp; Deployment**](./14_CICD/) | — | Docker, Compose, GitHub Actions, registries, DNS, reverse proxies, HTTPS, Ubuntu deployment — a self-contained mini-book + runnable example app |
 
 > **11 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 12–13 are optional, reference-style tracks** (text analytics + deep tabular), also fully offline.
 
@@ -114,7 +115,8 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | Path | Contents |
 |---|---|
 | `00_onboarding/` … `11_agents_tools_mcp/` | The complete course — 42 lessons + 11 appendices |
-| `12_optional/`, `13_DeepTab/` | Optional reference tracks — text analytics (NB 43–45) &amp; deep tabular learning (NB 46) |
+| `12_NLP/`, `13_DeepTab/` | Optional reference tracks — text analytics (NB 43–45) &amp; deep tabular learning (NB 46) |
+| `14_CICD/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + a runnable example app (no notebooks) |
 | `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
 | `quizzes/` | 10 short multiple-choice quizzes (Modules 1–6 &amp; 8–11) |
 | `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
@@ -277,13 +279,13 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `41_model_context_protocol.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_agents_tools_mcp/41_model_context_protocol.ipynb) |
 | `42_multi_agent_systems.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_agents_tools_mcp/42_multi_agent_systems.ipynb) |
 
-### 12 · Optional: Text Analytics
+### 12 · NLP (Text Analytics)
 
 | Notebook | Open |
 |---|---|
-| `43_topic_modeling_bertopic.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_optional/43_topic_modeling_bertopic.ipynb) |
-| `44_topic_modeling_stream.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_optional/44_topic_modeling_stream.ipynb) |
-| `45_sentiment_analysis.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_optional/45_sentiment_analysis.ipynb) |
+| `43_topic_modeling_bertopic.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_NLP/43_topic_modeling_bertopic.ipynb) |
+| `44_topic_modeling_stream.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_NLP/44_topic_modeling_stream.ipynb) |
+| `45_sentiment_analysis.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_NLP/45_sentiment_analysis.ipynb) |
 
 ### 13 · Optional: DeepTab
 

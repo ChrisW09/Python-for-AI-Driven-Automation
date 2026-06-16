@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example App</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 4rem auto; line-height: 1.5; }
+    button { padding: .5rem 1rem; font-size: 1rem; cursor: pointer; }
+    #message { font-size: 1.25rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Example App</h1>
+  <p>The text below is fetched live from the FastAPI backend through the Nginx reverse proxy.</p>
+  <p id="message">Loading…</p>
+  <button id="refresh">Refresh</button>
+
+  <script>
+    // Call the backend through the SAME origin. Nginx routes /api/ to the backend
+    // container, so the browser never talks to the backend directly.
+    async function load() {
+      const el = document.getElementById("message");
+      try {
+        const res = await fetch("/api/message");
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+        el.textContent = data.message;
+      } catch (err) {
+        el.textContent = "Error contacting backend: " + err.message;
+      }
+    }
+    document.getElementById("refresh").addEventListener("click", load);
+    load();
+  </script>
+</body>
+</html>

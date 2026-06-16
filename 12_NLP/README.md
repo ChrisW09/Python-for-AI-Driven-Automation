@@ -1,4 +1,4 @@
-# Module 12 — Optional: Text Analytics (Topic Modeling & Sentiment)
+# Module 12 — NLP: Text Analytics (Topic Modeling & Sentiment)
 
 **Goal:** Turn unstructured text — reviews, support tickets, survey verbatims, social posts — into structure you can act on. Discover *what* people are talking about (**topic modeling**) and *how they feel* about it (**sentiment analysis**), using the libraries practitioners actually reach for.
 
