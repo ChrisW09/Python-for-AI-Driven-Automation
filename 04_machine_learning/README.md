@@ -52,4 +52,4 @@ A four-notebook deep-learning mini-track that picks up where scikit-learn stops:
 ## Where next
 
 → **Module 5 — Industry Applications** (`../05_industry_applications/17_churn_clv_retention.ipynb`) to apply Modules 1–4 to churn, fraud, segmentation and forecasting (spiral-path order), or
-→ **Module 6 — AI Engineering** (`../06_ai_engineering/21_ai_workflows.ipynb`) to go straight to the LLM layer.
+→ **Module 6 — AI Engineering** (`../06_ai_engineering/22_ai_workflows.ipynb`) to go straight to the LLM layer.

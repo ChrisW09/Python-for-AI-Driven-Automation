@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <b>81 runnable notebooks · 11 modules · 300+ exercises · 100% offline</b>
+  <b>87 runnable notebooks · 14 modules · 300+ exercises · 100% offline</b>
 </p>
 
 ---
@@ -29,7 +29,7 @@
 - [Repository layout](#repository-layout)
 - [How each notebook works](#how-each-notebook-works)
 - [LLM providers](#llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 81 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 87 notebooks
 - [Contributing &amp; licence](#contributing--licence)
 
 ---
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 11 appendices demo heavier libraries (PyTorch, Prophet, FAISS, LangChain, …), kept commented-out at the bottom of `requirements.txt` — each still runs offline via a built-in stand-in, so install them only to see the real library at work.
+Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 13 appendices demo heavier libraries (PyTorch, Prophet, FAISS, LangChain, …), kept commented-out at the bottom of `requirements.txt` — each still runs offline via a built-in stand-in, so install them only to see the real library at work.
 
 ---
 
@@ -76,8 +76,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 11 modules + 11 optional appendices | The essentials, condensed |
-| **Notebooks** | 42 lessons (+ appendices) | 14 lessons |
+| **Scope** | All 14 modules + 13 optional appendices | The essentials, condensed |
+| **Notebooks** | 46 lessons (+ appendices) | 14 lessons |
 | **Time** | ~115 hours | ~15 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -96,8 +96,8 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**3 · Real-world I/O**](./03_real_world_io/) | 12–13 | HTTP/APIs, SQL, data validation |
 | [**4 · Machine Learning**](./04_machine_learning/) | 14–16 | scikit-learn, cross-validation &amp; hyperparameter tuning, model evaluation, feature engineering |
 | [**5 · Industry Applications**](./05_industry_applications/) | 17–20 | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance |
-| [**6 · AI Engineering**](./06_ai_engineering/) | 21–25 | Prompts, RAG, agents, document processing, eval &amp; observability |
-| [**7 · Building AI POCs**](./07_building_ai_pocs/) | 26–30 | LLM theory, Copilot setup, three POCs, RAG deep dive, vector DBs + agents |
+| [**6 · AI Engineering**](./06_ai_engineering/) | 21–26 | LLM fundamentals, prompts, RAG, agents, document processing, eval &amp; observability |
+| [**7 · Building AI POCs**](./07_building_ai_pocs/) | 27–30 | Copilot setup, three POCs, RAG deep dive, vector DBs + agentic AI |
 | [**8 · Agents, Tools &amp; MCP**](./08_agents_tools_mcp/) | 31–34 | Agent architectures, robust tools, the Model Context Protocol, multi-agent systems |
 | [**9 · NLP (Text Analytics)**](./09_nlp/) | 35–37 | Topic modeling (BERTopic, STREAM) &amp; sentiment analysis (VADER → classical → transformers) |
 | [**10 · Optional: DeepTab**](./10_deeptab/) | 38 | Deep learning for tabular data — Mamba/FT-Transformer/SAINT… behind a scikit-learn API |
@@ -106,7 +106,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**13 · Capstones**](./13_capstones/) | 41–42 | Two end-to-end projects (analytics + AI assistant) |
 | [**14 · Business AI**](./14_business_ai/) | 43–46 | Digital transformation, architecture, AI-assisted dev, governance |
 
-> **11 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), also fully offline.
+> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), also fully offline.
 
 ---
 
@@ -114,7 +114,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `14_business_ai/` | The complete course — 42 lessons + 11 appendices |
+| `00_onboarding/` … `14_business_ai/` | The complete course — 46 lessons + 13 appendices |
 | `09_nlp/`, `10_deeptab/` | Optional reference tracks — text analytics (NB 35–37) &amp; deep tabular learning (NB 38) |
 | `12_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + a runnable example app (no notebooks) |
 | `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
@@ -145,7 +145,7 @@ Two conventions you'll see throughout:
 
 ## LLM providers
 
-Notebooks 21–25 and 42 run **entirely offline** with the built-in `MockLLM`. For real intelligence, swap one line — the unified interface in [`llm_providers.py`](./llm_providers.py) supports four providers:
+Notebooks 21–26 and 42 run **entirely offline** with the built-in `MockLLM`. For real intelligence, swap one line — the unified interface in [`llm_providers.py`](./llm_providers.py) supports four providers:
 
 | Provider | Class | When to use |
 |---|---|---|
@@ -229,11 +229,12 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 | Notebook | Open |
 |---|---|
-| `21_ai_workflows.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/21_ai_workflows.ipynb) |
-| `22_embeddings_retrieval.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/22_embeddings_retrieval.ipynb) |
-| `23_tools_and_agents.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/23_tools_and_agents.ipynb) |
-| `24_document_processing.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/24_document_processing.ipynb) |
-| `25_ai_evaluation_observability.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/25_ai_evaluation_observability.ipynb) |
+| `21_llm_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/21_llm_fundamentals.ipynb) |
+| `22_ai_workflows.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/22_ai_workflows.ipynb) |
+| `23_embeddings_retrieval.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/23_embeddings_retrieval.ipynb) |
+| `24_tools_and_agents.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/24_tools_and_agents.ipynb) |
+| `25_document_processing.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/25_document_processing.ipynb) |
+| `26_ai_evaluation_observability.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/26_ai_evaluation_observability.ipynb) |
 | `A1_llm_providers_guide.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/A1_llm_providers_guide.ipynb) |
 | `A2_vector_stores_survey.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/A2_vector_stores_survey.ipynb) |
 | `A3_rag_and_agent_frameworks.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_ai_engineering/A3_rag_and_agent_frameworks.ipynb) |
@@ -242,7 +243,6 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 | Notebook | Open |
 |---|---|
-| `26_llm_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_building_ai_pocs/26_llm_fundamentals.ipynb) |
 | `27_from_setup_to_first_poc.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_building_ai_pocs/27_from_setup_to_first_poc.ipynb) |
 | `28_three_pocs_growing_complexity.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_building_ai_pocs/28_three_pocs_growing_complexity.ipynb) |
 | `29_rag_pipeline_deep_dive.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_building_ai_pocs/29_rag_pipeline_deep_dive.ipynb) |

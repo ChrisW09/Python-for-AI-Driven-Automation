@@ -3,7 +3,7 @@
 **Goal:** Take the code you've been writing in notebooks and graduate it into a packaged, scheduled, observable, configurable Python project that another engineer can pick up.
 
 **Estimated time:** 5–7 hours.
-**Prerequisites:** Module 1 (functions). Helpful: NB 12 (HTTP), NB 24 (the toolkit we'll package).
+**Prerequisites:** Module 1 (functions). Helpful: NB 12 (HTTP), NB 25 (the toolkit we'll package).
 
 ```
                   ┌─────────────────────────────────────┐

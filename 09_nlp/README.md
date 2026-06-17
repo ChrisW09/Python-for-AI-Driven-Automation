@@ -3,7 +3,7 @@
 **Goal:** Turn unstructured text — reviews, support tickets, survey verbatims, social posts — into structure you can act on. Discover *what* people are talking about (**topic modeling**) and *how they feel* about it (**sentiment analysis**), using the libraries practitioners actually reach for.
 
 **Estimated time:** 2–4 hours.
-**Prerequisites:** Module 4 (NB 14 sklearn basics), Module 6 NB 22 (embeddings & retrieval). NumPy fluency (NB 8) helps.
+**Prerequisites:** Module 4 (NB 14 sklearn basics), Module 6 NB 23 (embeddings & retrieval). NumPy fluency (NB 8) helps.
 
 > 📎 **Optional, reference-style module.** Like the appendices, these notebooks demo a library at work rather than drilling exercises. **Every notebook runs end-to-end offline** via a small built-in scikit-learn stand-in — install the optional library to swap in the real thing.
 
@@ -52,4 +52,4 @@ pip install transformers torch  # NB 37 — transformer sentiment pipelines
 ## Where next
 
 → **Module 10 — DeepTab** (`../10_deeptab/38_deeptab_tabular_deep_learning.ipynb`) for deep learning on *tabular* data, or
-→ back to **Module 6 — AI Engineering** (`../06_ai_engineering/22_embeddings_retrieval.ipynb`) to combine these signals with retrieval and LLMs.
+→ back to **Module 6 — AI Engineering** (`../06_ai_engineering/23_embeddings_retrieval.ipynb`) to combine these signals with retrieval and LLMs.

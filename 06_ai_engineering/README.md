@@ -13,13 +13,13 @@
                                     │
         ┌───────────────────┬───────┴───────┬─────────────────┐
         ▼                   ▼               ▼                 ▼
-   NB 21                NB 22          NB 23             NB 24
+   NB 22                NB 23          NB 24             NB 25
    prompts +            embeddings     tools +           document
    structured           + RAG          agents            processing
    output                                                    
                                     │
                                     ▼
-                            NB 25 — evaluation
+                            NB 26 — evaluation
                           golden sets, LLM-as-judge,
                           cost dashboards, regression tests
 ```
@@ -28,11 +28,11 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 17 | `21_ai_workflows.ipynb` | Inbox-triage with the MockLLM (prompts, JSON output, batch) |
-| 18 | `22_embeddings_retrieval.ipynb` | TF-IDF + dense retrieval, retrieval@k benchmark |
-| 19 | `23_tools_and_agents.ipynb` | A multi-tool data assistant |
-| 20 | `24_document_processing.ipynb` | An invoice-extraction pipeline with validation |
-| 21 | `25_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
+| 17 | `22_ai_workflows.ipynb` | Inbox-triage with the MockLLM (prompts, JSON output, batch) |
+| 18 | `23_embeddings_retrieval.ipynb` | TF-IDF + dense retrieval, retrieval@k benchmark |
+| 19 | `24_tools_and_agents.ipynb` | A multi-tool data assistant |
+| 20 | `25_document_processing.ipynb` | An invoice-extraction pipeline with validation |
+| 21 | `26_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
 
 ## Optional appendices — provider, vector-store & framework surveys
 

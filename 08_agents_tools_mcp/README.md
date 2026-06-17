@@ -1,13 +1,13 @@
 # Module 8 — Agents, Tools & MCP
 
-**Goal:** Go from "an LLM that calls a tool" (Module 6, NB 23) to production-grade **agentic systems** — reliable agent loops, hardened tools, the **Model Context Protocol (MCP)**, and multi-agent orchestration. By the end you can design, build, and evaluate an agent that discovers its tools over a standard protocol and works in Claude Desktop, Claude Code, or your own app.
+**Goal:** Go from "an LLM that calls a tool" (Module 6, NB 24) to production-grade **agentic systems** — reliable agent loops, hardened tools, the **Model Context Protocol (MCP)**, and multi-agent orchestration. By the end you can design, build, and evaluate an agent that discovers its tools over a standard protocol and works in Claude Desktop, Claude Code, or your own app.
 
 **Estimated time:** 6–8 hours.
-**Prerequisites:** Module 6 (AI Engineering — especially NB 23 tools & agents), Modules 1–2 (functions, dicts, JSON). A real LLM is **not** required — every notebook runs 100% offline.
+**Prerequisites:** Module 6 (AI Engineering — especially NB 24 tools & agents), Modules 1–2 (functions, dicts, JSON). A real LLM is **not** required — every notebook runs 100% offline.
 
 ```
                         ┌──────────────────────────────────────┐
-                        │   the agent control loop (NB 23)     │
+                        │   the agent control loop (NB 24)     │
                         └──────────────────┬───────────────────┘
                                            │
         ┌──────────────────┬───────────────┴───────┬──────────────────────┐

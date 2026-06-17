@@ -13,7 +13,7 @@ Lecture decks in the HSBI house style (LaTeX Beamer, Madrid theme, 16:9).
 | `27_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · **frontend↔backend interaction with FastAPI** (request/response cycle + code) · the ML pipeline · choosing the right size | NB 44 |
 | `28_ai_assisted_software_development` | IDEs · Git & pull requests · prompt patterns for code · the four failure modes · the 60-second review | NB 45 |
 | `29_bpm_governance_poc_mvp` | BPM lifecycle · RACI for AI · POC → MVP → Production · three case studies · the readiness checklist | NB 46 |
-| `30_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 26 |
+| `30_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 21 |
 
 The five lecture decks (`26`–`30`) were added in the 2026 review pass; `00_course_overview` is the original onboarding deck. There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
 

@@ -11,7 +11,7 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
         ┌──────────────────────────────────────────────────────────────────┐
         │  Module 7 — Building AI POCs                                     │
         │                                                                    │
-        │  NB 26  LLM Fundamentals (Transformer, tokens, parameters)        │
+        │  NB 21  LLM Fundamentals (Transformer, tokens, parameters)        │
         │  NB 27  From Setup to First POC (VS Code, Copilot, vibe coding)   │
         │  NB 28  Three POCs (Streamlit → 3-tier → ML pipeline)             │
         │  NB 29  RAG Pipeline Deep Dive (chunking, ANN, RAG-over-PDF POC)  │
@@ -23,7 +23,7 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
 
 | # | Notebook | Slide source |
 |---|---|---|
-| 30 | `26_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
+| 30 | `21_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
 | 31 | `27_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
 | 32 | `28_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
 | 33 | `29_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
@@ -40,7 +40,7 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
 
 ## Recommended teaching order
 
-1. NB 26 — Transformer / LLM theory (1 lecture)
+1. NB 21 — Transformer / LLM theory (1 lecture)
 2. NB 27 — Setup + first Streamlit POC (1 lecture, with live setup)
 3. NB 28 — Three POCs progression (2 lectures — one per architecture step)
 4. NB 29 — RAG deep dive + PDF POC (1 lecture + lab)

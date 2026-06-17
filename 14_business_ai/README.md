@@ -52,10 +52,10 @@ This shape mirrors how the course is actually taught: Modules 1–13 are the wor
 | Packaging a script into a project | NB 39 |
 | Scheduling and orchestration | NB 40 |
 | End-to-end AI feature | NB 42 (capstone AI assistant) |
-| LLM evaluation patterns | NB 25 |
+| LLM evaluation patterns | NB 26 |
 
 ## Where next
 
-→ **Module 7 — Building AI POCs** (`../07_building_ai_pocs/26_llm_fundamentals.ipynb`) — the hands-on deep-dive companion to this module. After that, **Module 5 — Industry Applications** (`../05_industry_applications/`, NB 17–20) and **Module 8 — Agents, Tools & MCP** (`../08_agents_tools_mcp/`, NB 31–34) complete the course.
+→ **Module 7 — Building AI POCs** (`../06_ai_engineering/21_llm_fundamentals.ipynb`) — the hands-on deep-dive companion to this module. After that, **Module 5 — Industry Applications** (`../05_industry_applications/`, NB 17–20) and **Module 8 — Agents, Tools & MCP** (`../08_agents_tools_mcp/`, NB 31–34) complete the course.
 
 → **Module 13 — Capstones** (`../13_capstones/41_capstone_analytics.ipynb` or `42_capstone_ai_assistant.ipynb`), if you haven't done them yet. The capstones make many of the Module 14 ideas concrete.

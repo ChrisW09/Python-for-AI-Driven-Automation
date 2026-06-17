@@ -36,5 +36,5 @@
 
 ## Where next
 
-→ **Module 6 — AI Engineering** (`../06_ai_engineering/21_ai_workflows.ipynb`) if you haven't done it yet — LLMs layered on top of exactly these workflows.
+→ **Module 6 — AI Engineering** (`../06_ai_engineering/22_ai_workflows.ipynb`) if you haven't done it yet — LLMs layered on top of exactly these workflows.
 → **Capstone A** (`../13_capstones/41_capstone_analytics.ipynb`) to prove the analytics half end-to-end.
