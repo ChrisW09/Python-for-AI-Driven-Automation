@@ -1,6 +1,6 @@
 # 🧪 Module Quizzes
 
-Ten short multiple-choice quizzes — one per content module (Modules 1–6 and 8–11; Module 7 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
+Ten short multiple-choice quizzes — one per content module (Modules 1–8, 11 and 14; Module 13 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Quiz | Module | File |
 |---|---|---|
@@ -8,12 +8,12 @@ Ten short multiple-choice quizzes — one per content module (Modules 1–6 and 
 | 2 | Data Science (NB 7–11) | [`quiz_02_data_science.ipynb`](./quiz_02_data_science.ipynb) |
 | 3 | Real-world I/O (NB 12–13) | [`quiz_03_real_world_io.ipynb`](./quiz_03_real_world_io.ipynb) |
 | 4 | Machine Learning (NB 14–16) | [`quiz_04_machine_learning.ipynb`](./quiz_04_machine_learning.ipynb) |
-| 5 | AI Engineering (NB 17–21) | [`quiz_05_ai_engineering.ipynb`](./quiz_05_ai_engineering.ipynb) |
-| 6 | Production (NB 22–23) | [`quiz_06_production.ipynb`](./quiz_06_production.ipynb) |
-| 8 | Business AI (NB 26–29) | [`quiz_08_business_ai.ipynb`](./quiz_08_business_ai.ipynb) |
-| 9 | Building AI POCs (NB 30–34) | [`quiz_09_building_ai_pocs.ipynb`](./quiz_09_building_ai_pocs.ipynb) |
-| 10 | Industry Applications (NB 35–38) | [`quiz_10_industry_applications.ipynb`](./quiz_10_industry_applications.ipynb) |
-| 11 | Agents, Tools & MCP (NB 39–42) | [`quiz_11_agents_tools_mcp.ipynb`](./quiz_11_agents_tools_mcp.ipynb) |
+| 5 | AI Engineering (NB 21–25) | [`quiz_06_ai_engineering.ipynb`](./quiz_06_ai_engineering.ipynb) |
+| 6 | Production (NB 39–40) | [`quiz_11_production.ipynb`](./quiz_11_production.ipynb) |
+| 8 | Business AI (NB 43–46) | [`quiz_14_business_ai.ipynb`](./quiz_14_business_ai.ipynb) |
+| 9 | Building AI POCs (NB 26–30) | [`quiz_07_building_ai_pocs.ipynb`](./quiz_07_building_ai_pocs.ipynb) |
+| 10 | Industry Applications (NB 17–20) | [`quiz_05_industry_applications.ipynb`](./quiz_05_industry_applications.ipynb) |
+| 11 | Agents, Tools & MCP (NB 31–34) | [`quiz_08_agents_tools_mcp.ipynb`](./quiz_08_agents_tools_mcp.ipynb) |
 
 ## How to use the quizzes
 

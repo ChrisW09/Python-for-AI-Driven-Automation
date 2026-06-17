@@ -7,9 +7,9 @@ than synthetic in-memory data.
 
 | File | Rows | Schema | Used by |
 |---|---|---|---|
-| `support_ops.csv` | 60 | `channel`, `month`, `month_num`, `tickets_total`, `tickets_auto`, `automation_rate`, `latency_ms`, `satisfaction`, `cost_per_ticket` | NB 24 (capstone analytics) |
+| `support_ops.csv` | 60 | `channel`, `month`, `month_num`, `tickets_total`, `tickets_auto`, `automation_rate`, `latency_ms`, `satisfaction`, `cost_per_ticket` | NB 41 (capstone analytics) |
 | `api_log.csv` | 50 | `request_id`, `model`, `segment`, `quarter`, `tokens_in`, `tokens_out`, `latency_ms` | NB 7 (pandas fundamentals) |
-| `customer_feedback.csv` | 15 | `id`, `text`, `sentiment`, `topic` | NB 14 (sklearn text classification) and NB 17 (LLM workflows) |
+| `customer_feedback.csv` | 15 | `id`, `text`, `sentiment`, `topic` | NB 14 (sklearn text classification) and NB 21 (LLM workflows) |
 
 To load any of them inside a notebook:
 
