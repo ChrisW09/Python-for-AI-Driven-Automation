@@ -44,6 +44,7 @@
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
 - [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 87 notebooks
+- [About](#-about)
 - [Contributing &amp; licence](#-contributing--licence)
 
 ---
@@ -381,6 +382,16 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_07_building_ai_pocs.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_07_building_ai_pocs.ipynb) |
 | `quiz_05_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_05_industry_applications.ipynb) |
 | `quiz_08_agents_tools_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_08_agents_tools_mcp.ipynb) |
+
+---
+
+## 👤 About
+
+I work at the intersection of cutting-edge research and real-world implementation. My focus is Artificial Intelligence and Business Data Science with measurable industrial impact — from Generative AI, tabular deep learning, and natural language processing to agentic AI systems that translate frontier research into production.
+
+Before joining academia, I served as Technical Lead Analytics & Artificial Intelligence at BASF, leading international AI initiatives from strategy through production. Today, I am Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI). Alongside my academic work, I advise selected organizations, contribute to open-source AI software, and publish research in leading journals and international conferences.
+
+My goal is to help organizations translate advances in Artificial Intelligence into practical solutions that create lasting business value.
 
 ---
 
