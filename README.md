@@ -387,13 +387,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 ## 👤 About
 
-**Prof. Dr. Christoph Weisser** builds production-grade AI, publishes peer-reviewed research, and advises a select group of organizations on turning artificial intelligence into measurable value.
+I work at the intersection of cutting-edge research and real-world implementation. My focus is Artificial Intelligence and Business Data Science with measurable industrial impact — from Generative AI, tabular deep learning, and natural language processing to agentic AI systems that translate frontier research into production.
 
-He works at the intersection of cutting-edge research and real-world implementation. His focus is Artificial Intelligence and Business Data Science with measurable industrial impact — from Generative AI, tabular deep learning, and natural language processing to agentic AI systems that translate frontier research into production.
+Before joining academia, I served as Technical Lead Analytics & Artificial Intelligence at BASF, leading international AI initiatives from strategy through production. Today, I am Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI). Alongside my academic work, I advise selected organizations, contribute to open-source AI software, and publish research in leading journals and international conferences.
 
-Before joining academia, he served as Technical Lead Analytics & Artificial Intelligence at BASF, leading international AI initiatives from strategy through production. Today, he is Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI). Alongside his academic work, he advises selected organizations, contributes to open-source AI software, and publishes research in leading journals and international conferences.
-
-His goal is to help organizations translate advances in Artificial Intelligence into practical solutions that create lasting business value.
+My goal is to help organizations translate advances in Artificial Intelligence into practical solutions that create lasting business value.
 
 ---
 
