@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <b>87 runnable notebooks · 14 modules · 300+ exercises · 100% offline</b>
+  <b>87 runnable notebooks · 14 modules · 300+ exercises · 240+ in-lesson checkpoints · 100% offline</b>
 </p>
 
 ---
@@ -39,6 +39,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **240+ across the course**, each with a scaffolded starter and a collapsible solution.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -132,11 +133,23 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 A consistent six-part template:
 
-> 🎯 **Objectives** + ✅ **prerequisites** → numbered **concept sections** (prose + runnable code) → 🧪 **practice exercises** (incl. a 🐞 debug-me) → 🧠 **stretch exercises** A–D → 🎁 **bonus mini-project** → ✅ **self-assessment** + 🚀 **next step**
+> 🎯 **Objectives** + ✅ **prerequisites** → numbered **concept sections** (prose + runnable code), interleaved with ✋ **quick-exercise checkpoints** → 🧪 **practice exercises** (incl. a 🐞 debug-me) → 🧠 **stretch exercises** A–D → 🎁 **bonus mini-project** → ✅ **self-assessment** + 🚀 **next step**
 
 Every exercise — **300+ across the course** — ships with a worked solution and the *reasoning* behind it.
 
-Two conventions you'll see throughout:
+### ✋ In-lesson checkpoints — designed for interactive teaching
+
+Beyond the end-of-lesson exercise bank, each lesson embeds short **✋ Quick exercise** checkpoints at natural section breaks — roughly one every ~20 minutes of material. They turn a lecture into a rhythm: **teach ~20 min → pause for a ~2-minute hands-on exercise → teach again.**
+
+Each checkpoint is a self-contained three-cell block:
+
+1. **Prompt** — a focused, business/AI-flavoured task, solvable with *only* what the lesson has covered up to that point.
+2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
+3. **✅ Solution** — a collapsible answer with a one-line explanation.
+
+There are **240+ of these across the course** (3–4 per core lesson, 3 per fast-track lesson). They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors can use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+
+Two more conventions you'll see throughout:
 
 - **Charts take a few lines, not a page.** Plots are drawn with pandas `.plot()`, seaborn one-liners (`hue=` instead of loops, `sns.heatmap(cm, annot=True)` for matrices), and scikit-learn's `*Display` helpers — raw matplotlib appears only for final tweaks and multi-panel layouts.
 - **Diagrams travel with the notebook.** Explanatory figures (the train/test split, 5-fold cross-validation, the GridSearchCV flow, RAG pipelines, MCP host/client/server topology, walk-forward backtesting, …) are embedded as attachments inside the `.ipynb` files, so they render on GitHub, in Colab, and locally with no extra image files.
