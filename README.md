@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="docs/images/course_roadmap.png" width="900"
-       alt="Python for AI-Driven Automation &amp; Business Data Science — course roadmap across 15 modules (0–14): Onboarding, Foundations, Data Science, Real-world I/O, Machine Learning, Industry Apps, AI Engineering, Building AI POCs, Agents &amp; MCP, NLP, DeepTab, Production, CI/CD &amp; Deploy, Capstones, Business AI. 87 notebooks · 14 modules · 249 in-lesson checkpoints · 100% offline.">
+  <img src="docs/images/hero.png" width="900"
+       alt="Python for AI-Driven Automation &amp; Business Data Science — from your first line of Python to shipping AI in production, across Foundations, Data Science, Machine Learning, AI Engineering, Agents &amp; MCP, and Production.">
 </p>
 
 <p align="center">
@@ -161,7 +161,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `quizzes/` | 10 short multiple-choice quizzes (Modules 1–8, 11 &amp; 14) |
 | `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
-| `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the roadmap banner, check NB-number references |
+| `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
 | `previous_versions/` | The legacy flat 19-notebook layout, archived |
