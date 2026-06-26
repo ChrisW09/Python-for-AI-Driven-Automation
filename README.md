@@ -66,6 +66,21 @@
 
 ## 🚀 Quick start
 
+A taste of the style you'll be writing by Module 4 — a full, leakage-free model in a handful of lines (pipelines over boilerplate, just like real practitioners):
+
+```python
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import cross_val_score
+
+churn_model = make_pipeline(StandardScaler(), LogisticRegression())
+auc = cross_val_score(churn_model, X, y, cv=5, scoring="roc_auc").mean()
+print(f"5-fold ROC-AUC: {auc:.3f}")
+```
+
+No setup yet — just open a notebook and press **Run**:
+
 ### ▶︎ Google Colab — zero setup *(recommended)*
 
 Click a badge to open a notebook in your browser; nothing to install.
