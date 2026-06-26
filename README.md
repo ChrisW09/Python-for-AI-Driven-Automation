@@ -12,10 +12,11 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
+  <img alt="249 checkpoints, kernel-tested" src="https://img.shields.io/badge/249%20checkpoints-kernel--tested-8a2be2.svg">
 </p>
 
 <p align="center">
-  <b>87 runnable notebooks · 14 modules · 300+ exercises · 240+ in-lesson checkpoints · 100% offline</b>
+  <b>87 runnable notebooks · 14 modules · 300+ exercises · 249 in-lesson checkpoints · 100% offline</b>
 </p>
 
 ---
@@ -39,7 +40,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **240+ across the course**, each with a scaffolded starter and a collapsible solution.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **249 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -147,7 +148,9 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **240+ of these across the course** (3–4 per core lesson, 3 per fast-track lesson). They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors can use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **249 of these across the course** (3–4 per core lesson, 3 per fast-track lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+
+> 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 
 Two more conventions you'll see throughout:
 
