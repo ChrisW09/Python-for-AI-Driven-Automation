@@ -1,0 +1,24 @@
+name: checkpoints
+
+# Keeps the in-lesson "✋ Quick exercise" checkpoints honest on every change:
+# verifies each one has the 3-cell structure and that every starter cell and
+# Python solution parses without syntax errors. Fast and dependency-light
+# (only needs nbformat). Full kernel execution is available locally with:
+#   python scripts/test_checkpoints.py --exec
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install nbformat
+      - name: Validate checkpoints (structure + syntax)
+        run: python scripts/test_checkpoints.py
