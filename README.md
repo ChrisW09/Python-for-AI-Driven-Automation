@@ -19,23 +19,32 @@
   <b>87 runnable notebooks · 14 modules · 300+ exercises · 249 in-lesson checkpoints · 100% offline</b>
 </p>
 
+<p align="center">
+  <a href="#-quick-start">🚀 Quick start</a> &nbsp;·&nbsp;
+  <a href="#-curriculum">📚 Curriculum</a> &nbsp;·&nbsp;
+  <a href="#-how-each-notebook-works">📓 How it works</a> &nbsp;·&nbsp;
+  <a href="#-open-any-notebook-in-colab">▶️ Open in Colab</a> &nbsp;·&nbsp;
+  <a href="#-contributing--licence">🤝 Contributing</a>
+</p>
+
 ---
 
 ## Contents
 
-- [Why this course](#why-this-course)
-- [Quick start](#quick-start)
-- [Choose your path](#choose-your-path)
-- [Curriculum](#curriculum)
-- [Repository layout](#repository-layout)
-- [How each notebook works](#how-each-notebook-works)
-- [LLM providers](#llm-providers)
+- [Why this course](#-why-this-course)
+- [What's new](#-whats-new)
+- [Quick start](#-quick-start)
+- [Choose your path](#-choose-your-path)
+- [Curriculum](#-curriculum)
+- [Repository layout](#-repository-layout)
+- [How each notebook works](#-how-each-notebook-works)
+- [LLM providers](#-llm-providers)
 - [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 87 notebooks
-- [Contributing &amp; licence](#contributing--licence)
+- [Contributing &amp; licence](#-contributing--licence)
 
 ---
 
-## Why this course
+## ⚡ Why this course
 
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
@@ -47,7 +56,15 @@
 
 ---
 
-## Quick start
+## ✨ What's new
+
+- **✋ Interactive in-lesson checkpoints.** Every lesson now embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **249 across the course** — so you pause and *do* every ~20 minutes instead of reading straight through. Each ships a scaffolded starter and a collapsible solution, and **every solution has been executed in a fresh kernel to confirm it runs**. → [How each notebook works](#-how-each-notebook-works)
+- **🧑‍🏫 Built for live teaching.** The checkpoint rhythm — lecture ~20 min → ~2-min try → reveal — turns any lesson into an interactive class with zero prep.
+- **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, and agent lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
+
+---
+
+## 🚀 Quick start
 
 ### ▶︎ Google Colab — zero setup *(recommended)*
 
@@ -74,7 +91,7 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 
 ---
 
-## Choose your path
+## 🧭 Choose your path
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
@@ -88,7 +105,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 ---
 
-## Curriculum
+## 📚 Curriculum
 
 | Module | Lessons | Focus |
 |---|:---:|---|
@@ -112,7 +129,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 ---
 
-## Repository layout
+## 🗂️ Repository layout
 
 | Path | Contents |
 |---|---|
@@ -130,7 +147,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 ---
 
-## How each notebook works
+## 📓 How each notebook works
 
 A consistent six-part template:
 
@@ -159,7 +176,7 @@ Two more conventions you'll see throughout:
 
 ---
 
-## LLM providers
+## 🔌 LLM providers
 
 Notebooks 21–26 and 42 run **entirely offline** with the built-in `MockLLM`. For real intelligence, swap one line — the unified interface in [`llm_providers.py`](./llm_providers.py) supports four providers:
 
@@ -174,7 +191,7 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 ---
 
-## 🚀 Open any notebook in Colab
+## ▶️ Open any notebook in Colab
 
 Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
@@ -347,7 +364,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 ---
 
-## Contributing & licence
+## 🤝 Contributing & licence
 
 Spotted a bug or an unclear explanation? **Open an issue or PR** — contributions are welcome.
 
