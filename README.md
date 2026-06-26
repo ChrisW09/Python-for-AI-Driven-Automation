@@ -387,11 +387,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 ## 👤 About
 
-I work at the intersection of cutting-edge research and real-world implementation. My focus is Artificial Intelligence and Business Data Science with measurable industrial impact — from Generative AI, tabular deep learning, and natural language processing to agentic AI systems that translate frontier research into production.
+I am Prof. Dr. Christoph Weisser, Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI), and former Technical Lead Analytics & Artificial Intelligence at BASF. My work focuses on Artificial Intelligence, Generative AI, Business Data Science, and agentic AI systems that bridge research with real-world industrial applications.
 
-Before joining academia, I served as Technical Lead Analytics & Artificial Intelligence at BASF, leading international AI initiatives from strategy through production. Today, I am Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI). Alongside my academic work, I advise selected organizations, contribute to open-source AI software, and publish research in leading journals and international conferences.
+Before joining academia, I led international AI initiatives at BASF from strategy through production deployment. Today, I combine research, teaching, open-source software development, and selected industry collaborations to advance the practical application of AI.
 
-My goal is to help organizations translate advances in Artificial Intelligence into practical solutions that create lasting business value.
+I completed the PhD Program in Applied Statistics & Empirical Methods (summa cum laude) at Georg-August-Universität Göttingen and studied at the University of Oxford and the University of St Andrews as a scholar of the Studienstiftung des deutschen Volkes. I regularly publish research in leading journals and international conferences and contribute to open-source AI software.
 
 ---
 
