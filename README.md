@@ -5,7 +5,7 @@
 
 <p align="center">
   From your first line of Python to shipping a real AI-driven automation —<br>
-  a hands-on, self-paced curriculum across Python fluency, business data science,<br>
+  a hands-on curriculum (self-paced <em>or</em> instructor-led) across Python fluency, business data science,<br>
   machine learning, AI engineering, and production.
 </p>
 
@@ -16,10 +16,11 @@
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
   <img alt="249 checkpoints, kernel-tested" src="https://img.shields.io/badge/249%20checkpoints-kernel--tested-8a2be2.svg">
+  <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>87 runnable notebooks · 14 modules · 300+ exercises · 249 in-lesson checkpoints · 100% offline</b>
+  <b>87 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 249 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -77,6 +78,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
 
+# X, y: a feature matrix and churn labels you've already loaded (see Module 4)
 churn_model = make_pipeline(StandardScaler(), LogisticRegression())
 auc = cross_val_score(churn_model, X, y, cv=5, scoring="roc_auc").mean()
 print(f"5-fold ROC-AUC: {auc:.3f}")
@@ -158,7 +160,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `quizzes/` | 10 short multiple-choice quizzes (Modules 1–8, 11 &amp; 14) |
 | `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
-| `scripts/` | Helpers to run every notebook end-to-end or check NB-number references |
+| `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the roadmap banner, check NB-number references |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
 | `previous_versions/` | The legacy flat 19-notebook layout, archived |
@@ -183,7 +185,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **249 of these across the course** (3–4 per core lesson, 3 per fast-track lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **249 of these across the course** (3–4 per core lesson, 3 per fast-track lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 249 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 

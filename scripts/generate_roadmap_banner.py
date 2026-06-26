@@ -49,7 +49,7 @@ ax.axis("off")
 ax.text(MIDX, 8.78, "Python for AI-Driven Automation & Business Data Science",
         ha="center", va="center", fontsize=19, fontweight="bold", color="#1f2937")
 ax.text(MIDX, 8.18,
-        "87 notebooks  ·  14 modules  ·  249 in-lesson checkpoints  ·  self-paced  ·  100% offline",
+        "87 notebooks  ·  14 modules  ·  249 in-lesson checkpoints  ·  self-paced or instructor-led  ·  100% offline",
         ha="center", va="center", fontsize=11.5, style="italic", color="#6b7280")
 
 for i, (num, name, nb, focus, colour) in enumerate(MODULES):
