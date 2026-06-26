@@ -1,4 +1,7 @@
-<h1 align="center">Python for AI-Driven Automation &amp; Business Data Science</h1>
+<p align="center">
+  <img src="docs/images/course_roadmap.png" width="900"
+       alt="Python for AI-Driven Automation &amp; Business Data Science — course roadmap across 15 modules (0–14): Onboarding, Foundations, Data Science, Real-world I/O, Machine Learning, Industry Apps, AI Engineering, Building AI POCs, Agents &amp; MCP, NLP, DeepTab, Production, CI/CD &amp; Deploy, Capstones, Business AI. 87 notebooks · 14 modules · 249 in-lesson checkpoints · 100% offline.">
+</p>
 
 <p align="center">
   From your first line of Python to shipping a real AI-driven automation —<br>
