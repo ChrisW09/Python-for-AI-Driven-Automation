@@ -1,0 +1,23 @@
+{% extends "scoring/base.html" %}
+
+{% block content %}
+<p>Enter a customer's details to estimate their churn risk.</p>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Score customer</button>
+</form>
+
+{% if result %}
+  <div class="result {% if result.will_churn %}churn{% else %}stay{% endif %}">
+    <p><b>Churn probability: {{ result.probability|floatformat:2 }}</b>
+       (threshold {{ threshold }})</p>
+    <p>Verdict:
+      {% if result.will_churn %}⚠️ likely to <b>churn</b> — flag for retention.
+      {% else %}✅ likely to <b>stay</b>.{% endif %}</p>
+  </div>
+{% endif %}
+
+<p class="muted">Programmatic? <code>POST /api/score</code> with JSON.</p>
+{% endblock %}

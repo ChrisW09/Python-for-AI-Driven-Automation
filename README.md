@@ -146,8 +146,9 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**12 · CI/CD &amp; Deployment**](./12_cicd/) | — | Docker, Compose, GitHub Actions, registries, DNS, reverse proxies, HTTPS, Ubuntu deployment — a self-contained mini-book + runnable example app |
 | [**13 · Capstones**](./13_capstones/) | 41–42 | Two end-to-end projects (analytics + AI assistant) |
 | [**14 · Business AI**](./14_business_ai/) | 43–46 | Digital transformation, architecture, AI-assisted dev, governance |
+| [**15 · Optional: Django**](./15_django/) | — | Wrap a model in a real web app — ORM, admin, forms, a JSON API — a self-contained mini-book + runnable example app |
 
-> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), also fully offline.
+> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), and **Module 15 (Django)** is an optional mini-book — all fully offline.
 
 ---
 
@@ -158,6 +159,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `00_onboarding/` … `14_business_ai/` | The complete course — 46 lessons + 13 appendices |
 | `09_nlp/`, `10_deeptab/` | Optional reference tracks — text analytics (NB 35–37) &amp; deep tabular learning (NB 38) |
 | `12_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + a runnable example app (no notebooks) |
+| `15_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + a runnable example app, ChurnScope (no notebooks) |
 | `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
 | `quizzes/` | 10 short multiple-choice quizzes (Modules 1–8, 11 &amp; 14) |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
