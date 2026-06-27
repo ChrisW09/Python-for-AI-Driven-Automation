@@ -41,6 +41,7 @@
 - [Choose your path](#-choose-your-path)
 - [Curriculum](#-curriculum)
 - [Repository layout](#-repository-layout)
+- [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
 - [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 87 notebooks
@@ -159,12 +160,58 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `12_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + a runnable example app (no notebooks) |
 | `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
 | `quizzes/` | 10 short multiple-choice quizzes (Modules 1–8, 11 &amp; 14) |
-| `data/` | Sample CSVs the notebooks read (support_ops, api_log, customer_feedback) |
+| `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
 | `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
 | `previous_versions/` | The legacy flat 19-notebook layout, archived |
+
+---
+
+## 📊 Datasets
+
+The course is **offline-first and reproducible**: almost every dataset is **synthetic and generated inline** from a fixed random seed, so each run produces identical data with **zero downloads**. One fictional world ties them together — a SaaS company running an **AI customer-support operation** — and its tables (customers, support tickets, API-cost logs, feedback, payments) recur from module to module, so you re-meet familiar data as the techniques get harder. Three of those synthetic tables are also dumped to `data/*.csv` so you can practise `pd.read_csv` against real files, and a few lessons deliberately reach for small real datasets or live public APIs where that *is* the point.
+
+### Bundled sample files
+
+Tiny on purpose — they fit on one screen, travel with the repo, and are disk copies of data the notebooks otherwise build in memory (see [`data/README.md`](./data/README.md)).
+
+| File | Rows | What it is | Used by |
+|---|---|---|---|
+| `data/api_log.csv` | 50 | LLM API request log — `model`, `segment`, `quarter`, `tokens_in/out`, `latency_ms` | NB 7 — Pandas fundamentals |
+| `data/support_ops.csv` | 60 | Support-ops metrics by channel & month — tickets, automation rate, latency, satisfaction, cost | NB 41 — Capstone A |
+| `data/customer_feedback.csv` | 15 | Labelled feedback — `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 14 & 22 |
+| `forecast.csv` | 28 | 7-day weather forecast for 4 cities, saved from the Open-Meteo API | NB 12 — APIs & HTTP |
+
+### Synthetic datasets, by theme
+
+All generated inline (no downloads), grouped by the business problem they illustrate:
+
+| Theme | What's in it | Notebooks |
+|---|---|---|
+| **SaaS customer churn** | The course backbone — tenure, charges, support tickets, usage, contract, region, churn label (+ a revenue target) | NB 14–17, 38 |
+| **LLM cost & latency logs** | Support calls tagged by model & channel with tokens, cost, latency, satisfaction | NB 7–9 |
+| **Support operations** | Tickets across five channels (Email/Chat/Phone/Web/Social), queried in an in-memory SQLite DB | NB 13, 24, 41 |
+| **Fraud / payments** | One row per transaction, with planted fraud patterns (night spend, new-device takeover) | NB 18 |
+| **Customer segmentation** | Customers drawn from hidden archetypes for clustering + recommendations | NB 19 |
+| **Demand & maintenance** | Short demand series (lag & rolling features) plus predictive-maintenance signals | NB 20 |
+| **Time-series forecasting** | Daily product-search series with trend & seasonality (classical → Prophet → DL → foundation models) | NB 11, DS A1–A4 |
+| **Customer feedback & reviews** | Piles of short product reviews, support tickets and survey notes for topic models + sentiment | NB 35–37, 42 |
+| **RAG document corpora** | Small knowledge bases / product catalogues chunked, embedded and retrieved | NB 23, 29, 30 |
+| **Invoices & documents** | Synthetic messy invoices for an extraction pipeline | NB 25 |
+| **Golden eval sets** | Tiny labelled sets for evaluating and triaging an AI feature | NB 26 |
+| **Agent / copilot data** | A support copilot's lookup numbers + docs, exposed as tools / MCP resources | NB 31–34 |
+| **POC & app demo data** | ~500 synthetic customer rows, a product catalogue, and random embedding vectors that seed the POC apps | NB 27, 28, 30 |
+| **Vision & sequences (PyTorch)** | Toy 8×8 "digit" images, a synthetic sequence task, and a tiny text-intent set | ML A2, A3 |
+| **Business case studies** | *Meridian*, a fictional 400-person B2B SaaS, for transformation & governance scenarios | NB 43–46 |
+
+### Real data & live services — the few exceptions
+
+- **scikit-learn toy sets** — Iris & Wine (NB 14) and Breast Cancer (NB 15), used briefly to anchor the classic ML examples before switching to the synthetic SaaS data.
+- **Live public APIs** *(no key required)* — Open-Meteo (weather — the running example) and JSONPlaceholder (a fake REST API) in NB 12; **Firecrawl** web scraping into a RAG-ready dataset in the I/O appendix.
+- **Pretrained models** *(models, not datasets — fetched on first use when online, each with an offline fallback)* — sentence-transformers embeddings and small Hugging Face transformers in the embeddings/NLP lessons.
+- **`MockLLM`** — not a dataset, but the deterministic offline model that *produces* the text/JSON for 16 of the AI notebooks; swap one line in [`llm_providers.py`](./llm_providers.py) to call OpenAI / Anthropic / Google / Ollama instead.
 
 ---
 
