@@ -171,11 +171,11 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 ## 📊 Datasets
 
-The course is **offline-first and reproducible**: almost every dataset is **synthetic and generated inline** from a fixed random seed, so each run produces identical data with **zero downloads**. One fictional world ties them together — a SaaS company running an **AI customer-support operation** — and its tables (customers, support tickets, API-cost logs, feedback, payments) recur from module to module, so you re-meet familiar data as the techniques get harder. Three of those synthetic tables are also dumped to `data/*.csv` so you can practise `pd.read_csv` against real files, and a few lessons deliberately reach for small real datasets or live public APIs where that *is* the point.
+The course is **offline-first and reproducible**: almost every dataset is **synthetic and generated inline** from a fixed random seed, so each run produces identical data with **zero downloads**. One fictional world ties them together — a SaaS company running an **AI customer-support operation** — and its tables (customers, support tickets, API-cost logs, feedback, payments) recur from module to module, so you re-meet familiar data as the techniques get harder. Three of those synthetic tables are also dumped to `data/*.csv` so you can practise `pd.read_csv` against real files; two small **real** datasets (Palmer Penguins, UCI Bike Sharing) are bundled there too, so the optional *📊 try it on real data* sections run offline as well; and a few lessons deliberately reach for live public APIs where that *is* the point.
 
 ### Bundled sample files
 
-Tiny on purpose — they fit on one screen, travel with the repo, and are disk copies of data the notebooks otherwise build in memory (see [`data/README.md`](./data/README.md)).
+Small enough to fit on one screen and travel with the repo (see [`data/README.md`](./data/README.md)). The first four are disk copies of data the notebooks build inline; the last two are small **real** datasets bundled for the optional *try it on real data* sections.
 
 | File | Rows | What it is | Used by |
 |---|---|---|---|
@@ -183,6 +183,8 @@ Tiny on purpose — they fit on one screen, travel with the repo, and are disk c
 | `data/support_ops.csv` | 60 | Support-ops metrics by channel & month — tickets, automation rate, latency, satisfaction, cost | NB 41 — Capstone A |
 | `data/customer_feedback.csv` | 15 | Labelled feedback — `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 14 & 22 |
 | `forecast.csv` | 28 | 7-day weather forecast for 4 cities, saved from the Open-Meteo API | NB 12 — APIs & HTTP |
+| `data/penguins.csv` | 344 | **Real** — Palmer Penguins: 3 species' bill/flipper/mass measurements, with real missing values · CC0 | NB 9 — Visualization |
+| `data/bike_sharing_daily.csv` | 731 | **Real** — UCI Bike Sharing: daily rentals 2011–12 with weather & calendar features · CC BY 4.0 | NB 20 — Demand forecasting |
 
 ### Synthetic datasets, by theme
 
@@ -212,6 +214,24 @@ All generated inline (no downloads), grouped by the business problem they illust
 - **Live public APIs** *(no key required)* — Open-Meteo (weather — the running example) and JSONPlaceholder (a fake REST API) in NB 12; **Firecrawl** web scraping into a RAG-ready dataset in the I/O appendix.
 - **Pretrained models** *(models, not datasets — fetched on first use when online, each with an offline fallback)* — sentence-transformers embeddings and small Hugging Face transformers in the embeddings/NLP lessons.
 - **`MockLLM`** — not a dataset, but the deterministic offline model that *produces* the text/JSON for 16 of the AI notebooks; swap one line in [`llm_providers.py`](./llm_providers.py) to call OpenAI / Anthropic / Google / Ollama instead.
+
+### Going further — real datasets to drop in
+
+If you want to take a lesson onto real data, these fit the course's themes and mostly load in one line (cached after the first fetch):
+
+| Dataset | Load / source | Pairs with | Licence |
+|---|---|---|---|
+| **California Housing** | `sklearn.datasets.fetch_california_housing()` | M4 regression (14–15) | public |
+| **20 Newsgroups** | `sklearn.datasets.fetch_20newsgroups()` | M9 topic modeling (35–36) | public |
+| **statsmodels series** (CO₂, sunspots, Nile) | `statsmodels.datasets.co2.load_pandas()` | M2 stats & forecasting (10–11, A1–A4) | public |
+| **Telco Customer Churn** | [Kaggle `blastchar/telco-customer-churn`](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) · 7,043 rows | M4–M5 churn (14–17), M10 (38) | IBM sample |
+| **RAG Mini-Wikipedia** | `load_dataset("rag-datasets/rag-mini-wikipedia")` · corpus + Q/A | M6–M7 RAG (23, 29, 30) | CC BY 3.0 |
+| **Twitter Financial News Sentiment** | `load_dataset("zeroshot/twitter-financial-news-sentiment")` | M9 sentiment (37) | MIT |
+| **Adult / Census Income** | `sklearn.datasets.fetch_openml("adult", version=2)` | M14 governance & fairness (46), M10 (38) | public |
+| **Online Retail II** | [UCI #352](https://archive.ics.uci.edu/dataset/352/online+retail) · ~1M rows | M2 pandas-at-scale, M3 SQL (13), M5 RFM/CLV (19) | CC BY 4.0 |
+| **Credit Card Fraud** (ULB) | [Kaggle `mlg-ulb/creditcardfraud`](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) · 0.17% fraud | M5 fraud (18) | DbCL v1.0 |
+
+> **Key-free public APIs** for Module 3 (NB 12), beyond Open-Meteo: **REST Countries**, **Frankfurter** (FX rates), **USGS earthquakes** (GeoJSON), and **Hacker News** — each returns a different JSON shape to practise on.
 
 ---
 
