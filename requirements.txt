@@ -65,8 +65,8 @@ pytest>=8.0,<10
 # vaderSentiment>=3.3               # NB 45 — lexicon/rule-based sentiment
 # transformers>=4.40                # NB 45 — transformer sentiment pipelines (also Module 4 A3)
 
-# --- Optional deep tabular learning (Module 13 — DeepTab) ---
-# deeptab>=0.1                      # NB 46 — OpenTabular/DeepTab; deep tabular models, sklearn API (pulls torch + lightning)
+# --- Optional deep tabular learning (Module 10 — DeepTab) ---
+# deeptab>=2.0                      # NB 46 — OpenTabular/DeepTab; deep tabular models, sklearn API (v2 split-config; pulls torch + lightning)
 
 # --- Optional forecasting libraries (Module 2 appendices A2-A4) ---
 # prophet>=1.1

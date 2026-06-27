@@ -1,6 +1,6 @@
 # Module 10 — Optional: DeepTab (Deep Learning for Tabular Data)
 
-**Goal:** Meet the modern deep-learning toolkit for *structured* data. Gradient-boosted trees (XGBoost/LightGBM) still win most tabular problems — but **DeepTab** ([OpenTabular/DeepTab](https://github.com/OpenTabular/DeepTab)) wraps ~18 deep architectures (Mamba, FT-Transformer, SAINT, NODE, TabM, ResNet…) behind a clean scikit-learn API, and unlocks things trees can't: **distributional regression**, **learned embeddings**, and end-to-end multimodal models.
+**Goal:** Meet the modern deep-learning toolkit for *structured* data. Gradient-boosted trees (XGBoost/LightGBM) still win most tabular problems — but **DeepTab** ([OpenTabular/DeepTab](https://github.com/OpenTabular/DeepTab)) wraps 15 deep architectures (Mamba, FT-Transformer, SAINT, NODE, TabM, ResNet…) behind a clean scikit-learn API, and unlocks things trees can't: **distributional regression**, **learned embeddings**, and end-to-end multimodal models.
 
 **Estimated time:** 1–2 hours.
 **Prerequisites:** Module 4 (NB 14 sklearn basics, NB 16 feature engineering) and the Module 4 PyTorch appendices **A1–A3**. Appendix **A5** (conformal prediction) pairs naturally with the uncertainty section.
@@ -8,7 +8,7 @@
 > 📎 **Optional, reference-style module.** This notebook demos a library at work rather than drilling exercises. It **runs end-to-end offline** via a scikit-learn (`MLP` / `HistGradientBoosting`) stand-in — install `deeptab` to swap in the real models.
 
 ```
-        scikit-learn API  ──►  ~18 deep tabular architectures
+        scikit-learn API  ──►  15 deep tabular architectures
         model.fit(X, y)        Mambular · FTTransformer · SAINT · NODE
         model.predict(X)       TabM · ResNet · MLP · TabTransformer …
         model.predict_proba    each ships as  *Classifier / *Regressor / *LSS
