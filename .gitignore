@@ -95,6 +95,13 @@ ipython_config.py
 *.synctex(busy)
 *.toc
 *.vrb
+
+# -----------------------------------------------------------------------------
+#  First-lecture intro presentation (LaTeX Beamer) — do NOT track this folder:
+#  its source, the generated PDF, and all build artifacts stay out of git.
+#  (The LaTeX aux extensions above are also ignored repo-wide for good measure.)
+# -----------------------------------------------------------------------------
+course_intro_presentation/
 *.run.xml
 *.xdv
 *.acn
