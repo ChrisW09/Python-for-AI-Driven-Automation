@@ -102,6 +102,9 @@ ipython_config.py
 #  (The LaTeX aux extensions above are also ignored repo-wide for good measure.)
 # -----------------------------------------------------------------------------
 course_intro_presentation/
+# Local lecture material — course-overview deck (source, PDF, build artefacts).
+# Generated locally for classroom use; never tracked or pushed.
+local_presentations/
 *.run.xml
 *.xdv
 *.acn
