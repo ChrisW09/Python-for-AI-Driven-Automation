@@ -22,3 +22,8 @@ jobs:
       - run: pip install nbformat
       - name: Validate checkpoints (structure + syntax)
         run: python scripts/test_checkpoints.py
+      # Cross-reference integrity is dependency-light (stdlib only), so we gate
+      # it on every push too: catches stale "NB n" / "Module n" links that a
+      # renumber or a moved lesson would otherwise leave dangling.
+      - name: Validate notebook cross-references
+        run: python scripts/check_nb_references.py
