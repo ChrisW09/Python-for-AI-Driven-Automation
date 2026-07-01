@@ -29,9 +29,9 @@
 
 | # | Notebook | What you'll learn |
 |---|---|---|
-| 43 | `35_topic_modeling_bertopic.ipynb` | **BERTopic** — embedding-based topic modeling (embed → UMAP → HDBSCAN → c-TF-IDF), modular components, topic reduction & visualization |
-| 44 | `36_topic_modeling_stream.ipynb` | **STREAM** (`stream-topic`) — one unified API over classical *and* neural topic models, plus a proper evaluation suite (coherence/diversity) and downstream prediction |
-| 45 | `37_sentiment_analysis.ipynb` | **Sentiment** three ways — lexicon/rule-based (VADER), the classical TF-IDF + LogReg workhorse, and transformer pipelines; aspect-based sentiment & pitfalls |
+| 35 | `35_topic_modeling_bertopic.ipynb` | **BERTopic** — embedding-based topic modeling (embed → UMAP → HDBSCAN → c-TF-IDF), modular components, topic reduction & visualization |
+| 36 | `36_topic_modeling_stream.ipynb` | **STREAM** (`stream-topic`) — one unified API over classical *and* neural topic models, plus a proper evaluation suite (coherence/diversity) and downstream prediction |
+| 37 | `37_sentiment_analysis.ipynb` | **Sentiment** three ways — lexicon/rule-based (VADER), the classical TF-IDF + LogReg workhorse, and transformer pipelines; aspect-based sentiment & pitfalls |
 
 ## The disciplines this module trains
 

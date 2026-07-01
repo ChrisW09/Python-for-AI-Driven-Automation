@@ -7,7 +7,8 @@
 
 ```
                   ┌────────────────────────────────────┐
-                  │  LLM = function call               │
+                  │  NB 21 — LLM fundamentals:         │
+                  │  the LLM as a function call        │
                   │  (system + user + assistant)       │
                   └─────────────────┬──────────────────┘
                                     │
@@ -28,11 +29,12 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 17 | `22_ai_workflows.ipynb` | Inbox-triage with the MockLLM (prompts, JSON output, batch) |
-| 18 | `23_embeddings_retrieval.ipynb` | TF-IDF + dense retrieval, retrieval@k benchmark |
-| 19 | `24_tools_and_agents.ipynb` | A multi-tool data assistant |
-| 20 | `25_document_processing.ipynb` | An invoice-extraction pipeline with validation |
-| 21 | `26_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
+| 21 | `21_llm_fundamentals.ipynb` | The theory floor: tokens, next-token prediction, the Transformer, prompting, limitations |
+| 22 | `22_ai_workflows.ipynb` | Inbox-triage with the MockLLM (prompts, JSON output, batch) |
+| 23 | `23_embeddings_retrieval.ipynb` | TF-IDF + dense retrieval, retrieval@k benchmark |
+| 24 | `24_tools_and_agents.ipynb` | A multi-tool data assistant |
+| 25 | `25_document_processing.ipynb` | An invoice-extraction pipeline with validation |
+| 26 | `26_ai_evaluation_observability.ipynb` | LLM evals, cost dashboards, regression tests |
 
 ## Optional appendices — provider, vector-store & framework surveys
 

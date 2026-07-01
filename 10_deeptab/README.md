@@ -26,7 +26,7 @@
 
 | # | Notebook | What you'll learn |
 |---|---|---|
-| 46 | `38_deeptab_tabular_deep_learning.ipynb` | The DeepTab value proposition (and **when to prefer GBMs**), classification & regression with a one-line model swap, **distributional regression (LSS)** for uncertainty, latent embeddings via `encode()`, and hyper-parameter tuning (`optimize_hparams` + `RandomizedSearchCV`) |
+| 38 | `38_deeptab_tabular_deep_learning.ipynb` | The DeepTab value proposition (and **when to prefer GBMs**), classification & regression with a one-line model swap, **distributional regression (LSS)** for uncertainty, latent embeddings via `encode()`, and hyper-parameter tuning (`optimize_hparams` + `RandomizedSearchCV`) |
 
 ## The disciplines this module trains
 

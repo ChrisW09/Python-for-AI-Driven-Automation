@@ -24,10 +24,10 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 39 | `31_agent_architectures.ipynb` | A ReAct agent with planning, reflection & memory — plus the failure-mode guardrails |
-| 40 | `32_designing_robust_tools.ipynb` | A `ToolRegistry` with JSON-Schema validation, structured errors, an approval gate & parallel calls |
-| 41 | `33_model_context_protocol.ipynb` | A working MCP server **and** client from scratch (JSON-RPC 2.0; tools, resources, prompts) |
-| 42 | `34_multi_agent_systems.ipynb` | An orchestrator + specialist agents, evaluated end-to-end — the MCP-backed support copilot capstone |
+| 31 | `31_agent_architectures.ipynb` | A ReAct agent with planning, reflection & memory — plus the failure-mode guardrails |
+| 32 | `32_designing_robust_tools.ipynb` | A `ToolRegistry` with JSON-Schema validation, structured errors, an approval gate & parallel calls |
+| 33 | `33_model_context_protocol.ipynb` | A working MCP server **and** client from scratch (JSON-RPC 2.0; tools, resources, prompts) |
+| 34 | `34_multi_agent_systems.ipynb` | An orchestrator + specialist agents, evaluated end-to-end — the MCP-backed support copilot capstone |
 
 ## What makes this module different
 

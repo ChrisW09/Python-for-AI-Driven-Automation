@@ -5,13 +5,12 @@
 This module mirrors the lecture-slide flow used in the course, so the entire syllabus can be taught from the notebooks alone.
 
 **Estimated time:** 12–16 hours.
-**Prerequisites:** Modules 1 (foundations), 4 (ML basics), and 5 (AI engineering). Module 14 strongly recommended for the architecture vocabulary.
+**Prerequisites:** Modules 1 (foundations), 4 (ML basics), and 6 (AI engineering). Module 14 strongly recommended for the architecture vocabulary.
 
 ```
         ┌──────────────────────────────────────────────────────────────────┐
         │  Module 7 — Building AI POCs                                     │
         │                                                                    │
-        │  NB 21  LLM Fundamentals (Transformer, tokens, parameters)        │
         │  NB 27  From Setup to First POC (VS Code, Copilot, vibe coding)   │
         │  NB 28  Three POCs (Streamlit → 3-tier → ML pipeline)             │
         │  NB 29  RAG Pipeline Deep Dive (chunking, ANN, RAG-over-PDF POC)  │
@@ -19,15 +18,17 @@ This module mirrors the lecture-slide flow used in the course, so the entire syl
         └──────────────────────────────────────────────────────────────────┘
 ```
 
+The lecture block opens with **NB 21 — LLM Fundamentals** (Transformer, tokens, parameters), which lives in Module 6 (`../06_ai_engineering/21_llm_fundamentals.ipynb`) but is taught as the theory opener for this block.
+
 ## Notebooks
 
 | # | Notebook | Slide source |
 |---|---|---|
-| 30 | `21_llm_fundamentals.ipynb` | "Building with LLMs" Parts 1–2 |
-| 31 | `27_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
-| 32 | `28_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
-| 33 | `29_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
-| 34 | `30_vector_db_and_agentic_ai.ipynb` | "Building with LLMs" Parts 4–5 |
+| 21 | `../06_ai_engineering/21_llm_fundamentals.ipynb` (Module 6) | "Building with LLMs" Parts 1–2 |
+| 27 | `27_from_setup_to_first_poc.ipynb` | "Getting Started with POCs" + "POCs mit VS Code" §1–§3 |
+| 28 | `28_three_pocs_growing_complexity.ipynb` | "POCs mit VS Code" §4–§7 |
+| 29 | `29_rag_pipeline_deep_dive.ipynb` | "Building with LLMs" Part 3 |
+| 30 | `30_vector_db_and_agentic_ai.ipynb` | "Building with LLMs" Parts 4–5 |
 
 ## How this module is different from Module 6
 

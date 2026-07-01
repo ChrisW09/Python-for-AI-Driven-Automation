@@ -25,8 +25,8 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 22 | `39_from_notebook_to_project.ipynb` | A packaged, tested, importable `costkit` library — including YAML configs, dotenv, and dev/staging/prod patterns (config & secrets folded in here rather than split into a separate notebook). |
-| 23 | `40_scheduling_orchestration.ipynb` | Production-shape automation wrapper with retries + alerts |
+| 39 | `39_from_notebook_to_project.ipynb` | A packaged, tested, importable `costkit` library — including YAML configs, dotenv, and dev/staging/prod patterns (config & secrets folded in here rather than split into a separate notebook). |
+| 40 | `40_scheduling_orchestration.ipynb` | Production-shape automation wrapper with retries + alerts |
 
 ## What "production-ready" actually means here
 

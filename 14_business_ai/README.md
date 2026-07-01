@@ -28,10 +28,10 @@
 
 | # | Notebook | What you'll learn |
 |---|---|---|
-| 26 | `43_digital_transformation.ipynb` | Why AI now, what's *actually* changing in organisations, the maturity model, adoption pitfalls, the human side |
-| 27 | `44_architecture_patterns.ipynb` | Single-tier scripts → 3-tier client-server → service / microservice patterns → end-to-end ML pipelines; when to use which |
-| 28 | `45_ai_assisted_software_development.ipynb` | Modern IDEs, Git basics, prompt engineering for code, critical review of AI-generated artefacts, when *not* to trust the LLM |
-| 29 | `46_bpm_governance_poc_mvp.ipynb` | Embedding AI in the BPM lifecycle, governance + RACI for AI projects, the POC → MVP → Production journey, three case studies |
+| 43 | `43_digital_transformation.ipynb` | Why AI now, what's *actually* changing in organisations, the maturity model, adoption pitfalls, the human side |
+| 44 | `44_architecture_patterns.ipynb` | Single-tier scripts → 3-tier client-server → service / microservice patterns → end-to-end ML pipelines; when to use which |
+| 45 | `45_ai_assisted_software_development.ipynb` | Modern IDEs, Git basics, prompt engineering for code, critical review of AI-generated artefacts, when *not* to trust the LLM |
+| 46 | `46_bpm_governance_poc_mvp.ipynb` | Embedding AI in the BPM lifecycle, governance + RACI for AI projects, the POC → MVP → Production journey, three case studies |
 
 ## How this module is different from the rest
 
@@ -56,6 +56,6 @@ This shape mirrors how the course is actually taught: Modules 1–13 are the wor
 
 ## Where next
 
-→ **Module 7 — Building AI POCs** (`../06_ai_engineering/21_llm_fundamentals.ipynb`) — the hands-on deep-dive companion to this module. After that, **Module 5 — Industry Applications** (`../05_industry_applications/`, NB 17–20) and **Module 8 — Agents, Tools & MCP** (`../08_agents_tools_mcp/`, NB 31–34) complete the course.
+→ **Module 6 — AI Engineering** (`../06_ai_engineering/21_llm_fundamentals.ipynb`) — the hands-on deep-dive companion to this module. After that, **Module 5 — Industry Applications** (`../05_industry_applications/`, NB 17–20) and **Module 8 — Agents, Tools & MCP** (`../08_agents_tools_mcp/`, NB 31–34) complete the course.
 
 → **Module 13 — Capstones** (`../13_capstones/41_capstone_analytics.ipynb` or `42_capstone_ai_assistant.ipynb`), if you haven't done them yet. The capstones make many of the Module 14 ideas concrete.

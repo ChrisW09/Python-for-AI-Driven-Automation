@@ -22,10 +22,10 @@
 
 | # | Notebook | What you'll build |
 |---|---|---|
-| 35 | `17_churn_clv_retention.ipynb` | CLV table, expected-value targeting rule, budget-constrained retention campaign simulation |
-| 36 | `18_fraud_anomaly_detection.ipynb` | Supervised + Isolation Forest detectors, precision@k alert queue, €-prevented accounting |
-| 37 | `19_segmentation_recommenders.ipynb` | RFM + k-means segmentation with profiles, item-item recommender that beats the popularity baseline |
-| 38 | `20_demand_maintenance.ipynb` | Promo-aware demand forecasts → safety stock & newsvendor orders; sensor-based maintenance schedule |
+| 17 | `17_churn_clv_retention.ipynb` | CLV table, expected-value targeting rule, budget-constrained retention campaign simulation |
+| 18 | `18_fraud_anomaly_detection.ipynb` | Supervised + Isolation Forest detectors, precision@k alert queue, €-prevented accounting |
+| 19 | `19_segmentation_recommenders.ipynb` | RFM + k-means segmentation with profiles, item-item recommender that beats the popularity baseline |
+| 20 | `20_demand_maintenance.ipynb` | Promo-aware demand forecasts → safety stock & newsvendor orders; sensor-based maintenance schedule |
 
 ## The four mental models you should leave with
 
