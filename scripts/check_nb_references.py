@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Verify NB-number references in markdown / notebooks resolve to a real file.
+"""Verify NB-number references in markdown / notebooks / LaTeX resolve to a real file.
 
 Catches drift between documentation and the actual notebook layout. Looks for
 patterns like:
   - "NB 7"  /  "NB7"  /  "NB 18–22"  /  "NB 23-25"
+  - "Notebook 7"  /  "Notebooks 18–22"  /  LaTeX forms like "NB~43", "NB 14--16"
   - "01_python_basics.ipynb" (literal filename references)
 …and asserts that every NB number / filename can be found somewhere in the repo.
+
+Scans the live course tree: *.md, *.ipynb (markdown cells) and slides/*.tex.
+Historical / archival content (previous_versions/, docs/, COURSE_REVIEW_REPORT.md)
+intentionally describes old states and is skipped.
 
 Run from the repo root:
     python scripts/check_nb_references.py
@@ -22,19 +27,36 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# Where to look for cross-references
-TEXT_GLOBS = ["**/*.md", "**/*.ipynb"]
+# Where to look for cross-references (LaTeX is limited to the lecture decks;
+# other .tex under course_intro_presentation/ & local_presentations/ is legacy)
+TEXT_GLOBS = ["**/*.md", "**/*.ipynb", "slides/*.tex"]
 # Where to find notebook files (skip the legacy archive)
 NB_GLOBS = ["**/*.ipynb"]
-# Folders ignored entirely (both for text scanning and notebook discovery).
-# fast_track/ uses its own re-numbering (1-13) that diverges from the canonical
+# Folders ignored entirely (both for text scanning and notebook discovery):
+# historical/archival trees plus tooling junk.
+EXCLUDED_DIR_NAMES = {
+    "previous_versions",
+    "docs",
+    ".ipynb_checkpoints",
+    "__pycache__",
+    ".venv",
+    "node_modules",
+    ".git",
+}
+# Individual files that intentionally describe old states of the course.
+EXCLUDED_FILE_NAMES = {"COURSE_REVIEW_REPORT.md"}
+# fast_track/ uses its own re-numbering (0-14) that diverges from the canonical
 # course; cross-references in any file should resolve against the canonical
-# numbering, so we don't let fast_track filenames satisfy "NB N" references.
-EXCLUDED_DIR_NAMES = {"previous_versions", "fast_track", "docs", ".ipynb_checkpoints", "__pycache__"}
+# numbering, so we don't let fast_track filenames satisfy "NB N" references and
+# we don't scan its notebooks' prose. Its markdown (README) is live and scanned.
+FAST_TRACK_DIR = "fast_track"
 
 
 def is_excluded(path: Path) -> bool:
-    return any(part in EXCLUDED_DIR_NAMES for part in path.parts)
+    return (
+        any(part in EXCLUDED_DIR_NAMES for part in path.parts)
+        or path.name in EXCLUDED_FILE_NAMES
+    )
 
 
 def discover_nb_numbers() -> set[int]:
@@ -42,7 +64,7 @@ def discover_nb_numbers() -> set[int]:
     nums = set()
     for pat in NB_GLOBS:
         for p in ROOT.glob(pat):
-            if is_excluded(p):
+            if is_excluded(p) or FAST_TRACK_DIR in p.parts:
                 continue
             m = re.match(r"(\d{1,2})_", p.name)
             if m:
@@ -56,13 +78,26 @@ def iter_text_files():
         for p in ROOT.glob(pat):
             if is_excluded(p) or p in seen:
                 continue
+            if FAST_TRACK_DIR in p.parts and p.suffix != ".md":
+                continue
             seen.add(p)
             yield p
 
 
+# Fenced code blocks in markdown may contain literal "NB n"-looking examples;
+# drop them before matching.
+MD_FENCE_RE = re.compile(r"^(```|~~~).*?^\1", re.MULTILINE | re.DOTALL)
+
+
 def extract_text(path: Path) -> str:
     if path.suffix == ".md":
-        return path.read_text(encoding="utf-8", errors="ignore")
+        return MD_FENCE_RE.sub("", path.read_text(encoding="utf-8", errors="ignore"))
+    if path.suffix == ".tex":
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        # Normalise LaTeX typography so the same reference regex applies:
+        # non-breaking space "NB~43" and en/em dashes "NB 14--16".
+        text = text.replace("~", " ")
+        return re.sub(r"-{2,3}", "–", text)
     if path.suffix == ".ipynb":
         try:
             nb = json.loads(path.read_text(encoding="utf-8"))
@@ -76,8 +111,12 @@ def extract_text(path: Path) -> str:
     return ""
 
 
-# NB-number references like "NB 12", "NB12", "NB 18–22", "NB 23-25"
-NB_REF_RE = re.compile(r"\bNB\s*(\d{1,2})(?:\s*[–-]\s*(\d{1,2}))?\b")
+# NB-number references like "NB 12", "NB12", "Notebook 12", "Notebooks 18–22",
+# "NB 23-25". The trailing (?!\.\d) keeps version-like strings ("NB 4.0") from
+# matching; integers only, same semantics as before.
+NB_REF_RE = re.compile(
+    r"\b(?:NB|Notebooks?)\s*(\d{1,2})(?!\.\d)(?:\s*[–—-]\s*(\d{1,2})(?!\.\d))?\b"
+)
 
 # Surrounding text that signals the missing NB is explicitly documented as such
 RESERVED_MARKERS = ("reserved", "folded", "originally planned", "absent", "intentional")
