@@ -15,9 +15,9 @@ Every provider implements the same minimal interface:
 Pick the provider that fits your situation:
 
     MockLLM       — fully offline. Default for the course's notebooks. No internet, no keys.
-    OpenAILLM     — gpt-4o-mini (default) / gpt-4o. Set OPENAI_API_KEY.
+    OpenAILLM     — gpt-5.4-mini (default) / gpt-5.5. Set OPENAI_API_KEY.
     AnthropicLLM  — claude-haiku-4-5 (default) / claude-sonnet-5 / claude-opus-4-8. Set ANTHROPIC_API_KEY.
-    GoogleLLM     — gemini-2.0-flash (default) / gemini-2.0-pro. Set GOOGLE_API_KEY (or GEMINI_API_KEY).
+    GoogleLLM     — gemini-2.5-flash (default) / gemini-2.5-pro. Set GOOGLE_API_KEY (or GEMINI_API_KEY).
     OllamaLLM     — any model you've `ollama pull`ed locally. No key needed.
 
 Usage in any notebook:
@@ -26,9 +26,9 @@ Usage in any notebook:
 
     # Choose ONE — same interface across all five
     llm = MockLLM()                                    # default for the course
-    # llm = OpenAILLM(model="gpt-4o-mini")
+    # llm = OpenAILLM(model="gpt-5.4-mini")
     # llm = AnthropicLLM(model="claude-haiku-4-5")
-    # llm = GoogleLLM(model="gemini-2.0-flash")
+    # llm = GoogleLLM(model="gemini-2.5-flash")
     # llm = OllamaLLM(model="llama3.2:3b")
 
     r = llm.chat(messages=[
@@ -165,7 +165,7 @@ class OpenAILLM:
     export OPENAI_API_KEY=sk-...
     """
 
-    def __init__(self, model: str = "gpt-4o-mini", api_key: str | None = None):
+    def __init__(self, model: str = "gpt-5.4-mini", api_key: str | None = None):
         try:
             from openai import OpenAI
         except ImportError as e:
@@ -250,7 +250,7 @@ class GoogleLLM:
     OpenAI-style chat messages into Gemini's format.
     """
 
-    def __init__(self, model: str = "gemini-2.0-flash", api_key: str | None = None):
+    def __init__(self, model: str = "gemini-2.5-flash", api_key: str | None = None):
         try:
             import google.generativeai as genai
         except ImportError as e:
@@ -423,7 +423,7 @@ def get_llm(provider: str = "mock", **kwargs):
     """Create an LLM client by short name.
 
     >>> llm = get_llm("mock")
-    >>> llm = get_llm("openai", model="gpt-4o-mini")
+    >>> llm = get_llm("openai", model="gpt-5.4-mini")
     """
     provider = provider.lower()
     if provider not in PROVIDERS:
