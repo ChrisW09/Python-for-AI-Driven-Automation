@@ -78,8 +78,8 @@
 \section{Structure}
 % ============================================================
 
-\begin{frame}{Ten modules, thirty-eight notebooks}
-  \footnotesize
+\begin{frame}{Sixteen modules, forty-six lessons (+ 13 appendices)}
+  \scriptsize
   \begin{tabular}{rll}
     \toprule
     \textbf{\#} & \textbf{Module} & \textbf{Notebooks} \\
@@ -87,14 +87,19 @@
     0 & Onboarding              & master onboarding + overview + see-it-work \\
     1 & Foundations             & NB 1–6 — Python you can read without friction \\
     2 & Data science            & NB 7–11 — pandas, NumPy, plots, stats, time series \\
-    3 & Real-world I/O          & NB 12–13 — HTTP, SQL, Pydantic validation \\
+    3 & Real-world I/O          & NB 12–13 — HTTP, SQL, validation \\
     4 & Machine learning        & NB 14–16 — sklearn, model evaluation, features \\
-    5 & AI engineering          & NB 17–21 — LLM patterns, RAG, agents, evaluation \\
-    6 & Production              & NB 22–23 — packaging, scheduling, config \& secrets \\
-    7 & Capstones               & NB 24–25 — analytics + AI assistant \\
-    8 & Business AI             & NB 26–29 — strategy, architecture, BPM, governance \\
-    9 & Building AI POCs        & NB 30–34 — LLM theory, Copilot, three POCs, RAG, agents \\
-    10 & Industry applications   & NB 35–38 — churn value, fraud, segmentation, forecasting \\
+    5 & Industry applications   & NB 17–20 — churn value, fraud, segmentation, demand \\
+    6 & AI engineering          & NB 21–26 — LLM patterns, RAG, agents, evaluation \\
+    7 & Building AI POCs        & NB 27–30 — setup, three POCs, RAG deep dive, agentic AI \\
+    8 & Agents, tools \& MCP    & NB 31–34 — architectures, robust tools, MCP, multi-agent \\
+    9 & NLP                     & NB 35–37 — topic modeling, sentiment \\
+    10 & DeepTab (optional)      & NB 38 — deep learning for tabular data \\
+    11 & Production              & NB 39–40 — packaging, scheduling, config \& secrets \\
+    12 & CI/CD \& deployment     & markdown module — Docker, GitHub Actions, HTTPS \\
+    13 & Capstones               & NB 41–42 — analytics + AI assistant \\
+    14 & Business AI             & NB 43–46 — strategy, architecture, BPM, governance \\
+    15 & Django                  & markdown module — serve a model behind a web UI \\
     \bottomrule
   \end{tabular}
   \vspace{6pt}
@@ -121,13 +126,13 @@
 
 \begin{frame}{When to pick which path}
   \begin{block}{Complete beginner}
-    Never written code before. Take all nine modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 105 hours} — the interactive estimator in \texttt{00b} computes yours.
+    Never written code before. Take all modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 115 hours} — the interactive estimator in \texttt{00b} computes yours.
   \end{block}
   \begin{exampleblock}{Analyst who knows Excel and SQL}
-    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (ML), 10 (industry applications), 7 (capstone). Time-budget: \textbf{about 43 hours}.
+    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (ML), 5 (industry applications), 13 (capstone). Time-budget: \textbf{about 43 hours}.
   \end{exampleblock}
   \begin{block}{ML practitioner adding AI engineering}
-    Skim Module 4. Focus on Modules 5 (AI), 6 (production), 9 (build the POCs), 7 (capstone). Time-budget: \textbf{about 25 hours}.
+    Skip foundations and data science. Focus on Modules 6 (AI engineering), 8 (agents \& MCP), 11 (production), 13 (capstone). Time-budget: \textbf{about 34 hours}.
   \end{block}
 \end{frame}
 
@@ -180,11 +185,11 @@
 \end{frame}
 
 \begin{frame}{Plus two big capstones at the end}
-  \begin{exampleblock}{Capstone A — AI Support-Bot Analytics (NB 24)}
+  \begin{exampleblock}{Capstone A — AI Support-Bot Analytics (NB 41)}
     Five channels × twelve months of operational data $\to$ 2$\times$2 executive dashboard $\to$ regression demonstrating Simpson's paradox $\to$ five-bullet executive summary.
   \end{exampleblock}
   \vspace{6pt}
-  \begin{block}{Capstone B — AI Customer-Feedback Assistant (NB 25)}
+  \begin{block}{Capstone B — AI Customer-Feedback Assistant (NB 42)}
     Ingest free-form customer feedback $\to$ classify + extract via the MockLLM $\to$ ground answers in a knowledge base via RAG $\to$ orchestrate as a scheduled job with alerts. End-to-end AI feature.
   \end{block}
 \end{frame}
@@ -209,11 +214,11 @@
   \begin{block}{Default = the offline MockLLM}
     Every AI notebook runs offline by default. Swapping in a real provider is a
     \emph{one-line} change thanks to the unified interface in
-    \texttt{refined\_course/llm\_providers.py}.
+    \texttt{llm\_providers.py} at the repo root.
   \end{block}
   \vspace{4pt}
   \begin{exampleblock}{See the dedicated guide}
-    Notebook \texttt{05\_ai\_engineering/A1\_llm\_providers\_guide.ipynb} has the
+    Notebook \texttt{06\_ai\_engineering/A1\_llm\_providers\_guide.ipynb} has the
     full setup walk-through, model recommendations, and cost estimates.
   \end{exampleblock}
 \end{frame}
