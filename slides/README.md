@@ -9,23 +9,23 @@ Lecture decks in the HSBI house style (LaTeX Beamer, Madrid theme, 16:9).
 | Deck | Lecture | Companion notebook |
 |---|---|---|
 | `00_course_overview` | Orientation: the big picture, structure, learning paths, how to study, what you'll build | Module 0 (onboarding) |
-| `26_digital_transformation` | Why AI now · tasks-not-jobs · maturity model · change strategies · adoption pitfalls | NB 43 |
-| `27_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · **frontend↔backend interaction with FastAPI** (request/response cycle + code) · the ML pipeline · choosing the right size | NB 44 |
-| `28_ai_assisted_software_development` | IDEs · Git & pull requests · prompt patterns for code · the four failure modes · the 60-second review | NB 45 |
-| `29_bpm_governance_poc_mvp` | BPM lifecycle · RACI for AI · POC → MVP → Production · three case studies · the readiness checklist | NB 46 |
-| `30_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 21 |
+| `43_digital_transformation` | Why AI now · tasks-not-jobs · maturity model · change strategies · adoption pitfalls | NB 43 |
+| `44_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · **frontend↔backend interaction with FastAPI** (request/response cycle + code) · the ML pipeline · choosing the right size | NB 44 |
+| `45_ai_assisted_software_development` | IDEs · Git & pull requests · prompt patterns for code · the four failure modes · the 60-second review | NB 45 |
+| `46_bpm_governance_poc_mvp` | BPM lifecycle · RACI for AI · POC → MVP → Production · three case studies · the readiness checklist | NB 46 |
+| `21_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 21 |
 
-The five lecture decks (`26`–`30`) were added in the 2026 review pass; `00_course_overview` is the original onboarding deck. There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
+The five lecture decks were added in the 2026 review pass and are numbered after their companion notebook (`21`, `43`–`46`); `00_course_overview` is the original onboarding deck. There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
 
 ## Building
 
 A full TeX install (`pdflatex`) is all you need. Run twice so the section-navigation bar and table of contents resolve:
 
 ```bash
-pdflatex 30_llm_fundamentals.tex
-pdflatex 30_llm_fundamentals.tex      # second pass for the nav bar + TOC
+pdflatex 21_llm_fundamentals.tex
+pdflatex 21_llm_fundamentals.tex      # second pass for the nav bar + TOC
 # or, simpler:
-latexmk -pdf 30_llm_fundamentals.tex
+latexmk -pdf 21_llm_fundamentals.tex
 ```
 
 All decks compile cleanly (no errors, no slide overflow). They are also Overleaf-ready — upload the `.tex` (and the `images/` folder for the overview deck).
