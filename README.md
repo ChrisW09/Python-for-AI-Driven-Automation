@@ -161,7 +161,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `12_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + a runnable example app (no notebooks) |
 | `15_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + a runnable example app, ChurnScope (no notebooks) |
 | `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
-| `quizzes/` | 10 short multiple-choice quizzes (Modules 1–8, 11 &amp; 14) |
+| `quizzes/` | 11 short multiple-choice quizzes (Modules 1–9, 11 &amp; 14) |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
 | `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
@@ -174,6 +174,8 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 ## 📊 Datasets
 
 The course is **offline-first and reproducible**: almost every dataset is **synthetic and generated inline** from a fixed random seed, so each run produces identical data with **zero downloads**. One fictional world ties them together — a SaaS company running an **AI customer-support operation** — and its tables (customers, support tickets, API-cost logs, feedback, payments) recur from module to module, so you re-meet familiar data as the techniques get harder. Three of those synthetic tables are also dumped to `data/*.csv` so you can practise `pd.read_csv` against real files; two small **real** datasets (Palmer Penguins, UCI Bike Sharing) are bundled there too, so the optional *📊 try it on real data* sections run offline as well; and a few lessons deliberately reach for live public APIs where that *is* the point.
+
+> **Output convention.** The quantitative teaching notebooks ship **with their figures rendered**, so every chart is viewable directly on GitHub and in Colab before you run a single cell. Deterministic seeds mean re-running a notebook reproduces the same figures; if you re-run and commit, keep the rendered outputs in place.
 
 ### Bundled sample files
 
@@ -272,9 +274,9 @@ Notebooks 21–26 and 42 run **entirely offline** with the built-in `MockLLM`. F
 
 | Provider | Class | When to use |
 |---|---|---|
-| 🟢 OpenAI | `OpenAILLM(model="gpt-4o-mini")` | Reliable default |
+| 🟢 OpenAI | `OpenAILLM(model="gpt-5.4-mini")` | Reliable default |
 | 🟠 Anthropic | `AnthropicLLM(model="claude-haiku-4-5")` | Long context, careful tone |
-| 🔵 Google | `GoogleLLM(model="gemini-2.0-flash")` | Cheap at scale |
+| 🔵 Google | `GoogleLLM(model="gemini-2.5-flash")` | Cheap at scale |
 | 🟣 Ollama | `OllamaLLM(model="llama3.2:3b")` | Local — no internet, key, or cost |
 
 Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`06_ai_engineering/A1_llm_providers_guide.ipynb`](./06_ai_engineering/A1_llm_providers_guide.ipynb) for setup and cost notes. **Never commit API keys.**
@@ -445,12 +447,13 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_02_data_science.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_02_data_science.ipynb) |
 | `quiz_03_real_world_io.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_03_real_world_io.ipynb) |
 | `quiz_04_machine_learning.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_04_machine_learning.ipynb) |
+| `quiz_05_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_05_industry_applications.ipynb) |
 | `quiz_06_ai_engineering.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_06_ai_engineering.ipynb) |
+| `quiz_07_building_ai_pocs.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_07_building_ai_pocs.ipynb) |
+| `quiz_08_agents_tools_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_08_agents_tools_mcp.ipynb) |
+| `quiz_09_nlp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_09_nlp.ipynb) |
 | `quiz_11_production.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_11_production.ipynb) |
 | `quiz_14_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_14_business_ai.ipynb) |
-| `quiz_07_building_ai_pocs.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_07_building_ai_pocs.ipynb) |
-| `quiz_05_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_05_industry_applications.ipynb) |
-| `quiz_08_agents_tools_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_08_agents_tools_mcp.ipynb) |
 
 ---
 
