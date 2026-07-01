@@ -66,3 +66,5 @@ Templates live in `scoring/templates/scoring/`. They use `{{ variables }}` and `
 ```
 
 `{% csrf_token %}` is mandatory on POST forms — it's the anti-forgery protection Django gives you by default.
+
+Two more pieces of template shorthand worth knowing: `{{ form.as_p }}` renders every form field wrapped in `<p>` tags, complete with its label and any validation errors — one tag instead of hand-writing the HTML for each field. And `|floatformat:2` is a **template filter**: it takes the value on its left and formats it, here rounding the probability to 2 decimal places. Filters chain with `|`, like a Unix pipe.

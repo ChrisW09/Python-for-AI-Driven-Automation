@@ -118,7 +118,7 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
 | **Scope** | All 14 modules + 13 optional appendices | The essentials, condensed |
-| **Notebooks** | 46 lessons (+ appendices) | 14 lessons |
+| **Notebooks** | 46 lessons (+ 13 appendices) | 15 (onboarding + 14 lessons) |
 | **Time** | ~115 hours | ~15 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -182,9 +182,9 @@ Small enough to fit on one screen and travel with the repo (see [`data/README.md
 | File | Rows | What it is | Used by |
 |---|---|---|---|
 | `data/api_log.csv` | 50 | LLM API request log — `model`, `segment`, `quarter`, `tokens_in/out`, `latency_ms` | NB 7 — Pandas fundamentals |
-| `data/support_ops.csv` | 60 | Support-ops metrics by channel & month — tickets, automation rate, latency, satisfaction, cost | NB 41 — Capstone A |
+| `data/support_ops.csv` | 60 | Support-ops metrics by channel & month — tickets, automation rate, latency, satisfaction, cost | disk copy of the data NB 41 (Capstone A) builds inline |
 | `data/customer_feedback.csv` | 15 | Labelled feedback — `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 14 & 22 |
-| `forecast.csv` | 28 | 7-day weather forecast for 4 cities, saved from the Open-Meteo API | NB 12 — APIs & HTTP |
+| `forecast.csv` | 28 | 7-day weather forecast for 4 cities, saved from the Open-Meteo API (lives at the repo root) | written by NB 12 — APIs & HTTP |
 | `data/penguins.csv` | 344 | **Real** — Palmer Penguins: 3 species' bill/flipper/mass measurements, with real missing values · CC0 | NB 9 — Visualization |
 | `data/bike_sharing_daily.csv` | 731 | **Real** — UCI Bike Sharing: daily rentals 2011–12 with weather & calendar features · CC BY 4.0 | NB 20 — Demand forecasting |
 
@@ -273,7 +273,7 @@ Notebooks 21–26 and 42 run **entirely offline** with the built-in `MockLLM`. F
 | Provider | Class | When to use |
 |---|---|---|
 | 🟢 OpenAI | `OpenAILLM(model="gpt-4o-mini")` | Reliable default |
-| 🟠 Anthropic | `AnthropicLLM(model="claude-haiku-4-5-20251001")` | Long context, careful tone |
+| 🟠 Anthropic | `AnthropicLLM(model="claude-haiku-4-5")` | Long context, careful tone |
 | 🔵 Google | `GoogleLLM(model="gemini-2.0-flash")` | Cheap at scale |
 | 🟣 Ollama | `OllamaLLM(model="llama3.2:3b")` | Local — no internet, key, or cost |
 

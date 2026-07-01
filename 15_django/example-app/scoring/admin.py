@@ -15,4 +15,6 @@ class PredictionAdmin(admin.ModelAdmin):
         "will_churn",
     )
     list_filter = ("contract", "will_churn")
+    # A Prediction is an audit log — nobody should edit one after the fact.
+    # `_meta.fields` lists every model field, so this stays correct if fields change.
     readonly_fields = [f.name for f in Prediction._meta.fields]

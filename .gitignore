@@ -63,6 +63,14 @@ dmypy.json
 .ruff_cache/
 
 # -----------------------------------------------------------------------------
+#  Training artifacts — PyTorch Lightning writes these when NB38 runs with the
+#  real DeepTab backend; they are regenerated on every run and shouldn't ship.
+# -----------------------------------------------------------------------------
+lightning_logs/
+model_checkpoints/
+*.ckpt
+
+# -----------------------------------------------------------------------------
 #  Jupyter
 # -----------------------------------------------------------------------------
 .ipynb_checkpoints/

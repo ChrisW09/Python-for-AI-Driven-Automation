@@ -57,3 +57,5 @@ class PredictionAdmin(admin.ModelAdmin):
 ```
 
 Create a login (`python manage.py createsuperuser`), visit `/admin/`, and a non-engineer can search, filter, and inspect every prediction — no extra code. **This is Django's killer feature**: the back-office that would take days in Flask is one file here.
+
+> The version in the example app shows a few more columns (`tenure_months`, `monthly_charges`, `support_tickets`) and adds `readonly_fields = [f.name for f in Prediction._meta.fields]` — every field locked, because a prediction is an audit log that nobody should edit after the fact. The snippet above is the minimal shape; the file is the production-flavoured one.

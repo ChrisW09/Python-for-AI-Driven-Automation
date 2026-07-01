@@ -50,4 +50,4 @@ def test_contract_matters(self):
 </details>
 
 ### 5. (Stretch) Swap in a real model
-Train a small scikit-learn classifier on the synthetic churn data from NB 14, `joblib.dump` it, load it once in `ScoringConfig.ready()`, and call it from `churn_probability`. The views, forms, templates, and admin stay untouched — proof the seams are in the right place.
+Train a small scikit-learn classifier on the synthetic churn data from NB 14 (`04_machine_learning/14_sklearn_basics.ipynb`), `joblib.dump` it, load it once in `ScoringConfig.ready()`, and call it from `churn_probability`. The views, forms, templates, and admin stay untouched — proof the seams are in the right place.
