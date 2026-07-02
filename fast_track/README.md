@@ -83,10 +83,10 @@ fast_track/                      canonical full course
   07_visualization_and_stats←  02_data_science/09_matplotlib_basics + 10_statistics_basics
   08_sklearn_basics         ←  04_machine_learning/14_sklearn_basics
   09_apis_and_sql           ←  03_real_world_io/12_apis_and_http + 13_sql_fundamentals
-  10_ai_workflows           ←  06_ai_engineering/17_ai_workflows
-  11_embeddings_and_rag     ←  06_ai_engineering/18_embeddings_retrieval
-  12_tools_and_agents       ←  06_ai_engineering/19_tools_and_agents
-  13_notebook_to_project    ←  11_production/22_from_notebook_to_project
+  10_ai_workflows           ←  06_ai_engineering/22_ai_workflows
+  11_embeddings_and_rag     ←  06_ai_engineering/23_embeddings_retrieval
+  12_tools_and_agents       ←  06_ai_engineering/24_tools_and_agents
+  13_notebook_to_project    ←  11_production/39_from_notebook_to_project
   14_agents_and_mcp         ←  08_agents_tools_mcp/* (agents, tools & MCP, condensed)
 ```
 

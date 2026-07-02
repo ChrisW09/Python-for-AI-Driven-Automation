@@ -1,6 +1,7 @@
 # =============================================================================
-# Verified with (Python 3.11), last full run 2026-06-07 — the course executes
-# clean on this exact set (72 pass / 3 intentional Debug-me xfail / 0 fail):
+# Verified with (Python 3.11), last full run 2026-07-02 — the course executes
+# clean on this exact set (73 notebooks end-to-end; the 8 intentional Debug-me
+# cells carry the `raises-exception` tag so full execution passes):
 #   numpy 2.4.6 · pandas 3.0.3 · matplotlib 3.10.9 · scikit-learn 1.8.0
 #   statsmodels 0.14.6 · scipy 1.17.1 · requests 2.34.2 · jupyterlab 4.5.7
 # Floors stay open ("modern tools, modern habits" — see README), but each line
@@ -16,9 +17,9 @@ pandas>=2.0,<4
 matplotlib>=3.9,<4     # 3.9+ required: notebooks use ax.boxplot(tick_labels=...)
 seaborn>=0.13,<1       # statistical charts in one line (NB 9, fast-track NB 7)
 scikit-learn>=1.3,<2
-scipy>=1.10,<2        # statistics, safety stock, rank ensembles (NB 10, 35–38)
+scipy>=1.10,<2        # statistics, safety stock, rank ensembles (NB 10, 17–20)
 jupyterlab>=4.0,<5
-ipywidgets>=8.0,<9    # interactive sliders in the model->money cells (NB 35, 36, 38)
+ipywidgets>=8.0,<9    # interactive sliders in the model->money cells (NB 17, 18, 20)
 
 # Notebook 12 — real HTTP calls
 requests>=2.30,<3
@@ -26,22 +27,28 @@ requests>=2.30,<3
 # Notebook 11 — time series & forecasting
 statsmodels>=0.14,<1
 
-# Notebook 22 — testing inside the project
+# Notebook 39 — testing inside the project
 pytest>=8.0,<10
 
-# Notebook 23 — optional in-process scheduling
+# Fast-track NB 8 — progress bars
+tqdm>=4.66,<5
+
+# Module 3 appendix A1 — offline HTML parsing (web scraping)
+beautifulsoup4>=4.12,<5
+
+# Notebook 40 — optional in-process scheduling
 # schedule>=1.2
 
 # --- Optional LLM providers (see notebook A1 — the providers guide) ---
 # Every AI notebook works offline with the built-in MockLLM. Uncomment the
 # provider(s) you actually plan to use.
-# openai>=1.0                       # OpenAI: gpt-4o-mini, gpt-4o, text-embedding-3-small
+# openai>=1.0                       # OpenAI: gpt-5.4-mini, gpt-5.5, text-embedding-3-small
 # anthropic>=0.30                   # Anthropic: Claude haiku / sonnet / opus
 # google-generativeai>=0.7          # Google: Gemini Flash / Pro
 # ollama>=0.3                       # Local: any model you `ollama pull` (needs Ollama server)
-# sentence-transformers>=2.7        # Local embeddings (NB 18 — embeddings & retrieval)
+# sentence-transformers>=2.7        # Local embeddings (NB 23 — embeddings & retrieval)
 
-# --- Optional vector stores & RAG/agent frameworks (Module 5 appendices A2-A3) ---
+# --- Optional vector stores & RAG/agent frameworks (Module 6 appendices A2-A3) ---
 # faiss-cpu>=1.7
 # chromadb>=0.5
 # qdrant-client>=1.9
@@ -58,15 +65,15 @@ pytest>=8.0,<10
 # tabpfn>=0.1                       # local TabPFN (PriorLabs)
 # tabpfn-client>=0.1                # hosted PriorLabs API
 
-# --- Optional text analytics (Module 12 — topic modeling & sentiment) ---
+# --- Optional text analytics (Module 9 — topic modeling & sentiment) ---
 # Each notebook runs offline via a scikit-learn stand-in; install to see the real library.
-# bertopic>=0.16                    # NB 43 — embedding topic models (pulls sentence-transformers, umap-learn, hdbscan)
-# stream-topic>=0.1                 # NB 44 — STREAM (AnFreTh/STREAM): unified topic models + evaluation
-# vaderSentiment>=3.3               # NB 45 — lexicon/rule-based sentiment
-# transformers>=4.40                # NB 45 — transformer sentiment pipelines (also Module 4 A3)
+# bertopic>=0.16                    # NB 35 — embedding topic models (pulls sentence-transformers, umap-learn, hdbscan)
+# stream-topic>=0.1                 # NB 36 — STREAM (AnFreTh/STREAM): unified topic models + evaluation
+# vaderSentiment>=3.3               # NB 37 — lexicon/rule-based sentiment
+# transformers>=4.40                # NB 37 — transformer sentiment pipelines (also Module 4 A3)
 
 # --- Optional deep tabular learning (Module 10 — DeepTab) ---
-# deeptab>=2.0                      # NB 46 — OpenTabular/DeepTab; deep tabular models, sklearn API (v2 split-config; pulls torch + lightning)
+# deeptab>=2.0                      # NB 38 — OpenTabular/DeepTab; deep tabular models, sklearn API (v2 split-config; pulls torch + lightning)
 
 # --- Optional forecasting libraries (Module 2 appendices A2-A4) ---
 # prophet>=1.1
