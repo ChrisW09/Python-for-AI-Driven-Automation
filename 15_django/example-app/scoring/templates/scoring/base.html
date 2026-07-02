@@ -16,10 +16,26 @@
     .stay  { background: #e7f6ec; border: 1px solid #a8d8b9; }
     .muted { color: #777; font-size: 0.9rem; }
     code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    nav { margin-bottom: 1.5rem; }
+    nav form { display: inline; }
+    nav button { margin: 0; padding: 0.2rem 0.7rem; font-size: 0.85rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+    th, td { padding: 0.4rem 0.6rem; text-align: left; border-bottom: 1px solid #ddd; }
   </style>
 </head>
 <body>
   <h1>🎯 ChurnScope</h1>
+  <nav>
+    <a href="{% url 'scoring:index' %}">Score</a> ·
+    <a href="{% url 'scoring:history' %}">History</a>
+    {% if user.is_authenticated %}
+      {# Django 5 removed GET logout, so this must be a POST form, not a link. #}
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log out ({{ user.username }})</button>
+      </form>
+    {% endif %}
+  </nav>
   {% block content %}{% endblock %}
   <p class="muted">A Django teaching app · Module 15 · scores are from a transparent stand-in model.</p>
 </body>

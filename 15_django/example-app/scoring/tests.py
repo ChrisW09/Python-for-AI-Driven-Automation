@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
 
@@ -63,3 +64,35 @@ class ViewTests(TestCase):
             content_type="application/json",
         )
         self.assertEqual(resp.status_code, 400)
+
+
+class HistoryTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("analyst", password="pass1234")
+        Prediction.objects.create(
+            tenure_months=3, monthly_charges=95, support_tickets=4,
+            contract="month-to-month", probability=0.81, will_churn=True,
+        )
+
+    def test_anonymous_redirected_to_login(self):
+        resp = self.client.get(reverse("scoring:history"))
+        self.assertRedirects(resp, "/accounts/login/?next=/history/")
+
+    def test_logged_in_user_sees_prediction(self):
+        self.client.login(username="analyst", password="pass1234")
+        resp = self.client.get(reverse("scoring:history"))
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "month-to-month")
+        self.assertContains(resp, "0.81")
+
+    def test_pagination_splits_at_ten(self):
+        for _ in range(14):  # 15 total with the one from setUp
+            Prediction.objects.create(
+                tenure_months=12, monthly_charges=70, support_tickets=1,
+                contract="one-year", probability=0.30, will_churn=False,
+            )
+        self.client.login(username="analyst", password="pass1234")
+        page1 = self.client.get(reverse("scoring:history"))
+        self.assertEqual(len(page1.context["page_obj"]), 10)
+        page2 = self.client.get(reverse("scoring:history"), {"page": 2})
+        self.assertEqual(len(page2.context["page_obj"]), 5)

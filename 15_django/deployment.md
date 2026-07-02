@@ -1,6 +1,6 @@
 # Testing & deployment
 
-> Chapter 7 of [Module 15 — Django for AI Web Apps](README.md).
+> Chapter 8 of [Module 15 — Django for AI Web Apps](README.md).
 
 ## Testing with the test client
 
@@ -50,13 +50,42 @@ python manage.py collectstatic --noinput        # gather static files
 gunicorn churnscope.wsgi:application --bind 0.0.0.0:8000
 ```
 
+## Containerising ChurnScope
+
+The example app ships a real **[`Dockerfile`](example-app/Dockerfile)** (plus a [`.dockerignore`](example-app/.dockerignore)). It follows the exact house pattern from [Module 12's backend Dockerfile](../12_cicd/example-app/backend/Dockerfile) — `python:3.12-slim`, requirements layer before code, non-root user, a stdlib `HEALTHCHECK` — with gunicorn instead of uvicorn. Build and run it:
+
+```bash
+cd 15_django/example-app
+docker build -t churnscope .
+docker run -p 8000:8000 \
+    -e DJANGO_SECRET_KEY="change-me" \
+    -e DJANGO_DEBUG=0 \
+    -e DJANGO_ALLOWED_HOSTS=localhost \
+    churnscope
+```
+
+Open <http://localhost:8000/> and score a customer — same app, now in a box. Three things in the image deserve a pause:
+
+**Migrations at container start.** The `CMD` is `sh -c "python manage.py migrate --noinput && exec gunicorn churnscope.wsgi --bind 0.0.0.0:8000"` — migrate, then serve, so the container sets itself up. Fine for a single-container SQLite demo; in real life run migrations as a separate **release step** (a one-off `docker run … python manage.py migrate`, or a CI job) — otherwise several replicas race to migrate the same database.
+
+**Static files.** The demo serves nothing collected beyond the admin's assets, so the image skips `collectstatic`. The standard production answer: run `python manage.py collectstatic --noinput` at build time and add [WhiteNoise](https://whitenoise.readthedocs.io/) middleware so gunicorn serves the collected files efficiently — or let Module 12's Nginx serve `staticfiles/` directly.
+
+**SQLite in a container is ephemeral.** The database lives in the container's writable layer, so `docker rm` deletes every logged prediction (Module 12, [Docker §8](../12_cicd/docker.md)). Bind-mount the file to keep it:
+
+```bash
+touch db.sqlite3       # must exist before Docker can mount it
+docker run -p 8000:8000 -v "$PWD/db.sqlite3:/app/db.sqlite3" churnscope
+```
+
+For anything real, swap the `DATABASES` dict for Postgres in its own container — which is exactly what Module 12's compose file does.
+
 ## Hand-off to Module 12
 
-This is exactly the app shape **[Module 12 — CI/CD & Deployment](../12_cicd/)** knows how to ship:
+The image above drops straight into **[Module 12 — CI/CD & Deployment](../12_cicd/)**:
 
-1. **Dockerise** it (a `Dockerfile` running `gunicorn churnscope.wsgi`).
-2. **Compose** it with Postgres + Nginx.
-3. **GitHub Actions** builds and deploys on every push.
-4. **HTTPS** via Let's Encrypt.
+1. **Dockerise** it — done: the `Dockerfile` above.
+2. **[Compose](../12_cicd/docker-compose.md)** it with Postgres + Nginx.
+3. **[GitHub Actions](../12_cicd/github-actions.md)** builds and deploys on every push.
+4. **[HTTPS](../12_cicd/https.md)** via Let's Encrypt.
 
 Same pipeline, a Django image instead of a FastAPI one. You've now seen both ends — a thin API service and a full batteries-included app — through the *same* deployment door.

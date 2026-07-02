@@ -71,6 +71,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
 ]
 
+# --- Auth: built-in views mounted at /accounts/ in churnscope/urls.py ------
+LOGIN_URL = "/accounts/login/"
+LOGIN_REDIRECT_URL = "/history/"
+LOGOUT_REDIRECT_URL = "/"
+
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True

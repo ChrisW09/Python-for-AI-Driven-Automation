@@ -1,6 +1,6 @@
 # Exercises
 
-> Chapter 8 of [Module 15 — Django for AI Web Apps](README.md). Do these against the running [`example-app/`](example-app/).
+> Chapter 9 of [Module 15 — Django for AI Web Apps](README.md). Do these against the running [`example-app/`](example-app/).
 
 Each exercise has a worked solution — try first, then peek.
 
@@ -12,20 +12,25 @@ Add `region` (a `ChoiceField`: north/south/east/west) to `ChurnForm`, the `Predi
 Add `region = forms.ChoiceField(choices=[("north","North"),...])` to `ChurnForm`; add `region = models.CharField(max_length=10)` to `Prediction`; add `"region"` to `PredictionAdmin.list_display`; then `python manage.py makemigrations scoring && python manage.py migrate`. (The scorer can ignore `region` or add a small per-region offset.)
 </details>
 
-### 2. A "recent predictions" page
-Add a view + template at `/history/` that lists the 20 most recent predictions from the ORM.
+### 2. Filter the history
+The shipped `/history/` page shows every prediction. Add a `?contract=` filter: `/history/?contract=month-to-month` should show only those rows, pagination intact, and the page should offer the three contract types as links.
 
 <details><summary>💡 Solution</summary>
 
 ```python
-# views.py
+# views.py — filter BEFORE paginating, so page counts stay correct
+@login_required
 def history(request):
-    rows = Prediction.objects.all()[:20]              # Meta.ordering handles the sort
-    return render(request, "scoring/history.html", {"rows": rows})
-# urls.py
-path("history/", views.history, name="history"),
+    rows = Prediction.objects.all()
+    contract = request.GET.get("contract")
+    if contract:
+        rows = rows.filter(contract=contract)
+    paginator = Paginator(rows, per_page=10)
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return render(request, "scoring/history.html",
+                  {"page_obj": page_obj, "contract": contract})
 ```
-Template: loop `{% for p in rows %}` over the rows in a `<table>`.
+Template: three links like `<a href="?contract=month-to-month">month-to-month</a>` (plus one plain `?` link for "all"), and carry the filter through the pager links: `?page={{ page_obj.next_page_number }}&contract={{ contract }}`. Querysets are lazy, so stacking `.filter()` before the paginator costs one SQL query either way.
 </details>
 
 ### 3. Validate the API
@@ -50,4 +55,4 @@ def test_contract_matters(self):
 </details>
 
 ### 5. (Stretch) Swap in a real model
-Train a small scikit-learn classifier on the synthetic churn data from NB 14 (`04_machine_learning/14_sklearn_basics.ipynb`), `joblib.dump` it, load it once in `ScoringConfig.ready()`, and call it from `churn_probability`. The views, forms, templates, and admin stay untouched — proof the seams are in the right place.
+Train a small scikit-learn classifier on the synthetic churn data from NB 14 (`04_machine_learning/14_sklearn_basics.ipynb`), `joblib.dump` it, load it once in `ScoringConfig.ready()`, and call it from `churn_probability`. The views, forms, templates, and admin stay untouched — proof the seams are in the right place. (Stuck? [Chapter 7](serving-a-model.md) now walks the full pattern — attempt it first, then compare.)

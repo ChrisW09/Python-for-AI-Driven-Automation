@@ -1,0 +1,33 @@
+{% extends "scoring/base.html" %}
+
+{% block title %}History · ChurnScope{% endblock %}
+
+{% block content %}
+<p>Every logged prediction, newest first.</p>
+
+<table>
+  <tr>
+    <th>When</th><th>Contract</th><th>Tenure</th><th>Charges</th>
+    <th>Tickets</th><th>P(churn)</th><th>Verdict</th>
+  </tr>
+  {% for p in page_obj %}
+  <tr>
+    <td>{{ p.created_at|date:"Y-m-d H:i" }}</td>
+    <td>{{ p.contract }}</td>
+    <td>{{ p.tenure_months }}</td>
+    <td>{{ p.monthly_charges }}</td>
+    <td>{{ p.support_tickets }}</td>
+    <td>{{ p.probability|floatformat:2 }}</td>
+    <td>{% if p.will_churn %}⚠️ churn{% else %}✅ stay{% endif %}</td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="7" class="muted">No predictions yet.</td></tr>
+  {% endfor %}
+</table>
+
+<p class="muted">
+  {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">&laquo; prev</a>{% endif %}
+  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+  {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">next &raquo;</a>{% endif %}
+</p>
+{% endblock %}

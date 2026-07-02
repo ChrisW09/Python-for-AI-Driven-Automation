@@ -1,5 +1,7 @@
 import json
 
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -30,6 +32,14 @@ def index(request):
         "scoring/form.html",
         {"form": form, "result": result, "threshold": THRESHOLD},
     )
+
+
+@login_required
+def history(request):
+    """Paginated prediction log, newest first (per the model's Meta.ordering)."""
+    paginator = Paginator(Prediction.objects.all(), per_page=10)
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return render(request, "scoring/history.html", {"page_obj": page_obj})
 
 
 @csrf_exempt  # stateless JSON API; use token auth (DRF/Ninja) in production
