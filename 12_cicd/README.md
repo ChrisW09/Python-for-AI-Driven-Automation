@@ -48,6 +48,20 @@ The [example app](example-app/docker-compose.yml) — a small FastAPI backend, a
 
 ---
 
+## Hands-on lab notebooks
+
+The chapters explain the concepts; three **lab notebooks** let you *practise* them without installing anything — Docker, a CI runner, and a live web stack are all **simulated in pure Python** (100% offline), grounded in the exact files this module ships.
+
+| Notebook | ⏱ Time | Companion chapters | What you do |
+|---|---|---|---|
+| [`lab01_docker_and_compose.ipynb`](lab01_docker_and_compose.ipynb) | ~60 min | [Docker](docker.md), [Compose](docker-compose.md) | Parse the real `Dockerfile`, hash its instructions into layers, replay the build cache, apply `.dockerignore` to a file tree, and tick through Compose startup order |
+| [`lab02_ci_pipeline_github_actions.ipynb`](lab02_ci_pipeline_github_actions.ipynb) | ~60 min | [GitHub Actions](github-actions.md), [Registries](registries.md) | Parse the real workflow, then build an ~80-line Actions-style runner that runs jobs as a DAG, executes real `pytest`, and simulates matrix builds, caching, and a registry |
+| [`lab03_deploy_dns_https_monitoring.ipynb`](lab03_deploy_dns_https_monitoring.ipynb) | ~60 min | [DNS](dns.md), [Reverse proxies](reverse-proxies.md), [HTTPS](https.md), [Monitoring](monitoring.md) | Simulate DNS resolution, run a real backend + a reverse proxy you write yourself on `localhost`, simulate the ACME certificate challenge, and build an uptime monitor |
+
+Each lab runs 100% offline and needs no Docker, no server, and no cloud account — so you can watch every moving part in slow motion, then run the real commands (per the [tutorial](tutorial.md)) already knowing what they do. Every lab embeds ✋ checkpoints, 🧪 practice exercises, and a 🎁 mini-project, in the same style as the numbered course lessons.
+
+---
+
 ## Prerequisites
 
 You should be comfortable with:

@@ -39,6 +39,14 @@ beautifulsoup4>=4.12,<5
 # Notebook 40 — optional in-process scheduling
 # schedule>=1.2
 
+# --- Optional: Module 12 CI/CD labs & Module 15 Django labs ---
+# The lab notebooks in 12_cicd/ and 15_django/ run 100% offline on the core
+# deps above (they simulate Docker/CI and boot Django in-kernel). Install these
+# only to parse the real YAML directly / run the Django labs and example app.
+# pyyaml>=6.0                       # 12_cicd labs: parse compose/workflow YAML (else inline-dict fallback)
+# django>=5.0,<6                    # 15_django labs + example app (lab boots Django in the notebook kernel)
+# gunicorn>=21.0                    # 15_django: only for the Docker/deployment chapter
+
 # --- Optional LLM providers (see notebook A1 — the providers guide) ---
 # Every AI notebook works offline with the built-in MockLLM. Uncomment the
 # provider(s) you actually plan to use.

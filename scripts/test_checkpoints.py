@@ -36,7 +36,8 @@ FOLDERS = [
     "00_onboarding", "01_foundations", "02_data_science", "03_real_world_io",
     "04_machine_learning", "05_industry_applications", "06_ai_engineering",
     "07_building_ai_pocs", "08_agents_tools_mcp", "09_nlp", "10_deeptab",
-    "11_production", "13_capstones", "14_business_ai", "fast_track",
+    "11_production", "12_cicd", "13_capstones", "14_business_ai", "15_django",
+    "fast_track",
 ]
 
 

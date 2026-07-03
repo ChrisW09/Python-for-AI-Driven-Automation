@@ -2,7 +2,7 @@
 
 So far you've *built* models and *shipped* them as scripts, notebooks, and small FastAPI services (Modules 7, 11, 12). This optional module adds the other end of the spectrum: **Django**, the "batteries-included" web framework — the fastest way to wrap a model in a real, multi-page web application with a database, an admin dashboard, forms, and authentication, with almost no glue code.
 
-> 📎 **Optional, reference-style module — no notebooks.** Like Module 12 (CI/CD), Django is a *project*, not a sequence of notebook cells. So this module is a short **mini-book** (the chapters below) plus a **runnable example app** you read, run, and extend. It runs **offline** — Django is the only dependency you need to run it (gunicorn joins for the Docker chapter).
+> 📎 **Optional module — a mini-book, two lab notebooks, and an example app.** Django is a *project*, not a sequence of notebook cells, so its core is a short **mini-book** (the chapters below) plus a **runnable example app** you read, run, and extend. Two hands-on **lab notebooks** (below) complement it — they boot *real* Django inside a Jupyter kernel, so you practise the ORM, views, forms, auth, and model-serving cell by cell. Everything runs **offline**; `pip install django` is the only dependency you need (gunicorn joins for the Docker chapter).
 
 Our running example is **ChurnScope** — the churn-scoring tool you prototyped in Module 7 (NB 27–30) — rebuilt as a proper Django app: a form-driven UI, a JSON API, an admin dashboard, and the ORM logging every prediction to a database.
 
@@ -77,6 +77,19 @@ Run the tests:
 ```bash
 python manage.py test
 ```
+
+---
+
+## Hands-on lab notebooks
+
+Prefer to *practise* cell by cell before reading the example app's files? Two lab notebooks boot **real Django inside the notebook kernel** — no `manage.py`, no server process — so every concept is runnable and editable in place. They run 100% offline (`pip install django`) and mirror the ChurnScope model and fields, so the files under [`example-app/`](example-app/) feel familiar afterwards.
+
+| Notebook | ⏱ Time | What you build |
+|---|---|---|
+| [`lab01_django_in_a_notebook.ipynb`](lab01_django_in_a_notebook.ipynb) | ~60 min | `settings.configure()` + `django.setup()`, the `Prediction` model on real SQLite, the ORM (lazy QuerySets, aggregates, the N+1 trap shown with `connection.queries`), string templates, a URLconf + views exercised through the test `Client`, and validated forms |
+| [`lab02_serving_a_model_with_auth.ipynb`](lab02_serving_a_model_with_auth.ipynb) | ~60 min | Train a churn model, serve it behind a `POST /api/score/` JSON endpoint and an HTML form, log every prediction via the ORM, protect a `/history/` page with `@login_required`, test it through the client, and walk the production `Dockerfile` into Module 12 |
+
+Start with lab 1. Each embeds ✋ checkpoints, 🧪 practice exercises, and a 🎁 mini-project, in the same style as the numbered course lessons.
 
 ---
 
