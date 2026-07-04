@@ -15,12 +15,12 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
-  <img alt="269 checkpoints, kernel-tested" src="https://img.shields.io/badge/269%20checkpoints-kernel--tested-8a2be2.svg">
+  <img alt="290 checkpoints, kernel-tested" src="https://img.shields.io/badge/290%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>92 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 269 in-lesson checkpoints · 100% offline</b>
+  <b>99 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 290 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 92 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 99 notebooks
 - [About](#-about)
 - [Contributing &amp; licence](#-contributing--licence)
 
@@ -55,7 +55,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **269 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **290 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -64,7 +64,7 @@
 
 ## ✨ What's new
 
-- **✋ Interactive in-lesson checkpoints.** Every lesson now embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **269 across the course** — so you pause and *do* every ~20 minutes instead of reading straight through. Each ships a scaffolded starter and a collapsible solution, and **every solution has been executed in a fresh kernel to confirm it runs**. → [How each notebook works](#-how-each-notebook-works)
+- **✋ Interactive in-lesson checkpoints.** Every lesson now embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **290 across the course** — so you pause and *do* every ~20 minutes instead of reading straight through. Each ships a scaffolded starter and a collapsible solution, and **every solution has been executed in a fresh kernel to confirm it runs**. → [How each notebook works](#-how-each-notebook-works)
 - **🧑‍🏫 Built for live teaching.** The checkpoint rhythm — lecture ~20 min → ~2-min try → reveal — turns any lesson into an interactive class with zero prep.
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, and agent lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
@@ -118,8 +118,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
 | **Scope** | All 14 modules + 13 optional appendices | The essentials, condensed |
-| **Notebooks** | 46 lessons (+ 13 appendices) | 15 (onboarding + 14 lessons) |
-| **Time** | ~115 hours | ~15 hours |
+| **Notebooks** | 46 lessons (+ 13 appendices) | 22 (onboarding + 21 lessons) |
+| **Time** | ~115 hours | ~24 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
 
@@ -160,7 +160,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `09_nlp/`, `10_deeptab/` | Optional reference tracks — text analytics (NB 35–37) &amp; deep tabular learning (NB 38) |
 | `12_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + 3 hands-on lab notebooks + a runnable example app |
 | `15_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + 2 hands-on lab notebooks + a runnable example app, ChurnScope |
-| `fast_track/` | The fast track — 14 trimmed notebooks (~15 h) |
+| `fast_track/` | The fast track — 21 trimmed notebooks (~24 h): 14 core essentials + 7 breadth extensions |
 | `quizzes/` | 11 short multiple-choice quizzes (Modules 1–9, 11 &amp; 14) |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
@@ -257,7 +257,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **269 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 269 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **290 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 290 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 
@@ -453,6 +453,13 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `12_tools_and_agents.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/12_tools_and_agents.ipynb) |
 | `13_notebook_to_project.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/13_notebook_to_project.ipynb) |
 | `14_agents_and_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/14_agents_and_mcp.ipynb) |
+| `15_time_series_and_forecasting.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/15_time_series_and_forecasting.ipynb) |
+| `16_model_evaluation_and_feature_engineering.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/16_model_evaluation_and_feature_engineering.ipynb) |
+| `17_industry_applications.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/17_industry_applications.ipynb) |
+| `18_document_ai_and_observability.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/18_document_ai_and_observability.ipynb) |
+| `19_nlp_topic_modeling_and_sentiment.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/19_nlp_topic_modeling_and_sentiment.ipynb) |
+| `20_shipping_scheduling_and_deployment.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/20_shipping_scheduling_and_deployment.ipynb) |
+| `21_capstone_fast_track.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/21_capstone_fast_track.ipynb) |
 
 ### 🧠 Quizzes
 
