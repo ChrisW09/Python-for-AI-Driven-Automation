@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <b>100 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 290 in-lesson checkpoints · 100% offline</b>
+  <b>102 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 290 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 100 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 102 notebooks
 - [About](#-about)
 - [Contributing &amp; licence](#-contributing--licence)
 
@@ -475,7 +475,9 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_08_agents_tools_mcp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_08_agents_tools_mcp.ipynb) |
 | `quiz_09_nlp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_09_nlp.ipynb) |
 | `quiz_11_production.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_11_production.ipynb) |
+| `quiz_12_cicd.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_12_cicd.ipynb) |
 | `quiz_14_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_14_business_ai.ipynb) |
+| `quiz_15_django.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_15_django.ipynb) |
 
 ---
 
