@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <b>99 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 290 in-lesson checkpoints · 100% offline</b>
+  <b>100 runnable notebooks · 14 modules · 300+ end-of-lesson exercises · 290 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 99 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 100 notebooks
 - [About](#-about)
 - [Contributing &amp; licence](#-contributing--licence)
 
