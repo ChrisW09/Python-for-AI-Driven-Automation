@@ -1,6 +1,6 @@
 # 🧪 Module Quizzes
 
-Thirteen short multiple-choice quizzes — one per content module (Modules 1–9, 11, 12, 14 and 15; Module 13 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
+Fourteen short multiple-choice quizzes — one per content module (Modules 1–9, 11, 12, 14, 15 and 16; Module 13 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Module | Covers | File |
 |---|---|---|
@@ -17,6 +17,7 @@ Thirteen short multiple-choice quizzes — one per content module (Modules 1–9
 | 12 | CI/CD & Deployment (labs) | [`quiz_12_cicd.ipynb`](./quiz_12_cicd.ipynb) |
 | 14 | Business AI (NB 43–46) | [`quiz_14_business_ai.ipynb`](./quiz_14_business_ai.ipynb) |
 | 15 | Django for AI Web Apps (labs) | [`quiz_15_django.ipynb`](./quiz_15_django.ipynb) |
+| 16 | Web Scraping (NB 47–49) | [`quiz_16_webscraping.ipynb`](./quiz_16_webscraping.ipynb) |
 
 ## How to use the quizzes
 

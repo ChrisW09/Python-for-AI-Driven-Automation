@@ -1,8 +1,8 @@
 # 🏎️ Fast Track
 
-The whole curriculum, condensed to its essentials. **21 notebooks. About 24 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, and an end-to-end capstone.
+The whole curriculum, condensed to its essentials. **22 notebooks. About 26 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, an end-to-end capstone, and web scraping.
 
-The first **14 notebooks** are the original linear essentials; notebooks **15–21** are *breadth extensions* that mirror the applied modules of the full course (time series, model evaluation, industry applications, document AI & observability, NLP, deployment, and a capstone) — each still trimmed to fast-track size.
+The first **14 notebooks** are the original linear essentials; notebooks **15–22** are *breadth extensions* that mirror the applied modules of the full course (time series, model evaluation, industry applications, document AI & observability, NLP, deployment, a capstone, and web scraping) — each still trimmed to fast-track size.
 
 > 🚀 **Start here:** [`00_fast_track_onboarding.ipynb`](./00_fast_track_onboarding.ipynb)
 
@@ -37,15 +37,16 @@ The first **14 notebooks** are the original linear essentials; notebooks **15–
 | 19 | `19_nlp_topic_modeling_and_sentiment.ipynb` | Topic modeling (TF-IDF + KMeans) and the sentiment ladder | ~75 min |
 | 20 | `20_shipping_scheduling_and_deployment.ipynb` | Scheduling &amp; retries; Docker layers, build cache, and CI — simulated offline | ~75 min |
 | 21 | `21_capstone_fast_track.ipynb`     | End-to-end support-ops project: analytics + AI assistant → executive summary | ~90 min |
-| | **Total** | | **~24 h** |
+| 22 | `22_web_scraping.ipynb`            | Web scraping (BeautifulSoup, `robots.txt`, politeness) & the *check-for-an-API-first* rule (OpenAlex) | ~65 min |
+| | **Total** | | **~26 h** |
 
-Each notebook (except the onboarding) is a **trimmed copy** of its canonical counterpart in the parent folders; notebooks 7, 9, 16 and 18 each combine two canonical chapters into one, and 17/19/21 condense a whole module. The first cell of every trimmed notebook links back to the full version(s). Notebooks 15–21 chain on from 14 but are self-contained — take them in order, or dip into the ones relevant to your work.
+Each notebook (except the onboarding) is a **trimmed copy** of its canonical counterpart in the parent folders; notebooks 7, 9, 16 and 18 each combine two canonical chapters into one, and 17/19/21/22 condense a whole module. The first cell of every trimmed notebook links back to the full version(s). Notebooks 15–22 chain on from 14 but are self-contained — take them in order, or dip into the ones relevant to your work.
 
 ---
 
 ## What's intentionally missing
 
-The breadth extensions (NB 15–21) now mirror most of the full course's applied modules — time series, model evaluation & feature engineering, industry applications, document AI & observability, NLP, deployment, and a capstone. Even so, the fast track stays lean. Compared to the full course, these are still gone:
+The breadth extensions (NB 15–22) now mirror most of the full course's applied modules — time series, model evaluation & feature engineering, industry applications, document AI & observability, NLP, deployment, a capstone, and web scraping. Even so, the fast track stays lean. Compared to the full course, these are still gone:
 
 - **🧠 Stretch exercises A and B** (the very-deep problems) — the fast track keeps Stretch C and D, which are still notably harder than the Practice ones but realistic for the time budget.
 - **🎁 Bonus mini-project** at the end of every notebook.
@@ -105,6 +106,7 @@ fast_track/                      canonical full course
   19_nlp_topic_modeling_and_sentiment         ←  09_nlp/* (BERTopic→TF-IDF+KMeans; sentiment ladder)
   20_shipping_scheduling_and_deployment       ←  11_production/40_scheduling_orchestration + 12_cicd/* (labs)
   21_capstone_fast_track                      ←  13_capstones/41_capstone_analytics + 42_capstone_ai_assistant
+  22_web_scraping                             ←  16_webscraping/* (fundamentals, Firecrawl, OpenAlex — condensed)
 ```
 
 The fast-track notebooks are flat-numbered 1–21 deliberately — a single linear path you can work straight through (1–14 are the core essentials; 15–21 broaden coverage across the applied modules). Inside each notebook the cross-references use the **fast-track numbers** (e.g. *"pandas in NB 6"*); back-references to the full course always use explicit relative paths (e.g. [`../06_ai_engineering/`](../06_ai_engineering/)), so you can always follow a thread to the depth notebook.
