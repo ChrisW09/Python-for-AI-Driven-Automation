@@ -1,5 +1,7 @@
 # Module 6 — AI Engineering
 
+> 🧭  [◀ Industry Applications](../05_industry_applications/)  ·  [🏠 Course home](../README.md)  ·  [Building AI POCs ▶](../07_building_ai_pocs/)
+
 **Goal:** Use LLMs from Python as engineered, observable, evaluated components — not as magic. By the end of this module you can build, test, and ship an AI feature.
 
 **Estimated time:** 8–10 hours.
@@ -204,3 +206,7 @@ Every notebook runs **100% offline** — a deterministic `MockLLM` (and `MockEmb
 ## Where next
 
 → **Module 11 — Production** (`../11_production/39_from_notebook_to_project.ipynb`)
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 6 quiz](../quizzes/quiz_06_ai_engineering.ipynb) — five questions, ~10 minutes.

@@ -1,5 +1,7 @@
 # Module 4 — Machine Learning
 
+> 🧭  [◀ Real-world I/O](../03_real_world_io/)  ·  [🏠 Course home](../README.md)  ·  [Industry Applications ▶](../05_industry_applications/)
+
 **Goal:** Train your first models with scikit-learn, evaluate them *honestly*, and learn the feature-engineering moves that separate a 0.65 R² from a 0.85.
 
 **Estimated time:** 6–8 hours (core lessons 14–16); the five optional appendices add roughly 5–7 hours more.
@@ -202,3 +204,7 @@ Every notebook opens with a Colab badge and a metadata line (module · estimated
 
 → **Module 5 — Industry Applications** (`../05_industry_applications/17_churn_clv_retention.ipynb`) to apply Modules 1–4 to churn, fraud, segmentation and forecasting (spiral-path order), or
 → **Module 6 — AI Engineering** (`../06_ai_engineering/22_ai_workflows.ipynb`) to go straight to the LLM layer.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 4 quiz](../quizzes/quiz_04_machine_learning.ipynb) — five questions, ~10 minutes.

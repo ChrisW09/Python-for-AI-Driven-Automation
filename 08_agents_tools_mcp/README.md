@@ -1,5 +1,7 @@
 # Module 8 — Agents, Tools & MCP
 
+> 🧭  [◀ Building AI POCs](../07_building_ai_pocs/)  ·  [🏠 Course home](../README.md)  ·  [NLP ▶](../09_nlp/)
+
 **Goal:** Go from "an LLM that calls a tool" (Module 6, NB 24) to production-grade **agentic systems** — reliable agent loops, hardened tools, the **Model Context Protocol (MCP)**, and multi-agent orchestration. By the end you can design, build, and evaluate an agent that discovers its tools over a standard protocol and works in Claude Desktop, Claude Code, or your own app.
 
 **Estimated time:** 6–8 hours.
@@ -155,3 +157,7 @@ Every notebook runs **100% offline** — the agent "brain", every tool call, and
 ## Where next
 
 Turn the capstone into a real **FastMCP** server (NB 33 §9) and register it with **Claude Desktop** (`claude_desktop_config.json`) or **Claude Code** (`claude mcp add`). Then carry on to [Module 9 — NLP](../09_nlp/).
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 8 quiz](../quizzes/quiz_08_agents_tools_mcp.ipynb) — five questions, ~10 minutes.

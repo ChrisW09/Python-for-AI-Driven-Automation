@@ -1,5 +1,7 @@
 # Module 1 — Foundations
 
+> 🧭  [◀ Onboarding](../00_onboarding/)  ·  [🏠 Course home](../README.md)  ·  [Data Science ▶](../02_data_science/)
+
 **Goal:** Become fluent enough to read and write Python without friction. By the end of this module you will not be looking up "how do I make a list?" anymore.
 
 **Estimated time:** 9–12 hours of focused study (six notebooks of ~30–60 min each, plus exercises and mini-projects).
@@ -144,3 +146,7 @@ Every notebook opens with a Colab badge and a metadata line (module · estimated
 ## Where next
 
 → **Module 2 — Data Science** (`../02_data_science/07_pandas_fundamentals.ipynb`) — the first real use of your new OOP fluency: a pandas `DataFrame` is exactly the kind of object you just learned to read, with attributes (`df.shape`), methods (`df.groupby()`), and dunder magic (`df["col"]`) everywhere.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 1 quiz](../quizzes/quiz_01_foundations.ipynb) — five questions, ~10 minutes.

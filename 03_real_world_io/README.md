@@ -1,5 +1,7 @@
 # Module 3 — Real-world I/O
 
+> 🧭  [◀ Data Science](../02_data_science/)  ·  [🏠 Course home](../README.md)  ·  [Machine Learning ▶](../04_machine_learning/)
+
 **Goal:** Move beyond toy data. Make polite, retry-aware HTTP calls against live APIs and query a SQL database from Python — the two ways real business data reaches your code (with an optional appendix for the API-less web: scraping).
 
 **Estimated time:** 4–6 hours of focused study.
@@ -121,3 +123,7 @@ Every notebook runs **100% offline**. NB 12 talks to two free, keyless public AP
 ## Where next
 
 → **Module 4 — Machine Learning** (`../04_machine_learning/14_sklearn_basics.ipynb`)
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 3 quiz](../quizzes/quiz_03_real_world_io.ipynb) — five questions, ~10 minutes.

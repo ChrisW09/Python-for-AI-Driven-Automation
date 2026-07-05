@@ -1,5 +1,7 @@
 # Module 11 — Production
 
+> 🧭  [◀ DeepTab](../10_deeptab/)  ·  [🏠 Course home](../README.md)  ·  [CI/CD & Deployment ▶](../12_cicd/)
+
 **Goal:** Take the code you've been writing in notebooks and graduate it into a packaged, tested, scheduled, observable Python project that another engineer can pick up.
 
 **Estimated time:** 5–7 hours.
@@ -112,3 +114,7 @@ Both lessons run **100% offline**, like every notebook in this course: NB 39 cre
 ## Where next
 
 → **Module 13 — Capstones** (`../13_capstones/41_capstone_analytics.ipynb`)
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 11 quiz](../quizzes/quiz_11_production.ipynb) — five questions, ~10 minutes.

@@ -1,5 +1,7 @@
 # Module 7 — Building AI POCs
 
+> 🧭  [◀ AI Engineering](../06_ai_engineering/)  ·  [🏠 Course home](../README.md)  ·  [Agents, Tools & MCP ▶](../08_agents_tools_mcp/)
+
 **Goal:** Give the technical depth to actually build LLM-powered prototypes end-to-end. Module 6 (AI Engineering) taught you how the pieces fit; this module is the *deep version* — the vibe-coding workflow, full RAG pipeline, vector-DB landscape, agentic AI mechanics, and progressive POCs that take you from a one-file Streamlit app to a 3-tier ML application. One running scenario — **ChurnScope**, a churn-radar tool for a small SaaS company — threads through all four notebooks, growing from a "Hello, Streamlit" skeleton into a RAG-grounded, agent-driven system.
 
 **Estimated time:** 12–16 hours.
@@ -149,3 +151,7 @@ Each notebook ships a self-contained Copilot Agent-Mode prompt that builds a wor
 → Module 8 (`../08_agents_tools_mcp/`, NB 31–34) — the direct sequel to NB 30: agent architectures, hardened tools, MCP, multi-agent systems.
 → Module 13 capstones (`../13_capstones/`) — apply what you learned to a complete deliverable.
 → Module 14 (`../14_business_ai/`) — embed your POC into a real organisation: governance, BPM, POC→MVP→Production.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 7 quiz](../quizzes/quiz_07_building_ai_pocs.ipynb) — five questions, ~10 minutes.

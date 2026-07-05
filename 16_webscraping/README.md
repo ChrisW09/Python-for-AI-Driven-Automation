@@ -1,5 +1,7 @@
 # Module 16 — Web Scraping
 
+> 🧭  [◀ Django](../15_django/)  ·  [🏠 Course home](../README.md)
+
 **Goal:** Get data *off the web* responsibly — parse HTML yourself when the page is simple, reach for a managed API when pages fight back, and always prefer a clean open API when one exists. By the end you can pick the right tool for any "I need data from that website" problem and use it politely.
 
 **Estimated time:** ~4 hours (three lessons of ~60–70 min each, plus exercises).
@@ -98,3 +100,7 @@ Each lesson follows the course rhythm: short teaching sections punctuated by **�
 ## Where next
 
 → **Module 13 — Capstones** (`../13_capstones/`) — turn scraped/queried data into an end-to-end analysis or AI assistant. Or feed what you collect into **Module 6 — AI Engineering** (`../06_ai_engineering/`) for RAG and document processing.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 16 quiz](../quizzes/quiz_16_webscraping.ipynb) — five questions, ~10 minutes.

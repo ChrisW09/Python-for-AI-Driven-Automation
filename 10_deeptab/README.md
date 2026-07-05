@@ -1,5 +1,7 @@
 # Module 10 — DeepTab (optional)
 
+> 🧭  [◀ NLP](../09_nlp/)  ·  [🏠 Course home](../README.md)  ·  [Production ▶](../11_production/)
+
 **Goal:** Meet the modern deep-learning toolkit for *structured* data. Gradient-boosted trees (XGBoost/LightGBM) still win most tabular problems — but **DeepTab** ([OpenTabular/DeepTab](https://github.com/OpenTabular/DeepTab)) wraps 15 deep architectures (Mamba, FT-Transformer, SAINT, NODE, TabM, ResNet…) behind a clean scikit-learn API, and unlocks things trees can't: **distributional regression**, **learned embeddings**, and end-to-end multimodal models.
 
 **Estimated time:** 1–2 hours.

@@ -1,5 +1,7 @@
 # 🧪 Module Quizzes
 
+> 🧭  [🏠 Course home](../README.md)  ·  [🏎️ Fast track](../fast_track/)
+
 Fourteen short multiple-choice quizzes — one per content module (Modules 1–9, 11, 12, 14, 15 and 16; Module 13 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Module | Covers | File |

@@ -1,5 +1,7 @@
 # 15 · Optional: Django for AI Web Apps
 
+> 🧭  [◀ Business AI](../14_business_ai/)  ·  [🏠 Course home](../README.md)  ·  [Web Scraping ▶](../16_webscraping/)
+
 So far you've *built* models and *shipped* them as scripts, notebooks, and small FastAPI services (Modules 7, 11, 12). This optional module adds the other end of the spectrum: **Django**, the "batteries-included" web framework — the fastest way to wrap a model in a real, multi-page web application with a database, an admin dashboard, forms, and authentication, with almost no glue code.
 
 > 📎 **Optional module — a mini-book, two lab notebooks, and an example app.** Django is a *project*, not a sequence of notebook cells, so its core is a short **mini-book** (the chapters below) plus a **runnable example app** you read, run, and extend. Two hands-on **lab notebooks** (below) complement it — they boot *real* Django inside a Jupyter kernel, so you practise the ORM, views, forms, auth, and model-serving cell by cell. Everything runs **offline**; `pip install django` is the only dependency you need (gunicorn joins for the Docker chapter).
@@ -103,3 +105,7 @@ Start with lab 1. Each embeds ✋ checkpoints, 🧪 practice exercises, and a �
 Flask/FastAPI (Modules 7 & 12) are perfect for a thin model-serving API. Reach for **Django** when the thing around the model grows — users, an admin back-office, many pages, a real schema. Same model, a bigger house to put it in.
 
 → Deploy what you build here with **[Module 12 — CI/CD & Deployment](../12_cicd/)** (Docker, GitHub Actions, HTTPS).
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 15 quiz](../quizzes/quiz_15_django.ipynb) — five questions, ~10 minutes.

@@ -1,5 +1,7 @@
 # CI/CD, Docker & Deployment
 
+> 🧭  [◀ Production](../11_production/)  ·  [🏠 Course home](../README.md)  ·  [Capstones ▶](../13_capstones/)
+
 Welcome. This module takes you from *"I can run my FastAPI app on my laptop"* all the way to *"my app is live on the internet at a real domain, ships itself automatically every time I `git push`, and survives a server reboot."*
 
 You already know Python, Git basics, FastAPI, and a bit of machine learning / data science. What you probably **don't** know yet is the world of **DevOps** — the engineering practices and tools that take software from a developer's machine and run it reliably for real users. That's exactly what we'll teach here, slowly and from first principles. No prior DevOps experience is assumed. Every term is defined the first time it appears.
@@ -312,3 +314,7 @@ You now have the vocabulary and the map. Continue in reading order:
 - [Docker](docker.md) — start building images and containers, the foundation for everything else.
 - [GitHub Actions](github-actions.md) — see the automated pipeline from the diagram above in full detail.
 - [Tutorial](tutorial.md) — when you're ready to do it all hands-on from zero to live.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 12 quiz](../quizzes/quiz_12_cicd.ipynb) — five questions, ~10 minutes.

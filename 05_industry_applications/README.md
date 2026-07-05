@@ -1,5 +1,7 @@
 # Module 5 — Industry Applications
 
+> 🧭  [◀ Machine Learning](../04_machine_learning/)  ·  [🏠 Course home](../README.md)  ·  [AI Engineering ▶](../06_ai_engineering/)
+
 **Goal:** Apply everything from Modules 1–4 to the four use-case families that dominate business data science in practice — and learn the one pattern they share: *model → money → decision*.
 
 **Estimated time:** 10–12 hours of focused study.
@@ -147,3 +149,7 @@ Each lesson follows the same rhythm: short teaching sections punctuated by **✋
 
 → **Module 6 — AI Engineering** (`../06_ai_engineering/22_ai_workflows.ipynb`) if you haven't done it yet — LLMs layered on top of exactly these workflows.
 → **Capstone A** (`../13_capstones/41_capstone_analytics.ipynb`) to prove the analytics half end-to-end.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 5 quiz](../quizzes/quiz_05_industry_applications.ipynb) — five questions, ~10 minutes.

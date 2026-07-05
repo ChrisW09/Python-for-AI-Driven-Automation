@@ -1,5 +1,7 @@
 # Module 0 — Onboarding
 
+> 🧭  [🏠 Course home](../README.md)  ·  [Foundations ▶](../01_foundations/)
+
 **Goal:** in 30–45 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the rest of the course.
 
 **Estimated time:** ~40 minutes (~20 + ~5 + ~15 across the three notebooks).

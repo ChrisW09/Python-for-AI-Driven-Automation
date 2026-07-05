@@ -1,5 +1,7 @@
 # 🏎️ Fast Track
 
+> 🧭  [🏠 Course home](../README.md)  ·  [🧪 Module quizzes ▶](../quizzes/)
+
 The whole curriculum, condensed to its essentials. **22 notebooks. About 26 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, an end-to-end capstone, and web scraping.
 
 The first **14 notebooks** are the original linear essentials; notebooks **15–22** are *breadth extensions* that mirror the applied modules of the full course (time series, model evaluation, industry applications, document AI & observability, NLP, deployment, a capstone, and web scraping) — each still trimmed to fast-track size.
@@ -50,7 +52,7 @@ The breadth extensions (NB 15–22) now mirror most of the full course's applied
 
 - **🧠 Stretch exercises A and B** (the very-deep problems) — the fast track keeps Stretch C and D, which are still notably harder than the Practice ones but realistic for the time budget.
 - **🎁 Bonus mini-project** at the end of every notebook.
-- **Full depth in every lesson** — each fast-track notebook is trimmed; the combined ones (NB 7, 9, 16, 18) and the module-condensing ones (NB 17, 19, 21) keep the essential throughline and link back to the canonical chapters for the rest.
+- **Full depth in every lesson** — each fast-track notebook is trimmed; the combined ones (NB 7, 9, 16, 18) and the module-condensing ones (NB 17, 19, 21, 22) keep the essential throughline and link back to the canonical chapters for the rest.
 - **A standalone NumPy notebook** (`08_numpy_fundamentals.ipynb`) and **`04_dictionaries_advanced.ipynb`** — folded into pandas (NB 6) and the lists + dicts notebook (NB 3) respectively.
 - **The optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, TabPFN/conformal prediction, vector-store & RAG/agent-framework surveys), **Module 10 (DeepTab)**, **Module 14 (Business AI)** as a standalone lesson, and **Module 15 (Django)**.
 

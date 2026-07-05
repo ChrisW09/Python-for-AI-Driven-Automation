@@ -1,5 +1,7 @@
 # Module 2 — Data Science
 
+> 🧭  [◀ Foundations](../01_foundations/)  ·  [🏠 Course home](../README.md)  ·  [Real-world I/O ▶](../03_real_world_io/)
+
 **Goal:** Master the library stack that powers every analytical Python codebase — pandas, NumPy, seaborn/matplotlib, statsmodels — plus the statistics you need to interpret what they show you.
 
 **Estimated time:** 8–10 hours of focused study (core lessons 7–11; the optional forecasting appendices add ~4–5 hours more).
@@ -183,3 +185,7 @@ Every lesson opens with a metadata line (module · estimated time · difficulty)
 ## Where next
 
 → **Module 3 — Real-world I/O** (`../03_real_world_io/12_apis_and_http.ipynb`)
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 2 quiz](../quizzes/quiz_02_data_science.ipynb) — five questions, ~10 minutes.

@@ -1,5 +1,7 @@
 # Module 13 — Capstones
 
+> 🧭  [◀ CI/CD & Deployment](../12_cicd/)  ·  [🏠 Course home](../README.md)  ·  [Business AI ▶](../14_business_ai/)
+
 **Goal:** Apply everything from the technical track (NB 01–40) to ship two real-shape projects you can talk about in an interview or a code review.
 
 **Estimated time:** 6–10 hours each if you work them as full projects — the guided run alone is ~75–120 min (Capstone A) and ~90–120 min (Capstone B). Capstone A is mostly analytical; Capstone B is mostly engineering.

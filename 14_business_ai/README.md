@@ -1,5 +1,7 @@
 # Module 14 — Business AI
 
+> 🧭  [◀ Capstones](../13_capstones/)  ·  [🏠 Course home](../README.md)  ·  [Django ▶](../15_django/)
+
 **Goal:** Bridge the gap between *knowing how to build* AI systems (Modules 1–13) and *knowing how to land them inside a real organisation*. By the end of this module you will be able to walk a stakeholder through the architecture choices, the governance model, and the POC → MVP → Production path for any AI-automation initiative.
 
 **Estimated time:** 5–7 hours.
@@ -151,3 +153,7 @@ The earlier modules teach *technique*; this one teaches *judgement* — Modules 
 → **Module 6 — AI Engineering** (`../06_ai_engineering/21_llm_fundamentals.ipynb`) — the hands-on deep-dive companion to this module. After that, **Module 5 — Industry Applications** (`../05_industry_applications/`, NB 17–20) and **Module 8 — Agents, Tools & MCP** (`../08_agents_tools_mcp/`, NB 31–34) complete the course.
 
 → **Module 13 — Capstones** (`../13_capstones/41_capstone_analytics.ipynb` or `42_capstone_ai_assistant.ipynb`), if you haven't done them yet. The capstones make many of the Module 14 ideas concrete.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 14 quiz](../quizzes/quiz_14_business_ai.ipynb) — five questions, ~10 minutes.

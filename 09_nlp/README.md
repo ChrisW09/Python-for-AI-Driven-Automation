@@ -1,5 +1,7 @@
 # Module 9 — NLP (Text Analytics)
 
+> 🧭  [◀ Agents, Tools & MCP](../08_agents_tools_mcp/)  ·  [🏠 Course home](../README.md)  ·  [DeepTab ▶](../10_deeptab/)
+
 **Goal:** Turn unstructured text — reviews, support tickets, survey verbatims, social posts — into structure you can act on. Discover *what* people are talking about (**topic modeling**) and *how they feel* about it (**sentiment analysis**), using the libraries practitioners actually reach for.
 
 **Estimated time:** 2–4 hours.
@@ -114,3 +116,7 @@ Module 9 is optional and written reference-style: each notebook demos a real lib
 
 → **Module 10 — DeepTab** (`../10_deeptab/38_deeptab_tabular_deep_learning.ipynb`) for deep learning on *tabular* data, or
 → back to **Module 6 — AI Engineering** (`../06_ai_engineering/23_embeddings_retrieval.ipynb`) to combine these signals with retrieval and LLMs.
+
+---
+
+📝 **Finished this module?** Test yourself with the [Module 9 quiz](../quizzes/quiz_09_nlp.ipynb) — five questions, ~10 minutes.
