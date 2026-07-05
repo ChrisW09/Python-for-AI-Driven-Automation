@@ -30,9 +30,9 @@ The first **14 notebooks** are the original linear essentials; notebooks **15–
 | 13 | `13_notebook_to_project.ipynb`     | Packaging notebook code into an installable, tested project | ~60 min |
 | 14 | `14_agents_and_mcp.ipynb`          | Agent loops with budgets, robust tools, the Model Context Protocol (MCP) | ~60 min |
 | | *— breadth extensions (mirror the full course's applied modules) —* | | |
-| 15 | `15_time_series_and_forecasting.ipynb` | Trend/seasonality, time-ordered splits, baselines, Holt-Winters, backtesting | ~65 min |
+| 15 | `15_time_series_and_forecasting.ipynb` | Trend/seasonality, decomposition, time-ordered splits, baselines, Holt-Winters, backtesting | ~65 min |
 | 16 | `16_model_evaluation_and_feature_engineering.ipynb` | Honest evaluation (ROC/PR, thresholds, CV) + feature engineering &amp; leakage | ~85 min |
-| 17 | `17_industry_applications.ipynb`   | Churn/CLV targeting &amp; fraud detection — the *model → money → decision* pattern | ~80 min |
+| 17 | `17_industry_applications.ipynb`   | Churn/CLV targeting, fraud detection &amp; RFM segmentation — the *model → money → decision* pattern | ~80 min |
 | 18 | `18_document_ai_and_observability.ipynb` | Document extraction + validation; golden sets, LLM-as-judge, cost/trace dashboards | ~80 min |
 | 19 | `19_nlp_topic_modeling_and_sentiment.ipynb` | Topic modeling (TF-IDF + KMeans) and the sentiment ladder | ~75 min |
 | 20 | `20_shipping_scheduling_and_deployment.ipynb` | Scheduling &amp; retries; Docker layers, build cache, and CI — simulated offline | ~75 min |

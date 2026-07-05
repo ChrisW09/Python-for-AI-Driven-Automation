@@ -82,4 +82,4 @@ Suggested order:
 
 → **Module 1 — Foundations** (`../01_foundations/01_python_basics.ipynb`).
 
-If you've already programmed in Python before, you can skim Module 1 and start fully engaging from Module 2. Short on time overall? The **`../fast_track/`** folder is the ~15-hour condensed path through the same material.
+If you've already programmed in Python before, you can skim Module 1 and start fully engaging from Module 2. Short on time overall? The **`../fast_track/`** folder is the 21-notebook, ~24-hour condensed path through the same material.

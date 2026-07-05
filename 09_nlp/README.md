@@ -52,7 +52,7 @@ It explains the four-stage pipeline conceptually, shows the real BERTopic API ve
 
 **Sections:** 1 Setup & the offline smoke test · 2 A small, honest corpus · 3 How BERTopic thinks — the four-stage pipeline · 4 The real BERTopic API · 5 The offline stand-in — BERTopic in ~40 lines of sklearn · 6 One object, two implementations · 7 Reading the results · 8 Visualising topics · 9 Topic `-1` — outliers are a feature · 10 Too many topics? Merge them · 11 BERTopic vs classical LDA · 12 Custom components — the real power · 13 Beyond the basics · 14 Where this pays off in business
 
-**Practice:** 3 ✋ quick exercises (~2 min, collapsible solutions) · 3 🧪 end-of-notebook exercises (open-ended).
+**Practice:** 3 ✋ quick exercises (~2 min, collapsible solutions) · 3 🧪 end-of-notebook exercises (open-ended) · ✅ self-assessment checklist.
 
 **Libraries & offline behaviour:**
 
@@ -79,7 +79,7 @@ The bake-off runs on a voice-of-customer corpus: fit `KmeansTM`, swap to `ProdLD
 
 **Sections:** 1 Setup & offline smoke-test · 2 A small business corpus · 3 The offline stand-in · 4 Fitting a model — the canonical STREAM flow · 5 The killer feature — swap the model, change nothing else · 6 `get_beta` and `get_theta` — what a probabilistic model gives you · 7 Evaluation — is this topic model any good? · 8 How many topics? `optimize_and_fit` · 9 Visualization · 10 Downstream prediction with a Neural Additive Model
 
-**Practice:** 4 ✋ quick exercises (~2 min, collapsible solutions) · 5 🧪 end-of-notebook exercises (the last one needs a real STREAM install).
+**Practice:** 4 ✋ quick exercises (~2 min, collapsible solutions) · 5 🧪 end-of-notebook exercises (the last one needs a real STREAM install) · ✅ self-assessment checklist.
 
 **Libraries & offline behaviour:** `pip install stream-topic` (also pulls `lightning` for the NAM and sentence-transformers for the embedding metrics). A `HAS_STREAM` flag guards every real cell; offline, a `StandInTopicModel` (TF-IDF + sklearn `NMF` — itself a legitimate classical topic model) mirrors the STREAM API (`fit`, `get_topics`, `get_beta`, `get_theta`), a NumPy **NPMI proxy** replaces the metric suite, PCA replaces the built-in visualizations, and plain `LinearRegression` stands in for the downstream NAM.
 
@@ -100,7 +100,7 @@ The same six gadget-review snippets — including deliberate negation, sarcasm, 
 
 **Sections:** 0 Setup & imports · 1 Lexicon / rule-based sentiment — VADER · 2 Classical ML — TF-IDF + Logistic Regression (the workhorse) · 3 Transformers — Hugging Face `pipeline` · 4 Side-by-side: the three rungs of the ladder · 5 Aspect-based sentiment (ABSA) · 6 Pitfalls & practitioner notes
 
-**Practice:** 3 ✋ quick exercises (~2 min, collapsible solutions) · 6 🧪 end-of-notebook exercises (one needs `transformers`).
+**Practice:** 3 ✋ quick exercises (~2 min, collapsible solutions) · 6 🧪 end-of-notebook exercises (one needs `transformers`) · ✅ self-assessment checklist.
 
 **Libraries & offline behaviour:** `pip install vaderSentiment transformers torch` — all optional, behind `HAS_VADER` / `HAS_TRANSFORMERS` capability flags. Offline, VADER is replaced by a minimal built-in lexicon scorer (hand-set word valences + negation flipping), and the transformer rung falls back to the Section-2 classical model — the notebook guards the *model download* too, not just the import, so it survives a no-network machine even with `transformers` installed. The classical rung is plain scikit-learn and always real.
 
@@ -108,7 +108,7 @@ The same six gadget-review snippets — including deliberate negation, sarcasm, 
 
 ## How these notebooks work
 
-Module 9 is optional and written reference-style: each notebook demos a real library's API verbatim, but a `try/except` import sets a capability flag (`HAS_BERTOPIC`, `HAS_STREAM`, `HAS_VADER`, `HAS_TRANSFORMERS`) and every heavy cell degrades gracefully to a built-in scikit-learn/NumPy stand-in — so everything runs 100% offline, and installing the real library simply swaps the backend. Short "✋ Quick exercise (~2 min)" checkpoints with collapsible `<details>` solutions punctuate each notebook, and a 🧪 exercise block at the end offers open-ended extensions (no autograder here, unlike the core modules). The habits this module drills: read the topics, don't trust the count (always inspect topic words and the `-1` outlier topic); pick embeddings vs. bag-of-words deliberately; start sentiment classical before reaching for transformers; and beware domain shift and sarcasm — validate on *your* text.
+Module 9 is optional and written reference-style: each notebook demos a real library's API verbatim, but a `try/except` import sets a capability flag (`HAS_BERTOPIC`, `HAS_STREAM`, `HAS_VADER`, `HAS_TRANSFORMERS`) and every heavy cell degrades gracefully to a built-in scikit-learn/NumPy stand-in — so everything runs 100% offline, and installing the real library simply swaps the backend. Short "✋ Quick exercise (~2 min)" checkpoints with collapsible `<details>` solutions punctuate each notebook, and each one closes with a 🧪 exercise block of open-ended extensions (no autograder here, unlike the core modules), a 🧠 key-takeaways recap, and a ✅ self-assessment checklist to gauge what stuck. The habits this module drills: read the topics, don't trust the count (always inspect topic words and the `-1` outlier topic); pick embeddings vs. bag-of-words deliberately; start sentiment classical before reaching for transformers; and beware domain shift and sarcasm — validate on *your* text.
 
 ## Where next
 

@@ -65,7 +65,7 @@ It also showcases DeepTab **v2's split-config API**: instead of one long list of
 
 *Making it good*
 - 7 · Hyperparameter tuning — (a) built-in Bayesian `optimize_hparams`, (b) sklearn `RandomizedSearchCV` with nested `model_config__d_model` params
-- 🧪 Exercises · 🧠 Key takeaways · 🚀 Next step
+- 🧪 Exercises · 🧠 Key takeaways · ✅ Self-assessment · 🚀 Next step
 
 **Models covered:** `MambularClassifier`, `MambularRegressor`, `MambularLSS` trained in-notebook, each configured via the v2 split-config trio (`MambularConfig` + `PreprocessingConfig` + `TrainerConfig`); one-line-swap siblings named for every architecture (`FTTransformerClassifier`, `TabTransformerClassifier`, `ResNetClassifier`, `MLPClassifier`, `SAINTClassifier`, `TabMClassifier`, `NODEClassifier`, …); `HistGradientBoostingClassifier` as the tree baseline to beat.
 
