@@ -64,9 +64,12 @@
 
 ## ✨ What's new
 
-- **✋ Interactive in-lesson checkpoints.** Every lesson now embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **305 across the course** — so you pause and *do* every ~20 minutes instead of reading straight through. Each ships a scaffolded starter and a collapsible solution, and **every solution has been executed in a fresh kernel to confirm it runs**. → [How each notebook works](#-how-each-notebook-works)
-- **🧑‍🏫 Built for live teaching.** The checkpoint rhythm — lecture ~20 min → ~2-min try → reveal — turns any lesson into an interactive class with zero prep.
-- **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, and agent lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
+- **🕸️ A new Web Scraping module.** BeautifulSoup fundamentals (`robots.txt`, politeness, pagination), managed scraping with **Firecrawl**, and the **OpenAlex** open scholarly API — the "check for an open API before you scrape" discipline, all runnable 100% offline. → [Module 16](./16_webscraping/)
+- **🛠️ Hands-on labs for shipping.** [CI/CD & Deployment](./12_cicd/) (Docker, GitHub Actions, DNS/HTTPS — *simulated in pure Python*, no Docker required) and [Django](./15_django/) (a real ORM/views/forms/auth app booted inside a notebook) now ship runnable lab notebooks alongside their mini-books.
+- **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
+- **🧪 Module quizzes.** Fourteen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
+- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **305 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
+- **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
 ---
 
@@ -149,7 +152,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**15 · Optional: Django**](./15_django/) | 2 labs | Wrap a model in a real web app — ORM, admin, forms, a JSON API — a self-contained mini-book + 2 hands-on lab notebooks + runnable example app |
 | [**16 · Web Scraping**](./16_webscraping/) | 47–49 | Scraping fundamentals (BeautifulSoup, `robots.txt`, politeness), Firecrawl managed scraping, and the OpenAlex open scholarly API — all 100% offline |
 
-> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), and **Module 15 (Django)** is an optional mini-book — all fully offline.
+> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), and **Module 15 (Django)** is an optional mini-book — all fully offline. Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
 
 ---
 
