@@ -6,7 +6,7 @@
 
 **Estimated time:** 1–2 hours.
 
-**Prerequisites:** Module 4 (NB 14 sklearn basics, NB 16 feature engineering) and the Module 4 PyTorch appendices **A1–A3**. Appendix **A5** (conformal prediction) pairs naturally with the uncertainty section.
+**Prerequisites:** Module 4 (NB 14 sklearn basics, NB 16 feature engineering) and PyTorch basics — either the Module 4 appendices **A1–A3** or the full [**Module 17**](../17_pytorch/) (its NB 52 builds this module's entity-embedding architecture by hand). Appendix **A5** (conformal prediction) pairs naturally with the uncertainty section.
 
 ```
         scikit-learn API  ──►  15 deep tabular architectures

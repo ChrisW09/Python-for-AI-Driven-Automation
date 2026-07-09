@@ -64,7 +64,8 @@ beautifulsoup4>=4.12,<5
 # llama-index>=0.10
 # haystack-ai>=2.0
 
-# --- Optional deep learning (Module 4 appendices A1-A3) ---
+# --- Optional deep learning (Module 17 + Module 4 appendices A1-A3) ---
+# Module 17 runs 100% offline once torch is installed (Colab ships it preinstalled).
 # torch>=2.2                        # install: pip install torch --index-url https://download.pytorch.org/whl/cpu
 # transformers>=4.40
 # peft>=0.10                        # LoRA / parameter-efficient fine-tuning

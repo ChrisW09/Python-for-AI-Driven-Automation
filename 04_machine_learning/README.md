@@ -40,6 +40,8 @@
 
 A five-notebook deep-dive track that picks up where scikit-learn stops. Appendices are optional, reference-style demos of *real* heavy libraries — but every one of them still runs 100% offline via built-in stand-ins or graceful skips, so installing the real library (commented out at the bottom of `requirements.txt`) is entirely optional.
 
+> 🔥 **Want PyTorch as full lessons instead of a reference tour?** [**Module 17 — Deep Learning with PyTorch**](../17_pytorch/) is the classroom treatment of the A1–A3 territory — slower, exercise-driven, on this module's own churn data. Pedagogically it slots right after this module; A2/A3 remain the breadth extensions (vision, sequences, fine-tuning) beyond it.
+
 | Appendix | Notebook | ⏱ Time | Focus |
 |---|---|---|---|
 | A1 | `A1_pytorch_foundations.ipynb` | ~60–90 min | Tensors, autograd, `nn.Module`, the canonical training loop; an MLP on tabular data that beats a logistic baseline |
@@ -203,7 +205,8 @@ Every notebook opens with a Colab badge and a metadata line (module · estimated
 ## Where next
 
 → **Module 5 — Industry Applications** (`../05_industry_applications/17_churn_clv_retention.ipynb`) to apply Modules 1–4 to churn, fraud, segmentation and forecasting (spiral-path order), or
-→ **Module 6 — AI Engineering** (`../06_ai_engineering/22_ai_workflows.ipynb`) to go straight to the LLM layer.
+→ **Module 6 — AI Engineering** (`../06_ai_engineering/22_ai_workflows.ipynb`) to go straight to the LLM layer, or
+→ **Module 17 — Deep Learning with PyTorch** (`../17_pytorch/`) to open the `.fit()` black box now — full lessons on tensors, autograd, the training loop, embeddings and serving, on this module's churn data.
 
 ---
 

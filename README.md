@@ -15,12 +15,12 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
-  <img alt="305 checkpoints, kernel-tested" src="https://img.shields.io/badge/305%20checkpoints-kernel--tested-8a2be2.svg">
+  <img alt="317 checkpoints, kernel-tested" src="https://img.shields.io/badge/317%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>107 runnable notebooks · 15 modules · 300+ end-of-lesson exercises · 305 in-lesson checkpoints · 100% offline</b>
+  <b>111 runnable notebooks · 17 modules · 300+ end-of-lesson exercises · 317 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 107 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 111 notebooks
 - [About](#-about)
 - [Contributing &amp; licence](#-contributing--licence)
 
@@ -55,7 +55,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **305 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **317 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -64,11 +64,12 @@
 
 ## ✨ What's new
 
+- **🔥 A new PyTorch module — deep learning as full lessons.** Tensors → autograd → the five-step training loop (NB 50); the training craft — the two-curve overfitting diagnostic, dropout & weight decay, early stopping, LR schedules, save/load, a live four-bug clinic (NB 51); then embeddings for categorical data, an honest bake-off vs gradient boosting, a sklearn-style wrapper and TorchScript serving (NB 52) — all on the course's own churn data, 100% offline (Colab ships PyTorch preinstalled). The Module 4 appendix mini-track (A1–A3) stays as the condensed reference tour. → [Module 17](./17_pytorch/)
 - **🕸️ A new Web Scraping module.** BeautifulSoup fundamentals (`robots.txt`, politeness, pagination), managed scraping with **Firecrawl**, and the **OpenAlex** open scholarly API — the "check for an open API before you scrape" discipline, all runnable 100% offline. → [Module 16](./16_webscraping/)
 - **🛠️ Hands-on labs for shipping.** [CI/CD & Deployment](./12_cicd/) (Docker, GitHub Actions, DNS/HTTPS — *simulated in pure Python*, no Docker required) and [Django](./15_django/) (a real ORM/views/forms/auth app booted inside a notebook) now ship runnable lab notebooks alongside their mini-books.
 - **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
-- **🧪 Module quizzes.** Fourteen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
-- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **305 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
+- **🧪 Module quizzes.** Fifteen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
+- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **317 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
 ---
@@ -120,9 +121,9 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 1
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 15 modules + 13 optional appendices | The essentials, condensed |
-| **Notebooks** | 46 lessons (+ 13 appendices) | 23 (onboarding + 22 lessons) |
-| **Time** | ~115 hours | ~26 hours |
+| **Scope** | All 17 modules + 13 optional appendices | The essentials, condensed |
+| **Notebooks** | 52 lessons + 5 labs (+ 13 appendices) | 23 (onboarding + 22 lessons) |
+| **Time** | ~120 hours | ~26 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
 
@@ -151,8 +152,9 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**14 · Business AI**](./14_business_ai/) | 43–46 | Digital transformation, architecture, AI-assisted dev, governance |
 | [**15 · Optional: Django**](./15_django/) | 2 labs | Wrap a model in a real web app — ORM, admin, forms, a JSON API — a self-contained mini-book + 2 hands-on lab notebooks + runnable example app |
 | [**16 · Web Scraping**](./16_webscraping/) | 47–49 | Scraping fundamentals (BeautifulSoup, `robots.txt`, politeness), Firecrawl managed scraping, and the OpenAlex open scholarly API — all 100% offline |
+| [**17 · Deep Learning with PyTorch**](./17_pytorch/) | 50–52 | Tensors, autograd &amp; the training loop; overfitting, regularization &amp; schedules; embeddings, an honest bake-off vs gradient boosting, a sklearn-style wrapper &amp; serving |
 
-> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), and **Module 15 (Django)** is an optional mini-book — all fully offline. Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
+> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 9–10 are optional, reference-style tracks** (text analytics + deep tabular), and **Module 15 (Django)** is an optional mini-book — all fully offline. **Module 17 (PyTorch)** is the full-lesson treatment of the Module 4 appendix mini-track — pedagogically it slots right after Module 4. Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
 
 ---
 
@@ -160,13 +162,14 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `14_business_ai/` | The complete course — 46 lessons + 13 appendices |
+| `00_onboarding/` … `14_business_ai/` | The complete course core — lessons 1–46 + 13 appendices |
 | `09_nlp/`, `10_deeptab/` | Optional reference tracks — text analytics (NB 35–37) &amp; deep tabular learning (NB 38) |
 | `12_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + 3 hands-on lab notebooks + a runnable example app |
 | `15_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + 2 hands-on lab notebooks + a runnable example app, ChurnScope |
 | `16_webscraping/` | Web scraping — fundamentals (BeautifulSoup, `robots.txt`), Firecrawl, and the OpenAlex open API (lessons 47–49, all offline) |
+| `17_pytorch/` | Deep Learning with PyTorch — tensors → autograd → the training loop, training craft, embeddings + bake-off + serving (lessons 50–52, all offline) |
 | `fast_track/` | The fast track — 22 trimmed notebooks (~26 h): 14 core essentials + 8 breadth extensions |
-| `quizzes/` | 11 short multiple-choice quizzes (Modules 1–9, 11 &amp; 14) |
+| `quizzes/` | 15 short multiple-choice quizzes — one per content module |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
 | `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
@@ -201,7 +204,7 @@ All generated inline (no downloads), grouped by the business problem they illust
 
 | Theme | What's in it | Notebooks |
 |---|---|---|
-| **SaaS customer churn** | The course backbone — tenure, charges, support tickets, usage, contract, region, churn label (+ a revenue target) | NB 14–17, 38 |
+| **SaaS customer churn** | The course backbone — tenure, charges, support tickets, usage, contract, region, churn label (+ a revenue target) | NB 14–17, 38, 50–52 |
 | **LLM cost & latency logs** | Support calls tagged by model & channel with tokens, cost, latency, satisfaction | NB 7–9 |
 | **Support operations** | Tickets across five channels (Email/Chat/Phone/Web/Social), queried in an in-memory SQLite DB | NB 13, 24, 41 |
 | **Fraud / payments** | One row per transaction, with planted fraud patterns (night spend, new-device takeover) | NB 18 |
@@ -447,6 +450,14 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `48_scraping_with_firecrawl.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/16_webscraping/48_scraping_with_firecrawl.ipynb) |
 | `49_openalex_scholarly_data.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/16_webscraping/49_openalex_scholarly_data.ipynb) |
 
+### 17 · Deep Learning with PyTorch
+
+| Notebook | Open |
+|---|---|
+| `50_pytorch_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_pytorch/50_pytorch_fundamentals.ipynb) |
+| `51_training_neural_networks.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_pytorch/51_training_neural_networks.ipynb) |
+| `52_pytorch_in_practice.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_pytorch/52_pytorch_in_practice.ipynb) |
+
 ### 🏎️ Fast track
 
 | Notebook | Open |
@@ -493,6 +504,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_14_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_14_business_ai.ipynb) |
 | `quiz_15_django.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_15_django.ipynb) |
 | `quiz_16_webscraping.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_16_webscraping.ipynb) |
+| `quiz_17_pytorch.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_17_pytorch.ipynb) |
 
 ---
 
