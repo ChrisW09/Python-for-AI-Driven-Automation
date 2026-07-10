@@ -8,14 +8,16 @@ Lecture decks in the HSBI house style (LaTeX Beamer, Madrid theme, 16:9).
 
 | Deck | Lecture | Companion notebook |
 |---|---|---|
-| `00_course_overview` | Orientation: the big picture, structure, learning paths, how to study, what you'll build | Module 0 (onboarding) |
+| `00_course_overview` | Orientation: the big picture, structure (modules 0–17), learning paths, how to study (checkpoints · quizzes · fast track), what you'll build | Module 0 (onboarding) |
 | `43_digital_transformation` | Why AI now · tasks-not-jobs · maturity model · change strategies · adoption pitfalls | NB 43 |
 | `44_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · **frontend↔backend interaction with FastAPI** (request/response cycle + code) · the ML pipeline · choosing the right size | NB 44 |
 | `45_ai_assisted_software_development` | IDEs · Git & pull requests · prompt patterns for code · the four failure modes · the 60-second review | NB 45 |
 | `46_bpm_governance_poc_mvp` | BPM lifecycle · RACI for AI · POC → MVP → Production · three case studies · the readiness checklist | NB 46 |
 | `21_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 21 |
 
-The five lecture decks were added in the 2026 review pass and are numbered after their companion notebook (`21`, `43`–`46`); `00_course_overview` is the original onboarding deck. There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
+The five lecture decks were added in the 2026 review pass and are numbered after their companion notebook (`21`, `43`–`46`); `00_course_overview` is the original onboarding deck, last revised for the module 0–17 structure (Web Scraping, PyTorch, the lab notebooks in CI/CD & Django, checkpoints/quizzes/fast track). There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
+
+**Structural infographics.** The overview deck's roadmap, dependency-graph, learning-paths and weekly-timeline PNGs in `images/` are *generated*, not drawn — after any module renumber or addition, edit the `MODULES` / `DEPS` / `PATHS` / `WEEKS` tables at the top of [`../scripts/generate_course_images.py`](../scripts/generate_course_images.py), rerun it (`.venv/bin/python scripts/generate_course_images.py`), and recompile the deck.
 
 ## Building
 

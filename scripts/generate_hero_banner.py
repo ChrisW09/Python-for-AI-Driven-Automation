@@ -18,7 +18,7 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "docs", "images", "hero.png"
 
 TITLE = "Python for AI-Driven Automation & Business Data Science"
 TAGLINE = "From your first line of Python to shipping AI in production"
-STAGES = ["Foundations", "Data Science", "Machine Learning",
+STAGES = ["Foundations", "Data Science", "Machine Learning", "Deep Learning",
           "AI Engineering", "Agents & MCP", "Production"]
 
 INK = "#f8fafc"

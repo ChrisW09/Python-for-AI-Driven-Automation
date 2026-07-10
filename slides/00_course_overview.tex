@@ -67,7 +67,7 @@
     Read, write, and modify clean Python without friction. Functions, modules, error handling, defensive parsing.
   \end{block}
   \begin{exampleblock}{2. Working with data professionally}
-    pandas, NumPy, matplotlib, scikit-learn, statistics, time-series forecasting. Real datasets, not toy ones.
+    pandas, NumPy, matplotlib, scikit-learn, statistics, time-series forecasting --- plus PyTorch deep learning for when the classical toolkit stops. Real datasets, not toy ones.
   \end{exampleblock}
   \begin{block}{3. AI-driven automation}
     Calling LLMs as functions. Structured output. Retrieval-augmented generation. Tools and agents. Document processing. \emph{Plus} the engineering wrapper around all of it.
@@ -78,8 +78,9 @@
 \section{Structure}
 % ============================================================
 
-\begin{frame}{Sixteen modules, forty-six lessons (+ 13 appendices)}
+\begin{frame}{Eighteen modules --- 52 lessons, 5 labs (+ 13 appendices)}
   \scriptsize
+  \renewcommand{\arraystretch}{0.88}%
   \begin{tabular}{rll}
     \toprule
     \textbf{\#} & \textbf{Module} & \textbf{Notebooks} \\
@@ -93,19 +94,20 @@
     6 & AI engineering          & NB 21–26 — LLM patterns, RAG, agents, evaluation \\
     7 & Building AI POCs        & NB 27–30 — setup, three POCs, RAG deep dive, agentic AI \\
     8 & Agents, tools \& MCP    & NB 31–34 — architectures, robust tools, MCP, multi-agent \\
-    9 & NLP                     & NB 35–37 — topic modeling, sentiment \\
+    9 & NLP (optional)          & NB 35–37 — topic modeling, sentiment \\
     10 & DeepTab (optional)      & NB 38 — deep learning for tabular data \\
     11 & Production              & NB 39–40 — packaging, scheduling, config \& secrets \\
-    12 & CI/CD \& deployment     & markdown module — Docker, GitHub Actions, HTTPS \\
+    12 & CI/CD \& deployment     & mini-book + 3 labs — Docker, GitHub Actions, HTTPS \\
     13 & Capstones               & NB 41–42 — analytics + AI assistant \\
     14 & Business AI             & NB 43–46 — strategy, architecture, BPM, governance \\
-    15 & Django                  & markdown module — serve a model behind a web UI \\
+    15 & Django (optional)       & mini-book + 2 labs — serve a model behind a web UI \\
+    16 & Web scraping            & NB 47–49 — BeautifulSoup, Firecrawl, the OpenAlex API \\
+    17 & Deep learning (PyTorch) & NB 50–52 — tensors \& the training loop, training craft, embeddings \& serving \\
     \bottomrule
   \end{tabular}
-  \vspace{6pt}
-  \begin{block}{Every module folder has its own README}
-    Goals, prerequisites, what you'll build, the notebooks in order. Read it before you open the first notebook of the module.
-  \end{block}
+  \vspace{4pt}
+
+  {\footnotesize \textbf{Every module folder has its own README} --- goals, prerequisites, what you'll build. Read it before the module's first notebook. Module 17 slots pedagogically right after Module 4.}
 \end{frame}
 
 \begin{frame}{Module dependencies — what comes before what}
@@ -126,17 +128,17 @@
 
 \begin{frame}{When to pick which path}
   \begin{block}{Complete beginner}
-    Never written code before. Take all modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 115 hours} — the interactive estimator in \texttt{00b} computes yours.
+    Never written code before. Take all modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 123 hours} — the interactive estimator in \texttt{00b} computes yours.
   \end{block}
   \begin{exampleblock}{Analyst who knows Excel and SQL}
-    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (ML), 5 (industry applications), 13 (capstone). Time-budget: \textbf{about 43 hours}.
+    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (ML), 5 (industry applications), 16 (web scraping), 13 (capstone). Time-budget: \textbf{about 47 hours}.
   \end{exampleblock}
   \begin{block}{ML practitioner adding AI engineering}
-    Skip foundations and data science. Focus on Modules 6 (AI engineering), 8 (agents \& MCP), 11 (production), 13 (capstone). Time-budget: \textbf{about 34 hours}.
+    Skip foundations and data science. Focus on Modules 6 (AI engineering), 8 (agents \& MCP), 17 (PyTorch), 11 (production), 13 (capstone). Time-budget: \textbf{about 38 hours}.
   \end{block}
 \end{frame}
 
-\begin{frame}{Eleven weeks, self-paced}
+\begin{frame}{Twelve weeks, self-paced}
   \begin{center}
     \includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/03_weekly_timeline.png}
   \end{center}
@@ -154,24 +156,37 @@
   Apply this loop to \emph{every} notebook. Genuine struggle beats passive reading.
 \end{frame}
 
-\begin{frame}{Six visual markers you'll see throughout}
+\begin{frame}{Eight visual markers you'll see throughout}
   \footnotesize
   \begin{tabular}{ll}
     \toprule
     \textbf{Marker} & \textbf{Meaning} \\
     \midrule
-    \texttt{(Tip)}        & A small ``stop and notice'' callout. \\
-    \texttt{(Intuition)}  & The mental model behind the syntax. \\
-    \texttt{(Pitfall)}    & A bug or anti-pattern that bites if you're not warned. \\
-    \texttt{(Exercises)}  & Hands-on tasks. Try \emph{before} peeking at the solution. \\
-    \texttt{(Bonus)}      & One larger applied task per notebook. \\
-    \texttt{(Debug me)}   & A cell that \emph{intentionally} contains a bug for you to find. \\
-    \texttt{(Next step)}  & Always points to the next notebook in your path. \\
+    \texttt{(Tip)}            & A small ``stop and notice'' callout. \\
+    \texttt{(Intuition)}      & The mental model behind the syntax. \\
+    \texttt{(Pitfall)}        & A bug or anti-pattern that bites if you're not warned. \\
+    \texttt{(Quick exercise)} & A $\sim$2-minute in-lesson checkpoint with a collapsible solution. \\
+    \texttt{(Exercises)}      & Hands-on tasks. Try \emph{before} peeking at the solution. \\
+    \texttt{(Bonus)}          & One larger applied task per notebook. \\
+    \texttt{(Debug me)}       & A cell that \emph{intentionally} contains a bug for you to find. \\
+    \texttt{(Next step)}      & Always points to the next notebook in your path. \\
     \bottomrule
   \end{tabular}
   \vspace{4pt}
 
   Once you internalise the markers they become road signs, not decoration.
+\end{frame}
+
+\begin{frame}{Checkpoints, quizzes, and the fast track}
+  \begin{block}{317 in-lesson checkpoints --- the rhythm of every lesson}
+    Roughly every $\sim$20 minutes of material: a \texttt{(Quick exercise)} with a scaffolded starter and a collapsible solution --- every solution executed in a fresh kernel. Teach $\to$ try for $\sim$2 minutes $\to$ reveal.
+  \end{block}
+  \begin{exampleblock}{15 module quizzes}
+    Five multiple-choice questions per content module ($\sim$10 minutes) in \texttt{quizzes/} --- read code, predict behaviour, pick the right tool. Score 0--2/5? Re-do the module before moving on.
+  \end{exampleblock}
+  \begin{block}{Short on time? The fast track}
+    \texttt{fast\_track/} condenses the whole course into 22 trimmed lessons ($\sim$26 hours) --- the 14 core essentials plus 8 breadth extensions.
+  \end{block}
 \end{frame}
 
 % ============================================================
@@ -205,7 +220,7 @@
     \textbf{Provider} & \textbf{Class} & \textbf{Best for} \\
     \midrule
     OpenAI    & \texttt{OpenAILLM("gpt-5.4-mini")}            & Reliable default \\
-    Anthropic & \texttt{AnthropicLLM("claude-haiku")}        & Long context, careful tone \\
+    Anthropic & \texttt{AnthropicLLM("claude-haiku-4-5")}    & Long context, careful tone \\
     Google    & \texttt{GoogleLLM("gemini-2.5-flash")}       & Cheapest at high volume \\
     Ollama    & \texttt{OllamaLLM("llama3.2:3b")}            & \textbf{Local} -- no internet, no key \\
     \bottomrule
@@ -263,8 +278,9 @@ jupyter lab
   \end{block}
   \begin{exampleblock}{When to use which marker}
     \texttt{(Tip)} information; \texttt{(Intuition)} mental model;
-    \texttt{(Pitfall)} avoid this; \texttt{(Exercise)} hands-on practice;
-    \texttt{(Bonus)} bigger applied task; \texttt{(Debug me)} intentional bug — find it.
+    \texttt{(Pitfall)} avoid this; \texttt{(Quick exercise)} $\sim$2-minute checkpoint;
+    \texttt{(Exercise)} hands-on practice; \texttt{(Bonus)} bigger applied task;
+    \texttt{(Debug me)} intentional bug — find it.
   \end{exampleblock}
   \begin{alertblock}{When you're stuck for 15 minutes}
     Copy the full error into a search engine. 95\% of beginner errors are
@@ -276,7 +292,7 @@ jupyter lab
 \begin{frame}
   \begin{center}
     {\Huge\bfseries Welcome.}\\[10pt]
-    \large 38 notebooks await you.\\[20pt]
+    \large 111 notebooks await you.\\[20pt]
     {\large \textit{Open Module 0 next.}}
   \end{center}
 \end{frame}

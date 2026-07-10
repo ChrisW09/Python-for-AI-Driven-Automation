@@ -104,9 +104,9 @@
     \toprule
     \textbf{Model} & \textbf{Parameters} & \textbf{Year} \\
     \midrule
-    GPT-2                            & 1.5 billion                  & 2019 \\
-    Llama-3 (open-weights)           & 8B / 70B / 405B              & 2024 \\
-    Frontier (GPT-4, Claude, Gemini) & hundreds of billions (est.)  & 2023+ \\
+    GPT-2                              & 1.5 billion                  & 2019 \\
+    Llama-3 (open-weights)             & 8B / 70B / 405B              & 2024 \\
+    Frontier (GPT-5.x, Claude, Gemini) & hundreds of billions (est.)  & 2023+ \\
     \bottomrule
   \end{tabular}
   \end{center}
@@ -126,6 +126,9 @@
     \mathcal{L} \;=\; -\sum_i y_i \log \hat{p}_i
   \]
   where $y_i = 1$ for the one true next token and $0$ otherwise (a \emph{one-hot} target), and $\hat{p}_i$ is the model's predicted probability for token $i$. Grammar, facts, and reasoning emerge as \emph{side-effects}.
+
+  \vspace{2pt}
+  {\footnotesize You write this exact loop --- loss $\to$ backward $\to$ step --- yourself in \textbf{Module 17 (PyTorch)}; an LLM trains with the same five moves, just with more parameters and more data.}
 \end{frame}
 
 \begin{frame}{The output is a probability over \emph{every} token}

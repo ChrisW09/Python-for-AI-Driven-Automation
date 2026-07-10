@@ -1,12 +1,12 @@
 <p align="center">
   <img src="docs/images/hero.png" width="900"
-       alt="Python for AI-Driven Automation &amp; Business Data Science — from your first line of Python to shipping AI in production, across Foundations, Data Science, Machine Learning, AI Engineering, Agents &amp; MCP, and Production.">
+       alt="Python for AI-Driven Automation &amp; Business Data Science — from your first line of Python to shipping AI in production, across Foundations, Data Science, Machine Learning, Deep Learning, AI Engineering, Agents &amp; MCP, and Production.">
 </p>
 
 <p align="center">
   From your first line of Python to shipping a real AI-driven automation —<br>
   a hands-on curriculum (self-paced <em>or</em> instructor-led) across Python fluency, business data science,<br>
-  machine learning, AI engineering, and production.
+  machine learning, deep learning, AI engineering, and production.
 </p>
 
 <p align="center">
@@ -113,7 +113,7 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The 13 appendices demo heavier libraries (PyTorch, Prophet, FAISS, LangChain, …), kept commented-out at the bottom of `requirements.txt` — each still runs offline via a built-in stand-in, so install them only to see the real library at work.
+Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The heavier optional libraries (PyTorch for Module 17 and the ML appendices, Prophet, FAISS, LangChain, …) stay commented-out at the bottom of `requirements.txt` — every notebook that uses one still runs offline via a built-in stand-in or a graceful skip, so install them only to see the real library at work. (Colab ships PyTorch preinstalled, so Module 17 needs no install there at all.)
 
 ---
 
@@ -217,7 +217,7 @@ All generated inline (no downloads), grouped by the business problem they illust
 | **Golden eval sets** | Tiny labelled sets for evaluating and triaging an AI feature | NB 26 |
 | **Agent / copilot data** | A support copilot's lookup numbers + docs, exposed as tools / MCP resources | NB 31–34 |
 | **POC & app demo data** | ~500 synthetic customer rows, a product catalogue, and random embedding vectors that seed the POC apps | NB 27, 28, 30 |
-| **Vision & sequences (PyTorch)** | Toy 8×8 "digit" images, a synthetic sequence task, and a tiny text-intent set | ML A2, A3 |
+| **Vision & sequences (PyTorch)** | Toy 8×8 "digit" images, a synthetic sequence task, and tiny text-intent/support-note sets | ML A2, A3, NB 52 (stretch) |
 | **Business case studies** | *Meridian*, a fictional 400-person B2B SaaS, for transformation & governance scenarios | NB 43–46 |
 
 ### Real data & live services — the few exceptions
@@ -236,7 +236,7 @@ If you want to take a lesson onto real data, these fit the course's themes and m
 | **California Housing** | `sklearn.datasets.fetch_california_housing()` | M4 regression (14–15) | public |
 | **20 Newsgroups** | `sklearn.datasets.fetch_20newsgroups()` | M9 topic modeling (35–36) | public |
 | **statsmodels series** (CO₂, sunspots, Nile) | `statsmodels.datasets.co2.load_pandas()` | M2 stats & forecasting (10–11, A1–A4) | public |
-| **Telco Customer Churn** | [Kaggle `blastchar/telco-customer-churn`](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) · 7,043 rows | M4–M5 churn (14–17), M10 (38) | IBM sample |
+| **Telco Customer Churn** | [Kaggle `blastchar/telco-customer-churn`](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) · 7,043 rows | M4–M5 churn (14–17), M10 (38), M17 (50–52) | IBM sample |
 | **RAG Mini-Wikipedia** | `load_dataset("rag-datasets/rag-mini-wikipedia")` · corpus + Q/A | M6–M7 RAG (23, 29, 30) | CC BY 3.0 |
 | **Twitter Financial News Sentiment** | `load_dataset("zeroshot/twitter-financial-news-sentiment")` | M9 sentiment (37) | MIT |
 | **Adult / Census Income** | `sklearn.datasets.fetch_openml("adult", version=2)` | M14 governance & fairness (46), M10 (38) | public |
@@ -265,7 +265,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **305 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab and web-scraping lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 305 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **317 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab and per web-scraping and PyTorch lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 317 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 

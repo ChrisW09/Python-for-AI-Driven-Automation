@@ -40,6 +40,8 @@ MODULES = [
     (13, "Capstones",            "NB 41–42",     "#3A3A3A", False),
     (14, "Business AI",          "NB 43–46",     "#4C9E9E", False),
     (15, "Django",               "mini-book",    "#A66E4A", True),
+    (16, "Web Scraping",         "NB 47–49",     "#5F7F5F", False),
+    (17, "PyTorch",              "NB 50–52",     "#B0603B", False),
 ]
 MOD = {m[0]: m for m in MODULES}
 
@@ -66,32 +68,34 @@ def roadmap():
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.5, 0.965, "Python for AI-Driven Automation and Business Data Science",
             ha="center", va="top", fontsize=19, fontweight="bold", color="#2b2b2b")
-    ax.text(0.5, 0.905, "46 lessons + 13 appendices  ·  16 modules  ·  self-paced — spiral order",
+    ax.text(0.5, 0.905, "52 lessons + 5 labs + 13 appendices  ·  modules 0–17  ·  self-paced — spiral order",
             ha="center", va="top", fontsize=12, style="italic", color="#8a8a8a")
 
-    order = list(range(16))
-    w, h, gx = 0.104, 0.175, 0.0145
-    x0 = (1 - 8 * w - 7 * gx) / 2
+    order = list(range(18))
+    per_row = 9
+    w, h, gx = 0.0935, 0.175, 0.0125
+    x0 = (1 - per_row * w - (per_row - 1) * gx) / 2
     rows = [0.60, 0.30]
     for i, mnum in enumerate(order):
         num, name, nbs, color, opt = MOD[mnum]
-        r, c = divmod(i, 8)
+        r, c = divmod(i, per_row)
         x, y = x0 + c * (w + gx), rows[r]
         WRAP = {"Machine Learning": "Machine\nLearning", "Real-world I/O": "Real-world\nI/O",
                 "AI Engineering": "AI\nEngineering", "Building AI POCs": "Building\nAI POCs",
                 "Agents, Tools & MCP": "Agents, Tools\n& MCP", "CI/CD & Deployment": "CI/CD &\nDeployment",
-                "Industry Apps": "Industry\nApps", "Data Science": "Data\nScience"}
+                "Industry Apps": "Industry\nApps", "Data Science": "Data\nScience",
+                "Web Scraping": "Web\nScraping"}
         white = dict(color="white", fontsize=12.5, fontweight="bold")
-        small = dict(color="white", fontsize=8.4)
+        small = dict(color="white", fontsize=8.2)
         label = WRAP.get(name, name) + (" *" if opt else "")
         _box(ax, x, y, w, h, color,
-             [(str(num), white), (label, dict(color="white", fontsize=8.2, fontweight="bold")), (nbs, small)],
+             [(str(num), white), (label, dict(color="white", fontsize=8.0, fontweight="bold")), (nbs, small)],
              optional=opt)
-        if c < 7:  # arrow to the next box in the row
+        if c < per_row - 1:  # arrow to the next box in the row
             ax.add_patch(FancyArrowPatch((x + w, y + h / 2), (x + w + gx, y + h / 2),
                                          arrowstyle="-|>", mutation_scale=11, color="#555"))
     # row-1 → row-2 connector
-    ax.add_patch(FancyArrowPatch((x0 + 8 * w + 7 * gx - w / 2, rows[0] - 0.005),
+    ax.add_patch(FancyArrowPatch((x0 + per_row * w + (per_row - 1) * gx - w / 2, rows[0] - 0.005),
                                  (x0 + w / 2, rows[1] + h + 0.005),
                                  arrowstyle="-|>", mutation_scale=12, color="#555",
                                  connectionstyle="arc3,rad=0.0"))
@@ -107,8 +111,8 @@ def roadmap():
 
 DEPS = [  # (upstream, downstream)
     (0, 1), (1, 2), (2, 3), (2, 4), (4, 5), (3, 6), (4, 6), (6, 7), (7, 8),
-    (6, 9), (4, 10), (7, 11), (11, 12), (5, 13), (8, 13), (11, 13),
-    (6, 14), (12, 15),
+    (6, 9), (4, 17), (17, 10), (7, 11), (11, 12), (5, 13), (8, 13), (11, 13),
+    (6, 14), (12, 15), (3, 16),
 ]
 
 
@@ -117,11 +121,12 @@ def dependency_graph():
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.5, 0.975, "Module dependency graph — what depends on what",
             ha="center", va="top", **TITLE_KW)
-    pos = {  # 4 columns × 4 rows, spine flows top-left → bottom-right
-        0: (0.06, 0.76), 1: (0.30, 0.76), 2: (0.54, 0.76), 3: (0.78, 0.76),
-        4: (0.30, 0.55), 5: (0.06, 0.55), 6: (0.54, 0.55), 7: (0.78, 0.55),
-        8: (0.78, 0.34), 9: (0.30, 0.34), 10: (0.06, 0.34), 11: (0.54, 0.34),
-        12: (0.54, 0.13), 13: (0.78, 0.13), 14: (0.30, 0.13), 15: (0.06, 0.13),
+    pos = {  # 5 columns × 5 rows, spine flows top-left → bottom-right
+        0: (0.015, 0.815), 1: (0.215, 0.815), 2: (0.415, 0.815), 3: (0.615, 0.815), 16: (0.815, 0.815),
+        5: (0.015, 0.635), 4: (0.215, 0.635), 6: (0.415, 0.635), 7: (0.615, 0.635),
+        17: (0.015, 0.455), 9: (0.215, 0.455), 11: (0.415, 0.455), 8: (0.615, 0.455),
+        10: (0.015, 0.275), 14: (0.215, 0.275), 12: (0.415, 0.275), 13: (0.615, 0.275),
+        15: (0.415, 0.095),
     }
     w, h = 0.17, 0.115
     for num, (x, y) in pos.items():
@@ -156,21 +161,22 @@ def dependency_graph():
 
 
 PATHS = [  # (label, color, hours, set of module numbers touched)
-    ("Complete beginner", "#4C72B0", "~115 h", {0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 13, 14}),
-    ("Analyst (Excel + SQL)", "#64B5CD", "~43 h", {0, 2, 3, 4, 5, 13}),
+    ("Complete beginner", "#4C72B0", "~123 h", {0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 13, 14, 16, 17}),
+    ("Analyst (Excel + SQL)", "#64B5CD", "~47 h", {0, 2, 3, 4, 5, 13, 16}),
     ("Developer (knows Python)", "#55A868", "~55 h", {0, 2, 3, 4, 6, 11, 13}),
-    ("ML practitioner", "#DD8452", "~34 h", {0, 6, 8, 11, 13}),
+    ("ML practitioner", "#DD8452", "~38 h", {0, 6, 8, 11, 13, 17}),
     ("Manager (curious)", "#8172B2", "~10 h", {0, 13}),
 ]
 SHORT = {0: "Onbd", 1: "Fnd", 2: "DS", 3: "I/O", 4: "ML", 5: "Ind", 6: "AI", 7: "POC",
-         8: "MCP", 9: "NLP", 10: "DT", 11: "Prod", 12: "CI", 13: "Cap", 14: "Biz", 15: "Djg"}
+         8: "MCP", 9: "NLP", 10: "DT", 11: "Prod", 12: "CI", 13: "Cap", 14: "Biz", 15: "Djg",
+         16: "Scr", 17: "PyT"}
 
 
 def learning_paths():
     fig, ax = plt.subplots(figsize=(13.2, 9.6), dpi=100)
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.5, 0.97, "Pick the learning path that fits you", ha="center", va="top", **TITLE_KW)
-    xs = [0.315 + i * 0.0405 for i in range(16)]
+    xs = [0.315 + i * 0.036 for i in range(18)]
     yhdr = 0.80
     ax.text(0.03, yhdr, "Path", fontsize=14, fontweight="bold", color="#2b2b2b", va="center")
     for i, x in enumerate(xs):
@@ -191,7 +197,8 @@ def learning_paths():
                 ax.scatter([x], [y], s=55, color="#d9d9d9", zorder=2)
         ax.text(xs[-1] + 0.038, y, hours, fontsize=14, fontweight="bold", va="center")
     ax.text(0.5, 0.055, "Each dot is one module. Solid line = modules you'd touch on that path. "
-                        "Optional modules (9, 10, 12, 15) join any path.", **FOOT_KW)
+                        "Optional modules (9, 10, 12, 15) join any path;\n"
+                        "16 (Web Scraping) slots in after Module 3 and 17 (PyTorch) after Module 4.", **FOOT_KW)
     fig.savefig(OUT / "02_learning_paths.png", bbox_inches="tight")
     plt.close(fig)
 
@@ -202,26 +209,27 @@ WEEKS = [  # (title, focus, nb-label, hours)
     ("Week 3", "Data science I", "NB 7–9", "~8 h focus"),
     ("Week 4", "Data science II\n+ real-world I/O", "NB 10–13", "~10 h focus"),
     ("Week 5", "Machine\nlearning", "NB 14–16", "~9 h focus"),
-    ("Week 6", "Industry\napplications", "NB 17–20", "~11 h focus"),
-    ("Week 7", "AI engineering I", "NB 21–23", "~9 h focus"),
-    ("Week 8", "AI engineering II\n+ production", "NB 24–26, 39–40", "~12 h focus"),
-    ("Week 9", "Business AI +\nLLM theory", "NB 43–46, 21", "~9 h focus"),
-    ("Week 10", "Build the POCs\n+ agents & MCP", "NB 27–34", "~15 h focus"),
-    ("Week 11", "Capstones", "NB 41–42", "~9 h focus"),
+    ("Week 6", "Deep learning\n(PyTorch)", "NB 50–52", "~9 h focus"),
+    ("Week 7", "Industry\napplications", "NB 17–20", "~11 h focus"),
+    ("Week 8", "AI engineering I", "NB 21–23", "~9 h focus"),
+    ("Week 9", "AI engineering II\n+ production", "NB 24–26, 39–40", "~12 h focus"),
+    ("Week 10", "Business AI +\nLLM theory", "NB 43–46, 21", "~9 h focus"),
+    ("Week 11", "Build the POCs\n+ agents & MCP", "NB 27–34", "~15 h focus"),
+    ("Week 12", "Web scraping\n+ capstones", "NB 47–49, 41–42", "~12 h focus"),
 ]
-WEEK_COLORS = ["#4C72B0", "#4C72B0", "#55A868", "#64B5CD", "#CCB974", "#8A9A5B",
-               "#C44E52", "#7A68A6", "#4C9E9E", "#937860", "#3A3A3A"]
+WEEK_COLORS = ["#4C72B0", "#4C72B0", "#55A868", "#64B5CD", "#CCB974", "#B0603B",
+               "#8A9A5B", "#C44E52", "#7A68A6", "#4C9E9E", "#937860", "#3A3A3A"]
 
 
 def weekly_timeline():
     fig, ax = plt.subplots(figsize=(12.6, 7.1), dpi=100)
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
-    ax.text(0.5, 0.965, "A self-paced 11-week schedule", ha="center", va="top", **TITLE_KW)
+    ax.text(0.5, 0.965, "A self-paced 12-week schedule", ha="center", va="top", **TITLE_KW)
     w, h, gx = 0.145, 0.27, 0.0165
     x0 = (1 - 6 * w - 5 * gx) / 2
     for i, ((title, focus, nbs, hrs), color) in enumerate(zip(WEEKS, WEEK_COLORS)):
         r, c = divmod(i, 6)
-        x = x0 + c * (w + gx) + (r * (w + gx) / 2)  # offset second row half a box
+        x = x0 + c * (w + gx)                       # two full rows of six
         y = 0.55 if r == 0 else 0.17
         _box(ax, x, y, w, h, color, [
             (title, dict(color="white", fontsize=13.5, fontweight="bold")),
