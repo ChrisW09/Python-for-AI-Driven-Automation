@@ -1,6 +1,6 @@
 # Module 3 — Real-world I/O
 
-> 🧭  [◀ Data Science](../02_data_science/)  ·  [🏠 Course home](../README.md)  ·  [Machine Learning ▶](../04_machine_learning/)
+> 🧭  [◀ Data Science](../02_data_science/)  ·  [🏠 Course home](../README.md)  ·  [Web Scraping ▶](../04_webscraping/)
 
 **Goal:** Move beyond toy data. Make polite, retry-aware HTTP calls against live APIs and query a SQL database from Python — the two ways real business data reaches your code (with an optional appendix for the API-less web: scraping).
 
@@ -122,7 +122,8 @@ Every notebook runs **100% offline**. NB 12 talks to two free, keyless public AP
 
 ## Where next
 
-→ **Module 4 — Machine Learning** (`../04_machine_learning/14_sklearn_basics.ipynb`)
+→ **Module 4 — Web Scraping** (`../04_webscraping/`) — get data *off the web* politely when there's no API, or
+→ **Module 5 — Machine Learning** (`../05_machine_learning/17_sklearn_basics.ipynb`)
 
 ---
 

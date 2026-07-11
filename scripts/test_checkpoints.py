@@ -34,10 +34,10 @@ PY_FENCE = re.compile(r"```python\s*\n(.*?)```", re.DOTALL)
 
 FOLDERS = [
     "00_onboarding", "01_foundations", "02_data_science", "03_real_world_io",
-    "04_machine_learning", "05_industry_applications", "06_ai_engineering",
-    "07_building_ai_pocs", "08_agents_tools_mcp", "09_nlp", "10_deeptab",
-    "11_production", "12_cicd", "13_capstones", "14_business_ai", "15_django",
-    "16_webscraping", "17_pytorch", "fast_track",
+    "05_machine_learning", "07_industry_applications", "08_ai_engineering",
+    "09_building_ai_pocs", "10_agents_tools_mcp", "11_nlp", "12_deeptab",
+    "13_production", "14_cicd", "15_capstones", "16_business_ai", "17_django",
+    "04_webscraping", "06_pytorch", "fast_track",
 ]
 
 

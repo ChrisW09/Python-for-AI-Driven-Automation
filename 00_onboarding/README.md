@@ -40,7 +40,7 @@
 
 ### `00_master_onboarding.ipynb` — Master Onboarding
 
-The first notebook of the course. It explains what the course is (and *is not*), how the modules fit together, and how to study each notebook effectively as a self-learner — then verifies that your environment actually works. It covers both ways to run the material (Google Colab with a free account, or local Jupyter / VS Code) and lays out the recommended **spiral** route: see the destination first (`00c`), build the skills bottom-up (Modules 1–6), build the real thing (Modules 7–12), then synthesise (capstones + Business AI).
+The first notebook of the course. It explains what the course is (and *is not*), how the modules fit together, and how to study each notebook effectively as a self-learner — then verifies that your environment actually works. It covers both ways to run the material (Google Colab with a free account, or local Jupyter / VS Code) and lays out the recommended **spiral** route: see the destination first (`00c`), build the skills bottom-up (Modules 1–8), build the real thing (Modules 9–14), then synthesise (capstones + Business AI).
 
 Its core teaching device is the **5-step loop** you'll apply to every notebook — *Read → Run → Try → Tweak → Predict* ("5 minutes of struggle beats 5 hours of passive reading"). Two things happen *in code*: an **environment check** that reports your Python version and ticks off the required packages (numpy, pandas, matplotlib, seaborn, scikit-learn) plus optional ones you'll need later (requests, statsmodels, pytest) — you want it to print `✅ Setup looks good!` — and a tiny self-test proving you can run Python right now. Section 5 matches you to one of five learning paths (complete beginner ~115h · analyst ~43h · developer ~55h · ML practitioner ~34h · manager ~10h), and a troubleshooting section covers the usual first-day snags.
 
@@ -52,7 +52,7 @@ Its core teaching device is the **5-step loop** you'll apply to every notebook �
 
 Optional but recommended *before* the Python foundations: a five-minute, run-the-cells-and-watch demo of the finished shapes you'll spend the course building. Three mini-demos run end to end: an AI **triages free-form customer feedback** into structured tags, a tiny **RAG** pipeline answers a question grounded in your own policy documents instead of making things up, and the same ticket data becomes a **business KPI snapshot** — first as numbers, then as a one-glance bar chart.
 
-The notebook's explicit instruction is *don't read the code closely yet* — watch the outputs. Each demo ends with a pointer to where you'll build the real version (AI workflows in NB 22, retrieval in NB 23 and a full RAG pipeline in NB 29, dashboards from NB 1 through Capstone A), and a closing table maps everything you just saw to the module that teaches it.
+The notebook's explicit instruction is *don't read the code closely yet* — watch the outputs. Each demo ends with a pointer to where you'll build the real version (AI workflows in NB 28, retrieval in NB 29 and a full RAG pipeline in NB 35, dashboards from NB 1 through Capstone A), and a closing table maps everything you just saw to the module that teaches it.
 
 **Sections:** 1 An AI reads and triages customer feedback · 2 An AI answers a question grounded in *your* documents (RAG) · 3 The same data, turned into a business KPI snapshot (+ the same KPI as a picture) · What you just saw — and where you'll build it · Now start the journey
 

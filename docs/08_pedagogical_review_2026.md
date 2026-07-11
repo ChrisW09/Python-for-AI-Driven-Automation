@@ -1,3 +1,5 @@
+> **Note (July 2026).** This document predates the learning-order renumbering (modules 0–17 / lessons 1–52 were re-sequenced); lesson and module numbers below refer to the **old** numbering and are kept as a historical record.
+
 # Pedagogical Review & Revision Pass — 2026
 
 A full-course pedagogical review from the perspective of a **first-time learner**, with fixes applied directly in place. Scope: all 34 numbered notebooks + 2 onboarding notebooks + 11 appendices + 9 fast-track notebooks + 6 quizzes (63 notebooks total), plus `README.md` and `requirements.txt`.

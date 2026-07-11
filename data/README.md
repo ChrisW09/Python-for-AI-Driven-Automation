@@ -13,16 +13,16 @@ Two kinds of CSV live here:
 
 | File | Rows | Schema | Used by |
 |---|---|---|---|
-| `support_ops.csv` | 60 | `channel`, `month`, `month_num`, `tickets_total`, `tickets_auto`, `automation_rate`, `latency_ms`, `satisfaction`, `cost_per_ticket` | NB 41 (capstone analytics) |
+| `support_ops.csv` | 60 | `channel`, `month`, `month_num`, `tickets_total`, `tickets_auto`, `automation_rate`, `latency_ms`, `satisfaction`, `cost_per_ticket` | NB 47 (capstone analytics) |
 | `api_log.csv` | 50 | `request_id`, `model`, `segment`, `quarter`, `tokens_in`, `tokens_out`, `latency_ms` | NB 7 (pandas fundamentals) |
-| `customer_feedback.csv` | 15 | `id`, `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 14 & NB 22 |
+| `customer_feedback.csv` | 15 | `id`, `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 17 & NB 28 |
 
 ## Real datasets (permissively licensed)
 
 | File | Rows | What it is | Used by | Licence |
 |---|---|---|---|---|
 | `penguins.csv` | 344 | Palmer Penguins — species, island, bill/flipper measurements, body mass, sex (includes real missing values) | NB 9 (visualization) | CC0 |
-| `bike_sharing_daily.csv` | 731 | UCI Bike Sharing — daily rental counts (2011–2012) with weather + calendar features | NB 20 (demand forecasting) | CC BY 4.0 |
+| `bike_sharing_daily.csv` | 731 | UCI Bike Sharing — daily rental counts (2011–2012) with weather + calendar features | NB 26 (demand forecasting) | CC BY 4.0 |
 
 **Attribution (required by CC BY 4.0).** `bike_sharing_daily.csv` is the `day.csv`
 file from the **UCI Bike Sharing Dataset** by Hadi Fanaee-T & João Gama (2013) —

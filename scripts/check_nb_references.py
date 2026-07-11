@@ -3,8 +3,8 @@
 
 Catches drift between documentation and the actual notebook layout. Looks for
 patterns like:
-  - "NB 7"  /  "NB7"  /  "NB 18–22"  /  "NB 23-25"
-  - "Notebook 7"  /  "Notebooks 18–22"  /  LaTeX forms like "NB~43", "NB 14--16"
+  - "NB 7"  /  "NB7"  /  "NB 24–28"  /  "NB 29-31"
+  - "Notebook 7"  /  "Notebooks 24–28"  /  LaTeX forms like "NB~43", "NB 17--19"
   - "01_python_basics.ipynb" (literal filename references)
 …and asserts that every NB number / filename can be found somewhere in the repo.
 
@@ -95,7 +95,7 @@ def extract_text(path: Path) -> str:
     if path.suffix == ".tex":
         text = path.read_text(encoding="utf-8", errors="ignore")
         # Normalise LaTeX typography so the same reference regex applies:
-        # non-breaking space "NB~43" and en/em dashes "NB 14--16".
+        # non-breaking space "NB~43" and en/em dashes "NB 17--19".
         text = text.replace("~", " ")
         return re.sub(r"-{2,3}", "–", text)
     if path.suffix == ".ipynb":
@@ -111,8 +111,8 @@ def extract_text(path: Path) -> str:
     return ""
 
 
-# NB-number references like "NB 12", "NB12", "Notebook 12", "Notebooks 18–22",
-# "NB 23-25". The trailing (?!\.\d) keeps version-like strings ("NB 4.0") from
+# NB-number references like "NB 12", "NB12", "Notebook 12", "Notebooks 24–28",
+# "NB 29-31". The trailing (?!\.\d) keeps version-like strings ("NB 4.0") from
 # matching; integers only, same semantics as before.
 NB_REF_RE = re.compile(
     r"\b(?:NB|Notebooks?)\s*(\d{1,2})(?!\.\d)(?:\s*[–—-]\s*(\d{1,2})(?!\.\d))?\b"

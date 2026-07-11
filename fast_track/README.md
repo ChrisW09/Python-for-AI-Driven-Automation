@@ -54,7 +54,7 @@ The breadth extensions (NB 15–22) now mirror most of the full course's applied
 - **🎁 Bonus mini-project** at the end of every notebook.
 - **Full depth in every lesson** — each fast-track notebook is trimmed; the combined ones (NB 7, 9, 16, 18) and the module-condensing ones (NB 17, 19, 21, 22) keep the essential throughline and link back to the canonical chapters for the rest.
 - **A standalone NumPy notebook** (`08_numpy_fundamentals.ipynb`) and **`04_dictionaries_advanced.ipynb`** — folded into pandas (NB 6) and the lists + dicts notebook (NB 3) respectively.
-- **The optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, TabPFN/conformal prediction, vector-store & RAG/agent-framework surveys), **Module 10 (DeepTab)**, **Module 14 (Business AI)** as a standalone lesson, and **Module 15 (Django)**.
+- **The optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, TabPFN/conformal prediction, vector-store & RAG/agent-framework surveys), **Module 12 (DeepTab)**, **Module 16 (Business AI)** as a standalone lesson, and **Module 17 (Django)**.
 
 The full course is at the parent level — entry point: `../00_onboarding/00_master_onboarding.ipynb`.
 
@@ -65,7 +65,7 @@ The full course is at the parent level — entry point: `../00_onboarding/00_mas
 Three good signals:
 
 1. **You want interview prep.** The full course has 140+ Stretch exercises (A–D in every notebook) that are deliberately interview-grade. The fast track keeps only C and D.
-2. **You want to ship code.** The fast track covers the packaging basics (NB 13); the full course's Module 6 goes further into scheduling, orchestration, and config & secrets.
+2. **You want to ship code.** The fast track covers the packaging basics (NB 13); the full course's Module 13 goes further into scheduling, orchestration, and config & secrets.
 3. **You're curious about a specific topic.** The full course has dedicated notebooks on NumPy, time-series forecasting, model evaluation, feature engineering, document processing, and AI observability. Pick the one that matters for your work.
 
 ---
@@ -93,22 +93,22 @@ fast_track/                      canonical full course
   05_classes_basics         ←  01_foundations/06_classes_and_oop
   06_pandas_fundamentals    ←  02_data_science/07_pandas_fundamentals
   07_visualization_and_stats←  02_data_science/09_matplotlib_basics + 10_statistics_basics
-  08_sklearn_basics         ←  04_machine_learning/14_sklearn_basics
+  08_sklearn_basics         ←  05_machine_learning/17_sklearn_basics
   09_apis_and_sql           ←  03_real_world_io/12_apis_and_http + 13_sql_fundamentals
-  10_ai_workflows           ←  06_ai_engineering/22_ai_workflows
-  11_embeddings_and_rag     ←  06_ai_engineering/23_embeddings_retrieval
-  12_tools_and_agents       ←  06_ai_engineering/24_tools_and_agents
-  13_notebook_to_project    ←  11_production/39_from_notebook_to_project
-  14_agents_and_mcp         ←  08_agents_tools_mcp/* (agents, tools & MCP, condensed)
+  10_ai_workflows           ←  08_ai_engineering/28_ai_workflows
+  11_embeddings_and_rag     ←  08_ai_engineering/29_embeddings_retrieval
+  12_tools_and_agents       ←  08_ai_engineering/30_tools_and_agents
+  13_notebook_to_project    ←  13_production/45_from_notebook_to_project
+  14_agents_and_mcp         ←  10_agents_tools_mcp/* (agents, tools & MCP, condensed)
   ── breadth extensions ──
   15_time_series_and_forecasting              ←  02_data_science/11_time_series_forecasting (+ A1 classical)
-  16_model_evaluation_and_feature_engineering ←  04_machine_learning/15_model_evaluation + 16_feature_engineering
-  17_industry_applications                    ←  05_industry_applications/* (churn/CLV, fraud, condensed)
-  18_document_ai_and_observability            ←  06_ai_engineering/25_document_processing + 26_ai_evaluation_observability
-  19_nlp_topic_modeling_and_sentiment         ←  09_nlp/* (BERTopic→TF-IDF+KMeans; sentiment ladder)
-  20_shipping_scheduling_and_deployment       ←  11_production/40_scheduling_orchestration + 12_cicd/* (labs)
-  21_capstone_fast_track                      ←  13_capstones/41_capstone_analytics + 42_capstone_ai_assistant
-  22_web_scraping                             ←  16_webscraping/* (fundamentals, Firecrawl, OpenAlex — condensed)
+  16_model_evaluation_and_feature_engineering ←  05_machine_learning/18_model_evaluation + 19_feature_engineering
+  17_industry_applications                    ←  07_industry_applications/* (churn/CLV, fraud, condensed)
+  18_document_ai_and_observability            ←  08_ai_engineering/31_document_processing + 32_ai_evaluation_observability
+  19_nlp_topic_modeling_and_sentiment         ←  11_nlp/* (BERTopic→TF-IDF+KMeans; sentiment ladder)
+  20_shipping_scheduling_and_deployment       ←  13_production/46_scheduling_orchestration + 14_cicd/* (labs)
+  21_capstone_fast_track                      ←  15_capstones/47_capstone_analytics + 48_capstone_ai_assistant
+  22_web_scraping                             ←  04_webscraping/* (fundamentals, Firecrawl, OpenAlex — condensed)
 ```
 
-The fast-track notebooks are flat-numbered 1–21 deliberately — a single linear path you can work straight through (1–14 are the core essentials; 15–21 broaden coverage across the applied modules). Inside each notebook the cross-references use the **fast-track numbers** (e.g. *"pandas in NB 6"*); back-references to the full course always use explicit relative paths (e.g. [`../06_ai_engineering/`](../06_ai_engineering/)), so you can always follow a thread to the depth notebook.
+The fast-track notebooks are flat-numbered 1–21 deliberately — a single linear path you can work straight through (1–14 are the core essentials; 15–21 broaden coverage across the applied modules). Inside each notebook the cross-references use the **fast-track numbers** (e.g. *"pandas in NB 6"*); back-references to the full course always use explicit relative paths (e.g. [`../08_ai_engineering/`](../08_ai_engineering/)), so you can always follow a thread to the depth notebook.

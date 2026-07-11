@@ -2,25 +2,25 @@
 
 > 🧭  [🏠 Course home](../README.md)  ·  [🏎️ Fast track](../fast_track/)
 
-Fifteen short multiple-choice quizzes — one per content module (Modules 1–9, 11, 12 and 14–17; Module 13 is the two capstones, which *are* the assessment). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
+Fifteen short multiple-choice quizzes — one per content module (Modules 1–11, 13–14 and 16–17; Module 15 is the two capstones, which *are* the assessment, and Module 12 — DeepTab — is an optional reference track). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Module | Covers | File |
 |---|---|---|
 | 1 | Foundations (NB 1–6) | [`quiz_01_foundations.ipynb`](./quiz_01_foundations.ipynb) |
 | 2 | Data Science (NB 7–11) | [`quiz_02_data_science.ipynb`](./quiz_02_data_science.ipynb) |
 | 3 | Real-world I/O (NB 12–13) | [`quiz_03_real_world_io.ipynb`](./quiz_03_real_world_io.ipynb) |
-| 4 | Machine Learning (NB 14–16) | [`quiz_04_machine_learning.ipynb`](./quiz_04_machine_learning.ipynb) |
-| 5 | Industry Applications (NB 17–20) | [`quiz_05_industry_applications.ipynb`](./quiz_05_industry_applications.ipynb) |
-| 6 | AI Engineering (NB 21–26) | [`quiz_06_ai_engineering.ipynb`](./quiz_06_ai_engineering.ipynb) |
-| 7 | Building AI POCs (NB 27–30) | [`quiz_07_building_ai_pocs.ipynb`](./quiz_07_building_ai_pocs.ipynb) |
-| 8 | Agents, Tools & MCP (NB 31–34) | [`quiz_08_agents_tools_mcp.ipynb`](./quiz_08_agents_tools_mcp.ipynb) |
-| 9 | NLP (NB 35–37) | [`quiz_09_nlp.ipynb`](./quiz_09_nlp.ipynb) |
-| 11 | Production (NB 39–40) | [`quiz_11_production.ipynb`](./quiz_11_production.ipynb) |
-| 12 | CI/CD & Deployment (labs) | [`quiz_12_cicd.ipynb`](./quiz_12_cicd.ipynb) |
-| 14 | Business AI (NB 43–46) | [`quiz_14_business_ai.ipynb`](./quiz_14_business_ai.ipynb) |
-| 15 | Django for AI Web Apps (labs) | [`quiz_15_django.ipynb`](./quiz_15_django.ipynb) |
-| 16 | Web Scraping (NB 47–49) | [`quiz_16_webscraping.ipynb`](./quiz_16_webscraping.ipynb) |
-| 17 | Deep Learning with PyTorch (NB 50–52) | [`quiz_17_pytorch.ipynb`](./quiz_17_pytorch.ipynb) |
+| 4 | Web Scraping (NB 14–16) | [`quiz_04_webscraping.ipynb`](./quiz_04_webscraping.ipynb) |
+| 5 | Machine Learning (NB 17–19) | [`quiz_05_machine_learning.ipynb`](./quiz_05_machine_learning.ipynb) |
+| 6 | Deep Learning with PyTorch (NB 20–22) | [`quiz_06_pytorch.ipynb`](./quiz_06_pytorch.ipynb) |
+| 7 | Industry Applications (NB 23–26) | [`quiz_07_industry_applications.ipynb`](./quiz_07_industry_applications.ipynb) |
+| 8 | AI Engineering (NB 27–32) | [`quiz_08_ai_engineering.ipynb`](./quiz_08_ai_engineering.ipynb) |
+| 9 | Building AI POCs (NB 33–36) | [`quiz_09_building_ai_pocs.ipynb`](./quiz_09_building_ai_pocs.ipynb) |
+| 10 | Agents, Tools & MCP (NB 37–40) | [`quiz_10_agents_tools_mcp.ipynb`](./quiz_10_agents_tools_mcp.ipynb) |
+| 11 | NLP (NB 41–43) | [`quiz_11_nlp.ipynb`](./quiz_11_nlp.ipynb) |
+| 13 | Production (NB 45–46) | [`quiz_13_production.ipynb`](./quiz_13_production.ipynb) |
+| 14 | CI/CD & Deployment (labs) | [`quiz_14_cicd.ipynb`](./quiz_14_cicd.ipynb) |
+| 16 | Business AI (NB 49–52) | [`quiz_16_business_ai.ipynb`](./quiz_16_business_ai.ipynb) |
+| 17 | Django for AI Web Apps (labs) | [`quiz_17_django.ipynb`](./quiz_17_django.ipynb) |
 
 ## How to use the quizzes
 

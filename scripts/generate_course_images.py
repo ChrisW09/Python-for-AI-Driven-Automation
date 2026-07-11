@@ -28,20 +28,20 @@ MODULES = [
     (1,  "Foundations",          "NB 1–6",       "#4C72B0", False),
     (2,  "Data Science",         "NB 7–11",      "#55A868", False),
     (3,  "Real-world I/O",       "NB 12–13",     "#64B5CD", False),
-    (4,  "Machine Learning",     "NB 14–16",     "#CCB974", False),
-    (5,  "Industry Apps",        "NB 17–20",     "#8A9A5B", False),
-    (6,  "AI Engineering",       "NB 21–26",     "#C44E52", False),
-    (7,  "Building AI POCs",     "NB 27–30",     "#937860", False),
-    (8,  "Agents, Tools & MCP",  "NB 31–34",     "#8172B2", False),
-    (9,  "NLP",                  "NB 35–37",     "#DA8BC3", True),
-    (10, "DeepTab",              "NB 38",        "#B07AA1", True),
-    (11, "Production",           "NB 39–40",     "#7A68A6", False),
-    (12, "CI/CD & Deployment",   "mini-book",    "#6B8E9F", True),
-    (13, "Capstones",            "NB 41–42",     "#3A3A3A", False),
-    (14, "Business AI",          "NB 43–46",     "#4C9E9E", False),
-    (15, "Django",               "mini-book",    "#A66E4A", True),
-    (16, "Web Scraping",         "NB 47–49",     "#5F7F5F", False),
-    (17, "PyTorch",              "NB 50–52",     "#B0603B", False),
+    (4,  "Web Scraping",         "NB 14–16",     "#5F7F5F", False),
+    (5,  "Machine Learning",     "NB 17–19",     "#CCB974", False),
+    (6,  "PyTorch",              "NB 20–22",     "#B0603B", False),
+    (7,  "Industry Apps",        "NB 23–26",     "#8A9A5B", False),
+    (8,  "AI Engineering",       "NB 27–32",     "#C44E52", False),
+    (9,  "Building AI POCs",     "NB 33–36",     "#937860", False),
+    (10, "Agents, Tools & MCP",  "NB 37–40",     "#8172B2", False),
+    (11, "NLP",                  "NB 41–43",     "#DA8BC3", True),
+    (12, "DeepTab",              "NB 44",        "#B07AA1", True),
+    (13, "Production",           "NB 45–46",     "#7A68A6", False),
+    (14, "CI/CD & Deployment",   "mini-book",    "#6B8E9F", True),
+    (15, "Capstones",            "NB 47–48",     "#3A3A3A", False),
+    (16, "Business AI",          "NB 49–52",     "#4C9E9E", False),
+    (17, "Django",               "mini-book",    "#A66E4A", True),
 ]
 MOD = {m[0]: m for m in MODULES}
 
@@ -110,9 +110,9 @@ def roadmap():
 
 
 DEPS = [  # (upstream, downstream)
-    (0, 1), (1, 2), (2, 3), (2, 4), (4, 5), (3, 6), (4, 6), (6, 7), (7, 8),
-    (6, 9), (4, 17), (17, 10), (7, 11), (11, 12), (5, 13), (8, 13), (11, 13),
-    (6, 14), (12, 15), (3, 16),
+    (0, 1), (1, 2), (2, 3), (3, 4), (2, 5), (5, 6), (5, 7), (3, 8), (5, 8),
+    (8, 9), (9, 10), (8, 11), (6, 12), (9, 13), (13, 14), (7, 15), (10, 15),
+    (13, 15), (8, 16), (14, 17),
 ]
 
 
@@ -122,11 +122,11 @@ def dependency_graph():
     ax.text(0.5, 0.975, "Module dependency graph — what depends on what",
             ha="center", va="top", **TITLE_KW)
     pos = {  # 5 columns × 5 rows, spine flows top-left → bottom-right
-        0: (0.015, 0.815), 1: (0.215, 0.815), 2: (0.415, 0.815), 3: (0.615, 0.815), 16: (0.815, 0.815),
-        5: (0.015, 0.635), 4: (0.215, 0.635), 6: (0.415, 0.635), 7: (0.615, 0.635),
-        17: (0.015, 0.455), 9: (0.215, 0.455), 11: (0.415, 0.455), 8: (0.615, 0.455),
-        10: (0.015, 0.275), 14: (0.215, 0.275), 12: (0.415, 0.275), 13: (0.615, 0.275),
-        15: (0.415, 0.095),
+        0: (0.015, 0.815), 1: (0.215, 0.815), 2: (0.415, 0.815), 3: (0.615, 0.815), 4: (0.815, 0.815),
+        7: (0.015, 0.635), 5: (0.215, 0.635), 8: (0.415, 0.635), 9: (0.615, 0.635),
+        6: (0.015, 0.455), 11: (0.215, 0.455), 13: (0.415, 0.455), 10: (0.615, 0.455),
+        12: (0.015, 0.275), 16: (0.215, 0.275), 14: (0.415, 0.275), 15: (0.615, 0.275),
+        17: (0.415, 0.095),
     }
     w, h = 0.17, 0.115
     for num, (x, y) in pos.items():
@@ -161,15 +161,15 @@ def dependency_graph():
 
 
 PATHS = [  # (label, color, hours, set of module numbers touched)
-    ("Complete beginner", "#4C72B0", "~123 h", {0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 13, 14, 16, 17}),
-    ("Analyst (Excel + SQL)", "#64B5CD", "~47 h", {0, 2, 3, 4, 5, 13, 16}),
-    ("Developer (knows Python)", "#55A868", "~55 h", {0, 2, 3, 4, 6, 11, 13}),
-    ("ML practitioner", "#DD8452", "~38 h", {0, 6, 8, 11, 13, 17}),
-    ("Manager (curious)", "#8172B2", "~10 h", {0, 13}),
+    ("Complete beginner", "#4C72B0", "~125 h", {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 15, 16}),
+    ("Analyst (Excel + SQL)", "#64B5CD", "~47 h", {0, 2, 3, 4, 5, 7, 15}),
+    ("Developer (knows Python)", "#55A868", "~55 h", {0, 2, 3, 5, 8, 13, 15}),
+    ("ML practitioner", "#DD8452", "~38 h", {0, 6, 8, 10, 13, 15}),
+    ("Manager (curious)", "#8172B2", "~10 h", {0, 15}),
 ]
-SHORT = {0: "Onbd", 1: "Fnd", 2: "DS", 3: "I/O", 4: "ML", 5: "Ind", 6: "AI", 7: "POC",
-         8: "MCP", 9: "NLP", 10: "DT", 11: "Prod", 12: "CI", 13: "Cap", 14: "Biz", 15: "Djg",
-         16: "Scr", 17: "PyT"}
+SHORT = {0: "Onbd", 1: "Fnd", 2: "DS", 3: "I/O", 4: "Scr", 5: "ML", 6: "PyT", 7: "Ind",
+         8: "AI", 9: "POC", 10: "MCP", 11: "NLP", 12: "DT", 13: "Prod", 14: "CI", 15: "Cap",
+         16: "Biz", 17: "Djg"}
 
 
 def learning_paths():
@@ -197,25 +197,24 @@ def learning_paths():
                 ax.scatter([x], [y], s=55, color="#d9d9d9", zorder=2)
         ax.text(xs[-1] + 0.038, y, hours, fontsize=14, fontweight="bold", va="center")
     ax.text(0.5, 0.055, "Each dot is one module. Solid line = modules you'd touch on that path. "
-                        "Optional modules (9, 10, 12, 15) join any path;\n"
-                        "16 (Web Scraping) slots in after Module 3 and 17 (PyTorch) after Module 4.", **FOOT_KW)
+                        "Optional modules (11, 12, 14, 17) join any path.", **FOOT_KW)
     fig.savefig(OUT / "02_learning_paths.png", bbox_inches="tight")
     plt.close(fig)
 
 
 WEEKS = [  # (title, focus, nb-label, hours)
     ("Week 1", "Onboarding +\nPython I", "NB 0–3", "~8 h focus"),
-    ("Week 2", "Python II +\nGit & Copilot", "NB 4–6, 45", "~10 h focus"),
+    ("Week 2", "Python II +\nGit & Copilot", "NB 4–6, 51", "~10 h focus"),
     ("Week 3", "Data science I", "NB 7–9", "~8 h focus"),
     ("Week 4", "Data science II\n+ real-world I/O", "NB 10–13", "~10 h focus"),
-    ("Week 5", "Machine\nlearning", "NB 14–16", "~9 h focus"),
-    ("Week 6", "Deep learning\n(PyTorch)", "NB 50–52", "~9 h focus"),
-    ("Week 7", "Industry\napplications", "NB 17–20", "~11 h focus"),
-    ("Week 8", "AI engineering I", "NB 21–23", "~9 h focus"),
-    ("Week 9", "AI engineering II\n+ production", "NB 24–26, 39–40", "~12 h focus"),
-    ("Week 10", "Business AI +\nLLM theory", "NB 43–46, 21", "~9 h focus"),
-    ("Week 11", "Build the POCs\n+ agents & MCP", "NB 27–34", "~15 h focus"),
-    ("Week 12", "Web scraping\n+ capstones", "NB 47–49, 41–42", "~12 h focus"),
+    ("Week 5", "Machine\nlearning", "NB 17–19", "~9 h focus"),
+    ("Week 6", "Deep learning\n(PyTorch)", "NB 20–22", "~9 h focus"),
+    ("Week 7", "Industry\napplications", "NB 23–26", "~11 h focus"),
+    ("Week 8", "AI engineering I", "NB 27–29", "~9 h focus"),
+    ("Week 9", "AI engineering II\n+ production", "NB 30–32, 45–46", "~12 h focus"),
+    ("Week 10", "Business AI +\nLLM theory", "NB 49–52, 27", "~9 h focus"),
+    ("Week 11", "Build the POCs\n+ agents & MCP", "NB 33–40", "~15 h focus"),
+    ("Week 12", "Web scraping\n+ capstones", "NB 14–16, 47–48", "~12 h focus"),
 ]
 WEEK_COLORS = ["#4C72B0", "#4C72B0", "#55A868", "#64B5CD", "#CCB974", "#B0603B",
                "#8A9A5B", "#C44E52", "#7A68A6", "#4C9E9E", "#937860", "#3A3A3A"]

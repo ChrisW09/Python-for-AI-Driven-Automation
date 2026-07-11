@@ -89,25 +89,25 @@
     1 & Foundations             & NB 1–6 — Python you can read without friction \\
     2 & Data science            & NB 7–11 — pandas, NumPy, plots, stats, time series \\
     3 & Real-world I/O          & NB 12–13 — HTTP, SQL, validation \\
-    4 & Machine learning        & NB 14–16 — sklearn, model evaluation, features \\
-    5 & Industry applications   & NB 17–20 — churn value, fraud, segmentation, demand \\
-    6 & AI engineering          & NB 21–26 — LLM patterns, RAG, agents, evaluation \\
-    7 & Building AI POCs        & NB 27–30 — setup, three POCs, RAG deep dive, agentic AI \\
-    8 & Agents, tools \& MCP    & NB 31–34 — architectures, robust tools, MCP, multi-agent \\
-    9 & NLP (optional)          & NB 35–37 — topic modeling, sentiment \\
-    10 & DeepTab (optional)      & NB 38 — deep learning for tabular data \\
-    11 & Production              & NB 39–40 — packaging, scheduling, config \& secrets \\
-    12 & CI/CD \& deployment     & mini-book + 3 labs — Docker, GitHub Actions, HTTPS \\
-    13 & Capstones               & NB 41–42 — analytics + AI assistant \\
-    14 & Business AI             & NB 43–46 — strategy, architecture, BPM, governance \\
-    15 & Django (optional)       & mini-book + 2 labs — serve a model behind a web UI \\
-    16 & Web scraping            & NB 47–49 — BeautifulSoup, Firecrawl, the OpenAlex API \\
-    17 & Deep learning (PyTorch) & NB 50–52 — tensors \& the training loop, training craft, embeddings \& serving \\
+    4 & Web scraping            & NB 14–16 — BeautifulSoup, Firecrawl, the OpenAlex API \\
+    5 & Machine learning        & NB 17–19 — sklearn, model evaluation, features \\
+    6 & Deep learning (PyTorch) & NB 20–22 — tensors \& the training loop, training craft, embeddings \& serving \\
+    7 & Industry applications   & NB 23–26 — churn value, fraud, segmentation, demand \\
+    8 & AI engineering          & NB 27–32 — LLM patterns, RAG, agents, evaluation \\
+    9 & Building AI POCs        & NB 33–36 — setup, three POCs, RAG deep dive, agentic AI \\
+    10 & Agents, tools \& MCP    & NB 37–40 — architectures, robust tools, MCP, multi-agent \\
+    11 & NLP (optional)          & NB 41–43 — topic modeling, sentiment \\
+    12 & DeepTab (optional)      & NB 44 — deep learning for tabular data \\
+    13 & Production              & NB 45–46 — packaging, scheduling, config \& secrets \\
+    14 & CI/CD \& deployment     & mini-book + 3 labs — Docker, GitHub Actions, HTTPS \\
+    15 & Capstones               & NB 47–48 — analytics + AI assistant \\
+    16 & Business AI             & NB 49–52 — strategy, architecture, BPM, governance \\
+    17 & Django (optional)       & mini-book + 2 labs — serve a model behind a web UI \\
     \bottomrule
   \end{tabular}
   \vspace{4pt}
 
-  {\footnotesize \textbf{Every module folder has its own README} --- goals, prerequisites, what you'll build. Read it before the module's first notebook. Module 17 slots pedagogically right after Module 4.}
+  {\footnotesize \textbf{Every module folder has its own README} --- goals, prerequisites, what you'll build. Read it before the module's first notebook. Module and lesson numbers follow the learning order.}
 \end{frame}
 
 \begin{frame}{Module dependencies — what comes before what}
@@ -128,13 +128,13 @@
 
 \begin{frame}{When to pick which path}
   \begin{block}{Complete beginner}
-    Never written code before. Take all modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 123 hours} — the interactive estimator in \texttt{00b} computes yours.
+    Never written code before. Take all modules in \textbf{spiral order} (see it work first, then the skills, then the builds). Time-budget: \textbf{about 125 hours} — the interactive estimator in \texttt{00b} computes yours.
   \end{block}
   \begin{exampleblock}{Analyst who knows Excel and SQL}
-    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (ML), 5 (industry applications), 16 (web scraping), 13 (capstone). Time-budget: \textbf{about 47 hours}.
+    Skim Module 1 (Python basics); Module 3's SQL will feel familiar. Focus on Modules 2 (data science), 4 (web scraping), 5 (ML), 7 (industry applications), 15 (capstone). Time-budget: \textbf{about 47 hours}.
   \end{exampleblock}
   \begin{block}{ML practitioner adding AI engineering}
-    Skip foundations and data science. Focus on Modules 6 (AI engineering), 8 (agents \& MCP), 17 (PyTorch), 11 (production), 13 (capstone). Time-budget: \textbf{about 38 hours}.
+    Skip foundations and data science. Focus on Modules 6 (PyTorch), 8 (AI engineering), 10 (agents \& MCP), 13 (production), 15 (capstone). Time-budget: \textbf{about 38 hours}.
   \end{block}
 \end{frame}
 
@@ -200,11 +200,11 @@
 \end{frame}
 
 \begin{frame}{Plus two big capstones at the end}
-  \begin{exampleblock}{Capstone A — AI Support-Bot Analytics (NB 41)}
+  \begin{exampleblock}{Capstone A — AI Support-Bot Analytics (NB 47)}
     Five channels × twelve months of operational data $\to$ 2$\times$2 executive dashboard $\to$ regression demonstrating Simpson's paradox $\to$ five-bullet executive summary.
   \end{exampleblock}
   \vspace{6pt}
-  \begin{block}{Capstone B — AI Customer-Feedback Assistant (NB 42)}
+  \begin{block}{Capstone B — AI Customer-Feedback Assistant (NB 48)}
     Ingest free-form customer feedback $\to$ classify + extract via the MockLLM $\to$ ground answers in a knowledge base via RAG $\to$ orchestrate as a scheduled job with alerts. End-to-end AI feature.
   \end{block}
 \end{frame}

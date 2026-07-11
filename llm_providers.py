@@ -332,10 +332,10 @@ class OllamaLLM:
 
 
 # =========================================================================
-#  EMBEDDERS — same idea, for vector retrieval (NB 19)
+#  EMBEDDERS — same idea, for vector retrieval (NB 25)
 # =========================================================================
 class MockEmbedder:
-    """Deterministic offline embedder — same one used in NB 19.
+    """Deterministic offline embedder — same one used in NB 25.
 
     Uses a fast, sha256-keyed pseudo-random vector per token, averaged and
     L2-normalised. Replace with `OpenAIEmbedder` or `LocalEmbedder` for real

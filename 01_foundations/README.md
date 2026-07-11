@@ -8,7 +8,7 @@
 
 **Prerequisites:** None — Notebook 1 starts from zero.
 
-> 🧭 **Where this fits in the AI-automation picture.** This is the skill-building base of the course's spiral: you saw the destination in `00c` (and the *why* in NB 43) — these six notebooks are the Python you need before any of it. Every later module (pandas, ML, RAG, agents, the POCs) leans on what you build here.
+> 🧭 **Where this fits in the AI-automation picture.** This is the skill-building base of the course's spiral: you saw the destination in `00c` (and the *why* in NB 49) — these six notebooks are the Python you need before any of it. Every later module (pandas, ML, RAG, agents, the POCs) leans on what you build here.
 
 ```
    types  ──►  control  ──►  lists  ──►  dicts  ──►  functions  ──►  classes
@@ -123,7 +123,7 @@ The mental model: a function is a **machine on a workbench** — arguments enter
 
 ### 06 · Classes and Object-Oriented Programming — `06_classes_and_oop.ipynb`
 
-Functions bundle a *behaviour*; classes bundle **data + behaviour** into a single unit you can copy, pass around, and extend — the last piece of core Python before the rest of the course, where OOP shows up everywhere (Pydantic models, scikit-learn estimators, matplotlib axes, your own `MockLLM` in Module 6). The running example is one humble **SaaS `Customer`** object growing up: it starts as a loose dict surrounded by helper functions (§1), becomes a proper class with `self` and methods (§3), learns to print and compare itself with `__repr__`/`__eq__` (§5), shrinks to a one-liner with `@dataclass` (§6), and finally reveals the patterns the whole data-science stack is built on (§8: a `Dataset` wrapper, a `fit`/`transform` transformer hierarchy, a `fit`/`predict` estimator).
+Functions bundle a *behaviour*; classes bundle **data + behaviour** into a single unit you can copy, pass around, and extend — the last piece of core Python before the rest of the course, where OOP shows up everywhere (Pydantic models, scikit-learn estimators, matplotlib axes, your own `MockLLM` in Module 8). The running example is one humble **SaaS `Customer`** object growing up: it starts as a loose dict surrounded by helper functions (§1), becomes a proper class with `self` and methods (§3), learns to print and compare itself with `__repr__`/`__eq__` (§5), shrinks to a one-liner with `@dataclass` (§6), and finally reveals the patterns the whole data-science stack is built on (§8: a `Dataset` wrapper, a `fit`/`transform` transformer hierarchy, a `fit`/`predict` estimator).
 
 The mental model, used throughout: **a class is a blueprint, an instance is the concrete thing built from it** — attributes are what an object *knows about itself*, methods are what it *can do*.
 
