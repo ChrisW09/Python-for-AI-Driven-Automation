@@ -27,7 +27,7 @@ The first **14 notebooks** are the original linear essentials; notebooks **15–
 | 8 | `08_sklearn_basics.ipynb`           | train/test split, fit/predict, evaluation, pipelines | ~85 min |
 | 9 | `09_apis_and_sql.ipynb`             | HTTP/REST APIs, status codes, JSON, SQL queries with pandas | ~85 min |
 | 10 | `10_ai_workflows.ipynb`            | LLM prompting, classification, JSON output, validation | ~65 min |
-| 11 | `11_embeddings_and_rag.ipynb`      | Embeddings, cosine similarity, retrieval, basic RAG | ~65 min |
+| 11 | `11_embeddings_and_rag.ipynb`      | Embeddings, cosine similarity, retrieval, basic RAG, Ragas evaluation | ~70 min |
 | 12 | `12_tools_and_agents.ipynb`        | Tool calling, the agent loop, multi-step agents | ~60 min |
 | 13 | `13_notebook_to_project.ipynb`     | Packaging notebook code into an installable, tested project | ~60 min |
 | 14 | `14_agents_and_mcp.ipynb`          | Agent loops with budgets, robust tools, the Model Context Protocol (MCP) | ~60 min |

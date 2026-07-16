@@ -34,7 +34,7 @@
 |---|---|---|---|---|
 | 21 | `27_llm_fundamentals.ipynb` | ~75 min | Intermediate | The theory floor: tokens, next-token prediction, the Transformer & attention, prompting techniques, hallucinations & knowledge cutoff — told through "Helpa" |
 | 22 | `28_ai_workflows.ipynb` | 60–90 min | Intermediate | Helpa's first real code: prompt patterns, safe JSON output, inbox batch classification, keyword RAG (offline MockLLM) |
-| 23 | `29_embeddings_retrieval.ipynb` | 60–80 min | Intermediate | A semantic retriever: TF-IDF + dense embeddings, retrieval@k / MRR benchmark, end-to-end RAG |
+| 23 | `29_embeddings_retrieval.ipynb` | 70–90 min | Intermediate | A semantic retriever: TF-IDF + dense embeddings, retrieval@k / MRR benchmark, end-to-end RAG + a Ragas answer-quality eval |
 | 24 | `30_tools_and_agents.ipynb` | 60–80 min | Intermediate | A multi-tool support-ops data assistant (call → execute → return loop, safety budget, trace log) |
 | 25 | `31_document_processing.ipynb` | 60–75 min | Intermediate | An invoice-extraction pipeline: extract → chunk → LLM-extract → validate → DataFrame |
 | 26 | `32_ai_evaluation_observability.ipynb` | 55–70 min | Intermediate | An eval harness: golden set, LLM-as-judge, tracing, cost dashboard, A/B test, regression detection |
@@ -93,7 +93,7 @@ You write prompts that are *reliable, not just clever*: the four core prompt pat
 
 NB 28's keyword RAG has a glaring weakness: *"how do I end my plan?"* won't match a document about *"cancelling your subscription"* — so Helpa shrugs, or invents an answer. This notebook fixes that with a **semantic** retriever, under the mental model **meaning becomes geometry**: embeddings turn texts into arrows, and retrieval is "which stored arrow points most like my query arrow?". One query pair runs through everything: *"How do I cancel my subscription?"* vs. its evil twin *"How can I end my plan?"*.
 
-You build TF-IDF and dense-embedding retrievers, run a head-to-head evaluation of keyword vs TF-IDF vs dense on the same test set, and finish with an upgraded end-to-end RAG — every piece of a production-grade RAG system except the vector database (which A2 covers).
+You build TF-IDF and dense-embedding retrievers, run a head-to-head evaluation of keyword vs TF-IDF vs dense on the same test set, and finish with an upgraded end-to-end RAG plus a [Ragas](https://www.ragas.io)-style evaluation of the *whole* pipeline — faithfulness, answer relevancy, context precision/recall, taught with an offline mock judge and real `ragas` reference code. Every piece of a production-grade RAG system except the vector database (which A2 covers).
 
 **Learning objectives:**
 - Explain what an embedding is and what cosine similarity measures.
@@ -102,10 +102,11 @@ You build TF-IDF and dense-embedding retrievers, run a head-to-head evaluation o
 - Compute retrieval@k and MRR to evaluate retrievers.
 - Compare keyword vs TF-IDF vs dense retrieval on the same test set.
 - Combine retrieval with an LLM — and recognise the failure modes (synonyms, paraphrase, domain jargon).
+- Evaluate the whole RAG pipeline with Ragas metrics — faithfulness, answer relevancy, context precision/recall.
 
-**Sections:** 1 What is an embedding? · 2 Setup · 3 Baseline — keyword overlap (the NB 28 approach) · 4 TF-IDF — a stronger lexical baseline · 5 Dense embeddings — semantic similarity · 6 Plugging in a real embedding model (reference) · 7 Evaluating retrievers — retrieval@k and MRR · 8 Where keyword wins and dense loses · 9 End-to-end RAG with the new retriever
+**Sections:** 1 What is an embedding? · 2 Setup · 3 Baseline — keyword overlap (the NB 28 approach) · 4 TF-IDF — a stronger lexical baseline · 5 Dense embeddings — semantic similarity · 6 Plugging in a real embedding model (reference) · 7 Evaluating retrievers — retrieval@k and MRR · 8 Where keyword wins and dense loses · 9 End-to-end RAG with the new retriever · 10 Evaluating the whole pipeline — Ragas
 
-**Practice:** 4 ✋ quick checkpoints · 4 🧪 practice exercises (incl. a Debug me 🐞) · 4 🧠 stretch exercises · 🎁 bonus mini-project: a confidence threshold that refuses out-of-corpus questions gracefully.
+**Practice:** 5 ✋ quick checkpoints · 4 🧪 practice exercises (incl. a Debug me 🐞) · 4 🧠 stretch exercises · 🎁 bonus mini-project: a confidence threshold that refuses out-of-corpus questions gracefully.
 
 **Files/datasets:** offline throughout — a minimal in-notebook `MockLLM` plus the deterministic `MockEmbedder` from the repo-root `llm_providers.py`; the document corpus is defined in-notebook. Real options (OpenAI embeddings, `sentence-transformers`) are shown as reference code.
 
@@ -163,7 +164,7 @@ The running example is an **inbox-triage feature** that tags customer messages w
 - Run an A/B test of two prompt variants and reach a defensible verdict.
 - Detect regression (a new prompt makes things worse on previously-passing examples).
 
-**Sections:** 1 Why "look at it and it seems fine" doesn't scale · 2 Setup — the MockLLM and a tiny golden dataset · 3 Run the feature and score it · 4 Per-class metrics · 5 LLM-as-judge · 6 Tracing — log every call · 7 The cost dashboard · 8 A/B-testing two prompt variants · 9 Regression detection · 10 Putting it together — the eval pipeline
+**Sections:** 1 Why "look at it and it seems fine" doesn't scale · 2 Setup — the MockLLM and a tiny golden dataset · 3 Run the feature and score it · 4 Per-class metrics · 5 LLM-as-judge (+ Ragas, the packaged judges for RAG) · 6 Tracing — log every call · 7 The cost dashboard · 8 A/B-testing two prompt variants · 9 Regression detection · 10 Putting it together — the eval pipeline
 
 **Practice:** 4 ✋ quick checkpoints · 3 🧪 practice exercises · 4 🧠 stretch exercises · 🎁 bonus mini-project: a pre-commit eval check.
 
@@ -187,7 +188,7 @@ Picks up where NB 29's hand-rolled NumPy retriever hits its limits (latency, mem
 
 ### A3 · RAG & Agent Frameworks — `A3_rag_and_agent_frameworks.ipynb`
 
-NB 29 built RAG by hand and NB 30 built agents by hand — so why do frameworks exist? Answer: *when your pipeline grows past hand-rolled and you want batteries — loaders, retrievers, tracing, evaluation, deploy — without writing them yourself.* This is a code-level tour of the major frameworks against the **same FAQ-with-citations RAG task**: a plain-Python baseline, then **LangChain** (LCEL pipes), **LlamaIndex** (retrieval-first), **Haystack** (production pipelines), **DSPy** (programmatic prompting), and the agent frameworks — **smolagents**, **AutoGen**, with **CrewAI** in the comparison table. Runs offline via `MockLLM`/`MockEmbedder`; framework snippets are reference code.
+NB 29 built RAG by hand and NB 30 built agents by hand — so why do frameworks exist? Answer: *when your pipeline grows past hand-rolled and you want batteries — loaders, retrievers, tracing, evaluation, deploy — without writing them yourself.* This is a code-level tour of the major frameworks against the **same FAQ-with-citations RAG task**: a plain-Python baseline, then **LangChain** (LCEL pipes), **LlamaIndex** (retrieval-first), **Haystack** (production pipelines), **DSPy** (programmatic prompting), and the agent frameworks — **smolagents**, **AutoGen**, with **CrewAI** in the comparison table — plus a note on judging any of them with the same framework-agnostic **Ragas** eval. Runs offline via `MockLLM`/`MockEmbedder`; framework snippets are reference code.
 
 **Decision guidance:** a 3-question rubric for picking a framework — or *not* picking one and shipping faster. 3 ✋ quick checkpoints and 2 exercises (translate the baseline to LCEL style, frame an agent task as a state machine).
 
