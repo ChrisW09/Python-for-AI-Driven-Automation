@@ -2,600 +2,792 @@
   {
     "notebook": "00_onboarding/00_master_onboarding.ipynb",
     "status": "pass",
-    "cells_executed": 2,
-    "duration_s": 1.28,
+    "cells_executed": 4,
+    "duration_s": 1.56,
     "error": null
   },
   {
     "notebook": "00_onboarding/00b_course_overview.ipynb",
     "status": "pass",
-    "cells_executed": 1,
-    "duration_s": 0.54,
+    "cells_executed": 4,
+    "duration_s": 0.79,
     "error": null
   },
   {
     "notebook": "00_onboarding/00c_see_it_work.ipynb",
     "status": "pass",
-    "cells_executed": 4,
-    "duration_s": 0.54,
+    "cells_executed": 5,
+    "duration_s": 1.33,
     "error": null
   },
   {
     "notebook": "01_foundations/01_python_basics.ipynb",
-    "status": "xfail",
-    "cells_executed": 15,
-    "duration_s": 0.58,
-    "error": {
-      "cell_index": 39,
-      "ename": "TypeError",
-      "evalue": "unsupported operand type(s) for -: 'str' and 'int'"
-    }
+    "status": "pass",
+    "cells_executed": 27,
+    "duration_s": 0.81,
+    "error": null
   },
   {
     "notebook": "01_foundations/02_control_structures.ipynb",
     "status": "pass",
-    "cells_executed": 25,
-    "duration_s": 0.6,
+    "cells_executed": 39,
+    "duration_s": 1.67,
     "error": null
   },
   {
     "notebook": "01_foundations/03_lists_data_structures.ipynb",
     "status": "pass",
-    "cells_executed": 26,
-    "duration_s": 0.63,
+    "cells_executed": 41,
+    "duration_s": 1.59,
     "error": null
   },
   {
     "notebook": "01_foundations/04_dictionaries_advanced.ipynb",
     "status": "pass",
-    "cells_executed": 25,
-    "duration_s": 0.61,
+    "cells_executed": 41,
+    "duration_s": 1.59,
     "error": null
   },
   {
     "notebook": "01_foundations/05_functions_modules.ipynb",
     "status": "pass",
-    "cells_executed": 24,
-    "duration_s": 0.87,
+    "cells_executed": 43,
+    "duration_s": 0.96,
     "error": null
   },
   {
     "notebook": "01_foundations/06_classes_and_oop.ipynb",
-    "status": "xfail",
-    "cells_executed": 11,
-    "duration_s": 0.57,
-    "error": {
-      "cell_index": 38,
-      "ename": "TypeError",
-      "evalue": "Greeter.__init__() takes 1 positional argument but 2 were given"
-    }
+    "status": "pass",
+    "cells_executed": 43,
+    "duration_s": 1.0,
+    "error": null
   },
   {
     "notebook": "02_data_science/07_pandas_fundamentals.ipynb",
     "status": "pass",
-    "cells_executed": 29,
-    "duration_s": 1.19,
+    "cells_executed": 45,
+    "duration_s": 1.0,
     "error": null
   },
   {
     "notebook": "02_data_science/08_numpy_fundamentals.ipynb",
     "status": "pass",
-    "cells_executed": 21,
-    "duration_s": 0.99,
+    "cells_executed": 34,
+    "duration_s": 1.31,
     "error": null
   },
   {
     "notebook": "02_data_science/09_matplotlib_basics.ipynb",
     "status": "pass",
-    "cells_executed": 19,
-    "duration_s": 1.21,
+    "cells_executed": 33,
+    "duration_s": 2.81,
     "error": null
   },
   {
     "notebook": "02_data_science/10_statistics_basics.ipynb",
     "status": "pass",
-    "cells_executed": 17,
-    "duration_s": 1.48,
+    "cells_executed": 32,
+    "duration_s": 1.86,
     "error": null
   },
   {
     "notebook": "02_data_science/11_time_series_forecasting.ipynb",
     "status": "pass",
-    "cells_executed": 23,
-    "duration_s": 2.24,
+    "cells_executed": 42,
+    "duration_s": 3.02,
     "error": null
   },
   {
     "notebook": "02_data_science/A1_forecasting_classical.ipynb",
     "status": "pass",
-    "cells_executed": 11,
-    "duration_s": 14.63,
+    "cells_executed": 25,
+    "duration_s": 15.24,
     "error": null
   },
   {
     "notebook": "02_data_science/A2_forecasting_prophet_libraries.ipynb",
     "status": "pass",
-    "cells_executed": 7,
-    "duration_s": 1.69,
+    "cells_executed": 20,
+    "duration_s": 2.04,
     "error": null
   },
   {
     "notebook": "02_data_science/A3_forecasting_deep_learning.ipynb",
     "status": "pass",
-    "cells_executed": 8,
-    "duration_s": 14.53,
+    "cells_executed": 20,
+    "duration_s": 14.27,
     "error": null
   },
   {
     "notebook": "02_data_science/A4_forecasting_foundation_models.ipynb",
     "status": "pass",
-    "cells_executed": 5,
-    "duration_s": 2.98,
+    "cells_executed": 17,
+    "duration_s": 3.26,
     "error": null
   },
   {
     "notebook": "03_real_world_io/12_apis_and_http.ipynb",
     "status": "pass",
-    "cells_executed": 18,
-    "duration_s": 3.55,
+    "cells_executed": 32,
+    "duration_s": 4.48,
     "error": null
   },
   {
     "notebook": "03_real_world_io/13_sql_fundamentals.ipynb",
     "status": "pass",
+    "cells_executed": 41,
+    "duration_s": 1.7,
+    "error": null
+  },
+  {
+    "notebook": "03_real_world_io/A1_web_scraping_firecrawl.ipynb",
+    "status": "pass",
+    "cells_executed": 16,
+    "duration_s": 1.09,
+    "error": null
+  },
+  {
+    "notebook": "04_webscraping/14_web_scraping_fundamentals.ipynb",
+    "status": "pass",
     "cells_executed": 22,
-    "duration_s": 0.81,
+    "duration_s": 1.82,
     "error": null
   },
   {
-    "notebook": "04_machine_learning/14_sklearn_basics.ipynb",
-    "status": "pass",
-    "cells_executed": 25,
-    "duration_s": 6.85,
-    "error": null
-  },
-  {
-    "notebook": "04_machine_learning/15_model_evaluation.ipynb",
-    "status": "pass",
-    "cells_executed": 19,
-    "duration_s": 6.98,
-    "error": null
-  },
-  {
-    "notebook": "04_machine_learning/16_feature_engineering.ipynb",
-    "status": "pass",
-    "cells_executed": 17,
-    "duration_s": 1.69,
-    "error": null
-  },
-  {
-    "notebook": "04_machine_learning/A1_pytorch_foundations.ipynb",
-    "status": "pass",
-    "cells_executed": 12,
-    "duration_s": 3.13,
-    "error": null
-  },
-  {
-    "notebook": "04_machine_learning/A2_pytorch_vision_and_sequences.ipynb",
-    "status": "pass",
-    "cells_executed": 8,
-    "duration_s": 4.69,
-    "error": null
-  },
-  {
-    "notebook": "04_machine_learning/A3_pytorch_fine_tuning.ipynb",
-    "status": "pass",
-    "cells_executed": 7,
-    "duration_s": 2.85,
-    "error": null
-  },
-  {
-    "notebook": "04_machine_learning/A4_tabpfn_priorlab.ipynb",
-    "status": "pass",
-    "cells_executed": 5,
-    "duration_s": 3.21,
-    "error": null
-  },
-  {
-    "notebook": "05_ai_engineering/17_ai_workflows.ipynb",
+    "notebook": "04_webscraping/15_scraping_with_firecrawl.ipynb",
     "status": "pass",
     "cells_executed": 18,
-    "duration_s": 0.59,
+    "duration_s": 0.96,
     "error": null
   },
   {
-    "notebook": "05_ai_engineering/18_embeddings_retrieval.ipynb",
+    "notebook": "04_webscraping/16_openalex_scholarly_data.ipynb",
     "status": "pass",
-    "cells_executed": 17,
-    "duration_s": 1.52,
+    "cells_executed": 23,
+    "duration_s": 5.36,
     "error": null
   },
   {
-    "notebook": "05_ai_engineering/19_tools_and_agents.ipynb",
+    "notebook": "05_machine_learning/17_sklearn_basics.ipynb",
     "status": "pass",
-    "cells_executed": 15,
-    "duration_s": 0.68,
+    "cells_executed": 45,
+    "duration_s": 7.49,
     "error": null
   },
   {
-    "notebook": "05_ai_engineering/20_document_processing.ipynb",
+    "notebook": "05_machine_learning/18_model_evaluation.ipynb",
     "status": "pass",
-    "cells_executed": 17,
-    "duration_s": 0.73,
+    "cells_executed": 34,
+    "duration_s": 7.2,
     "error": null
   },
   {
-    "notebook": "05_ai_engineering/21_ai_evaluation_observability.ipynb",
+    "notebook": "05_machine_learning/19_feature_engineering.ipynb",
     "status": "pass",
-    "cells_executed": 17,
+    "cells_executed": 41,
+    "duration_s": 2.07,
+    "error": null
+  },
+  {
+    "notebook": "05_machine_learning/A1_pytorch_foundations.ipynb",
+    "status": "pass",
+    "cells_executed": 33,
+    "duration_s": 4.34,
+    "error": null
+  },
+  {
+    "notebook": "05_machine_learning/A2_pytorch_vision_and_sequences.ipynb",
+    "status": "pass",
+    "cells_executed": 25,
+    "duration_s": 5.31,
+    "error": null
+  },
+  {
+    "notebook": "05_machine_learning/A3_pytorch_fine_tuning.ipynb",
+    "status": "pass",
+    "cells_executed": 20,
+    "duration_s": 3.32,
+    "error": null
+  },
+  {
+    "notebook": "05_machine_learning/A4_tabpfn_priorlab.ipynb",
+    "status": "pass",
+    "cells_executed": 13,
+    "duration_s": 3.28,
+    "error": null
+  },
+  {
+    "notebook": "05_machine_learning/A5_conformal_prediction.ipynb",
+    "status": "pass",
+    "cells_executed": 20,
+    "duration_s": 12.46,
+    "error": null
+  },
+  {
+    "notebook": "06_pytorch/20_pytorch_fundamentals.ipynb",
+    "status": "pass",
+    "cells_executed": 29,
+    "duration_s": 2.86,
+    "error": null
+  },
+  {
+    "notebook": "06_pytorch/21_training_neural_networks.ipynb",
+    "status": "pass",
+    "cells_executed": 27,
+    "duration_s": 4.12,
+    "error": null
+  },
+  {
+    "notebook": "06_pytorch/22_pytorch_in_practice.ipynb",
+    "status": "pass",
+    "cells_executed": 23,
+    "duration_s": 5.47,
+    "error": null
+  },
+  {
+    "notebook": "07_industry_applications/23_churn_clv_retention.ipynb",
+    "status": "pass",
+    "cells_executed": 30,
+    "duration_s": 5.18,
+    "error": null
+  },
+  {
+    "notebook": "07_industry_applications/24_fraud_anomaly_detection.ipynb",
+    "status": "pass",
+    "cells_executed": 30,
+    "duration_s": 5.01,
+    "error": null
+  },
+  {
+    "notebook": "07_industry_applications/25_segmentation_recommenders.ipynb",
+    "status": "pass",
+    "cells_executed": 30,
+    "duration_s": 4.84,
+    "error": null
+  },
+  {
+    "notebook": "07_industry_applications/26_demand_maintenance.ipynb",
+    "status": "pass",
+    "cells_executed": 36,
+    "duration_s": 6.87,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/27_llm_fundamentals.ipynb",
+    "status": "pass",
+    "cells_executed": 11,
+    "duration_s": 1.59,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/28_ai_workflows.ipynb",
+    "status": "pass",
+    "cells_executed": 33,
+    "duration_s": 1.11,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/29_embeddings_retrieval.ipynb",
+    "status": "pass",
+    "cells_executed": 35,
+    "duration_s": 1.66,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/30_tools_and_agents.ipynb",
+    "status": "pass",
+    "cells_executed": 27,
     "duration_s": 0.92,
     "error": null
   },
   {
-    "notebook": "05_ai_engineering/A1_llm_providers_guide.ipynb",
+    "notebook": "08_ai_engineering/31_document_processing.ipynb",
+    "status": "pass",
+    "cells_executed": 23,
+    "duration_s": 0.72,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/32_ai_evaluation_observability.ipynb",
+    "status": "pass",
+    "cells_executed": 38,
+    "duration_s": 1.61,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/A1_llm_providers_guide.ipynb",
+    "status": "pass",
+    "cells_executed": 20,
+    "duration_s": 0.79,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/A2_vector_stores_survey.ipynb",
+    "status": "pass",
+    "cells_executed": 13,
+    "duration_s": 1.66,
+    "error": null
+  },
+  {
+    "notebook": "08_ai_engineering/A3_rag_and_agent_frameworks.ipynb",
+    "status": "pass",
+    "cells_executed": 12,
+    "duration_s": 0.86,
+    "error": null
+  },
+  {
+    "notebook": "09_building_ai_pocs/33_from_setup_to_first_poc.ipynb",
     "status": "pass",
     "cells_executed": 11,
-    "duration_s": 0.65,
-    "error": null
-  },
-  {
-    "notebook": "05_ai_engineering/A2_vector_stores_survey.ipynb",
-    "status": "pass",
-    "cells_executed": 8,
-    "duration_s": 0.8,
-    "error": null
-  },
-  {
-    "notebook": "05_ai_engineering/A3_rag_and_agent_frameworks.ipynb",
-    "status": "pass",
-    "cells_executed": 7,
-    "duration_s": 0.57,
-    "error": null
-  },
-  {
-    "notebook": "06_production/22_from_notebook_to_project.ipynb",
-    "status": "pass",
-    "cells_executed": 18,
     "duration_s": 0.69,
     "error": null
   },
   {
-    "notebook": "06_production/23_scheduling_orchestration.ipynb",
+    "notebook": "09_building_ai_pocs/34_three_pocs_growing_complexity.ipynb",
     "status": "pass",
-    "cells_executed": 13,
-    "duration_s": 4.57,
+    "cells_executed": 7,
+    "duration_s": 0.63,
     "error": null
   },
   {
-    "notebook": "07_capstones/24_capstone_analytics.ipynb",
+    "notebook": "09_building_ai_pocs/35_rag_pipeline_deep_dive.ipynb",
     "status": "pass",
-    "cells_executed": 19,
-    "duration_s": 1.86,
+    "cells_executed": 9,
+    "duration_s": 0.77,
     "error": null
   },
   {
-    "notebook": "07_capstones/25_capstone_ai_assistant.ipynb",
+    "notebook": "09_building_ai_pocs/36_vector_db_and_agentic_ai.ipynb",
     "status": "pass",
-    "cells_executed": 16,
-    "duration_s": 1.05,
+    "cells_executed": 7,
+    "duration_s": 1.3,
     "error": null
   },
   {
-    "notebook": "08_business_ai/26_digital_transformation.ipynb",
+    "notebook": "10_agents_tools_mcp/37_agent_architectures.ipynb",
     "status": "pass",
-    "cells_executed": 0,
-    "duration_s": 0.57,
-    "error": null
-  },
-  {
-    "notebook": "08_business_ai/27_architecture_patterns.ipynb",
-    "status": "pass",
-    "cells_executed": 0,
-    "duration_s": 0.6,
-    "error": null
-  },
-  {
-    "notebook": "08_business_ai/28_ai_assisted_software_development.ipynb",
-    "status": "pass",
-    "cells_executed": 0,
-    "duration_s": 0.57,
-    "error": null
-  },
-  {
-    "notebook": "08_business_ai/29_bpm_governance_poc_mvp.ipynb",
-    "status": "pass",
-    "cells_executed": 0,
-    "duration_s": 0.61,
-    "error": null
-  },
-  {
-    "notebook": "09_building_ai_pocs/30_llm_fundamentals.ipynb",
-    "status": "pass",
-    "cells_executed": 1,
+    "cells_executed": 15,
     "duration_s": 0.64,
     "error": null
   },
   {
-    "notebook": "09_building_ai_pocs/31_from_setup_to_first_poc.ipynb",
+    "notebook": "10_agents_tools_mcp/38_designing_robust_tools.ipynb",
     "status": "pass",
-    "cells_executed": 0,
-    "duration_s": 0.52,
+    "cells_executed": 15,
+    "duration_s": 0.72,
     "error": null
   },
   {
-    "notebook": "09_building_ai_pocs/32_three_pocs_growing_complexity.ipynb",
+    "notebook": "10_agents_tools_mcp/39_model_context_protocol.ipynb",
     "status": "pass",
-    "cells_executed": 0,
-    "duration_s": 0.5,
+    "cells_executed": 14,
+    "duration_s": 0.69,
     "error": null
   },
   {
-    "notebook": "09_building_ai_pocs/33_rag_pipeline_deep_dive.ipynb",
+    "notebook": "10_agents_tools_mcp/40_multi_agent_systems.ipynb",
     "status": "pass",
-    "cells_executed": 1,
-    "duration_s": 0.66,
+    "cells_executed": 16,
+    "duration_s": 0.82,
     "error": null
   },
   {
-    "notebook": "09_building_ai_pocs/34_vector_db_and_agentic_ai.ipynb",
+    "notebook": "11_nlp/41_topic_modeling_bertopic.ipynb",
+    "status": "pass",
+    "cells_executed": 16,
+    "duration_s": 19.34,
+    "error": null
+  },
+  {
+    "notebook": "11_nlp/42_topic_modeling_stream.ipynb",
+    "status": "pass",
+    "cells_executed": 15,
+    "duration_s": 2.02,
+    "error": null
+  },
+  {
+    "notebook": "11_nlp/43_sentiment_analysis.ipynb",
+    "status": "pass",
+    "cells_executed": 18,
+    "duration_s": 6.76,
+    "error": null
+  },
+  {
+    "notebook": "12_deeptab/44_deeptab_tabular_deep_learning.ipynb",
+    "status": "pass",
+    "cells_executed": 18,
+    "duration_s": 5.49,
+    "error": null
+  },
+  {
+    "notebook": "13_production/45_from_notebook_to_project.ipynb",
+    "status": "pass",
+    "cells_executed": 23,
+    "duration_s": 0.89,
+    "error": null
+  },
+  {
+    "notebook": "13_production/46_scheduling_orchestration.ipynb",
+    "status": "pass",
+    "cells_executed": 21,
+    "duration_s": 4.78,
+    "error": null
+  },
+  {
+    "notebook": "14_cicd/lab01_docker_and_compose.ipynb",
+    "status": "pass",
+    "cells_executed": 22,
+    "duration_s": 0.78,
+    "error": null
+  },
+  {
+    "notebook": "14_cicd/lab02_ci_pipeline_github_actions.ipynb",
+    "status": "pass",
+    "cells_executed": 28,
+    "duration_s": 1.27,
+    "error": null
+  },
+  {
+    "notebook": "14_cicd/lab03_deploy_dns_https_monitoring.ipynb",
+    "status": "pass",
+    "cells_executed": 31,
+    "duration_s": 4.28,
+    "error": null
+  },
+  {
+    "notebook": "15_capstones/47_capstone_analytics.ipynb",
+    "status": "pass",
+    "cells_executed": 19,
+    "duration_s": 2.03,
+    "error": null
+  },
+  {
+    "notebook": "15_capstones/48_capstone_ai_assistant.ipynb",
+    "status": "pass",
+    "cells_executed": 16,
+    "duration_s": 1.49,
+    "error": null
+  },
+  {
+    "notebook": "16_business_ai/49_digital_transformation.ipynb",
     "status": "pass",
     "cells_executed": 0,
+    "duration_s": 0.73,
+    "error": null
+  },
+  {
+    "notebook": "16_business_ai/50_architecture_patterns.ipynb",
+    "status": "pass",
+    "cells_executed": 3,
+    "duration_s": 0.55,
+    "error": null
+  },
+  {
+    "notebook": "16_business_ai/51_ai_assisted_software_development.ipynb",
+    "status": "pass",
+    "cells_executed": 2,
     "duration_s": 0.51,
     "error": null
   },
   {
-    "notebook": "10_industry_applications/35_churn_clv_retention.ipynb",
+    "notebook": "16_business_ai/52_bpm_governance_poc_mvp.ipynb",
     "status": "pass",
-    "cells_executed": 16,
-    "duration_s": 5.21,
+    "cells_executed": 0,
+    "duration_s": 0.66,
     "error": null
   },
   {
-    "notebook": "10_industry_applications/36_fraud_anomaly_detection.ipynb",
+    "notebook": "17_django/lab01_django_in_a_notebook.ipynb",
     "status": "pass",
-    "cells_executed": 15,
-    "duration_s": 4.63,
+    "cells_executed": 37,
+    "duration_s": 1.14,
     "error": null
   },
   {
-    "notebook": "10_industry_applications/37_segmentation_recommenders.ipynb",
+    "notebook": "17_django/lab02_serving_a_model_with_auth.ipynb",
     "status": "pass",
-    "cells_executed": 15,
-    "duration_s": 2.32,
+    "cells_executed": 31,
+    "duration_s": 1.81,
     "error": null
   },
   {
-    "notebook": "10_industry_applications/38_demand_maintenance.ipynb",
+    "notebook": "18_compound_ai_evaluation/53_compound_ai_evaluation_cafe.ipynb",
     "status": "pass",
-    "cells_executed": 18,
-    "duration_s": 6.91,
+    "cells_executed": 19,
+    "duration_s": 1.93,
     "error": null
-  },
-  {
-    "notebook": "11_agents_tools_mcp/39_agent_architectures.ipynb",
-    "status": "xfail",
-    "cells_executed": 12,
-    "duration_s": 0.58,
-    "error": {
-      "cell_index": 27,
-      "ename": "KeyError",
-      "evalue": "'action'"
-    }
-  },
-  {
-    "notebook": "11_agents_tools_mcp/40_designing_robust_tools.ipynb",
-    "status": "xfail",
-    "cells_executed": 12,
-    "duration_s": 0.71,
-    "error": {
-      "cell_index": 25,
-      "ename": "AttributeError",
-      "evalue": "'str' object has no attribute 'items'"
-    }
-  },
-  {
-    "notebook": "11_agents_tools_mcp/41_model_context_protocol.ipynb",
-    "status": "xfail",
-    "cells_executed": 12,
-    "duration_s": 0.58,
-    "error": {
-      "cell_index": 27,
-      "ename": "RuntimeError",
-      "evalue": "tools/call failed: internal error: <lambda>() got an unexpected keyword argument 'chanel'"
-    }
-  },
-  {
-    "notebook": "11_agents_tools_mcp/42_multi_agent_systems.ipynb",
-    "status": "xfail",
-    "cells_executed": 13,
-    "duration_s": 0.63,
-    "error": {
-      "cell_index": 27,
-      "ename": "ValueError",
-      "evalue": "not enough values to unpack (expected 3, got 2)"
-    }
   },
   {
     "notebook": "fast_track/00_fast_track_onboarding.ipynb",
     "status": "pass",
     "cells_executed": 1,
-    "duration_s": 1.16,
+    "duration_s": 1.56,
     "error": null
   },
   {
     "notebook": "fast_track/01_python_basics.ipynb",
-    "status": "xfail",
-    "cells_executed": 15,
-    "duration_s": 0.62,
-    "error": {
-      "cell_index": 40,
-      "ename": "TypeError",
-      "evalue": "unsupported operand type(s) for -: 'str' and 'int'"
-    }
+    "status": "pass",
+    "cells_executed": 24,
+    "duration_s": 0.82,
+    "error": null
   },
   {
     "notebook": "fast_track/02_control_structures.ipynb",
     "status": "pass",
-    "cells_executed": 22,
-    "duration_s": 0.67,
+    "cells_executed": 30,
+    "duration_s": 1.49,
     "error": null
   },
   {
     "notebook": "fast_track/03_lists_and_dicts.ipynb",
     "status": "pass",
-    "cells_executed": 24,
-    "duration_s": 0.73,
+    "cells_executed": 32,
+    "duration_s": 1.59,
     "error": null
   },
   {
     "notebook": "fast_track/04_functions.ipynb",
     "status": "pass",
-    "cells_executed": 21,
-    "duration_s": 0.8,
+    "cells_executed": 26,
+    "duration_s": 1.03,
     "error": null
   },
   {
     "notebook": "fast_track/05_classes_basics.ipynb",
     "status": "pass",
-    "cells_executed": 11,
-    "duration_s": 0.54,
+    "cells_executed": 32,
+    "duration_s": 0.94,
     "error": null
   },
   {
     "notebook": "fast_track/06_pandas_fundamentals.ipynb",
     "status": "pass",
-    "cells_executed": 28,
-    "duration_s": 1.07,
+    "cells_executed": 33,
+    "duration_s": 1.19,
     "error": null
   },
   {
     "notebook": "fast_track/07_visualization_and_stats.ipynb",
     "status": "pass",
-    "cells_executed": 33,
-    "duration_s": 1.88,
+    "cells_executed": 45,
+    "duration_s": 3.14,
     "error": null
   },
   {
     "notebook": "fast_track/08_sklearn_basics.ipynb",
     "status": "pass",
-    "cells_executed": 23,
-    "duration_s": 6.83,
+    "cells_executed": 51,
+    "duration_s": 10.27,
     "error": null
   },
   {
     "notebook": "fast_track/09_apis_and_sql.ipynb",
     "status": "pass",
-    "cells_executed": 36,
-    "duration_s": 3.92,
+    "cells_executed": 44,
+    "duration_s": 5.76,
     "error": null
   },
   {
     "notebook": "fast_track/10_ai_workflows.ipynb",
     "status": "pass",
-    "cells_executed": 17,
-    "duration_s": 0.59,
+    "cells_executed": 25,
+    "duration_s": 0.95,
     "error": null
   },
   {
     "notebook": "fast_track/11_embeddings_and_rag.ipynb",
     "status": "pass",
-    "cells_executed": 15,
-    "duration_s": 1.62,
+    "cells_executed": 25,
+    "duration_s": 2.09,
     "error": null
   },
   {
     "notebook": "fast_track/12_tools_and_agents.ipynb",
     "status": "pass",
-    "cells_executed": 13,
-    "duration_s": 0.87,
+    "cells_executed": 19,
+    "duration_s": 1.05,
     "error": null
   },
   {
     "notebook": "fast_track/13_notebook_to_project.ipynb",
     "status": "pass",
-    "cells_executed": 16,
-    "duration_s": 0.74,
+    "cells_executed": 20,
+    "duration_s": 0.84,
     "error": null
   },
   {
     "notebook": "fast_track/14_agents_and_mcp.ipynb",
-    "status": "xfail",
-    "cells_executed": 9,
-    "duration_s": 0.56,
-    "error": {
-      "cell_index": 20,
-      "ename": "TypeError",
-      "evalue": "<lambda>() got an unexpected keyword argument 'chanel'"
-    }
+    "status": "pass",
+    "cells_executed": 19,
+    "duration_s": 1.5,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/15_time_series_and_forecasting.ipynb",
+    "status": "pass",
+    "cells_executed": 21,
+    "duration_s": 2.26,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/16_model_evaluation_and_feature_engineering.ipynb",
+    "status": "pass",
+    "cells_executed": 27,
+    "duration_s": 6.08,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/17_industry_applications.ipynb",
+    "status": "pass",
+    "cells_executed": 24,
+    "duration_s": 5.7,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/18_document_ai_and_observability.ipynb",
+    "status": "pass",
+    "cells_executed": 27,
+    "duration_s": 1.07,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/19_nlp_topic_modeling_and_sentiment.ipynb",
+    "status": "pass",
+    "cells_executed": 24,
+    "duration_s": 2.03,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/20_shipping_scheduling_and_deployment.ipynb",
+    "status": "pass",
+    "cells_executed": 23,
+    "duration_s": 1.28,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/21_capstone_fast_track.ipynb",
+    "status": "pass",
+    "cells_executed": 22,
+    "duration_s": 1.67,
+    "error": null
+  },
+  {
+    "notebook": "fast_track/22_web_scraping.ipynb",
+    "status": "pass",
+    "cells_executed": 18,
+    "duration_s": 1.01,
+    "error": null
   },
   {
     "notebook": "quizzes/quiz_01_foundations.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.59,
+    "duration_s": 0.69,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_02_data_science.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.58,
+    "duration_s": 0.74,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_03_real_world_io.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.52,
+    "duration_s": 0.61,
     "error": null
   },
   {
-    "notebook": "quizzes/quiz_04_machine_learning.ipynb",
+    "notebook": "quizzes/quiz_04_webscraping.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.63,
+    "duration_s": 0.6,
     "error": null
   },
   {
-    "notebook": "quizzes/quiz_05_ai_engineering.ipynb",
+    "notebook": "quizzes/quiz_05_machine_learning.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.65,
+    "duration_s": 0.51,
     "error": null
   },
   {
-    "notebook": "quizzes/quiz_06_production.ipynb",
+    "notebook": "quizzes/quiz_06_pytorch.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.53,
+    "duration_s": 0.55,
     "error": null
   },
   {
-    "notebook": "quizzes/quiz_08_business_ai.ipynb",
+    "notebook": "quizzes/quiz_07_industry_applications.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.63,
+    "duration_s": 0.7,
+    "error": null
+  },
+  {
+    "notebook": "quizzes/quiz_08_ai_engineering.ipynb",
+    "status": "pass",
+    "cells_executed": 0,
+    "duration_s": 0.8,
     "error": null
   },
   {
     "notebook": "quizzes/quiz_09_building_ai_pocs.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.69,
+    "duration_s": 0.65,
     "error": null
   },
   {
-    "notebook": "quizzes/quiz_10_industry_applications.ipynb",
+    "notebook": "quizzes/quiz_10_agents_tools_mcp.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.53,
+    "duration_s": 0.59,
     "error": null
   },
   {
-    "notebook": "quizzes/quiz_11_agents_tools_mcp.ipynb",
+    "notebook": "quizzes/quiz_11_nlp.ipynb",
     "status": "pass",
     "cells_executed": 0,
-    "duration_s": 0.6,
+    "duration_s": 0.74,
+    "error": null
+  },
+  {
+    "notebook": "quizzes/quiz_13_production.ipynb",
+    "status": "pass",
+    "cells_executed": 0,
+    "duration_s": 0.74,
+    "error": null
+  },
+  {
+    "notebook": "quizzes/quiz_14_cicd.ipynb",
+    "status": "pass",
+    "cells_executed": 0,
+    "duration_s": 0.72,
+    "error": null
+  },
+  {
+    "notebook": "quizzes/quiz_16_business_ai.ipynb",
+    "status": "pass",
+    "cells_executed": 0,
+    "duration_s": 0.81,
+    "error": null
+  },
+  {
+    "notebook": "quizzes/quiz_17_django.ipynb",
+    "status": "pass",
+    "cells_executed": 0,
+    "duration_s": 0.73,
+    "error": null
+  },
+  {
+    "notebook": "quizzes/quiz_18_compound_ai_evaluation.ipynb",
+    "status": "pass",
+    "cells_executed": 0,
+    "duration_s": 0.52,
     "error": null
   }
 ]

@@ -1,6 +1,6 @@
 # =============================================================================
-# Verified with (Python 3.11), last full run 2026-07-02 — the course executes
-# clean on this exact set (73 notebooks end-to-end; the 8 intentional Debug-me
+# Verified with (Python 3.11), last full run 2026-07-17 — the course executes
+# clean on this exact set (113 notebooks end-to-end; the 23 intentional Debug-me
 # cells carry the `raises-exception` tag so full execution passes):
 #   numpy 2.4.6 · pandas 3.0.3 · matplotlib 3.10.9 · scikit-learn 1.8.0
 #   statsmodels 0.14.6 · scipy 1.17.1 · requests 2.34.2 · jupyterlab 4.5.7
