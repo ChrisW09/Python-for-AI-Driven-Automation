@@ -2,7 +2,7 @@
 
 > 🧭  [🏠 Course home](../README.md)  ·  [🏎️ Fast track](../fast_track/)
 
-Fifteen short multiple-choice quizzes — one per content module (Modules 1–11, 13–14 and 16–17; Module 15 is the two capstones, which *are* the assessment, and Module 12 — DeepTab — is an optional reference track). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
+Sixteen short multiple-choice quizzes — one per content module (Modules 1–11, 13–14 and 16–18; Module 15 is the two capstones, which *are* the assessment, and Module 12 — DeepTab — is an optional reference track). Each one is **five questions, ~10 minutes**, and tests whether the module's ideas actually stuck.
 
 | Module | Covers | File |
 |---|---|---|
@@ -21,6 +21,7 @@ Fifteen short multiple-choice quizzes — one per content module (Modules 1–11
 | 14 | CI/CD & Deployment (labs) | [`quiz_14_cicd.ipynb`](./quiz_14_cicd.ipynb) |
 | 16 | Business AI (NB 49–52) | [`quiz_16_business_ai.ipynb`](./quiz_16_business_ai.ipynb) |
 | 17 | Django for AI Web Apps (labs) | [`quiz_17_django.ipynb`](./quiz_17_django.ipynb) |
+| 18 | Compound AI Evaluation (NB 53) | [`quiz_18_compound_ai_evaluation.ipynb`](./quiz_18_compound_ai_evaluation.ipynb) |
 
 ## How to use the quizzes
 

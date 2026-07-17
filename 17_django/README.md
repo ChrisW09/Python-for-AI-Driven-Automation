@@ -1,6 +1,6 @@
 # 17 · Optional: Django for AI Web Apps
 
-> 🧭  [◀ Business AI](../16_business_ai/)  ·  [🏠 Course home](../README.md)
+> 🧭  [◀ Business AI](../16_business_ai/)  ·  [🏠 Course home](../README.md)  ·  [Compound AI Evaluation ▶](../18_compound_ai_evaluation/)
 
 So far you've *built* models and *shipped* them as scripts, notebooks, and small FastAPI services (Modules 9, 13, 14). This optional module adds the other end of the spectrum: **Django**, the "batteries-included" web framework — the fastest way to wrap a model in a real, multi-page web application with a database, an admin dashboard, forms, and authentication, with almost no glue code.
 

@@ -15,12 +15,12 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
-  <img alt="317 checkpoints, kernel-tested" src="https://img.shields.io/badge/317%20checkpoints-kernel--tested-8a2be2.svg">
+  <img alt="322 checkpoints, kernel-tested" src="https://img.shields.io/badge/322%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>111 runnable notebooks · 17 modules · 300+ end-of-lesson exercises · 317 in-lesson checkpoints · 100% offline</b>
+  <b>113 runnable notebooks · 18 modules · 300+ end-of-lesson exercises · 322 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -55,7 +55,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **317 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **322 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -64,12 +64,13 @@
 
 ## ✨ What's new
 
+- **☕ A new module on Compound AI Evaluation.** *Which pipeline knob actually moved quality — and is the difference real?* Factorial designs over your system's factors, replication vs LLM noise, ANOVA attribution with effect sizes and interactions, cost/quality Pareto frontiers — built by hand, 100% offline, then expressed in a few lines of **[CAFE](https://github.com/fabian-lu/Cafe)** (Compound-AI Factorial Evaluation, [cafe-ai.de](https://cafe-ai.de)). → [Module 18](./18_compound_ai_evaluation/)
 - **🔥 A new PyTorch module — deep learning as full lessons.** Tensors → autograd → the five-step training loop (NB 20); the training craft — the two-curve overfitting diagnostic, dropout & weight decay, early stopping, LR schedules, save/load, a live four-bug clinic (NB 21); then embeddings for categorical data, an honest bake-off vs gradient boosting, a sklearn-style wrapper and TorchScript serving (NB 22) — all on the course's own churn data, 100% offline (Colab ships PyTorch preinstalled). The Module 5 appendix mini-track (A1–A3) stays as the condensed reference tour. → [Module 6](./06_pytorch/)
 - **🕸️ A new Web Scraping module.** BeautifulSoup fundamentals (`robots.txt`, politeness, pagination), managed scraping with **Firecrawl**, and the **OpenAlex** open scholarly API — the "check for an open API before you scrape" discipline, all runnable 100% offline. → [Module 4](./04_webscraping/)
 - **🛠️ Hands-on labs for shipping.** [CI/CD & Deployment](./14_cicd/) (Docker, GitHub Actions, DNS/HTTPS — *simulated in pure Python*, no Docker required) and [Django](./17_django/) (a real ORM/views/forms/auth app booted inside a notebook) now ship runnable lab notebooks alongside their mini-books.
 - **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
-- **🧪 Module quizzes.** Fifteen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
-- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **317 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
+- **🧪 Module quizzes.** Sixteen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
+- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **322 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
 ---
@@ -121,8 +122,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The h
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 17 modules + 13 optional appendices | The essentials, condensed |
-| **Notebooks** | 52 lessons + 5 labs (+ 13 appendices) | 23 (onboarding + 22 lessons) |
+| **Scope** | All 18 modules + 13 optional appendices | The essentials, condensed |
+| **Notebooks** | 53 lessons + 5 labs (+ 13 appendices) | 23 (onboarding + 22 lessons) |
 | **Time** | ~125 hours | ~26 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -153,8 +154,9 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**15 · Capstones**](./15_capstones/) | 47–48 | Two end-to-end projects (analytics + AI assistant) |
 | [**16 · Business AI**](./16_business_ai/) | 49–52 | Digital transformation, architecture, AI-assisted dev, governance |
 | [**17 · Optional: Django**](./17_django/) | 2 labs | Wrap a model in a real web app — ORM, admin, forms, a JSON API — a self-contained mini-book + 2 hands-on lab notebooks + runnable example app |
+| [**18 · Optional: Compound AI Evaluation**](./18_compound_ai_evaluation/) | 53 | Which pipeline knob drives quality? Factorial designs, replication, ANOVA attribution &amp; Pareto frontiers with [CAFE](https://cafe-ai.de) |
 
-> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Module 17 (Django)** is an optional mini-book — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
+> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django) and 18 (Compound AI Evaluation)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
 
 ---
 
@@ -162,10 +164,11 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `17_django/` | The complete course — modules 0–17 in learning order, lessons 1–52 + 13 appendices |
+| `00_onboarding/` … `18_compound_ai_evaluation/` | The complete course — modules 0–18 in learning order, lessons 1–53 + 13 appendices |
 | `11_nlp/`, `12_deeptab/` | Optional reference tracks — text analytics (NB 41–43) &amp; deep tabular learning (NB 44) |
 | `14_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + 3 hands-on lab notebooks + a runnable example app |
 | `17_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + 2 hands-on lab notebooks + a runnable example app, ChurnScope |
+| `18_compound_ai_evaluation/` | Optional: Compound AI Evaluation — factorial studies, replication &amp; statistical attribution for AI pipelines with [CAFE](https://github.com/fabian-lu/Cafe) (lesson 53, offline; library install optional) |
 | `04_webscraping/` | Web scraping — fundamentals (BeautifulSoup, `robots.txt`), Firecrawl, and the OpenAlex open API (lessons 14–16, all offline) |
 | `06_pytorch/` | Deep Learning with PyTorch — tensors → autograd → the training loop, training craft, embeddings + bake-off + serving (lessons 20–22, all offline) |
 | `fast_track/` | The fast track — 22 trimmed notebooks (~26 h): 14 core essentials + 8 breadth extensions |
@@ -265,7 +268,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **317 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab and per web-scraping and PyTorch lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 317 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **322 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 322 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 
@@ -458,6 +461,12 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `lab01_django_in_a_notebook.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_django/lab01_django_in_a_notebook.ipynb) |
 | `lab02_serving_a_model_with_auth.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_django/lab02_serving_a_model_with_auth.ipynb) |
 
+### 18 · Optional: Compound AI Evaluation (CAFE)
+
+| Notebook | Open |
+|---|---|
+| `53_compound_ai_evaluation_cafe.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/18_compound_ai_evaluation/53_compound_ai_evaluation_cafe.ipynb) |
+
 ### 🏎️ Fast track
 
 | Notebook | Open |
@@ -505,6 +514,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_14_cicd.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_14_cicd.ipynb) |
 | `quiz_16_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_16_business_ai.ipynb) |
 | `quiz_17_django.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_17_django.ipynb) |
+| `quiz_18_compound_ai_evaluation.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_18_compound_ai_evaluation.ipynb) |
 
 ---
 
