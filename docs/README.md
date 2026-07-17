@@ -13,9 +13,14 @@ Project artefacts. Not part of the course content — these are reference docume
 | `08_pedagogical_review_2026.md` | The 2026 first-time-learner pedagogical review: course-wide numbering/navigation repair, rerouted 'Next step' chains, correctness-bug fixes, simplified explanations, and remaining future improvements. The current state of the repo reflects everything in this report. |
 | `09_module_descriptor_coverage.md` | Curriculum-alignment matrix: maps the official Modulhandbuch Lernergebnisse/Kompetenzen and Inhalte to the notebooks that deliver them, with coverage ratings and two delivery-level notes. |
 | `07_submission_ready.docx` | The submission-readiness certificate: a 20-item checklist, the final smoke-test result, and what changed in the last polish pass (consistency fixes, marker count, exercise count, requirements.txt comments). All checklist items PASS. |
+| `10_course_review_2026.md` | The July 2026 course review & improvement report (formerly `COURSE_REVIEW_REPORT.md` at the repo root): the visualization pass (132 rendered figures), cell-splitting for lecturability, the post-renumber cross-reference sweep, and the correctness fixes — a historical record whose lesson/module numbers use the **pre-renumber** scheme. |
 | `notebook_execution_results.json` | The most recent execution snapshot from the helper `scripts/run_all_notebooks.py`. One entry per notebook with `status`, `duration_s`, and first error (if any). Regenerate by re-running the script from the repo root. |
 
-Reading order: 01 → 02 → 03 → … → 09 (numeric). The current state of the repo reflects everything through report 08; report 09 is the curriculum-alignment matrix on top of that state.
+Reading order: 01 → 02 → 03 → … → 10 (numeric). The current state of the repo reflects everything through report 10; report 09 is the curriculum-alignment matrix.
+
+## Output convention
+
+Notebooks ship **with rendered outputs and figures committed** (the "render all" convention chosen in report 10): students see charts and results on GitHub/Colab without executing anything, at the cost of heavier diffs. Don't strip outputs when editing a notebook — re-run it and commit the refreshed outputs instead. The only intentional error outputs are the 🐞 Debug-me cells, each tagged `raises-exception`.
 
 ## Reproducing the execution snapshot
 
@@ -26,5 +31,6 @@ python scripts/run_all_notebooks.py . --json docs/notebook_execution_results.jso
 
 The runner skips `previous_versions/` and `.venv/` automatically, executes each
 notebook in memory (notebooks are never modified on disk), and exits non-zero if
-any notebook errors — including the intentional 🐞 *Debug-me* cells, which is why
-the snapshot shows a small number of expected `fail` entries.
+any notebook errors. The intentional 🐞 *Debug-me* cells carry the
+`raises-exception` cell tag, so they don't abort execution — a fully healthy run
+shows `pass` for all notebooks.

@@ -44,7 +44,7 @@ EXCLUDED_DIR_NAMES = {
     ".git",
 }
 # Individual files that intentionally describe old states of the course.
-EXCLUDED_FILE_NAMES = {"COURSE_REVIEW_REPORT.md"}
+EXCLUDED_FILE_NAMES = {"10_course_review_2026.md"}  # historical record; uses pre-renumber NB numbers
 # fast_track/ uses its own re-numbering (0-14) that diverges from the canonical
 # course; cross-references in any file should resolve against the canonical
 # numbering, so we don't let fast_track filenames satisfy "NB N" references and
