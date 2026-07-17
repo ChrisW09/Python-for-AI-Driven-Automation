@@ -44,7 +44,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 111 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 113 notebooks
 - [About](#-about)
 - [Contributing &amp; licence](#-contributing--licence)
 
