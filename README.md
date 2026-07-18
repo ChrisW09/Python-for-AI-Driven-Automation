@@ -130,6 +130,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The h
 
 New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 5-minute offline demo of what you'll build, and [`00b_course_overview.ipynb`](./00_onboarding/00b_course_overview.ipynb) has the full module map and an interactive time estimator.
 
+> 🧑‍🏫 **Teaching this as a semester course?** The fast track fits a 12-lecture × 180-minute format almost exactly — see the [suggested lecture plan](./fast_track/README.md#-teaching-plan-12-lectures--180-minutes) in `fast_track/`.
+
 ---
 
 ## 📚 Curriculum

@@ -46,6 +46,35 @@ Each notebook (except the onboarding) is a **trimmed copy** of its canonical cou
 
 ---
 
+## 🧑‍🏫 Teaching plan: 12 lectures × 180 minutes
+
+The fast track maps almost perfectly onto a **12-session course with 180-minute lectures** (36 h of contact time for ~26 h of material). Each session pairs roughly two notebooks and leaves ~30–60 minutes for the built-in ✋ Quick-exercise checkpoints (3 per notebook), a selection of the Practice exercises, and discussion. The natural rhythm: **teach ~20 min → ✋ checkpoint (~2 min, then reveal the solution) → repeat**, with a longer hands-on exercise block at the end of each notebook.
+
+| Lecture | Theme | Notebooks | Content | Hands-on / buffer |
+|---|---|---|---|---|
+| **1** | Getting started with Python | 00 onboarding · 01 basics · 02 control structures | ~115 min | ~65 min — environment check in class, extra time on first-timers' setup issues |
+| **2** | Data structures & functions | 03 lists and dicts · 04 functions | ~125 min | ~55 min — comprehension drills; decorators only if time allows |
+| **3** | OOP & pandas | 05 classes · 06 pandas fundamentals | ~140 min | ~40 min — groupby/merge Practice exercises in pairs |
+| **4** | Visualization, statistics & first models | 07 visualization and stats · 08 sklearn basics | ~165 min | ~15 min — **tightest session**: run checkpoints only, assign Practice exercises as homework |
+| **5** | Getting data: APIs & SQL, first LLM calls | 09 APIs and SQL · 10 AI workflows | ~150 min | ~30 min — live API demo; prompt-engineering experiments |
+| **6** | Embeddings, RAG & agents | 11 embeddings and RAG · 12 tools and agents | ~130 min | ~50 min — build-your-own-tool exercise; discuss RAG failure modes |
+| **7** | From notebook to project; agents & MCP | 13 notebook to project · 14 agents and MCP | ~120 min | ~60 min — package a small project live; midpoint recap of NB 1–14 |
+| **8** | Forecasting & honest evaluation | 15 time series · 16 model evaluation and feature engineering | ~150 min | ~30 min — leakage hunt exercise; announce capstone (lecture 11) |
+| **9** | AI in the business | 17 industry applications · 18 document AI and observability | ~160 min | ~20 min — second-tightest session: checkpoints only, Stretch C/D as homework |
+| **10** | NLP & shipping to production | 19 NLP topic modeling and sentiment · 20 scheduling and deployment | ~150 min | ~30 min — Docker layer-cache demo; sentiment-ladder discussion |
+| **11** | Capstone | 21 capstone fast track | ~90 min guided | ~90 min — supervised project work: students extend the capstone with their own analysis |
+| **12** | Web scraping & wrap-up | 22 web scraping | ~65 min | ~115 min — capstone presentations, [module quizzes](../quizzes/) as a review round, where-to-go-next (full course, Stretch A/B) |
+| | **Total** | 23 notebooks | **~26 h** | **~10 h** |
+
+A few notes for instructors:
+
+- **Lectures 4 and 9 are the tight ones** (~165 and ~160 min of material). Stick to the checkpoints in class and push the end-of-notebook Practice exercises to homework — every one ships with a worked solution, so they self-correct.
+- **Homework cadence:** assign the Practice exercises of each session's notebooks between lectures; offer Stretch C/D to stronger students. That adds ~2–3 h/week of self-study and keeps contact time for the interactive parts.
+- **Quizzes:** the [module quizzes](../quizzes/) make good 5-minute openers — quiz the previous session's topics before starting new material.
+- **Fewer sessions?** With 10 lectures, merge 7+8 into one session (drop the midpoint recap, trim NB 15's backtesting section) and fold NB 22 into the capstone session as homework.
+
+---
+
 ## What's intentionally missing
 
 The breadth extensions (NB 15–22) now mirror most of the full course's applied modules — time series, model evaluation & feature engineering, industry applications, document AI & observability, NLP, deployment, a capstone, and web scraping. Even so, the fast track stays lean. Compared to the full course, these are still gone:
@@ -111,4 +140,4 @@ fast_track/                      canonical full course
   22_web_scraping                             ←  04_webscraping/* (fundamentals, Firecrawl, OpenAlex — condensed)
 ```
 
-The fast-track notebooks are flat-numbered 1–21 deliberately — a single linear path you can work straight through (1–14 are the core essentials; 15–21 broaden coverage across the applied modules). Inside each notebook the cross-references use the **fast-track numbers** (e.g. *"pandas in NB 6"*); back-references to the full course always use explicit relative paths (e.g. [`../08_ai_engineering/`](../08_ai_engineering/)), so you can always follow a thread to the depth notebook.
+The fast-track notebooks are flat-numbered 1–22 deliberately — a single linear path you can work straight through (1–14 are the core essentials; 15–22 broaden coverage across the applied modules). Inside each notebook the cross-references use the **fast-track numbers** (e.g. *"pandas in NB 6"*); back-references to the full course always use explicit relative paths (e.g. [`../08_ai_engineering/`](../08_ai_engineering/)), so you can always follow a thread to the depth notebook.
