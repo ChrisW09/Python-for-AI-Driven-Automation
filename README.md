@@ -46,6 +46,7 @@
 - [LLM providers](#-llm-providers)
 - [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 113 notebooks
 - [About](#-about)
+- [Citation](#-citation)
 - [Contributing &amp; licence](#-contributing--licence)
 
 ---
@@ -300,6 +301,8 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
+<sub>The **113 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–18), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
+
 ### 0 · Onboarding
 
 | Notebook | Open |
@@ -527,6 +530,23 @@ I am Christoph Weisser, Professor of Mathematics, specializing in Business Data 
 Before joining academia, I led international AI initiatives at BASF from strategy through production deployment. Today, I combine research, teaching, open-source software development, and selected industry collaborations to advance the practical application of AI.
 
 I hold two master’s degrees from the University of Oxford and the University of St Andrews and completed the PhD Program in Applied Statistics & Empirical Methods (summa cum laude) at Georg-August-Universität Göttingen. I was awarded scholarships by the Studienstiftung des deutschen Volkes, the Konrad-Adenauer-Stiftung, and the Evangelisches Studienwerk Villigst. I regularly publish research in leading journals and at international conferences and contribute to open-source software.
+
+---
+
+## 📌 Citation
+
+If you use this course or its materials in your teaching, work, or research, please cite it. GitHub's **“Cite this repository”** button (top-right of the [repo page](https://github.com/ChrisW09/Python-for-AI-Driven-Automation)) generates APA and BibTeX automatically from [`CITATION.cff`](./CITATION.cff), or copy the BibTeX below:
+
+```bibtex
+@misc{weisser2026python,
+  author       = {Weisser, Christoph},
+  title        = {Python for {AI}-Driven Automation \& Business Data Science},
+  year         = {2026},
+  publisher    = {GitHub},
+  howpublished = {\url{https://github.com/ChrisW09/Python-for-AI-Driven-Automation}},
+  note         = {Hochschule Bielefeld (HSBI)}
+}
+```
 
 ---
 

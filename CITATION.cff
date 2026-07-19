@@ -29,3 +29,18 @@ keywords:
   - education
 license: MIT
 date-released: "2026-07-19"
+# If you mint a Zenodo (or other) DOI for this repository, add it here and in
+# preferred-citation below, e.g.:  doi: "10.5281/zenodo.XXXXXXX"
+
+# How you'd like the work cited. GitHub's "Cite this repository" and most
+# reference managers surface this entry.
+preferred-citation:
+  type: software
+  title: "Python for AI-Driven Automation & Business Data Science"
+  authors:
+    - given-names: Christoph
+      family-names: Weisser
+      affiliation: Hochschule Bielefeld (HSBI)
+  year: 2026
+  url: "https://github.com/ChrisW09/Python-for-AI-Driven-Automation"
+  notes: "A hands-on curriculum in Python, business data science, machine learning, deep learning, AI engineering, and production."
