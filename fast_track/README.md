@@ -64,7 +64,7 @@ The fast track maps almost perfectly onto a **12-session course with 180-minute 
 | **10** | NLP & shipping to production | 19 NLP topic modeling and sentiment · 20 scheduling and deployment | ~150 min | ~30 min — Docker layer-cache demo; sentiment-ladder discussion |
 | **11** | Capstone | 21 capstone fast track | ~90 min guided | ~90 min — supervised project work: students extend the capstone with their own analysis |
 | **12** | Web scraping & wrap-up | 22 web scraping | ~65 min | ~115 min — capstone presentations, [module quizzes](../quizzes/) as a review round, where-to-go-next (full course, Stretch A/B) |
-| | **Total** | 23 notebooks | **~26 h** | **~10 h** |
+| | **Total** | 22 notebooks + onboarding | **~26 h** | **~10 h** |
 
 A few notes for instructors:
 
