@@ -1,4 +1,6 @@
-> **Note (July 2026).** This document predates the learning-order renumbering (modules 0–17 / lessons 1–52 were re-sequenced); lesson and module numbers below refer to the **old** numbering and are kept as a historical record. Notebook and fast-track counts below likewise reflect the course as it stood at the time of this review; for current counts see [`README.md`](../README.md) and [`fast_track/README.md`](../fast_track/README.md).
+> **Note (July 2026).** This document predates the learning-order renumbering (modules 0–17 / lessons 1–52 were re-sequenced); lesson and module numbers below refer to the **old** numbering and are kept as a historical record. The dated notebook/figure counts in the body are that review's findings *at the time* and are likewise left intact.
+
+> **📌 Current course snapshot (verified 2026-07-19).** The course now holds **113 notebooks** — **58** numbered lessons + **13** appendices + **22** fast-track (plus 1 fast-track onboarding) + **16** quizzes + **3** onboarding — with **243** rendered figures. The reference checker is green over the whole NB 0–53 graph, and the most recent full-execution snapshot is **113/113 clean** (2026-07-17). The **Fast track** is **22 content notebooks (~26 h)**. For the live per-module index see [`README.md`](../README.md) and [`fast_track/README.md`](../fast_track/README.md).
 
 # Course Review & Improvement Report
 
@@ -24,7 +26,7 @@ The improvement work captured in this report therefore concentrated on the **nex
 
 **Audience.** Self-paced learners and a lecture cohort: beginners on the Foundations/Fast-track side, advancing to intermediate ML/AI-engineering practitioners and business/technical leads by the Industry/AI-Engineering/Business modules.
 
-**Sequence & build-up.** A deliberate **motivation-first spiral**: a 5-minute "see it work" demo (`00c`) up front, then a strict dependency-clean skill spine (Python → data → ML → AI), with professional tooling (Git/Copilot) pulled early, and the *build it / ship it* judgement (POCs, production, business) clustered near the end. Notebooks build on one another with explicit prerequisites and "Next step" pointers; a **Fast track** mirrors the spine in 15 trimmed notebooks, and **quizzes** check each module.
+**Sequence & build-up.** A deliberate **motivation-first spiral**: a 5-minute "see it work" demo (`00c`) up front, then a strict dependency-clean skill spine (Python → data → ML → AI), with professional tooling (Git/Copilot) pulled early, and the *build it / ship it* judgement (POCs, production, business) clustered near the end. Notebooks build on one another with explicit prerequisites and "Next step" pointers; a **Fast track** mirrors the spine in 22 trimmed notebooks, and **quizzes** check each module.
 
 **Strengths.** Offline-first reproducibility; consistent template; worked solutions with reasoning; honest ML evaluation; strong business framing (everything ends in a costed decision rule).
 
