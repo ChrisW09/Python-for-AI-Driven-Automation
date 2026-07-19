@@ -75,6 +75,12 @@ A few notes for instructors:
 
 ---
 
+## 📝 Test yourself: mock exams
+
+Three full-length **[mock exams](./mock_exams/)** (120 min · 100 marks each) sample the whole track — each in a different business world (SaaS support, e-commerce, fintech) so you can sit up to three genuinely distinct attempts. Every exam ships with a **worked-solutions slide deck**: sit the paper, self-mark, then revisit the notebooks behind whatever you fumbled. They're the natural final step after NB 21/22 — and for instructors, ready-made practice papers for the 12-lecture course above.
+
+---
+
 ## What's intentionally missing
 
 The breadth extensions (NB 15–22) now mirror most of the full course's applied modules — time series, model evaluation & feature engineering, industry applications, document AI & observability, NLP, deployment, a capstone, and web scraping. Even so, the fast track stays lean. Compared to the full course, these are still gone:
