@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Python for AI-Driven Automation & Business Data Science"
+message: >-
+  If you use this course or its materials in your work,
+  teaching, or research, please cite it using the metadata
+  from this file.
+type: software
+authors:
+  - given-names: Christoph
+    family-names: Weisser
+    affiliation: Hochschule Bielefeld (HSBI)
+repository-code: "https://github.com/ChrisW09/Python-for-AI-Driven-Automation"
+url: "https://github.com/ChrisW09/Python-for-AI-Driven-Automation"
+abstract: >-
+  A hands-on curriculum taking learners from their first line
+  of Python to shipping a real AI-driven automation, across
+  Python fluency, business data science, machine learning,
+  deep learning, AI engineering, and production — with
+  runnable, kernel-tested notebooks.
+keywords:
+  - python
+  - data-science
+  - machine-learning
+  - deep-learning
+  - ai-engineering
+  - automation
+  - agents
+  - mcp
+  - education
+license: MIT
+date-released: "2026-07-19"
