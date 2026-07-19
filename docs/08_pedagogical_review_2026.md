@@ -1,4 +1,4 @@
-> **Note (July 2026).** This document predates the learning-order renumbering (modules 0–17 / lessons 1–52 were re-sequenced); lesson and module numbers below refer to the **old** numbering and are kept as a historical record.
+> **Note (July 2026).** This document predates the learning-order renumbering (modules 0–17 / lessons 1–52 were re-sequenced); lesson and module numbers below refer to the **old** numbering and are kept as a historical record. Notebook and fast-track counts below likewise reflect the course as it stood at the time of this review; for current counts see [`README.md`](../README.md) and [`fast_track/README.md`](../fast_track/README.md).
 
 # Pedagogical Review & Revision Pass — 2026
 
