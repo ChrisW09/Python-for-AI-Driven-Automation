@@ -535,7 +535,13 @@ I hold two master’s degrees from the University of Oxford and the University o
 
 ## 📌 Citation
 
-If you use this course or its materials in your teaching, work, or research, please cite it. GitHub's **“Cite this repository”** button (top-right of the [repo page](https://github.com/ChrisW09/Python-for-AI-Driven-Automation)) generates APA and BibTeX automatically from [`CITATION.cff`](./CITATION.cff), or copy the BibTeX below:
+If you use this course or its materials in your teaching, work, or research, please cite it. GitHub's **“Cite this repository”** button (top-right of the [repo page](https://github.com/ChrisW09/Python-for-AI-Driven-Automation)) generates APA and BibTeX automatically from [`CITATION.cff`](./CITATION.cff) — or copy one of the forms below.
+
+**Plain text (APA):**
+
+> Weisser, C. (2026). *Python for AI-Driven Automation & Business Data Science* [Educational course materials]. Hochschule Bielefeld (HSBI). https://github.com/ChrisW09/Python-for-AI-Driven-Automation
+
+**BibTeX:**
 
 ```bibtex
 @misc{weisser2026python,

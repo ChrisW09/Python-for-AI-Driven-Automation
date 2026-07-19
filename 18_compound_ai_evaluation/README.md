@@ -93,7 +93,7 @@ CAFE requires **Python ≥ 3.11** and **R** (the ordinal/logistic mixed models r
 
 ## The web platform & [cafe-ai.de](https://cafe-ai.de)
 
-Everything NB 53 does in code, CAFE also offers as a **self-hostable web application** (FastAPI backend + React front end) — for teams who'd rather point-and-click than script. Instead of writing the study out in Python, you define its factors, levels, judge, and replication count in the browser, launch the run, and watch **live progress** as each configuration is executed and scored. When it finishes you get the same artefacts you built by hand in the notebook — the factor table with p-values and effect sizes, the interaction terms, and the cost/quality Pareto frontier — rendered as interactive views. The app ships inside the CAFE repo under `apps/web-app` and runs locally with a single `docker compose up`.
+Everything NB 53 does in code, CAFE also offers as a **self-hostable web application** (FastAPI backend + React front end) — for teams who'd rather point-and-click than script. Instead of writing the study out in Python, you define its factors, levels, judge, and replication count in the browser, launch the run, and watch **live progress** as each configuration is executed and scored. When it finishes you read back the same results you computed by hand in the notebook — which factors moved quality, whether the effects are statistically real, and where each configuration sits on the cost/quality trade-off. The app ships inside the CAFE repo under `apps/web-app` and runs locally with a single `docker compose up`.
 
 Want to see it before installing anything?
 

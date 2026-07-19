@@ -20,13 +20,18 @@ abstract: >-
 keywords:
   - python
   - data-science
+  - business-data-science
   - machine-learning
   - deep-learning
+  - pytorch
   - ai-engineering
-  - automation
+  - llm
   - agents
   - mcp
-  - education
+  - nlp
+  - automation
+  - course
+  - jupyter-notebooks
 license: MIT
 date-released: "2026-07-19"
 # If you mint a Zenodo (or other) DOI for this repository, add it here and in
