@@ -1,0 +1,532 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\AtBeginSection[]{\begin{frame}{Outline}\tableofcontents[currentsection,subsectionstyle=hide]\end{frame}}
+\definecolor{hsbiblue}{RGB}{45,57,120}
+\definecolor{hsbimid}{RGB}{76,114,176}
+\definecolor{hsbilight}{RGB}{225,231,247}
+\definecolor{cgreen}{RGB}{85,164,103}
+\definecolor{cred}{RGB}{196,78,82}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,keywordstyle=\color{hsbiblue},commentstyle=\color{cgreen},columns=fullflexible,showstringspaces=false}
+\title{Fast Track --- Mock Exam 3 (Solutions)}
+\subtitle{PayFlow scenario $\cdot$ full worked solutions}
+\author{Prof.\ Dr.\ Christoph Weisser}
+\institute{HSBI}
+\date{Summer Semester 2026}
+\begin{document}
+\begin{frame}\titlepage\end{frame}
+\begin{frame}{How to use these solutions}
+\begin{itemize}
+  \item One slide per question, in exam order: \textbf{Part A} (Python) $\to$ \textbf{Part E} (production).
+  \item Each slide restates the task, then gives the full worked answer; code is runnable with modern \texttt{pandas} / \texttt{scikit-learn}.
+  \item For MCQ we give the \textcolor{cgreen}{correct key} and say why each distractor is wrong.
+  \item Scenario: \textbf{PayFlow}, a fintech --- transactions, fraud, KYC, transfers. 100 marks, 5 parts of 20.
+  \item \textbf{Green} = correct / do this; \textcolor{cred}{\textbf{red}} = the trap.
+\end{itemize}
+\end{frame}
+
+% ==================================================================
+\section{Part A --- Python foundations}
+% ==================================================================
+
+\begin{frame}[fragile]{A1 --- \texttt{int(-3.9)} \hfill (2 marks, MCQ)}
+Reconciling a refund, PayFlow evaluates \texttt{int(-3.9)}. Result?
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{-3}.}
+\begin{itemize}
+  \item \texttt{int()} \textbf{truncates toward zero} --- it drops the fractional part, it does not round. So \texttt{int(-3.9) == -3} and \texttt{int(3.9) == 3}.
+  \item A) $-4$ would be \emph{rounding} / \texttt{math.floor(-3.9)}. C) $0$ is nonsense. D) $4$ confuses sign and rounds.
+  \item To round properly use \texttt{round(-3.9) == -4}; for a direction use \texttt{math.floor} / \texttt{math.ceil}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A2 --- the \texttt{or}-default trap \hfill (2 marks, MCQ)}
+\texttt{size = requested or 50} with \texttt{requested = 0}. What is \texttt{size}?
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{50}.}
+\begin{itemize}
+  \item \texttt{x or default} keys off \emph{truthiness}, and \texttt{0} is \textcolor{cred}{falsy}. So \texttt{0 or 50} evaluates to \texttt{50} --- the valid value \texttt{0} is silently discarded.
+  \item A) \texttt{0} is what you \emph{wanted} but not what the code does. C)/D) no \texttt{None}, no error is produced.
+  \item Fix when \texttt{0} is legal: \texttt{size = 50 if requested is None else requested} --- test presence with \texttt{is None}, not truthiness.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A3 --- mutable default argument \hfill (3 marks)}
+\begin{lstlisting}[language=Python]
+def add_txn(txn, batch=[]):   # BUG: default list created ONCE
+    batch.append(txn)
+    return batch
+\end{lstlisting}
+\textbf{What goes wrong:} the default \texttt{[]} is built a single time when the \texttt{def} runs, and \emph{shared} by every call that omits \texttt{batch}. Successive "different" batches all append to the same list, so transactions leak across calls.
+\begin{lstlisting}[language=Python]
+def add_txn(txn, batch=None):   # sentinel default
+    if batch is None:
+        batch = []              # fresh list per call
+    batch.append(txn)
+    return batch
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{A4 --- \texttt{Wallet} class \hfill (5 marks)}
+\begin{lstlisting}[language=Python]
+class Wallet:
+    def __init__(self, owner, balance=0.0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise ValueError("insufficient funds")
+        self.balance -= amount
+
+    def statement(self):
+        return f"{self.owner}: {self.balance:.2f} EUR"
+\end{lstlisting}
+\footnotesize Marks: constructor with default (1), deposit (1), withdraw with the \texttt{ValueError} guard (2), formatted \texttt{statement} (1).
+\end{frame}
+
+\begin{frame}[fragile]{A5 --- \texttt{.sort()} returns \texttt{None} \hfill (4 marks, debug)}
+\begin{lstlisting}[language=Python]
+top = amounts.sort(reverse=True)   # BUG
+print(top[:3])                     # TypeError: NoneType not subscriptable
+\end{lstlisting}
+\textbf{Root cause:} \texttt{list.sort()} sorts the list \emph{in place} and \textcolor{cred}{returns \texttt{None}}. So \texttt{top} is \texttt{None}, and \texttt{None[:3]} raises. (Same trap for \texttt{.append}, \texttt{.reverse}, \texttt{.extend}.)
+\medskip
+
+\textbf{Fix} --- use \texttt{sorted()}, which returns a \emph{new} list:
+\begin{lstlisting}[language=Python]
+top = sorted(amounts, reverse=True)
+print(top[:3])           # [340.5, 210.0, 12.0]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{A6 --- count categories with \texttt{Counter} \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+from collections import Counter
+
+counts = Counter(t["category"] for t in txns)   # comprehension -> Counter
+# counts -> Counter({'groceries': 2, 'travel': 1, ...})
+
+top_category = counts.most_common(1)[0][0]       # most frequent name
+\end{lstlisting}
+\begin{itemize}\footnotesize
+  \item \texttt{Counter} consumes any iterable; a generator expression avoids building an intermediate list.
+  \item \texttt{most\_common(1)} returns \texttt{[(name, count)]}; index \texttt{[0][0]} pulls the name.
+  \item Equivalent manual tally: \texttt{d[k] = d.get(k, 0) + 1} in a loop.
+\end{itemize}
+\end{frame}
+
+% ==================================================================
+\section{Part B --- Data, pandas, viz \& statistics}
+% ==================================================================
+
+\begin{frame}[fragile]{B1 --- pandas boolean masking \hfill (2 marks, MCQ)}
+Select \texttt{amount > 1000} \textbf{and} \texttt{is\_fraud == 1}.
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{\texttt{df[(df.amount>1000) \& (df.is\_fraud==1)]}}.}
+\begin{itemize}
+  \item Element-wise combination needs the \textbf{bitwise} \texttt{\&} (or \texttt{|}), and each condition must be \textbf{parenthesised} because \texttt{\&} binds tighter than the comparisons.
+  \item A) uses Python \texttt{and} on Series $\to$ \textcolor{cred}{\texttt{ValueError: ambiguous truth value}}.
+  \item C) drops the parentheses, so \texttt{1000 \& df.is\_fraud} is evaluated first $\to$ error.
+  \item D) uses \texttt{or} (same ambiguity) and the wrong logic.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{B2 --- \texttt{WHERE} vs \texttt{HAVING} \hfill (2 marks, MCQ)}
+Keep only merchants whose \emph{total} volume exceeds 1{,}000{,}000.
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{\texttt{GROUP BY merchant HAVING SUM(amount) > 1000000}}.}
+\begin{itemize}
+  \item \texttt{WHERE} filters \emph{rows} before grouping and cannot see aggregates; a per-group aggregate condition belongs in \texttt{HAVING} (which runs after \texttt{GROUP BY}).
+  \item A) puts \texttt{WHERE} after \texttt{GROUP BY} \emph{and} references \texttt{SUM} in \texttt{WHERE} --- both illegal.
+  \item C) filters individual big transactions, not merchant totals. D) is not a filter at all.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{B3 --- \texttt{groupby().agg()} scorecard \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+scorecard = transactions.groupby("merchant").agg(
+    n_txns=("amount", "count"),
+    total_amount=("amount", "sum"),
+    fraud_rate=("is_fraud", "mean"),   # mean of a 0/1 column = a rate
+)
+\end{lstlisting}
+\begin{itemize}\footnotesize
+  \item \textbf{Named aggregation}: each output column is \texttt{name=(source\_column, function)}.
+  \item The key idea: the \textbf{mean of a 0/1 indicator column is its rate} --- \texttt{fraud\_rate} needs no manual division.
+  \item Result is indexed by \texttt{merchant}; add \texttt{.reset\_index()} for a flat frame.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{B4 --- A/B test statistics \hfill (4 marks)}
+\begin{itemize}
+  \item \textbf{(a)} \texttt{scipy.stats.ttest\_ind(a, b, equal\_var=False)} --- \texttt{equal\_var=False} makes it \textbf{Welch's} t-test (unequal variances); read \texttt{.pvalue}.
+  \item \textbf{(b)} \emph{If there were truly no difference between the models}, we would see a difference in means at least this large about \textbf{3\%} of the time. Since $0.03 < 0.05$ we reject $H_0$ at the 5\% level. It is \textcolor{cred}{not} "a 97\% chance B is better" and not the probability that $H_0$ is true.
+  \item \textbf{(c)} The p-value shows \emph{whether} there is a signal, not \emph{how big} it is --- with enough reviewers even a trivial gap turns "significant". \textbf{Cohen's d} reports the standardised effect size, i.e.\ the practical magnitude PayFlow actually cares about.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{B5 --- \texttt{.mean("amount")} bug \hfill (3 marks, debug)}
+\begin{lstlisting}[language=Python]
+transactions.groupby("merchant")["amount"].mean("amount")  # TypeError
+\end{lstlisting}
+\textbf{Mistake:} after \texttt{["amount"]} you have already selected a single Series. Series/GroupBy \texttt{.mean()} takes no column name --- its first positional argument is \texttt{axis}, and passing the string \texttt{"amount"} is invalid.
+\medskip
+
+\textbf{Fix} --- call \texttt{.mean()} with no argument:
+\begin{lstlisting}[language=Python]
+transactions.groupby("merchant")["amount"].mean()
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{B6 --- applied SQL: top DE merchants \hfill (5 marks)}
+\begin{lstlisting}[language=SQL]
+SELECT m.name,
+       COUNT(*)      AS n_completed,
+       SUM(t.amount) AS total_amount
+FROM transactions AS t
+JOIN merchants   AS m ON m.merchant_id = t.merchant_id
+WHERE m.country = 'DE'
+  AND t.status = 'completed'
+GROUP BY m.name
+HAVING COUNT(*) > 100
+ORDER BY total_amount DESC;
+\end{lstlisting}
+\begin{itemize}\footnotesize
+  \item Row filters (country, status) go in \texttt{WHERE}; the per-merchant count filter goes in \texttt{HAVING}.
+  \item \texttt{JOIN} on \texttt{merchant\_id}; group by the displayed \texttt{name}; \texttt{ORDER BY} may use the \texttt{SELECT} alias.
+\end{itemize}
+\end{frame}
+
+% ==================================================================
+\section{Part C --- ML, evaluation \& feature engineering}
+% ==================================================================
+
+\begin{frame}[fragile]{C1 --- spot the data leak \hfill (2 marks, MCQ)}
+Predicting fraud \emph{at authorisation time}. Which feature leaks?
+\medskip
+
+\textbf{Answer: C) \textcolor{cgreen}{\texttt{chargeback\_filed}}.}
+\begin{itemize}
+  \item The golden rule: a feature may only use information available \textbf{at prediction time}. A chargeback is logged \emph{days after} the transaction, so it is future knowledge --- it would inflate offline scores, then vanish in production.
+  \item A) amount, B) merchant country, D) hour of day are all known the instant the transaction is authorised --- legitimate features.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{C2 --- the accuracy trap on imbalanced data \hfill (2 marks, MCQ)}
+0.5\% fraud; model always predicts "not fraud".
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{\textasciitilde99.5\% accuracy, catches zero fraud; report PR-AUC}.}
+\begin{itemize}
+  \item Predicting the majority class scores $1-0.005 = 99.5\%$ accuracy while catching \emph{no} fraud --- accuracy is meaningless here.
+  \item Use \textbf{PR-AUC} = \texttt{average\_precision\_score(y, score)}; the no-skill baseline is the fraud \emph{rate} ($0.005$).
+  \item A) accuracy is not 50\%. C) high accuracy does \emph{not} prove skill. D) accuracy is not 0.5\%.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{C3 --- ColumnTransformer + Pipeline \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+
+prep = ColumnTransformer([
+    ("num", StandardScaler(), num_cols),
+    ("cat", OneHotEncoder(handle_unknown="ignore"), cat_cols),
+])
+model = Pipeline([
+    ("prep", prep),
+    ("clf", LogisticRegression(max_iter=1000)),
+])
+model.fit(X_train, y_train)
+\end{lstlisting}
+\footnotesize \texttt{handle\_unknown="ignore"} tolerates unseen categories at predict time. Putting the scaler \emph{inside} the pipeline fits it on train folds only --- no leakage during CV.
+\end{frame}
+
+\begin{frame}[fragile]{C4 --- cost-optimal fraud threshold \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+import numpy as np
+from sklearn.metrics import confusion_matrix
+COST_FP, COST_FN = 5, 200
+
+def total_cost(y_true, proba, t):
+    pred = (proba >= t).astype(int)
+    tn, fp, fn, tp = confusion_matrix(y_true, pred, labels=[0, 1]).ravel()
+    return fp * COST_FP + fn * COST_FN
+
+thresholds = np.linspace(0.05, 0.95, 91)
+costs = [total_cost(y_test, proba, t) for t in thresholds]
+best_t = thresholds[int(np.argmin(costs))]
+\end{lstlisting}
+\footnotesize \textbf{Why not 0.5:} the costs are \emph{asymmetric} --- a missed fraud costs $40\times$ a false alarm, so the money-minimising cutoff sits \emph{well below} 0.5 (flag more aggressively). A default 0.5 optimises accuracy, not euros.
+\end{frame}
+
+\begin{frame}[fragile]{C5 --- two bugs in a recall calc \hfill (3 marks, debug)}
+\begin{lstlisting}[language=Python]
+tn, fp, fn, tp = confusion_matrix(y_test, y_pred)  # BUG 1
+recall = tp / (tp + fp)                            # BUG 2
+\end{lstlisting}
+\begin{itemize}
+  \item \textbf{Bug 1:} \texttt{confusion\_matrix} returns a $2\times2$ array, not four scalars --- unpacking fails. Flatten it with \texttt{.ravel()}.
+  \item \textbf{Bug 2:} \texttt{tp/(tp+fp)} is \emph{precision}. Recall is \texttt{tp/(tp+fn)}.
+\end{itemize}
+\begin{lstlisting}[language=Python]
+tn, fp, fn, tp = confusion_matrix(y_test, y_pred).ravel()
+recall = tp / (tp + fn)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{C6 --- precision@k / recall@k \hfill (5 marks)}
+\begin{lstlisting}[language=Python]
+import numpy as np
+def precision_at_k(y_true, scores, k):
+    idx = np.argsort(-scores)[:k]        # k riskiest
+    return np.asarray(y_true)[idx].mean()
+
+def recall_at_k(y_true, scores, k):
+    idx = np.argsort(-scores)[:k]
+    caught = np.asarray(y_true)[idx].sum()
+    return caught / np.asarray(y_true).sum()
+\end{lstlisting}
+\textbf{(b)} With 35 frauds in the top 50 and 200 frauds total:
+\[
+\text{precision@50} = \frac{35}{50} = 0.70,\qquad
+\text{recall@50} = \frac{35}{200} = 0.175.
+\]
+\footnotesize Shrinking $k$ raises precision but lowers recall --- the review-queue trade-off.
+\end{frame}
+
+% ==================================================================
+\section{Part D --- AI engineering}
+% ==================================================================
+
+\begin{frame}[fragile]{D1 --- MCP primitives \hfill (2 marks, MCQ)}
+Which MCP primitive is \textbf{model-controlled}?
+\medskip
+
+\textbf{Answer: C) \textcolor{cgreen}{tools}.}
+\begin{itemize}
+  \item \textbf{Tools} are \emph{model-controlled} --- the model chooses when to call them (e.g.\ "look up this transaction's risk").
+  \item \textbf{Resources} (A) are \emph{application-controlled} --- a read-only GET addressed by URI, loaded by the host app.
+  \item \textbf{Prompts} (B) are \emph{user-controlled} message templates the user invokes.
+  \item D) "sampling" is a server$\to$client request, not one of the three core primitives.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{D2 --- role of \texttt{max\_steps} \hfill (2 marks, MCQ)}
+Primary purpose of \texttt{max\_steps} in an agent loop?
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{a fuse that stops a runaway / infinite tool-calling loop}.}
+\begin{itemize}
+  \item An agent can loop forever (call tool $\to$ observe $\to$ call again). \texttt{max\_steps} caps the iterations and returns a "stopped: budget reached" result --- the single most important safety parameter.
+  \item A) it does not change call quality. C) temperature is separate. D) it bounds \emph{steps}, not the number of registered tools.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{D3 --- \texttt{safe\_json} with fence stripping \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+import re, json
+
+def safe_json(text):
+    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "",
+                     text.strip(), flags=re.I | re.M)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        return {"error": "unparseable", "raw": text}
+\end{lstlisting}
+\begin{itemize}\footnotesize
+  \item Strip a leading \texttt{```} / \texttt{```json} and a trailing \texttt{```} fence, then parse.
+  \item Catch \emph{only} \texttt{json.JSONDecodeError} and return a fallback dict --- never let a bad model response raise. The parser is your seatbelt; a tighter prompt is the real fix.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{D4 --- LLM-as-judge biases \hfill (4 marks)}
+Two documented biases, each with a mitigation:
+\begin{itemize}
+  \item \textbf{Verbosity (length) bias} --- the judge tends to score \emph{longer} answers higher regardless of quality. \emph{Mitigation:} give the rubric explicit length-independent criteria and/or normalise for length; cross-check with a different (e.g.\ smaller) judge model.
+  \item \textbf{Position (order) bias} --- when comparing two answers, the judge favours whichever is presented \emph{first}. \emph{Mitigation:} run both orderings (A,B) and (B,A) and average, so position cancels out.
+\end{itemize}
+\footnotesize (Also acceptable: self-preference / style bias; mitigate by validating the judge against human labels and requiring $\geq$80\% agreement before trusting it.)
+\end{frame}
+
+\begin{frame}[fragile]{D5 --- guard the batch extractor \hfill (3 marks, debug)}
+One prose (non-JSON) response kills the whole loop. Wrap the parse:
+\begin{lstlisting}[language=Python]
+import json
+records = []
+for row in receipts:
+    raw = llm_extract(row)
+    try:
+        records.append(json.loads(raw))
+    except json.JSONDecodeError:
+        records.append({"error": "bad_json", "raw": raw})  # flag, keep going
+\end{lstlisting}
+\footnotesize \textbf{Rule:} never call \texttt{json.loads} unguarded on model output. Catch \texttt{JSONDecodeError} per row so one malformed receipt is flagged (or routed to a human) instead of aborting the batch.
+\end{frame}
+
+\begin{frame}[fragile]{D6 --- TF-IDF retriever + cosine \hfill (5 marks)}
+\begin{lstlisting}[language=Python]
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+vec = TfidfVectorizer(stop_words="english")
+doc_vectors = vec.fit_transform(TEXTS)        # fit on the corpus
+q_vec = vec.transform([query])                # transform, do NOT re-fit
+sims = cosine_similarity(q_vec, doc_vectors)[0]
+top3 = np.argsort(-sims)[:3]                   # indices of 3 best docs
+\end{lstlisting}
+\textbf{(b)} Cosine is $\dfrac{a\cdot b}{\lVert a\rVert\,\lVert b\rVert}$. If the vectors are \textbf{L2-normalised} then $\lVert a\rVert=\lVert b\rVert=1$, so the denominator is $1$ and cosine similarity reduces to the plain dot product $a\cdot b$ --- cheaper to compute and rank-equivalent.
+\end{frame}
+
+% ==================================================================
+\section{Part E --- Applied \& production}
+% ==================================================================
+
+\begin{frame}[fragile]{E1 --- time-series split leakage \hfill (2 marks, MCQ)}
+Why not default \texttt{train\_test\_split} on a daily time series?
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{default \texttt{shuffle=True} mixes future rows into training --- leakage}.}
+\begin{itemize}
+  \item A random shuffle puts \emph{future} days in the training set and past days in test, so the model "sees the future" --- scores look great offline, fail live.
+  \item Split by \emph{time} instead: \texttt{train = s.iloc[:n]; test = s.iloc[n:]} (or \texttt{shuffle=False} / \texttt{TimeSeriesSplit}).
+  \item A) speed is irrelevant. C) stratify is for classification. D) the index is not dropped.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{E2 --- the data-acquisition ladder \hfill (2 marks, MCQ)}
+Before scraping a regulator's rates page, you should:
+\medskip
+
+\textbf{Answer: B) \textcolor{cgreen}{check for an official API / data export first; scrape static HTML only as a fallback}.}
+\begin{itemize}
+  \item The rule is "check for an API first": an API/export is more stable, cleaner, and usually explicitly permitted. Scraping is the \emph{last} rung of the ladder.
+  \item A) ignores rate limits / politeness. C) a headless browser is overkill for static HTML. D) \texttt{robots.txt} and Terms of Service still apply to public pages.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{E3 --- Holt-Winters forecast + MAE \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
+
+fit = ExponentialSmoothing(
+    train, trend="add", seasonal="add", seasonal_periods=7,
+    initialization_method="estimated",
+).fit()
+
+fc = fit.forecast(h)                    # h steps ahead
+mae = (test - fc).abs().mean()          # mean absolute error
+\end{lstlisting}
+\begin{itemize}\footnotesize
+  \item \texttt{seasonal\_periods=7} = weekly cycle; additive trend + additive seasonal = "triple exponential smoothing".
+  \item \texttt{forecast(h)} extends past the training window; align \texttt{test} and \texttt{fc} on the same index.
+  \item MAE $= \frac{1}{n}\sum |y-\hat y|$; compare against a naive/seasonal-naive baseline to judge lift.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{E4 --- \texttt{retry} backoff decorator \hfill (4 marks)}
+\begin{lstlisting}[language=Python]
+import time, functools
+
+def retry(attempts=3, base_delay=0.5, backoff=2.0):
+    def decorator(func):
+        @functools.wraps(func)              # preserve name/docstring
+        def wrapper(*args, **kwargs):
+            delay = base_delay
+            for attempt in range(1, attempts + 1):
+                try:
+                    return func(*args, **kwargs)
+                except Exception:
+                    if attempt == attempts:  # last try: give up
+                        raise
+                    time.sleep(delay)
+                    delay *= backoff         # exponential
+        return wrapper
+    return decorator
+\end{lstlisting}
+\footnotesize Three nested layers (args $\to$ func $\to$ call). Re-raise on the final attempt. In production: cap the delay and add jitter, and only retry \emph{transient} errors.
+\end{frame}
+
+\begin{frame}[fragile]{E5 --- guard \texttt{None.text} \hfill (3 marks, debug)}
+\begin{lstlisting}[language=Python]
+title = soup.find("span", class_="merchant").text   # AttributeError if missing
+\end{lstlisting}
+\textbf{Cause:} \texttt{find} returns \texttt{None} when no matching tag exists, and \texttt{None.text} raises. Capture the node, test it, then read:
+\begin{lstlisting}[language=Python]
+node = soup.find("span", class_="merchant")
+title = node.get_text(strip=True) if node else None
+\end{lstlisting}
+\footnotesize \texttt{get\_text(strip=True)} also trims whitespace. Same discipline for \texttt{select\_one} / attribute access at any scraping boundary.
+\end{frame}
+
+\begin{frame}[fragile]{E6 --- robots check + table scrape \hfill (5 marks)}
+\begin{lstlisting}[language=Python]
+from urllib import robotparser
+from bs4 import BeautifulSoup
+import requests
+
+rp = robotparser.RobotFileParser()
+rp.set_url(URL.rsplit("/", 1)[0] + "/robots.txt")
+rp.read()
+
+rows = []
+if rp.can_fetch(UA, URL):                       # (a) allowed?
+    html = requests.get(URL, headers={"User-Agent": UA}, timeout=8).text
+    soup = BeautifulSoup(html, "html.parser")
+    for tr in soup.select("table tbody tr"):    # (b) parse rows
+        cells = tr.select("td")
+        if len(cells) >= 2:
+            rows.append({
+                "currency": cells[0].get_text(strip=True),
+                "rate": float(cells[1].get_text(strip=True)),
+            })
+\end{lstlisting}
+\footnotesize \texttt{can\_fetch(UA, URL)} gates the request; guard the cell count before indexing and cast the rate to \texttt{float}.
+\end{frame}
+
+\begin{frame}{Mark scheme summary}
+\begin{center}
+\small
+\begin{tabular}{llc}
+\toprule
+\textbf{Part} & \textbf{Coverage (notebooks)} & \textbf{Marks} \\
+\midrule
+A & Python foundations (NB 1--5) & 20 \\
+B & Data, pandas, viz \& statistics (NB 6--9) & 20 \\
+C & ML, evaluation \& feature engineering (NB 8, 16, 17) & 20 \\
+D & AI engineering: LLM, RAG, agents, MCP, doc AI (NB 10--14, 18) & 20 \\
+E & Applied \& production: TS, NLP, deploy, scraping, capstone (NB 15--22) & 20 \\
+\midrule
+ & \textbf{Total} & \textbf{100} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+\footnotesize 30 questions $\cdot$ MCQ, short-answer, write-the-code, debug, and one applied scenario per part $\cdot$ PayFlow fintech throughout.
+\end{frame}
+
+\end{document}

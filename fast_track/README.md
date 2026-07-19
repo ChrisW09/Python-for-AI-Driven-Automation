@@ -1,6 +1,6 @@
 # 🏎️ Fast Track
 
-> 🧭  [🏠 Course home](../README.md)  ·  [🧪 Module quizzes ▶](../quizzes/)
+> 🧭  [🏠 Course home](../README.md)  ·  [🧪 Module quizzes ▶](../quizzes/)  ·  [📝 Mock exams ▶](./mock_exams/)
 
 The whole curriculum, condensed to its essentials. **22 notebooks. About 26 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, an end-to-end capstone, and web scraping.
 
