@@ -28,6 +28,19 @@
       └──────────────────────────────────────────────────────────┘
 ```
 
+## A one-minute primer: design of experiments & factorial design
+
+**Design of experiments (DoE)** is a ~100-year-old branch of statistics — it grew out of R. A. Fisher's agricultural field trials in the 1920s — for a deceptively hard problem: *when several things can affect an outcome, how do you change them so you can tell what each one actually did?* The naïve approach, **one factor at a time** (hold everything fixed, wiggle a single knob, repeat), is both wasteful and blind — it needs many runs and it can never reveal that two knobs only help *together*. DoE changes the inputs **deliberately and simultaneously** so that each effect can be estimated cleanly, with fewer runs, and separated from random noise.
+
+The workhorse layout is the **factorial design**: choose your **factors** (the knobs), the **levels** each factor can take, and then test **every combination** of levels — the *full factorial*. Three factors at two levels each is a 2×2×2 = **8-configuration** grid. Because every factor is varied against every setting of the others, you can measure:
+
+- **Main effects** — how much each factor moves the outcome on its own, and
+- **Interactions** — whether factors combine (e.g. retrieval helps *only* with the bigger model) — which one-factor-at-a-time testing structurally cannot see.
+
+Add **replication** (running each configuration several times) and statistics can then tell you whether a difference is **real** (significance, p-values) or **big** (effect sizes) rather than just run-to-run noise.
+
+**Why this fits compound AI.** A modern AI pipeline is a stack of knobs — model, retrieval, prompt, temperature, re-ranking — and teams routinely flip several at once, then read a single before/after score that can't attribute the change. Treat the knobs as factors, run the factorial with replication against an LLM judge, and you get a principled answer to *which change moved quality, is it real, and was it worth the cost* — which is exactly the workflow NB 53 builds by hand and CAFE packages.
+
 ## Notebooks at a glance
 
 | # | Notebook | ⏱ Time | Difficulty | What you'll learn |
@@ -76,11 +89,20 @@ cafe doctor          # verify Python + R + LLM access
 cafe run example     # bundled toy study — no API keys needed
 ```
 
-CAFE requires **Python ≥ 3.11** and **R** (the ordinal/logistic mixed models run through R's `ordinal` and `lme4` packages). The self-hostable web platform lives in the repo under `apps/web-app` (`docker compose up`), or click through the read-only [live demo](https://cafe-ai.de/demo).
+CAFE requires **Python ≥ 3.11** and **R** (the ordinal/logistic mixed models run through R's `ordinal` and `lme4` packages).
+
+## The web platform & [cafe-ai.de](https://cafe-ai.de)
+
+Everything NB 53 does in code, CAFE also offers as a **self-hostable web application** (FastAPI backend + React front end) — for teams who'd rather point-and-click than script. Instead of writing the study out in Python, you define its factors, levels, judge, and replication count in the browser, launch the run, and watch **live progress** as each configuration is executed and scored. When it finishes you get the same artefacts you built by hand in the notebook — the factor table with p-values and effect sizes, the interaction terms, and the cost/quality Pareto frontier — rendered as interactive views. The app ships inside the CAFE repo under `apps/web-app` and runs locally with a single `docker compose up`.
+
+Want to see it before installing anything?
+
+- **[cafe-ai.de](https://cafe-ai.de)** is the project's home — a plain-language overview of the framework, with links to the paper, the documentation, and the source.
+- **[cafe-ai.de/demo](https://cafe-ai.de/demo)** is a **read-only live demo** of that platform: click through a completed study end-to-end in your browser, with zero setup and no API keys required.
 
 ## Links
 
-- 🌐 [cafe-ai.de](https://cafe-ai.de) — project site & live demo
+- 🌐 [cafe-ai.de](https://cafe-ai.de) — project site, with a zero-install [live demo](https://cafe-ai.de/demo) of the web platform
 - 📦 [github.com/fabian-lu/Cafe](https://github.com/fabian-lu/Cafe) — source, `cafe-core` package, web platform
 - 📚 [Documentation](https://fabian-lu.github.io/Cafe/) — guides, API reference, tutorial notebooks (RAG, routing, agents)
 - 📄 [arXiv:2607.10380](https://arxiv.org/abs/2607.10380) — Lukassen, Weisser, Kneib & Silbersdorff, *CAFE: A Compound-AI Factorial Evaluation Framework* (yes — the same Weisser who wrote this course)
