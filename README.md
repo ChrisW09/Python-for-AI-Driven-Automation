@@ -522,11 +522,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 ## 👤 About
 
-I am Prof. Dr. Christoph Weisser, Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI), and former Technical Lead Analytics & Artificial Intelligence at BASF. My work focuses on Artificial Intelligence, Generative AI, Business Data Science, and agentic AI systems that bridge research with real-world industrial applications.
+I am Christoph Weisser, Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI), and former Technical Lead Analytics & Artificial Intelligence at BASF. My work focuses on Artificial Intelligence, Generative AI, Business Data Science, and agentic AI systems that bridge research with real-world industrial applications.
 
 Before joining academia, I led international AI initiatives at BASF from strategy through production deployment. Today, I combine research, teaching, open-source software development, and selected industry collaborations to advance the practical application of AI.
 
-I completed the PhD Program in Applied Statistics & Empirical Methods (summa cum laude) at Georg-August-Universität Göttingen and studied at the University of Oxford and the University of St Andrews as a scholar of the Studienstiftung des deutschen Volkes. I regularly publish research in leading journals and international conferences and contribute to open-source AI software.
+I hold two master’s degrees from the University of Oxford and the University of St Andrews and completed the PhD Program in Applied Statistics & Empirical Methods (summa cum laude) at Georg-August-Universität Göttingen. I was awarded scholarships by the Studienstiftung des deutschen Volkes, the Konrad-Adenauer-Stiftung, and the Evangelisches Studienwerk Villigst. I regularly publish research in leading journals and at international conferences and contribute to open-source software.
 
 ---
 
