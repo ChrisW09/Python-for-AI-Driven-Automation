@@ -19,7 +19,7 @@ The first **14 notebooks** are the original linear essentials; notebooks **15–
 | 0 | `00_fast_track_onboarding.ipynb`    | What the fast track is, what's been left out, environment check | ~10 min |
 | 1 | `01_python_basics.ipynb`            | Types, casting, f-strings, defensive string handling | ~50 min |
 | 2 | `02_control_structures.ipynb`       | if/elif, for/while, loop control, early return | ~55 min |
-| 3 | `03_lists_and_dicts.ipynb`          | Lists, tuples, sets, dicts, comprehensions, `defaultdict`, `Counter` | ~60 min |
+| 3 | `03_lists_and_dicts.ipynb`          | Lists, tuples, sets, dicts, comprehensions, `Counter` | ~60 min |
 | 4 | `04_functions.ipynb`                | Functions, default args, `*args/**kwargs`, decorators | ~65 min |
 | 5 | `05_classes_basics.ipynb`           | Classes, `__init__`, `self`, methods | ~60 min |
 | 6 | `06_pandas_fundamentals.ipynb`      | DataFrames, groupby, merge, missing data | ~80 min |
