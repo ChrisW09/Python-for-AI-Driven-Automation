@@ -32,12 +32,12 @@
 
 | # | Notebook | ⏱ Time | Difficulty | Project |
 |---|---|---|---|---|
-| 41 | `47_capstone_analytics.ipynb` | ~75–120 min | Intermediate | A complete analytical study of an AI support-bot deployment — 5 channels × 12 months of ops data → `groupby` analysis, a 2×2 executive dashboard, a Simpson's-paradox regression, channel clustering, and a 5-bullet executive summary |
-| 42 | `48_capstone_ai_assistant.ipynb` | ~90–120 min | Advanced | A complete AI feature — 50 overnight feedback messages classified with structured LLM output, validated, priority-routed, RAG-answered, and shipped as a scheduled daily report with tracing, a cost dashboard, and an eval gate |
+| 47 | `47_capstone_analytics.ipynb` | ~75–120 min | Intermediate | A complete analytical study of an AI support-bot deployment — 5 channels × 12 months of ops data → `groupby` analysis, a 2×2 executive dashboard, a Simpson's-paradox regression, channel clustering, and a 5-bullet executive summary |
+| 48 | `48_capstone_ai_assistant.ipynb` | ~90–120 min | Advanced | A complete AI feature — 50 overnight feedback messages classified with structured LLM output, validated, priority-routed, RAG-answered, and shipped as a scheduled daily report with tracing, a cost dashboard, and an eval gate |
 
 ## Capstone guides
 
-### 41 · Capstone A: AI-Driven Customer Support Analytics — `47_capstone_analytics.ipynb`
+### 47 · Capstone A: AI-Driven Customer Support Analytics — `47_capstone_analytics.ipynb`
 
 You've just joined a SaaS company that introduced an **AI-powered support bot** at the start of the year. The product manager wants one review document that answers four questions: which channels is the bot working well in, is the automation rate improving over the year, what's the trade-off between bot cost and customer satisfaction, and where should the team invest next? You answer with a small, polished analytical report — using everything from the earlier notebooks (variables, control flow, functions, NumPy, pandas, the pandas/seaborn plotting toolkit, scikit-learn) on one coherent business-AI problem. It's the very same support-ops bot you automated a weekly report for in NB 46: there you made it *run*; here you find out *what it's actually doing*.
 
@@ -79,7 +79,7 @@ This is the *analytical* version of "shipping a project". The deliverable is a d
 
 **`support_ops_report.csv`** (in this folder) is the committed reference output of bonus exercises A + B: the final enriched table (60 rows = 5 channels × 12 months) including the engineered `quarter`, `health`, `bot_savings`, and `bot_roi` columns.
 
-### 42 · Capstone B: AI Customer-Feedback Assistant — `48_capstone_ai_assistant.ipynb`
+### 48 · Capstone B: AI Customer-Feedback Assistant — `48_capstone_ai_assistant.ipynb`
 
 The *engineering* twin of NB 47. One concrete artefact carries the whole notebook: an **overnight support inbox** of 50 raw customer messages — refund complaints, bug reports, feature wishes, praise — that has to be turned, by morning, into a PM-ready report. You build the machine that does it: ingest free-form feedback, classify sentiment + topic as structured LLM output, route high-priority items through a small rules engine, ground answers in your own knowledge base via RAG, and produce a daily report that runs on a schedule with cost tracking and an eval guard. These are the *words* behind the *numbers* you analysed in NB 47 — same support operation, the other half of the job.
 
@@ -136,3 +136,7 @@ Congratulations — with NB 1–46 plus these two capstones, the core technical 
 - **Module 16 — Business AI in Practice** (`../16_business_ai/`, NB 49–52) — architecture, governance, and the POC → MVP → Production path for landing AI inside a real organisation.
 
 From there, **what you build is up to you**.
+
+---
+
+📝 **No quiz for this module** — the two capstones *are* the assessment (see the [quizzes README](../quizzes/README.md)). Ship both deliverables and you've passed.

@@ -6,7 +6,7 @@
 
 **Estimated time:** 5–7 hours.
 
-**Prerequisites:** Modules 1 (foundations) and at least one of Modules 5 (ML) or 5 (AI Engineering). NB 50 additionally leans on Module 13 (packaging & scheduling, NB 45–46); NB 49 and NB 51 are flagged "recommended early" and are essentially prerequisite-free. Strong background reading: the NB 47 / 42 capstones — they make the business cases here much more vivid.
+**Prerequisites:** Modules 1 (foundations) and at least one of Modules 5 (ML) or 8 (AI Engineering). NB 50 additionally leans on Module 13 (packaging & scheduling, NB 45–46); NB 49 and NB 51 are flagged "recommended early" and are essentially prerequisite-free. Strong background reading: the NB 47–48 capstones — they make the business cases here much more vivid.
 
 ```
         ┌──────────────────────────────────────────────────────────┐
@@ -33,14 +33,14 @@ One running example ties the four notebooks together: 🏢 **Meridian**, a ficti
 
 | # | Notebook | ⏱ Time | Difficulty | What you'll learn |
 |---|---|---|---|---|
-| 43 | `49_digital_transformation.ipynb` | ~1.5 h | Intermediate | Why AI feels different *this* time, tasks-not-jobs framing, the five-stage maturity model, three change strategies, the four adoption pitfalls, the human side |
-| 44 | `50_architecture_patterns.ipynb` | ~1.5 h | Intermediate | Single-tier → 3-tier → service-oriented → microservices, the end-to-end ML pipeline, and picking the simplest architecture that holds |
-| 45 | `51_ai_assisted_software_development.ipynb` | ~2 h | Intermediate | The 2026 IDE landscape, Git & pull requests, prompt engineering for code, the four failure modes of AI-generated code, when *not* to trust the assistant |
-| 46 | `52_bpm_governance_poc_mvp.ipynb` | ~2.5 h | Intermediate | Embedding AI in the BPM loop, RACI governance, POC → MVP → Production, three case studies, the 10-question readiness checklist |
+| 49 | `49_digital_transformation.ipynb` | ~1.5 h | Intermediate | Why AI feels different *this* time, tasks-not-jobs framing, the five-stage maturity model, three change strategies, the four adoption pitfalls, the human side |
+| 50 | `50_architecture_patterns.ipynb` | ~1.5 h | Intermediate | Single-tier → 3-tier → service-oriented → microservices, the end-to-end ML pipeline, and picking the simplest architecture that holds |
+| 51 | `51_ai_assisted_software_development.ipynb` | ~2 h | Intermediate | The 2026 IDE landscape, Git & pull requests, prompt engineering for code, the four failure modes of AI-generated code, when *not* to trust the assistant |
+| 52 | `52_bpm_governance_poc_mvp.ipynb` | ~2.5 h | Intermediate | Embedding AI in the BPM loop, RACI governance, POC → MVP → Production, three case studies, the 10-question readiness checklist |
 
 ## Notebook guides
 
-### 43 · Digital Transformation & AI-Induced Change — `49_digital_transformation.ipynb`
+### 49 · Digital Transformation & AI-Induced Change — `49_digital_transformation.ipynb`
 
 Module 16 opens with the broadest question: **why is AI suddenly everywhere, and what is it actually changing inside organisations?** The first thing it fixes is the unit of analysis — Meridian's leadership opens a strategy offsite asking *"how many support roles can AI replace?"*, and the notebook shows why the useful question is which **tasks within jobs** AI absorbs first. From there it builds the module's core mental model: don't ask *"which AI project should we fund?"* — ask *"which of our existing tasks should we redesign now that intelligence is a cheap utility?"*
 
@@ -67,7 +67,7 @@ Flagged 📍 **recommended early**: it is prerequisite-free, and the onboarding 
 
 **Practice:** 3 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. a reasoning-based "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐) · 🎁 bonus mini-project: draft your own AI maturity assessment.
 
-### 44 · Architecture Patterns for AI Applications — `50_architecture_patterns.ipynb`
+### 50 · Architecture Patterns for AI Applications — `50_architecture_patterns.ipynb`
 
 Once you know *what* to automate (NB 49), the next question is *how to structure it*. This notebook walks four canonical architectures in order of growing complexity, plus the dedicated end-to-end ML pipeline pattern — each with the specific moment in an organisation's life when it's the right answer, and the specific failure mode when it's the wrong one. Meridian's lone engineer is at the whiteboard asking the notebook's driving question: *what's the simplest architecture that does the job — and how will I know when we've outgrown it?* The mental model: **architecture is the answer to a traffic question, not a fashion question** — user count, volume, and team size pick the pattern, never what sounds modern.
 
@@ -94,7 +94,7 @@ It isn't all prose: a 🔬 runnable, stdlib-only simulation demonstrates **failu
 
 **Practice:** 4 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. an architecture-review "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. cost a microservices migration, review a real-ish ADR).
 
-### 45 · AI-Assisted Software Development — `51_ai_assisted_software_development.ipynb`
+### 51 · AI-Assisted Software Development — `51_ai_assisted_software_development.ipynb`
 
 In 2024–2026, *how* code gets written changed more than in the previous twenty years: a working professional now spends a significant fraction of the day directing an AI assistant rather than typing. This notebook is that workflow — the tools, the habits, and above all the **critical-review discipline** that separates *AI-assisted productivity* from *AI-assisted bug-introduction*. In the running example, Meridian's one engineer builds the 3-tier triage app from NB 50 with an assistant doing much of the typing. The mental model: the assistant is **a fast, confident junior who never says "I don't know"** — so (1) only delegate what you could review, and (2) review every diff before you trust it.
 
@@ -119,7 +119,7 @@ Flagged 📍 **do this early**: the Git + GitHub + Copilot workflow pays off acr
 
 **Practice:** 4 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. a review-style "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. compare two assistants, write a team prompt-style guide) · 🎁 bonus mini-project: set up your AI-assisted workflow for *this* course.
 
-### 46 · BPM Integration, Governance, POC → MVP → Production — `52_bpm_governance_poc_mvp.ipynb`
+### 52 · BPM Integration, Governance, POC → MVP → Production — `52_bpm_governance_poc_mvp.ipynb`
 
 The closing notebook pulls the methodology together. You now know *what* to automate (NB 49), *how to structure it* (NB 50), and *how to build it efficiently* (NB 51) — what Meridian holds at this point is **working code that nobody uses yet**, and this is the last and longest stretch: turning it into a default tool the organisation trusts. The mental model: *POC, MVP, and Production are not three phases of one project — they are three different projects with three different questions* ("Can it work at all?" / "Will real users use it?" / "Can we run it for three years?"), and confusing them is the single most expensive mistake in AI project planning.
 

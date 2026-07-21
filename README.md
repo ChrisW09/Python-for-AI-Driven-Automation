@@ -69,8 +69,9 @@
 - **🔥 A new PyTorch module — deep learning as full lessons.** Tensors → autograd → the five-step training loop (NB 20); the training craft — the two-curve overfitting diagnostic, dropout & weight decay, early stopping, LR schedules, save/load, a live four-bug clinic (NB 21); then embeddings for categorical data, an honest bake-off vs gradient boosting, a sklearn-style wrapper and TorchScript serving (NB 22) — all on the course's own churn data, 100% offline (Colab ships PyTorch preinstalled). The Module 5 appendix mini-track (A1–A3) stays as the condensed reference tour. → [Module 6](./06_pytorch/)
 - **🕸️ A new Web Scraping module.** BeautifulSoup fundamentals (`robots.txt`, politeness, pagination), managed scraping with **Firecrawl**, and the **OpenAlex** open scholarly API — the "check for an open API before you scrape" discipline, all runnable 100% offline. → [Module 4](./04_webscraping/)
 - **🛠️ Hands-on labs for shipping.** [CI/CD & Deployment](./14_cicd/) (Docker, GitHub Actions, DNS/HTTPS — *simulated in pure Python*, no Docker required) and [Django](./17_django/) (a real ORM/views/forms/auth app booted inside a notebook) now ship runnable lab notebooks alongside their mini-books.
+- **📦 A new Containers & Docker module.** What a container actually *is*: images &amp; layers, the overlay filesystem, namespaces &amp; cgroups, and Dockerfile patterns for Python/data-science/GPU workloads — a first-principles mini-book plus a 100% offline lab that rebuilds image layers, the build cache, and OverlayFS in pure Python. The fundamentals deep-dive behind Module 14. → [Module 19](./19_containers_docker/)
 - **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
-- **🧪 Module quizzes.** Sixteen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
+- **🧪 Module quizzes.** Seventeen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
 - **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **322 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
@@ -124,7 +125,7 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The h
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
 | **Scope** | All 18 modules + 13 optional appendices | The essentials, condensed |
-| **Notebooks** | 53 lessons + 5 labs (+ 13 appendices) | 23 (onboarding + 22 lessons) |
+| **Notebooks** | 53 lessons + 7 labs (+ 14 appendices) | 23 (onboarding + 22 lessons) |
 | **Time** | ~125 hours | ~26 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -141,7 +142,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 |---|:---:|---|
 | [**0 · Onboarding**](./00_onboarding/) | — | Setup, orientation, 5-minute demo |
 | [**1 · Foundations**](./01_foundations/) | 1–6 | Variables, control flow, lists, dicts, functions, classes |
-| [**2 · Data Science**](./02_data_science/) | 7–11 | pandas, NumPy, seaborn/matplotlib, statistics, time series |
+| [**2 · Data Science**](./02_data_science/) | 7–11 | pandas, NumPy, seaborn/matplotlib, statistics, regression, time series |
 | [**3 · Real-world I/O**](./03_real_world_io/) | 12–13 | HTTP/APIs, SQL, data validation |
 | [**4 · Web Scraping**](./04_webscraping/) | 14–16 | Scraping fundamentals (BeautifulSoup, `robots.txt`, politeness), Firecrawl managed scraping, and the OpenAlex open scholarly API — all 100% offline |
 | [**5 · Machine Learning**](./05_machine_learning/) | 17–19 | scikit-learn, cross-validation &amp; hyperparameter tuning, model evaluation, feature engineering |
@@ -157,9 +158,10 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**15 · Capstones**](./15_capstones/) | 47–48 | Two end-to-end projects (analytics + AI assistant) |
 | [**16 · Business AI**](./16_business_ai/) | 49–52 | Digital transformation, architecture, AI-assisted dev, governance |
 | [**17 · Optional: Django**](./17_django/) | 2 labs | Wrap a model in a real web app — ORM, admin, forms, a JSON API — a self-contained mini-book + 2 hands-on lab notebooks + runnable example app |
-| [**18 · Optional: Compound AI Evaluation**](./18_compound_ai_evaluation/) | 53 | Which pipeline knob drives quality? Factorial designs, replication, ANOVA attribution &amp; Pareto frontiers with [CAFE](https://cafe-ai.de) |
+| [**18 · Optional: Compound AI Evaluation**](./18_compound_ai_evaluation/) | 53 + 1 lab | Which pipeline knob drives quality? Factorial designs, replication, ANOVA attribution &amp; Pareto frontiers with [CAFE](https://cafe-ai.de) — plus a hands-on lab running a factorial study on the capstone assistant |
+| [**19 · Optional: Containers &amp; Docker**](./19_containers_docker/) | 1 lab | What a container *is*: images &amp; layers, OverlayFS, namespaces &amp; cgroups, data-science Dockerfiles, volumes &amp; networking — a mini-book + offline lab; pairs with Module 14 and can be read before it |
 
-> **13 optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django) and 18 (Compound AI Evaluation)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
+> **14 optional appendices** (classical → deep-learning → foundation-model forecasting, regression analysis, PyTorch, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django), 18 (Compound AI Evaluation) and 19 (Containers &amp; Docker)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26 h).
 
 ---
 
@@ -167,11 +169,12 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `18_compound_ai_evaluation/` | The complete course — modules 0–18 in learning order, lessons 1–53 + 13 appendices |
+| `00_onboarding/` … `19_containers_docker/` | The complete course — modules 0–19 in learning order, lessons 1–53 + 14 appendices |
 | `11_nlp/`, `12_deeptab/` | Optional reference tracks — text analytics (NB 41–43) &amp; deep tabular learning (NB 44) |
 | `14_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + 3 hands-on lab notebooks + a runnable example app |
 | `17_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + 2 hands-on lab notebooks + a runnable example app, ChurnScope |
-| `18_compound_ai_evaluation/` | Optional: Compound AI Evaluation — factorial studies, replication &amp; statistical attribution for AI pipelines with [CAFE](https://github.com/fabian-lu/Cafe) (lesson 53, offline; library install optional) |
+| `18_compound_ai_evaluation/` | Optional: Compound AI Evaluation — factorial studies, replication &amp; statistical attribution for AI pipelines with [CAFE](https://github.com/fabian-lu/Cafe) (lesson 53 + 1 lab, offline; library install optional) |
+| `19_containers_docker/` | Optional: Containers &amp; Docker from first principles — mini-book (8 chapters incl. exercise bank) + 1 offline lab notebook; the fundamentals deep-dive behind Module 14 |
 | `04_webscraping/` | Web scraping — fundamentals (BeautifulSoup, `robots.txt`), Firecrawl, and the OpenAlex open API (lessons 14–16, all offline) |
 | `06_pytorch/` | Deep Learning with PyTorch — tensors → autograd → the training loop, training craft, embeddings + bake-off + serving (lessons 20–22, all offline) |
 | `fast_track/` | The fast track — 22 trimmed notebooks (~26 h): 14 core essentials + 8 breadth extensions |
@@ -335,6 +338,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `A2_forecasting_prophet_libraries.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A2_forecasting_prophet_libraries.ipynb) |
 | `A3_forecasting_deep_learning.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A3_forecasting_deep_learning.ipynb) |
 | `A4_forecasting_foundation_models.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A4_forecasting_foundation_models.ipynb) |
+| `A5_regression_analysis.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A5_regression_analysis.ipynb) |
 
 ### 3 · Real-world I/O
 
@@ -471,6 +475,13 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | Notebook | Open |
 |---|---|
 | `53_compound_ai_evaluation_cafe.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/18_compound_ai_evaluation/53_compound_ai_evaluation_cafe.ipynb) |
+| `lab01_factorial_capstone_eval.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/18_compound_ai_evaluation/lab01_factorial_capstone_eval.ipynb) |
+
+### 19 · Optional: Containers &amp; Docker
+
+| Notebook | Open |
+|---|---|
+| `lab01_container_anatomy.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/19_containers_docker/lab01_container_anatomy.ipynb) |
 
 ### 🏎️ Fast track
 
@@ -520,6 +531,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_16_business_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_16_business_ai.ipynb) |
 | `quiz_17_django.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_17_django.ipynb) |
 | `quiz_18_compound_ai_evaluation.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_18_compound_ai_evaluation.ipynb) |
+| `quiz_19_containers_docker.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_19_containers_docker.ipynb) |
 
 ---
 

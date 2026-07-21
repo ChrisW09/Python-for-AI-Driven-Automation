@@ -4,7 +4,7 @@
 
 **Goal:** Master the library stack that powers every analytical Python codebase — pandas, NumPy, seaborn/matplotlib, statsmodels — plus the statistics you need to interpret what they show you.
 
-**Estimated time:** 8–10 hours of focused study (core lessons 7–11; the optional forecasting appendices add ~4–5 hours more).
+**Estimated time:** 8–10 hours of focused study (core lessons 7–11; the optional appendices add ~5–6 hours more).
 
 **Prerequisites:** Module 1 (functions, comprehensions).
 
@@ -19,6 +19,8 @@
                           (NB 10 — making
                            sense of the numbers)
                                   │
+                                  ├──▶  (optional deep-dive)
+                                  │     Regression analysis (A5)
                                   ▼
                             Time series
                           (NB 11 — forecasting)
@@ -41,7 +43,7 @@
 
 ## Optional appendices at a glance
 
-The A-series is an optional specialised forecasting track that deepens Notebook 11. Appendices are written in *reference style* — demos of real libraries rather than fully scaffolded lessons — and every one runs end-to-end offline via a built-in stand-in; installing the real library just swaps the stand-in for the real thing.
+The A-series is an optional deep-dive track. A1–A4 form a specialised forecasting sequence that deepens Notebook 11; A5 deepens Notebook 10's statistics into full regression analysis. Appendices are written in *reference style* — demos rather than fully scaffolded lessons — and every one runs end-to-end offline (A1–A4 via built-in stand-ins for optional libraries; A5 needs nothing beyond the bundled requirements).
 
 | Appendix | Notebook | ⏱ Time | Focus |
 |---|---|---|---|
@@ -49,6 +51,7 @@ The A-series is an optional specialised forecasting track that deepens Notebook 
 | A2 | `A2_forecasting_prophet_libraries.ipynb` | ~60–75 min | Prophet, NeuralProphet, sktime, Darts, Nixtla — when to reach for which |
 | A3 | `A3_forecasting_deep_learning.ipynb` | ~75–90 min | LSTM + Transformer forecasters in PyTorch, from scratch |
 | A4 | `A4_forecasting_foundation_models.ipynb` | ~45–60 min | TimesFM, Chronos, TabPFN-TS — zero-shot pretrained forecasters |
+| A5 | `A5_regression_analysis.ipynb` | ~60–75 min | Simple → multiple OLS regression with statsmodels — confounding, diagnostics, robust errors, prediction intervals (pairs with NB 10) |
 
 ## Notebook guides
 
@@ -178,9 +181,15 @@ In 2024 forecasting had its *ChatGPT moment*: pretrained foundation models that 
 
 **Demos:** `timesfm`, `chronos-forecasting`, `tabpfn-time-series` — each shown as ready-to-uncomment API recipes. Runs offline via §6's stand-in: a strong classical baseline compared against an "ensemble of priors" proxy that mimics the pretrained-then-condition behaviour, plus a tiny offline "history in, forecast out, no fitting" analogy. **Practice:** 3 ✋ checkpoints · 2 🧪 exercises (a "cold-start" sweep; a hybrid foundation-forecast + residual-GBM model).
 
+### A5 · Regression Analysis: From Correlation to Explanation — `A5_regression_analysis.ipynb`
+
+The statistics deep-dive behind Notebook 10, and the bridge to Module 5: **which factors actually drive a number, and by how much per unit?** The notebook simulates the monthly bills of 300 customers of an LLM API business from a *known* formula — so every regression result can be graded against ground truth. The arc: correlation flags the drivers but can't price or untangle them; a one-predictor fit gives a confidently *wrong* price (omitted-variable bias, demonstrated live); multiple regression with dummy variables recovers the planted coefficients and correctly zeroes a decoy predictor — but its naive CIs miss 3 of the 7 planted truths, because the noise is (deliberately) heteroscedastic. Residual diagnostics catch the funnel, robust **HC3 errors** repair the intervals — all 7 truths recovered — and the notebook closes with VIF, confidence vs prediction intervals, the statsmodels-vs-sklearn mindset split, and the five classical regression mistakes.
+
+**Demos:** `statsmodels` (formula API, robust SEs, Breusch–Pagan) + `scikit-learn` — both bundled with the course requirements, so this appendix runs fully offline with no extra installs. **Practice:** 4 ✋ checkpoints · 3 🧪 exercises (subgroup refit; interaction terms; bootstrap CI for a coefficient) · 🎁 mini-project: a reusable `spend_driver_report()` with automatic heteroscedasticity handling.
+
 ## How these notebooks work
 
-Every lesson opens with a metadata line (module · estimated time · difficulty) and a 🎯 objectives list, then teaches in short sections punctuated by **✋ Quick exercises (~2 min)** with collapsible solutions, "🔬 What actually happens" internals and 🔮 predict-the-output moments. Each core lesson ends with 🧪 practice exercises (⭐-rated, including a broken-code "Debug me 🐞"), 🧠 stretch exercises, a 🎁 bonus mini-project, key takeaways and a self-assessment. Everything runs **100% offline** — datasets are generated in-notebook or shipped in `../data/`. The A1–A4 appendices are optional reference-style demos of real forecasting libraries (Prophet, PyTorch, TimesFM, Chronos, …): they run offline via built-in stand-ins, and installing the real library (heavy deps are commented out at the bottom of `requirements.txt`) is optional.
+Every lesson opens with a metadata line (module · estimated time · difficulty) and a 🎯 objectives list, then teaches in short sections punctuated by **✋ Quick exercises (~2 min)** with collapsible solutions, "🔬 What actually happens" internals and 🔮 predict-the-output moments. Each core lesson ends with 🧪 practice exercises (⭐-rated, including a broken-code "Debug me 🐞"), 🧠 stretch exercises, a 🎁 bonus mini-project, key takeaways and a self-assessment. Everything runs **100% offline** — datasets are generated in-notebook or shipped in `../data/`. The A-series appendices are optional reference-style deep-dives: A1–A4 demo real forecasting libraries (Prophet, PyTorch, TimesFM, Chronos, …) via built-in stand-ins, with the real library installs optional (heavy deps are commented out at the bottom of `requirements.txt`); A5 deepens Notebook 10 into regression analysis using only bundled libraries.
 
 ## Where next
 

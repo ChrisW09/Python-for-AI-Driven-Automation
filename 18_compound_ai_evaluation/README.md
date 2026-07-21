@@ -1,10 +1,10 @@
 # Module 18 — Compound AI Evaluation with CAFE (optional)
 
-> 🧭  [◀ Django](../17_django/)  ·  [🏠 Course home](../README.md)
+> 🧭  [◀ Django](../17_django/)  ·  [🏠 Course home](../README.md)  ·  [Containers & Docker ▶](../19_containers_docker/)
 
 **Goal:** Learn to answer the question every AI team eventually faces: *we changed the pipeline and quality moved — **which change actually did it, and is the difference real?*** The tool for that question is a century of **design of experiments** (factorial designs, replication, mixed-effects models) pointed at compound AI systems — and **[CAFE](https://github.com/fabian-lu/Cafe)** (*Compound-AI Factorial Evaluation*, [cafe-ai.de](https://cafe-ai.de)), the open-source library that packages the whole workflow: factorial designs over your pipeline's knobs, an LLM-judge layer, scale-correct statistical attribution, cost/quality Pareto frontiers, and a self-hostable web platform.
 
-**Estimated time:** 1.5–2 hours.
+**Estimated time:** 1.5–2 hours for the lesson notebook, plus 60–75 minutes for the hands-on lab.
 
 **Prerequisites:** Module 8 — especially NB 32 (evaluation & observability: golden datasets, LLM-as-judge) and NB 29 (retrieval). The statistics (ANOVA, p-values, effect sizes) are introduced from scratch, but NB 10's statistics primer makes them land faster. Module 16's Meridian company returns as the running example.
 
@@ -46,6 +46,7 @@ Add **replication** (running each configuration several times) and statistics ca
 | # | Notebook | ⏱ Time | Difficulty | What you'll learn |
 |---|---|---|---|---|
 | 53 | `53_compound_ai_evaluation_cafe.ipynb` | ~1.5 h | Intermediate–Advanced | The attribution problem, factors/levels/configurations, replication vs LLM noise, ANOVA with interactions and effect sizes, ordinal-rubric caveats (CLMM), cost/quality Pareto frontiers, and the CAFE library |
+| Lab 01 | `lab01_factorial_capstone_eval.ipynb` | 60–75 min | Intermediate–Advanced | Hands-on: run the full factorial-evaluation loop on the Module 15 capstone assistant — design, replication, ANOVA attribution, Pareto frontier, ship decision |
 
 ## Notebook guide
 
@@ -76,9 +77,19 @@ The notebook builds the entire answer **by hand, 100% offline** on a mock compou
 
 Plus the standard course closing: 🧪 practice exercises (including a 🐞 debug-me on outcome-conditioning bias), 🧠 stretch exercises A–D, a 🎁 bonus mini-project (a full CAFE study on a real pipeline), and the ✅ self-assessment.
 
+## Hands-on lab
+
+The lesson explains the method; the **lab notebook** makes you run it end-to-end on something you built yourself — the AI Customer-Feedback Assistant from the Module 15 capstone (`../15_capstones/48_capstone_ai_assistant.ipynb`). Like every notebook in this module it runs **100% offline** (deterministic seeded mocks, no API keys), so you can watch every moving part of a factorial study in slow motion before pointing the machinery at a real provider.
+
+| Notebook | ⏱ Time | Companion lesson | What you do |
+|---|---|---|---|
+| [`lab01_factorial_capstone_eval.ipynb`](lab01_factorial_capstone_eval.ipynb) | 60–75 min | NB 53 | Rebuild the capstone's feedback-assistant pipeline in compact form, turn three upgrade proposals into a 2×2×2 factorial (`prompt_style` × `retrieval_k` × `model_tier`), run 800 judged runs with replication, demonstrate single-run winner instability on your own data, attribute quality with ANOVA + partial η² (including a retrieval×tier interaction), build the cost/quality Pareto frontier, and issue an evidence-backed ship decision — closing with the same study expressed as CAFE config |
+
+The lab embeds ✋ quick checkpoints, 🧪 practice exercises (including a 🐞 debug-me on pseudo-replication), and a 🎁 mini-project (a two-metric study of the whole pipeline), in the same style as the numbered course lessons.
+
 ## Installing CAFE (optional)
 
-The notebook runs end-to-end **without** CAFE — the library section is guarded and skips gracefully. To run the real thing:
+Both notebooks (lesson and lab) run end-to-end **without** CAFE — the library sections are guarded and skip gracefully. To run the real thing:
 
 ```bash
 git clone https://github.com/fabian-lu/Cafe.git && cd Cafe

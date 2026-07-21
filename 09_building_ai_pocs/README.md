@@ -25,14 +25,14 @@ The lecture block opens with **NB 27 — LLM Fundamentals** (Transformer, tokens
 
 | # | Notebook | ⏱ Time | Difficulty | What you'll build |
 |---|---|---|---|---|
-| 27 | `33_from_setup_to_first_poc.ipynb` | ~2.5 h | Intermediate | VS Code + Copilot Agent Mode setup, the vibe-coding loop, a Hello-Streamlit POC, and a parse → validate → retry structured-output loop |
-| 28 | `34_three_pocs_growing_complexity.ipynb` | ~4 h | Advanced | ChurnScope three ways: Streamlit CSV app → 3-tier app (FastAPI + SQLite) → XGBoost churn pipeline, plus a microservices split (POC 3½) |
-| 29 | `35_rag_pipeline_deep_dive.ipynb` | ~3 h | Intermediate / Advanced | The full RAG pipeline step by step, an offline mini-RAG in ~40 lines, and a chat-with-your-PDF Streamlit POC |
-| 30 | `36_vector_db_and_agentic_ai.ipynb` | ~3 h | Advanced | A Chroma-backed semantic product search and a command-line ReAct agent |
+| 33 | `33_from_setup_to_first_poc.ipynb` | ~2.5 h | Intermediate | VS Code + Copilot Agent Mode setup, the vibe-coding loop, a Hello-Streamlit POC, and a parse → validate → retry structured-output loop |
+| 34 | `34_three_pocs_growing_complexity.ipynb` | ~4 h | Advanced | ChurnScope three ways: Streamlit CSV app → 3-tier app (FastAPI + SQLite) → XGBoost churn pipeline, plus a microservices split (POC 3½) |
+| 35 | `35_rag_pipeline_deep_dive.ipynb` | ~3 h | Intermediate / Advanced | The full RAG pipeline step by step, an offline mini-RAG in ~40 lines, and a chat-with-your-PDF Streamlit POC |
+| 36 | `36_vector_db_and_agentic_ai.ipynb` | ~3 h | Advanced | A Chroma-backed semantic product search and a command-line ReAct agent |
 
 ## Notebook guides
 
-### 27 · From Setup to First POC — `33_from_setup_to_first_poc.ipynb`
+### 33 · From Setup to First POC — `33_from_setup_to_first_poc.ipynb`
 
 The bridge between the theory of NB 27 and the hands-on POCs of NB 34–36. You set up VS Code with GitHub Copilot Agent Mode and learn the **vibe-coding loop** that powers the rest of the module: describe the goal in natural language → AI generates code → you review and run → describe the next adjustment. The module's mental model is set here — *you are the architect, the AI is the builder* — and the running example **ChurnScope** starts as a "Hello, Streamlit" skeleton built from a single Agent-Mode prompt.
 
@@ -56,7 +56,7 @@ Beyond setup, the notebook covers Copilot's four modes (Inline, Ask, Plan, Agent
 
 **Files/datasets:** none read in-notebook — the structured-output demo uses an offline deterministic mock LLM, no API key.
 
-### 28 · Three POCs of Growing Complexity — `34_three_pocs_growing_complexity.ipynb`
+### 34 · Three POCs of Growing Complexity — `34_three_pocs_growing_complexity.ipynb`
 
 The workshop notebook of Module 9: ChurnScope gets built for real, three times, each POC from a single Copilot Agent-Mode prompt, with the architecture climbing one rung at a time. **POC 1** is a single Streamlit app for CSV analysis (one process, one file); **POC 2** refactors the same use case into a 3-tier architecture (Streamlit + FastAPI + SQLite — two processes, three concerns); **POC 3** extends it with an XGBoost churn-prediction model (full train → serve → predict → log pipeline). A bonus **POC 3½** actually splits the model out into its own microservice, so you run three processes and see what the gateway-as-client change costs.
 
@@ -79,7 +79,7 @@ The notebook also introduces the *other* axis of growing complexity — LLM call
 
 **Files/datasets:** none read in-notebook — the chain demo uses an offline stdlib-only mock LLM, no API key; POC 3's churn dataset is synthetic and generated inside the POC.
 
-### 29 · RAG Pipeline Deep Dive — `35_rag_pipeline_deep_dive.ipynb`
+### 35 · RAG Pipeline Deep Dive — `35_rag_pipeline_deep_dive.ipynb`
 
 The applied deep-dive companion to NB 29 (Embeddings & Retrieval): where NB 29 introduces vectors and similarity, this notebook walks the full production RAG pipeline, names every trade-off knob, and ends with a runnable Streamlit POC that lets you **chat with a PDF**. The running scenario: ChurnScope can *score* at-risk customers (NB 34), but the retention team's follow-up — "what do we actually do about it?" — lives in a 40-page retention-playbook PDF the LLM has never seen. RAG turns the closed-book exam into an open-book one, with a **librarian** (the retriever) finding the right page before the model writes a word.
 
@@ -104,7 +104,7 @@ The pipeline is dissected step by step — ingestion, chunking strategies, embed
 
 **Files/datasets:** none read in-notebook — the mini-RAG uses hard-coded deterministic embeddings (a `sentence-transformers` snippet is shown as a non-executed reference); the playbook PDF only enters via the Agent-Mode POC you build in VS Code.
 
-### 30 · Vector Databases & Agentic AI — `36_vector_db_and_agentic_ai.ipynb`
+### 36 · Vector Databases & Agentic AI — `36_vector_db_and_agentic_ai.ipynb`
 
 The final notebook of Module 9 covers the *infrastructure* layer (vector databases) and the *behaviour* layer (agentic AI) — together they take the RAG POC from "one-PDF demo" to "actually useful AI system", framed by the three-level ladder **Just-LLM → LLM + RAG → LLM + RAG + Agent**. For ChurnScope this ties off two loose ends: NB 35's librarian kept its library in memory (restart = index gone), so Part A gives it a persistent, scalable shelf; and ChurnScope so far only *answers*, so Part B gives it the ability to *act*.
 

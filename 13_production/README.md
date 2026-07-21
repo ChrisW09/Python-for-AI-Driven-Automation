@@ -28,12 +28,12 @@
 
 | # | Notebook | ⏱ Time | Difficulty | What you'll build |
 |---|---|---|---|---|
-| 39 | `45_from_notebook_to_project.ipynb` | ~50–70 min | Intermediate | `costkit` — a packaged, tested, importable library with a `src/` layout, `pyproject.toml`, pytest suite, and `argparse` CLI, built file-by-file in `/tmp` |
-| 40 | `46_scheduling_orchestration.ipynb` | ~45–60 min | Intermediate | A weekly support-ops report that runs itself — task function, scheduler loop, idempotency, retries, and alerts, plus ready-to-ship cron / systemd / GitHub Actions / Prefect snippets |
+| 45 | `45_from_notebook_to_project.ipynb` | ~50–70 min | Intermediate | `costkit` — a packaged, tested, importable library with a `src/` layout, `pyproject.toml`, pytest suite, and `argparse` CLI, built file-by-file in `/tmp` |
+| 46 | `46_scheduling_orchestration.ipynb` | ~45–60 min | Intermediate | A weekly support-ops report that runs itself — task function, scheduler loop, idempotency, retries, and alerts, plus ready-to-ship cron / systemd / GitHub Actions / Prefect snippets |
 
 ## Notebook guides
 
-### 39 · From Notebook to Project — `45_from_notebook_to_project.ipynb`
+### 45 · From Notebook to Project — `45_from_notebook_to_project.ipynb`
 
 A notebook is a great place to *figure things out* and a terrible place to *deploy* from. This lesson follows one concrete story the whole way through: the loose helpers you've been copy-pasting between notebooks (`call_cost`, `safe_get`, `parse_number`) get assembled — in front of you, on the real filesystem under `/tmp` — into a shippable package called **`costkit`**, a cost toolkit for LLM usage. The mental model is "from a messy workbench to a labelled toolbox": every function gets a drawer (`cost.py`, `parsing.py`), the lid (`__init__.py`) lists the public API, and anyone can carry the whole box to CI, a server, or a teammate's laptop.
 
@@ -67,7 +67,7 @@ By the last cell the project has a standard folder layout, a `pyproject.toml` wi
 
 **Tools covered:** `src/` layout · `pyproject.toml` (setuptools) · `pytest` (`approx`, `raises`, `parametrize`) · `argparse` (with `typer`/`click` as the step-up) · `mypy` · `ruff` · `venv` + editable installs.
 
-### 40 · Scheduling and Automation Orchestration — `46_scheduling_orchestration.ipynb`
+### 46 · Scheduling and Automation Orchestration — `46_scheduling_orchestration.ipynb`
 
 You have a package (NB 45); the last mile of automation is making it run **without a human present**. One concrete job carries the whole notebook: a **weekly support-ops report** that every Monday at 6 a.m. fetches last week's ticket numbers, computes the share handled automatically, writes a summary file, and pings the team in Slack — the same scenario Capstone A (NB 47) picks up later. The mental model is "hire a night-shift robot": it needs a job description (the task function), a shift schedule (cron / systemd / Prefect), the habit of writing down what it did (logging), and the sense to phone you when something breaks (alerts) — without re-doing work it already finished (idempotency).
 
@@ -113,7 +113,7 @@ Both lessons run **100% offline**, like every notebook in this course: NB 45 cre
 
 ## Where next
 
-→ **Module 15 — Capstones** (`../15_capstones/47_capstone_analytics.ipynb`)
+→ **Module 14 — CI/CD & Deployment** (`../14_cicd/README.md`) — you learned packaging and scheduling here; Module 14 takes the same app through Docker, pipelines, and a live server. Then the **Capstones** (`../15_capstones/47_capstone_analytics.ipynb`).
 
 ---
 
