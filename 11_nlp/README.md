@@ -38,7 +38,7 @@
 
 ## Notebook guides
 
-### 35 · Topic Modeling with BERTopic — `41_topic_modeling_bertopic.ipynb`
+### 41 · Topic Modeling with BERTopic — `41_topic_modeling_bertopic.ipynb`
 
 You have 50,000 support tickets, a year of product reviews, or 3,000 free-text survey answers — nobody will read them all. Topic modeling builds the *map*: which themes exist, how big each cluster is, and where the outliers hide. The notebook's running mental model is the **automatic librarian** — group notes by *meaning*, shelve them, write a spine label per shelf, and keep a "misc" cart (topic `-1`) for notes that fit nowhere.
 
@@ -66,7 +66,7 @@ That one line pulls a surprisingly large stack (expect a few hundred MB); the de
 
 **Datasets:** 36 short inline documents across five deliberately obvious themes — cloud computing, customer churn, healthcare, sports, cooking — so you can eyeball whether the model recovered them. No files, no downloads.
 
-### 36 · Topic Modeling with STREAM — `42_topic_modeling_stream.ipynb`
+### 42 · Topic Modeling with STREAM — `42_topic_modeling_stream.ipynb`
 
 NB 41 gave you one excellent, opinionated pipeline. But which topic model is best for *your* pile of text? **STREAM** ([`stream-topic`](https://github.com/AnFreTh/STREAM)) is a **unified API over many topic models** — classical (`LDA`, `NMF`), neural (`ETM`, `CTM`, `ProdLDA`, `NeuralLDA`, `NSTM`, `TNTM`, `WordCluTM`), and clustering/embedding (`KmeansTM`, `CEDC`, `DCTE`, `SomTM`, `CBC`) — all trained with the same `model.fit(dataset, n_topics=…)` → `model.get_topics()` calls. The mental model is a **test kitchen**: same ingredients (your corpus), swappable chefs (models), and a consistent panel of judges (the evaluation metrics), so you can say which recipe was *actually* better.
 
@@ -87,7 +87,7 @@ The bake-off runs on a voice-of-customer corpus: fit `KmeansTM`, swap to `ProdLD
 
 **Datasets:** ~36 short inline business documents — product reviews, support tickets, and finance/news snippets — with three baked-in themes (shipping/delivery, app/login/technical, price/billing). With the real library, the same docs are wrapped in a `TMDataset` (falling back to the bundled `BBC_News` corpus if that fails).
 
-### 37 · Sentiment Analysis — `43_sentiment_analysis.ipynb`
+### 43 · Sentiment Analysis — `43_sentiment_analysis.ipynb`
 
 Sentiment analysis turns free text into a *signal you can aggregate* — positive/negative/neutral or a polarity score — the thing that answers "did sentiment drop after the price change?" or "route this angry ticket to a human now." The running mental model is the **sentiment ladder**: rung 1 a **lexicon** (VADER — no training, instant, transparent), rung 2 **classical ML** (TF-IDF + Logistic Regression — the workhorse, shockingly hard to beat in-domain), rung 3 a **transformer** (context-aware, strongest, heaviest). Golden rule: *climb only as high as the problem forces you to.*
 

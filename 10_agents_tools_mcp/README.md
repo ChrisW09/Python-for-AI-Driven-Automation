@@ -36,7 +36,7 @@ One running example carries the whole module: an **AI support copilot** for a Sa
 
 ## Notebook guides
 
-### 31 · Agent Architectures: Loops, Planning & Reflection — `37_agent_architectures.ipynb`
+### 37 · Agent Architectures: Loops, Planning & Reflection — `37_agent_architectures.ipynb`
 
 Notebook 30 introduced the **call → execute → return** loop; this lesson goes professional. The mental model for the whole module: *an agent is an LLM sitting inside a `while`-loop with a memory and a budget* — the clever model isn't the architecture, the loop around it is. You build the support copilot's brain against a tiny in-memory world (channel-level CSAT scores plus a calculator) and a deterministic `policy()` stand-in that makes the same kind of decisions a real model would, so every run is reproducible.
 
@@ -65,7 +65,7 @@ Concretely you implement four escalating architectures — `react_agent()` (Thou
 
 **Files/datasets:** none — all data is in-memory; the "brain" is an offline deterministic stand-in, no API key needed (real `anthropic` client shown as a commented reference).
 
-### 32 · Designing Robust Tools — `38_designing_robust_tools.ipynb`
+### 38 · Designing Robust Tools — `38_designing_robust_tools.ipynb`
 
 An agent is only as good as its tools. The copilot gains one consequential new tool — `estimate_refund(order_id, pct)`, a tool that **moves money** — and it becomes the stress test for the whole lesson: what happens when the model sends `pct: "fifty"`, forgets `order_id`, or asks for `pct: 9999`? Mental model: *the schema is the contract you advertise; the validator is the bouncer at the door* — every argument the model sends is untrusted input.
 
@@ -93,7 +93,7 @@ You build the full defensive stack: a `Tool` dataclass (name, description, JSON-
 
 **Files/datasets:** none — everything runs offline on in-memory data, no API key needed.
 
-### 33 · The Model Context Protocol (MCP) — `39_model_context_protocol.ipynb`
+### 39 · The Model Context Protocol (MCP) — `39_model_context_protocol.ipynb`
 
 Every framework wires tools *differently* — an OpenAI tool, a LangChain tool, and a Claude tool are described in three incompatible ways. **MCP**, open-sourced by Anthropic in late 2024, is the single open standard that fixes this: write one MCP **server** and it works in Claude Desktop, Claude Code, and any other MCP host. Mental model: *MCP is a USB-C port for AI* — it turns M×N bespoke glue into M+N standard plugs, and the plug is just two messages: "what can you do?" (discover) and "do this now" (invoke).
 
@@ -122,7 +122,7 @@ This notebook builds a **working MCP server and client from scratch, in process*
 
 **Files/datasets:** none — server data (tickets, CSAT) lives in-memory and the protocol runs in process, no API key needed; the real `mcp` SDK (`pip install "mcp[cli]"`) and host configs appear as commented references.
 
-### 34 · Multi-Agent Systems & Capstone — `40_multi_agent_systems.ipynb`
+### 40 · Multi-Agent Systems & Capstone — `40_multi_agent_systems.ipynb`
 
 Some tasks have distinct sub-jobs — analyse, then draft, then check — that are cleaner and more testable when handled by **specialist agents** under an **orchestrator**. Mental model: *a multi-agent system is a team* — the orchestrator is the team lead, the "wiring" is just messages (text or dicts) passed between LLM calls, and you hire a new specialist only when the role is genuinely different. The lesson is honest about cost: it opens with a decision table for when one agent is enough.
 

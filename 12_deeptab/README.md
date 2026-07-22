@@ -31,7 +31,7 @@
 
 ## Notebook guide
 
-### 38 · DeepTab: Deep Learning for Tabular Data — `44_deeptab_tabular_deep_learning.ipynb`
+### 44 · DeepTab: Deep Learning for Tabular Data — `44_deeptab_tabular_deep_learning.ipynb`
 
 For two decades, tabular data — the spreadsheets, transaction logs and feature stores that run most of a business — has belonged to gradient-boosted trees. The notebook opens by taking that seriously: on the median tabular benchmark, XGBoost/LightGBM are still the thing to beat. But architectures designed *specifically for tables* — FT-Transformer, SAINT, NODE, TabM, ResNet, and sequence models such as Mamba — now match or beat boosting on large, complex datasets, and they natively do things trees cannot: predict full distributions, learn reusable row embeddings, fuse tables with text/image towers, and transfer-learn across tables. **DeepTab** (from the OpenTabular project) wraps 15 stable models behind a single scikit-learn `BaseEstimator` API, each shipping as a matching `<Name>Classifier` / `<Name>Regressor` / `<Name>LSS` trio.
 

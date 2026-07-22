@@ -52,7 +52,7 @@ A five-notebook deep-dive track that picks up where scikit-learn stops. Appendic
 
 ## Notebook guides
 
-### 14 · Scikit-Learn Basics: Customer Churn and Feedback Classification — `17_sklearn_basics.ipynb`
+### 17 · Scikit-Learn Basics: Customer Churn and Feedback Classification — `17_sklearn_basics.ipynb`
 
 This is where Modules 1–3 converge: NumPy gave you arrays, pandas tables, matplotlib charts — scikit-learn gives you a uniform toolkit for training, evaluating and using models. Rather than the classic Iris/California-housing demos, the notebook follows **one synthetic SaaS company through two questions about the same customers**: *who is about to leave?* (churn classification, Project 1) and *how happy is this customer?* (satisfaction regression, Project 2). Running the identical seven-step workflow twice is the point — once internalised, every new ML problem is a variation on it.
 
@@ -72,7 +72,7 @@ Two mental models carry the whole notebook: every estimator is *the same machine
 
 **Datasets:** a synthetic SaaS customer table generated in-notebook (a latent "happiness" drives both the NPS score and the churn label — so classification and regression share one dataset); sklearn's built-in **Iris** and **Wine** appear only in stretch exercises C and D.
 
-### 15 · Model Evaluation Deep Dive — `18_model_evaluation.ipynb`
+### 18 · Model Evaluation Deep Dive — `18_model_evaluation.ipynb`
 
 NB 17 looked at accuracy; that's enough to get started, not enough to ship. This notebook carries the **same churn dataset and the same two models** (logistic regression and random forest) the whole way through and asks one escalating question: *is this model safe to ship?* Each section is a different lens on that question — read the mistakes (confusion matrix), price the mistakes (cost), choose where to act (threshold), check whether the probabilities can be trusted (calibration), and confirm the score wasn't luck (cross-validation).
 
@@ -92,7 +92,7 @@ The mental model: a classifier doesn't hand you a decision, it hands you a **sco
 
 **Datasets:** the synthetic churn dataset recreated exactly from NB 17; sklearn's built-in **breast-cancer** dataset in stretch exercise D.
 
-### 16 · Feature Engineering — `19_feature_engineering.ipynb`
+### 19 · Feature Engineering — `19_feature_engineering.ipynb`
 
 *"Most of what looks like a model problem is actually a feature problem."* A model can only learn what the features tell it, and better features almost always beat a fancier model — at a fraction of the cost. The notebook keeps **one dataset the whole way through** — the SaaS churn customers from NB 17/18, now enriched with a `signup_date` and a `region` — and takes one messy column at a time (a category, a wildly-scaled number, a date, a leaky shortcut) and turns it into something a model can compute with. By the end the individual moves assemble into one leak-free `Pipeline` ready for the honest cross-validation of NB 18.
 

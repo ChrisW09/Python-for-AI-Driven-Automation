@@ -32,7 +32,7 @@ Everything in this module runs **100% offline** — PyTorch is a local library, 
 
 ## Notebook guides
 
-### 50 · PyTorch Fundamentals — `20_pytorch_fundamentals.ipynb`
+### 20 · PyTorch Fundamentals — `20_pytorch_fundamentals.ipynb`
 
 Everything AI-shaped in this course — the LLMs of Module 8, the transformers behind BERTopic, DeepTab — is a neural network trained with gradient descent in PyTorch (or a framework on top of it). This lesson builds the four load-bearing ideas in order — **tensors → autograd → `nn.Module` → the training loop** — each verified with your own eyes (autograd is checked against calculus once, so you trust it forever). The mental model: *training is a thermostat loop* — forward (guess), loss (how wrong?), backward (which way is downhill?), step (nudge every knob), zero (clean slate). It ends on familiar ground: an MLP churn classifier on the NB 17/18 SaaS dataset that has to face a logistic-regression baseline — and roughly ties it, which is the honest result that frames the whole module.
 
@@ -49,7 +49,7 @@ Everything AI-shaped in this course — the LLMs of Module 8, the transformers b
 
 **Offline:** synthetic data generated in-notebook (same seed as NB 17/18); `HAS_TORCH` guard throughout.
 
-### 51 · Training Neural Networks Well — `21_training_neural_networks.ipynb`
+### 21 · Training Neural Networks Well — `21_training_neural_networks.ipynb`
 
 "The loss went down" is a low bar: a network will happily **memorise** the training set and call it learning. This lesson is the craft of catching and preventing that. The mental model: *capacity is a loan; the validation curve is the repayment schedule.* A deliberately oversized network on deliberately tiny data makes overfitting visible (the unforgettable two-curve plot), then each treatment is applied and *watched working*: dropout + weight decay, early stopping with patience and best-weight restore, learning-rate schedules. Around that core, the professional habits: proper train/val/test three-way splits, `Dataset`/`DataLoader` batching, `state_dict` save/load, seeds, device-agnostic code — and a **bug clinic** that runs the four classic failures live (exploding/NaN loss, frozen loss, silent shape broadcasting, forgotten `train()`/`eval()` modes).
 
@@ -66,7 +66,7 @@ Everything AI-shaped in this course — the LLMs of Module 8, the transformers b
 
 **Offline:** same churn data rebuilt in-notebook; `HAS_TORCH` guard throughout.
 
-### 52 · PyTorch in Practice: Embeddings, Baselines & Serving — `22_pytorch_in_practice.ipynb`
+### 22 · PyTorch in Practice: Embeddings, Baselines & Serving — `22_pytorch_in_practice.ipynb`
 
 The business lesson. First, deep learning's genuinely new gift to tabular data: **`nn.Embedding`** turns categories into *learned vectors* — the notebook trains a 2-D region embedding and plots the map the model drew for itself (high-churn markets end up neighbours; nobody told it). Those embeddings join scaled numerics in a **tabular network** — the entity-embeddings architecture behind Module 12's DeepTab — complete with the UNK-at-index-0 convention that survives unseen categories. Then the reckoning: an **honest bake-off** against logistic regression, random forest and `HistGradientBoosting` (spoiler: on 600 near-linear rows the thirty-second baseline wins — and the lesson is *why*, and what would flip it). Finally, shipping: a `TorchTabularClassifier` that speaks fluent sklearn (`fit`/`predict_proba`, `clone`-able, survives `cross_val_score`), the three serving artifacts (weights + scaler + vocab), and TorchScript export — with ONNX/quantization pointers into appendix A3. Closes with the module's decision guide: boosting vs. embeddings vs. TabPFN vs. transfer learning, chosen by problem, not ideology.
 

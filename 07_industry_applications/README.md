@@ -34,7 +34,7 @@
 
 ## Notebook guides
 
-### 17 · Churn, Customer Lifetime Value & Retention Targeting — `23_churn_clv_retention.ipynb`
+### 23 · Churn, Customer Lifetime Value & Retention Targeting — `23_churn_clv_retention.ipynb`
 
 **The business case notebook.** HelpDeskAI, a subscription support-bot platform, sells three plans; finance supplies the monthly fee and gross margin per plan, marketing supplies a retention offer that costs **€60 per customer** and historically saves **~30 %** of the churners it reaches. NB 17 trained the churn classifier and NB 18 evaluated it honestly — this notebook closes the loop that actually matters: compute what a customer is *worth* (the capped geometric-series CLV, `margin × 1/churn`), derive the offer threshold from euros instead of gut feeling, and simulate a **€18,000** retention campaign under three targeting strategies.
 
@@ -60,7 +60,7 @@ Along the way a threshold sweep on six customers shows why the profit-optimal cu
 
 **Datasets:** Synthetic HelpDeskAI customer base — 4,000 subscription customers across Basic/Pro/Enterprise plans, generated inline with a seeded `default_rng`; the campaign simulation draws save outcomes with its own seed. No files needed, fully offline.
 
-### 18 · Fraud & Anomaly Detection — `24_fraud_anomaly_detection.ipynb`
+### 24 · Fraud & Anomaly Detection — `24_fraud_anomaly_detection.ipynb`
 
 Fraud is where Module 5's classification skills get stress-tested: positives are **0.5 %** of the data, the two error types have wildly asymmetric costs, the adversary adapts to your model, and the deliverable is not a metric — it's a **review queue** that a small team of human analysts (~50 case reviews per day) can actually work through. The notebook opens with the world's laziest fraud detector scoring 99.5 % accuracy while catching zero fraud — the accuracy trap, dissected box-by-box with the confusion matrix — then rebuilds honest measurement around precision, recall, the PR curve and precision@k.
 
@@ -85,7 +85,7 @@ Two detectors are then built: a cost-aware **supervised** model (`class_weight`)
 
 **Datasets:** Synthetic payments log — 30,000 transactions over 90 days with ≈0.5 % fraud following three planted patterns (stolen-card night spending, new-device takeovers with high amounts, rapid geo-velocity), generated inline; fully offline.
 
-### 19 · Customer Segmentation & Recommenders — `25_segmentation_recommenders.ipynb`
+### 25 · Customer Segmentation & Recommenders — `25_segmentation_recommenders.ipynb`
 
 The course's introduction to **unsupervised learning**. Everything so far predicted a label; this notebook answers two label-free questions every commercial team asks — *"which kinds of customers do we have?"* (segmentation) and *"what should we show each of them next?"* (recommendation). The stage is a B2B webshop run by HelpDeskAI's parent company — office & IT supplies, 12 products, 1,200 business customers, 18 months of orders — with four behavioural archetypes planted in the data generator that you must *recover* without ever being told they exist.
 
@@ -111,7 +111,7 @@ RFM quintile scoring comes first ("segmentation you can build before lunch"), th
 
 **Datasets:** Synthetic 18-month order log — 1,200 B2B customers × 12 products drawn from four planted behavioural archetypes, generated inline with a seeded `default_rng`; fully offline.
 
-### 20 · Demand Forecasting & Predictive Maintenance — `26_demand_maintenance.ipynb`
+### 26 · Demand Forecasting & Predictive Maintenance — `26_demand_maintenance.ipynb`
 
 The operations double feature. **Part I** turns NB 11's forecasting craft into stock orders: a distributor's three SKUs of very different character (a steady seller, a weekday-driven B2B item, a promo-sensitive impulse product) over two years of daily demand, where promotions are *planned* — a known-future feature, not a surprise. Three forecasters (seasonal-naive, Holt-Winters, lag-feature gradient-boosted regression) face one honest backtest on the last 8 weeks; forecast error (σ) then becomes **safety stock** for a target service level, and the **newsvendor** critical ratio Cu / (Cu + Co) sets the order quantity. The same recipe is re-run on real demand with the UCI Bike Sharing dataset.
 

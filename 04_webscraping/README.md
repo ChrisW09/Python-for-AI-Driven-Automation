@@ -35,7 +35,7 @@ Everything in this module runs **100% offline**: NB 14 parses an inline mock web
 
 ## Notebook guides
 
-### 47 · Web Scraping Fundamentals — `14_web_scraping_fundamentals.ipynb`
+### 14 · Web Scraping Fundamentals — `14_web_scraping_fundamentals.ipynb`
 
 The foundation: how to pull structured data out of raw HTML with `requests` + **BeautifulSoup**, and how to do it without getting yourself (or your IP) blocked. The running example is a tiny inline mock bookshop — a paginated catalogue, detail pages, a bestsellers table, and its own `robots.txt` — so every technique is runnable with no network. The mental model: **a web page is a tree (the DOM); scraping is fetch-the-tree, then navigate to the nodes you want — and be a polite guest while you do it.**
 
@@ -52,7 +52,7 @@ The foundation: how to pull structured data out of raw HTML with `requests` + **
 
 **Offline:** parses an inline mock website (Python strings); `requests` is shown for reference but never called.
 
-### 48 · Scraping with Firecrawl — `15_scraping_with_firecrawl.ipynb`
+### 15 · Scraping with Firecrawl — `15_scraping_with_firecrawl.ipynb`
 
 When DIY scraping hits JavaScript rendering, anti-bot walls, or just messy markup, a **managed scraping API** that returns clean **markdown or typed JSON** earns its keep. This lesson is the fuller, dedicated treatment of **Firecrawl** (the Module 3 appendix [`../03_real_world_io/A1_web_scraping_firecrawl.ipynb`](../03_real_world_io/A1_web_scraping_firecrawl.ipynb) is the quick intro). Mental model: **give Firecrawl a URL, get back LLM-ready content** — scrape one page, crawl a whole site, map its URLs, or search-and-scrape.
 
@@ -69,7 +69,7 @@ When DIY scraping hits JavaScript rendering, anti-bot walls, or just messy marku
 
 **Offline:** a built-in `MockFirecrawl` (no API key, no network); the real `firecrawl` SDK + `FIRECRAWL_API_KEY` are used automatically if present.
 
-### 49 · OpenAlex: The Open Scholarly Graph — `16_openalex_scholarly_data.ipynb`
+### 16 · OpenAlex: The Open Scholarly Graph — `16_openalex_scholarly_data.ipynb`
 
 The most important scraping lesson is often *don't scrape at all* — check for an open API first. **OpenAlex** indexes ~250M scholarly works (papers, authors, institutions, sources, topics) for free, no key required. This lesson treats it as the model "web data via a clean API" case: the scholarly graph, filtering and search, cursor pagination, and a small citations analysis. Mental model: **works ↔ authors ↔ institutions ↔ sources ↔ topics — you query one entity and filter or expand along the edges.**
 

@@ -49,7 +49,7 @@
 
 ## Notebook guides
 
-### 21 · LLM Fundamentals — `27_llm_fundamentals.ipynb`
+### 27 · LLM Fundamentals — `27_llm_fundamentals.ipynb`
 
 Module 8 opens with the question every learner asks first: *what is an LLM actually doing inside?* This is the *theory* notebook (NB 28–32 are the hands-on ones), built around one mental model — **an LLM is a next-token predictor run in a loop** (sample → append → repeat) — and one running example: **Helpa**, an AI customer-support assistant you've been asked to build for a small SaaS company. Tokens become Helpa's monthly bill, attention becomes how Helpa reads a question, hallucinations become the support reply that invents a product that doesn't exist.
 
@@ -69,7 +69,7 @@ The concepts are prerequisite-free (you can read it early, alongside `00c`); the
 
 **Files/datasets:** none — the next-token loop, temperature dial, and attention demos are toy models built in-notebook with NumPy/matplotlib. No LLM calls at all.
 
-### 22 · AI-Assisted Workflows — `28_ai_workflows.ipynb`
+### 28 · AI-Assisted Workflows — `28_ai_workflows.ipynb`
 
 The bridge between everything you've learned and what modern AI-driven work looks like — and the notebook where **Helpa stops being a thought experiment and becomes Python**. One mental model carries the whole lesson: **an LLM call is just a function call**, `reply = f(messages)`; every pattern (system prompts, JSON output, batch loops, retrieval) is plumbing around that one call.
 
@@ -89,7 +89,7 @@ You write prompts that are *reliable, not just clever*: the four core prompt pat
 
 **Files/datasets:** offline `MockLLM` imported from the repo-root `llm_providers.py` — no API key, no internet. The customer-feedback batch is defined in-notebook.
 
-### 23 · Embeddings and Semantic Retrieval — `29_embeddings_retrieval.ipynb`
+### 29 · Embeddings and Semantic Retrieval — `29_embeddings_retrieval.ipynb`
 
 NB 28's keyword RAG has a glaring weakness: *"how do I end my plan?"* won't match a document about *"cancelling your subscription"* — so Helpa shrugs, or invents an answer. This notebook fixes that with a **semantic** retriever, under the mental model **meaning becomes geometry**: embeddings turn texts into arrows, and retrieval is "which stored arrow points most like my query arrow?". One query pair runs through everything: *"How do I cancel my subscription?"* vs. its evil twin *"How can I end my plan?"*.
 
@@ -110,7 +110,7 @@ You build TF-IDF and dense-embedding retrievers, run a head-to-head evaluation o
 
 **Files/datasets:** offline throughout — a minimal in-notebook `MockLLM` plus the deterministic `MockEmbedder` from the repo-root `llm_providers.py`; the document corpus is defined in-notebook. Real options (OpenAI embeddings, `sentence-transformers`) are shown as reference code.
 
-### 24 · Tool Calling and Small Agents — `30_tools_and_agents.ipynb`
+### 30 · Tool Calling and Small Agents — `30_tools_and_agents.ipynb`
 
 So far the LLM took text and returned text. Here you give it **tools** — functions it can decide to call — and watch it do multi-step work. The mental model is **planner + hands + a `while` loop**: the model is the planner (it only ever *asks*), your code is the hands (it *acts*), and the loop is the agent. "Tool calling", "function calling", "agents", "ReAct" are all brand names for this one machine.
 
@@ -130,7 +130,7 @@ The running example is a **support-ops data assistant**: a ~100-line program tha
 
 **Files/datasets:** a tool-aware `MockLLM` defined in-notebook (offline, no API key); the `support_ops` DataFrame is generated in-notebook (same shape as NB 13's table).
 
-### 25 · AI Document Processing — `31_document_processing.ipynb`
+### 31 · AI Document Processing — `31_document_processing.ipynb`
 
 A huge fraction of business work is extracting structured information from unstructured documents — invoices, receipts, contracts, KYC forms. The mental model is an **assembly line**: a raw document rolls through **extract → chunk → LLM-extract → validate → aggregate**, and a tidy database row rolls out; validation is the quality-control inspector at the end of the belt.
 
@@ -150,7 +150,7 @@ The running example is an **invoice parser**: a finance-ops tool that turns a st
 
 **Files/datasets:** the invoices are synthesised in-notebook (no external files); an inline invoice-extractor `MockLLM` keeps it offline. `pypdf` (and OCR options for scans) appear as reference snippets for real PDFs.
 
-### 26 · AI Evaluation & Observability — `32_ai_evaluation_observability.ipynb`
+### 32 · AI Evaluation & Observability — `32_ai_evaluation_observability.ipynb`
 
 You shipped an AI feature in NB 28–31 and the demo answers looked great — but how do you know it still works after someone tweaks a prompt or the provider updates the model? This notebook is "the difference between hobby AI and production AI". Mental model: **an eval is a regression test for something that won't sit still** — a smoke detector bolted to your feature, silent on a good day, the only thing that wakes you up on a bad one.
 

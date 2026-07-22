@@ -202,7 +202,7 @@ Small enough to fit on one screen and travel with the repo (see [`data/README.md
 |---|---|---|---|
 | `data/api_log.csv` | 50 | LLM API request log — `model`, `segment`, `quarter`, `tokens_in/out`, `latency_ms` | NB 7 — Pandas fundamentals |
 | `data/support_ops.csv` | 60 | Support-ops metrics by channel & month — tickets, automation rate, latency, satisfaction, cost | disk copy of the data NB 47 (Capstone A) builds inline |
-| `data/customer_feedback.csv` | 15 | Labelled feedback — `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 17 & 22 |
+| `data/customer_feedback.csv` | 15 | Labelled feedback — `text`, `sentiment`, `topic` | sample mirroring the inline data in NB 17 & NB 28 |
 | `forecast.csv` | 28 | 7-day weather forecast for 4 cities, saved from the Open-Meteo API (lives at the repo root) | written by NB 12 — APIs & HTTP |
 | `data/penguins.csv` | 344 | **Real** — Palmer Penguins: 3 species' bill/flipper/mass measurements, with real missing values · CC0 | NB 9 — Visualization |
 | `data/bike_sharing_daily.csv` | 731 | **Real** — UCI Bike Sharing: daily rentals 2011–12 with weather & calendar features · CC BY 4.0 | NB 26 — Demand forecasting |
