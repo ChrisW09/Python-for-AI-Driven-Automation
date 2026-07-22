@@ -16,6 +16,14 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc,fit,backgrounds}
 
+% Speaker notes. Default build = clean slides, unchanged. For presenter view
+% (slide left, notes right) build with:
+%   pdflatex "\def\notesmode{}\input{52_bpm_governance_poc_mvp.tex}"
+\ifdefined\notesmode
+  \usepackage{pgfpages}
+  \setbeameroption{show notes on second screen=right}
+\fi
+
 \usetheme{Madrid}
 \usecolortheme{default}
 \setbeamertemplate{navigation symbols}{}
@@ -80,6 +88,12 @@
   \begin{exampleblock}{Tip --- name the phase before you scope the work}
     When a stakeholder pitches an AI project, ask which BPM phase it lands in. If they can't say, the project is still a \emph{wish}, not a feature.
   \end{exampleblock}
+  \note{%
+    \textbf{$\sim$8 min.} Point: AI lands \emph{inside} an existing process, never on a blank page.\\[2pt]
+    Walk the loop once, then make it concrete --- most AI work sits in \textbf{Execute} (the model does a step) or \textbf{Monitor} (the model watches for drift). Analyse/Design are where it usually \emph{should} have started.\\[2pt]
+    \textbf{Ask the room:} ``Think of an AI feature you've seen demoed. Which phase was it in?'' Expect Execute almost every time --- that's the lesson: teams automate a step before understanding the process.\\[2pt]
+    \textbf{Misconception to pre-empt:} that the loop runs once. It doesn't --- Monitor feeds back into Analyse, which is exactly why deployed models need owners, not just builders.
+  }
 \end{frame}
 
 % ============================================================
@@ -94,6 +108,13 @@
     \item \textbf{Compliance is A} for the provider choice --- anything touching customer data has a veto.
     \item \textbf{Rollback is owned by the platform team}: ML decides \emph{whether} to revert; platform can actually \emph{do} it.
   \end{itemize}
+  \note{%
+    \textbf{$\sim$10 min.} Point: governance is about naming \emph{who is accountable when the model is wrong} --- before it is wrong.\\[2pt]
+    The one line that lands: \textbf{the AI can be Responsible, but never Accountable.} A system cannot be fired, sued, or asked to explain itself to a regulator. Accountability always terminates at a human.\\[2pt]
+    \textbf{Ask the room:} ``Your model declines a customer's loan. Who does the customer complain to?'' Let them argue --- the useful answer is that if nobody in the org can name that person, the system isn't ready to ship.\\[2pt]
+    \textbf{Why rollback is split:} the team that can judge whether to revert is rarely the team with production access. If those two aren't wired together in advance, a bad deploy stays live through the argument.\\[2pt]
+    Full RACI table is in Notebook 52 --- don't rebuild it on the board.
+  }
 \end{frame}
 
 % ============================================================
@@ -111,6 +132,13 @@
   \begin{alertblock}{The most common confusion}
     Production is \emph{not} ``MVP, but more robust.'' It is MVP \emph{plus all the boring operational work} --- monitoring, rollback, cost control, support.
   \end{alertblock}
+  \note{%
+    \textbf{$\sim$12 min --- the core slide of the lecture.}\\[2pt]
+    Point: these three answer \emph{different questions} and have \emph{different audiences}, so they need different success criteria. A POC judged by production standards always looks like a failure; a production system judged by POC standards always looks finished.\\[2pt]
+    \textbf{The trap to name explicitly:} the demo that works on curated data gets applauded, and someone says ``great, ship it Monday.'' Everything expensive lives in the gap between MVP and Production --- and none of it is model work.\\[2pt]
+    \textbf{Ask the room:} ``What percentage of a shipped AI project is the model?'' Collect guesses, then hold the answer until the next slide, where the invoice case gives it: \emph{about 30\,\%}.\\[2pt]
+    If the room is engineering-heavy, dwell on ``three projects, not three phases'' --- each transition is a re-scope, not a continuation.
+  }
 \end{frame}
 
 % ============================================================
@@ -122,6 +150,13 @@
     \item \textbf{Invoice processing \textcolor{cgreen}{(shipped)}.} The AI was \emph{30\,\%} of the project; ingestion, ERP integration, and the review UI were the other 70\,\%. Trust grew from \emph{observation}; a rule layer caught hallucinated invoice numbers.
     \item \textbf{Sales analytics \textcolor{cred}{(did not ship)}.} A solution looking for a problem --- never a specific user story. \emph{Discovery is allowed to conclude ``don't build it.''}
   \end{itemize}
+  \note{%
+    \textbf{$\sim$12 min.} Point: the pattern across all three is that \emph{the model was never the hard part}.\\[2pt]
+    Now pay off the previous slide's question with the invoice number: the AI was \textbf{30\,\%} of the project; ingestion, ERP integration and the review UI were the other 70\,\%.\\[2pt]
+    \textbf{Spend real time on the third case.} A project that correctly did \emph{not} ship is a success story, and students almost never hear one. The failure wasn't technical --- nobody could name a specific user with a specific task. That is the same test as question 1 and 2 on the next slide.\\[2pt]
+    \textbf{Ask the room:} ``Who here has been on a project that should have been stopped and wasn't? What would have had to be true to stop it?'' --- good discussion if the cohort has industry experience; skip if they're pre-career.\\[2pt]
+    \textbf{Trust point worth stating:} in the invoice case trust grew from \emph{observation} --- users watched it be right for weeks before relying on it. You cannot argue people into trusting a model.
+  }
 \end{frame}
 
 % ============================================================
@@ -144,6 +179,12 @@
     \end{enumerate}
   \end{block}
   {\footnotesize Full detail, the RACI table, and the three cases end-to-end are in \textbf{Notebook 52}.}
+  \note{%
+    \textbf{$\sim$10 min + close.} Point: this is the slide they should photograph. Frame it as the tool that lets a technical lead say ``no'' \emph{constructively} --- not by refusing, but by asking questions the proposal can't yet answer.\\[2pt]
+    Don't read all ten aloud. Pick three and go deep --- \textbf{5 (baseline)}, \textbf{6 (success metric)} and \textbf{8 (rollback)} are the ones that kill bad projects fastest. Note that 4 calls back to the 2$\times$2 from Notebook 49, so this is a synthesis, not a new framework.\\[2pt]
+    \textbf{Best closing exercise if you have 15 minutes:} have them apply the list to a real proposal --- their own, or the sales-analytics case from the previous slide. It fails at questions 1, 2 and 6, and they'll find that themselves.\\[2pt]
+    \textbf{Send them to Notebook 52} for the RACI table and the cases end-to-end; the notebook's checkpoints mirror this checklist.
+  }
 \end{frame}
 
 \end{document}

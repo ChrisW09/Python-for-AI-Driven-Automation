@@ -16,6 +16,14 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc,fit,backgrounds}
 
+% Speaker notes. Default build = clean slides, unchanged. For presenter view
+% (slide left, notes right) build with:
+%   pdflatex "\def\notesmode{}\input{51_ai_assisted_software_development.tex}"
+\ifdefined\notesmode
+  \usepackage{pgfpages}
+  \setbeameroption{show notes on second screen=right}
+\fi
+
 \usetheme{Madrid}
 \usecolortheme{default}
 \setbeamertemplate{navigation symbols}{}
@@ -82,6 +90,13 @@
   \begin{exampleblock}{Recommendation for beginners}
     \textbf{VS Code $+$ Copilot} or \textbf{Cursor} --- the most forgiving combinations to learn the workflow on.
   \end{exampleblock}
+  \note{%
+    \textbf{$\sim$6 min.} Point: orientation only --- the \emph{workflow} is the lecture, not the tool.\\[2pt]
+    \textbf{This slide dates fastest in the whole course.} Say so out loud; it teaches them to hold tool choices loosely. If the table has drifted by the time you teach it, that is itself the lesson.\\[2pt]
+    Steer beginners to VS Code $+$ Copilot: Jupyter support matters for this course, and the inline model is easier to supervise than an agent that edits five files at once.\\[2pt]
+    \textbf{Ask the room:} ``Who's already using one of these daily?'' Calibrates how fast you can go, and surfaces students who can help their neighbours.\\[2pt]
+    Don't get drawn into a tool war --- redirect to the review discipline, which is the transferable part.
+  }
 \end{frame}
 
 \begin{frame}{Three ways the assistant helps --- rising autonomy}
@@ -95,6 +110,13 @@
   \end{tikzpicture}
   \end{center}
   {\footnotesize The more the assistant does on its own, the more your review discipline matters (Module 10 --- agents, tools \& MCP --- builds on Agent mode).}
+  \note{%
+    \textbf{$\sim$8 min.} Point: three modes, rising autonomy --- and \textbf{review burden rises with autonomy}. That's the whole slide.\\[2pt]
+    Match mode to task: completion for boilerplate you could type; chat for a function you can describe; agent mode when the change genuinely spans files --- and only then.\\[2pt]
+    \textbf{The trap with agent mode} is that it produces so much so fast that review is skipped exactly when it matters most. Reviewing 400 generated lines is harder than writing 40 yourself.\\[2pt]
+    \textbf{Ask the room:} ``It edited eight files and says it's done. What do you do first?'' Read the diff --- \texttt{git diff} before you run anything. That habit is the bridge to the review section.\\[2pt]
+    Forward-reference Module 10: agent mode is the same architecture they'll build.
+  }
 \end{frame}
 
 % ============================================================
@@ -118,6 +140,12 @@
   \begin{alertblock}{Common beginner mistake}
     \emph{Force-pushing} over the main branch destroys history others built on. Force-push only your \emph{own} feature branches.
   \end{alertblock}
+  \note{%
+    \textbf{$\sim$10 min.} Point: nine commands, and they are enough. Students overestimate how much Git they need and freeze.\\[2pt]
+    Frame Git as the \emph{safety net that makes AI assistance usable}: you can accept a big generated change precisely because you can throw it away. Committing before you prompt is the habit to instil --- a clean working tree turns any bad generation into one \texttt{git checkout}.\\[2pt]
+    \textbf{The force-push warning is the one that saves someone's week.} Explain \emph{why}: rewriting shared history means everyone else's clone disagrees about what happened, and recovery is genuinely painful.\\[2pt]
+    \textbf{Ask the room:} ``The assistant rewrote a working file and made it worse. What's the recovery?'' If they can't answer, that's why we commit first.
+  }
 \end{frame}
 
 \begin{frame}{Branches and pull requests --- the unit of professional work}
@@ -138,6 +166,13 @@
     short title $\cdot$ a 2-paragraph \emph{what / why / tested} $\cdot$ \textbf{small scope} (30 lines reviewed in 5 min) $\cdot$ tests or a screenshot.
   \end{block}
   {\footnotesize AI-generated PRs are no exception --- arguably \emph{more} important to keep small.}
+  \note{%
+    \textbf{$\sim$10 min.} Point: the PR is the unit of professional work --- and the place review actually happens.\\[2pt]
+    Walk the diagram once: branch off main, commit a few times, open a PR, merge back. The value is that main stays working while you experiment.\\[2pt]
+    \textbf{Small scope is the bullet to defend.} A 30-line PR gets a real review in five minutes; a 900-line PR gets ``LGTM'' and a rubber stamp. Reviewer attention is the scarce resource, and it does not scale with diff size.\\[2pt]
+    \textbf{The footnote is the punchline of the lecture so far:} AI makes it trivial to generate 900 lines, which makes small PRs \emph{more} important, not less. Volume went up; review capacity did not.\\[2pt]
+    ``What / why / tested'' is worth writing on the board --- most students write only \emph{what}, and \emph{why} is the part reviewers actually need.
+  }
 \end{frame}
 
 % ============================================================
@@ -151,6 +186,13 @@
     \item \textbf{Ask for tests} --- ``add a pytest for the empty-input case.''
     \item \textbf{Ask for alternatives when designing} --- ``three storage options with trade-offs.''
   \end{enumerate}
+  \note{%
+    \textbf{$\sim$10 min --- make this interactive.}\\[2pt]
+    Point: pattern 1 does the heavy lifting. Most bad output is an \emph{information} problem, not a model problem --- the assistant couldn't see your schema, your versions, or the actual traceback.\\[2pt]
+    \textbf{Do it live:} take a vague request (``fix this function''), watch it guess, then re-ask with the error text and the surrounding code pasted in. The difference is stark and needs no commentary.\\[2pt]
+    Pattern 2 (one thing per turn) is the discipline students resist most --- they ask for a feature, tests and a refactor at once, then can't tell which part broke.\\[2pt]
+    \textbf{Pattern 5 is under-used and worth selling:} asking for three options with trade-offs uses the model as a \emph{thinking partner} rather than a code dispenser, and it's the one place its breadth genuinely beats yours.
+  }
 \end{frame}
 
 \begin{frame}{Prompting is a loop, not a one-shot}
@@ -167,6 +209,12 @@
   \end{tikzpicture}
   \end{center}
   {\footnotesize Each turn is small and reviewable. You stay the author --- the assistant drafts; you decide.}
+  \note{%
+    \textbf{$\sim$6 min.} Point: it is a loop. Beginners treat a bad first answer as a verdict on the tool and give up; experienced users expect to go round three times.\\[2pt]
+    Note the loop is small on purpose --- each turn stays reviewable. That's what keeps the Review step to 60 seconds instead of an afternoon.\\[2pt]
+    \textbf{The last line is the ethical and professional core of the lecture:} you stay the author. You sign the commit, you defend it in review, you get paged when it breaks. ``The AI wrote it'' is not a defence anywhere it matters.\\[2pt]
+    Note Review feeds \emph{Adjust the prompt}, not ``fix it by hand.'' Fixing by hand silently teaches you nothing about steering the tool.
+  }
 \end{frame}
 
 % ============================================================
@@ -181,6 +229,13 @@
     \node[box, fill=hsbimid!22, text width=4.6cm, minimum height=1.5cm, below=0.45cm of B] (D) {\textbf{D --- Silent over-confidence}\\ \scriptsize ``safely'' swallows errors, hides failure};
   \end{tikzpicture}
   \end{center}
+  \note{%
+    \textbf{$\sim$10 min --- the heart of the lecture.}\\[2pt]
+    Point: four \emph{distinct} failure modes, in rising order of danger --- and note that danger rises as detectability falls.\\[2pt]
+    \textbf{A} is harmless: it crashes immediately, you fix it. \textbf{B} is the expensive one --- it runs, returns plausible numbers, and is wrong; only tests or domain knowledge catch it. \textbf{C} compounds over months into a codebase with five conventions. \textbf{D} is the worst: \texttt{except Exception: pass} means the failure never surfaces at all.\\[2pt]
+    \textbf{Tie back to NB 27:} the model predicts \emph{plausible} continuations. Plausible-but-wrong isn't a bug in the assistant --- it is the objective function, showing up in your codebase.\\[2pt]
+    \textbf{Ask the room:} ``Which is most dangerous?'' Most say A (it's the most visible). The realisation that D is worse because it is invisible is the moment worth engineering.
+  }
 \end{frame}
 
 \begin{frame}{The 60-second review checklist}
@@ -194,6 +249,13 @@
     \end{enumerate}
   \end{block}
   {\footnotesize 60 seconds; catches $\approx$80\,\% of failures. The rest is what real testing and code review are for.}
+  \note{%
+    \textbf{$\sim$8 min.} Point: the practical takeaway of the deck --- five questions, one minute, and each maps onto a failure mode from the previous slide.\\[2pt]
+    Make the mapping explicit: Q1 catches \textbf{A}, Q2 catches \textbf{B}, Q3 catches \textbf{C}, Q4 catches \textbf{D}, and Q5 catches scope creep --- the assistant helpfully refactoring things you never asked about.\\[2pt]
+    \textbf{Q4 is the one to demonstrate:} literally search the diff for \texttt{except Exception}, \texttt{pass}, \texttt{or \{\}}. Ten seconds, and it catches the most dangerous category.\\[2pt]
+    \textbf{Be honest about the 80\,\%} --- this is a filter, not a guarantee. It is what stands between ``I skimmed it'' and ``I reviewed it''; tests and real code review do the rest.\\[2pt]
+    Tell them to photograph this slide. It's the one they'll actually reuse on Monday.
+  }
 \end{frame}
 
 % ============================================================
@@ -208,6 +270,13 @@
     \item Skip it for security- / correctness-critical logic you can't fully review.
     \item \textbf{Companion notebook:} hands-on Git, PR, and review exercises are in \textbf{Notebook 51} --- recommended \emph{early} so the workflow pays off everywhere.
   \end{itemize}
+  \note{%
+    \textbf{$\sim$8 min --- close.} Point: the mental model in the block is the sentence to leave them with. Say it slowly.\\[2pt]
+    \textbf{``Skip it when the task is to learn''} deserves directness, because it's about \emph{this course}: if they autocomplete their way through Module 1, they will not be able to read their own capstone. The struggle is the mechanism, not an obstacle to route around. Using the assistant to \emph{explain} is fine; using it to \emph{write} the exercise is not.\\[2pt]
+    The security bullet is the professional one: never ship what you cannot review. Code you don't understand is code you cannot debug at 3 a.m.\\[2pt]
+    \textbf{Ask the room:} ``Where's the line for you personally?'' Genuinely open --- it varies by seniority, and hearing the disagreement is the point.\\[2pt]
+    \textbf{Send them to Notebook 51 early} --- the workflow compounds across every later module.
+  }
 \end{frame}
 
 \end{document}

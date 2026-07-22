@@ -21,19 +21,65 @@ The five lecture decks were added in the 2026 review pass and are numbered after
 
 **Structural infographics.** The overview deck's roadmap, dependency-graph, learning-paths and weekly-timeline PNGs in `images/` are *generated*, not drawn — after any module renumber or addition, edit the `MODULES` / `DEPS` / `PATHS` / `WEEKS` tables at the top of [`../scripts/generate_course_images.py`](../scripts/generate_course_images.py), rerun it (`.venv/bin/python scripts/generate_course_images.py`), and recompile the deck.
 
+## Speaker notes & presenter view
+
+Every deck carries **speaker notes** on its content frames: a time estimate, the
+one point the slide must land, a question to put to the room, and the
+misconception to pre-empt. They are written for someone teaching the slide
+cold.
+
+Each deck therefore builds two ways:
+
+| PDF | What it is | Use it for |
+|---|---|---|
+| `<deck>.pdf` | the slides alone — **notes compiled out entirely** | projecting |
+| `<deck>_notes.pdf` | double-width: slide on the left, notes on the right | your laptop / presenter screen |
+
+Open the `_notes` PDF on your screen and the normal deck on the projector, or
+use a PDF viewer's presenter mode with the double-width file on the second
+display.
+
+> The notes never reach the projected deck: `\note{...}` renders only when the
+> deck is built with `\notesmode` defined, so `<deck>.pdf` is byte-for-byte the
+> deck it always was.
+
 ## Building
 
-A full TeX install (`pdflatex`) is all you need. Run twice so the section-navigation bar and table of contents resolve:
+A full TeX install (`pdflatex`) is all you need. The `Makefile` runs both
+passes (so the section-navigation bar and table of contents resolve) and builds
+both variants:
+
+```bash
+make                                   # every deck + every presenter deck
+make slides                            # just the projected decks
+make notes                             # just the presenter decks
+make 27_llm_fundamentals.pdf           # one deck
+make 27_llm_fundamentals_notes.pdf     # one presenter deck
+make clean                             # remove LaTeX aux files (keeps PDFs)
+```
+
+By hand, if you prefer — note the second pass:
 
 ```bash
 pdflatex 27_llm_fundamentals.tex
 pdflatex 27_llm_fundamentals.tex      # second pass for the nav bar + TOC
-# or, simpler:
-latexmk -pdf 27_llm_fundamentals.tex
+
+# presenter version
+pdflatex -jobname=27_llm_fundamentals_notes \
+         "\def\notesmode{}\input{27_llm_fundamentals.tex}"
 ```
 
-All decks compile cleanly (no errors, no slide overflow). They are also Overleaf-ready — upload the `.tex` (and the `images/` folder for the overview deck).
+All decks compile cleanly in both modes (no errors, no slide overflow). They are
+also Overleaf-ready — upload the `.tex` (and the `images/` folder for the
+overview deck); Overleaf builds the projected deck by default.
 
 ## House style
 
 The preamble matches `00_course_overview.tex`: `\documentclass[aspectratio=169,11pt]{beamer}`, Madrid theme, a horizontal **section-navigation bar** in the headline, auto-generated section "Outline" slides (`\AtBeginSection`), `booktabs` tables, and rounded blocks with **no shadows** (shadows render as black boxes on Overleaf). Content is in English to match the course; each `\begin{frame}` is kept to one physical slide.
+
+Every preamble also carries the four-line `\ifdefined\notesmode` block that
+enables presenter view. Copy it into any new deck, and put a `\note{...}` inside
+each content frame, just before `\end{frame}` — title, "Contents" and the
+auto-generated "Outline" frames deliberately have none. Keep notes in the house
+voice: **a time estimate, the point, a question for the room, the misconception
+to pre-empt** — written so a stand-in lecturer could teach the slide cold.

@@ -17,6 +17,14 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc,fit,backgrounds}
 
+% Speaker notes. Default build = clean slides, unchanged. For presenter view
+% (slide left, notes right) build with:
+%   pdflatex "\def\notesmode{}\input{50_architecture_patterns.tex}"
+\ifdefined\notesmode
+  \usepackage{pgfpages}
+  \setbeameroption{show notes on second screen=right}
+\fi
+
 \usetheme{Madrid}
 \usecolortheme{default}
 \setbeamertemplate{navigation symbols}{}
@@ -98,6 +106,12 @@
     \end{itemize}
   \end{block}
   {\footnotesize Architecture is not sophistication --- it is matching \emph{structure} to \emph{load}.}
+  \note{%
+    \textbf{$\sim$8 min.} Point: architecture is a response to \emph{load}, not a measure of skill. Set that frame now or the whole deck reads as a ladder to climb.\\[2pt]
+    The three questions are the actual deliverable of this slide --- users, invoker, team count. Notice the third is organisational: architecture tends to mirror team boundaries, which is why a two-person team should almost never build microservices.\\[2pt]
+    \textbf{Ask the room:} ``Your churn model runs once a month for one analyst. What architecture?'' A script. Let someone argue for an API and then ask who would call it.\\[2pt]
+    \textbf{The failure mode to name early:} engineers choose architecture by what is interesting, not by load.
+  }
 \end{frame}
 
 % ============================================================
@@ -115,6 +129,12 @@
   \end{tikzpicture}
   \end{center}
   {\footnotesize Read left to right as \emph{growing load}, not ``primitive to advanced''. The simplest workable choice wins.}
+  \note{%
+    \textbf{$\sim$8 min.} Point: four shapes, increasing in operational cost. Read the footnote aloud --- students instinctively read the arrow as a maturity ladder and conclude their notebook is embarrassing.\\[2pt]
+    Give the one-line trigger for each: single-tier until someone else needs it; three-tier when a non-developer must use it; services when a \emph{second team} needs to ship independently; microservices when many teams do.\\[2pt]
+    \textbf{Every step right costs you} deployment, monitoring, network failure modes and debugging across process boundaries. Nothing is free, and none of it is model work.\\[2pt]
+    Most of this course --- and most real analytics work --- lives happily in the first two boxes.
+  }
 \end{frame}
 
 \begin{frame}{Three-tier --- the workhorse for interactive AI features}
@@ -132,6 +152,13 @@
     \item The API is reusable --- a second UI, a CLI, or another team can call it.
     \item \emph{You build exactly this} in \textbf{Notebook 34 (POC 2)}.
   \end{itemize}
+  \note{%
+    \textbf{$\sim$10 min --- the workhorse pattern; spend time here.}\\[2pt]
+    Point: three tiers, and the \textbf{REST contract} is the real boundary. Once the contract is fixed, the tiers can be rewritten independently --- that is the entire benefit.\\[2pt]
+    The reusability bullet is the one that convinces people: the same API serves the Streamlit UI, a CLI, a scheduled job, and another team, at no extra cost. A notebook serves exactly one consumer.\\[2pt]
+    \textbf{Ask the room:} ``Why can't the UI just query the database directly?'' Because then business logic lives in two places and drifts --- and every new consumer re-implements it. That is the whole argument for a logic tier.\\[2pt]
+    Promise them NB 34: they build this exact shape, Streamlit $+$ FastAPI $+$ SQLite.
+  }
 \end{frame}
 
 \begin{frame}{The over-engineering trap}
@@ -141,6 +168,12 @@
   \begin{exampleblock}{The rule}
     Pick the architecture you'll have \emph{outgrown in 12 months}, not the one you'll \emph{need in 36}. Premature complexity kills more projects than migrations do.
   \end{exampleblock}
+  \note{%
+    \textbf{$\sim$8 min.} Point: the 12-month rule is the takeaway of the section. Say it twice.\\[2pt]
+    The reasoning: you cannot predict 36 months, migrations are far cheaper than people fear, and complexity you don't need yet is paid for every single day in the meantime.\\[2pt]
+    \textbf{The unit-of-service line matters:} a service should be a \emph{capability} (``scoring'', ``ingestion''), not a Python module. Teams that split by file end up with a distributed monolith --- all the network cost, none of the independence.\\[2pt]
+    \textbf{Ask the room:} ``What's the cost of being wrong in each direction?'' Under-engineering is a bad week when you migrate; over-engineering is a bad year, every year.
+  }
 \end{frame}
 
 % ============================================================
@@ -162,6 +195,12 @@
     \item A request names an \textbf{endpoint} (URL path) $+$ a \textbf{verb} (\texttt{GET} read, \texttt{POST} send data) $+$ a JSON \textbf{body}.
     \item The backend validates, runs the logic / model, and returns \textbf{JSON} $+$ a \textbf{status code} (\texttt{200} ok $\cdot$ \texttt{4xx} client error $\cdot$ \texttt{5xx} server error).
   \end{itemize}
+  \note{%
+    \textbf{$\sim$10 min.} Point: this is the mechanical picture behind ``the tiers talk over HTTP.'' For many students this is the first time client/server is made concrete.\\[2pt]
+    Walk one request end to end, out loud: user clicks $\to$ frontend builds JSON $\to$ POST to the endpoint $\to$ backend validates $\to$ model runs $\to$ JSON back with 200 $\to$ UI renders. Then walk a \emph{failure}: bad input $\to$ 422, model crash $\to$ 500.\\[2pt]
+    \textbf{The status-code distinction is worth drilling:} 4xx means \emph{you} sent something wrong, 5xx means \emph{I} broke. Students conflate them constantly, and it determines who debugs.\\[2pt]
+    First bullet is the security point: the frontend never touches the database. It runs on the user's machine and cannot be trusted with credentials.
+  }
 \end{frame}
 
 \begin{frame}[fragile]{The backend --- one FastAPI endpoint}
@@ -182,6 +221,12 @@ def predict(c: Customer):
 \end{lstlisting}
   \vspace{-2pt}
   {\footnotesize Pydantic \textbf{validates} the body automatically; returning a dict is serialised to JSON; interactive docs appear free at \texttt{/docs}.}
+  \note{%
+    \textbf{$\sim$8 min.} Point: a real endpoint is about ten lines. Show that the ceremony they imagine isn't there.\\[2pt]
+    Read it in the order the request arrives: the \texttt{Customer} class \emph{is} the contract, the decorator binds path $+$ verb, the body is ordinary Python, the returned dict becomes JSON.\\[2pt]
+    \textbf{The Pydantic point is the one worth dwelling on:} you declared types, and got validation free --- send a string where an int belongs and FastAPI returns a 422 with a precise message before your code ever runs. That is the 4xx from the previous slide, generated for you.\\[2pt]
+    \textbf{Demo /docs if you're live} --- interactive documentation generated from those type hints is the moment FastAPI sells itself.
+  }
 \end{frame}
 
 \begin{frame}[fragile]{The frontend --- calling the backend}
@@ -201,6 +246,12 @@ st.metric("Churn risk", resp.json()["churn_probability"])
     \item \textbf{CORS:} a browser blocks cross-origin calls --- add FastAPI's \texttt{CORSMiddleware} so the UI (port 8501) may call the API (port 8000).
   \end{itemize}
   {\footnotesize You build this end-to-end in \textbf{Notebook 34 (POC 2)} --- Streamlit $+$ FastAPI $+$ SQLite.}
+  \note{%
+    \textbf{$\sim$8 min.} Point: the frontend is \emph{just an HTTP client} --- the same \texttt{requests} they already met in NB 12. Nothing new is being learned; it's being reused.\\[2pt]
+    \texttt{raise\_for\_status()} is the line students omit and then spend an hour debugging: without it a 500 sails through and you render an error page's body as data. Insist on it. Same for \texttt{timeout} --- a hung request with no timeout hangs forever.\\[2pt]
+    \textbf{CORS will bite them in NB 34}, so plant it now: the browser --- not FastAPI --- blocks the cross-origin call, which is why the error appears in the browser console and the server log looks clean. Knowing where to look saves the hour.\\[2pt]
+    \textbf{Ask the room:} ``The UI shows nothing and the server log looks fine. Where do you look first?''
+  }
 \end{frame}
 
 % ============================================================
@@ -227,6 +278,14 @@ st.metric("Churn risk", resp.json()["churn_probability"])
       \item \textbf{The feedback loop has economic cost} --- each prediction nudges the next training batch.
     \end{itemize}
   \end{block}
+  \note{%
+    \textbf{$\sim$10 min --- why ML architecture isn't just software architecture.}\\[2pt]
+    Point: the three bullets are what a software-architecture course would miss entirely.\\[2pt]
+    \textbf{``Training data is part of the artefact''} is the one to labour: the same code with a different data snapshot is a different product, which is why reproducibility needs data versioning, not just Git.\\[2pt]
+    \textbf{The red drift arrow is the slide's spine} --- monitor feeds back to data. Software ships and is done; a model starts decaying on day one because the world moves. 92\,\% in March is not 92\,\% in October.\\[2pt]
+    Connect forward: this loop is Module 13 (production) and NB 32 (observability); the question of \emph{which} change moved the metric is Module 18.\\[2pt]
+    The feedback bullet is subtle --- if your predictions influence behaviour, they contaminate the next training set. Mention briefly; don't derail.
+  }
 \end{frame}
 
 % ============================================================
@@ -243,6 +302,12 @@ st.metric("Churn risk", resp.json()["churn_probability"])
   \begin{exampleblock}{Two opposite mistakes}
     \textcolor{cred}{Over-engineering} (microservices for a pilot) and \textcolor{cred}{under-engineering} (a 200-user system held together by one notebook).
   \end{exampleblock}
+  \note{%
+    \textbf{$\sim$8 min.} Point: don't choose architecture up front --- let \emph{smells} tell you when you've outgrown the current shape.\\[2pt]
+    Each smell maps to one move, and the move is small. That's the reassurance: you are never trapped, so choosing simple now is safe.\\[2pt]
+    \textbf{Give under-engineering equal air time.} This deck spends more words on over-engineering, but a 200-user system running from one person's notebook is just as real a failure --- and more common in analytics teams. The tell is a single point of failure wearing a lanyard.\\[2pt]
+    \textbf{Ask the room:} ``What's the smell that says you've outgrown a notebook?'' Best answer: someone else needs to run it, or it must run when you're on holiday.
+  }
 \end{frame}
 
 % ============================================================
@@ -267,6 +332,12 @@ st.metric("Churn risk", resp.json()["churn_probability"])
   \end{center}
   \vspace{4pt}
   {\footnotesize You \emph{build} the three-tier and ML-pipeline shapes in \textbf{Notebook 34}; the rest you meet as patterns here.}
+  \note{%
+    \textbf{$\sim$6 min --- close.} Point: they have already been using these patterns without naming them. That's the satisfying reveal.\\[2pt]
+    Note honestly that microservices are \emph{patterns only} in this course --- you cannot teach them meaningfully without multiple teams and real traffic, and pretending otherwise would be dishonest.\\[2pt]
+    \texttt{llm\_providers.py} is a nice concrete callback: the pluggable-provider shim they've used all course \emph{is} a service-oriented boundary --- one interface, swappable implementations, no caller changes.\\[2pt]
+    \textbf{Send them to Notebook 50}, then NB 34 to build it. Next lecture: NB 51, AI-assisted software development.
+  }
 \end{frame}
 
 \end{document}

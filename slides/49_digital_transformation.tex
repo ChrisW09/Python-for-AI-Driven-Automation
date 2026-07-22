@@ -18,6 +18,14 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc,fit,backgrounds}
 
+% Speaker notes. Default build = clean slides, unchanged. For presenter view
+% (slide left, notes right) build with:
+%   pdflatex "\def\notesmode{}\input{49_digital_transformation.tex}"
+\ifdefined\notesmode
+  \usepackage{pgfpages}
+  \setbeameroption{show notes on second screen=right}
+\fi
+
 \usetheme{Madrid}
 \usecolortheme{default}
 \setbeamertemplate{navigation symbols}{}
@@ -82,6 +90,13 @@
     \item \textbf{Cheap intelligence} --- an LLM call costs cents and needs no in-house ML team.
     \item \textbf{Natural-language interface} --- an organisational change, not just a technical one.
   \end{itemize}
+  \note{%
+    \textbf{$\sim$8 min.} Point: name what actually changed, so ``AI is different now'' stops being a slogan.\\[2pt]
+    The two shifts that matter: \textbf{general} capability (one model, many tasks --- no bespoke model per problem) and \textbf{near-zero marginal cost} (cents per call, no in-house ML team).\\[2pt]
+    \textbf{The under-appreciated line is the second bullet:} a natural-language interface means the people who understand the work can now build with it directly. That is an organisational change, and it is why this lecture exists at all.\\[2pt]
+    \textbf{Ask the room:} ``Who here has automated something at work with an LLM without asking IT?'' Usually several hands --- that is stage 0/1 of the maturity model, arriving four slides early.\\[2pt]
+    \textbf{Stay honest:} earlier waves also felt inevitable. The claim is that the economics changed, not that the hype is new.
+  }
 \end{frame}
 
 % ============================================================
@@ -95,6 +110,13 @@
   \begin{exampleblock}{Reframe the stakeholder question}
     ``Will AI replace these 12 people?'' $\;\to\;$ ``Which of their \emph{tasks} will AI absorb, and what do the people do with the freed-up time?''
   \end{exampleblock}
+  \note{%
+    \textbf{$\sim$10 min --- the most useful reframe in the lecture.}\\[2pt]
+    Point: jobs are bundles of tasks. AI absorbs \emph{tasks}. Almost every overheated prediction comes from treating the job as the unit.\\[2pt]
+    \textbf{Do this live:} pick a job the room knows --- support agent, junior analyst, recruiter --- and enumerate its tasks on the board. Eight to twelve is typical. Then mark which are patternable. Usually a third, and rarely the part people think of as the job.\\[2pt]
+    That board exercise sets up the next slide's 2$\times$2 perfectly --- you're about to score exactly those tasks.\\[2pt]
+    \textbf{Handle the anxiety directly.} The question ``what do people do with the freed-up time?'' is not rhetorical; if leadership has no answer, adoption fails regardless of model quality.
+  }
 \end{frame}
 
 \begin{frame}{Where AI lands first --- patternable $\times$ stakes}
@@ -120,6 +142,12 @@
   \end{center}
   \vspace{-2pt}
   {\footnotesize Begin in the \textbf{high-pattern / low-stakes} corner: cheap to build, cheap to be wrong.}
+  \note{%
+    \textbf{$\sim$10 min.} Point: a placement tool they will reuse all course --- it comes back in NB 52's readiness checklist (question 4).\\[2pt]
+    The logic of the green corner: high-pattern means it'll probably work; low-stakes means a wrong answer is survivable. You want \emph{both} for a first project, because you are also buying organisational trust, not just shipping a feature.\\[2pt]
+    \textbf{Put the tasks from the previous slide into the quadrants} --- with the room, not for them. Disagreements about where something sits are the valuable part; ``high-stakes'' is often assumed rather than argued.\\[2pt]
+    \textbf{The top-right is the trap:} patternable \emph{and} high-stakes (medical, credit, legal) is exactly where a confident demo is most seductive and most dangerous. Augment, don't automate --- and note that the top-left never becomes an AI project at all.
+  }
 \end{frame}
 
 % ============================================================
@@ -136,6 +164,12 @@
   \end{center}
   \vspace{2pt}
   {\footnotesize Most organisations sit between \textbf{1} and \textbf{2}. The model names the \emph{next realistic step} --- not the destination.}
+  \note{%
+    \textbf{$\sim$6 min} (this slide and the next together $\sim$12).\\[2pt]
+    Point: the model's use is \emph{diagnostic} --- it names the next realistic step. Nobody jumps from 1 to 4.\\[2pt]
+    Stress the footnote: stage 4 is not the goal for most organisations. Getting from 1 to 2 --- one feature genuinely live, with a named owner --- is the hard, valuable transition, and it is mostly organisational rather than technical.\\[2pt]
+    \textbf{Ask the room:} ``Where is your employer, and what's the evidence?'' Push for evidence; self-assessment runs about one stage optimistic.
+  }
 \end{frame}
 
 \begin{frame}{Maturity --- the signature behaviour of each stage}
@@ -153,6 +187,12 @@
     \bottomrule
   \end{tabular}
   \end{center}
+  \note{%
+    \textbf{$\sim$6 min.} Point: the signature behaviours are how you diagnose a stage honestly --- claims are unreliable, behaviours aren't.\\[2pt]
+    \textbf{Stage 0's line is the one that gets a laugh and then lands:} ``staff quietly use ChatGPT on their phones.'' That is shadow AI --- the work is already happening, ungoverned, and the strategy question is whether the organisation knows.\\[2pt]
+    \textbf{Stage 1 $\to$ 2 is the graveyard} --- ``results stay in slides'' is pilot purgatory, which returns as a named pitfall three slides later. Flag the connection now.\\[2pt]
+    Read no more than two rows aloud; let them scan the rest.
+  }
 \end{frame}
 
 % ============================================================
@@ -171,6 +211,12 @@
   \begin{exampleblock}{Intuition}
     Most real projects are \textbf{augmentation} in year one, drifting to \textbf{substitution} for the well-understood tasks as trust grows.
   \end{exampleblock}
+  \note{%
+    \textbf{$\sim$8 min.} Point: three ambition levels, with change-management cost rising left to right.\\[2pt]
+    The intuition block is the practical advice: \textbf{start with augmentation}, even where substitution would technically work. Augmentation gives you a human check while you learn the real error modes, and it is far easier to get accepted.\\[2pt]
+    \textbf{Reinvention is rare and worth being honest about:} it means redesigning the process around what AI makes cheap, and it usually requires authority that a project team doesn't have. Most ``reinvention'' slides describe augmentation.\\[2pt]
+    Connect to the 2$\times$2: high-stakes quadrant $\to$ augmentation; low-stakes patternable $\to$ substitution is defensible.
+  }
 \end{frame}
 
 % ============================================================
@@ -193,6 +239,12 @@
   \end{center}
   \vspace{2pt}
   {\footnotesize ``92\,\% accurate at launch'' means nothing if nobody is watching the number six months later.}
+  \note{%
+    \textbf{$\sim$10 min.} Point: every one of these is an \emph{organisational} failure, not a modelling one. That's the thread --- none is fixed by a better model.\\[2pt]
+    \textbf{Solutionism} deserves the most time: automating a broken process makes it broken faster. If nobody can describe the current process, that's the project, not the AI.\\[2pt]
+    \textbf{The footnote is the line to land the section on} --- accuracy is a measurement at a moment, and models degrade as the world moves. This is exactly what Module 18 is about, and NB 32 builds the dashboard.\\[2pt]
+    \textbf{Ask the room:} ``Which of these five have you personally watched happen?'' Pilot purgatory wins nearly every time.
+  }
 \end{frame}
 
 % ============================================================
@@ -206,6 +258,12 @@
   \begin{block}{The cheapest trust intervention}
     Publish the AI's \textbf{confidence score} next to every output. Users quickly learn when to trust it and when to double-check.
   \end{block}
+  \note{%
+    \textbf{$\sim$8 min.} Point: adoption is a people problem, and it starts the day you ship --- not later.\\[2pt]
+    The confidence-score tip is cheap and genuinely effective: it lets users build a calibrated mental model of when the system is reliable, instead of swinging between blind trust and blanket rejection. Pair it with the \textbf{one-click override} --- people accept a system far more readily when they can overrule it, even if they rarely do.\\[2pt]
+    This connects forward to NB 52's invoice case, where trust grew from \emph{observation} over weeks. You cannot argue people into trusting a model.\\[2pt]
+    \textbf{If the cohort is technical}, this is the slide they will underrate. Say so.
+  }
 \end{frame}
 
 \begin{frame}{Companion notebook}
@@ -216,6 +274,12 @@
     \item Prerequisite-free; the course's \emph{spiral} recommends it as an early read (the ``why'').
     \item Next: \textbf{Notebook 50 --- Architecture Patterns}.
   \end{itemize}
+  \note{%
+    \textbf{$\sim$4 min --- close.} Point: hand off to the notebook, which is where the judgement is actually practised.\\[2pt]
+    Name the four exercises so they know what's coming: task inventory, placing an organisation on the maturity model, the pre-mortem, and the strategy-map 2$\times$2 --- all with worked solutions.\\[2pt]
+    \textbf{The pre-mortem is worth selling:} ``it's 12 months from now and the project failed --- write the reasons.'' It surfaces the pitfalls from two slides ago in the room's own words.\\[2pt]
+    Remind them this notebook is prerequisite-free --- they can send it to a non-technical colleague, which is unusual for this course.
+  }
 \end{frame}
 
 \end{document}
