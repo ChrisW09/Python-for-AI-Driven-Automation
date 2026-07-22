@@ -16,11 +16,12 @@
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
   <img alt="322 checkpoints, kernel-tested" src="https://img.shields.io/badge/322%20checkpoints-kernel--tested-8a2be2.svg">
+  <a href="./docs_site/"><img alt="Docs: Sphinx" src="https://img.shields.io/badge/Docs-Sphinx-0a507a.svg?logo=sphinx&logoColor=white"></a>
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>113 runnable notebooks · 18 modules · 300+ end-of-lesson exercises · 322 in-lesson checkpoints · 100% offline</b>
+  <b>117 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 322 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -44,7 +45,8 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 113 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 117 notebooks
+- [Documentation site](#-documentation-site)
 - [About](#-about)
 - [Citation](#-citation)
 - [Contributing &amp; licence](#-contributing--licence)
@@ -124,7 +126,7 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The h
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 18 modules + 13 optional appendices | The essentials, condensed |
+| **Scope** | All 19 content modules + 14 optional appendices | The essentials, condensed |
 | **Notebooks** | 53 lessons + 7 labs (+ 14 appendices) | 23 (onboarding + 22 lessons) |
 | **Time** | ~125 hours | ~26 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
@@ -178,11 +180,12 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `04_webscraping/` | Web scraping — fundamentals (BeautifulSoup, `robots.txt`), Firecrawl, and the OpenAlex open API (lessons 14–16, all offline) |
 | `06_pytorch/` | Deep Learning with PyTorch — tensors → autograd → the training loop, training craft, embeddings + bake-off + serving (lessons 20–22, all offline) |
 | `fast_track/` | The fast track — 22 trimmed notebooks (~26 h): 14 core essentials + 8 breadth extensions |
-| `quizzes/` | 15 short multiple-choice quizzes — one per content module |
+| `quizzes/` | 17 short multiple-choice quizzes — one per content module |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
 | `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
 | `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
+| `docs_site/` | Sphinx documentation site — every module guide + the mini-book chapters as a browsable website; see [Documentation site](#-documentation-site) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
 | `previous_versions/` | The legacy flat 19-notebook layout, archived |
 
@@ -302,11 +305,12 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 ## ▶️ Open any notebook in Colab
 
-Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
+Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Expand a module and click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
-<sub>The **113 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–18), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
+<sub>The **117 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
 
-### 0 · Onboarding
+<details>
+<summary><b>0 · Onboarding</b> &nbsp;·&nbsp; 3 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -314,7 +318,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `00b_course_overview.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00b_course_overview.ipynb) |
 | `00c_see_it_work.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb) |
 
-### 1 · Foundations
+</details>
+
+
+<details>
+<summary><b>1 · Foundations</b> &nbsp;·&nbsp; 6 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -325,7 +333,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `05_functions_modules.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/01_foundations/05_functions_modules.ipynb) |
 | `06_classes_and_oop.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/01_foundations/06_classes_and_oop.ipynb) |
 
-### 2 · Data Science
+</details>
+
+
+<details>
+<summary><b>2 · Data Science</b> &nbsp;·&nbsp; 10 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -340,7 +352,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `A4_forecasting_foundation_models.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A4_forecasting_foundation_models.ipynb) |
 | `A5_regression_analysis.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/02_data_science/A5_regression_analysis.ipynb) |
 
-### 3 · Real-world I/O
+</details>
+
+
+<details>
+<summary><b>3 · Real-world I/O</b> &nbsp;·&nbsp; 3 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -348,7 +364,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `13_sql_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/13_sql_fundamentals.ipynb) |
 | `A1_web_scraping_firecrawl.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/A1_web_scraping_firecrawl.ipynb) |
 
-### 4 · Web Scraping
+</details>
+
+
+<details>
+<summary><b>4 · Web Scraping</b> &nbsp;·&nbsp; 3 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -356,7 +376,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `15_scraping_with_firecrawl.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/04_webscraping/15_scraping_with_firecrawl.ipynb) |
 | `16_openalex_scholarly_data.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/04_webscraping/16_openalex_scholarly_data.ipynb) |
 
-### 5 · Machine Learning
+</details>
+
+
+<details>
+<summary><b>5 · Machine Learning</b> &nbsp;·&nbsp; 8 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -369,7 +393,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `A4_tabpfn_priorlab.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/05_machine_learning/A4_tabpfn_priorlab.ipynb) |
 | `A5_conformal_prediction.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/05_machine_learning/A5_conformal_prediction.ipynb) |
 
-### 6 · Deep Learning with PyTorch
+</details>
+
+
+<details>
+<summary><b>6 · Deep Learning with PyTorch</b> &nbsp;·&nbsp; 3 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -377,7 +405,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `21_training_neural_networks.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_pytorch/21_training_neural_networks.ipynb) |
 | `22_pytorch_in_practice.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/06_pytorch/22_pytorch_in_practice.ipynb) |
 
-### 7 · Industry Applications
+</details>
+
+
+<details>
+<summary><b>7 · Industry Applications</b> &nbsp;·&nbsp; 4 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -386,7 +418,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `25_segmentation_recommenders.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/25_segmentation_recommenders.ipynb) |
 | `26_demand_maintenance.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/26_demand_maintenance.ipynb) |
 
-### 8 · AI Engineering
+</details>
+
+
+<details>
+<summary><b>8 · AI Engineering</b> &nbsp;·&nbsp; 9 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -400,7 +436,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `A2_vector_stores_survey.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/08_ai_engineering/A2_vector_stores_survey.ipynb) |
 | `A3_rag_and_agent_frameworks.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/08_ai_engineering/A3_rag_and_agent_frameworks.ipynb) |
 
-### 9 · Building AI POCs
+</details>
+
+
+<details>
+<summary><b>9 · Building AI POCs</b> &nbsp;·&nbsp; 4 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -409,7 +449,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `35_rag_pipeline_deep_dive.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/09_building_ai_pocs/35_rag_pipeline_deep_dive.ipynb) |
 | `36_vector_db_and_agentic_ai.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/09_building_ai_pocs/36_vector_db_and_agentic_ai.ipynb) |
 
-### 10 · Agents, Tools & MCP
+</details>
+
+
+<details>
+<summary><b>10 · Agents, Tools & MCP</b> &nbsp;·&nbsp; 4 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -418,7 +462,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `39_model_context_protocol.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_agents_tools_mcp/39_model_context_protocol.ipynb) |
 | `40_multi_agent_systems.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/10_agents_tools_mcp/40_multi_agent_systems.ipynb) |
 
-### 11 · NLP (Text Analytics)
+</details>
+
+
+<details>
+<summary><b>11 · NLP (Text Analytics)</b> &nbsp;·&nbsp; 3 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -426,20 +474,32 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `42_topic_modeling_stream.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_nlp/42_topic_modeling_stream.ipynb) |
 | `43_sentiment_analysis.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/11_nlp/43_sentiment_analysis.ipynb) |
 
-### 12 · Optional: DeepTab
+</details>
+
+
+<details>
+<summary><b>12 · Optional: DeepTab</b> &nbsp;·&nbsp; 1 notebook</summary>
 
 | Notebook | Open |
 |---|---|
 | `44_deeptab_tabular_deep_learning.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/12_deeptab/44_deeptab_tabular_deep_learning.ipynb) |
 
-### 13 · Production
+</details>
+
+
+<details>
+<summary><b>13 · Production</b> &nbsp;·&nbsp; 2 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
 | `45_from_notebook_to_project.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/13_production/45_from_notebook_to_project.ipynb) |
 | `46_scheduling_orchestration.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/13_production/46_scheduling_orchestration.ipynb) |
 
-### 14 · CI/CD &amp; Deployment *(labs — mini-book module)*
+</details>
+
+
+<details>
+<summary><b>14 · CI/CD &amp; Deployment *(labs — mini-book module)*</b> &nbsp;·&nbsp; 3 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -447,14 +507,22 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `lab02_ci_pipeline_github_actions.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/14_cicd/lab02_ci_pipeline_github_actions.ipynb) |
 | `lab03_deploy_dns_https_monitoring.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/14_cicd/lab03_deploy_dns_https_monitoring.ipynb) |
 
-### 15 · Capstones
+</details>
+
+
+<details>
+<summary><b>15 · Capstones</b> &nbsp;·&nbsp; 2 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
 | `47_capstone_analytics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/15_capstones/47_capstone_analytics.ipynb) |
 | `48_capstone_ai_assistant.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/15_capstones/48_capstone_ai_assistant.ipynb) |
 
-### 16 · Business AI
+</details>
+
+
+<details>
+<summary><b>16 · Business AI</b> &nbsp;·&nbsp; 4 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -463,27 +531,43 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `51_ai_assisted_software_development.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/16_business_ai/51_ai_assisted_software_development.ipynb) |
 | `52_bpm_governance_poc_mvp.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/16_business_ai/52_bpm_governance_poc_mvp.ipynb) |
 
-### 17 · Optional: Django *(labs — mini-book module)*
+</details>
+
+
+<details>
+<summary><b>17 · Optional: Django *(labs — mini-book module)*</b> &nbsp;·&nbsp; 2 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
 | `lab01_django_in_a_notebook.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_django/lab01_django_in_a_notebook.ipynb) |
 | `lab02_serving_a_model_with_auth.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/17_django/lab02_serving_a_model_with_auth.ipynb) |
 
-### 18 · Optional: Compound AI Evaluation (CAFE)
+</details>
+
+
+<details>
+<summary><b>18 · Optional: Compound AI Evaluation (CAFE)</b> &nbsp;·&nbsp; 2 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
 | `53_compound_ai_evaluation_cafe.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/18_compound_ai_evaluation/53_compound_ai_evaluation_cafe.ipynb) |
 | `lab01_factorial_capstone_eval.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/18_compound_ai_evaluation/lab01_factorial_capstone_eval.ipynb) |
 
-### 19 · Optional: Containers &amp; Docker
+</details>
+
+
+<details>
+<summary><b>19 · Optional: Containers &amp; Docker</b> &nbsp;·&nbsp; 1 notebook</summary>
 
 | Notebook | Open |
 |---|---|
 | `lab01_container_anatomy.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/19_containers_docker/lab01_container_anatomy.ipynb) |
 
-### 🏎️ Fast track
+</details>
+
+
+<details>
+<summary><b>🏎️ Fast track</b> &nbsp;·&nbsp; 23 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -511,7 +595,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `21_capstone_fast_track.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/21_capstone_fast_track.ipynb) |
 | `22_web_scraping.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/fast_track/22_web_scraping.ipynb) |
 
-### 🧠 Quizzes
+</details>
+
+
+<details>
+<summary><b>🧠 Quizzes</b> &nbsp;·&nbsp; 17 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -532,6 +620,23 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `quiz_17_django.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_17_django.ipynb) |
 | `quiz_18_compound_ai_evaluation.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_18_compound_ai_evaluation.ipynb) |
 | `quiz_19_containers_docker.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/quizzes/quiz_19_containers_docker.ipynb) |
+
+</details>
+
+
+---
+
+## 📖 Documentation site
+
+The course's written documentation — every module guide plus the full mini-book chapters (CI/CD, Django, Containers &amp; Docker) — also builds into a browsable **Sphinx** website with search and a navigation sidebar:
+
+```bash
+pip install -r docs_site/requirements.txt
+cd docs_site && make html
+open _build/html/index.html        # Windows: start _build\html\index.html
+```
+
+Every notebook link on the site points back to GitHub, one click from Colab. The build is a static site, so it can also be published via GitHub Pages or Read the Docs — see [`docs_site/README.md`](./docs_site/README.md).
 
 ---
 

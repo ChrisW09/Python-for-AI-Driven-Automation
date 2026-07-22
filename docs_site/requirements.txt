@@ -1,0 +1,5 @@
+# Documentation build dependencies (in addition to the course requirements)
+sphinx>=8
+myst-parser>=4
+furo
+sphinxcontrib-mermaid

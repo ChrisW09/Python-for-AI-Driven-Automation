@@ -250,3 +250,10 @@ scratch/
 .local/
 
 # End of .gitignore
+
+# -----------------------------------------------------------------------------
+#  Sphinx documentation site — generated sources and build output
+# -----------------------------------------------------------------------------
+docs_site/_build/
+docs_site/modules/
+docs_site/extras/
