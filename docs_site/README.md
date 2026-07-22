@@ -20,8 +20,9 @@ links so they resolve in the built site. Those two directories and `_build/`
 are generated — edit the module READMEs in the repository instead, then
 rebuild.
 
-## Publishing (optional)
+## Publishing
 
-The `_build/html` directory is a static site — it can be published as-is via
-GitHub Pages (e.g. a workflow that runs `make html` and uploads
-`docs_site/_build/html`), Read the Docs, or any static host.
+The site is deployed automatically: the [Docs workflow](../.github/workflows/docs.yml)
+builds it on every push to `main` and publishes `_build/html` to GitHub Pages at
+<https://chrisw09.github.io/Python-for-AI-Driven-Automation/>. The build output
+is a plain static site, so it would also work on Read the Docs or any static host.

@@ -16,7 +16,7 @@
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
   <img alt="322 checkpoints, kernel-tested" src="https://img.shields.io/badge/322%20checkpoints-kernel--tested-8a2be2.svg">
-  <a href="./docs_site/"><img alt="Docs: Sphinx" src="https://img.shields.io/badge/Docs-Sphinx-0a507a.svg?logo=sphinx&logoColor=white"></a>
+  <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/"><img alt="Documentation" src="https://img.shields.io/badge/Docs-online-0a507a.svg?logo=sphinx&logoColor=white"></a>
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
@@ -27,6 +27,7 @@
 <p align="center">
   <a href="#-quick-start">🚀 Quick start</a> &nbsp;·&nbsp;
   <a href="#-curriculum">📚 Curriculum</a> &nbsp;·&nbsp;
+  <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/">📖 Documentation</a> &nbsp;·&nbsp;
   <a href="#-how-each-notebook-works">📓 How it works</a> &nbsp;·&nbsp;
   <a href="#-open-any-notebook-in-colab">▶️ Open in Colab</a> &nbsp;·&nbsp;
   <a href="#-contributing--licence">🤝 Contributing</a>
@@ -628,7 +629,11 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 ## 📖 Documentation site
 
-The course's written documentation — every module guide plus the full mini-book chapters (CI/CD, Django, Containers &amp; Docker) — also builds into a browsable **Sphinx** website with search and a navigation sidebar:
+The course's written documentation — every module guide plus the full mini-book chapters (CI/CD, Django, Containers &amp; Docker) — is published as a browsable **Sphinx** website with search and a navigation sidebar:
+
+<p align="center"><b>→ <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/">chrisw09.github.io/Python-for-AI-Driven-Automation</a> ←</b></p>
+
+It rebuilds automatically on every push to `main` (the [Docs workflow](./.github/workflows/docs.yml) deploys to GitHub Pages). Every notebook link on the site points back to GitHub, one click from Colab. To build it locally instead:
 
 ```bash
 pip install -r docs_site/requirements.txt
@@ -636,7 +641,7 @@ cd docs_site && make html
 open _build/html/index.html        # Windows: start _build\html\index.html
 ```
 
-Every notebook link on the site points back to GitHub, one click from Colab. The build is a static site, so it can also be published via GitHub Pages or Read the Docs — see [`docs_site/README.md`](./docs_site/README.md).
+See [`docs_site/README.md`](./docs_site/README.md) for how the site is generated from the course's own markdown.
 
 ---
 
