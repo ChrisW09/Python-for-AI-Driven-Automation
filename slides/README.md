@@ -8,14 +8,16 @@ Lecture decks in the HSBI house style (LaTeX Beamer, Madrid theme, 16:9).
 
 | Deck | Lecture | Companion notebook |
 |---|---|---|
-| `00_course_overview` | Orientation: the big picture, structure (modules 0–17), learning paths, how to study (checkpoints · quizzes · fast track), what you'll build | Module 0 (onboarding) |
+| `00_course_overview` | Orientation: the big picture, structure (modules 0–19), learning paths, how to study (checkpoints · quizzes · fast track), what you'll build | Module 0 (onboarding) |
 | `49_digital_transformation` | Why AI now · tasks-not-jobs · maturity model · change strategies · adoption pitfalls | NB 49 |
 | `50_architecture_patterns` | Single-tier → 3-tier → service-oriented → microservices · **frontend↔backend interaction with FastAPI** (request/response cycle + code) · the ML pipeline · choosing the right size | NB 50 |
 | `51_ai_assisted_software_development` | IDEs · Git & pull requests · prompt patterns for code · the four failure modes · the 60-second review | NB 51 |
 | `52_bpm_governance_poc_mvp` | BPM lifecycle · RACI for AI · POC → MVP → Production · three case studies · the readiness checklist | NB 52 |
 | `27_llm_fundamentals` | Tokens · parameters · next-token prediction · the Transformer & attention · prompting · limitations | NB 27 |
 
-The five lecture decks were added in the 2026 review pass and are numbered after their companion notebook (`27`, `49`–`52`); `00_course_overview` is the original onboarding deck, last revised for the module 0–17 structure (Web Scraping, PyTorch, the lab notebooks in CI/CD & Django, checkpoints/quizzes/fast track). There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
+The five lecture decks were added in the 2026 review pass and are numbered after their companion notebook (`27`, `49`–`52`); `00_course_overview` is the original onboarding deck, last revised for the **module 0–19** structure (adding Compound AI Evaluation and Containers & Docker, and refreshing the 117-notebook / 322-checkpoint / 17-quiz counts). There are intentionally **no decks for the hands-on modules** — teach those from the notebooks.
+
+> ⚠️ **The overview deck states counts** (modules, lessons, labs, appendices, notebooks, checkpoints, quizzes) on its structure and study slides, and the four generated infographics encode the module list. Both go stale the moment a module is added. After any structural change, update `MODULES` / `DEPS` / `SHORT` in [`../scripts/generate_course_images.py`](../scripts/generate_course_images.py), rerun it, and re-check those numbers in `00_course_overview.tex` against [`../README.md`](../README.md), which is the source of truth.
 
 **Structural infographics.** The overview deck's roadmap, dependency-graph, learning-paths and weekly-timeline PNGs in `images/` are *generated*, not drawn — after any module renumber or addition, edit the `MODULES` / `DEPS` / `PATHS` / `WEEKS` tables at the top of [`../scripts/generate_course_images.py`](../scripts/generate_course_images.py), rerun it (`.venv/bin/python scripts/generate_course_images.py`), and recompile the deck.
 

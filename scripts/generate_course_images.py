@@ -42,6 +42,8 @@ MODULES = [
     (15, "Capstones",            "NB 47–48",     "#3A3A3A", False),
     (16, "Business AI",          "NB 49–52",     "#4C9E9E", False),
     (17, "Django",               "mini-book",    "#A66E4A", True),
+    (18, "Compound AI Eval",     "NB 53 + lab",  "#B5838D", True),
+    (19, "Containers & Docker",  "mini-book",    "#46788C", True),
 ]
 MOD = {m[0]: m for m in MODULES}
 
@@ -68,12 +70,12 @@ def roadmap():
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.5, 0.965, "Python for AI-Driven Automation and Business Data Science",
             ha="center", va="top", fontsize=19, fontweight="bold", color="#2b2b2b")
-    ax.text(0.5, 0.905, "52 lessons + 5 labs + 13 appendices  ·  modules 0–17  ·  self-paced — spiral order",
+    ax.text(0.5, 0.905, "53 lessons + 7 labs + 14 appendices  ·  modules 0–19  ·  self-paced — spiral order",
             ha="center", va="top", fontsize=12, style="italic", color="#8a8a8a")
 
-    order = list(range(18))
-    per_row = 9
-    w, h, gx = 0.0935, 0.175, 0.0125
+    order = list(range(len(MODULES)))
+    per_row = 10
+    w, h, gx = 0.0845, 0.175, 0.0105
     x0 = (1 - per_row * w - (per_row - 1) * gx) / 2
     rows = [0.60, 0.30]
     for i, mnum in enumerate(order):
@@ -84,7 +86,8 @@ def roadmap():
                 "AI Engineering": "AI\nEngineering", "Building AI POCs": "Building\nAI POCs",
                 "Agents, Tools & MCP": "Agents, Tools\n& MCP", "CI/CD & Deployment": "CI/CD &\nDeployment",
                 "Industry Apps": "Industry\nApps", "Data Science": "Data\nScience",
-                "Web Scraping": "Web\nScraping"}
+                "Web Scraping": "Web\nScraping", "Compound AI Eval": "Compound\nAI Eval",
+                "Containers & Docker": "Containers\n& Docker"}
         white = dict(color="white", fontsize=12.5, fontweight="bold")
         small = dict(color="white", fontsize=8.2)
         label = WRAP.get(name, name) + (" *" if opt else "")
@@ -99,7 +102,8 @@ def roadmap():
                                  (x0 + w / 2, rows[1] + h + 0.005),
                                  arrowstyle="-|>", mutation_scale=12, color="#555",
                                  connectionstyle="arc3,rad=0.0"))
-    ax.text(0.5, 0.175, "* optional — NLP, DeepTab, CI/CD and Django can be skipped or read as reference",
+    ax.text(0.5, 0.175, "* optional — NLP, DeepTab, CI/CD, Django, Compound AI Evaluation and "
+                        "Containers can be skipped or read as reference",
             fontsize=10.5, color="#8a8a8a", ha="center")
     ax.text(0.5, 0.10, "— runs entirely offline · every exercise has a worked solution · "
                        "every notebook executes end-to-end —", **FOOT_KW)
@@ -112,7 +116,12 @@ def roadmap():
 DEPS = [  # (upstream, downstream)
     (0, 1), (1, 2), (2, 3), (3, 4), (2, 5), (5, 6), (5, 7), (3, 8), (5, 8),
     (8, 9), (9, 10), (8, 11), (6, 12), (9, 13), (13, 14), (7, 15), (10, 15),
-    (13, 15), (8, 16), (14, 17),
+    (13, 15), (8, 16), (14, 17), (8, 18),
+    # 18 builds on Module 8 (NB 32 evaluation, NB 29 retrieval). 19 is drawn as
+    # a root on purpose: its only prerequisite is Module-1 Python plus a
+    # terminal, and an edge spanning the whole diagram from 1 read as noise —
+    # the caption carries that instead. It pairs with 14 but does not depend on
+    # it, and can deliberately be read before it.
 ]
 
 
@@ -126,12 +135,13 @@ def dependency_graph():
         7: (0.015, 0.635), 5: (0.215, 0.635), 8: (0.415, 0.635), 9: (0.615, 0.635),
         6: (0.015, 0.455), 11: (0.215, 0.455), 13: (0.415, 0.455), 10: (0.615, 0.455),
         12: (0.015, 0.275), 16: (0.215, 0.275), 14: (0.415, 0.275), 15: (0.615, 0.275),
-        17: (0.415, 0.095),
+        17: (0.415, 0.095), 19: (0.815, 0.635), 18: (0.815, 0.455),
     }
     w, h = 0.17, 0.115
     for num, (x, y) in pos.items():
         _, name, _, color, opt = MOD[num]
-        WRAP = {"Agents, Tools & MCP": "Agents, Tools\n& MCP", "CI/CD & Deployment": "CI/CD &\nDeployment"}
+        WRAP = {"Agents, Tools & MCP": "Agents, Tools\n& MCP", "CI/CD & Deployment": "CI/CD &\nDeployment",
+                "Compound AI Eval": "Compound\nAI Eval", "Containers & Docker": "Containers\n& Docker"}
         _box(ax, x, y, w, h, color,
              [(str(num), dict(color="white", fontsize=12, fontweight="bold")),
               (WRAP.get(name, name), dict(color="white", fontsize=9.2, fontweight="bold"))],
@@ -154,8 +164,10 @@ def dependency_graph():
         ax.add_patch(FancyArrowPatch(start, end, arrowstyle="-|>", mutation_scale=12,
                                      color="#444", lw=1.3, alpha=0.85,
                                      connectionstyle=f"arc3,rad={rad}", zorder=1))
-    ax.text(0.5, 0.025, "Edges flow downstream. Module N is safe to start once every "
-                        "upstream module is comfortable.", **FOOT_KW)
+    ax.text(0.5, 0.025, "Edges flow downstream. Module N is safe to start once every upstream "
+                        "module is comfortable.\nModule 19 has no upstream: it needs only "
+                        "Module-1 Python and a terminal, and pairs with 14 in either order.",
+            **FOOT_KW)
     fig.savefig(OUT / "01_dependency_graph.png", bbox_inches="tight")
     plt.close(fig)
 
@@ -163,32 +175,32 @@ def dependency_graph():
 PATHS = [  # (label, color, hours, set of module numbers touched)
     ("Complete beginner", "#4C72B0", "~125 h", {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 15, 16}),
     ("Analyst (Excel + SQL)", "#64B5CD", "~47 h", {0, 2, 3, 4, 5, 7, 15}),
-    ("Developer (knows Python)", "#55A868", "~55 h", {0, 2, 3, 5, 8, 13, 15}),
+    ("Developer (Python)", "#55A868", "~55 h", {0, 2, 3, 5, 8, 13, 15}),
     ("ML practitioner", "#DD8452", "~38 h", {0, 6, 8, 10, 13, 15}),
     ("Manager (curious)", "#8172B2", "~10 h", {0, 15}),
 ]
 SHORT = {0: "Onbd", 1: "Fnd", 2: "DS", 3: "I/O", 4: "Scr", 5: "ML", 6: "PyT", 7: "Ind",
          8: "AI", 9: "POC", 10: "MCP", 11: "NLP", 12: "DT", 13: "Prod", 14: "CI", 15: "Cap",
-         16: "Biz", 17: "Djg"}
+         16: "Biz", 17: "Djg", 18: "Eval", 19: "Dock"}
 
 
 def learning_paths():
     fig, ax = plt.subplots(figsize=(13.2, 9.6), dpi=100)
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.5, 0.97, "Pick the learning path that fits you", ha="center", va="top", **TITLE_KW)
-    xs = [0.315 + i * 0.036 for i in range(18)]
+    xs = [0.300 + i * 0.0325 for i in range(len(MODULES))]
     yhdr = 0.80
     ax.text(0.03, yhdr, "Path", fontsize=14, fontweight="bold", color="#2b2b2b", va="center")
     for i, x in enumerate(xs):
-        ax.add_patch(FancyBboxPatch((x - 0.016, yhdr - 0.028), 0.032, 0.056,
+        ax.add_patch(FancyBboxPatch((x - 0.0145, yhdr - 0.028), 0.029, 0.056,
                                     boxstyle="round,pad=0.002,rounding_size=0.006",
                                     facecolor="#f2f2f2", edgecolor="#999", lw=1))
-        ax.text(x, yhdr + 0.011, str(i), ha="center", va="center", fontsize=8.6, fontweight="bold")
-        ax.text(x, yhdr - 0.013, SHORT[i], ha="center", va="center", fontsize=7.6)
+        ax.text(x, yhdr + 0.011, str(i), ha="center", va="center", fontsize=8.0, fontweight="bold")
+        ax.text(x, yhdr - 0.013, SHORT[i], ha="center", va="center", fontsize=6.9)
     ax.text(xs[-1] + 0.038, yhdr, "Time", fontsize=14, fontweight="bold", va="center")
     for r, (label, color, hours, touched) in enumerate(PATHS):
         y = 0.665 - r * 0.125
-        ax.text(0.03, y, label, fontsize=14.5, fontweight="bold", color=color, va="center")
+        ax.text(0.03, y, label, fontsize=13.2, fontweight="bold", color=color, va="center")
         ax.plot([xs[0], xs[-1]], [y, y], color=color, lw=2.4, alpha=0.45, zorder=1)
         for i, x in enumerate(xs):
             if i in touched:
@@ -197,7 +209,7 @@ def learning_paths():
                 ax.scatter([x], [y], s=55, color="#d9d9d9", zorder=2)
         ax.text(xs[-1] + 0.038, y, hours, fontsize=14, fontweight="bold", va="center")
     ax.text(0.5, 0.055, "Each dot is one module. Solid line = modules you'd touch on that path. "
-                        "Optional modules (11, 12, 14, 17) join any path.", **FOOT_KW)
+                        "Optional modules (11, 12, 14, 17, 18, 19) join any path.", **FOOT_KW)
     fig.savefig(OUT / "02_learning_paths.png", bbox_inches="tight")
     plt.close(fig)
 
