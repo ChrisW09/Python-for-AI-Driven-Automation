@@ -1,6 +1,6 @@
 # 🏎️ Fast Track
 
-> 🧭  [🏠 Course home](../README.md)  ·  [🧪 Module quizzes ▶](../quizzes/)  ·  [📝 Mock exams ▶](./mock_exams/)
+> 🧭  [🏠 Course home](../README.md)  ·  [🧪 Module quizzes ▶](../quizzes/)
 
 The whole curriculum, condensed to its essentials. **22 notebooks. About 26 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, an end-to-end capstone, and web scraping.
 
@@ -72,12 +72,6 @@ A few notes for instructors:
 - **Homework cadence:** assign the Practice exercises of each session's notebooks between lectures; offer Stretch C/D to stronger students. That adds ~2–3 h/week of self-study and keeps contact time for the interactive parts.
 - **Quizzes:** the [module quizzes](../quizzes/) make good 5-minute openers — quiz the previous session's topics before starting new material.
 - **Fewer sessions?** With 10 lectures, merge 7+8 into one session (drop the midpoint recap, trim NB 15's backtesting section) and fold NB 22 into the capstone session as homework.
-
----
-
-## 📝 Test yourself: mock exams
-
-Three full-length **[mock exams](./mock_exams/)** (120 min · 100 marks each) sample the whole track — each in a different business world (SaaS support, e-commerce, fintech) so you can sit up to three genuinely distinct attempts. Every exam ships with a **worked-solutions slide deck**: sit the paper, self-mark, then revisit the notebooks behind whatever you fumbled. They're the natural final step after NB 21/22 — and for instructors, ready-made practice papers for the 12-lecture course above.
 
 ---
 

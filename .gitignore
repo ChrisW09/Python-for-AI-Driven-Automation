@@ -257,3 +257,11 @@ scratch/
 docs_site/_build/
 docs_site/modules/
 docs_site/extras/
+docs_site/_static/
+
+# -----------------------------------------------------------------------------
+#  Assessment material — kept local, never published
+# -----------------------------------------------------------------------------
+#  Mock exam papers and their worked solutions stay off the public repo so the
+#  questions aren't searchable. They live on disk for instructors to hand out.
+fast_track/mock_exams/

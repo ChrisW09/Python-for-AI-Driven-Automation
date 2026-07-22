@@ -8,34 +8,27 @@ This site is the reference documentation for the course: one section per module 
 
 ## Where to start
 
-- **New to the course?** Start with the [onboarding module](modules/00_onboarding/index.md), or get a taste in 5 minutes with the *See it work* notebook.
+- **New to the course?** Start with the [onboarding module](modules/00_onboarding/index.md), or get a taste in 5 minutes with the [*See it work* notebook](https://github.com/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb) — an offline demo of the finished shapes, before any Python.
 - **Short on time?** The [fast track](extras/fast_track.md) condenses the whole course into 22 notebooks (~26 h).
 - **Checking what stuck?** Every content module has a short [quiz](extras/quizzes.md).
+
+## How to read a module page
+
+Each module page is that module's own guide: what you'll learn, the notebooks
+in order with time estimates and difficulty, the exercises, and how it connects
+to the modules on either side. Notebook names link straight to GitHub, where the
+Colab badge at the top of every notebook opens it in a browser — nothing to
+install. The three mini-book modules ([CI/CD](modules/14_cicd/index.md),
+[Django](modules/17_django/index.md), and
+[Containers & Docker](modules/19_containers_docker/index.md)) additionally have
+their full prose chapters here, listed in the sidebar in reading order.
 
 ```{toctree}
 :caption: Modules
 :maxdepth: 1
+:glob:
 
-modules/00_onboarding/index
-modules/01_foundations/index
-modules/02_data_science/index
-modules/03_real_world_io/index
-modules/04_webscraping/index
-modules/05_machine_learning/index
-modules/06_pytorch/index
-modules/07_industry_applications/index
-modules/08_ai_engineering/index
-modules/09_building_ai_pocs/index
-modules/10_agents_tools_mcp/index
-modules/11_nlp/index
-modules/12_deeptab/index
-modules/13_production/index
-modules/14_cicd/index
-modules/15_capstones/index
-modules/16_business_ai/index
-modules/17_django/index
-modules/18_compound_ai_evaluation/index
-modules/19_containers_docker/index
+modules/*/index
 ```
 
 ```{toctree}

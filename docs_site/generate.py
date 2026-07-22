@@ -64,7 +64,13 @@ def rewrite_links(text: str, src_dir: Path, doc_dir: str) -> str:
             slug = {"fast_track": "fast_track", "quizzes": "quizzes", "data": "datasets"}.get(mod)
             if slug:
                 return f"{prefix}extras/{slug}.md{frag}"
-            return f"{GITHUB}/{rel.as_posix()}"
+            # The repository root README ("🏠 Course home") -> this site's home
+            # page, so navigation stays on the site. An anchored link is the
+            # exception: the site index is a short summary and won't have the
+            # big README's headings, so send those to GitHub.
+            if mod == "" and not anchor:
+                return f"{prefix}index.md"
+            return f"{GITHUB}/{rel.as_posix()}" + frag
 
         # Same-directory chapter .md links stay local (Sphinx resolves them)
         if rel.suffix == ".md" and resolved.parent == src_dir:
@@ -86,10 +92,31 @@ def rewrite_links(text: str, src_dir: Path, doc_dir: str) -> str:
     return LINK_RE.sub(sub, text)
 
 
+def chapter_order(mod: Path, readme: str) -> list[str]:
+    """Order a module's chapters the way its README introduces them.
+
+    The mini-book modules are written to be read front to back, and their
+    README's table of contents *is* that order. Sorting the files by name
+    instead would put "Exercises" third and "Architecture" first — so take
+    the order in which the README first links to each chapter, then append
+    anything it never links to (alphabetically) so no page is lost.
+    """
+    files = {f.name for f in mod.glob("*.md")} - {"README.md"}
+    ordered: list[str] = []
+    for m in LINK_RE.finditer(readme):
+        name = m.group(2).partition("#")[0]
+        if name in files and name not in ordered:
+            ordered.append(name)
+    return ordered + sorted(files - set(ordered))
+
+
 def main() -> None:
-    for out in (HERE / "modules", HERE / "extras"):
+    for out in (HERE / "modules", HERE / "extras", HERE / "_static"):
         shutil.rmtree(out, ignore_errors=True)
         out.mkdir(parents=True)
+
+    # The course hero image doubles as the site's social-preview card.
+    shutil.copy(ROOT / "docs" / "images" / "hero.png", HERE / "_static" / "hero.png")
 
     module_pages = []
     for mod in MODULE_DIRS:
@@ -100,10 +127,9 @@ def main() -> None:
         dest_dir.mkdir(parents=True)
         doc_dir = f"modules/{mod.name}"
 
-        chapters = sorted(
-            f.name for f in mod.glob("*.md") if f.name != "README.md"
-        )
-        body = rewrite_links(readme.read_text(), mod, doc_dir)
+        raw_readme = readme.read_text()
+        chapters = chapter_order(mod, raw_readme)
+        body = rewrite_links(raw_readme, mod, doc_dir)
         if chapters:
             entries = "\n".join(c for c in chapters)
             body += (
