@@ -90,7 +90,9 @@ class MockLLM:
                 "crash", "angry", "frustrating", "refund", "cancel", "worst"}
     BILLING  = {"refund", "invoice", "charge", "bill", "subscription", "renew", "payment", "price"}
     TECH     = {"error", "crash", "bug", "broken", "login", "password", "loading", "freeze", "stuck"}
-    FEATURE  = {"feature", "request", "missing", "wish", "could you", "add", "support for"}
+    # Single words only: _kw_score matches word tokens, so a phrase like
+    # "could you" can never fire. (Both dead phrases removed — behaviour-neutral.)
+    FEATURE  = {"feature", "request", "missing", "wish", "add"}
 
     def __init__(self, seed: int = 0):
         self._rng = random.Random(seed)
