@@ -1,4 +1,4 @@
-# Containers & Docker — from first principles
+# Module 19 — Containers & Docker (from first principles)
 
 > 🧭  [◀ Compound AI Evaluation](../18_compound_ai_evaluation/)  ·  [🏠 Course home](../README.md)
 

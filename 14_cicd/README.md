@@ -1,4 +1,4 @@
-# CI/CD, Docker & Deployment
+# Module 14 — CI/CD, Docker & Deployment
 
 > 🧭  [◀ Production](../13_production/)  ·  [🏠 Course home](../README.md)  ·  [Capstones ▶](../15_capstones/)
 

@@ -1,4 +1,4 @@
-# 17 · Optional: Django for AI Web Apps
+# Module 17 — Django for AI Web Apps (optional)
 
 > 🧭  [◀ Business AI](../16_business_ai/)  ·  [🏠 Course home](../README.md)  ·  [Compound AI Evaluation ▶](../18_compound_ai_evaluation/)
 
