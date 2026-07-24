@@ -1,0 +1,159 @@
+/* Course documentation — design layer on top of Furo.
+ *
+ * The palette is not invented: every colour here is sampled from the course
+ * hero image (docs/images/hero.png), so the site, the banner and the favicon
+ * are the same identity. Link colours are contrast-checked against each
+ * theme's background — #4f46e5 is 6.3:1 on white, #a5b4fc is 9.3:1 on the
+ * Furo dark surface — so neither mode relies on the reader having good eyes.
+ */
+
+:root {
+  --course-navy:   #0a1021;
+  --course-blue:   #3cbaf8;
+  --course-indigo: #818cf8;
+  --course-pink:   #f273b8;
+  --course-arc: linear-gradient(90deg, var(--course-blue), var(--course-indigo), var(--course-pink));
+}
+
+/* ── The course arc ──────────────────────────────────────────────────────
+ * The hero cropped to its curve: the title is already the page's <h1>, so
+ * repeating it in an image would just be the same words twice. What is left
+ * is the part that carries information — the arc of the curriculum.
+ */
+.course-arc {
+  margin: 1.5rem 0 1.75rem;
+}
+.course-arc img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  /* The banner is dark in both themes, so give it a hairline that reads on
+     a white page without boxing it in on a dark one. */
+  box-shadow: 0 0 0 1px rgb(129 140 248 / 22%);
+}
+
+/* ── Stat chips ─────────────────────────────────────────────────────────── */
+.course-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+.course-stats li {
+  margin: 0;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-background-border);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-foreground-muted);
+  white-space: nowrap;
+}
+.course-stats li b {
+  color: var(--color-brand-content);
+  font-weight: 700;
+}
+
+/* ── "Where to start" → cards ────────────────────────────────────────────
+ * Scoped by section id so it styles this list and nothing else. The list
+ * stays ordinary Markdown, so Sphinx still resolves and link-checks every
+ * href — a hand-written <a href="…html"> would not survive a page move.
+ */
+#where-to-start > ul {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+#where-to-start > ul > li {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-background-border);
+  border-radius: 12px;
+  background: var(--color-background-secondary);
+  font-size: 0.925rem;
+  line-height: 1.55;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+#where-to-start > ul > li:hover {
+  border-color: var(--color-brand-primary);
+  transform: translateY(-2px);
+}
+#where-to-start > ul > li > strong:first-child {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--color-brand-content);
+}
+
+/* ── "Browse the course" → a module grid ─────────────────────────────────
+ * The toctree still generates this list, so adding a module needs no edit
+ * here. Only the landing page's grid is restyled; the mini-book chapter
+ * toctrees stay a numbered list, because those have a reading order and a
+ * grid would throw it away.
+ */
+#browse-the-course .toctree-wrapper > p.caption {
+  margin: 1.75rem 0 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-foreground-muted);
+}
+#browse-the-course .toctree-wrapper > ul {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#browse-the-course .toctree-wrapper > ul > li {
+  margin: 0;
+}
+#browse-the-course .toctree-wrapper > ul > li > a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-background-border);
+  border-left: 3px solid var(--color-brand-primary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+#browse-the-course .toctree-wrapper > ul > li > a:hover {
+  background: var(--color-background-secondary);
+  border-color: var(--color-brand-primary);
+}
+/* A module page's own chapter list would otherwise nest inside the card. */
+#browse-the-course .toctree-wrapper > ul > li > ul {
+  display: none;
+}
+
+/* ── Reading comfort ─────────────────────────────────────────────────────
+ * Furo's default measure runs wide on a large monitor; long prose is easier
+ * to track at a shorter line length. Tables and code keep the full width.
+ */
+article[role="main"] > section > p,
+article[role="main"] > section > section > p,
+article[role="main"] > section > ul,
+article[role="main"] > section > section > ul {
+  max-width: 46rem;
+}
+
+/* A hairline in the brand gradient under the page title, so the identity is
+ * present on every page without needing a banner on every page. */
+article[role="main"] > section > h1 {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  border-image: var(--course-arc) 1;
+}
+
+@media (max-width: 46em) {
+  .course-stats li { font-size: 0.75rem; }
+  .course-arc { margin: 1.25rem 0; }
+}

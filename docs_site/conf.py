@@ -56,7 +56,13 @@ linkcheck_retries = 2
 
 html_theme = "furo"
 html_title = "Python for AI-Driven Automation<br>& Business Data Science"
-html_static_path = ["_static"]
+# "assets" holds the hand-written design files (tracked); "_static" is rebuilt
+# by generate.py each run. Sphinx merges both into the output _static/.
+html_static_path = ["_static", "assets"]
+html_css_files = ["custom.css"]
+# The favicon is the hero's own curve on the hero's own navy — same identity,
+# legible at 16px because it is one shape, not a shrunken banner.
+html_favicon = "assets/favicon.png"
 
 # Furo does not bundle an icon font, so a footer icon has to supply its own
 # markup — with an empty "html" the link renders as an invisible zero-width
@@ -74,7 +80,22 @@ GITHUB_MARK = """
 </svg>
 """
 
+# Brand colours sampled from docs/images/hero.png and contrast-checked against
+# each theme's background: #4f46e5 is 6.3:1 on white, #a5b4fc is 9.3:1 on the
+# Furo dark surface. The mid-gradient indigo (#818cf8) fails on white at
+# 3.0:1, which is why light mode uses the darker step rather than the hue
+# straight off the banner.
 html_theme_options = {
+    "light_css_variables": {
+        "color-brand-primary": "#4f46e5",
+        "color-brand-content": "#4f46e5",
+        "color-brand-visited": "#6d28d9",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#a5b4fc",
+        "color-brand-content": "#a5b4fc",
+        "color-brand-visited": "#c4b5fd",
+    },
     "source_repository": "https://github.com/ChrisW09/Python-for-AI-Driven-Automation",
     "source_branch": "main",
     "footer_icons": [
