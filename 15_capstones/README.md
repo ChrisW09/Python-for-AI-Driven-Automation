@@ -32,8 +32,8 @@
 
 | # | Notebook | ⏱ Time | Difficulty | Project |
 |---|---|---|---|---|
-| 47 | `47_capstone_analytics.ipynb` | ~75–120 min | Intermediate | A complete analytical study of an AI support-bot deployment — 5 channels × 12 months of ops data → `groupby` analysis, a 2×2 executive dashboard, a Simpson's-paradox regression, channel clustering, and a 5-bullet executive summary |
-| 48 | `48_capstone_ai_assistant.ipynb` | ~90–120 min | Advanced | A complete AI feature — 50 overnight feedback messages classified with structured LLM output, validated, priority-routed, RAG-answered, and shipped as a scheduled daily report with tracing, a cost dashboard, and an eval gate |
+| 47 | `47_capstone_analytics.ipynb` | ~75–120 min | Intermediate | A complete analytical study of an AI support-bot deployment — 5 channels × 12 months of ops data → `groupby` analysis, a 2×2 executive dashboard, a confounded-correlation trap dissected per channel, channel clustering, and a 5-bullet executive summary |
+| 48 | `48_capstone_ai_assistant.ipynb` | ~90–120 min | Advanced | A complete AI feature — 50 overnight feedback messages classified with structured LLM output, validated, priority-routed, RAG-answered, and shipped as a scheduled daily report with tracing, a cost dashboard, and an eval gate drawn as a bullet chart |
 
 ## Capstone guides
 
@@ -41,7 +41,7 @@
 
 You've just joined a SaaS company that introduced an **AI-powered support bot** at the start of the year. The product manager wants one review document that answers four questions: which channels is the bot working well in, is the automation rate improving over the year, what's the trade-off between bot cost and customer satisfaction, and where should the team invest next? You answer with a small, polished analytical report — using everything from the earlier notebooks (variables, control flow, functions, NumPy, pandas, the pandas/seaborn plotting toolkit, scikit-learn) on one coherent business-AI problem. It's the very same support-ops bot you automated a weekly report for in NB 46: there you made it *run*; here you find out *what it's actually doing*.
 
-The notebook runs on one mental model — **you're a detective building one case file**. The dataset is the crime scene, exploration is dusting for prints, the `groupby`/`pivot_table` work is interviewing witnesses, the 2×2 dashboard is the evidence board, the regression and clustering are forensics, and the executive summary is your closing argument to a jury (the PM, who has 30 seconds). The forensics section springs the course's best statistical trap: the global latency-vs-satisfaction correlation looks damning, but conditioning on channel reveals **Simpson's paradox** — the real lever is moving volume between channels, not shaving milliseconds.
+The notebook runs on one mental model — **you're a detective building one case file**. The dataset is the crime scene, exploration is dusting for prints, the `groupby`/`pivot_table` work is interviewing witnesses, the 2×2 dashboard is the evidence board, the latency slopes and clustering are forensics, and the executive summary is your closing argument to a jury (the PM, who has 30 seconds). The forensics section springs the course's best statistical trap — twice. The global latency-vs-satisfaction correlation looks damning, but it is **aggregation bias**: slow channels simply happen to be the low-satisfaction channels, and conditioning on channel makes the association vanish. (Strictly it is *not* Simpson's paradox — that is the sharper case where the within-group sign flips; here the within-group slopes are indistinguishable from zero.) Then the second trap: with twelve points per channel those slopes are **underpowered, not absent**, and the notebook is explicit that "we cannot detect it" is not "it is not there". The defensible lever is still moving volume between channels rather than shaving milliseconds — but it rests on the level differences, not on those slopes.
 
 This is the *analytical* version of "shipping a project". The deliverable is a document a manager could read in five minutes and take to a meeting — and the notebook is explicit that the 5-bullet summary *is* the deliverable: everything you compute exists to support it.
 
@@ -49,7 +49,8 @@ This is the *analytical* version of "shipping a project". The deliverable is a d
 - Build and sanity-check a reproducible dataset (schema, missing values, category balance) before trusting any conclusion
 - Answer manager questions with `groupby` / `pivot_table`, plus `apply`-based feature engineering (quarter tags, a bot-economics "health" label)
 - Condense a study into a 2×2 executive dashboard (`plt.subplots(2, 2)`) worth pasting into a slide deck
-- Test a causal-sounding claim with correlation + regression — and catch Simpson's paradox by conditioning on channel
+- Test a causal-sounding claim by conditioning on the grouping variable — and tell aggregation bias from Simpson's paradox, and *underpowered* from *no effect*
+- Read a tree's feature importances without mistaking a proxy for a cause (`latency_ms` tops the ranking only because it identifies the channel)
 - Group channels via a distance matrix over their 12-month automation profiles (K-means in the stretch)
 - Write a 5-bullet executive summary: one insight per bullet, concrete numbers, actionable
 
@@ -60,7 +61,7 @@ This is the *analytical* version of "shipping a project". The deliverable is a d
 4. Automation analysis — 4.1 which channel automates best · 4.2 seasonal grouping (quarter feature via `apply`)
 5. Cost and satisfaction analysis — 5.1 a bot-economics classifier (qualitative health labels)
 6. The executive dashboard — the 2×2 evidence board
-7. A statistical question — does latency hurt satisfaction? (global vs per-channel correlation → Simpson's paradox)
+7. A statistical question — does latency hurt satisfaction? (global vs per-channel correlation → aggregation bias, and why n=12 per channel cannot settle it)
 8. Bonus — clustering channels by automation profile (distance matrix)
 9. Your turn — write the executive summary (draft yours, then expand the model answer)
 
@@ -116,7 +117,7 @@ The finished artefact is ~250 lines of self-contained Python demonstrating every
 7. Step 5 — the full pipeline + tracing (every message records labels, priority, tokens, latency)
 8. The KPI dashboard — priority mix, cost, latency, sentiment, read back from the trace
 9. The executive summary — what a PM actually wants to read
-10. The regression check — would tomorrow's prompt change still pass the golden set?
+10. The regression check — would tomorrow's prompt change still pass the golden set? (10.1 draws the ship/halt gate, so you can see how close you came)
 11. Wiring it all together — a single scheduled task (`daily_run`), the night-shift robot from NB 46 running an AI line
 
 **Practice:** milestone-driven, no ✋ quick-exercise cells. 🧪 **Bonus exercises 1–3** (an English-only filter that overrides priority; VIP-customer routing; baking the daily summary into a `report.md` — "trace.csv for engineers, report.md for managers") and 🧠 **stretch exercises A–B** (a daily cost cap that halts the run and fires a Slack alert; VIP messages that always escalate to p0), each with a collapsible 💡 solution. Closes with "What you've built" and five upgrade paths (real provider, embedding retrieval, tool calling, a Streamlit UI, a feedback loop).

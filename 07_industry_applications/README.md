@@ -25,10 +25,10 @@
 
 | # | Notebook | ⏱ Time | Difficulty | Business problem | What you'll build |
 |---|---|---|---|---|---|
-| 17 | `23_churn_clv_retention.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Who is leaving, what are they worth, who gets the €60 retention offer? | CLV table, expected-value targeting rule, budget-constrained retention campaign simulation |
-| 18 | `24_fraud_anomaly_detection.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Catch 0.5 % fraud with ~50 analyst reviews a day | Supervised + Isolation Forest detectors, precision@k alert queue, €-prevented accounting |
+| 17 | `23_churn_clv_retention.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Who is leaving, what are they worth, who gets the €60 retention offer? | CLV table, expected-value targeting rule, budget-constrained campaign simulation — and expected profit checked against realized |
+| 18 | `24_fraud_anomaly_detection.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Catch 0.5 % fraud with ~50 analyst reviews a day | Supervised + Isolation Forest detectors, precision@k alert queue, €-prevented accounting, and sizing the queue (a bigger one is not a better one) |
 | 19 | `25_segmentation_recommenders.ipynb` | ~2 h 50 m | ⭐⭐ (stretch ⭐⭐⭐) | Which kinds of customers do we have, and what should each see next? | RFM + k-means segmentation with named personas, item-item recommender that beats the popularity baseline |
-| 20 | `26_demand_maintenance.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | How much to stock, and when to service the machines? | Promo-aware demand forecasts → safety stock & newsvendor orders; sensor-based maintenance schedule |
+| 20 | `26_demand_maintenance.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | How much to stock, and when to service the machines? | Promo-aware demand forecasts → safety stock & newsvendor orders (which inherit any bias in the forecast beneath them); sensor-based maintenance schedule |
 
 *Times are the full study budgets from the course overview (`00b`): ~40–45 min core reading plus ~30 min practice, ~1 h of stretch work and ~30 min bonus. Stars use the course's exercise scale — ⭐ warmup, ⭐⭐ standard, ⭐⭐⭐ stretch.*
 

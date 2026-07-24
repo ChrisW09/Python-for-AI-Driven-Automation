@@ -2,7 +2,7 @@
 
 > 🧭  [🏠 Course home](../README.md)  ·  [🧪 Module quizzes ▶](../quizzes/)
 
-The whole curriculum, condensed to its essentials. **22 notebooks. About 26 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, an end-to-end capstone, and web scraping.
+The whole curriculum, condensed to its essentials. **22 notebooks. About 26.5 hours.** A shortcut you can finish in a few weeks of evenings — not a substitute for the full course, but a credible introduction that touches every layer of the stack: from Python basics through data science, machine learning, LLM agents and the Model Context Protocol (MCP), and on to forecasting, real business applications, NLP, deployment, an end-to-end capstone, and web scraping.
 
 The first **14 notebooks** are the original linear essentials; notebooks **15–22** are *breadth extensions* that mirror the applied modules of the full course (time series, model evaluation, industry applications, document AI & observability, NLP, deployment, a capstone, and web scraping) — each still trimmed to fast-track size.
 
@@ -38,9 +38,9 @@ The first **14 notebooks** are the original linear essentials; notebooks **15–
 | 18 | `18_document_ai_and_observability.ipynb` | Document extraction + validation; golden sets, LLM-as-judge, cost/trace dashboards | ~80 min |
 | 19 | `19_nlp_topic_modeling_and_sentiment.ipynb` | Topic modeling (TF-IDF + KMeans) and the sentiment ladder | ~75 min |
 | 20 | `20_shipping_scheduling_and_deployment.ipynb` | Scheduling &amp; retries; Docker layers, build cache, and CI — simulated offline | ~75 min |
-| 21 | `21_capstone_fast_track.ipynb`     | End-to-end support-ops project: analytics + AI assistant → executive summary | ~90 min |
+| 21 | `21_capstone_fast_track.ipynb`     | End-to-end support-ops project: analytics + AI assistant → executive summary | ~120 min |
 | 22 | `22_web_scraping.ipynb`            | Web scraping (BeautifulSoup, `robots.txt`, politeness) & the *check-for-an-API-first* rule (OpenAlex) | ~65 min |
-| | **Total** | | **~26 h** |
+| | **Total** | | **~26.5 h** |
 
 Each notebook (except the onboarding) is a **trimmed copy** of its canonical counterpart in the parent folders; notebooks 7, 9, 16 and 18 each combine two canonical chapters into one, and 17/19/21/22 condense a whole module. The first cell of every trimmed notebook links back to the full version(s). Notebooks 15–22 chain on from 14 but are self-contained — take them in order, or dip into the ones relevant to your work.
 
@@ -48,7 +48,7 @@ Each notebook (except the onboarding) is a **trimmed copy** of its canonical cou
 
 ## 🧑‍🏫 Teaching plan: 12 lectures × 180 minutes
 
-The fast track maps almost perfectly onto a **12-session course with 180-minute lectures** (36 h of contact time for ~26 h of material). Each session pairs roughly two notebooks and leaves ~30–60 minutes for the built-in ✋ Quick-exercise checkpoints (3 per notebook), a selection of the Practice exercises, and discussion. The natural rhythm: **teach ~20 min → ✋ checkpoint (~2 min, then reveal the solution) → repeat**, with a longer hands-on exercise block at the end of each notebook.
+The fast track maps almost perfectly onto a **12-session course with 180-minute lectures** (36 h of contact time for ~26.5 h of material). Each session pairs roughly two notebooks and leaves ~30–60 minutes for the built-in ✋ Quick-exercise checkpoints (3 per notebook), a selection of the Practice exercises, and discussion. The natural rhythm: **teach ~20 min → ✋ checkpoint (~2 min, then reveal the solution) → repeat**, with a longer hands-on exercise block at the end of each notebook.
 
 | Lecture | Theme | Notebooks | Content | Hands-on / buffer |
 |---|---|---|---|---|
@@ -62,9 +62,9 @@ The fast track maps almost perfectly onto a **12-session course with 180-minute 
 | **8** | Forecasting & honest evaluation | 15 time series · 16 model evaluation and feature engineering | ~150 min | ~30 min — leakage hunt exercise; announce capstone (lecture 11) |
 | **9** | AI in the business | 17 industry applications · 18 document AI and observability | ~160 min | ~20 min — second-tightest session: checkpoints only, Stretch C/D as homework |
 | **10** | NLP & shipping to production | 19 NLP topic modeling and sentiment · 20 scheduling and deployment | ~150 min | ~30 min — Docker layer-cache demo; sentiment-ladder discussion |
-| **11** | Capstone | 21 capstone fast track | ~90 min guided | ~90 min — supervised project work: students extend the capstone with their own analysis |
+| **11** | Capstone | 21 capstone fast track | ~120 min guided | ~90 min — supervised project work: students extend the capstone with their own analysis |
 | **12** | Web scraping & wrap-up | 22 web scraping | ~65 min | ~115 min — capstone presentations, [module quizzes](../quizzes/) as a review round, where-to-go-next (full course, Stretch A/B) |
-| | **Total** | 22 notebooks + onboarding | **~26 h** | **~10 h** |
+| | **Total** | 22 notebooks + onboarding | **~26.5 h** | **~10 h** |
 
 A few notes for instructors:
 

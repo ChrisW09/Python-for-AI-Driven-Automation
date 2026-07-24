@@ -9,7 +9,7 @@ This site is the reference documentation for the course: one section per module 
 ## Where to start
 
 - **New to the course?** Start with the [onboarding module](modules/00_onboarding/index.md), or get a taste in 5 minutes with the [*See it work* notebook](https://github.com/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb) — an offline demo of the finished shapes, before any Python.
-- **Short on time?** The [fast track](extras/fast_track.md) condenses the whole course into 22 notebooks (~26 h).
+- **Short on time?** The [fast track](extras/fast_track.md) condenses the whole course into 22 notebooks (~26.5 h).
 - **Checking what stuck?** Every content module has a short [quiz](extras/quizzes.md).
 
 ## How to read a module page
