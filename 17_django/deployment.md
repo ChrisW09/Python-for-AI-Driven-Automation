@@ -68,7 +68,7 @@ Open <http://localhost:8000/> and score a customer — same app, now in a box. T
 
 **Migrations at container start.** The `CMD` is `sh -c "python manage.py migrate --noinput && exec gunicorn churnscope.wsgi --bind 0.0.0.0:8000"` — migrate, then serve, so the container sets itself up. Fine for a single-container SQLite demo; in real life run migrations as a separate **release step** (a one-off `docker run … python manage.py migrate`, or a CI job) — otherwise several replicas race to migrate the same database.
 
-**Static files.** The demo serves nothing collected beyond the admin's assets, so the image skips `collectstatic`. The standard production answer: run `python manage.py collectstatic --noinput` at build time and add [WhiteNoise](https://whitenoise.readthedocs.io/) middleware so gunicorn serves the collected files efficiently — or let Module 14's Nginx serve `staticfiles/` directly.
+**Static files.** The demo serves nothing collected beyond the admin's assets, so the image skips `collectstatic`. The standard production answer: run `python manage.py collectstatic --noinput` at build time and add [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/) middleware so gunicorn serves the collected files efficiently — or let Module 14's Nginx serve `staticfiles/` directly.
 
 **SQLite in a container is ephemeral.** The database lives in the container's writable layer, so `docker rm` deletes every logged prediction (Module 14, [Docker §8](../14_cicd/docker.md)). Bind-mount the file to keep it:
 

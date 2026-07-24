@@ -34,7 +34,10 @@ Two things `generate.py` does that are worth knowing when you edit a module:
 
 `make html` builds with `-W`, so an unresolved cross-reference fails the build
 rather than shipping a dead link. `make linkcheck` additionally verifies that
-external URLs still resolve.
+external URLs still resolve — with localhost URLs and GitHub *anchor*
+checks excluded in `conf.py`, since both report working links as broken.
+It is not part of CI (external sites go down for reasons that are not your
+bug), so run it before a release and read what it says.
 
 ## Publishing
 

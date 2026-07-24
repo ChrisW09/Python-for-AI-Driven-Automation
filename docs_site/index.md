@@ -2,7 +2,7 @@
 
 From your first line of Python to shipping a real AI-driven automation — a hands-on curriculum (self-paced *or* instructor-led) across Python fluency, business data science, machine learning, deep learning, AI engineering, and production.
 
-**117 runnable notebooks · 20 modules · 300+ exercises · 322 in-lesson checkpoints · 100% offline**
+**117 runnable notebooks · 20 modules · 300+ exercises · 326 in-lesson checkpoints · 100% offline**
 
 This site is the reference documentation for the course: one section per module (the module guides, plus the full mini-book chapters for CI/CD, Django, and Containers & Docker), together with the fast track, quizzes, and dataset guides. The notebooks themselves live in the [GitHub repository](https://github.com/ChrisW09/Python-for-AI-Driven-Automation) — every notebook link on this site takes you straight to it, and each one can be opened in Google Colab with one click.
 

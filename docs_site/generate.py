@@ -20,7 +20,13 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-GITHUB = "https://github.com/ChrisW09/Python-for-AI-Driven-Automation/blob/main"
+GITHUB_REPO = "https://github.com/ChrisW09/Python-for-AI-Driven-Automation"
+
+
+def github_url(rel, is_dir: bool) -> str:
+    """Repo path -> GitHub URL. Directories live under /tree/, files under
+    /blob/ — get it wrong and every such link takes a redirect hop."""
+    return f"{GITHUB_REPO}/{'tree' if is_dir else 'blob'}/main/{rel.as_posix()}"
 
 MODULE_DIRS = sorted(
     d for d in ROOT.iterdir() if d.is_dir() and re.match(r"^\d{2}_", d.name)
@@ -70,7 +76,7 @@ def rewrite_links(text: str, src_dir: Path, doc_dir: str) -> str:
             # big README's headings, so send those to GitHub.
             if mod == "" and not anchor:
                 return f"{prefix}index.md"
-            return f"{GITHUB}/{rel.as_posix()}" + frag
+            return github_url(rel, resolved.is_dir()) + frag
 
         # Same-directory chapter .md links stay local (Sphinx resolves them)
         if rel.suffix == ".md" and resolved.parent == src_dir:
@@ -83,7 +89,7 @@ def rewrite_links(text: str, src_dir: Path, doc_dir: str) -> str:
             return f"{prefix}modules/{rel.as_posix()}{frag}"
 
         # Everything else (.ipynb, .py, .csv, LICENSE, ...)
-        return f"{GITHUB}/{rel.as_posix()}" + (f"#{anchor}" if anchor else "")
+        return github_url(rel, resolved.is_dir()) + (f"#{anchor}" if anchor else "")
 
     def sub(m: re.Match) -> str:
         new = target_for(m.group(2))

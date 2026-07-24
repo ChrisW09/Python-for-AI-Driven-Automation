@@ -44,6 +44,16 @@ ogp_site_name = project
 ogp_image = html_baseurl + "_static/hero.png"
 ogp_enable_meta_description = True
 
+# ── linkcheck ────────────────────────────────────────────────────────────────
+# Two classes of false alarm would otherwise drown the real findings:
+#   * localhost URLs are instructions to open your own dev server, not links.
+#   * GitHub emits heading ids as `user-content-<slug>`, so anchor checking
+#     reports links that work perfectly in a browser as broken.
+# Ignoring both means a non-empty linkcheck report is worth reading.
+linkcheck_ignore = [r"^https?://(127\.0\.0\.1|localhost)(:\d+)?(/|$)"]
+linkcheck_anchors_ignore_for_url = [r"^https://github\.com/"]
+linkcheck_retries = 2
+
 html_theme = "furo"
 html_title = "Python for AI-Driven Automation<br>& Business Data Science"
 html_static_path = ["_static"]
