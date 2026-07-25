@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-# ---- Base image: small, official Python (same pattern as Module 12) ----
+# ---- Base image: small, official Python (same pattern as Module 14) ----
 FROM python:3.12-slim
 
 # Sensible Python defaults inside containers
