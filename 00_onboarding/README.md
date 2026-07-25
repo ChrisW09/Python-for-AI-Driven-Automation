@@ -4,7 +4,7 @@
 
 **Goal:** in 30–45 minutes, give you a clear map of the course, a working Python environment, and a mental model of *how to study* the rest of the course.
 
-**Estimated time:** ~40 minutes (~20 + ~5 + ~15 across the three notebooks).
+**Estimated time:** ~40 min for the three orientation notebooks (~20 + ~5 + ~15), plus two optional beginner skills primers — the command line (~35–45 min) and git & GitHub (~45–55 min) — for anyone new to the terminal or version control.
 
 **Prerequisites:** none — this is the entry point. You only need a way to run notebooks: Google Colab (free Google account) or a local Python + Jupyter/VS Code setup; `00_master_onboarding.ipynb` walks you through both.
 
@@ -33,8 +33,10 @@
 | **`00_master_onboarding.ipynb`** | ~20 min | — | Course philosophy, the recommended **spiral** order, the 5-step study loop, learning paths, environment check. The "you are here" notebook. |
 | **`00c_see_it_work.ipynb`** | ~5 min | — | An **offline** demo of the finished shapes — AI triage, RAG, a KPI snapshot — so you see the destination before the Python begins. |
 | **`00b_course_overview.ipynb`** | ~15 min | — | The companion overview: module-map diagram, per-notebook time budgets (read / practice / stretch / bonus), five learning paths, interactive time estimator, study habits that actually work. |
+| **`00d_command_line_basics.ipynb`** | ~35–45 min | Beginner | A runnable, 100% offline **command-line survival guide** — the shell, absolute vs relative paths, files, pipes & redirection, `PATH`, permissions, and `!`/`%%bash` in notebooks. For anyone unsure what a terminal is. |
+| **`00e_git_and_github_basics.ipynb`** | ~45–55 min | Beginner | The **git & GitHub** essentials every later notebook assumes — the staging model, `add`/`commit`/`log`/`diff`, branches & `merge`, `.gitignore`, undo, and what GitHub adds. Drives a real repo offline. |
 
-*(No difficulty ratings here — these are orientation notebooks, not lessons.)*
+*(The three orientation notebooks carry no difficulty rating. `00d`/`00e` are optional beginner skills primers — take them if the terminal or git is new to you; skip them if not.)*
 
 ## Notebook guides
 

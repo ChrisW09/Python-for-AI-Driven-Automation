@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <b>117 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 326 in-lesson checkpoints · 100% offline</b>
+  <b>119 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 326 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -46,7 +46,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 117 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 119 notebooks
 - [Documentation site](#-documentation-site)
 - [About](#-about)
 - [Citation](#-citation)
@@ -308,16 +308,18 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Expand a module and click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
-<sub>The **117 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
+<sub>The **119 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
 
 <details>
-<summary><b>0 · Onboarding</b> &nbsp;·&nbsp; 3 notebooks</summary>
+<summary><b>0 · Onboarding</b> &nbsp;·&nbsp; 5 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
 | `00_master_onboarding.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00_master_onboarding.ipynb) |
 | `00b_course_overview.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00b_course_overview.ipynb) |
 | `00c_see_it_work.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00c_see_it_work.ipynb) |
+| `00d_command_line_basics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00d_command_line_basics.ipynb) |
+| `00e_git_and_github_basics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/00_onboarding/00e_git_and_github_basics.ipynb) |
 
 </details>
 
