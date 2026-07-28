@@ -46,7 +46,7 @@
 - [Datasets](#-datasets)
 - [How each notebook works](#-how-each-notebook-works)
 - [LLM providers](#-llm-providers)
-- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 120 notebooks
+- [Open any notebook in Colab](#-open-any-notebook-in-colab) — one-click links to all 122 notebooks
 - [Documentation site](#-documentation-site)
 - [About](#-about)
 - [Citation](#-citation)
@@ -150,7 +150,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**4 · Web Scraping**](./04_webscraping/) | 14–16 | Scraping fundamentals (BeautifulSoup, `robots.txt`, politeness), Firecrawl managed scraping, and the OpenAlex open scholarly API — all 100% offline |
 | [**5 · Machine Learning**](./05_machine_learning/) | 17–19 | scikit-learn, cross-validation &amp; hyperparameter tuning, model evaluation, feature engineering |
 | [**6 · Deep Learning with PyTorch**](./06_pytorch/) | 20–22 | Tensors, autograd &amp; the training loop; overfitting, regularization &amp; schedules; embeddings, an honest bake-off vs gradient boosting, a sklearn-style wrapper &amp; serving |
-| [**7 · Industry Applications**](./07_industry_applications/) | 23–26 (+A1) | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance; appendix on pricing, elasticity &amp; promotion ROI |
+| [**7 · Industry Applications**](./07_industry_applications/) | 23–26 (+A1–A3) | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance; full-weight appendices on pricing &amp; elasticity, A/B testing &amp; experiment design, and credit-risk scorecards |
 | [**8 · AI Engineering**](./08_ai_engineering/) | 27–32 | LLM fundamentals, prompts, RAG, agents, document processing, eval &amp; observability |
 | [**9 · Building AI POCs**](./09_building_ai_pocs/) | 33–36 | Copilot setup, three POCs, RAG deep dive, vector DBs + agentic AI |
 | [**10 · Agents, Tools &amp; MCP**](./10_agents_tools_mcp/) | 37–40 | Agent architectures, robust tools, the Model Context Protocol, multi-agent systems |
@@ -164,7 +164,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**18 · Optional: Compound AI Evaluation**](./18_compound_ai_evaluation/) | 53 + 1 lab | Which pipeline knob drives quality? Factorial designs, replication, ANOVA attribution &amp; Pareto frontiers with [CAFE](https://cafe-ai.de) — plus a hands-on lab running a factorial study on the capstone assistant |
 | [**19 · Optional: Containers &amp; Docker**](./19_containers_docker/) | 1 lab | What a container *is*: images &amp; layers, OverlayFS, namespaces &amp; cgroups, data-science Dockerfiles, volumes &amp; networking — a mini-book + offline lab; pairs with Module 14 and can be read before it |
 
-> **15 optional appendices** (classical → deep-learning → foundation-model forecasting, regression analysis, PyTorch, pricing &amp; elasticity, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django), 18 (Compound AI Evaluation) and 19 (Containers &amp; Docker)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26.5 h).
+> **17 optional appendices** (classical → deep-learning → foundation-model forecasting, regression analysis, PyTorch, pricing &amp; elasticity, A/B testing, credit-risk scorecards, vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django), 18 (Compound AI Evaluation) and 19 (Containers &amp; Docker)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26.5 h).
 
 ---
 
@@ -412,7 +412,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 
 
 <details>
-<summary><b>7 · Industry Applications</b> &nbsp;·&nbsp; 5 notebooks</summary>
+<summary><b>7 · Industry Applications</b> &nbsp;·&nbsp; 7 notebooks</summary>
 
 | Notebook | Open |
 |---|---|
@@ -421,6 +421,8 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `25_segmentation_recommenders.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/25_segmentation_recommenders.ipynb) |
 | `26_demand_maintenance.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/26_demand_maintenance.ipynb) |
 | `A1_pricing_promotions.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A1_pricing_promotions.ipynb) |
+| `A2_experiments_ab_testing.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A2_experiments_ab_testing.ipynb) |
+| `A3_credit_risk_scorecards.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A3_credit_risk_scorecards.ipynb) |
 
 </details>
 
