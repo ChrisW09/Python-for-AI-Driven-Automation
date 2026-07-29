@@ -27,3 +27,9 @@ jobs:
       # renumber or a moved lesson would otherwise leave dangling.
       - name: Validate notebook cross-references
         run: python scripts/check_nb_references.py
+      # The notebook/checkpoint/appendix totals appear in several prose spots
+      # (README badge + headline, docs index, 00b overview). They have drifted
+      # before; this derives the real numbers from the tree and fails on any
+      # mismatch — including a notebook missing its Colab row.
+      - name: Validate course counts
+        run: python scripts/check_course_counts.py

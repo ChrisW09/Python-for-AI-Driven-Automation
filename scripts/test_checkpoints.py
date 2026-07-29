@@ -37,7 +37,8 @@ FOLDERS = [
     "05_machine_learning", "07_industry_applications", "08_ai_engineering",
     "09_building_ai_pocs", "10_agents_tools_mcp", "11_nlp", "12_deeptab",
     "13_production", "14_cicd", "15_capstones", "16_business_ai", "17_django",
-    "04_webscraping", "06_pytorch", "18_compound_ai_evaluation", "fast_track",
+    "04_webscraping", "06_pytorch", "18_compound_ai_evaluation",
+    "19_containers_docker", "fast_track",
 ]
 
 

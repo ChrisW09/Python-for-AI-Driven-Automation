@@ -10,7 +10,7 @@ From your first line of Python to shipping a real AI-driven automation — a han
   <li><b>122</b> runnable notebooks</li>
   <li><b>20</b> modules</li>
   <li><b>300+</b> exercises</li>
-  <li><b>338</b> in-lesson checkpoints</li>
+  <li><b>341</b> in-lesson checkpoints</li>
   <li><b>100%</b> offline</li>
 </ul>
 
