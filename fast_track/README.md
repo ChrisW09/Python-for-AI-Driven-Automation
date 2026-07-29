@@ -83,7 +83,7 @@ The breadth extensions (NB 15–22) now mirror most of the full course's applied
 - **🎁 Bonus mini-project** at the end of every notebook.
 - **Full depth in every lesson** — each fast-track notebook is trimmed; the combined ones (NB 7, 9, 16, 18) and the module-condensing ones (NB 17, 19, 21, 22) keep the essential throughline and link back to the canonical chapters for the rest.
 - **A standalone NumPy notebook** (`08_numpy_fundamentals.ipynb`) and **`04_dictionaries_advanced.ipynb`** — folded into pandas (NB 6) and the lists + dicts notebook (NB 3) respectively.
-- **The optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, TabPFN/conformal prediction, vector-store & RAG/agent-framework surveys), **Module 12 (DeepTab)**, **Module 16 (Business AI)** as a standalone lesson, and **Module 17 (Django)**.
+- **The optional appendices** (classical → deep-learning → foundation-model forecasting, PyTorch, TabPFN/conformal prediction, vector-store & RAG/agent-framework surveys, and the pricing / A/B-testing / credit-risk industry deep dives), **Module 12 (DeepTab)**, **Module 16 (Business AI)** as a standalone lesson, and **Module 17 (Django)**.
 
 The full course is at the parent level — entry point: `../00_onboarding/00_master_onboarding.ipynb`.
 
