@@ -15,13 +15,13 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
-  <img alt="341 checkpoints, kernel-tested" src="https://img.shields.io/badge/341%20checkpoints-kernel--tested-8a2be2.svg">
+  <img alt="342 checkpoints, kernel-tested" src="https://img.shields.io/badge/342%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/"><img alt="Documentation" src="https://img.shields.io/badge/Docs-online-0a507a.svg?logo=sphinx&logoColor=white"></a>
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>122 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 341 in-lesson checkpoints · 100% offline</b>
+  <b>122 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 342 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -59,7 +59,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **341 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **342 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -75,7 +75,7 @@
 - **📦 A new Containers & Docker module.** What a container actually *is*: images &amp; layers, the overlay filesystem, namespaces &amp; cgroups, and Dockerfile patterns for Python/data-science/GPU workloads — a first-principles mini-book plus a 100% offline lab that rebuilds image layers, the build cache, and OverlayFS in pure Python. The fundamentals deep-dive behind Module 14. → [Module 19](./19_containers_docker/)
 - **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26.5 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
 - **🧪 Module quizzes.** Seventeen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
-- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **341 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
+- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **342 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
 ---

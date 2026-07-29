@@ -36,7 +36,7 @@ One running example ties the four notebooks together: 🏢 **Meridian**, a ficti
 | 49 | `49_digital_transformation.ipynb` | ~1.5 h | Intermediate | Why AI feels different *this* time, tasks-not-jobs framing, the five-stage maturity model, three change strategies, the four adoption pitfalls, the human side |
 | 50 | `50_architecture_patterns.ipynb` | ~1.5 h | Intermediate | Single-tier → 3-tier → service-oriented → microservices, the end-to-end ML pipeline, and picking the simplest architecture that holds |
 | 51 | `51_ai_assisted_software_development.ipynb` | ~2 h | Intermediate | The 2026 IDE landscape, Git & pull requests, prompt engineering for code, the four failure modes of AI-generated code, when *not* to trust the assistant |
-| 52 | `52_bpm_governance_poc_mvp.ipynb` | ~2.5 h | Intermediate | Embedding AI in the BPM loop, RACI governance, POC → MVP → Production, three case studies, the 10-question readiness checklist |
+| 52 | `52_bpm_governance_poc_mvp.ipynb` | ~2.5 h | Intermediate | Embedding AI in the BPM loop, RACI governance, POC → MVP → Production, three case studies, the EU AI Act risk map, the 10-question readiness checklist |
 
 ## Notebook guides
 
@@ -92,7 +92,7 @@ It isn't all prose: a 🔬 runnable, stdlib-only simulation demonstrates **failu
 
 **Frameworks covered:** single-tier script · three-tier client-server · service-oriented · microservices · end-to-end ML/AI pipeline (cross-cutting) · the traffic-question heuristic and decision table, with the rule *"pick the architecture you'll have outgrown in 12 months, not the one you'll need in 36"* · failure isolation & graceful degradation.
 
-**Practice:** 4 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. an architecture-review "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. cost a microservices migration, review a real-ish ADR).
+**Practice:** 5 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. an architecture-review "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. cost a microservices migration, review a real-ish ADR).
 
 ### 51 · AI-Assisted Software Development — `51_ai_assisted_software_development.ipynb`
 
@@ -117,19 +117,20 @@ Flagged 📍 **do this early**: the Git + GitHub + Copilot workflow pays off acr
 
 **Frameworks covered:** completion vs chat interaction modes (VS Code + Copilot, Cursor, PyCharm + JetBrains AI, Jupyter AI) · the 9-command Git core + pull-request workflow · five prompt patterns for code (give the AI what it can't see; ask for one thing; be specific about constraints; ask for tests; ask for alternatives) · the four failure modes (hallucinated APIs, plausible-but-wrong, architectural drift, silent over-confidence) · the 60-second review checklist · the "confident junior" delegation rule.
 
-**Practice:** 4 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. a review-style "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. compare two assistants, write a team prompt-style guide) · 🎁 bonus mini-project: set up your AI-assisted workflow for *this* course.
+**Practice:** 5 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. a review-style "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. compare two assistants, write a team prompt-style guide) · 🎁 bonus mini-project: set up your AI-assisted workflow for *this* course.
 
 ### 52 · BPM Integration, Governance, POC → MVP → Production — `52_bpm_governance_poc_mvp.ipynb`
 
 The closing notebook pulls the methodology together. You now know *what* to automate (NB 49), *how to structure it* (NB 50), and *how to build it efficiently* (NB 51) — what Meridian holds at this point is **working code that nobody uses yet**, and this is the last and longest stretch: turning it into a default tool the organisation trusts. The mental model: *POC, MVP, and Production are not three phases of one project — they are three different projects with three different questions* ("Can it work at all?" / "Will real users use it?" / "Can we run it for three years?"), and confusing them is the single most expensive mistake in AI project planning.
 
-Three 📚 case studies make the pattern concrete: **Case 1 is Meridian's ticket-triage story told end-to-end from POC to production**; Case 2 is invoice processing in a 60-person finance department; Case 3 is "AI for sales analytics" — a project that *didn't* ship. A synthesis section distils everything into a 10-question readiness checklist, and a final section turns the whole module into a four-week, four-role team seminar (with an instructor grading rubric).
+Three 📚 case studies make the pattern concrete: **Case 1 is Meridian's ticket-triage story told end-to-end from POC to production**; Case 2 is invoice processing in a 60-person finance department; Case 3 is "AI for sales analytics" — a project that *didn't* ship. A regulation section places the course's own systems on the **EU AI Act's** risk map — the tier follows the *use*, not the technology. A synthesis section distils everything into a 10-question readiness checklist, and a final section turns the whole module into a four-week, four-role team seminar (with an instructor grading rubric).
 
 **Learning objectives:**
 - Embed an AI feature at the right point in the BPM lifecycle (analyse → design → execute → monitor)
 - Draft a RACI table for an AI initiative covering the human, AI, and platform roles
 - Distinguish POC, MVP, and Production by their *purpose*, not their feature list — and avoid the most common confusion
 - Walk through three case studies end-to-end, identifying where each project went well and where it struggled
+- Place an AI system in the EU AI Act's risk tiers, and know which duties fall on a provider vs a deployer
 - Produce a one-page project plan for a hypothetical AI initiative at your own organisation
 
 **Sections:**
@@ -137,12 +138,13 @@ Three 📚 case studies make the pattern concrete: **Case 1 is Meridian's ticket
 2. Governance — drafting a RACI for an AI initiative
 3. POC → MVP → Production — three projects, not three phases
 4. Three case studies — what real AI initiatives look like
-5. Synthesis — a one-page checklist for an AI initiative
-6. Run it as a team — the seminar format
+5. Regulation — the EU AI Act at working altitude
+6. Synthesis — a one-page checklist for an AI initiative
+7. Run it as a team — the seminar format
 
 **Frameworks covered:** the BPM loop (analyse → design → execute → monitor) with three AI-integration patterns (AI in design / execute / monitor) · RACI matrices for AI initiatives · the POC → MVP → Production model · the 10-question readiness checklist ("a tool for the technical lead to say no constructively") · the four-role, four-week seminar format.
 
-**Practice:** 4 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. a post-mortem-reading "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. design the production rollout, write a "this project should stop" memo) · 🎁 bonus mini-project: your own project plan.
+**Practice:** 5 ✋ quick-exercise checkpoints · 5 🧪 practice exercises (⭐–⭐⭐, incl. a post-mortem-reading "Debug me 🐞") · 4 🧠 stretch exercises (⭐⭐⭐, e.g. design the production rollout, write a "this project should stop" memo) · 🎁 bonus mini-project: your own project plan.
 
 ## How these notebooks work
 
