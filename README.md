@@ -687,7 +687,7 @@ If you use this course or its materials in your teaching, work, or research, ple
 
 ## 🤝 Contributing & licence
 
-Spotted a bug or an unclear explanation? **Open an issue or PR** — contributions are welcome.
+Spotted a bug or an unclear explanation? **Open an issue or PR** — contributions are welcome. If you're editing notebooks, [`MAINTENANCE.md`](./MAINTENANCE.md) lists the verification gates every change must pass (and the quarterly currency checklist for the few surfaces that track the outside world).
 
 Licensed under the **MIT License** (see [`LICENSE`](./LICENSE)) — use freely for learning, teaching, or anything else.
 
