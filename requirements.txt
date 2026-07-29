@@ -84,6 +84,12 @@ beautifulsoup4>=4.12,<5
 # --- Optional deep tabular learning (Module 10 — DeepTab) ---
 # deeptab>=2.0                      # NB 38 — OpenTabular/DeepTab; deep tabular models, sklearn API (v2 split-config; pulls torch + lightning)
 
+# --- Optional bigger-than-pandas engines (Module 3 appendix A2) ---
+# The appendix's Parquet sections run on the core stack (pandas + pyarrow);
+# these two turn on the DuckDB/Polars sections (small installs, no server).
+# duckdb>=1.0                       # SQL over Parquet/CSV files, out-of-core
+# polars>=1.0                       # lazy multi-core DataFrames
+
 # --- Optional forecasting libraries (Module 2 appendices A2-A4) ---
 # prophet>=1.1
 # neuralprophet>=0.8

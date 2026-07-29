@@ -15,8 +15,9 @@
         └───────────┬────────────┘
                     ▼
    Now you can pull real data from anywhere —
-    and appendix A1 covers pages with no API
-             (scraping + Firecrawl).
+   appendix A1 covers pages with no API (scraping),
+   and A2 covers data that outgrew CSV+pandas
+          (Parquet, DuckDB, Polars).
 ```
 
 ## Notebooks at a glance
@@ -26,11 +27,12 @@
 | 12 | `12_apis_and_http.ipynb` | ~45–60 min | Beginner / Intermediate | GET/POST with `requests`, status codes, auth headers, retry + backoff, pagination — capped by a weather ETL pipeline that writes `forecast.csv` |
 | 13 | `13_sql_fundamentals.ipynb` | ~50–70 min | Beginner / Intermediate | The six core SQL clauses, aggregations, JOINs, CTEs, and a window-function tour on an in-memory SQLite database — plus when SQL beats pandas |
 
-## Optional appendix at a glance
+## Optional appendices at a glance
 
 | Appendix | Notebook | ⏱ Time | Difficulty | Focus |
 |----------|----------|--------|------------|-------|
 | A1 | `A1_web_scraping_firecrawl.ipynb` | ~50–70 min | Intermediate | Optional, demo/reference style. DIY scraping with `requests` + BeautifulSoup (`robots.txt`, polite-scraper habits), then Firecrawl for LLM-ready markdown and structured extraction — runs fully offline via a local HTML fixture and a built-in Firecrawl mock |
+| A2 | `A2_duckdb_polars.ipynb` | ~60–75 min | Intermediate | Optional, demo/reference style. When pandas isn't enough: Parquet vs CSV measured honestly (columnar layout, pushdown), DuckDB as NB 13's SQL pointed at files (globs, out-of-core, `.df()` interop), the Polars lazy API with `explain()`, an honest 4-engine benchmark, and the pandas → Parquet → engine → warehouse escalation ladder. Parquet sections run on the core stack; DuckDB/Polars cells skip gracefully if not installed |
 
 ## Notebook guides
 
@@ -116,9 +118,19 @@ Everything runs offline: the hands-on BeautifulSoup cells parse a local HTML fix
 
 **Files/datasets:** None — the HTML fixture and the Firecrawl mock live inline in the notebook.
 
+### A2 · When pandas Isn't Enough: Parquet, DuckDB & Polars — `A2_duckdb_polars.ipynb`
+
+**The day the data outgrows the notebook.** The webshop's order log is now 6 million rows; the team's `read_csv` ritual costs seconds per rerun and a third of a gigabyte of disk. The appendix untangles three dials that get conflated in "pandas is slow" — file format, execution model, memory model — and upgrades them one at a time, measuring at every step.
+
+§1–2 make the case against CSV *mechanically* (row-oriented text: parsing is the price of everything) and fix the format first: the same pandas code on Parquet lands ~3× smaller files and >20× faster reads, plus the columnar superpower of reading only the columns a question needs. §3 points NB 13's SQL directly at files with **DuckDB** — no server, no load step, a glob over monthly partition files as a table, results handed back to pandas via `.df()`. §4 introduces the **Polars** lazy grammar (`scan` → expressions → `collect()`) and uses `explain()` to show projection and predicate pushdown actually happening in the plan, with a pandas↔Polars translation table for every move NB 7 taught. §5 races all four setups on the same query and then spends more words on *how to read a micro-benchmark honestly* than on the numbers — verify the answers agree, don't credit the engine for the format's win, remember that in-RAM benchmarks understate the engines' real advantages. §6 closes with the escalation ladder (pandas → +Parquet → DuckDB/Polars → warehouse) and the two questions that decide: does it fit in RAM, and what shape is the work?
+
+**Practice:** 3 ✋ quick-exercise checkpoints (why CSV can't column-prune, AOV in DuckDB SQL, a pandas→Polars translation) and 4 numbered exercises with worked solutions — measuring column pruning, a window-function query that earns the engine, a **Debug me 🐞** where a viral "3000× faster" benchmark turns out to have timed the *query plan* instead of the query, and a verified CSV→Parquet migration function.
+
+**Datasets:** Synthetic, generated inline — one year of order lines (6 M rows) written to scratch CSV/Parquet/monthly partitions at runtime; nothing committed to the repo. Parquet sections need only the core stack (`pandas`+`pyarrow`); `pip install duckdb polars` turns on the engine sections, and every such cell prints a clear skip note without them.
+
 ## How these notebooks work
 
-Every notebook runs **100% offline**. NB 12 talks to two free, keyless public APIs (Open-Meteo and JSONPlaceholder) when you have internet, and every networked cell wraps its call in `try/except` with a graceful fallback to a recorded response — plus "offline proof" cells that model the whole request/response lifecycle with plain dicts. NB 13 never touches the network at all (in-memory SQLite), and A1 scrapes a local HTML fixture and mocks the Firecrawl SDK. Each lesson opens with a Colab badge and a metadata line (estimated time, difficulty), then follows the course rhythm: ✋ Quick exercise (~2 min) checkpoints with collapsible 💡 solutions, end-of-lesson 🧪 practice exercises (⭐-rated, including a "Debug me 🐞"), 🧠 stretch exercises, and a 🎁 bonus mini-project in the core lessons.
+Every notebook runs **100% offline**. NB 12 talks to two free, keyless public APIs (Open-Meteo and JSONPlaceholder) when you have internet, and every networked cell wraps its call in `try/except` with a graceful fallback to a recorded response — plus "offline proof" cells that model the whole request/response lifecycle with plain dicts. NB 13 never touches the network at all (in-memory SQLite), A1 scrapes a local HTML fixture and mocks the Firecrawl SDK, and A2 generates its 6M-row dataset inline and writes only to a scratch directory. Each lesson opens with a Colab badge and a metadata line (estimated time, difficulty), then follows the course rhythm: ✋ Quick exercise (~2 min) checkpoints with collapsible 💡 solutions, end-of-lesson 🧪 practice exercises (⭐-rated, including a "Debug me 🐞"), 🧠 stretch exercises, and a 🎁 bonus mini-project in the core lessons.
 
 ## Where next
 

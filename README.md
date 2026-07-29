@@ -15,13 +15,13 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
-  <img alt="346 checkpoints, kernel-tested" src="https://img.shields.io/badge/346%20checkpoints-kernel--tested-8a2be2.svg">
+  <img alt="349 checkpoints, kernel-tested" src="https://img.shields.io/badge/349%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/"><img alt="Documentation" src="https://img.shields.io/badge/Docs-online-0a507a.svg?logo=sphinx&logoColor=white"></a>
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>123 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 346 in-lesson checkpoints · 100% offline</b>
+  <b>124 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 349 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -59,7 +59,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **346 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **349 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -75,7 +75,7 @@
 - **📦 A new Containers & Docker module.** What a container actually *is*: images &amp; layers, the overlay filesystem, namespaces &amp; cgroups, and Dockerfile patterns for Python/data-science/GPU workloads — a first-principles mini-book plus a 100% offline lab that rebuilds image layers, the build cache, and OverlayFS in pure Python. The fundamentals deep-dive behind Module 14. → [Module 19](./19_containers_docker/)
 - **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26.5 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
 - **🧪 Module quizzes.** Seventeen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
-- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **346 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
+- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **349 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
 ---
@@ -127,8 +127,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The h
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 19 content modules + 18 optional appendices | The essentials, condensed |
-| **Notebooks** | 53 lessons + 7 labs (+ 18 appendices) | 23 (onboarding + 22 lessons) |
+| **Scope** | All 19 content modules + 19 optional appendices | The essentials, condensed |
+| **Notebooks** | 53 lessons + 7 labs (+ 19 appendices) | 23 (onboarding + 22 lessons) |
 | **Time** | ~125 hours | ~26.5 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -172,7 +172,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `19_containers_docker/` | The complete course — modules 0–19 in learning order, lessons 1–53 + 18 appendices |
+| `00_onboarding/` … `19_containers_docker/` | The complete course — modules 0–19 in learning order, lessons 1–53 + 19 appendices |
 | `11_nlp/`, `12_deeptab/` | Optional reference tracks — text analytics (NB 41–43) &amp; deep tabular learning (NB 44) |
 | `14_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + 3 hands-on lab notebooks + a runnable example app |
 | `17_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + 2 hands-on lab notebooks + a runnable example app, ChurnScope |
@@ -308,7 +308,7 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Expand a module and click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
-<sub>The **123 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
+<sub>The **124 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
 
 <details>
 <summary><b>0 · Onboarding</b> &nbsp;·&nbsp; 5 notebooks</summary>
@@ -366,6 +366,7 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `12_apis_and_http.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/12_apis_and_http.ipynb) |
 | `13_sql_fundamentals.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/13_sql_fundamentals.ipynb) |
 | `A1_web_scraping_firecrawl.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/A1_web_scraping_firecrawl.ipynb) |
+| `A2_duckdb_polars.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/03_real_world_io/A2_duckdb_polars.ipynb) |
 
 </details>
 
