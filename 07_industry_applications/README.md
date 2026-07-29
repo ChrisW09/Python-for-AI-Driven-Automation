@@ -41,15 +41,16 @@
 
 ## Optional appendices
 
-Three appendices, all written at **full lesson weight** (same rhythm and ✋/🧪/🧠 exercise ladder as NB 23–26) rather than in the reference style of the Module 2 and 5 appendices — because each sits squarely on this module's *model → money → decision* spine. They are optional only in the sense that the core four do not depend on them.
+Four appendices, all written at **full lesson weight** (same rhythm and ✋/🧪/🧠 exercise ladder as NB 23–26) rather than in the reference style of the Module 2 and 5 appendices — because each sits squarely on this module's *model → money → decision* spine. They are optional only in the sense that the core four do not depend on them.
 
-They also close loops the core notebooks deliberately leave open. NB 23, NB 24 and A1 all end by recommending an experiment; **A2** is that experiment. NB 24 mentions the selective-labels problem in one stretch exercise; **A3** makes it the centrepiece and prices it.
+They also close loops the core notebooks deliberately leave open. NB 23, NB 24 and A1 all end by recommending an experiment; **A2** is that experiment. NB 24 mentions the selective-labels problem in one stretch exercise; **A3** makes it the centrepiece and prices it. NB 23 warns twice that *risk is not persuadability* and sketches a two-model uplift estimator in a stretch exercise; **A4** is that warning developed into a full causal toolkit — and the reason the warning matters is measured in euros.
 
 | Appendix | Notebook | ⏱ Time | Difficulty | Business problem | What you'll build |
 |---|---|---|---|---|---|
 | A1 | `A1_pricing_promotions.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | What should we charge for three very different SKUs, and was last year's promo calendar worth running? | Confound-corrected price elasticities, the headroom rule and inverse-elasticity price, a bootstrap + support-range guardrail that produces *hold / raise / test* rather than three prices, and a break-even discount rule that settles the promo P&L |
 | A2 | `A2_experiments_ab_testing.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Three teams want to test something. Which of these tests can actually answer its question? | MDE-first test planning that *cancels* one test before it runs, CUPED variance reduction that doubles power for free, a peeking simulation and a boundary calibrated by Monte Carlo, SRM + multiple-comparisons validity checks, and the winner's curse quantified at two power levels |
 | A3 | `A3_credit_risk_scorecards.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Who gets trade credit, how much, and what do we do about the applicants we have never approved? | A WOE/IV scorecard with IV screen, sign check and points transform, a calibration check, the `PD* = m/(m+LGD)` cutoff and profit curve, risk-banded limits priced as an overlay, reason codes for decline letters, and the selective-labels problem measured in euros |
+| A4 | `A4_causal_uplift.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Last quarter's retention report says the discount backfired. Did it — and who should get it this quarter? | The naive-vs-causal decomposition computed exactly (effect + selection bias), the four uplift segments priced in euros, a T-learner with a break-even targeting depth, a difference-in-differences + placebo analysis of an un-randomized rollout, and adjustment methods shown working — then failing with the wrong sign — on targeted data |
 
 ## Notebook guides
 
@@ -251,15 +252,42 @@ The closing section is the one worth the price of admission. Selecting on signif
 
 **Datasets:** Synthetic, generated inline — 6,000 trade-credit applications over two years, with a bureau score deliberately **blind** to the exposure ratio, board churn and sector that carry most of the real risk, and a judgemental legacy approval rule that screens on the variables you later want to model. That construction is what makes §6 measurable. Core stack only; fully offline.
 
+### A4 · Causal Inference & Uplift: Who to Target, Not Who Will Churn — `A4_causal_uplift.ipynb`
+
+**The notebook where the report's arithmetic is correct and its conclusion is wrong.** Brightloop's retention team discounted its riskiest customers; the treated group churned *more*; the report recommends cancelling the program. Because the notebook simulates both potential outcomes for every customer (`y0`, `y1` — god mode), it can compute what no analyst can: the naive **+1.8 pp** decomposes *exactly* into a **−5.4 pp** real effect on the treated plus **+7.3 pp** of selection bias. The program was making money; the comparison was rigged by its own targeting.
+
+§2 prices the four uplift segments for this offer — persuadable **+€170.50**, sure thing **−€9.50**, lost cause **€0**, sleeping dog **−€180** — and plots the punchline: risk is the x-axis, value of targeting is the y-axis, and they are not the same axis. §3 randomizes this quarter's campaign and watches the selection term die by construction (−4.3 ± 1.5 pp against a planted −3.0). §4 builds the T-learner NB 23 only sketched, validates it the production way (observed uplift by predicted-uplift quintile: −3 pp to +17 pp, monotone), sets the targeting depth from the **break-even uplift `D/V` = 5.3 pp**, and races policies at a 30 % budget: **€25k by uplift vs €13k by risk vs −€13k for treat-everyone** — a causally effective program that still torches money when untargeted, because 94 % of recipients aren't persuadables. §5 handles the rollout nobody randomized with difference-in-differences (−1.44 pp against a planted −1.50, placebo ≈ 0), and §6 is the honest heart: regression adjustment and IPW recover most of the truth when treatment depended on *measured* features — then the same code, on a quarter where agents also read the (unmeasured) support-call notes, confidently reports the **wrong sign**. No error, no warning. Stretch C shows even a cross-fitted doubly-robust AIPW estimator dies on the same hill.
+
+**Learning objectives:**
+- Decompose a naive treated-vs-untreated gap into **effect + selection bias**, numerically.
+- Name and **price** the four uplift segments, and explain why risk-targeting buys lost causes and sleeping dogs.
+- Fit and honestly evaluate a **T-learner**, and set the targeting depth from the break-even uplift `D/V`.
+- Estimate an un-randomized rollout's effect with **DiD**, defend parallel trends, and run a placebo.
+- Say exactly when **regression adjustment / IPW** are trustworthy, and demonstrate their silent failure mode.
+- Ask "who decided who got treated?" before asking "which estimator?".
+
+**Sections:**
+1. The business, and a campaign report that smells wrong
+2. Potential outcomes — the two-worlds bookkeeping
+3. This quarter: randomize, and the bias term dies
+4. Uplift modeling — estimating *who* reacts
+5. No experiment allowed — difference-in-differences
+6. Adjusting the targeted quarter — and the confounder you can't see
+7. What real causal systems add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the uplift model that killed a working program" — trained on confounded data, its *level* is fiction even though its ranking survives) · 3 🧠 stretch exercises (⭐⭐⭐: the Qini curve with bootstrap error bars, a DiD event-study with permutation placebos, cross-fitted AIPW) · 🎁 bonus mini-project: the retention decision memo, where every causal claim must name its design · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline — 20,000 subscription customers with *both* potential outcomes materialized, split into an observationally-targeted quarter (risk-list coverage kept probabilistic so overlap holds), a randomized quarter, and a hidden-confounder variant where treatment chased an unmeasured "anger" signal; plus a 12-month two-region panel for the DiD rollout. The exercise-2 verdict is deliberately anti-folklore: on this data the S-learner *beats* the T-learner, and the solution explains why the shrinkage rule of thumb is a tendency to check, not a law. Core stack only; fully offline.
+
 ## How these notebooks work
 
 Each lesson follows the same rhythm: short teaching sections punctuated by **✋ Quick exercise (~2 min)** checkpoints with collapsible `<details>` solutions, plus 🔮 predict-the-output and 🔬 "what actually happens" cells that make you commit to an answer before running the code; a 🧠 one-screen story recap; then the graded work — 🧪 practice exercises (⭐-rated, always including a **Debug me 🐞**), 🧠 stretch exercises and a 🎁 bonus mini-project — closing with a ✅ self-assessment checklist. All data is generated inline (plus one bundled CSV), so everything runs **100 % offline**. The module leans directly on Modules 2 & 4 — the pandas/plotting/statistics craft and the sklearn/evaluation/pipeline discipline — and hammers five shared lessons across its notebooks: a probability is not a decision (scores become actions only via costs — break-even thresholds in NB 23, queue capacity in NB 24, service levels and critical ratios in NB 26, elasticity against contribution margin in A1, the confidence interval against the cost of acting in A2, `PD* = m/(m+LGD)` in A3); respect time or your metrics lie (temporal splits, shifted rolling features); beat the dumb baseline first (always-legit in NB 24, popularity in NB 25, seasonal-naive in NB 26, the legacy rulebook in A3); unsupervised output only becomes a business object once you profile, name, and stability-check it (NB 24, NB 25); and **ask how the data came to exist before you fit anything** — leakage in NB 23, unshifted windows in NB 26, your own pricing department writing the history you are about to regress on in A1, and in A3 the fact that you only observe repayment for the applicants you approved.
 
-The three appendices add a sixth that the core four only gesture at: **know what your evidence could have shown you.** A1 refuses to extrapolate a demand curve beyond the prices it has observed; A2 computes an experiment's resolution before running it and shows that low power corrupts the effect sizes you *do* find; A3 shows a validation set that cannot detect the model's largest error because it has the same hole in it. All three end in "run this experiment" or "we cannot answer that yet" at least once — which is the most under-taught deliverable in applied data science.
+The appendices add a sixth that the core four only gesture at: **know what your evidence could have shown you.** A1 refuses to extrapolate a demand curve beyond the prices it has observed; A2 computes an experiment's resolution before running it and shows that low power corrupts the effect sizes you *do* find; A3 shows a validation set that cannot detect the model's largest error because it has the same hole in it; A4 shows an estimator that answers confidently and wrongly because the one variable that mattered was never collected. All four end in "run this experiment" or "we cannot answer that yet" at least once — which is the most under-taught deliverable in applied data science.
 
 ## Where next
 
-→ **The appendices** if you skipped them, in order: `A1` (pricing — the fastest lever on the P&L, and the one place where the *data itself* is the adversary), `A2` (experiments — the missing prerequisite that A1, NB 23 and NB 24 all lean on), `A3` (credit risk — a regulated industry's idiom, and the deepest version of "your own decisions wrote your training data").
+→ **The appendices** if you skipped them, in order: `A1` (pricing — the fastest lever on the P&L, and the one place where the *data itself* is the adversary), `A2` (experiments — the missing prerequisite that A1, NB 23 and NB 24 all lean on), `A3` (credit risk — a regulated industry's idiom, and the deepest version of "your own decisions wrote your training data"), `A4` (causal inference & uplift — the sequel NB 23's caveat promised, and the reason every campaign should keep a randomized holdout).
 → **Module 8 — AI Engineering** (`../08_ai_engineering/28_ai_workflows.ipynb`) if you haven't done it yet — LLMs layered on top of exactly these workflows.
 → **Capstone A** (`../15_capstones/47_capstone_analytics.ipynb`) to prove the analytics half end-to-end.
 
