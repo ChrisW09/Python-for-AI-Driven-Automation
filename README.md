@@ -278,7 +278,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **326 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 326 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **342 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 342 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 
@@ -308,7 +308,7 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Expand a module and click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
-<sub>The **124 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
+<sub>The **128 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
 
 <details>
 <summary><b>0 · Onboarding</b> &nbsp;·&nbsp; 5 notebooks</summary>
@@ -425,6 +425,10 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `A2_experiments_ab_testing.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A2_experiments_ab_testing.ipynb) |
 | `A3_credit_risk_scorecards.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A3_credit_risk_scorecards.ipynb) |
 | `A4_causal_uplift.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A4_causal_uplift.ipynb) |
+| `A5_people_analytics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A5_people_analytics.ipynb) |
+| `A6_finance_ar_cashflow.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A6_finance_ar_cashflow.ipynb) |
+| `A7_sales_pipeline.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A7_sales_pipeline.ipynb) |
+| `A8_procurement_spend.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A8_procurement_spend.ipynb) |
 
 </details>
 
