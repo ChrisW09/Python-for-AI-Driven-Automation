@@ -4,7 +4,7 @@
 
 **Goal:** Apply everything from Modules 1–5 to the four use-case families that dominate business data science in practice — and learn the one pattern they share: *model → money → decision*.
 
-**Estimated time:** 10–12 hours of focused study (core NB 23–26); the three optional appendices add ~8 h 15 m.
+**Estimated time:** 10–12 hours of focused study (core NB 23–26); the eight optional appendices add ~22 h.
 
 **Prerequisites:** Modules 1–5 (especially NB 17–19 — models, honest evaluation, pipelines; NB 11 returns for the forecasting half).
 
@@ -26,6 +26,17 @@
                                         (the "run a test" that A1/23/24 defer to)
    A3     Credit risk & scorecards   →  who do we lend to, how much, and what
                                         about the applicants we never approved?
+   A4     Causal inference & uplift  →  did the campaign actually work, and who
+                                        should get the offer? (risk ≠ persuadability)
+   ──────────────  the business-function tour (A5–A8)  ───────────────────────
+   A5     People analytics (HR)      →  who is leaving, what does it cost —
+                                        and is the pay gap real? (censoring!)
+   A6     Receivables & cash (Fin)   →  when do invoices actually pay, whom to
+                                        chase, and will we need the credit line?
+   A7     Sales pipeline & forecast  →  are the CRM's numbers any good, and
+                                        what really lands this quarter?
+   A8     Procurement & suppliers    →  where does the money go, and which
+                                        supplier is *actually* good? (averages lie)
 ```
 
 ## Notebooks at a glance
@@ -41,9 +52,11 @@
 
 ## Optional appendices
 
-Four appendices, all written at **full lesson weight** (same rhythm and ✋/🧪/🧠 exercise ladder as NB 23–26) rather than in the reference style of the Module 2 and 5 appendices — because each sits squarely on this module's *model → money → decision* spine. They are optional only in the sense that the core four do not depend on them.
+Eight appendices, all written at **full lesson weight** (same rhythm and ✋/🧪/🧠 exercise ladder as NB 23–26) rather than in the reference style of the Module 2 and 5 appendices — because each sits squarely on this module's *model → money → decision* spine. They are optional only in the sense that the core four do not depend on them.
 
-They also close loops the core notebooks deliberately leave open. NB 23, NB 24 and A1 all end by recommending an experiment; **A2** is that experiment. NB 24 mentions the selective-labels problem in one stretch exercise; **A3** makes it the centrepiece and prices it. NB 23 warns twice that *risk is not persuadability* and sketches a two-model uplift estimator in a stretch exercise; **A4** is that warning developed into a full causal toolkit — and the reason the warning matters is measured in euros.
+The first four close loops the core notebooks deliberately leave open. NB 23, NB 24 and A1 all end by recommending an experiment; **A2** is that experiment. NB 24 mentions the selective-labels problem in one stretch exercise; **A3** makes it the centrepiece and prices it. NB 23 warns twice that *risk is not persuadability* and sketches a two-model uplift estimator in a stretch exercise; **A4** is that warning developed into a full causal toolkit — and the reason the warning matters is measured in euros.
+
+**A5–A8 are the business-function tour:** the same toolkit walked into the four offices the core notebooks never visit — HR, finance, sales and procurement — because "tell me about a project" interviews come from all of them, not just from marketing. Each one imports the module's lessons into a new domain and adds the failure mode native to that domain. **A5** takes NB 23's churn machinery to the employer side and discovers the snapshot lies (*censoring* — most employees haven't left yet), plus the one analysis where controls can hide the problem instead of revealing it (pay equity). **A6** is A3's direct sequel: A3 decided *who gets credit*, A6 manages what happens next — when invoices actually pay, whom the two collectors should chase, and whether the CFO needs the credit line. **A7** is the module's leakage lesson in its natural habitat — a CRM whose fields are edited *after* deals close, and whose rep-entered probabilities are the antagonist. **A8** flips NB 25/A1/A3's webshop around and walks into its *buying* office, where the classic failures are averaging away lead-time variance (NB 26's safety-stock formula prices the difference) and claiming savings on price while total cost rises.
 
 | Appendix | Notebook | ⏱ Time | Difficulty | Business problem | What you'll build |
 |---|---|---|---|---|---|
@@ -51,6 +64,10 @@ They also close loops the core notebooks deliberately leave open. NB 23, NB 24 a
 | A2 | `A2_experiments_ab_testing.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Three teams want to test something. Which of these tests can actually answer its question? | MDE-first test planning that *cancels* one test before it runs, CUPED variance reduction that doubles power for free, a peeking simulation and a boundary calibrated by Monte Carlo, SRM + multiple-comparisons validity checks, and the winner's curse quantified at two power levels |
 | A3 | `A3_credit_risk_scorecards.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Who gets trade credit, how much, and what do we do about the applicants we have never approved? | A WOE/IV scorecard with IV screen, sign check and points transform, a calibration check, the `PD* = m/(m+LGD)` cutoff and profit curve, risk-banded limits priced as an overlay, reason codes for decline letters, and the selective-labels problem measured in euros |
 | A4 | `A4_causal_uplift.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Last quarter's retention report says the discount backfired. Did it — and who should get it this quarter? | The naive-vs-causal decomposition computed exactly (effect + selection bias), the four uplift segments priced in euros, a T-learner with a break-even targeting depth, a difference-in-differences + placebo analysis of an un-randomized rollout, and adjustment methods shown working — then failing with the wrong sign — on targeted data |
+| A5 | `A5_people_analytics.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Who is leaving, what does attrition actually cost — and is the pay gap real? | A hand-built Kaplan–Meier survival curve that exposes the censoring trap, an attrition bill per function (the highest *rate* is not the biggest *bill*), an honest leaves-within-12-months model with a per-function break-even threshold and a budgeted retention list, and a raw-vs-adjusted pay-gap decomposition with the mediator caveat spelled out |
+| A6 | `A6_finance_ar_cashflow.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | When will these invoices actually pay, whom should the two collectors chase, and will we need the credit line? | A days-late model built on as-of features (persistence is the signal), a collections queue ranked by expected cash acceleration rather than amount, a Monte-Carlo 13-week cash forecast that turns into a credit-line decision with a probability attached, and a walk-forward backtest that prices the due-date spreadsheet's optimism in euros |
+| A7 | `A7_sales_pipeline.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Are the CRM's own numbers any good — and what actually lands this quarter? | An as-of snapshot rebuild that deflates a leaked AUC 1.000 to an honest 0.853, a reliability curve that prices rep-entered probabilities, a calibrated quarter forecast with Monte-Carlo bands backtested over six quarters, and an EV-ranked lead queue with a break-even calling depth |
+| A8 | `A8_procurement_spend.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Where does the €11M actually go, which suppliers are actually good, and should we consolidate the tail? | A spend cube with Pareto/ABC and a maverick-spend bill, a naive savings claim collapsed to its honest number, a supplier scorecard where lead-time *variance* is priced via NB 26's safety stock, total cost of ownership that dethrones the cheapest invoice, and a consolidation plan with payback and the dual-sourcing premium worth paying |
 
 ## Notebook guides
 
@@ -279,18 +296,125 @@ The closing section is the one worth the price of admission. Selecting on signif
 
 **Datasets:** Synthetic, generated inline — 20,000 subscription customers with *both* potential outcomes materialized, split into an observationally-targeted quarter (risk-list coverage kept probabilistic so overlap holds), a randomized quarter, and a hidden-confounder variant where treatment chased an unmeasured "anger" signal; plus a 12-month two-region panel for the DiD rollout. The exercise-2 verdict is deliberately anti-folklore: on this data the S-learner *beats* the T-learner, and the solution explains why the shrinkage rule of thumb is a tendency to check, not a law. Core stack only; fully offline.
 
+### A5 · People Analytics: Attrition, Survival & Pay Equity — `A5_people_analytics.ipynb`
+
+**The notebook where "still here" is not a label.** Nordwerk Group — the parent of NB 25's webshop and NB 23's HelpDeskAI — employs 1,344 people across warehouse, support, sales and engineering, and HR opens with two asks: an attrition analysis before the budget round, and a pay-equity analysis before the works council meeting. The intro names why this is *not* NB 23 with employees: most employees haven't left yet, so the data is **censored** — and the naive "average tenure of leavers" (13.1 months) is off by a factor of three from the honest **Kaplan–Meier median of 41 months**, computed by hand from risk sets and event tables (no lifelines, core stack only). Function-level medians (warehouse 13 / support 50 / sales 70 / engineering 90 months) then feed the attrition *bill*: **€3.82 m a year**, with the module's favourite rank flip — warehouse has the highest *rate* (16.6 %) but engineering the biggest *bill* (€1.54 m vs €1.01 m), because a replacement costs 6–9 months of salary and engineers earn more. Rate-chasers fund the wrong retention program.
+
+The model section is deliberately humble: a calibrated logistic regression (AUC **0.744**) beats gradient boosting (0.727) and the "flag everyone in their first year" rule (0.599), and the interesting part is downstream — NB 23's break-even move, per function: `p* = C/(s·R)` puts the threshold at 0.23 for engineering and 0.79 for warehouse, and at a €60k budget the economics-driven list earns **+€9.8k expected** where flag-the-first-years loses **€38.5k**. The pay-equity section is the careful one: the raw gap is **13.1 %**, the within-level adjusted gap **−2.4 %** (CI [−3.0, −1.8]), the Oaxaca-style split is 9.9 pp composition + 2.4 pp within-job — and the honest caveat gets its own subsection: *controls can be mediators*; if level itself is assigned unfairly, adjusting for it hides the problem (A4's confounder language, A3's proxy-discrimination stretch). The notebook ends with the two numbers the works council actually needs and what each one does — and does not — mean.
+
+**Learning objectives:**
+- Explain **censoring** and why leaver-vs-stayer classification on a snapshot lies; build a **Kaplan–Meier curve** by hand from risk sets.
+- Turn a hazard into an **attrition bill** per function, and explain why the highest rate is not the biggest bill.
+- Build an honest "leaves within 12 months" model on a **time-aware cohort**, and derive a per-function **break-even threshold** from replacement cost and save rate.
+- Run a **budget-constrained retention campaign** and beat the tenure heuristic in euros.
+- Decompose a pay gap into **raw vs adjusted** with a composition/within-job split — and state the **mediator caveat** that keeps the adjusted number honest.
+- Name the guardrails that make people analytics different: small n, privacy, and scores that support conversations, never terminations.
+
+**Sections:**
+1. The business: one HR extract, three questions
+2. The censoring trap — why the snapshot lies
+3. From survival curves to euros
+4. Who is at risk — and who is worth €3,000
+5. The pay-equity question — raw gap, adjusted gap, and what each means
+6. What real people-analytics teams add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the attrition model that predicted the past" — a terminal survey wave leaks 0.968 AUC of fiction) · 4 🧠 stretch exercises (⭐⭐–⭐⭐⭐: bootstrap CI on the KM median, the pilot before the program + HR sleeping dogs, the pay gap at n=38 and the k-anonymity line at n=5, hazard-shaped intervention timing) · 🎁 bonus mini-project: the CHRO one-pager · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — 2,550 employees hired over eight years with a true per-person monthly hazard matrix (god mode, used only for checking), planted first-year/overtime/engagement/pay-band drivers, censoring at the snapshot date, and a pay gap that is part composition, part −2.5 % within-level residual. Fully offline.
+
+### A6 · Finance: Late Invoices, Collections & the 13-Week Cash Forecast — `A6_finance_ar_cashflow.ipynb`
+
+**A3's direct sequel — the credit you granted becomes the cash you wait for.** "Invoice 30" worked: approvals rose to ~89 %, and finance now owns the consequence — a **€4.25 m** book of 828 open invoices, a DSO of **60.4 days** (one DSO day = **€70k** of cash), a two-person collections team good for ~40 calls a week, and a CFO who asks every Monday whether the quarter's cash clears the €250k buffer. The prediction section teaches AR's humbling lesson in one table: "everyone pays on the due date" errs by 15.3 days, the *customer's own historical mean* already gets to 9.3, and the gradient-boosted model earns its keep at **8.6 days** — persistence is the signal, and saying so out loud is the point. Features are built **as-of the invoice date** (NB 26's shifted-window discipline), and the planted month-end payment-run batching is why per-day evaluation flatters no one.
+
+The collections queue is NB 24's move wearing finance clothes: rank by **expected cash acceleration** (success rate × days pulled forward × cost of capital + insolvency exposure), not by amount and not by days overdue — the three rankings genuinely disagree, and the trap is priced: the €45k invoice already sitting in a payment run is worth **−€4** per call while a €24k chronic offender is worth **+€139**. Then the CFO's actual question: per-invoice payment-date *distributions* (not point estimates) Monte-Carloed into a 13-week cash curve — median minimum cash **€293k** in week 2, **P(breach the buffer) = 25 %** — where the point-estimate version of the same forecast claims €422k and zero risk. The walk-forward backtest settles whose spreadsheet to trust: the model runs ~€121k conservative per quarter; the due-date spreadsheet runs **€1.49 m optimistic**.
+
+**Learning objectives:**
+- Read an AR book like a finance team: **DSO**, the aging waterfall, and what one DSO day is worth.
+- Predict days-late with **as-of features** and beat two named baselines — then admit how strong the dumb one was.
+- Rank a **collections queue by expected cash acceleration** and show why amount-ranked and overdue-ranked calling both lose money.
+- Build a **13-week cash forecast** from per-invoice payment distributions, and explain why summing point forecasts understates tail risk.
+- Turn the forecast into a **credit-line decision** with a probability attached, and backtest it walk-forward against realized cash.
+- Spot the optimism bias of **due-date accounting** and price it.
+
+**Sections:**
+1. The business: a €4.2M ledger, a credit line, and Monday's question
+2. When will this invoice pay? Predicting days-late
+3. The collections queue — NB 24's move, wearing finance clothes
+4. From invoices to the cash curve — the 13-week forecast
+5. Backtest the forecast honestly — four past Mondays
+6. What real treasury & FP&A systems add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the collections model that knew the payment date" — a `reminders_sent` feature buys an impossible 3.4-day MAE) · 4 🧠 stretch exercises (⭐⭐⭐: shrinkage for the customer league table, the P90 payment date by quantile regression, *when* to call rather than whom, pricing a factoring offer with A3's loss numbers) · 🎁 bonus mini-project: the Monday treasury one-pager · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — 9,066 invoices across 592 B2B-webshop customers over 18 months, with planted customer-persistent lateness, size and amount effects, month-end payment-run batching, a 3 % dispute tail and a ~1 % insolvency tail. Fully offline.
+
+### A7 · Sales: Lead Scoring, Pipeline Truth & the Quarter Forecast — `A7_sales_pipeline.ipynb`
+
+**The module's leakage lesson in its natural habitat.** HelpDeskAI has grown a 12-rep sales team, and three artifacts rule its Mondays: the CRM pipeline (rep-entered stages and win probabilities), the inbound lead queue (more leads than SDRs), and the quarterly forecast the VP gives the board. The antagonist is the CRM itself. Train a win-probability model on the *current* CRM table and you get **AUC 1.000** — because deal size, stage and days-in-pipeline were all edited after the deals closed; rebuild every feature **as-of a snapshot date** from the stage-history log and the honest number is **0.853**. That one deflation, plus the censoring footnote (open deals at snapshot time haven't resolved — you can only train on cohorts old enough to know), is the section the rest of the notebook stands on.
+
+Then the reps' numbers face a reliability curve: deals entered at "20 %" win **9.9 %**, deals at "80 %" win **55.6 %** — sandbagging at the bottom, happy ears at the top — and the embarrassing baseline is that plain stage-level win rates (Brier 0.111) crush the reps (0.175) while the model only edges further to **0.108**: *the win is calibration, not clairvoyance*, and the notebook says so. The forecast section rolls calibrated probabilities into the quarter — model **€64k** vs the CRM rollup's **€184k** (2.9× inflated) — with Monte-Carlo bands widened for the macro-correlation caveat, and a six-quarter walk-forward that settles the leaderboard: model 12.6 % MAPE, stage rates 16.6 %, the VP 80.8 %, the CRM 149.2 %. The lead queue closes the loop: EV-ranked calling yields **€80k of expected pipeline per SDR-week** vs €41.6k first-come-first-served, with a break-even depth (~103 of 120 capacity) where an SDR hour stops paying — and an A2/A4 citation ordering a 10 % random holdout of leads, because a score that changes who gets called writes targeted training data for next quarter.
+
+**Learning objectives:**
+- Rebuild CRM features **as-of a snapshot** from the stage-history log, and demonstrate what post-outcome edits do to AUC.
+- Read a **reliability curve** and price rep-entered probabilities against realized outcomes.
+- Beat the reps with the dumbest possible baseline (**stage-level win rates**) and say honestly what the model adds beyond it.
+- Roll calibrated probabilities into a **quarter forecast** with Monte-Carlo bands, and backtest it walk-forward against realized bookings.
+- Rank a **lead queue by expected value**, not conversion probability, and derive the break-even calling depth.
+- Explain why a deployed score needs a **random holdout** — A4's selection bias, arriving in sales clothes.
+
+**Sections:**
+1. The business: one CRM extract, three Monday questions
+2. The snapshot discipline — reconstructing what you knew, when
+3. Are the reps' numbers any good? Calibration before modeling
+4. From probabilities to the quarter forecast
+5. The lead queue — scoring what to call first
+6. What real revenue-ops teams add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the 0.97-AUC pipeline model" — NB 23's 0.99-AUC trap, CRM edition) · 4 🧠 stretch exercises (⭐⭐⭐: per-rep calibration with shrinkage, a survival view of deal staleness, a quantile forecast with a coverage audit, and a Goodhart simulation where reps game the model's features for a +75 % forecast and €0 of reality) · 🎁 bonus mini-project: the board forecast memo · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — ~39,000 leads over 130 weeks feeding 2,466 opportunities through a five-stage engine with full timestamped stage history, 12 planted rep calibration personalities, and post-close CRM field edits (the contamination is the curriculum). Fully offline.
+
+### A8 · Procurement: Spend, Supplier Scorecards & Total Cost — `A8_procurement_spend.ipynb`
+
+**The buying office — where the module's data skepticism meets a purchase order.** NB 25, A1 and A3 looked at the webshop's customers; A8 walks into the room where its **€10.9 m a year** gets spent: 14,000 PO lines, 60 suppliers, 12 categories, one new head of procurement with the three standard questions. The intro stakes the methodological claim: procurement analytics is mostly *not* prediction — it is honest accounting plus a handful of distributions, and its classic failures are averaging away variance and claiming savings on price while total cost rises. The spend cube and Pareto/ABC land first (17 suppliers carry 69.5 % of spend), then the maverick-spend bill — **€117k a year** of off-contract buying at a +9 % premium — a number that funds the analytics team; the notebook says so.
+
+The price-variance lens carries the module's honesty flag: the naive "if every line had paid the minimum price" savings claim is **€969k**; adjust for legitimate lot-size price breaks and it collapses to **€175k** — and the €793k gap *is* the lesson (a should-cost regression then finds the genuinely overpriced supplier, +3.7 % above model on 150 lines). The scorecard section stages the planted twins: two suppliers with the *same* mean lead time (7.1 vs 6.8 days) and σ of 0.81 vs 3.58 — NB 26's safety-stock formula prices the difference (+90 units of stock, or a service level quietly sliding from 95 % to 72 %), and the "rank by average lead time" baseline crowns the company's *worst* supplier (OTIF 75.9 %). Weights derived from € impact instead of the arbitrary 25/25/25/25 re-rank 25 of 52 suppliers; total cost of ownership dethrones the cheapest invoice (€104.88 on paper, **€113.80** all-in, beaten by a €109.50 rival); and the consolidation section ends the module the right way — 16 tail suppliers consolidated for **€47k/yr at a 10-month payback**, and two categories deliberately *not* consolidated, with the dual-sourcing premium priced as insurance (A3 §5's framing, third appearance).
+
+**Learning objectives:**
+- Build a **spend cube** and run Pareto/ABC — and put a euro figure on **maverick spend**.
+- Deflate a naive **price-variance savings claim** to its like-for-like honest number, and fit a **should-cost regression** that finds real overpricing rather than small lots.
+- Score suppliers where it matters: **OTIF**, and lead-time **variance priced via safety stock** (NB 26), with weights derived from € impact.
+- Fold defects, discounts and payment terms into **total cost of ownership** — and watch the cheapest invoice lose.
+- Decide a **consolidation plan** with switching costs, payback, and the concentration-risk math that keeps two categories dual-sourced.
+- Explain why the 2/10-net-30 discount you skip is a **45 % APR** loan you just took out.
+
+**Sections:**
+1. The business: 14,000 PO lines, one spend cube
+2. The price-variance lens — same item, many prices
+3. The supplier scorecard — where averages lie
+4. Defects, discounts and terms — small print in euros
+5. The consolidation decision — the tail and the risk
+6. What real procurement systems add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the savings that weren't" — a year-over-year price comparison broken by a lot-size mix shift; the fix is a like-for-like index) · 4 🧠 stretch exercises (⭐⭐–⭐⭐⭐: bootstrap + Wilson error bars for the supplier league table, a Kraljic-style 2×2, a category price index against the planted input-cost wave, pricing the second source under different failure probabilities) · 🎁 bonus mini-project: the category strategy one-pager · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — two years / 14,000 PO lines for the NB 25 webshop's buying office, 12 categories × 60 suppliers with planted ground truth: a +9 % maverick premium, lot-size price breaks, a steel-indexed category, a same-mean/high-σ supplier twin, and a 2025 lot-size mix shift. Fully offline.
+
 ## How these notebooks work
 
 Each lesson follows the same rhythm: short teaching sections punctuated by **✋ Quick exercise (~2 min)** checkpoints with collapsible `<details>` solutions, plus 🔮 predict-the-output and 🔬 "what actually happens" cells that make you commit to an answer before running the code; a 🧠 one-screen story recap; then the graded work — 🧪 practice exercises (⭐-rated, always including a **Debug me 🐞**), 🧠 stretch exercises and a 🎁 bonus mini-project — closing with a ✅ self-assessment checklist. All data is generated inline (plus one bundled CSV), so everything runs **100 % offline**. The module leans directly on Modules 2 & 4 — the pandas/plotting/statistics craft and the sklearn/evaluation/pipeline discipline — and hammers five shared lessons across its notebooks: a probability is not a decision (scores become actions only via costs — break-even thresholds in NB 23, queue capacity in NB 24, service levels and critical ratios in NB 26, elasticity against contribution margin in A1, the confidence interval against the cost of acting in A2, `PD* = m/(m+LGD)` in A3); respect time or your metrics lie (temporal splits, shifted rolling features); beat the dumb baseline first (always-legit in NB 24, popularity in NB 25, seasonal-naive in NB 26, the legacy rulebook in A3); unsupervised output only becomes a business object once you profile, name, and stability-check it (NB 24, NB 25); and **ask how the data came to exist before you fit anything** — leakage in NB 23, unshifted windows in NB 26, your own pricing department writing the history you are about to regress on in A1, and in A3 the fact that you only observe repayment for the applicants you approved.
 
 The appendices add a sixth that the core four only gesture at: **know what your evidence could have shown you.** A1 refuses to extrapolate a demand curve beyond the prices it has observed; A2 computes an experiment's resolution before running it and shows that low power corrupts the effect sizes you *do* find; A3 shows a validation set that cannot detect the model's largest error because it has the same hole in it; A4 shows an estimator that answers confidently and wrongly because the one variable that mattered was never collected. All four end in "run this experiment" or "we cannot answer that yet" at least once — which is the most under-taught deliverable in applied data science.
 
+The business-function tour (A5–A8) then replays the module's lessons where most readers will actually use them. Censoring — the observation that hasn't finished happening — appears twice (employees who haven't left in A5, open deals in A7); post-outcome leakage gets its most realistic staging yet (a CRM edited after the fact, A7; a terminal survey wave, A5; a reminder counter that only exists once the invoice paid, A6); the break-even threshold returns in four new costumes (`p* = C/(s·R)` for a retention package, expected cash acceleration per call, an SDR-hour's break-even lead depth, the dual-sourcing premium); and the humbling baselines keep winning more than dignity allows (the customer's own mean in A6, stage-level win rates in A7). A8 contributes the tour's quietest lesson: sometimes the most valuable analytics in the building is honest accounting with error bars.
+
 ## Where next
 
 → **The appendices** if you skipped them, in order: `A1` (pricing — the fastest lever on the P&L, and the one place where the *data itself* is the adversary), `A2` (experiments — the missing prerequisite that A1, NB 23 and NB 24 all lean on), `A3` (credit risk — a regulated industry's idiom, and the deepest version of "your own decisions wrote your training data"), `A4` (causal inference & uplift — the sequel NB 23's caveat promised, and the reason every campaign should keep a randomized holdout).
+→ **The business-function tour (A5–A8)** in any order — each stands alone: `A5` (HR — censoring and the pay-gap decomposition), `A6` (finance — A3's sequel: collections and the 13-week cash forecast), `A7` (sales — leakage's natural habitat, and the calibrated quarter forecast), `A8` (procurement — spend transparency, scorecards where averages lie, and total cost of ownership). Pick the one whose Monday meeting you sit in.
 → **Module 8 — AI Engineering** (`../08_ai_engineering/28_ai_workflows.ipynb`) if you haven't done it yet — LLMs layered on top of exactly these workflows.
 → **Capstone A** (`../15_capstones/47_capstone_analytics.ipynb`) to prove the analytics half end-to-end.
 
 ---
 
-📝 **Finished this module?** Test yourself with the [Module 7 quiz](../quizzes/quiz_07_industry_applications.ipynb) — five questions, ~10 minutes. (The quiz covers the core NB 23–26; the appendix is not examined.)
+📝 **Finished this module?** Test yourself with the [Module 7 quiz](../quizzes/quiz_07_industry_applications.ipynb) — five questions, ~10 minutes. (The quiz covers the core NB 23–26; the appendices are not examined.)
