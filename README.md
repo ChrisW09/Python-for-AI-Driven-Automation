@@ -223,6 +223,7 @@ All generated inline (no downloads), grouped by the business problem they illust
 | **Fraud / payments** | One row per transaction, with planted fraud patterns (night spend, new-device takeover) | NB 24 |
 | **Customer segmentation** | Customers drawn from hidden archetypes for clustering + recommendations | NB 25 |
 | **Demand & maintenance** | Short demand series (lag & rolling features) plus predictive-maintenance signals | NB 26 |
+| **Business-function deep dives** | Weekly SKU price/volume panels, simulated experiments, trade-credit applications, both potential outcomes for uplift, censored employee records, an invoice ledger, a CRM stage-history log and PO lines — each with ground truth planted for the notebook to recover | IA A1–A8 |
 | **Time-series forecasting** | Daily product-search series with trend & seasonality (classical → Prophet → DL → foundation models) | NB 11, DS A1–A4 |
 | **Customer feedback & reviews** | Piles of short product reviews, support tickets and survey notes for topic models + sentiment | NB 41–43, 48 |
 | **RAG document corpora** | Small knowledge bases / product catalogues chunked, embedded and retrieved | NB 29, 35, 36 |
