@@ -7,10 +7,10 @@ From your first line of Python to shipping a real AI-driven automation — a han
 </figure>
 
 <ul class="course-stats">
-  <li><b>128</b> runnable notebooks</li>
+  <li><b>134</b> runnable notebooks</li>
   <li><b>20</b> modules</li>
   <li><b>300+</b> exercises</li>
-  <li><b>365</b> in-lesson checkpoints</li>
+  <li><b>389</b> in-lesson checkpoints</li>
   <li><b>100%</b> offline</li>
 </ul>
 

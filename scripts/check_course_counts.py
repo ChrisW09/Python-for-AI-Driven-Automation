@@ -43,7 +43,8 @@ def derive_checkpoint_count():
 
 def derive_appendix_count():
     apps = [
-        p for p in glob.glob(os.path.join(ROOT, "*", "A[0-9]_*.ipynb"))
+        # A[0-9]*_ (not A[0-9]_) so two-digit appendices — A10, A11, … — count too.
+        p for p in glob.glob(os.path.join(ROOT, "*", "A[0-9]*_*.ipynb"))
         if not any(x in p for x in EXCLUDE)
     ]
     return len(apps)

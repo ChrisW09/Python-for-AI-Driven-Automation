@@ -15,13 +15,13 @@
   <img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-notebooks-f37726.svg?logo=jupyter&logoColor=white">
   <a href="#-open-any-notebook-in-colab"><img alt="Open in Colab" src="https://img.shields.io/badge/Open%20in-Colab-f9ab00.svg?logo=googlecolab&logoColor=white"></a>
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
-  <img alt="365 checkpoints, kernel-tested" src="https://img.shields.io/badge/365%20checkpoints-kernel--tested-8a2be2.svg">
+  <img alt="389 checkpoints, kernel-tested" src="https://img.shields.io/badge/389%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/"><img alt="Documentation" src="https://img.shields.io/badge/Docs-online-0a507a.svg?logo=sphinx&logoColor=white"></a>
   <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
-  <b>128 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 365 in-lesson checkpoints · 100% offline</b>
+  <b>134 runnable notebooks · 20 modules · 300+ end-of-lesson exercises · 389 in-lesson checkpoints · 100% offline</b>
 </p>
 
 <p align="center">
@@ -59,7 +59,7 @@
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
 - **Runs anywhere.** One click into Google Colab, or `pip install` locally. Every notebook runs **100% offline** — no API key, no paid service required.
 - **Learn by doing.** **300+ exercises** — including a deliberate 🐞 debug-me in each lesson — every one shipping with a worked solution and the *reasoning* behind it.
-- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **365 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
+- **Built for live teaching.** Every lesson is punctuated with short ✋ **Quick exercise** checkpoints (~2 min each) at natural section breaks, so a class can alternate ~20 minutes of instruction with a quick hands-on pause. **389 across the course**, each with a scaffolded starter and a collapsible solution — and every solution has been **executed in a fresh kernel to confirm it runs**.
 - **Modern, minimal code.** Charts in 1–3 lines (pandas `.plot()`, seaborn, sklearn's built-in plot helpers), pipelines over boilerplate — you learn the way practitioners actually write Python today.
 - **Visual where it counts.** Key ideas — train/test splits, k-fold cross-validation, grid search, RAG pipelines, MCP topology — come with clean diagrams embedded right in the notebooks.
 - **Real business problems.** Churn &amp; CLV, fraud detection, demand forecasting, customer segmentation, RAG assistants, and AI governance — not toy datasets.
@@ -75,7 +75,7 @@
 - **📦 A new Containers & Docker module.** What a container actually *is*: images &amp; layers, the overlay filesystem, namespaces &amp; cgroups, and Dockerfile patterns for Python/data-science/GPU workloads — a first-principles mini-book plus a 100% offline lab that rebuilds image layers, the build cache, and OverlayFS in pure Python. The fundamentals deep-dive behind Module 14. → [Module 19](./19_containers_docker/)
 - **🏎️ The fast track now spans the whole course.** 22 trimmed notebooks (~26.5 h): the 14 core essentials plus **8 breadth extensions** mirroring the applied modules — forecasting, model evaluation, industry applications, NLP, deployment, a capstone, and web scraping. → [`fast_track/`](./fast_track/)
 - **🧪 Module quizzes.** Seventeen short multiple-choice quizzes — one per content module — to check what actually stuck. → [`quizzes/`](./quizzes/)
-- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **365 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
+- **✋ Interactive in-lesson checkpoints, built for live teaching.** Every lesson embeds short ~2-minute *Quick exercise* checkpoints at natural section breaks — **389 across the course** — each with a scaffolded starter and a collapsible solution, **executed in a fresh kernel to confirm it runs**. The lecture → try → reveal rhythm turns any lesson into an interactive class with zero prep. → [How each notebook works](#-how-each-notebook-works)
 - **🔌 100% offline, end to end.** Every notebook — including the LLM, RAG, agent, and scraping lessons — runs with no API key via a built-in `MockLLM` and offline stand-ins for the heavy libraries.
 
 ---
@@ -127,8 +127,8 @@ Tested with **Python 3.10+**. Module 0 includes an environment-check cell. The h
 
 | | 🎓 **Complete course** | 🏎️ **Fast track** |
 |---|---|---|
-| **Scope** | All 19 content modules + 23 optional appendices | The essentials, condensed |
-| **Notebooks** | 53 lessons + 7 labs (+ 23 appendices) | 23 (onboarding + 22 lessons) |
+| **Scope** | All 19 content modules + 29 optional appendices | The essentials, condensed |
+| **Notebooks** | 53 lessons + 7 labs (+ 29 appendices) | 23 (onboarding + 22 lessons) |
 | **Time** | ~125 hours | ~26.5 hours |
 | **Best for** | Depth — every exercise, stretch problem &amp; capstone | A credible end-to-end pass in a few evenings |
 | **Start here** | [`00_master_onboarding.ipynb`](./00_onboarding/00_master_onboarding.ipynb) | [`fast_track/`](./fast_track/) |
@@ -150,7 +150,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**4 · Web Scraping**](./04_webscraping/) | 14–16 | Scraping fundamentals (BeautifulSoup, `robots.txt`, politeness), Firecrawl managed scraping, and the OpenAlex open scholarly API — all 100% offline |
 | [**5 · Machine Learning**](./05_machine_learning/) | 17–19 | scikit-learn, cross-validation &amp; hyperparameter tuning, model evaluation, feature engineering |
 | [**6 · Deep Learning with PyTorch**](./06_pytorch/) | 20–22 | Tensors, autograd &amp; the training loop; overfitting, regularization &amp; schedules; embeddings, an honest bake-off vs gradient boosting, a sklearn-style wrapper &amp; serving |
-| [**7 · Industry Applications**](./07_industry_applications/) | 23–26 (+A1–A8) | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance; full-weight appendices on pricing &amp; elasticity, A/B testing, credit risk, causal inference &amp; uplift — plus a business-function tour: HR/people analytics, receivables &amp; cash-flow, sales pipeline &amp; forecasting, procurement &amp; supplier scorecards |
+| [**7 · Industry Applications**](./07_industry_applications/) | 23–26 (+A1–A14) | Churn/CLV, fraud, segmentation + recommenders, demand &amp; maintenance; full-weight appendices on pricing &amp; elasticity, A/B testing, credit risk, causal inference &amp; uplift; a business-function tour (HR, receivables &amp; cash-flow, sales pipeline, procurement); and growth &amp; operations (marketing mix, service ops &amp; Erlang C, routing &amp; allocation, insurance pricing, product analytics, bandits) |
 | [**8 · AI Engineering**](./08_ai_engineering/) | 27–32 | LLM fundamentals, prompts, RAG, agents, document processing, eval &amp; observability |
 | [**9 · Building AI POCs**](./09_building_ai_pocs/) | 33–36 | Copilot setup, three POCs, RAG deep dive, vector DBs + agentic AI |
 | [**10 · Agents, Tools &amp; MCP**](./10_agents_tools_mcp/) | 37–40 | Agent architectures, robust tools, the Model Context Protocol, multi-agent systems |
@@ -164,7 +164,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | [**18 · Optional: Compound AI Evaluation**](./18_compound_ai_evaluation/) | 53 + 1 lab | Which pipeline knob drives quality? Factorial designs, replication, ANOVA attribution &amp; Pareto frontiers with [CAFE](https://cafe-ai.de) — plus a hands-on lab running a factorial study on the capstone assistant |
 | [**19 · Optional: Containers &amp; Docker**](./19_containers_docker/) | 1 lab | What a container *is*: images &amp; layers, OverlayFS, namespaces &amp; cgroups, data-science Dockerfiles, volumes &amp; networking — a mini-book + offline lab; pairs with Module 14 and can be read before it |
 
-> **23 optional appendices** (classical → deep-learning → foundation-model forecasting, regression analysis, PyTorch, pricing &amp; elasticity, A/B testing, credit-risk scorecards, causal inference &amp; uplift, the Module 7 business-function tour — HR, finance, sales, procurement — vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django), 18 (Compound AI Evaluation) and 19 (Containers &amp; Docker)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26.5 h).
+> **29 optional appendices** (classical → deep-learning → foundation-model forecasting, regression analysis, PyTorch, pricing &amp; elasticity, A/B testing, credit-risk scorecards, causal inference &amp; uplift, Module 7's business-function tour — HR, finance, sales, procurement — and its growth &amp; operations set — marketing mix, service operations, routing, insurance, product analytics, bandits — vector stores, RAG/agent frameworks) live beside their modules — all runnable offline. **Modules 11–12 are optional, reference-style tracks** (text analytics + deep tabular), and **Modules 17 (Django), 18 (Compound AI Evaluation) and 19 (Containers &amp; Docker)** are optional closers — all fully offline. **Module 6 (PyTorch)** is the full-lesson treatment of the Module 5 appendix mini-track (A1–A3). Every content module also ships a short **[5-question quiz](./quizzes/)** to check what stuck; short on time? The **[fast track](./fast_track/)** condenses the whole course into 22 notebooks (~26.5 h).
 
 ---
 
@@ -172,7 +172,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 
 | Path | Contents |
 |---|---|
-| `00_onboarding/` … `19_containers_docker/` | The complete course — modules 0–19 in learning order, lessons 1–53 + 23 appendices |
+| `00_onboarding/` … `19_containers_docker/` | The complete course — modules 0–19 in learning order, lessons 1–53 + 29 appendices |
 | `11_nlp/`, `12_deeptab/` | Optional reference tracks — text analytics (NB 41–43) &amp; deep tabular learning (NB 44) |
 | `14_cicd/` | CI/CD, Docker &amp; deployment mini-book — 14 chapters + 3 hands-on lab notebooks + a runnable example app |
 | `17_django/` | Optional: Django for AI web apps — mini-book (7 chapters) + 2 hands-on lab notebooks + a runnable example app, ChurnScope |
@@ -224,6 +224,7 @@ All generated inline (no downloads), grouped by the business problem they illust
 | **Customer segmentation** | Customers drawn from hidden archetypes for clustering + recommendations | NB 25 |
 | **Demand & maintenance** | Short demand series (lag & rolling features) plus predictive-maintenance signals | NB 26 |
 | **Business-function deep dives** | Weekly SKU price/volume panels, simulated experiments, trade-credit applications, both potential outcomes for uplift, censored employee records, an invoice ledger, a CRM stage-history log and PO lines — each with ground truth planted for the notebook to recover | IA A1–A8 |
+| **Growth & operations** | Channel spend with planted adstock/saturation, half-hourly contact-centre arrivals, a field-service board with historical trip times, an insurance book with exposure and a fat claims tail, a self-serve signup funnel with cohorts, and simulated bandit sessions | IA A9–A14 |
 | **Time-series forecasting** | Daily product-search series with trend & seasonality (classical → Prophet → DL → foundation models) | NB 11, DS A1–A4 |
 | **Customer feedback & reviews** | Piles of short product reviews, support tickets and survey notes for topic models + sentiment | NB 41–43, 48 |
 | **RAG document corpora** | Small knowledge bases / product catalogues chunked, embedded and retrieved | NB 29, 35, 36 |
@@ -279,7 +280,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **365 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 365 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **389 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 389 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 
@@ -309,7 +310,7 @@ Set the matching `*_API_KEY` env var for hosted providers (never inline). See [`
 
 Every notebook below runs in [Google Colab](https://colab.research.google.com/) with one click — no install, no download. Expand a module and click a badge to open it. **Sign in with a free Google account** the first time you run a cell — Colab needs it to give you a cloud runtime.
 
-<sub>The **128 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
+<sub>The **134 notebooks** counted throughout this README are exactly the ones indexed here for Colab — the course modules (0–19), the [quizzes](quizzes/), and the [fast-track](fast_track/) variants. Archived material under [`previous_versions/`](previous_versions/) is not included in that count.</sub>
 
 <details>
 <summary><b>0 · Onboarding</b> &nbsp;·&nbsp; 5 notebooks</summary>
@@ -430,6 +431,12 @@ Every notebook below runs in [Google Colab](https://colab.research.google.com/) 
 | `A6_finance_ar_cashflow.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A6_finance_ar_cashflow.ipynb) |
 | `A7_sales_pipeline.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A7_sales_pipeline.ipynb) |
 | `A8_procurement_spend.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A8_procurement_spend.ipynb) |
+| `A9_marketing_mix.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A9_marketing_mix.ipynb) |
+| `A10_service_operations.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A10_service_operations.ipynb) |
+| `A11_routing_allocation.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A11_routing_allocation.ipynb) |
+| `A12_insurance_pricing.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A12_insurance_pricing.ipynb) |
+| `A13_product_analytics.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A13_product_analytics.ipynb) |
+| `A14_bandits_adaptive.ipynb` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChrisW09/Python-for-AI-Driven-Automation/blob/main/07_industry_applications/A14_bandits_adaptive.ipynb) |
 
 </details>
 

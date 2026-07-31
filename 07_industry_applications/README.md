@@ -4,7 +4,7 @@
 
 **Goal:** Apply everything from Modules 1–5 to the four use-case families that dominate business data science in practice — and learn the one pattern they share: *model → money → decision*.
 
-**Estimated time:** 10–12 hours of focused study (core NB 23–26); the eight optional appendices add ~22 h.
+**Estimated time:** 10–12 hours of focused study (core NB 23–26); the fourteen optional appendices add ~38 h 30 m.
 
 **Prerequisites:** Modules 1–5 (especially NB 17–19 — models, honest evaluation, pipelines; NB 11 returns for the forecasting half).
 
@@ -37,6 +37,19 @@
                                         what really lands this quarter?
    A8     Procurement & suppliers    →  where does the money go, and which
                                         supplier is *actually* good? (averages lie)
+   ──────────────  growth & operations (A9–A14)  ─────────────────────────────
+   A9     Marketing mix & budget     →  which channels actually create demand,
+                                        and where should the €2.4M go?
+   A10    Service operations         →  how many agents, at what service level —
+                                        and what does the bot really save?
+   A11    Routing & allocation       →  the module's first *plan*: assignments,
+                                        time windows, and slack that pays
+   A12    Insurance pricing          →  frequency × severity, and what happens
+                                        if you refuse to differentiate
+   A13    Product analytics          →  funnels, cohort curves, and the metric
+                                        the team gets held to (but shouldn't)
+   A14    Bandits & adaptation       →  learn while you earn — and re-break
+                                        your own inference doing it
 ```
 
 ## Notebooks at a glance
@@ -52,11 +65,13 @@
 
 ## Optional appendices
 
-Eight appendices, all written at **full lesson weight** (same rhythm and ✋/🧪/🧠 exercise ladder as NB 23–26) rather than in the reference style of the Module 2 and 5 appendices — because each sits squarely on this module's *model → money → decision* spine. They are optional only in the sense that the core four do not depend on them.
+Fourteen appendices, all written at **full lesson weight** (same rhythm and ✋/🧪/🧠 exercise ladder as NB 23–26) rather than in the reference style of the Module 2 and 5 appendices — because each sits squarely on this module's *model → money → decision* spine. They are optional only in the sense that the core four do not depend on them.
 
 The first four close loops the core notebooks deliberately leave open. NB 23, NB 24 and A1 all end by recommending an experiment; **A2** is that experiment. NB 24 mentions the selective-labels problem in one stretch exercise; **A3** makes it the centrepiece and prices it. NB 23 warns twice that *risk is not persuadability* and sketches a two-model uplift estimator in a stretch exercise; **A4** is that warning developed into a full causal toolkit — and the reason the warning matters is measured in euros.
 
 **A5–A8 are the business-function tour:** the same toolkit walked into the four offices the core notebooks never visit — HR, finance, sales and procurement — because "tell me about a project" interviews come from all of them, not just from marketing. Each one imports the module's lessons into a new domain and adds the failure mode native to that domain. **A5** takes NB 23's churn machinery to the employer side and discovers the snapshot lies (*censoring* — most employees haven't left yet), plus the one analysis where controls can hide the problem instead of revealing it (pay equity). **A6** is A3's direct sequel: A3 decided *who gets credit*, A6 manages what happens next — when invoices actually pay, whom the two collectors should chase, and whether the CFO needs the credit line. **A7** is the module's leakage lesson in its natural habitat — a CRM whose fields are edited *after* deals close, and whose rep-entered probabilities are the antagonist. **A8** flips NB 25/A1/A3's webshop around and walks into its *buying* office, where the classic failures are averaging away lead-time variance (NB 26's safety-stock formula prices the difference) and claiming savings on price while total cost rises.
+
+**A9–A14 are growth & operations** — and they exist because the first eight appendices, for all their range, share a shape: predict something, threshold it, act. These six break that mould in ways the module needed. **A9** is the missing commercial function: A1 owns price and A7 owns the sales motion, but nothing owned the marketing budget, which needs two effects no other notebook has — carryover and diminishing returns — and delivers an *allocation* rather than a score. **A10** sets capacity instead of ranking within it, and brings the course its only queueing theory; its punchline is that the conversion from volume to headcount is non-linear, which is why a plan built on daily averages hits its target on paper and fails in half of all intervals. **A11** is the module's first genuine *plan under constraints* — an assignment and a sequence, where the lesson is that an optimiser answers the question you actually asked, and that the schedule which looks best on paper is the one that collapses on Tuesday. **A12** takes A3's regulated-pricing idiom somewhere A3 cannot go: a loss that is a count *times* an amount, a severity with a real tail, and a strategic trap (refuse to differentiate and your good risks leave) that has no analogue in approve/decline. **A13** works upstream of NB 23, in cohorts rather than customer-months, and asks the question that decides how a product team spends its quarter — is this metric *diagnostic* or *actionable*? **A14** closes the module's longest argument: NB 23 targeted with a model, A3 found its own decisions in its training data, A4 measured the damage, A2 randomized to fix it — and A14 shows what happens when the randomization itself adapts, which fixes the cost of learning and re-breaks the inference.
 
 | Appendix | Notebook | ⏱ Time | Difficulty | Business problem | What you'll build |
 |---|---|---|---|---|---|
@@ -68,6 +83,12 @@ The first four close loops the core notebooks deliberately leave open. NB 23, NB
 | A6 | `A6_finance_ar_cashflow.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | When will these invoices actually pay, whom should the two collectors chase, and will we need the credit line? | A days-late model built on as-of features (persistence is the signal), a collections queue ranked by expected cash acceleration rather than amount, a Monte-Carlo 13-week cash forecast that turns into a credit-line decision with a probability attached, and a walk-forward backtest that prices the due-date spreadsheet's optimism in euros |
 | A7 | `A7_sales_pipeline.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Are the CRM's own numbers any good — and what actually lands this quarter? | An as-of snapshot rebuild that deflates a leaked AUC 1.000 to an honest 0.853, a reliability curve that prices rep-entered probabilities, a calibrated quarter forecast with Monte-Carlo bands backtested over six quarters, and an EV-ranked lead queue with a break-even calling depth |
 | A8 | `A8_procurement_spend.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Where does the €11M actually go, which suppliers are actually good, and should we consolidate the tail? | A spend cube with Pareto/ABC and a maverick-spend bill, a naive savings claim collapsed to its honest number, a supplier scorecard where lead-time *variance* is priced via NB 26's safety stock, total cost of ownership that dethrones the cheapest invoice, and a consolidation plan with payback and the dual-sourcing premium worth paying |
+| A9 | `A9_marketing_mix.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Which channels actually create demand, and where should next year's €2.4M go? | Adstock and saturation curves fitted and recovered against planted truth, last-click's 12× ROAS on branded search set beside its true 1.72×, a marginal-return reallocation worth +€193k a year on the same budget, identification limits priced in euros, and a geo holdout that buys the answer |
+| A10 | `A10_service_operations.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | How many agents does next quarter need, at what service level — and what does the deflection bot really save? | Interval-level arrival forecasting, Erlang C from scratch checked against simulation, the occupancy cliff and shrinkage in FTE and euros, a cost-optimal (not maximal) service level, and an AI-deflection business case walked from the vendor's 30% down to an honest 11.2% |
+| A11 | `A11_routing_allocation.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Forty jobs, six vans, two-hour promises — what does tomorrow's schedule look like? | A travel-time model whose *error* matters more than its mean, the distance-optimal plan that misses 27 of 40 windows, a euro-optimal assignment (`linear_sum_assignment` + greedy insertion + 2-opt) that drives further and costs €4,836 less, and slack chosen from a 400-day simulation because the on-paper optimum always picks zero |
+| A12 | `A12_insurance_pricing.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | What should a device-protection plan cost, and what happens if we keep charging everyone €89? | Exposure as the actuarial form of censoring, a Poisson GLM with log-exposure offset that recovers every planted relativity, a fat-tailed Gamma severity with large-loss capping, a technical rate table exposing €1.3M of cross-subsidy, and an adverse-selection death spiral simulated over renewal cycles |
+| A13 | `A13_product_analytics.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Where do we lose people, is the product improving, and which metric should the team chase? | A funnel that collapses because its denominator changed, cohort curves compared at equal age (and the young-cohort censoring trap), an activation metric whose 2.75× retention lift survives adjustment at 8pp and a randomized nudge at 1.9pp, LTV with its tail assumption exposed, and two roadmap items priced |
+| A14 | `A14_bandits_adaptive.ipynb` | ~2 h 45 m | ⭐⭐ (stretch ⭐⭐⭐) | Six offers, one hero slot — should this be a bandit or an experiment? | ε-greedy, UCB1 and Thompson sampling from scratch scored in euros of regret, the adaptive-sampling bias that makes your winner's reported lift a fiction, contextual bandits as A4's online twin (with a warm start that locks onto the wrong arm), and four honest cases where a bandit is the wrong tool |
 
 ## Notebook guides
 
@@ -400,6 +421,176 @@ The price-variance lens carries the module's honesty flag: the naive "if every l
 
 **Datasets:** Synthetic, generated inline with a seeded `default_rng` — two years / 14,000 PO lines for the NB 25 webshop's buying office, 12 categories × 60 suppliers with planted ground truth: a +9 % maverick premium, lot-size price breaks, a steel-indexed category, a same-mean/high-σ supplier twin, and a 2025 lot-size mix shift. Fully offline.
 
+### A9 · Marketing Mix & Incrementality — `A9_marketing_mix.ipynb`
+
+**The notebook where the best-performing channel turns out to be a mirror.** The webshop spends **€2.4M a year** across six channels, and the CFO has noticed that branded search reports a **12.00× ROAS** — so why not move the whole budget there? Because last-click attribution ranks who *closed*, not who *caused*: branded search's spend rises with demand it did not create, and its true return is **1.72×**, while trade shows report **0.66×** and are truly **3.39×**. Acting on the last-click ranking destroys **€1.6M a year**.
+
+The fix needs two effects no other notebook in the module has: **adstock** (this week's spend still working three weeks from now) and **saturation** (the tenth euro buying less than the first). Both are implemented as small functions, fitted per channel, and checked against planted truth — the model decomposes a €19.9M year into a €249,919/week baseline (truth: €245,000) and €118,487/week of marketing (truth: €120,874), and backtests at **1.39% MAPE** against seasonal-naive's 5.05%. §3 then does something most MMM write-ups skip: it prices what 156 weekly observations **cannot** identify. Email's contribution interval is **[€0, €10,266]** — the channel may be doing nothing, and this data cannot tell; branded search carries a VIF of 17.2, and a synchronised budget would push VIFs to 73. The ridge penalty is taught rather than hidden, because cross-validation picks 0.02 for *prediction* and attribution needs 0.09 — prediction and attribution are different jobs, and that gap is what makes §5 necessary.
+
+§4 turns curves into a budget by equalising **marginal** returns, moving **€335,303** of the same €2.4M for **+€193,490 a year** (god mode says the ideal move was worth €522,505 — the gap is what imperfect estimation costs). A1's guardrails return in force: bootstrap the response curves, refuse to extrapolate past the spend range you have actually run, and accept that the optimum is flat. §5 is the honest fix and the notebook's best section — a **geo holdout** on branded search across 12 of 24 regions for 26 weeks, with an MDE of 2.54%, measuring incrementality at **1.70%** against the planted 1.72×. It costs €104,868 of revenue and *gains* €58,248 of gross profit, because the ad spend it switches off was mostly buying customers who were already coming.
+
+**Learning objectives:**
+- Explain why **last-click attribution** systematically over-credits closers, and name **reverse causality** as the separate, second error.
+- Implement **adstock** and **saturation** transforms and fit them, checking recovered contributions against a known truth.
+- Diagnose what a 156-week MMM **cannot identify** — flat spend, collinear channels — and report those limits as intervals rather than point estimates.
+- Reallocate a fixed budget by **equalising marginal returns**, with bootstrap and support-range guardrails.
+- Design a **geo holdout** to measure incrementality directly, and price the test against the budget it protects.
+- Say what MMM can never do: it sizes channels, never people (that is A4's job).
+
+**Sections:**
+1. The business: €2.4M, six channels, one budget meeting
+2. Last-click is a ranking of who closed, not who caused
+3. The MMM: adstock, saturation, and what 156 weeks can identify
+4. From coefficients to a budget
+5. The honest fix: buy the answer with a geo holdout
+6. What real MMM teams add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the model that discovered branded search is the whole company" — drop the seasonality and promo controls and Christmas gets handed to whichever channel tracks demand hardest, inflating branded search from €30,182 to €187,524 a week and 49% of revenue) · 4 🧠 stretch exercises (⭐⭐⭐: bootstrap the whole allocation into a range, model brand/non-brand cannibalisation, contour the near-flat likelihood surface to make identifiability visible, and calibrate the MMM with the geo result as a prior) · 🎁 bonus mini-project: the budget memo · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — 156 weeks of the webshop's weekly spend across six channels, revenue, orders, A1's promo calendar, a price index and a competitor ad-pressure index, with per-channel geometric adstock and Hill saturation planted as recoverable ground truth, plus a 75,541-order touchpath log tied to the same P&L. Fully offline.
+
+### A10 · Service Operations: Arrivals, Erlang C & the Staffing Plan — `A10_service_operations.ipynb`
+
+**The notebook where the average day never happens.** HelpDeskAI's own support floor handles ~8,974 contacts a week at a 6.90-minute average handle time, and must hit "80% of chats answered in 20 seconds". The opening figure settles the notebook's thesis before any model appears: the mean interval carries 45.9 contacts, but only **14.9%** of intervals land within ±20% of it, and Monday 10:30 runs **40× busier** than Sunday 20:30. Anything you compute from a daily average is a statement about a day that does not exist.
+
+Erlang C is implemented from scratch (offered load, P(wait), service level, average speed of answer) and — the step that makes it teachable — **validated against a simulation**: 0.209 vs 0.199 for P(wait), 83.6% vs 84.7% for service level. Then the three lessons the formula exists to teach. The staffing curve is a **staircase, not a line**: +5% volume needs +4.0% agents at the median but **+14.3%** in the 20:00 interval, and a 30% volume drop returns only 26.2% of the agents. The **occupancy cliff** is dissected at fixed load — 80% occupancy gives an 83.6% service level and a 17-second answer; **95.2% gives 27.5% and 315 seconds**, which is why "run everyone flat out" is an operational death wish rather than an efficiency drive. And **shrinkage** — rostering paid hours rather than productive ones — is worth 15.8 FTE and **€316,545** of the quarter's €1,055,151 plan.
+
+§5 buys a service level instead of assuming one: an abandoned contact costs €15.24, and the total-cost curve bottoms out at **88%**, not at the contracted 80% (which costs €22,056 more) and certainly not at 98% (€103,100 more). The baseline is then executed properly: the flat-average plan looks **€216,111 cheaper in wages** and is **€1,024,996 worse per quarter**, because it misses the SLA in 52.4% of intervals and delivers a contact-weighted service level of 24.2%. §6 is the Module 8 bridge and the section support leaders will recognise: a bot with 30.2% containment is walked down a waterfall — the staffing staircase (−25.6%), **mix shift** as the bot eats the easy contacts and AHT rises from 6.90 to 8.03 minutes (−15.6%), the interval profile (−15.9%), and harder escalations at 8.57 minutes — landing at **−11.2%**, or **€118,099 honest against the vendor's €319,118**. Break-even containment is 20.1%.
+
+**Learning objectives:**
+- Forecast **interval-level** arrivals and explain why daily totals cannot staff a queue.
+- Implement **Erlang C** from scratch and check it against a simulation.
+- Explain the **staffing staircase** and the **occupancy cliff**, and apply **shrinkage** correctly.
+- Choose a **cost-optimal service level** from the cost of waiting versus the cost of an agent.
+- Build the quarter's staffing plan and beat the flat-average baseline in euros.
+- Audit an **AI deflection** business case: staircase, mix shift, interval profile and escalation quality.
+
+**Sections:**
+1. The business: 9,000 contacts a week, one SLA
+2. Forecasting the arrivals — a prerequisite, not the point
+3. Erlang C from scratch — and a simulation to check it
+4. What the formula teaches: a stepped curve and a cliff
+5. The money: shrinkage, the cost of waiting, and the service level to buy
+6. The AI deflection question — what the vendor's slide leaves out
+7. What real workforce-management teams add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the plan that hits its SLA on paper" — an Erlang plan built on the daily average reports 80.1% attainment and misses in 50.5% of intervals, at a €945,286 cost of averaging) · 4 🧠 stretch exercises (⭐⭐⭐: Erlang A with a patience distribution by simulation, a two-skill floor where the formula has no answer, buying a forecast **quantile** instead of a point, and turning the requirement curve into a roster with a set-covering LP) · 🎁 bonus mini-project: the staffing plan one-pager for the CFO · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — 20,468 half-hour intervals (two years, 07:00–21:00) of support arrivals with an intraday double hump, day-of-week and annual waves and six launch spikes, split into four contact types whose easy share deliberately thins out at the peak, plus a one-week contact-level log with lognormal handle times by channel × type. Fully offline.
+
+### A11 · From Prediction to Allocation: Routing, Dispatch & Slack — `A11_routing_allocation.ipynb`
+
+**The module's first plan.** Every other notebook here ends in a threshold or a ranked list; this one ends in an assignment, a sequence, and a promise you either keep or pay for. Forty field-service jobs, six technicians, two-hour arrival windows, and a costed board: a missed window is €150, a rebooking agreed the night before is €60, overtime is €48/hour, driving is €0.42/km.
+
+§2 makes the pivot that justifies the notebook. The travel-time model is fine (**MAE 9.20 minutes** against the dispatcher's 30 km/h rule at 11.35), but for a schedule the **error distribution matters more than the mean**: the ratio of actual to predicted has a median of 0.947 and a 90th percentile of 1.39, errors accumulate down a route, and a hand-built route that is feasible on paper **misses a window on 59% of days**. §3 then runs the baseline honestly — nearest-neighbour distance minimisation produces the shortest plan in the notebook at **287.1 km**, hits **13 of 40** windows, books 1,120 minutes of overtime, leaves vans parked for 26.4 hours, and costs **€5,067 a day**. The exchange rate is printed so nobody forgets it: one missed window equals 357 km of driving.
+
+§4 optimises the thing that actually matters — `scipy.optimize.linear_sum_assignment` for jobs-to-technicians, greedy insertion plus 2-opt for sequencing, all scored in euros — and lands **39 of 39 promised windows for €231 on paper**, while driving 11 km *further* than the distance-optimal plan and costing **€4,836 less**. Then §5 undercuts its own answer, which is the best thing in the notebook. Simulated over 400 Tuesdays, that €231 plan really costs **€742**, has only **9% clean days**, and in the worst case a single 184-minute delay takes out **six consecutive windows** and sends a technician home at 20:34 against a sheet that said 16:57. Sweeping **slack** finds an interior optimum at **12 minutes per leg** — €548/day, 60% clean days, worth **€48,500 a year** — and the closing observation is the one to remember: on-paper cost rises monotonically with slack, so anyone optimising the sheet will choose zero, every time. Insurance, for the third time in this module after A3's credit limits and A8's dual sourcing.
+
+**Learning objectives:**
+- Explain why a schedule needs a travel-time **distribution**, not a point estimate, and why errors compound along a route.
+- Recognise a **wrong objective**: minimise distance and watch the promises break.
+- Build an assignment with `linear_sum_assignment` and sequence it with **greedy insertion + 2-opt**, scored in euros under skill, shift and window constraints.
+- Stress-test a plan by simulation and quantify **cascade failure**.
+- Choose **slack** as a priced decision variable, and explain why the on-paper optimum never will.
+- Say what makes a routing deliverable adopted: a plan the dispatcher understands.
+
+**Sections:**
+1. The business: 40 jobs, 6 vans, one promise
+2. Predict travel time — and notice which part matters
+3. The dumb baseline, and the wrong objective
+4. Optimising the thing you actually care about
+5. The plan that survives Tuesday
+6. What real routing systems add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the schedule that validated perfectly" — feasibility checked with mean travel times and no service duration; the fix validates at a service level and finds 10 of 39 promises kept less than 90% of the time) · 4 🧠 stretch exercises (⭐⭐⭐: start the vans from home — and lose, €581 against €548; SLA-weighted misses so the *business* job stops being the one sacrificed; a fleet-size sweep where the 7th technician saves €66/day against a €272/day wage; intraday re-dispatch after a 90-minute over-run, at €124 per incident) · 🎁 bonus mini-project: tomorrow's dispatch sheet **plus** the note answering the dispatcher's four questions · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — one day's board of 40 jobs (location, duration, skill, SLA class, two-hour window) across a 30 × 30 km metro with five customer clusters and six skill-constrained technicians, plus 12,000 historical trip records with planted rush-hour congestion and a right-skewed delay tail, and a 4,000-job duration log. Core stack plus `scipy.optimize`; fully offline.
+
+### A12 · Pricing Risk: Frequency × Severity & Adverse Selection — `A12_insurance_pricing.ipynb`
+
+**A3's sequel in a different industry — where the loss is a count times an amount.** The webshop sells a device protection plan at a flat **€89** to everyone. The book looks healthy in aggregate (loss ratio 0.729, a combined ratio of 0.953, €151,832 of margin) and is quietly catastrophic in one corner: consumer-monitor plans run a **0.24** loss ratio while trade-laptop plans run **2.50**, against a pure premium of €222.74. A3 decided approve or decline on a binary event; here the decision is a *price*, the severity has a real tail, and there is a strategic trap A3 never faces.
+
+§2 is why this notebook sits beside A5: **exposure is the actuarial form of censoring**. Policies written mid-year have not finished their year, and the naive claims-per-policy frequency of 0.0799 understates the earned 0.1307 per policy-year by **38.9%**. With `offset=np.log(exposure)`, the Poisson GLM recovers **all ten planted relativities inside their confidence intervals** (laptop 1.89 against a planted 1.86; trade 1.69 against 1.75). The dispersion check then does what a good diagnostic should — variance/mean of 2.01 sends you to a negative binomial whose α of 2.82 matches the planted 2.86, the relativities move 0.3%, and the **standard errors widen 12–18%**: the point estimate survives, your certainty does not. §4 refuses to summarise severity with a mean (€497 against a €269 median and a €25,953 maximum, with the top 1% of claims carrying 17.1% of the euros) and is explicit that capping at €2,500 does not delete the tail, it **moves** it — €8.12 per policy-year, 12.5% of incurred, that someone still pays.
+
+The rate table runs **€41.88 to €229.97** and averages €90.50 — within €1.50 of the flat price, which is the point: the flat price is roughly right *on average* and wrong for almost everybody, hiding **€1,299,810 a year of cross-subsidy, 39.8% of earned premium**. §6 then simulates what the analysis is really for. Hold the flat price while good risks lapse and the loss ratio walks **0.722 → 1.038** as the book shrinks from 60,000 to 23,999 and premium falls €5.34M → €2.14M; chase it with a single higher flat rate and you reach €129.51 with 18,928 plans; differentiate and the loss ratio stays flat at 0.71 with 44,090 plans and €3.99M. A3's fairness discipline is imported explicitly — `credit_band` looks 1.44× predictive univariately and collapses to **1.01× (p = 0.71)** once legitimate factors are in, failing on statistics as well as ethics — and the +25% year-over-year cap is priced as the business constraint it is: €464,879 in year one, €990,224 cumulative.
+
+**Learning objectives:**
+- Treat **exposure** correctly with a log-offset, and connect it to censoring (A5).
+- Fit a **Poisson/negative-binomial frequency GLM**, check dispersion, and say what overdispersion does and does not change.
+- Model **severity** with a Gamma GLM, respect the tail, and price a **large-loss cap** honestly.
+- Build a **technical rate table** and quantify the **cross-subsidy** a flat price conceals.
+- Simulate **adverse selection** and show what refusing to differentiate costs over renewal cycles.
+- Separate **permissible** rating factors from merely predictive ones, and price a rate-change glide path.
+
+**Sections:**
+1. The business: 60,000 plans, one price, and a loss ratio nobody owns
+2. Exposure — the actuarial version of censoring
+3. Frequency: a Poisson GLM with an offset
+4. Severity, and why the mean is a bad summary
+5. The technical price and the cross-subsidy
+6. Adverse selection: what happens if you refuse to differentiate
+7. What real pricing teams add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the model that priced new business a third too cheap" — frequency fitted without the exposure offset files €174.50 against a correct €273.33, −36.2%) · 4 🧠 stretch exercises (⭐⭐⭐: credibility shrinkage for a thin cell, a Tweedie GLM fitted directly on pure premium against the two-part model, a bootstrap that says which cells are genuinely distinguishable, and a €150 excess and who selects into it) · 🎁 bonus mini-project: the rate-change memo for the product committee · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — 60,000 device-protection plans (device × segment × channel × district × declared usage × exposure) with planted frequency relativities, a gamma frailty producing genuine overdispersion, and 4,794 lognormal claims plus rare €4k–€26k fleet thefts and batch defects. Uses `statsmodels`; fully offline.
+
+### A13 · Product Analytics: Funnels, Cohort Curves & the Activation Metric — `A13_product_analytics.ipynb`
+
+**Upstream of NB 23, and the notebook that decides how a squad spends its quarter.** HelpDeskAI's self-serve product takes 60,000 signups through activate → habit → paid (47.5% / 46.7% / 26.0%, or 5.8% end to end), and the PM arrives with three questions. The first is answered by a decomposition rather than a model: during a paid-social push, signup-to-paid conversion collapses **5.8% → 4.2%**, every step looks worse, and nothing got worse — paid social went from 13.8% to 47.9% of signups and activates at 26.1% against organic's 53.2%. Mix-adjusted, activation is 48.4% against a pre-push 47.5%. A funnel is a ratio whose denominator has a marketing department attached to it.
+
+§3 rebuilds retention properly — 54.8% at week 1, 32.1% at week 12, 22.4% at week 52 — and compares cohorts **at equal age**, because the calendar-snapshot view credits the month-15 release with **+10.2 pp** when the honest like-for-like figure is **+4.4 pp**. That gap is right-censoring: young cohorts look wonderful because you have only seen their good weeks, which is A5's lesson wearing a product-management badge. §4 is the centrepiece. "Users who invite three teammates in week 1 retain 2.75× better" is **true in the data** (+46.5 pp), and it is mostly intent: adjusting for measured proxies leaves **+8.0 pp**, and the randomized nudge — the only thing that settles it — moves the metric **+24.6 pp** while moving retention **+1.90 pp ± 1.54**, against the +11.4 pp the correlation promised. The distinction the notebook exists to teach: a *diagnostic* metric predicts, an *actionable* metric changes the outcome when you move it, and teams are routinely handed the first and held to it as if it were the second — a mistake billed here at **€292,224** in squad time plus forgone work.
+
+§5 converts curves into decisions. LTV is **€374** per payer, with **28% of it sitting in the unobserved tail** (47% for the newest cohorts) — stated plainly, because that share is an assumption, not a measurement. The channel table ranks by payback rather than volume: referral 8.75 LTV:CAC at 1.3 months, content SEO 3.97 at 2.9 months, paid search 1.23 at 9.2 months, and **paid social 0.71 at 16.0 months** — the cheapest signup at €9 and the only losing channel, with the push itself returning €56,110 on €78,912. And the roadmap choice inverts the usual instinct: +5 pp at the *leakiest* early step is worth €15,628/year against **€121,224** for the later one, because the steps carry different traffic and very different downstream value.
+
+**Learning objectives:**
+- Decompose a funnel that moved because its **traffic mix** moved, and report the mix-adjusted rate.
+- Build a **cohort triangle** and compare cohorts **at equal age**, recognising young-cohort censoring.
+- Distinguish a **diagnostic** metric from an **actionable** one, and design the randomized nudge that settles it.
+- Integrate a retention curve into **LTV**, and state how much of it is assumption.
+- Rank acquisition channels by **LTV:CAC and payback**, not by volume or cost per signup.
+- Price two roadmap options in euros and explain why the leakiest step is not automatically the best fix.
+
+**Sections:**
+1. The business: 60,000 signups and one funnel
+2. The funnel that got worse without anything getting worse
+3. Cohort retention curves, and the trap of the young cohort
+4. The activation metric — the one the team gets held to
+5. From curves to money — LTV, payback, and two roadmap items
+6. What real product-analytics teams add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the dashboard that found the best cohort in company history" — cohorts compared as of today rather than at equal age; the fix is age alignment and censoring the incomplete cells) · 4 🧠 stretch exercises (⭐⭐⭐: fit the tail instead of assuming it and watch LTV move with the assumption, a payback table that admits it does not know CAC, size the nudge experiment the way A2 would, and Goodhart in twenty lines) · 🎁 bonus mini-project: the quarterly product review one-pager, every metric labelled diagnostic or actionable · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — 60,000 self-serve signups over 24 months with acquisition channel, latent intent, weekly step timestamps, subscription lifetimes, week-1 invite counts and six measured intent proxies, plus two planted events: a paid-social push in months 10–14 (the mix shift) and a genuine onboarding release in month 15. Fully offline.
+
+### A14 · Bandits & Adaptive Allocation: Learning While You Earn — `A14_bandits_adaptive.ipynb`
+
+**The closing argument of the module's longest thread.** NB 23 targeted with a model; A3 discovered its own approvals had written its training data; A4 measured what that does to an estimator; A2 randomized to fix it. A14 asks what happens when the randomization itself adapts — which fixes the cost of learning and **re-breaks the inference**. Six offers compete for one hero slot, and because they carry different margins the best *click* arm is deliberately not the best *euro* arm.
+
+§2 implements ε-greedy, UCB1 and Thompson sampling from scratch and scores them in the only unit that matters: **regret**, in euros. Thompson sampling costs **€3,212** a quarter against ε-greedy's €12,933 and a correctly-run four-week equal-split test's €24,656 — worth **€21,444 a quarter**. Textbook UCB1 comes in at €65,685 and is therefore *worse than the experiment*, which the notebook refuses to hide: rescale the reward from €41 to €1.50 and the same algorithm drops to €8,794. An exploration bonus that is not on the scale of your rewards is not a bonus, it is a random number.
+
+§3 is why this notebook belongs in Module 7 rather than a generic ML course. After an adaptive run, the arms' naive sample means are **biased**: offer B's true 4.10% reports as 3.68% off 962 sessions, and the winner's reported lift over the incumbent comes in at **+63.8% against a true +43.2%** — where the equal-split test reports +43.7%. Hence the rule the notebook hands you: **bandits optimise, experiments estimate.** If the deliverable is a decision, adapt; if it is a number someone will reuse in a business case, randomize. §4 bridges to A4 with contextual bandits worth a further **€39,958 a quarter** — and shows the hybrid everyone actually deploys biting back, because a *stale* warm start costs €138,720, worse than not personalising at all, with forced exploration (A3's exploration budget, third costume) as the €10,352 fix. §5 then argues against the tool in four quantified ways: 30-day delayed rewards cut the advantage from €21,458 to €8,039; a stale winner burns €23,158 in six weeks unless the bandit forgets; and at three decisions a year the fixed test wins by €141,547.
+
+**Learning objectives:**
+- Frame an allocation problem as **regret in euros**, and reward on margin rather than conversion.
+- Implement **ε-greedy, UCB1 and Thompson sampling**, and explain why UCB's bonus is scale-sensitive.
+- Demonstrate **adaptive-sampling bias** and decide, per brief, whether to adapt or randomize.
+- Extend to **contextual** bandits, connect them to A4's offline uplift, and handle a bad warm start.
+- Quantify the conditions that break a bandit: **delayed rewards, non-stationarity, too few decisions**.
+- Name what production systems add — off-policy evaluation, guardrails, ramped exposure.
+
+**Sections:**
+1. Six offers, one hero slot, and the price of learning
+2. Three algorithms, from scratch
+3. The bill for adaptivity: your estimates are now biased
+4. Contextual bandits — the bridge back to A4
+5. When a bandit is the wrong tool
+6. What real adaptive systems add (honest section)
+
+**Practice:** 4 ✋ quick-exercise checkpoints · 4 🧪 practice exercises (⭐–⭐⭐, incl. "Debug me 🐞: the bandit that optimised itself broke" — reward the click instead of the margin and it converges confidently on the worst offer, €116,046 against €3,462, or €450k a year; and exercise 2, which finds that a *right-length* seven-day test costs €10,440 rather than €24,656, so two-thirds of the headline "bandit win" was really just test duration) · 4 🧠 stretch exercises (⭐⭐⭐: batched Thompson sampling for nightly updates, IPS/SNIPS off-policy evaluation with its positivity failure made visible, successive halving versus Thompson when you want the *answer* rather than the revenue, and three ways to forget under non-stationarity) · 🎁 bonus mini-project: the merchandising decision memo — which of next quarter's four questions get a bandit and which get an experiment · ✅ self-assessment checklist.
+
+**Datasets:** Synthetic, generated inline with a seeded `default_rng` — six hero-slot offers with planted true conversion rates and differing contribution margins, served to 360,000 simulated sessions a quarter in 1,800 batches of 200, plus an eight-segment (new/returning × mobile/desktop × basket size) response matrix for the contextual section. Fully offline.
+
 ## How these notebooks work
 
 Each lesson follows the same rhythm: short teaching sections punctuated by **✋ Quick exercise (~2 min)** checkpoints with collapsible `<details>` solutions, plus 🔮 predict-the-output and 🔬 "what actually happens" cells that make you commit to an answer before running the code; a 🧠 one-screen story recap; then the graded work — 🧪 practice exercises (⭐-rated, always including a **Debug me 🐞**), 🧠 stretch exercises and a 🎁 bonus mini-project — closing with a ✅ self-assessment checklist. All data is generated inline (plus one bundled CSV), so everything runs **100 % offline**. The module leans directly on Modules 2 & 4 — the pandas/plotting/statistics craft and the sklearn/evaluation/pipeline discipline — and hammers five shared lessons across its notebooks: a probability is not a decision (scores become actions only via costs — break-even thresholds in NB 23, queue capacity in NB 24, service levels and critical ratios in NB 26, elasticity against contribution margin in A1, the confidence interval against the cost of acting in A2, `PD* = m/(m+LGD)` in A3); respect time or your metrics lie (temporal splits, shifted rolling features); beat the dumb baseline first (always-legit in NB 24, popularity in NB 25, seasonal-naive in NB 26, the legacy rulebook in A3); unsupervised output only becomes a business object once you profile, name, and stability-check it (NB 24, NB 25); and **ask how the data came to exist before you fit anything** — leakage in NB 23, unshifted windows in NB 26, your own pricing department writing the history you are about to regress on in A1, and in A3 the fact that you only observe repayment for the applicants you approved.
@@ -408,10 +599,15 @@ The appendices add a sixth that the core four only gesture at: **know what your 
 
 The business-function tour (A5–A8) then replays the module's lessons where most readers will actually use them. Censoring — the observation that hasn't finished happening — appears twice (employees who haven't left in A5, open deals in A7); post-outcome leakage gets its most realistic staging yet (a CRM edited after the fact, A7; a terminal survey wave, A5; a reminder counter that only exists once the invoice paid, A6); the break-even threshold returns in four new costumes (`p* = C/(s·R)` for a retention package, expected cash acceleration per call, an SDR-hour's break-even lead depth, the dual-sourcing premium); and the humbling baselines keep winning more than dignity allows (the customer's own mean in A6, stage-level win rates in A7). A8 contributes the tour's quietest lesson: sometimes the most valuable analytics in the building is honest accounting with error bars.
 
+Growth & operations (A9–A14) then widen the module's idea of what a deliverable can be. Four of the six do not end in a score at all: A9 ends in a **budget**, A10 in a **headcount**, A11 in a **schedule**, A14 in a **policy** — and each needed machinery the module had never used (carryover and saturation, queueing, constrained assignment, sequential allocation). They also sharpen the module's oldest habits rather than repeating them. "Beat the dumb baseline" gets its most humiliating outing in A10, where the flat-average plan is €216k cheaper in wages and a million euros worse in total. "Averages lie" moves from A8's supplier lead times to A10's intervals and A12's claim severities, where the mean sits nearly twice the median. Censoring appears for the third and fourth time — A12's unexpired policies, A13's young cohorts — under two more names. And the module's insistence that a number must survive contact with uncertainty produces its best single result in A11: a schedule that is optimal on paper has a 9% chance of a clean day, and the slack that fixes it can never be discovered by optimising the paper.
+
+Two of them end by arguing against their own tools, which is the disposition the whole module has been building toward. A14 finds that two-thirds of its headline "bandit beats experiment" win was really just a badly-sized experiment, and that its own textbook UCB1 loses to the test it was supposed to replace. A11's stretch exercises contradict the folklore they were written to confirm. A notebook that cannot report a result its author did not want is not teaching analysis; it is teaching advocacy.
+
 ## Where next
 
 → **The appendices** if you skipped them, in order: `A1` (pricing — the fastest lever on the P&L, and the one place where the *data itself* is the adversary), `A2` (experiments — the missing prerequisite that A1, NB 23 and NB 24 all lean on), `A3` (credit risk — a regulated industry's idiom, and the deepest version of "your own decisions wrote your training data"), `A4` (causal inference & uplift — the sequel NB 23's caveat promised, and the reason every campaign should keep a randomized holdout).
 → **The business-function tour (A5–A8)** in any order — each stands alone: `A5` (HR — censoring and the pay-gap decomposition), `A6` (finance — A3's sequel: collections and the 13-week cash forecast), `A7` (sales — leakage's natural habitat, and the calibrated quarter forecast), `A8` (procurement — spend transparency, scorecards where averages lie, and total cost of ownership). Pick the one whose Monday meeting you sit in.
+→ **Growth & operations (A9–A14)**, also standalone: `A9` (marketing mix — the budget, and why the best-looking channel is a mirror), `A10` (service operations — Erlang C, and the bot that saves a third of what the vendor claims), `A11` (routing — the module's only plan under constraints, and the slack that pays), `A12` (insurance pricing — frequency × severity and the death spiral), `A13` (product analytics — cohorts, and the metric your team should not be chasing), `A14` (bandits — learning while you earn, and the inference it costs you).
 → **Module 8 — AI Engineering** (`../08_ai_engineering/28_ai_workflows.ipynb`) if you haven't done it yet — LLMs layered on top of exactly these workflows.
 → **Capstone A** (`../15_capstones/47_capstone_analytics.ipynb`) to prove the analytics half end-to-end.
 
