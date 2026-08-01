@@ -17,6 +17,7 @@ Work through the table; most quarters most rows need nothing.
 | **EU AI Act section** | Obligation dates phrased as future become past as they arrive (next milestone: Annex I embedded high-risk, Aug 2027) | [`16_business_ai/52_bpm_governance_poc_mvp.ipynb`](./16_business_ai/52_bpm_governance_poc_mvp.ipynb) §5 |
 | **Colab claims** | "Colab ships PyTorch preinstalled" and friends still true | root `README.md`, Module 6 |
 | **Optional requirements** | Commented pins in `requirements.txt` still install cleanly on a fresh venv (spot-check the ones you touch) | [`requirements.txt`](./requirements.txt) |
+| **Tools named in honest sections** | Module 7's appendices name the tools real teams reach for (Robyn / PyMC-Marketing in A9, OR-Tools in A11, `lifelines` in A5, off-policy evaluation libraries in A14). No code depends on them, but the claim "this is what the industry uses" ages | [`07_industry_applications/`](./07_industry_applications/) |
 | **External links** | `make -C docs_site linkcheck` output is empty (exclusions live in `conf.py`) | `docs_site/` |
 
 Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pandas idioms — only needs attention when a library's own API deprecates something (CI's execution sweep will surface that).
@@ -31,6 +32,24 @@ Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pand
 4. **Cross-references:** `python3 scripts/check_nb_references.py`.
 5. **Counts:** `python3 scripts/check_course_counts.py` — notebook/checkpoint/appendix totals in the README, docs index and 00b must match the tree (CI enforces this too).
 6. **Docs:** `make -C docs_site html` builds with `-W`; `make -C docs_site linkcheck` output should be empty.
+
+## Adding a notebook or a module
+
+Most of the gates above are self-explanatory once they fail. Three are not, because they enforce
+conventions encoded in file *names* and in the docs sidebar:
+
+- **Appendix filenames** must be `A<n>_<slug>.ipynb` in a module directory. `check_course_counts.py`
+  globs `A[0-9]*_*.ipynb`, so two-digit appendices (`A10_…`) count correctly — it globbed `A[0-9]_*`
+  until Module 7 grew past nine appendices, which silently under-counted rather than failing.
+- **A new module directory** must be added by hand to a `{toctree}` group in `docs_site/index.md`;
+  the sidebar is grouped by theme rather than globbed, so `generate.py` refuses to build if the two
+  disagree and names the module it could not place.
+- **Every notebook needs a Colab row** in the root README's index — `check_course_counts.py` compares
+  the number of unique Colab links against the tree and fails if one is missing.
+
+When a module gains notebooks, the counts in the root README (badge, headline, "across the course",
+appendix totals, Colab footnote), `docs_site/index.md`, and `00b_course_overview.ipynb` all move
+together. Run gate 5 rather than trying to remember the list; it names each stale location.
 
 ## Editing rules that keep the course honest
 

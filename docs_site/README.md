@@ -20,7 +20,7 @@ relative links so they resolve in the built site. Those directories and
 `_build/` are generated — edit the module READMEs in the repository instead,
 then rebuild.
 
-Two things `generate.py` does that are worth knowing when you edit a module:
+Three things `generate.py` does that are worth knowing when you edit a module:
 
 - **Chapter order follows the README.** A mini-book module's sidebar lists its
   chapters in the order the module README first links to them, not
@@ -31,6 +31,23 @@ Two things `generate.py` does that are worth knowing when you edit a module:
   become GitHub URLs; links to another module's directory or README become
   that module's page on this site; `../README.md` ("🏠 Course home") becomes
   this site's home page.
+- **The sidebar is grouped by hand, and checked.** `index.md` sorts the twenty
+  modules into themed `{toctree}` blocks ("Python foundations", "Machine
+  learning & applications", …) rather than one 20-entry `:glob:`, because a flat
+  list of twenty is a wall rather than a table of contents. The cost is that a
+  new module could be left out — so `generate.py` compares the tree against
+  `index.md` first and aborts with the offending module's name if they differ.
+
+Beyond the module guides the site also publishes the course-wide pages
+(fast track, quizzes, datasets) and [`MAINTENANCE.md`](../MAINTENANCE.md) as
+*For maintainers* — the same quarterly-currency checklist and verification
+gates contributors run locally. Add another by putting it in `EXTRAS` in
+`generate.py` and giving it a `{toctree}` entry in `index.md`.
+
+`docs_site/root_files/` is copied verbatim to the site root (`html_extra_path`).
+It holds `404.html`, which GitHub Pages serves for any unknown path: it is
+deliberately a standalone file with absolute URLs and inline CSS, because a
+themed page served from `/a/b/c/` cannot resolve its assets by relative path.
 
 `make html` builds with `-W`, so an unresolved cross-reference fails the build
 rather than shipping a dead link. `make linkcheck` additionally verifies that

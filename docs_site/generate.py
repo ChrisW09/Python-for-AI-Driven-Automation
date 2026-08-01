@@ -35,6 +35,7 @@ EXTRAS = {
     "fast_track": ROOT / "fast_track" / "README.md",
     "quizzes": ROOT / "quizzes" / "README.md",
     "datasets": ROOT / "data" / "README.md",
+    "maintenance": ROOT / "MAINTENANCE.md",
 }
 
 LINK_RE = re.compile(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)")
@@ -116,7 +117,33 @@ def chapter_order(mod: Path, readme: str) -> list[str]:
     return ordered + sorted(files - set(ordered))
 
 
+def check_index_covers_modules() -> None:
+    """Fail the build if index.md's sidebar has drifted from the module tree.
+
+    The home page groups the modules into captioned sections by hand, because a
+    single 20-entry `:glob:` list is a wall rather than a table of contents.
+    The cost of writing them out is that adding a module could silently leave it
+    out of the sidebar — so check here instead, where `make html` runs first.
+    """
+    index = (HERE / "index.md").read_text()
+    listed = set(re.findall(r"^modules/(\d{2}_[a-z0-9_]+)/index\s*$", index, re.M))
+    actual = {m.name for m in MODULE_DIRS}
+    missing, extra = actual - listed, listed - actual
+    if missing or extra:
+        problems = []
+        if missing:
+            problems.append("not listed in index.md: " + ", ".join(sorted(missing)))
+        if extra:
+            problems.append("listed but absent from the tree: " + ", ".join(sorted(extra)))
+        raise SystemExit(
+            "docs_site/index.md is out of step with the module tree —\n  "
+            + "\n  ".join(problems)
+            + "\nAdd the module to the appropriate `{toctree}` group in index.md."
+        )
+
+
 def main() -> None:
+    check_index_covers_modules()
     for out in (HERE / "modules", HERE / "extras", HERE / "_static"):
         shutil.rmtree(out, ignore_errors=True)
         out.mkdir(parents=True)

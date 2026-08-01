@@ -56,6 +56,14 @@ linkcheck_retries = 2
 
 html_theme = "furo"
 html_title = "Python for AI-Driven Automation<br>& Business Data Science"
+# Every page is regenerated from the repository markdown on each build, so this
+# stamp is the publish date — which is the useful thing for a reader deciding
+# whether a model name or a price is still current.
+html_last_updated_fmt = "%d %B %Y"
+# Files copied to the site root verbatim: 404.html needs to sit there (GitHub
+# Pages serves it for any unknown path) and must not be wrapped in a template,
+# because a page served at /a/b/c/ cannot resolve theme assets by relative path.
+html_extra_path = ["root_files"]
 # "assets" holds the hand-written design files (tracked); "_static" is rebuilt
 # by generate.py each run. Sphinx merges both into the output _static/.
 html_static_path = ["_static", "assets"]
