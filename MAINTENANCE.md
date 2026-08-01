@@ -20,9 +20,15 @@ Work through the table; most quarters most rows need nothing.
 | **Tools named in honest sections** | Module 7's appendices name the tools real teams reach for (Robyn / PyMC-Marketing in A9, OR-Tools in A11, `lifelines` in A5, off-policy evaluation libraries in A14). No code depends on them, but the claim "this is what the industry uses" ages | [`07_industry_applications/`](./07_industry_applications/) |
 | **External links** | `make -C docs_site linkcheck` output is empty (exclusions live in `conf.py`) | `docs_site/` |
 
-Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pandas idioms — only needs attention when a library's own API deprecates something (CI's execution sweep will surface that).
+Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pandas idioms — only needs attention when a library's own API deprecates something — which surfaces when you re-execute the notebooks (gate 1 below), so a quarterly pass over the modules you have touched is the safety net.
 
 ## Verification gates (run after ANY notebook edit)
+
+> ⚠️ **Nothing runs automatically.** The repository has no CI workflows, so these six gates are the
+> only thing standing between an edit and a broken lesson reaching a reader. Run them locally before
+> you push — there is no pull-request check to catch what you miss, and no failing build to tell you
+> afterwards. Gates 2, 4 and 5 take seconds; run them even for a "documentation-only" change, because
+> the counts and cross-references live in prose.
 
 1. **Re-execute edited notebooks in place** — outputs are committed deliberately:
    `jupyter nbconvert --to notebook --execute --inplace <nb>`
@@ -30,7 +36,7 @@ Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pand
 2. **Checkpoints:** `python3 scripts/test_checkpoints.py` — must end "All checkpoints OK" (add `--exec` for the full kernel gate on the notebooks you touched).
 3. **Solution fences:** every ```` ```python ```` fence inside a `<details>` block is *never* executed by nbconvert — extract them into a throwaway copy and run them against the notebook's final state (the `run_solutions` pattern) before trusting them.
 4. **Cross-references:** `python3 scripts/check_nb_references.py`.
-5. **Counts:** `python3 scripts/check_course_counts.py` — notebook/checkpoint/appendix totals in the README, docs index and 00b must match the tree (CI enforces this too).
+5. **Counts:** `python3 scripts/check_course_counts.py` — notebook/checkpoint/appendix totals in the README, docs index and 00b must match the tree.
 6. **Docs:** `make -C docs_site html` builds with `-W`; `make -C docs_site linkcheck` output should be empty.
 
 ## Adding a notebook or a module

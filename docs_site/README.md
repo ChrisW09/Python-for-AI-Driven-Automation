@@ -50,17 +50,30 @@ deliberately a standalone file with absolute URLs and inline CSS, because a
 themed page served from `/a/b/c/` cannot resolve its assets by relative path.
 
 `make html` builds with `-W`, so an unresolved cross-reference fails the build
-rather than shipping a dead link. `make linkcheck` additionally verifies that
-external URLs still resolve — with localhost URLs and GitHub *anchor*
-checks excluded in `conf.py`, since both report working links as broken.
-It is not part of CI (external sites go down for reasons that are not your
-bug), so run it before a release and read what it says.
+rather than shipping a dead link — which is the check worth running before you
+publish. `make linkcheck` additionally verifies that external URLs still
+resolve, with localhost URLs and GitHub *anchor* checks excluded in `conf.py`
+since both report working links as broken. Run it before a release and read
+what it says; external sites go down for reasons that are not your bug, so
+treat its output as a report rather than a pass/fail gate.
 
 ## Publishing
 
-The site is deployed automatically: the [Docs workflow](../.github/workflows/docs.yml)
-builds it on every push to `main` and publishes `_build/html` to GitHub Pages at
-<https://chrisw09.github.io/Python-for-AI-Driven-Automation/>. Pull requests that
-touch markdown or `docs_site/` run the same build without publishing, so a broken
-link fails the PR instead of the deployment. The build output is a plain static
-site, so it would also work on Read the Docs or any static host.
+The build output is a plain static site — `_build/html` can be served by GitHub
+Pages, Read the Docs, or any static host. The site currently lives at
+<https://chrisw09.github.io/Python-for-AI-Driven-Automation/>.
+
+There is no CI: publishing is a manual step, so a rebuild only reaches the web
+when you push it there. The shortest path is to build locally and publish the
+output to the `gh-pages` branch:
+
+```bash
+make -C docs_site html                       # verify it builds clean under -W first
+npx gh-pages -d docs_site/_build/html        # or: ghp-import -n -p -f docs_site/_build/html
+```
+
+With GitHub Pages set to serve from the `gh-pages` branch, that is the whole
+deployment. (If Pages is still set to the "GitHub Actions" source, switch it to
+"Deploy from a branch" in the repository's Settings → Pages, or the push will
+have no effect.) Whichever route you take, build with `-W` first — a manual
+publish has no PR to catch a dead link for you.

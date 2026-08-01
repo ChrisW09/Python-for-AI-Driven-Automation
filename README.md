@@ -17,7 +17,6 @@
   <img alt="Runs 100% offline" src="https://img.shields.io/badge/Runs-100%25%20offline-2ea44f.svg">
   <img alt="389 checkpoints, kernel-tested" src="https://img.shields.io/badge/389%20checkpoints-kernel--tested-8a2be2.svg">
   <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/"><img alt="Documentation" src="https://img.shields.io/badge/Docs-online-0a507a.svg?logo=sphinx&logoColor=white"></a>
-  <a href="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml"><img alt="Checkpoints CI" src="https://github.com/ChrisW09/Python-for-AI-Driven-Automation/actions/workflows/checkpoints.yml/badge.svg"></a>
 </p>
 
 <p align="center">
@@ -280,7 +279,7 @@ Each checkpoint is a self-contained three-cell block:
 2. **`# ✍️ Your turn`** — a scaffolded starter cell to fill in.
 3. **✅ Solution** — a collapsible answer with a one-line explanation.
 
-There are **389 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). A [CI workflow](./.github/workflows/checkpoints.yml) re-checks the structure and syntax of all 389 on every push; run the full kernel test yourself with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
+There are **389 of these across the course** (3–4 per core lesson, 3 per fast-track lesson, 4 per CI/CD &amp; Django lab, per web-scraping and PyTorch lesson, and in the compound-AI-evaluation lesson), and every code solution has been **executed in a fresh Jupyter kernel to verify it actually runs** (the few file-content solutions — `__init__.py`, pytest, `pyproject.toml` — are validated by inspection). Run the structure-and-syntax check yourself with `python scripts/test_checkpoints.py`, or the full kernel test with `python scripts/test_checkpoints.py --exec`. They run 100% offline like everything else — no API key or network needed. Self-paced learners solve each one as they reach it; instructors use them as the built-in "pause and try" beats of a class. In the conceptual Business-AI lessons (43–46) the middle cell is a short written reflection/decision task instead of code.
 
 > 🧑‍🏫 **Teaching live?** Lecture for ~20 minutes, then jump to the next ✋ checkpoint and give the room ~2 minutes to try it before you reveal the solution. With 3–4 per lesson, a 90-minute class gets several natural interactive breaks — no prep required.
 
@@ -652,7 +651,7 @@ The course's written documentation — every module guide plus the full mini-boo
 
 <p align="center"><b>→ <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/">chrisw09.github.io/Python-for-AI-Driven-Automation</a> ←</b></p>
 
-It rebuilds automatically on every push to `main` (the [Docs workflow](./.github/workflows/docs.yml) deploys to GitHub Pages). Every notebook link on the site points back to GitHub, one click from Colab. To build it locally instead:
+Every notebook link on the site points back to GitHub, one click from Colab. To build it — and to publish an update — run:
 
 ```bash
 pip install -r docs_site/requirements.txt
