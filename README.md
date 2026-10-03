@@ -25,6 +25,7 @@
 
 <p align="center">
   <a href="#-quick-start">🚀 Quick start</a> &nbsp;·&nbsp;
+  <a href="#-course-slides">🎓 Course slides</a> &nbsp;·&nbsp;
   <a href="#-curriculum">📚 Curriculum</a> &nbsp;·&nbsp;
   <a href="https://chrisw09.github.io/Python-for-AI-Driven-Automation/">📖 Documentation</a> &nbsp;·&nbsp;
   <a href="#-how-each-notebook-works">📓 How it works</a> &nbsp;·&nbsp;
@@ -36,6 +37,7 @@
 
 ## Contents
 
+- [Course slides](#-course-slides): the lecture decks, as PDF with speaker notes
 - [Why this course](#-why-this-course)
 - [What's new](#-whats-new)
 - [Quick start](#-quick-start)
@@ -53,6 +55,37 @@
 
 ---
 
+## 🎓 Course slides
+
+These are the lecture decks for **AI-Driven Automation** (Bielefeld School of Business, HSBI, Winter Semester 2026/27). Each deck has a slides-only PDF, a presenter PDF with speaker notes on every content slide, and its LaTeX source. → [`course_slides/`](./course_slides/)
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<a href="./course_slides/01_ai_assisted_coding.pdf"><img src="./course_slides/images/01_ai_assisted_coding_cover.png" alt="Title slide: AI-Assisted Coding: From Idea to Working Prototype"></a>
+
+**1 · AI-Assisted Coding: From Idea to Working Prototype**<br>
+VS Code, Git, GitHub Copilot and coding agents, then three POCs that build on each other: a Streamlit data app, a FastAPI + SQLite three-tier app, and an XGBoost churn model behind the API.
+
+📄 [Slides](./course_slides/01_ai_assisted_coding.pdf) · 🗣️ [With speaker notes](./course_slides/01_ai_assisted_coding_notes.pdf) · 📝 [LaTeX](./course_slides/01_ai_assisted_coding.tex)
+
+</td>
+<td width="50%" valign="top">
+
+<a href="./course_slides/02_llms_rag_agentic_ai.pdf"><img src="./course_slides/images/02_llms_rag_agentic_ai_cover.png" alt="Title slide: LLMs, RAG &amp; Agentic AI"></a>
+
+**2 · LLMs, RAG &amp; Agentic AI**<br>
+From next-token prediction to tool-using agents: how LLMs work, using them well, risks, RAG, vector databases, and agentic AI. It ends with three hands-on prototypes: a PDF chat, a semantic search, and a support agent.
+
+📄 [Slides](./course_slides/02_llms_rag_agentic_ai.pdf) · 🗣️ [With speaker notes](./course_slides/02_llms_rag_agentic_ai_notes.pdf) · 📝 [LaTeX](./course_slides/02_llms_rag_agentic_ai.tex)
+
+</td>
+</tr>
+</table>
+
+---
+
 ## ⚡ Why this course
 
 - **End to end.** From `print("hello")` to a deployed, scheduled AI automation — no gaps assumed, no steps skipped.
@@ -67,6 +100,7 @@
 
 ## ✨ What's new
 
+- **🎓 Course slides for Winter Semester 2026/27.** This adds two lecture decks with full speaker notes. *AI-Assisted Coding: From Idea to Working Prototype* covers VS Code, Copilot, and three POCs built with Streamlit, FastAPI, SQLite and XGBoost. *LLMs, RAG & Agentic AI* runs from next-token prediction to tool-using agents and ends with three LLM prototypes. → [Course slides](#-course-slides)
 - **☕ A new module on Compound AI Evaluation.** *Which pipeline knob actually moved quality — and is the difference real?* Factorial designs over your system's factors, replication vs LLM noise, ANOVA attribution with effect sizes and interactions, cost/quality Pareto frontiers — built by hand, 100% offline, then expressed in a few lines of **[CAFE](https://github.com/fabian-lu/Cafe)** (Compound-AI Factorial Evaluation, [cafe-ai.de](https://cafe-ai.de)). → [Module 18](./18_compound_ai_evaluation/)
 - **🔥 A new PyTorch module — deep learning as full lessons.** Tensors → autograd → the five-step training loop (NB 20); the training craft — the two-curve overfitting diagnostic, dropout & weight decay, early stopping, LR schedules, save/load, a live four-bug clinic (NB 21); then embeddings for categorical data, an honest bake-off vs gradient boosting, a sklearn-style wrapper and TorchScript serving (NB 22) — all on the course's own churn data, 100% offline (Colab ships PyTorch preinstalled). The Module 5 appendix mini-track (A1–A3) stays as the condensed reference tour. → [Module 6](./06_pytorch/)
 - **🕸️ A new Web Scraping module.** BeautifulSoup fundamentals (`robots.txt`, politeness, pagination), managed scraping with **Firecrawl**, and the **OpenAlex** open scholarly API — the "check for an open API before you scrape" discipline, all runnable 100% offline. → [Module 4](./04_webscraping/)
@@ -182,7 +216,8 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `fast_track/` | The fast track — 22 trimmed notebooks (~26.5 h): 14 core essentials + 8 breadth extensions |
 | `quizzes/` | 17 short multiple-choice quizzes — one per content module |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
-| `slides/` | Course-overview deck + lecture decks (PDF + LaTeX source) |
+| `course_slides/` | **The lecture decks:** AI-Assisted Coding, and LLMs, RAG &amp; Agentic AI (slides PDF + presenter PDF with speaker notes + LaTeX source); see [Course slides](#-course-slides) |
+| `slides/` | Course-overview deck + short companion decks for individual notebooks (NB 27, 49–52) (PDF + LaTeX source) |
 | `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `docs_site/` | Sphinx documentation site — every module guide + the mini-book chapters as a browsable website; see [Documentation site](#-documentation-site) |
@@ -664,6 +699,8 @@ See [`docs_site/README.md`](./docs_site/README.md) for how the site is generated
 ---
 
 ## 👤 About
+
+<img src="docs/images/profile.jpg" align="right" width="280" alt="Prof. Dr. Christoph Weisser">
 
 I am Christoph Weisser, Professor of Mathematics, specializing in Business Data Science at Hochschule Bielefeld (HSBI), and former Technical Lead Analytics & Artificial Intelligence at BASF. My work focuses on Artificial Intelligence, Generative AI, Business Data Science, and agentic AI systems that bridge research with real-world industrial applications.
 

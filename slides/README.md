@@ -2,6 +2,8 @@
 
 Lecture decks in the HSBI house style (LaTeX Beamer, Madrid theme, 16:9).
 
+> 🎓 **Looking for the main lecture series?** The full decks *AI-Assisted Coding* and *LLMs, RAG & Agentic AI* (Winter Semester 2026/27) live in [`../course_slides/`](../course_slides/). This folder holds the course-overview deck and the short companion decks for individual notebooks.
+
 > **Philosophy.** The **notebooks are the single source of truth** for content. Slides exist only for the parts of the course taught as a *lecture* in front of a room — the conceptual / seminar material — where pacing a class through a scrolling notebook is awkward. The **hands-on modules (Python, data science, ML, AI engineering, production, the Module 9 POC builds, the Module 7 industry applications, and the Module 10 agents/tools/MCP notebooks) are taught live from the notebook itself** (run a cell, change a number, break something on purpose) — they deliberately have no slides. The decks here are deliberately *thin*: framing, diagrams, and key points, pointing back into the notebooks for the detail. Keep them that way to avoid the two-sources-of-truth drift.
 
 ## Decks
