@@ -1,51 +1,52 @@
-\documentclass[aspectratio=169,11pt,t]{beamer}
+\documentclass[aspectratio=169,11pt]{beamer}
 %\def\WITHNOTES{}   % <- uncomment for slides + speaker notes on second screen
-% ================= shared look (AI-Driven Automation series) =================
 % ============================================================
-% AI-Driven Automation -- shared Beamer look (Prof. Dr. C. Weisser, HSBI)
+% AI-Driven Automation -- Beamer look of the lecture series
+% (same template as chapter_00/chapter_00.tex, Prof. Dr. C. Weisser, HSBI)
 % ------------------------------------------------------------
 % Speaker notes: every frame carries \note{...}.
 %   * Slides only (default): compile as is.
 %   * Slides + notes on a second screen (for Presentation.app / pdfpc):
 %       uncomment the line  \def\WITHNOTES{}  at the very top of the file
 %       (or compile with:  pdflatex "\def\WITHNOTES{}\input{<file>}")
-% Fonts/packages: Fira Sans, Fira Mono, fontawesome5, tcolorbox, tikz
-%   (all part of TeX Live / MacTeX / Overleaf).
 % ============================================================
-
-% ---------- Encoding, language, fonts ------------------------
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage[sfdefault,lining]{FiraSans}
-\usepackage[scale=0.86,lining]{FiraMono}
-\usepackage{textcomp}
-
-% ---------- Core packages ------------------------------------
-\usepackage{graphicx}
-\usepackage{booktabs}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[english]{babel}
+\usepackage{graphicx}\usepackage{booktabs}\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}\usepackage{hyperref}\usepackage{xcolor}\usepackage{colortbl}\usepackage{array}
 \usepackage{tabularx}
-\usepackage{array}
-\usepackage{amsmath,amssymb}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{listings}
-\usepackage{fontawesome5}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,shapes.geometric,shapes.misc,decorations.pathreplacing}
+\usepackage{tikz}\usetikzlibrary{calc,arrows.meta,positioning,shapes,fit,backgrounds,shapes.geometric,shapes.misc,decorations.pathreplacing}
 \usepackage[most]{tcolorbox}
+\usepackage{textcomp}\providecommand{\euro}{\texteuro}
+\usepackage{fontawesome5}
 \usepackage{pgfpages}
 \usepackage[kerning=true]{microtype}
 \DisableLigatures[-]{encoding = *, family = tt* }   % keep "--" as two hyphens in code
-\frenchspacing
+
+\usetheme{Madrid}\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{headline}{%
+  \leavevmode\hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.2ex,dp=0.9ex]{section in head/foot}%
+      {\fontsize{4.6}{5.2}\selectfont%
+       \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}}%
+    \end{beamercolorbox}}%
+}
+\setbeamerfont{section in head/foot}{size=\tiny}
+\setbeamerfont{palette primary}{size=\tiny}
+\setbeamerfont{palette tertiary}{size=\tiny}
+\setbeamerfont{section in toc}{size=\footnotesize}
 
 % ---------- Speaker-notes switch -----------------------------
 \ifdefined\WITHNOTES
   \setbeameroption{show notes on second screen=right}
 \fi
 
-% ---------- Colour palette -----------------------------------
-\definecolor{cNavy}{HTML}{0F2A44}
+% ---------- Colours ------------------------------------------
+\definecolor{pyKw}{RGB}{0,0,180}\definecolor{pyStr}{RGB}{20,120,40}
+\definecolor{pyCom}{RGB}{120,120,120}\definecolor{accent}{RGB}{38,70,140}
+% palette of the diagrams, matched to the template's blue
+\colorlet{cNavy}{accent}
 \definecolor{cInk}{HTML}{1E2A36}
 \definecolor{cBlue}{HTML}{1F6FB2}
 \definecolor{cBlueL}{HTML}{E3EEF8}
@@ -62,137 +63,86 @@
 \definecolor{cGray}{HTML}{5B6770}
 \definecolor{cGrayL}{HTML}{F1F3F5}
 \definecolor{cLine}{HTML}{C9D1D9}
+\hypersetup{colorlinks=true,linkcolor=.,urlcolor=accent}
 
-% ---------- Beamer base settings -----------------------------
-\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
-\setbeamertemplate{navigation symbols}{}
-\setbeamercolor{normal text}{fg=cInk,bg=white}
-\setbeamercolor{structure}{fg=cNavy}
-\setbeamercolor{alerted text}{fg=cOrange}
-\setbeamercolor{frametitle}{fg=cNavy}
-\setbeamercolor{framesubtitle}{fg=cGray}
-\setbeamerfont{frametitle}{size=\large,series=\bfseries}
-\setbeamerfont{framesubtitle}{size=\small,series=\mdseries}
-\setbeamercolor{title}{fg=white}
-\setbeamercolor{item}{fg=cTeal}
-\setbeamercolor{subitem}{fg=cGray}
-\setbeamercolor{enumerate item}{fg=cTeal}
-\setbeamerfont{enumerate item}{series=\bfseries}
-\setbeamertemplate{itemize item}{\raisebox{0.12ex}{\color{cTeal}\small\textbullet}}
-\setbeamertemplate{itemize subitem}{\raisebox{0.1ex}{\color{cGray}\footnotesize\textendash}}
-\setbeamertemplate{enumerate item}{\color{cTeal}\bfseries\insertenumlabel.}
-\setbeamertemplate{blocks}[rounded][shadow=false]
-\setbeamercolor{block title}{fg=white,bg=cNavy}
-\setbeamercolor{block body}{fg=cInk,bg=cGrayL}
-\setbeamercolor{block title alerted}{fg=white,bg=cOrange}
-\setbeamercolor{block body alerted}{fg=cInk,bg=cOrangeL}
-\setbeamercolor{block title example}{fg=white,bg=cTeal}
-\setbeamercolor{block body example}{fg=cInk,bg=cTealL}
-\setbeamerfont{block title}{size=\small,series=\bfseries}
-\setbeamercolor{description item}{fg=cNavy}
-\hypersetup{colorlinks=true,linkcolor=cNavy,urlcolor=cBlue}
-
-% ---------- Frame title: left-aligned with accent rule -------
-\makeatletter
-\setbeamertemplate{frametitle}{%
-  \vskip0.30cm%
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.65cm,rightskip=0.65cm]{frametitle}%
-    \usebeamerfont{frametitle}\strut\insertframetitle\strut
-    \ifx\insertframesubtitle\@empty\else
-      \par\vskip-1pt{\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par}%
-    \fi
-  \end{beamercolorbox}%
-  \vskip1pt%
-  \leavevmode{\color{cTeal}\rule{1.1cm}{2pt}}\par%   % accent rule, aligned with the title
-  \vskip-0.12cm%
-}
-\makeatother
-
-% ---------- Footline: short title | section ... page + progress bar
-\newlength{\aidaprogress}
+% ---------- Footline: source (left) and frame number ---------
+% \source{...} anywhere in a frame prints "Source: ..." in the footline
 \setbeamertemplate{footline}{%
-  \vskip3pt%
-  \ifnum\insertframenumber>\inserttotalframenumber\relax   % first run: total not known yet
-    \setlength{\aidaprogress}{\paperwidth}%
-  \else
-    \setlength{\aidaprogress}{\dimexpr\paperwidth*\insertframenumber/\inserttotalframenumber\relax}%
-  \fi
-  \leavevmode
-  \hbox to \paperwidth{%
-    \hspace*{0.65cm}%
-    {\color{cGray}\fontsize{6.2}{7}\selectfont\insertshorttitle\ifnum\value{section}>0\ \ \textbar\ \ {\hypersetup{linkcolor=cGray}\insertsectionhead}\fi}%
-    \hfill
-    {\color{cGray}\fontsize{5.8}{7}\selectfont\aidasourcetext}\hspace*{0.45cm}%
-    {\color{cGray}\fontsize{6.2}{7}\selectfont\insertframenumber\,/\,\inserttotalframenumber}%
-    \hspace*{0.65cm}}%
-  \vskip0.16cm%
-  \hbox to \paperwidth{{\color{cTeal}\rule{\aidaprogress}{1.4pt}}\hfill}%
+  \hspace*{1em}{\tiny\itshape\color{gray}\aidasourcetext}%
+  \hfill
+  \usebeamercolor[fg]{page number in head/foot}%
+  \usebeamerfont{page number in head/foot}%
+  \usebeamertemplate*{page number in head/foot}\kern1em\vskip2pt%
   \gdef\aidasourcetext{}%
 }
 \gdef\aidasourcetext{}
+\newcommand{\source}[1]{\gdef\aidasourcetext{Source: #1}}
 
 % ---------- Note pages (second screen) -----------------------
 \setbeamerfont{note page}{size=\footnotesize}
 \setbeamertemplate{note page}{%
   \vskip0.35cm
   \hspace*{0.1cm}\begin{minipage}{13.8cm}
-    {\color{cNavy}\bfseries\small\insertframetitle}\hfill{\color{cGray}\scriptsize Slide \arabic{framenumber}}\par
-    \vskip2pt{\color{cTeal}\rule{\linewidth}{0.8pt}}\par\vskip5pt
+    {\color{accent}\bfseries\small\insertframetitle}\hfill{\color{gray}\scriptsize Slide \arabic{framenumber}}\par
+    \vskip2pt{\color{accent}\rule{\linewidth}{0.8pt}}\par\vskip5pt
     \raggedright\small\setlength{\parskip}{4pt}\insertnote
   \end{minipage}
 }
 
-% ---------- Title page ---------------------------------------
-\setbeamertemplate{title page}{%
-  \hyphenpenalty=10000\exhyphenpenalty=10000\relax
-  \begin{tikzpicture}[remember picture,overlay]
-    \fill[cNavy] (current page.south west) rectangle (current page.north east);
-    % network motif (right side)
-    \begin{scope}[shift={($(current page.south east)+(-3.4,2.2)$)}]
-      \foreach \x/\y/\n in {0/0/a,1.4/0.9/b,-0.9/1.6/c,0.6/2.6/d,2.2/2.2/e,-1.6/0.2/f,1.9/-0.6/g,-0.3/-1.2/h,0.9/1.6/i}
-        {\coordinate (\n) at (\x,\y);}
-      \foreach \u/\v in {a/b,a/c,a/f,a/h,b/e,b/g,b/i,c/d,c/i,d/e,d/i,e/i,f/c,g/h,a/i}
-        {\draw[white,opacity=0.18,line width=0.6pt] (\u) -- (\v);}
-      \foreach \n in {a,b,c,d,e,f,g,h,i}{\fill[cTeal!80!white] (\n) circle (2.2pt);}
-      \fill[cOrange] (i) circle (3pt);
-    \end{scope}
-    \fill[cTeal] ($(current page.north west)+(0.65,-0.55)$) rectangle ++(1.4,-0.07);
-    \node[anchor=north west,text=cTeal!55!white,font=\footnotesize\bfseries,inner sep=0pt]
-      at ($(current page.north west)+(0.65,-0.85)$) {\insertinstitute};
-    \node[anchor=west,text=white,font=\Large\bfseries,text width=9.6cm,align=left,inner sep=0pt]
-      at ($(current page.west)+(0.65,0.55)$) {\inserttitle};
-    \node[anchor=north west,text=white!82!cTeal,font=\normalsize,text width=9.4cm,align=left,inner sep=0pt]
-      at ($(current page.west)+(0.65,-0.35)$) {\insertsubtitle};
-    \node[anchor=south west,text=white,font=\small\bfseries,inner sep=0pt]
-      at ($(current page.south west)+(0.65,1.4)$) {\insertauthor};
-    \node[anchor=south west,text=white!70,font=\footnotesize,inner sep=0pt]
-      at ($(current page.south west)+(0.65,0.95)$) {\insertdate};
-    \node[anchor=south west,text=white!85,font=\footnotesize,inner sep=0pt]
-      at ($(current page.south west)+(0.65,0.5)$) {{\color{cTeal!70!white}\faGithub}\ \ {\hypersetup{urlcolor=white!85}\href{https://github.com/ChrisW09/Python-for-AI-Driven-Automation}{github.com/ChrisW09/Python-for-AI-Driven-Automation}}};
-  \end{tikzpicture}
+% ---------- Code listings ------------------------------------
+\usepackage{listings}
+\lstdefinestyle{aida}{basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{pyKw}\bfseries,commentstyle=\color{pyCom}\itshape,
+  stringstyle=\color{pyStr},showstringspaces=false,upquote=true,
+  backgroundcolor=\color{black!3},frame=leftline,framerule=2.5pt,rulecolor=\color{accent},
+  xleftmargin=6pt,xrightmargin=2pt,framexleftmargin=4pt,
+  aboveskip=4pt,belowskip=4pt,framextopmargin=2.5pt,framexbottommargin=2.5pt,
+  columns=fullflexible,keepspaces=true,breaklines=true,tabsize=2,literate={~}{{$\sim$}}1}
+\lstset{style=aida}
+\lstdefinelanguage{JSON}{
+  morestring=[b]",
+  stringstyle=\color{pyStr},
+  literate={:}{{{\color{pyCom}:}}}1 {,}{{{\color{pyCom},}}}1,
 }
 
-% ---------- Part (section) divider ---------------------------
-% Usage:  \section{Title}  \partframe{Kicker, e.g. Session 1}{one-line promise}{learning goals (itemize) or empty}
+% ---------- Outline at the start of every part ---------------
+% Usage:  \section[short]{Title}  \partframe{Kicker, e.g. Session 1}{one-line promise}{learning goals (\darkitem) or empty}
 \newcommand{\partframe}[3]{%
-  \begin{frame}[plain,noframenumbering]
-    \begin{tikzpicture}[remember picture,overlay]
-      \fill[cNavy] (current page.south west) rectangle (current page.north east);
-      \node[anchor=east,text=white,opacity=0.07,font=\fontsize{150}{150}\selectfont\bfseries,inner sep=0pt]
-        at ($(current page.east)+(-0.5,0.2)$) {\thesection};
-      \node[anchor=north west,inner sep=0pt,text width=12cm,align=left] at ($(current page.north west)+(0.65,-1.8)$) {% top-anchored: same position on every divider
-        {\color{cTeal!55!white}\small\bfseries Part \thesection\ \ \textbullet\ \ #1}\par\vspace{5pt}
-        {\color{cTeal}\rule{1.4cm}{2pt}}\par\vspace{7pt}
-        {\color{white}\LARGE\bfseries\hyphenpenalty=10000\hypersetup{linkcolor=white}\insertsectionhead\par}\vspace{9pt}
-        {\color{white!80!cTeal}\normalsize\hyphenpenalty=10000 #2\par}\vspace{9pt}
-        {\color{white!88}\small\hyphenpenalty=10000 #3\par}};
-    \end{tikzpicture}
+  \begin{frame}{Outline}\scriptsize
+    \begin{columns}[t]
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[currentsection,sectionstyle=show/shaded,
+                         subsectionstyle=show/show/hide,sections={\aidatocleft}]
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[currentsection,sectionstyle=show/shaded,
+                         subsectionstyle=show/show/hide,sections={\aidatocright}]
+      \end{column}
+    \end{columns}
+    \vfill
+    \begin{readme}[Part \thesection\ \textbullet\ #1: \secname]
+      \footnotesize #2\par
+      \if\relax\detokenize{#3}\relax\else#3\fi
+    \end{readme}
   \end{frame}%
 }
-% Items on dark background
-\newcommand{\darkitem}[1]{\hangindent=1.35em\hangafter=1\noindent\makebox[1.35em][l]{\color{cTeal!70!white}\faCheck}#1\par\vspace{3pt}}
+% sections in the left / right column of the outline and contents slides
+\newcommand{\aidatocleft}{1-6}\newcommand{\aidatocright}{7-12}
+% learning goal of a part (check-mark list)
+\newcommand{\darkitem}[1]{\hangindent=1.35em\hangafter=1\noindent\makebox[1.35em][l]{\color{green!50!black}\faCheck}#1\par}
 
-% ---------- Boxes --------------------------------------------
+% ---------- Boxes (template callouts) ------------------------
+\newtcolorbox{readme}[1][How to read this]{enhanced,colback=blue!4,colframe=accent,
+  boxrule=0pt,leftrule=2.5pt,arc=2pt,fonttitle=\bfseries,title=#1,
+  left=2mm,right=2mm,top=1mm,bottom=1mm}
+\newtcolorbox{numexample}[1][Worked example]{enhanced,colback=orange!4,colframe=orange!70!black,
+  boxrule=0pt,leftrule=2.5pt,arc=2pt,fonttitle=\bfseries,title=#1,
+  left=2mm,right=2mm,top=1mm,bottom=1mm}
+\newtcolorbox{exercise}[1][Exercise ($\approx$5 min) --- try it before the solution]{enhanced, fontupper=\footnotesize, colback=purple!4, colframe=purple!55!black, boxrule=0pt, leftrule=2.5pt, arc=2pt, fonttitle=\bfseries, title=#1, left=2mm, right=2mm, top=1mm, bottom=1mm}
+\newtcolorbox{solutionbox}[1][Solution]{enhanced, colback=teal!5, colframe=teal!55!black, boxrule=0pt, leftrule=2.5pt, arc=2pt, fonttitle=\bfseries, title=#1, left=2mm, right=2mm, top=1mm, bottom=1mm}
+\newtcolorbox{labnote}[1][Run this live in the lab notebook]{enhanced, fontupper=\footnotesize, colback=cyan!7, colframe=cyan!45!black, boxrule=0pt, leftrule=3pt, arc=2pt, fonttitle=\bfseries, title=#1, left=2mm, right=2mm, top=1mm, bottom=1mm}
+\newtcolorbox{mistake}[1][Common mistake]{enhanced, fontupper=\footnotesize, colback=red!4, colframe=red!60!black, boxrule=0pt, leftrule=3pt, arc=2pt, fonttitle=\bfseries, title=#1, left=2mm, right=2mm, top=1mm, bottom=1mm}
+
 % Box spacing: like tcolorbox's "before skip", but at the top of a [T] column
 % (where beamer leaves a negative \vskip) the box starts flush with the text
 % of the neighbouring column instead of about 8pt lower.
@@ -219,58 +169,46 @@
 % start 1ex too high (beamer's T alignment); compensate for that case only.
 \BeforeBeginEnvironment{columns}{\par\ifvmode\ifdim\prevdepth<-999pt\vskip1ex\fi\fi}
 \makeatother
+% Callouts in the style of the template boxes: light body, left rule,
+% optional title bar  ->  \begin{keybox}[Title] ... \end{keybox}
 \tcbset{
-  aidabase/.style={enhanced,arc=3pt,boxrule=0pt,left=7pt,right=7pt,top=4pt,bottom=4pt,
-    fontupper=\small,aidabefore=3pt,after skip=3pt,before upper={\raggedright}},
+  aidabase/.style={enhanced,arc=2pt,boxrule=0pt,leftrule=2.5pt,left=2mm,right=2mm,top=1mm,bottom=1mm,
+    fonttitle=\bfseries\small,fontupper=\small,aidabefore=3pt,after skip=3pt,before upper={\raggedright}},
 }
-\NewDocumentEnvironment{infobox}{o}
-  {\begin{tcolorbox}[aidabase,colback=cBlueL,borderline west={3pt}{0pt}{cBlue}]%
-   \IfValueT{#1}{{\color{cBlue}\bfseries #1}\par\vspace{1pt}}}
-  {\end{tcolorbox}}
-\NewDocumentEnvironment{keybox}{o}
-  {\begin{tcolorbox}[aidabase,colback=cTealL,borderline west={3pt}{0pt}{cTeal}]%
-   \IfValueT{#1}{{\color{cTeal}\bfseries #1}\par\vspace{1pt}}}
-  {\end{tcolorbox}}
-\NewDocumentEnvironment{warnbox}{o}
-  {\begin{tcolorbox}[aidabase,colback=cOrangeL,borderline west={3pt}{0pt}{cOrange}]%
-   \IfValueT{#1}{{\color{cOrange!85!black}\bfseries #1}\par\vspace{1pt}}}
-  {\end{tcolorbox}}
-\NewDocumentEnvironment{badbox}{o}
-  {\begin{tcolorbox}[aidabase,colback=cRedL,borderline west={3pt}{0pt}{cRed}]%
-   \IfValueT{#1}{{\color{cRed}\bfseries #1}\par\vspace{1pt}}}
-  {\end{tcolorbox}}
-\NewDocumentEnvironment{graybox}{o}
-  {\begin{tcolorbox}[aidabase,colback=cGrayL,borderline west={3pt}{0pt}{cGray}]%
-   \IfValueT{#1}{{\color{cNavy}\bfseries #1}\par\vspace{1pt}}}
-  {\end{tcolorbox}}
+\newcommand{\aidacallout}[3]{\IfValueTF{#3}%
+  {\begin{tcolorbox}[aidabase,colback=#1,colframe=#2,title={#3}]}%
+  {\begin{tcolorbox}[aidabase,colback=#1,colframe=#2]}}
+\NewDocumentEnvironment{infobox}{o}{\aidacallout{blue!4}{accent}{#1}}{\end{tcolorbox}}
+\NewDocumentEnvironment{keybox}{o}{\aidacallout{green!4}{green!50!black}{#1}}{\end{tcolorbox}}
+\NewDocumentEnvironment{warnbox}{o}{\aidacallout{orange!4}{orange!70!black}{#1}}{\end{tcolorbox}}
+\NewDocumentEnvironment{badbox}{o}{\aidacallout{red!4}{red!60!black}{#1}}{\end{tcolorbox}}
+\NewDocumentEnvironment{graybox}{o}{\aidacallout{black!3}{black!45}{#1}}{\end{tcolorbox}}
 % Card: title strip on top (for side-by-side comparisons)
-\NewDocumentEnvironment{card}{O{cNavy}mO{}}
-  {\begin{tcolorbox}[enhanced,arc=3pt,boxrule=0.6pt,colframe=#1,colback=white,colbacktitle=#1,
-     coltitle=white,fonttitle=\bfseries\small,title={\strut #2},left=6pt,right=6pt,top=4pt,bottom=4pt,
+\NewDocumentEnvironment{card}{O{accent}mO{}}
+  {\begin{tcolorbox}[enhanced,arc=2pt,boxrule=0.6pt,colframe=#1,colback=white,colbacktitle=#1,
+     coltitle=white,fonttitle=\bfseries\small,title={\strut #2},left=2mm,right=2mm,top=1mm,bottom=1mm,
      toptitle=1pt,bottomtitle=1pt,fontupper=\small,aidabefore=2pt,after skip=2pt,
      before upper={\raggedright},#3]}
   {\end{tcolorbox}}
 % Prompt box: what students paste into the Copilot chat
 \NewDocumentEnvironment{promptbox}{O{Prompt for Copilot \textendash\ Agent}}
-  {\begin{tcolorbox}[enhanced,arc=3pt,boxrule=0.7pt,colframe=cNavy,colback=white,colbacktitle=cNavy,
-     coltitle=white,fonttitle=\bfseries\scriptsize,title={\strut\faRobot\ \ #1},left=7pt,right=7pt,top=3pt,bottom=3pt,
+  {\begin{tcolorbox}[enhanced,arc=2pt,boxrule=0.7pt,colframe=accent,colback=white,colbacktitle=accent,
+     coltitle=white,fonttitle=\bfseries\scriptsize,title={\strut\faRobot\ \ #1},left=2mm,right=2mm,top=3pt,bottom=3pt,
      toptitle=1pt,bottomtitle=1pt,fontupper=\footnotesize,aidabefore=3pt,after skip=3pt,before upper={\raggedright}]}
   {\end{tcolorbox}}
-% Take-away bar
+% Take-away of a slide (pushed to the bottom of the frame)
 \newcommand{\takeaway}[1]{%
   \par\vfill
-  \begin{tcolorbox}[enhanced,arc=2pt,boxrule=0pt,colback=cNavy,coltext=white,left=7pt,right=7pt,
-    top=3pt,bottom=3pt,fontupper=\small,before skip=2pt,after skip=0pt]
-    \makebox[1.3em][l]{\color{cTeal!60!white}\faLightbulb}%
+  \begin{tcolorbox}[enhanced,colback=green!4,colframe=green!50!black,boxrule=0pt,leftrule=2.5pt,arc=2pt,
+    left=2mm,right=2mm,top=1mm,bottom=1mm,fontupper=\small,before skip=2pt,after skip=0pt]
+    \makebox[1.3em][l]{\color{green!50!black}\faLightbulb}%
     \parbox[t]{\dimexpr\linewidth-1.3em\relax}{\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000 #1}%
   \end{tcolorbox}}
-% Source line (printed in the footer, right side)
-\newcommand{\source}[1]{\gdef\aidasourcetext{Source: #1}}
 % Small helpers
-\newcommand{\hl}[1]{\leavevmode{\color{cTeal}\bfseries #1}}
+\newcommand{\hl}[1]{\leavevmode{\color{accent}\bfseries #1}}
 \newcommand{\muted}[1]{\leavevmode{\color{cGray}#1}}
 \newcommand{\kbd}[1]{\kern0.8pt\tikz[baseline=(k.base)]\node[draw=cLine,fill=cGrayL,rounded corners=1.5pt,inner xsep=2.5pt,inner ysep=1.2pt,font=\ttfamily\scriptsize,text=cInk](k){#1};\kern0.8pt}
-\newcommand{\file}[1]{\leavevmode{\ttfamily\color{cNavy}#1}}
+\newcommand{\file}[1]{\leavevmode{\ttfamily\color{accent}#1}}
 \newcommand{\cmd}[1]{\leavevmode{\ttfamily\color{cInk}#1}}
 \newcommand{\pill}[2][cTeal]{\tikz[baseline=(t.base)]\node[fill=#1,text=white,rounded corners=2pt,inner xsep=3pt,inner ysep=1.2pt,font=\scriptsize\bfseries](t){\strut #2};}
 
@@ -285,25 +223,15 @@
   lbl/.style={font=\scriptsize,text=cGray,fill=white,inner sep=1.5pt},
 }
 
-% ---------- Code listings ------------------------------------
-\lstdefinestyle{aida}{
-  basicstyle=\ttfamily\scriptsize\color{cInk},
-  keywordstyle=\color{cBlue}\bfseries,
-  stringstyle=\color{cTeal!80!black},
-  commentstyle=\color{cGray}\itshape,
-  backgroundcolor=\color{cGrayL},
-  frame=leftline,framerule=2.5pt,rulecolor=\color{cBlue},
-  xleftmargin=6pt,xrightmargin=2pt,framexleftmargin=4pt,
-  aboveskip=4pt,belowskip=4pt,framextopmargin=2.5pt,framexbottommargin=2.5pt,
-  showstringspaces=false,breaklines=true,columns=fullflexible,keepspaces=true,tabsize=2,
-  upquote=true,
-}
-\lstset{style=aida}
-\lstdefinelanguage{JSON}{
-  morestring=[b]",
-  stringstyle=\color{cTeal!80!black},
-  literate={:}{{{\color{cGray}:}}}1 {,}{{{\color{cGray},}}}1,
-}
+% Reclaim ~2pt of body height (custom nav headline makes full slides tip over by ~1.83pt)
+\addtobeamertemplate{frametitle}{}{\vspace{-2pt}}
+
+% Course repository --- on the title page of every deck
+\newcommand{\courserepo}{\href{https://github.com/ChrisW09/Python-for-AI-Driven-Automation}{\color{accent}\faGithub\ \texttt{github.com/ChrisW09/Python-for-AI-Driven-Automation}}}
+\renewcommand{\aidatocleft}{1-5}\renewcommand{\aidatocright}{6-12}
+
+\titlegraphic{\small Slides, notebooks and data:\ \courserepo}
+\graphicspath{{images/}}
 % ================= end of shared look =================
 
 % ---------- Deck-specific helpers (defined after the shared preamble) ----------
@@ -364,27 +292,40 @@
 \begin{document}
 
 % ==================================================================
-\begin{frame}[plain,noframenumbering]\titlepage\end{frame}
+\begin{frame}[plain]\titlepage\end{frame}
 
 % ------------------------------------------------------------------
-\begin{frame}{About the speaker}
-  \vspace{6pt}
-  \begin{columns}[T]
-    \begin{column}{0.35\textwidth}
-      \includegraphics[width=\linewidth]{profile.jpg}
+\begin{frame}{About your lecturer}
+  \begin{columns}[c]
+    \begin{column}{0.34\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \begin{scope}
+          \clip[rounded corners=6pt] (0,0) rectangle (0.576\textheight,0.72\textheight);
+          \node[anchor=south west,inner sep=0pt] at (0,0)
+            {\includegraphics[height=0.72\textheight]{profile_portrait.jpg}};
+        \end{scope}
+        \draw[accent,line width=0.8pt,rounded corners=6pt]
+          (0,0) rectangle (0.576\textheight,0.72\textheight);
+      \end{tikzpicture}
     \end{column}
-    \begin{column}{0.61\textwidth}
-      {\large\bfseries\color{cNavy}Prof.\ Dr.\ rer.\ pol.\ Christoph Weisser}\par\vspace{2pt}
-      \muted{MLitt (St Andrews), MSc (Oxford)}\par\vspace{6pt}
-      Professor of Mathematics, in particular Business Data Science, at HSBI\par\vspace{10pt}
-      {\small
-      \begin{tabular}{@{}c@{\hspace{8pt}}L{7.9cm}@{}}
-        {\color{cTeal}\faIndustry} & Former Technical Lead for Artificial Intelligence and Industrial PhD Supervisor at BASF\\ \addlinespace[5pt]
-        {\color{cTeal}\faFlask} & Research: Data Science, Machine Learning and Artificial Intelligence\\ \addlinespace[5pt]
-        {\color{cTeal}\faBriefcase} & Focus: application of AI in business and industry\\
-      \end{tabular}}
-      \par\vspace{12pt}
-      {\small{\color{cTeal}\faEnvelope}\ \ christoph.weisser@hsbi.de}
+    \begin{column}{0.62\textwidth}
+      {\large\bfseries\color{accent}Prof.\ Dr.\ rer.\ pol.\ Christoph Weisser}\par
+      \vspace{1pt}
+      {\small\color{black!60}MLitt (St Andrews), MSc (Oxford)}\par
+      \vspace{3mm}
+      \small
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item Professor of Mathematics, in particular Business Data Science, at HSBI
+        \item Former Technical Lead for Artificial Intelligence and Industrial PhD Supervisor at BASF
+        \item \textbf{Research:} Data Science, Machine Learning and Artificial Intelligence
+        \item \textbf{Focus:} application of AI in business and industry
+      \end{itemize}
+      \vspace{3mm}
+      \footnotesize
+      \faEnvelope[regular]\ \href{mailto:christoph.weisser@hsbi.de}{\color{accent}\texttt{christoph.weisser@hsbi.de}}\par
+      \vspace{2pt}
+      \mbox{\courserepo}
     \end{column}
   \end{columns}
   \note{Introduce yourself briefly (1 minute). The key message for the students: this lecture connects research and practice. At BASF the question was never ``is the model impressive?'' but ``does it reliably improve a business process, and can we control it?'' -- that is exactly the lens of this module.\par
@@ -476,6 +417,18 @@
   \end{columns}
   \note{Introduce the running example (2 minutes). The email from Lena is deliberately simple: a customer wants to cancel an order placed yesterday. To answer it correctly you need three things: language skills (write a friendly reply), company knowledge (the cancellation policy and the live order status) and the ability to act (actually cancel the order).\par
   Each of these maps onto one building block of the lecture: LLM, RAG, agent. Ask: ``What could go wrong if a bot answers this email on its own?'' Typical answers: it promises a cancellation that is not possible, it cancels the wrong order, it is tricked by a malicious email. Keep these answers -- they come back in Part 3 (risks) and Part 6 (guardrails).}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Contents}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[hideallsubsections,sections={\aidatocleft}]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[hideallsubsections,sections={\aidatocright}]
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % ==================================================================
@@ -885,7 +838,7 @@
 \end{frame}
 
 % ==================================================================
-\section{Using LLMs well}
+\section[Using LLMs]{Using LLMs well}
 \partframe{Practice}{From a vague question to a reliable building block.}{%
   \darkitem{Apply zero-shot, few-shot and chain-of-thought prompting}%
   \darkitem{Write clear business prompts in five blocks}%
@@ -1128,7 +1081,7 @@ print(resp.choices[0].message.content)
 \end{frame}
 
 % ==================================================================
-\section{Limitations and risks}
+\section[Risks]{Limitations and risks}
 \partframe{Reality check}{Why fluent answers can still be wrong -- or dangerous.}{%
   \darkitem{Explain hallucinations and the knowledge cutoff}%
   \darkitem{Recognise direct and indirect prompt injection}%
@@ -1293,7 +1246,7 @@ print(resp.choices[0].message.content)
 \end{frame}
 
 % ==================================================================
-\section{Retrieval-Augmented Generation (RAG)}
+\section[RAG]{Retrieval-Augmented Generation (RAG)}
 \partframe{Grounding}{Give the model an open book: your company's knowledge.}{%
   \darkitem{Explain the RAG pipeline end to end}%
   \darkitem{Understand embeddings, cosine similarity and ANN search}%
@@ -2550,7 +2503,7 @@ print(resp.choices[0].message.content)
 \end{frame}
 
 % ==================================================================
-\section{AI-driven automation in practice}
+\section[In practice]{AI-driven automation in practice}
 \partframe{Management}{Which building block -- and how much autonomy?}{%
   \darkitem{Compare automation approaches from RPA to agents}%
   \darkitem{Choose a pattern and a level of autonomy}%
@@ -2772,7 +2725,7 @@ print(resp.choices[0].message.content)
 \end{frame}
 
 % ==================================================================
-\section{Hands-on: three LLM prototypes}
+\section[Hands-on]{Hands-on: three LLM prototypes}
 \partframe{Build}{Turn the concepts into working code -- with Copilot.}{%
   \darkitem{Set up LLM access safely with a \texttt{.env} file}%
   \darkitem{Build a PDF chat, a semantic search and a support agent}%
@@ -3242,7 +3195,7 @@ load_dotenv()                       # reads .env into os.environ
 % ------------------------------------------------------------------
 \begin{frame}[allowframebreaks]{References}
   \footnotesize
-  \setlength{\parskip}{1pt}
+  \setlength{\parskip}{0pt}
   \setlength{\parindent}{0pt}
   \refitem{Alammar, J., \& Grootendorst, M. (2024). \textit{Hands-On Large Language Models}. O'Reilly Media.}
   \refitem{Anthropic (Schluntz, E., \& Zhang, B.) (2024, 19 Dec). Building effective agents. \url{https://www.anthropic.com/engineering/building-effective-agents}}
@@ -3287,23 +3240,22 @@ load_dotenv()                       # reads .env into os.environ
 
 % ------------------------------------------------------------------
 \begin{frame}[plain,noframenumbering]
-  \begin{tikzpicture}[remember picture,overlay]
-    \fill[cNavy] (current page.south west) rectangle (current page.north east);
-    \fill[cTeal] ($(current page.west)+(0.65,1.3)$) rectangle ++(1.4,-0.07);
-    \node[anchor=north west,text=white,font=\fontsize{30}{32}\selectfont\bfseries,inner sep=0pt] at ($(current page.west)+(0.65,1.0)$) {Questions?};
-    \node[anchor=north west,text=white!80!cTeal,font=\normalsize,inner sep=0pt] at ($(current page.west)+(0.65,-0.2)$) {Thank you for your attention.};
-    \node[anchor=north west,text=white,font=\small,inner sep=0pt] at ($(current page.west)+(0.65,-1.1)$) {{\color{cTeal!70!white}\faEnvelope}\ \ christoph.weisser@hsbi.de};
-    \node[anchor=north west,text=white,font=\small,inner sep=0pt] at ($(current page.west)+(0.65,-1.6)$) {{\color{cTeal!70!white}\faGithub}\ \ {\hypersetup{urlcolor=white}\href{https://github.com/ChrisW09/Python-for-AI-Driven-Automation}{github.com/ChrisW09/Python-for-AI-Driven-Automation}}};
-    \node[anchor=north west,text=white!70,font=\footnotesize,inner sep=0pt,align=left] at ($(current page.west)+(0.65,-2.3)$) {Prof.\ Dr.\ Christoph Weisser\\[1pt] AI-Driven Automation \textbullet\ Bielefeld School of Business, HSBI};
-    \begin{scope}[shift={($(current page.south east)+(-3.4,2.2)$)}]
-      \foreach \x/\y/\n in {0/0/a,1.4/0.9/b,-0.9/1.6/c,0.6/2.6/d,2.2/2.2/e,-1.6/0.2/f,1.9/-0.6/g,-0.3/-1.2/h,0.9/1.6/i}
-        {\coordinate (\n) at (\x,\y);}
-      \foreach \u/\v in {a/b,a/c,a/f,a/h,b/e,b/g,b/i,c/d,c/i,d/e,d/i,e/i,f/c,g/h,a/i}
-        {\draw[white,opacity=0.18,line width=0.6pt] (\u) -- (\v);}
-      \foreach \n in {a,b,c,d,e,f,g,h,i}{\fill[cTeal!80!white] (\n) circle (2.2pt);}
-      \fill[cOrange] (i) circle (3pt);
-    \end{scope}
-  \end{tikzpicture}
+  \vfill
+  \begin{beamercolorbox}[sep=8pt,center,rounded=true,shadow=true]{title}
+    \usebeamerfont{title}Questions?\par
+    \vskip0.25em
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}Thank you for your attention.\par}
+  \end{beamercolorbox}
+  \vskip1.5em
+  \begin{center}
+    \small
+    \faEnvelope[regular]\ \href{mailto:christoph.weisser@hsbi.de}{\color{accent}\texttt{christoph.weisser@hsbi.de}}\par
+    \vspace{3pt}
+    \courserepo\par
+    \vspace{12pt}
+    {\footnotesize Prof.\ Dr.\ Christoph Weisser \textbullet\ AI-Driven Automation \textbullet\ Bielefeld School of Business, HSBI}
+  \end{center}
+  \vfill
   \note{Open the floor for questions (5--10 minutes). Good follow-up prompts if the room is quiet: ``Which of the three prototypes would you show your employer first, and why?'' or ``What would you need to see before you let an agent cancel real orders?''\par
   Remind students where to find the materials (the course repository on GitHub, shown on this slide), the deadline for the hands-on submission (if any) and the contact address. Encourage them to bring their own use-case ideas to the next session -- the best ones can become course projects.}
 \end{frame}

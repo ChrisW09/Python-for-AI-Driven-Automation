@@ -20,7 +20,7 @@ Teach them in this order. Deck 2 reuses the plan → build → review → run �
 
 ## Building
 
-You need a TeX distribution with `pdflatex` (TeX Live, MacTeX, or Overleaf). The decks use Fira Sans, Fira Mono, `fontawesome5`, `tcolorbox` and TikZ, which all ship with a full TeX install. `profile.jpg` (the title-slide photo) must stay next to the `.tex` files.
+You need a TeX distribution with `pdflatex` (TeX Live, MacTeX, or Overleaf). The decks use the same Beamer template as [`chapter_00/chapter_00.tex`](./chapter_00/chapter_00.tex) (Madrid theme, section navigation bar, an outline slide at the start of every part), plus `fontawesome5`, `tcolorbox` and TikZ, which all ship with a full TeX install. `images/profile_portrait.jpg` (the photo on the *About your lecturer* slide) must stay in `images/`.
 
 Run `pdflatex` twice so the navigation and cross-references resolve:
 
@@ -38,7 +38,7 @@ pdflatex -jobname=01_ai_assisted_coding_notes "\def\WITHNOTES{}\input{01_ai_assi
 
 To get the same result, you can also uncomment `%\def\WITHNOTES{}` on line 2 of the deck. These decks use `\WITHNOTES` as their notes switch, while the decks in [`slides/`](../slides/) use `\notesmode`, so the `slides/` Makefile does not build them.
 
-`images/` holds the title-slide thumbnails used in the main [README](../README.md). After you change a title slide, regenerate them:
+`images/` also holds the title-slide thumbnails used in the main [README](../README.md). After you change a title slide, regenerate them:
 
 ```bash
 pdftoppm -f 1 -l 1 -png -scale-to-x 800 -scale-to-y -1 -singlefile 01_ai_assisted_coding.pdf images/01_ai_assisted_coding_cover
