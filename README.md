@@ -37,7 +37,7 @@
 
 ## Contents
 
-- [Course slides](#-course-slides): the lecture decks, as PDF with speaker notes
+- [Course slides](#-course-slides): the lecture decks, as PDF plus LaTeX source
 - [Why this course](#-why-this-course)
 - [What's new](#-whats-new)
 - [Quick start](#-quick-start)
@@ -57,28 +57,24 @@
 
 ## 🎓 Course slides
 
-These are the lecture decks for **AI-Driven Automation** (Bielefeld School of Business, HSBI, Winter Semester 2026/27). Each deck has a slides-only PDF, a presenter PDF with speaker notes on every content slide, and its LaTeX source. → [`course_slides/`](./course_slides/)
+These are the lecture decks for **AI-Driven Automation** (Bielefeld School of Business, HSBI, Winter Semester 2026/27). Each deck has a PDF and its LaTeX source. The source carries speaker notes on every content frame: uncomment `\def\WITHNOTES{}` at the top of the `.tex` to build the presenter version. → [`course_slides/`](./course_slides/)
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<a href="./course_slides/01_ai_assisted_coding.pdf"><img src="./course_slides/images/01_ai_assisted_coding_cover.png" alt="Title slide: AI-Assisted Coding: From Idea to Working Prototype"></a>
-
 **1 · AI-Assisted Coding: From Idea to Working Prototype**<br>
 VS Code, Git, GitHub Copilot and coding agents, then three POCs that build on each other: a Streamlit data app, a FastAPI + SQLite three-tier app, and an XGBoost churn model behind the API.
 
-📄 [Slides](./course_slides/01_ai_assisted_coding.pdf) · 🗣️ [With speaker notes](./course_slides/01_ai_assisted_coding_notes.pdf) · 📝 [LaTeX](./course_slides/01_ai_assisted_coding.tex)
+📄 [Slides](./course_slides/01_ai_assisted_coding.pdf) · 📝 [LaTeX](./course_slides/01_ai_assisted_coding.tex)
 
 </td>
 <td width="50%" valign="top">
 
-<a href="./course_slides/02_llms_rag_agentic_ai.pdf"><img src="./course_slides/images/02_llms_rag_agentic_ai_cover.png" alt="Title slide: LLMs, RAG &amp; Agentic AI"></a>
-
 **2 · LLMs, RAG &amp; Agentic AI**<br>
 From next-token prediction to tool-using agents: how LLMs work, using them well, risks, RAG, vector databases, and agentic AI. It ends with three hands-on prototypes: a PDF chat, a semantic search, and a support agent.
 
-📄 [Slides](./course_slides/02_llms_rag_agentic_ai.pdf) · 🗣️ [With speaker notes](./course_slides/02_llms_rag_agentic_ai_notes.pdf) · 📝 [LaTeX](./course_slides/02_llms_rag_agentic_ai.tex)
+📄 [Slides](./course_slides/02_llms_rag_agentic_ai.pdf) · 📝 [LaTeX](./course_slides/02_llms_rag_agentic_ai.tex)
 
 </td>
 </tr>
@@ -216,7 +212,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `fast_track/` | The fast track — 22 trimmed notebooks (~26.5 h): 14 core essentials + 8 breadth extensions |
 | `quizzes/` | 17 short multiple-choice quizzes — one per content module |
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
-| `course_slides/` | **The lecture decks:** AI-Assisted Coding, and LLMs, RAG &amp; Agentic AI (slides PDF + presenter PDF with speaker notes + LaTeX source); see [Course slides](#-course-slides) |
+| `course_slides/` | **The lecture decks:** AI-Assisted Coding, and LLMs, RAG &amp; Agentic AI (slides PDF + LaTeX source with speaker notes); see [Course slides](#-course-slides) |
 | `slides/` | Course-overview deck + short companion decks for individual notebooks (NB 27, 49–52) (PDF + LaTeX source) |
 | `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
