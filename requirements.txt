@@ -52,7 +52,7 @@ beautifulsoup4>=4.12,<5
 # provider(s) you actually plan to use.
 # openai>=1.0                       # OpenAI: gpt-5.4-mini, gpt-5.5, text-embedding-3-small
 # anthropic>=0.30                   # Anthropic: Claude haiku / sonnet / opus
-# google-genai>=1.0                 # Google: Gemini Flash / Pro (successor of the retired google-generativeai)
+# google-genai>=1.8                 # Google: Gemini Flash / Pro (successor of the retired google-generativeai)
 # ollama>=0.3                       # Local: any model you `ollama pull` (needs Ollama server)
 # sentence-transformers>=2.7        # Local embeddings (NB 23 — embeddings & retrieval)
 
