@@ -79,8 +79,8 @@ CHECKS = [
     # months after the tree moved on. After fixing a number here, rebuild the PDFs
     # (make -C slides 00_course_overview.pdf 00_course_overview_notes.pdf).
     ("slides/00_course_overview.tex", "deck appendices", r"7 labs \(\+ (\d+) appendices\)", "appendices", 1),
-    ("slides/00_course_overview.tex", "deck notebooks", r"(\d+) notebooks", "notebooks", 3),
-    ("slides/00_course_overview.tex", "deck checkpoints", r"(\d+) (?:in-lesson )?checkpoints", "checkpoints", 2),
+    ("slides/00_course_overview.tex", "deck notebooks", r"(?:navigate|because|\\large) (\d+) notebooks", "notebooks", 3),
+    ("slides/00_course_overview.tex", "deck checkpoints", r"(?:\{|the )(\d+) (?:in-lesson )?checkpoints", "checkpoints", 2),
 ]
 
 
