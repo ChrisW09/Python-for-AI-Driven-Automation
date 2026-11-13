@@ -17,14 +17,36 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
-OUT = Path(__file__).resolve().parent.parent / "slides" / "images"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "slides" / "images"
+
+
+def course_counts():
+    """Count lessons, labs and appendices from the module folders.
+
+    Derived rather than typed so the roadmap subtitle cannot drift from the
+    tree (it once said "14 appendices" long after there were 29). Same file
+    conventions as ``scripts/check_course_counts.py``.
+
+    Returns
+    -------
+    tuple of int
+        ``(lessons, labs, appendices)``: distinct ``NN_*.ipynb`` lesson numbers
+        (excluding the 00 onboarding series), ``lab*.ipynb`` files and
+        ``A<n>_*.ipynb`` files across the ``NN_*`` module directories.
+    """
+    mods = [d for d in ROOT.glob("[0-9][0-9]_*") if d.is_dir()]
+    lessons = {p.name.split("_")[0] for d in mods for p in d.glob("[0-9][0-9]_*.ipynb")} - {"00"}
+    labs = [p for d in mods for p in d.glob("lab[0-9]*_*.ipynb")]
+    appendices = [p for d in mods for p in d.glob("A[0-9]*_*.ipynb")]
+    return len(lessons), len(labs), len(appendices)
 
 # ---------------------------------------------------------------------------
 # Ground truth: the current module structure. Edit HERE after a renumber.
 # ---------------------------------------------------------------------------
 MODULES = [
     # (num, name, nb-range label, color, optional?)
-    (0,  "Onboarding",           "NB 0, 0b, 0c", "#8C8C8C", False),
+    (0,  "Onboarding",           "NB 0, 0b–0e",  "#8C8C8C", False),
     (1,  "Foundations",          "NB 1–6",       "#4C72B0", False),
     (2,  "Data Science",         "NB 7–11",      "#55A868", False),
     (3,  "Real-world I/O",       "NB 12–13",     "#64B5CD", False),
@@ -70,7 +92,9 @@ def roadmap():
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
     ax.text(0.5, 0.965, "Python for AI-Driven Automation and Business Data Science",
             ha="center", va="top", fontsize=19, fontweight="bold", color="#2b2b2b")
-    ax.text(0.5, 0.905, "53 lessons + 7 labs + 14 appendices  ·  modules 0–19  ·  self-paced — spiral order",
+    n_lessons, n_labs, n_appendices = course_counts()
+    ax.text(0.5, 0.905, f"{n_lessons} lessons + {n_labs} labs + {n_appendices} appendices  ·  "
+            "modules 0–19  ·  self-paced — spiral order",
             ha="center", va="top", fontsize=12, style="italic", color="#8a8a8a")
 
     order = list(range(len(MODULES)))

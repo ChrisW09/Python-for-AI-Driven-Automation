@@ -2,7 +2,8 @@
 """Keep the course's headline numbers honest.
 
 The notebook count, checkpoint count and appendix count each appear in several
-prose locations (README badge/headline, docs_site index, the 00b overview).
+prose locations (README badge/headline, docs_site index, the 00b overview, the
+course-overview lecture deck).
 Whenever a notebook is added or a checkpoint lands, every one of those spots
 has to move in lockstep — history shows they drift. This script derives the
 real numbers from the tree and fails if any prose location disagrees, or if a
@@ -74,6 +75,12 @@ CHECKS = [
     ("docs_site/index.md", "stats checkpoints", r"<b>(\d+)</b> in-lesson checkpoints", "checkpoints", 1),
     ("00_onboarding/00b_course_overview.ipynb", "appendix note", r"\((\d+) advanced notebooks", "appendices", 1),
     ("00_onboarding/00b_course_overview.ipynb", "appendix tip", r"The (\d+) A-\* appendices", "appendices", 1),
+    # The course-overview deck went unchecked and still said 117 / 322 / 14 three
+    # months after the tree moved on. After fixing a number here, rebuild the PDFs
+    # (make -C slides 00_course_overview.pdf 00_course_overview_notes.pdf).
+    ("slides/00_course_overview.tex", "deck appendices", r"7 labs \(\+ (\d+) appendices\)", "appendices", 1),
+    ("slides/00_course_overview.tex", "deck notebooks", r"(\d+) notebooks", "notebooks", 3),
+    ("slides/00_course_overview.tex", "deck checkpoints", r"(\d+) (?:in-lesson )?checkpoints", "checkpoints", 2),
 ]
 
 

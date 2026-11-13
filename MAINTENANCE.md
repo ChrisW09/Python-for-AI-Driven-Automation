@@ -54,8 +54,11 @@ conventions encoded in file *names* and in the docs sidebar:
   the number of unique Colab links against the tree and fails if one is missing.
 
 When a module gains notebooks, the counts in the root README (badge, headline, "across the course",
-appendix totals, Colab footnote), `docs_site/index.md`, and `00b_course_overview.ipynb` all move
-together. Run gate 5 rather than trying to remember the list; it names each stale location.
+appendix totals, Colab footnote), `docs_site/index.md`, `00b_course_overview.ipynb` and the
+course-overview deck `slides/00_course_overview.tex` all move together. Run gate 5 rather than trying
+to remember the list; it names each stale location. When the deck changes, rebuild its PDFs
+(`make -C slides 00_course_overview.pdf 00_course_overview_notes.pdf`); when the module structure
+changes, also rerun `scripts/generate_course_images.py` for its infographics.
 
 ## Editing rules that keep the course honest
 
