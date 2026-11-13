@@ -34,11 +34,11 @@ Template: three links like `<a href="?contract=month-to-month">month-to-month</a
 </details>
 
 ### 3. Validate the API
-Make `api_score` return HTTP 400 with a helpful message when a field is missing or non-numeric (instead of a 500).
+Make `api_score` return HTTP 400 with a helpful message when a field is missing, non-numeric **or out of range** (a negative tenure, an unknown contract) — instead of a 500, and without logging the bad row.
 
 <details><summary>💡 Solution</summary>
 
-Wrap the parse in `try/except (KeyError, ValueError, TypeError) as exc:` and `return JsonResponse({"error": str(exc)}, status=400)`. (The shipped `api_score` already does this — read it, then make the error messages friendlier.)
+A `try/except (KeyError, ValueError, TypeError)` around hand-written `int(...)` casts only covers the first two: `int("-3")` parses fine, and the negative value then crashes the `PositiveIntegerField` insert. Bind the payload to the form you already have instead — `form = ChurnForm(payload)`, and on `not form.is_valid()` return `JsonResponse({"error": "invalid request", "fields": {name: list(errs) for name, errs in form.errors.items()}}, status=400)`. (The shipped `api_score` already does this — read it and its `ApiValidationTests`, then make the messages friendlier, e.g. add the allowed range to each one.)
 </details>
 
 ### 4. Test the threshold

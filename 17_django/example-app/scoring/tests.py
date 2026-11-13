@@ -1,3 +1,5 @@
+import json
+
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
@@ -64,6 +66,65 @@ class ViewTests(TestCase):
             content_type="application/json",
         )
         self.assertEqual(resp.status_code, 400)
+
+
+class ApiValidationTests(TestCase):
+    """The API must enforce the same rules as ChurnForm: reject, never log."""
+
+    VALID = {"tenure_months": 3, "monthly_charges": 95,
+             "support_tickets": 4, "contract": "month-to-month"}
+
+    def post_raw(self, body):
+        return self.client.post(reverse("scoring:api_score"), data=body,
+                                content_type="application/json")
+
+    def assertRejected(self, resp, field=None):
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn("error", resp.json())
+        if field:
+            self.assertIn(field, resp.json()["fields"])
+        self.assertEqual(Prediction.objects.count(), 0)
+
+    def test_valid_payload_is_logged_with_cleaned_values(self):
+        resp = self.post_raw(json.dumps(self.VALID))
+        self.assertEqual(resp.status_code, 200)
+        row = Prediction.objects.get()
+        self.assertEqual(row.contract, "month-to-month")
+        self.assertEqual(row.tenure_months, 3)
+
+    def test_negative_tenure_is_rejected_not_a_500(self):
+        # Used to reach the PositiveIntegerField CHECK constraint -> IntegrityError.
+        self.assertRejected(self.post_raw(json.dumps({**self.VALID, "tenure_months": -3})),
+                            "tenure_months")
+
+    def test_unknown_contract_is_rejected(self):
+        # Used to be scored as a neutral contract and logged verbatim.
+        self.assertRejected(self.post_raw(json.dumps({**self.VALID, "contract": "weekly"})),
+                            "contract")
+
+    def test_out_of_range_values_are_rejected(self):
+        self.assertRejected(self.post_raw(json.dumps({**self.VALID, "support_tickets": 999})),
+                            "support_tickets")
+        self.assertRejected(self.post_raw(json.dumps({**self.VALID, "monthly_charges": -50})),
+                            "monthly_charges")
+
+    def test_huge_tenure_is_rejected_not_an_overflow(self):
+        # Used to overflow math.exp in the scorer -> 500.
+        self.assertRejected(self.post_raw(json.dumps({**self.VALID, "tenure_months": 10**11})),
+                            "tenure_months")
+
+    def test_non_finite_charges_are_rejected(self):
+        # json.loads accepts NaN; it used to be stored as NULL -> IntegrityError.
+        body = json.dumps(self.VALID).replace("95", "NaN")
+        self.assertRejected(self.post_raw(body), "monthly_charges")
+
+    def test_fractional_count_is_rejected_not_truncated(self):
+        self.assertRejected(self.post_raw(json.dumps({**self.VALID, "support_tickets": 2.7})),
+                            "support_tickets")
+
+    def test_malformed_json_and_non_object_payloads(self):
+        self.assertRejected(self.post_raw("tenure=3&contract=gold"))
+        self.assertRejected(self.post_raw("[1, 2, 3]"))
 
 
 class HistoryTests(TestCase):

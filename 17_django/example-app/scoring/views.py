@@ -45,25 +45,41 @@ def history(request):
 @csrf_exempt  # stateless JSON API; use token auth (DRF/Ninja) in production
 @require_POST
 def api_score(request):
-    """POST JSON -> {"probability": float, "will_churn": bool}."""
+    """Score one customer sent as JSON, log it, and return the verdict.
+
+    The payload is validated by the same ``ChurnForm`` as the HTML form, so
+    both surfaces enforce one set of rules (required fields, whole numbers,
+    value ranges, known contract types, finite charges). Anything the form
+    rejects gets a 400 and never reaches the scorer or the audit log.
+
+    Parameters
+    ----------
+    request : django.http.HttpRequest
+        A POST whose body is a JSON object with the keys ``tenure_months``,
+        ``monthly_charges``, ``support_tickets`` and ``contract``.
+
+    Returns
+    -------
+    django.http.JsonResponse
+        200 with ``{"probability": float, "will_churn": bool}`` on success.
+        400 with ``{"error": str}`` if the body is not a JSON object, or
+        ``{"error": str, "fields": {name: [message, ...]}}`` if the form
+        rejects one or more fields.
+    """
     try:
         payload = json.loads(request.body or "{}")
-        p = churn_probability(
-            tenure_months=int(payload["tenure_months"]),
-            monthly_charges=float(payload["monthly_charges"]),
-            support_tickets=int(payload["support_tickets"]),
-            contract=str(payload["contract"]),
-        )
-    except (KeyError, ValueError, TypeError) as exc:
-        return JsonResponse({"error": f"invalid request: {exc}"}, status=400)
+    except ValueError as exc:  # json.JSONDecodeError and UnicodeDecodeError
+        return JsonResponse({"error": f"invalid JSON: {exc}"}, status=400)
+    if not isinstance(payload, dict):
+        return JsonResponse({"error": "invalid request: expected a JSON object"}, status=400)
 
+    form = ChurnForm(payload)
+    if not form.is_valid():
+        fields = {name: list(errors) for name, errors in form.errors.items()}
+        return JsonResponse({"error": "invalid request", "fields": fields}, status=400)
+
+    data = form.cleaned_data
+    p = churn_probability(**data)
     will_churn = p >= THRESHOLD
-    Prediction.objects.create(
-        tenure_months=int(payload["tenure_months"]),
-        monthly_charges=float(payload["monthly_charges"]),
-        support_tickets=int(payload["support_tickets"]),
-        contract=str(payload["contract"]),
-        probability=p,
-        will_churn=will_churn,
-    )
+    Prediction.objects.create(probability=p, will_churn=will_churn, **data)
     return JsonResponse({"probability": round(p, 4), "will_churn": will_churn})
