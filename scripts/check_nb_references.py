@@ -13,7 +13,11 @@ Catches drift between documentation and the actual repository layout. Three chec
    from the referencing file's own directory (*.md, notebook markdown cells). URLs,
    in-page #anchors, and anything inside `inline code` or fenced code blocks are
    ignored. In docs_site/, "_static/…" resolves to docs_site/assets/ (Sphinx merges
-   that folder into _static/ at build time).
+   that folder into _static/ at build time). Pages that docs_site/generate.py writes
+   (modules/, extras/) don't exist until the docs are built, so links into them are
+   left to the Sphinx -W build when they come from a docs_site/ page, and reported
+   as broken from anywhere else (on GitHub those pages never exist). The result is
+   the same whether or not the docs were built.
 
 Historical / archival content (previous_versions/, docs/, COURSE_REVIEW_REPORT.md)
 intentionally describes old states and is skipped.
@@ -201,19 +205,25 @@ def link_target_exists(source: Path, target: str) -> bool:
     -------
     bool
         True if the target is external (has a URL scheme), a pure in-page
-        anchor, or an existing file / folder.
+        anchor, or an existing file / folder. A target inside the docs site's
+        generated build tree counts as resolved only when ``source`` is a page
+        Sphinx builds; the answer never depends on whether the docs were built.
     """
     if URL_SCHEME_RE.match(target) or target.startswith(("#", "//")):
         return True
     path = unquote(target.split("#", 1)[0].split("?", 1)[0])
     if not path:
         return True
-    if (source.parent / path).exists():
-        return True
+    sphinx_page = source.parent == DOCS_SITE and source.name != "README.md"  # conf.py excludes README.md
     # docs_site/: Sphinx merges docs_site/assets/ into _static/ at build time.
-    if source.parent == DOCS_SITE and path.startswith("_static/"):
+    if sphinx_page and path.startswith("_static/"):
         return (DOCS_SITE / "assets" / path.removeprefix("_static/")).exists()
-    return False
+    resolved = (source.parent / path).resolve()
+    if any(resolved.is_relative_to(g) for g in DOCS_SITE_GENERATED):
+        # Written by generate.py only during a docs build: the -W build (gate 6)
+        # checks a Sphinx page's links into it; from any other file it is broken.
+        return sphinx_page
+    return resolved.exists()
 
 
 def find_broken_links() -> tuple[list[tuple[Path, str]], list[tuple[Path, str]]]:

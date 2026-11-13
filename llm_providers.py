@@ -22,7 +22,7 @@ Pick the provider that fits your situation:
 
 Usage in any notebook:
 
-    from llm_providers import MockLLM, OpenAILLM, AnthropicLLM, GoogleLLM, OllamaLLM
+    from llm_providers import MockLLM, OpenAILLM, AnthropicLLM, GoogleLLM, OllamaLLM, get_llm
 
     # Choose ONE — same interface across all five
     llm = MockLLM()                                    # default for the course
@@ -344,8 +344,9 @@ class GoogleLLM:
     Notes
     -----
     Built on the unified ``google-genai`` package (``from google import
-    genai``). It replaces the legacy ``google-generativeai`` package, whose
-    support ended on 2025-11-30. OpenAI-style messages are mapped to Gemini
+    genai``), version 1.8 or later (the first to report thinking tokens). It
+    replaces the legacy ``google-generativeai`` package, whose support ended
+    on 2025-11-30. OpenAI-style messages are mapped to Gemini
     ``contents`` (``assistant`` becomes the ``model`` role, text goes into
     ``parts``) and the system message becomes ``config.system_instruction``.
     """
@@ -375,7 +376,9 @@ class GoogleLLM:
         temperature : float or None, default 0.0
             Sampling temperature; ``None`` leaves the model default.
         max_tokens : int or None, default 512
-            Sent as ``max_output_tokens``; ``None`` leaves the model default.
+            Sent as ``max_output_tokens`` (for thinking models it also covers
+            the thinking tokens, so a small cap can leave ``text`` empty).
+            ``None`` leaves the model default.
         **kwargs
             Any other ``GenerateContentConfig`` field (e.g. ``top_p``,
             ``response_mime_type``), merged into the request config.
