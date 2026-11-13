@@ -30,6 +30,7 @@ Usage in any notebook:
     # llm = AnthropicLLM(model="claude-haiku-4-5")
     # llm = GoogleLLM(model="gemini-2.5-flash")
     # llm = OllamaLLM(model="llama3.2:3b")
+    # ...or by name, e.g. from a config value: llm = get_llm("openai", model="gpt-5.4-mini")
 
     r = llm.chat(messages=[
         {"role": "system", "content": "You are a classifier..."},
@@ -82,6 +83,29 @@ class MockLLM:
     It's not intelligent; it follows hard-coded keyword rules so the course's
     notebooks run without internet or API keys. Plug in any real provider to
     get real intelligence — the calling code does not change.
+
+    Parameters
+    ----------
+    seed : int, default 0
+        Seed for the internal random generator (kept for API stability; the
+        keyword rules themselves are deterministic).
+    model : str, default "mock-mini"
+        Name reported in every response's ``"model"`` key. Accepted in the
+        constructor like every real provider's, so
+        ``get_llm(provider, model=...)`` works for ``"mock"`` too.
+
+    Attributes
+    ----------
+    model : str
+        The model name this client reports.
+
+    Examples
+    --------
+    >>> llm = MockLLM()
+    >>> r = llm.chat([{"role": "system", "content": "Classify the sentiment."},
+    ...               {"role": "user", "content": "I love it"}])
+    >>> r["text"], r["model"]
+    ('positive', 'mock-mini')
     """
 
     POSITIVE = {"love", "great", "amazing", "excellent", "happy", "fantastic",
@@ -94,8 +118,9 @@ class MockLLM:
     # "could you" can never fire. (Both dead phrases removed — behaviour-neutral.)
     FEATURE  = {"feature", "request", "missing", "wish", "add"}
 
-    def __init__(self, seed: int = 0):
+    def __init__(self, seed: int = 0, model: str = "mock-mini"):
         self._rng = random.Random(seed)
+        self.model = model
 
     @staticmethod
     def _count_tokens(s: str) -> int:
@@ -121,8 +146,31 @@ class MockLLM:
         first_sentence = re.split(r"(?<=[.!?])\s+", text.strip(), maxsplit=1)[0]
         return shorten(first_sentence, width=max_chars, placeholder="…")
 
-    def chat(self, messages, *, model: str = "mock-mini",
+    def chat(self, messages, *, model: str | None = None,
              temperature: float = 0.0, max_tokens: int = 512, **_):
+        """Answer a chat request with keyword rules.
+
+        Parameters
+        ----------
+        messages : list of dict
+            OpenAI-style messages, each with ``"role"`` and ``"content"``.
+            The rules read the (first) system message and the last user
+            message.
+        model : str, optional
+            Per-call override of the reported model name. Defaults to the
+            name given to the constructor.
+        temperature, max_tokens
+            Accepted for interface compatibility with the real providers;
+            ignored by the mock.
+        **_
+            Any other provider-specific keyword is accepted and ignored.
+
+        Returns
+        -------
+        dict
+            ``text``, ``model``, ``tokens_in``, ``tokens_out`` (word-ish token
+            estimates) and ``latency_s`` — the same keys every provider returns.
+        """
         t0 = time.perf_counter()
         sys_msg  = next((m["content"] for m in messages if m["role"] == "system"), "").lower()
         user_msgs = [m["content"] for m in messages if m["role"] == "user"]
@@ -152,7 +200,7 @@ class MockLLM:
 
         tokens_in  = sum(self._count_tokens(m["content"]) for m in messages)
         tokens_out = self._count_tokens(out)
-        return {"text": out, "model": model,
+        return {"text": out, "model": model or self.model,
                 "tokens_in": tokens_in, "tokens_out": tokens_out,
                 "latency_s": time.perf_counter() - t0}
 
@@ -499,8 +547,32 @@ PROVIDERS = {
 def get_llm(provider: str = "mock", **kwargs):
     """Create an LLM client by short name.
 
-    >>> llm = get_llm("mock")
-    >>> llm = get_llm("openai", model="gpt-5.4-mini")
+    Every provider class takes ``model=`` in its constructor, so the same
+    call works for all of them — switch providers by changing one string.
+
+    Parameters
+    ----------
+    provider : {"mock", "openai", "anthropic", "google", "ollama"}, default "mock"
+        Short provider name (case-insensitive).
+    **kwargs
+        Passed to the provider's constructor, e.g. ``model=``, ``api_key=``
+        (hosted providers), ``host=`` (Ollama) or ``seed=`` (mock).
+
+    Returns
+    -------
+    MockLLM or OpenAILLM or AnthropicLLM or GoogleLLM or OllamaLLM
+        A client exposing ``chat(messages, *, temperature, max_tokens, ...)``.
+
+    Raises
+    ------
+    ValueError
+        If ``provider`` is not one of the names above.
+
+    Examples
+    --------
+    >>> get_llm("mock", model="mock-large").model
+    'mock-large'
+    >>> llm = get_llm("openai", model="gpt-5.4-mini")  # doctest: +SKIP
     """
     provider = provider.lower()
     if provider not in PROVIDERS:

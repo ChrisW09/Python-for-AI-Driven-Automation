@@ -24,10 +24,10 @@ Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pand
 
 ## Verification gates (run after ANY notebook edit)
 
-> ⚠️ **Nothing runs automatically.** The repository has no CI workflows, so these six gates are the
+> ⚠️ **Nothing runs automatically.** The repository has no CI workflows, so these seven gates are the
 > only thing standing between an edit and a broken lesson reaching a reader. Run them locally before
 > you push — there is no pull-request check to catch what you miss, and no failing build to tell you
-> afterwards. Gates 2, 4 and 5 take seconds; run them even for a "documentation-only" change, because
+> afterwards. Gates 2, 4, 5 and 7 take seconds; run them even for a "documentation-only" change, because
 > the counts and cross-references live in prose.
 
 1. **Re-execute edited notebooks in place** — outputs are committed deliberately:
@@ -38,6 +38,7 @@ Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pand
 4. **Cross-references:** `python3 scripts/check_nb_references.py`.
 5. **Counts:** `python3 scripts/check_course_counts.py` — notebook/checkpoint/appendix totals in the README, docs index and 00b must match the tree.
 6. **Docs:** `make -C docs_site html` builds with `-W`; `make -C docs_site linkcheck` output should be empty.
+7. **Unit tests:** `python3 -m pytest tests/` — interface tests for the shared `llm_providers.py` (offline, no keys); run them whenever you touch the shim.
 
 ## Adding a notebook or a module
 
