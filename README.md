@@ -222,6 +222,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `docs_site/` | Sphinx documentation site — every module guide + the mini-book chapters as a browsable website; see [Documentation site](#-documentation-site) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
+| `tests/` | Offline unit tests for `llm_providers.py` — `python -m pytest tests/` |
 | `previous_versions/` | The legacy flat 19-notebook layout, archived |
 
 ---
