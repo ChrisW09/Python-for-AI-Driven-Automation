@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
-"""Verify NB-number references in markdown / notebooks / LaTeX resolve to a real file.
+"""Verify that references in markdown / notebooks / LaTeX resolve to real files.
 
-Catches drift between documentation and the actual notebook layout. Looks for
-patterns like:
-  - "NB 7"  /  "NB7"  /  "NB 24–28"  /  "NB 29-31"
-  - "Notebook 7"  /  "Notebooks 24–28"  /  LaTeX forms like "NB~43", "NB 17--19"
-  - "01_python_basics.ipynb" (literal filename references)
-…and asserts that every NB number / filename can be found somewhere in the repo.
+Catches drift between documentation and the actual repository layout. Three checks:
 
-Scans the live course tree: *.md, *.ipynb (markdown cells) and slides/*.tex.
+1. NB-number references — "NB 7" / "NB7" / "NB 24–28" / "NB 29-31", "Notebook 7" /
+   "Notebooks 24–28", LaTeX forms like "NB~43", "NB 17--19" — must name a notebook
+   number that exists (*.md, notebook markdown cells, slides/*.tex).
+2. Literal notebook filenames — "01_python_basics.ipynb" — must exist somewhere in
+   the live tree (*.md, notebook markdown cells).
+3. Relative links and images — "[text](../data/README.md)", "![fig](images/x.png)",
+   <a href="…">, <img src="…"> — must point at an existing file or folder, resolved
+   from the referencing file's own directory (*.md, notebook markdown cells). URLs,
+   in-page #anchors, and anything inside `inline code` or fenced code blocks are
+   ignored. In docs_site/, "_static/…" resolves to docs_site/assets/ (Sphinx merges
+   that folder into _static/ at build time).
+
 Historical / archival content (previous_versions/, docs/, COURSE_REVIEW_REPORT.md)
 intentionally describes old states and is skipped.
 
@@ -23,6 +29,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,6 +46,7 @@ EXCLUDED_DIR_NAMES = {
     "docs",
     ".ipynb_checkpoints",
     "__pycache__",
+    ".pytest_cache",
     ".venv",
     "node_modules",
     ".git",
@@ -121,6 +129,115 @@ NB_REF_RE = re.compile(
 # Surrounding text that signals the missing NB is explicitly documented as such
 RESERVED_MARKERS = ("reserved", "folded", "originally planned", "absent", "intentional")
 
+# --- checks 2 & 3: literal notebook filenames and relative links ---------------
+# Code is not prose: a filename or link inside `inline code` or a fenced block is
+# an example, not a reference, so both are blanked out before matching.
+CODE_RE = re.compile(r"^(```|~~~).*?^\1|`[^`\n]*`", re.MULTILINE | re.DOTALL)
+NB_FILENAME_RE = re.compile(r"(?<![\w/.-])([\w-]+\.ipynb)\b")
+# [text](target), ![alt](target), [text](<target>), [text](target "title")
+MD_LINK_RE = re.compile(r"!?\[[^\]\n]*\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
+HTML_LINK_RE = re.compile(r"""\b(?:href|src)\s*=\s*["']([^"']+)["']""")
+URL_SCHEME_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")  # http:, mailto:, attachment:, …
+DOCS_SITE = ROOT / "docs_site"
+# Build output of docs_site/generate.py + Sphinx (git-ignored copies with rewritten
+# links); checking them would make the result depend on whether docs were built.
+DOCS_SITE_GENERATED = tuple(DOCS_SITE / d for d in ("modules", "extras", "_static", "_build"))
+
+
+def iter_link_files():
+    """Yield every live markdown file and notebook whose links should resolve.
+
+    Unlike :func:`iter_text_files`, fast-track notebooks are included: their
+    prose links are live, only their NB *numbering* is separate.
+
+    Yields
+    ------
+    pathlib.Path
+        A ``.md`` or ``.ipynb`` file outside the excluded archive folders and
+        the docs site's generated build tree.
+    """
+    for pat in ("**/*.md", "**/*.ipynb"):
+        for p in sorted(ROOT.glob(pat)):
+            if not is_excluded(p) and not any(p.is_relative_to(g) for g in DOCS_SITE_GENERATED):
+                yield p
+
+
+def markdown_prose(path: Path) -> str:
+    """Return a file's markdown with fenced blocks and inline code removed.
+
+    Parameters
+    ----------
+    path : pathlib.Path
+        A ``.md`` file or a notebook (only its markdown cells are used).
+
+    Returns
+    -------
+    str
+        The prose, ready for link / filename matching.
+    """
+    if path.suffix == ".ipynb":
+        try:
+            nb = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            return ""
+        text = "\n".join("".join(c.get("source", [])) for c in nb.get("cells", [])
+                         if c.get("cell_type") == "markdown")
+    else:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+    return CODE_RE.sub("", text)
+
+
+def link_target_exists(source: Path, target: str) -> bool:
+    """Decide whether a relative link written in ``source`` resolves.
+
+    Parameters
+    ----------
+    source : pathlib.Path
+        The file containing the link; relative targets resolve from its folder.
+    target : str
+        The raw link target, possibly with ``#fragment`` or ``?query``.
+
+    Returns
+    -------
+    bool
+        True if the target is external (has a URL scheme), a pure in-page
+        anchor, or an existing file / folder.
+    """
+    if URL_SCHEME_RE.match(target) or target.startswith(("#", "//")):
+        return True
+    path = unquote(target.split("#", 1)[0].split("?", 1)[0])
+    if not path:
+        return True
+    if (source.parent / path).exists():
+        return True
+    # docs_site/: Sphinx merges docs_site/assets/ into _static/ at build time.
+    if source.parent == DOCS_SITE and path.startswith("_static/"):
+        return (DOCS_SITE / "assets" / path.removeprefix("_static/")).exists()
+    return False
+
+
+def find_broken_links() -> tuple[list[tuple[Path, str]], list[tuple[Path, str]]]:
+    """Run checks 2 and 3 over the live tree.
+
+    Returns
+    -------
+    missing_files : list of (pathlib.Path, str)
+        Literal ``*.ipynb`` names that match no live notebook.
+    broken_links : list of (pathlib.Path, str)
+        Relative link / image targets that do not exist.
+    """
+    live_notebooks = {p.name for p in ROOT.glob("**/*.ipynb") if not is_excluded(p)}
+    missing_files, broken_links = [], []
+    for path in iter_link_files():
+        prose = markdown_prose(path)
+        for m in NB_FILENAME_RE.finditer(prose):
+            if m.group(1) not in live_notebooks:
+                missing_files.append((path, m.group(1)))
+        for m in (*MD_LINK_RE.finditer(prose), *HTML_LINK_RE.finditer(prose)):
+            if not link_target_exists(path, m.group(1)):
+                broken_links.append((path, m.group(1)))
+    return missing_files, broken_links
+
 
 def main() -> int:
     existing = discover_nb_numbers()
@@ -143,17 +260,33 @@ def main() -> int:
                 if n not in existing and not is_reserved:
                     failures.append((tf, m.group(0), n))
 
+    missing_files, broken_links = find_broken_links()
+    status = 0
+
     if failures:
         print(f"❌ {len(failures)} NB-number reference(s) point to missing notebooks:\n")
         for path, ref, num in failures:
             rel = path.relative_to(ROOT)
             print(f"  {rel}: '{ref}' → NB {num:02d} not on disk")
         print("\nFix the docs to match the filesystem, add the missing notebook, ")
-        print("or mark the surrounding context as 'reserved'.")
-        return 1
+        print("or mark the surrounding context as 'reserved'.\n")
+        status = 1
+    else:
+        print(f"✅ All NB-number references resolve. Discovered notebooks: {sorted(existing)}")
 
-    print(f"✅ All NB-number references resolve. Discovered notebooks: {sorted(existing)}")
-    return 0
+    if missing_files:
+        print(f"❌ {len(missing_files)} notebook filename(s) match no notebook in the tree:")
+        for path, name in missing_files:
+            print(f"  {path.relative_to(ROOT)}: '{name}'")
+        status = 1
+    if broken_links:
+        print(f"❌ {len(broken_links)} relative link(s) / image(s) point to a missing path:")
+        for path, target in broken_links:
+            print(f"  {path.relative_to(ROOT)}: ({target})")
+        status = 1
+    if not (missing_files or broken_links):
+        print("✅ All notebook filenames and relative links resolve.")
+    return status
 
 
 if __name__ == "__main__":
