@@ -35,7 +35,7 @@ Anything *not* on this list — synthetic-data lessons, statistics, sklearn/pand
    (exception: NB 24 hangs under `--inplace`; use `--output tmp` and move back).
 2. **Checkpoints:** `python3 scripts/test_checkpoints.py` — must end "All checkpoints OK" (add `--exec` for the full kernel gate on the notebooks you touched).
 3. **Solution fences:** every ```` ```python ```` fence inside a `<details>` block is *never* executed by nbconvert — extract them into a throwaway copy and run them against the notebook's final state (the `run_solutions` pattern) before trusting them.
-4. **Cross-references:** `python3 scripts/check_nb_references.py`.
+4. **Cross-references:** `python3 scripts/check_nb_references.py` — NB numbers, literal notebook filenames, and every relative link / image in the markdown and notebooks must resolve (catches a doc still pointing at a renamed or deleted file).
 5. **Counts:** `python3 scripts/check_course_counts.py` — notebook/checkpoint/appendix totals in the README, docs index and 00b must match the tree.
 6. **Docs:** `make -C docs_site html` builds with `-W`; `make -C docs_site linkcheck` output should be empty.
 

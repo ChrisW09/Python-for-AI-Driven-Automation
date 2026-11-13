@@ -214,7 +214,7 @@ New here? [`00c_see_it_work.ipynb`](./00_onboarding/00c_see_it_work.ipynb) is a 
 | `data/` | Sample CSVs (support_ops, api_log, customer_feedback) — disk copies of inline data for `read_csv` practice; see [Datasets](#-datasets) |
 | `course_slides/` | **The lecture decks:** AI-Assisted Coding, and LLMs, RAG &amp; Agentic AI (slides PDF + LaTeX source with speaker notes); see [Course slides](#-course-slides) |
 | `slides/` | Course-overview deck + short companion decks for individual notebooks (NB 27, 49–52) (PDF + LaTeX source) |
-| `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references |
+| `scripts/` | Helpers — validate/execute every checkpoint (`test_checkpoints.py`), run every notebook end-to-end, regenerate the hero banner, check NB-number references and relative links |
 | `docs/` | Course-design notes (pedagogical review, module-descriptor coverage) |
 | `docs_site/` | Sphinx documentation site — every module guide + the mini-book chapters as a browsable website; see [Documentation site](#-documentation-site) |
 | `llm_providers.py` | Unified interface to OpenAI / Anthropic / Google / Ollama (+ offline `MockLLM`) |
