@@ -17,6 +17,7 @@ Work through the table; most quarters most rows need nothing.
 | **EU AI Act section** | Obligation dates phrased as future become past as they arrive (next milestone: Annex I embedded high-risk, Aug 2027) | [`16_business_ai/52_bpm_governance_poc_mvp.ipynb`](./16_business_ai/52_bpm_governance_poc_mvp.ipynb) §5 |
 | **Colab claims** | "Colab ships PyTorch preinstalled" and friends still true | root `README.md`, Module 6 |
 | **Optional requirements** | Commented pins in `requirements.txt` still install cleanly on a fresh venv (spot-check the ones you touch) | [`requirements.txt`](./requirements.txt) |
+| **pyarrow cap** | pyarrow ships a new major roughly every quarter, so its `<N` cap goes stale fastest of the core pins: raise it to the next major once Module 3 A2 (Parquet) runs clean on the new release | [`requirements.txt`](./requirements.txt) |
 | **Tools named in honest sections** | Module 7's appendices name the tools real teams reach for (Robyn / PyMC-Marketing in A9, OR-Tools in A11, `lifelines` in A5, off-policy evaluation libraries in A14). No code depends on them, but the claim "this is what the industry uses" ages | [`07_industry_applications/`](./07_industry_applications/) |
 | **External links** | `make -C docs_site linkcheck` output is empty (exclusions live in `conf.py`) | `docs_site/` |
 
