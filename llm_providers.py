@@ -42,7 +42,7 @@ ones you actually use:
 
     pip install openai            # for OpenAILLM
     pip install anthropic         # for AnthropicLLM
-    pip install google-generativeai   # for GoogleLLM
+    pip install google-genai          # for GoogleLLM
     pip install ollama            # for OllamaLLM   (plus a local Ollama server)
 """
 from __future__ import annotations
@@ -243,49 +243,86 @@ class AnthropicLLM:
 #  Google (Gemini)
 # =========================================================================
 class GoogleLLM:
-    """Wrapper around the `google.generativeai` SDK.
+    """Wrapper around the Google Gen AI SDK (``google-genai``) for Gemini.
 
-    pip install google-generativeai
+    pip install google-genai
     export GOOGLE_API_KEY=...        # or GEMINI_API_KEY
 
-    Gemini's API uses `generate_content(...)` with parts. We map the
-    OpenAI-style chat messages into Gemini's format.
+    Parameters
+    ----------
+    model : str, default "gemini-2.5-flash"
+        Gemini model id.
+    api_key : str, optional
+        Falls back to ``GOOGLE_API_KEY``, then ``GEMINI_API_KEY``.
+
+    Notes
+    -----
+    Built on the unified ``google-genai`` package (``from google import
+    genai``). It replaces the legacy ``google-generativeai`` package, whose
+    support ended on 2025-11-30. OpenAI-style messages are mapped to Gemini
+    ``contents`` (``assistant`` becomes the ``model`` role, text goes into
+    ``parts``) and the system message becomes ``config.system_instruction``.
     """
 
     def __init__(self, model: str = "gemini-2.5-flash", api_key: str | None = None):
         try:
-            import google.generativeai as genai
+            from google import genai
         except ImportError as e:
             raise ImportError(
-                "Google provider requires `pip install google-generativeai`."
+                "Google provider requires `pip install google-genai`."
             ) from e
         key = api_key or os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
         if not key:
             raise RuntimeError("Set GOOGLE_API_KEY (or GEMINI_API_KEY) in your environment.")
-        genai.configure(api_key=key)
-        self._genai = genai
+        self._client = genai.Client(api_key=key)
         self.model = model
 
     def chat(self, messages, *, temperature=0.0, max_tokens=512, **kwargs):
+        """Send one ``generate_content`` request.
+
+        Parameters
+        ----------
+        messages : list of dict
+            OpenAI-style messages (``role`` / ``content``). The first system
+            message becomes the system instruction; user and assistant turns
+            become the conversation.
+        temperature : float or None, default 0.0
+            Sampling temperature; ``None`` leaves the model default.
+        max_tokens : int or None, default 512
+            Sent as ``max_output_tokens``; ``None`` leaves the model default.
+        **kwargs
+            Any other ``GenerateContentConfig`` field (e.g. ``top_p``,
+            ``response_mime_type``), merged into the request config.
+
+        Returns
+        -------
+        dict
+            ``text``, ``model``, ``tokens_in``, ``tokens_out`` (answer plus
+            any thinking tokens, i.e. what is billed as output), ``latency_s``.
+        """
         t0 = time.perf_counter()
-        # Gemini handles "system_instruction" separately
         system = next((m["content"] for m in messages if m["role"] == "system"), "")
-        gemini_messages = [
-            {"role": "user" if m["role"] == "user" else "model", "parts": [m["content"]]}
+        contents = [
+            {"role": "user" if m["role"] == "user" else "model",
+             "parts": [{"text": m["content"]}]}
             for m in messages if m["role"] in ("user", "assistant")
         ]
-        model = self._genai.GenerativeModel(
-            model_name=self.model,
-            system_instruction=system or None,
-            generation_config={"temperature": temperature, "max_output_tokens": max_tokens, **kwargs},
+        config = {}
+        if system:
+            config["system_instruction"] = system
+        if temperature is not None:
+            config["temperature"] = temperature
+        if max_tokens is not None:
+            config["max_output_tokens"] = max_tokens
+        config.update(kwargs)
+        resp = self._client.models.generate_content(
+            model=self.model, contents=contents, config=config,
         )
-        resp = model.generate_content(gemini_messages)
-        text = resp.text or ""
-        # Gemini gives input/output token counts via usage_metadata (recent SDK)
-        usage = getattr(resp, "usage_metadata", None)
-        tokens_in  = getattr(usage, "prompt_token_count", 0) if usage else 0
-        tokens_out = getattr(usage, "candidates_token_count", 0) if usage else 0
-        return {"text": text, "model": self.model,
+        usage = resp.usage_metadata
+        tokens_in = (usage.prompt_token_count or 0) if usage else 0
+        tokens_out = ((usage.candidates_token_count or 0)
+                      + (usage.thoughts_token_count or 0)) if usage else 0
+        return {"text": resp.text or "", "model": resp.model_version or self.model,
                 "tokens_in": tokens_in, "tokens_out": tokens_out,
                 "latency_s": time.perf_counter() - t0}
 
