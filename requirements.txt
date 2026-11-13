@@ -50,7 +50,7 @@ beautifulsoup4>=4.12,<5
 # --- Optional LLM providers (see notebook A1 — the providers guide) ---
 # Every AI notebook works offline with the built-in MockLLM. Uncomment the
 # provider(s) you actually plan to use.
-# openai>=1.0                       # OpenAI: gpt-5.4-mini, gpt-5.5, text-embedding-3-small
+# openai>=1.45                      # OpenAI: gpt-5.4-mini, gpt-5.5, text-embedding-3-small (1.45+: max_completion_tokens)
 # anthropic>=0.30                   # Anthropic: Claude haiku / sonnet / opus
 # google-genai>=1.0                 # Google: Gemini Flash / Pro (successor of the retired google-generativeai)
 # ollama>=0.3                       # Local: any model you `ollama pull` (needs Ollama server)

@@ -161,10 +161,26 @@ class MockLLM:
 #  OpenAI
 # =========================================================================
 class OpenAILLM:
-    """Wrapper around `openai.OpenAI`.
+    """Wrapper around `openai.OpenAI` (Chat Completions API).
 
-    pip install openai
+    pip install "openai>=1.45"
     export OPENAI_API_KEY=sk-...
+
+    Parameters
+    ----------
+    model : str, default "gpt-5.4-mini"
+        OpenAI model id.
+    api_key : str, optional
+        Falls back to the ``OPENAI_API_KEY`` environment variable.
+
+    Notes
+    -----
+    The course-wide ``max_tokens`` argument is sent as OpenAI's
+    ``max_completion_tokens``. The older ``max_tokens`` request field is
+    deprecated and rejected by reasoning models (the o-series and the GPT-5
+    family), which is what the default model belongs to. Reasoning models may
+    also reject a non-default ``temperature``; pass ``temperature=None`` to
+    leave it out of the request.
     """
 
     def __init__(self, model: str = "gpt-5.4-mini", api_key: str | None = None):
@@ -178,14 +194,36 @@ class OpenAILLM:
         self.model = model
 
     def chat(self, messages, *, temperature=0.0, max_tokens=512, **kwargs):
+        """Send one Chat Completions request.
+
+        Parameters
+        ----------
+        messages : list of dict
+            OpenAI-style messages (``role`` / ``content``), passed through as is.
+        temperature : float or None, default 0.0
+            Sampling temperature; ``None`` omits it so the model's default
+            applies (needed for reasoning models that only accept the default).
+        max_tokens : int or None, default 512
+            Upper bound on generated tokens, sent as ``max_completion_tokens``
+            (for reasoning models it also covers the hidden reasoning tokens).
+            ``None`` omits the limit.
+        **kwargs
+            Any other Chat Completions parameter (e.g. ``reasoning_effort``,
+            ``response_format``), passed through unchanged.
+
+        Returns
+        -------
+        dict
+            ``text``, ``model``, ``tokens_in``, ``tokens_out``, ``latency_s``.
+        """
         t0 = time.perf_counter()
-        resp = self._client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            **kwargs,
-        )
+        params = {"model": self.model, "messages": messages}
+        if temperature is not None:
+            params["temperature"] = temperature
+        if max_tokens is not None:
+            params["max_completion_tokens"] = max_tokens
+        params.update(kwargs)            # explicit provider kwargs win
+        resp = self._client.chat.completions.create(**params)
         return {
             "text":       resp.choices[0].message.content or "",
             "model":      resp.model,
