@@ -50,6 +50,8 @@ class ChurnForm(forms.Form):
 
 `form.is_valid()` runs every rule and populates `form.cleaned_data` with typed, trusted values — so your view (and your model) never see a raw string where they expect an int.
 
+The "don't write twice" part is literal in ChurnScope: the HTML view binds the form to `request.POST`, and the JSON API ([Chapter 7](serving-a-model.md#a-json-api)) binds the *same* form to the parsed request body. One set of rules guards both doors, so a negative tenure or an unknown contract is rejected the same way whichever door it arrives through.
+
 ## Templates = HTML with holes
 
 Templates live in `scoring/templates/scoring/`. They use `{{ variables }}` and `{% tags %}`:

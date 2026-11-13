@@ -22,21 +22,34 @@ def churn_probability(*, tenure_months, monthly_charges, support_tickets, contra
 
 ## A JSON API
 
-For programmatic callers, `api_score` reads JSON and returns JSON (`scoring/views.py`):
+For programmatic callers, `api_score` reads JSON and returns JSON (`scoring/views.py`, simplified):
 
 ```python
 @csrf_exempt                       # stateless API; use token auth in production
 @require_POST
 def api_score(request):
-    data = json.loads(request.body or "{}")
-    p = churn_probability(tenure_months=int(data["tenure_months"]), ...)
+    payload = json.loads(request.body or "{}")   # malformed JSON → 400 (see views.py)
+    form = ChurnForm(payload)                    # the SAME rules as the HTML form
+    if not form.is_valid():
+        return JsonResponse({"error": "invalid request", "fields": ...}, status=400)
+    p = churn_probability(**form.cleaned_data)
+    ...                                          # log the Prediction, as index() does
     return JsonResponse({"probability": round(p, 4), "will_churn": p >= THRESHOLD})
 ```
 
 ```bash
 curl -X POST localhost:8000/api/score -H "Content-Type: application/json" \
      -d '{"tenure_months":3,"monthly_charges":95,"support_tickets":4,"contract":"month-to-month"}'
-# {"probability": 0.83, "will_churn": true}
+# {"probability": 0.9541, "will_churn": true}
+```
+
+**Validate with the form, not by hand.** Casting each field with `int(...)` / `float(...)` catches *missing* and *non-numeric* values, but not *wrong* ones: a negative tenure would crash the insert into the `PositiveIntegerField` column (a 500), and an unknown contract such as `"weekly"` would be scored and logged as if it were valid. Reusing `ChurnForm` gives the API the form's ranges and choices for free, and the 400 tells the caller which field to fix:
+
+```bash
+curl -X POST localhost:8000/api/score -H "Content-Type: application/json" \
+     -d '{"tenure_months":-3,"monthly_charges":95,"support_tickets":4,"contract":"weekly"}'
+# {"error": "invalid request", "fields": {"tenure_months": ["Ensure this value is greater than or equal to 0."],
+#                                         "contract": ["Select a valid choice. weekly is not one of the available choices."]}}
 ```
 
 > For anything beyond a teaching endpoint, reach for **Django REST Framework** or **Django Ninja** (FastAPI-style, with the Pydantic validation and auto-docs you met in Module 9) instead of hand-rolling JSON views.
