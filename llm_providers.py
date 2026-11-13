@@ -22,7 +22,7 @@ Pick the provider that fits your situation:
 
 Usage in any notebook:
 
-    from llm_providers import MockLLM, OpenAILLM, AnthropicLLM, GoogleLLM, OllamaLLM
+    from llm_providers import MockLLM, OpenAILLM, AnthropicLLM, GoogleLLM, OllamaLLM, get_llm
 
     # Choose ONE — same interface across all five
     llm = MockLLM()                                    # default for the course
